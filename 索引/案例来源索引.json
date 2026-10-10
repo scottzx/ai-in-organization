@@ -1,0 +1,4503 @@
+{
+  "title": "AI进入组织·案例来源索引",
+  "author": "一芥智能研究院",
+  "version": "v7.0",
+  "updated_on": "2026-10-10",
+  "counts": {
+    "entries": 62,
+    "industry_and_pending_entries": 54,
+    "methods": 1,
+    "references": 7,
+    "source_records_main_fragment": 54,
+    "practice_fragments": 94,
+    "reference_fragments": 7,
+    "all_fragments": 101
+  },
+  "source_note": "来源为公开资料及受访者自述；原文不在本仓库转载。整理稿行号与文件哈希用于回查研究底稿，不代表独立事实核验。",
+  "entries": [
+    {
+      "id": "A01",
+      "title": "苏北大型主粮农场项目",
+      "path": "下册-案例汇编/A-农林牧渔业/A01-苏北大型主粮农场项目.md",
+      "industry_code": "A",
+      "industry_name": "农、林、牧、渔业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-25",
+      "fragments": [
+        {
+          "source_fragment_id": "S-25-F01",
+          "title": "巡田之后，谁去处理异常",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供方介绍已服务的大农场，并现场演示部分环节；未独立验收",
+          "anchor": "s-25-f01",
+          "sources": [
+            {
+              "title": "让AI下地种田 一季增收900万 AI走进田间地头，帮农人看农事、问农情，管作业，农场一季增收900万。看看徐连云如何让农业AI真的落地",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7693915317050838272",
+              "document": "7693915317050838272.md",
+              "document_sha256": "b0e70d9715132cf6c94be646d4ae22e06dbbf7350002790775f6e8447c39cd96",
+              "line_start": 546,
+              "line_end": 644,
+              "locator": "00:04:08.500"
+            },
+            {
+              "title": "让AI下地种田 一季增收900万 AI走进田间地头，帮农人看农事、问农情，管作业，农场一季增收900万。看看徐连云如何让农业AI真的落地",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7693915317050838272",
+              "document": "7693915317050838272.md",
+              "document_sha256": "b0e70d9715132cf6c94be646d4ae22e06dbbf7350002790775f6e8447c39cd96",
+              "line_start": 676,
+              "line_end": 1048,
+              "locator": "00:05:08.490"
+            },
+            {
+              "title": "让AI下地种田 一季增收900万 AI走进田间地头，帮农人看农事、问农情，管作业，农场一季增收900万。看看徐连云如何让农业AI真的落地",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7693915317050838272",
+              "document": "7693915317050838272.md",
+              "document_sha256": "b0e70d9715132cf6c94be646d4ae22e06dbbf7350002790775f6e8447c39cd96",
+              "line_start": 1466,
+              "line_end": 1512,
+              "locator": "00:11:53.770"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-25-F02",
+          "title": "把收益口径和投入口径分开",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "一季收益为供方转述农场自算；订阅费为报价",
+          "anchor": "s-25-f02",
+          "sources": [
+            {
+              "title": "让AI下地种田 一季增收900万 AI走进田间地头，帮农人看农事、问农情，管作业，农场一季增收900万。看看徐连云如何让农业AI真的落地",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7693915317050838272",
+              "document": "7693915317050838272.md",
+              "document_sha256": "b0e70d9715132cf6c94be646d4ae22e06dbbf7350002790775f6e8447c39cd96",
+              "line_start": 1182,
+              "line_end": 1252,
+              "locator": "00:09:36.300"
+            },
+            {
+              "title": "让AI下地种田 一季增收900万 AI走进田间地头，帮农人看农事、问农情，管作业，农场一季增收900万。看看徐连云如何让农业AI真的落地",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7693915317050838272",
+              "document": "7693915317050838272.md",
+              "document_sha256": "b0e70d9715132cf6c94be646d4ae22e06dbbf7350002790775f6e8447c39cd96",
+              "line_start": 1738,
+              "line_end": 1776,
+              "locator": "00:14:20.270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "德国斯图加特零部件企业AI培训",
+      "path": "下册-案例汇编/C-制造业/C01-德国斯图加特零部件企业AI培训.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-01",
+      "fragments": [
+        {
+          "source_fragment_id": "C-01-F01",
+          "title": "经验问答接入新人培训与带教",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "知识问答已接入新人培训与带教，来源称上线后陪跑接近两个月；未披露独立上岗效果。",
+          "anchor": "c-01-f01",
+          "sources": [
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 55,
+              "line_end": 69,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第55—69行。"
+            },
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 71,
+              "line_end": 83,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第71—83行。"
+            },
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 85,
+              "line_end": 91,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第85—91行。"
+            },
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 71,
+              "line_end": 75,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第71—75行。"
+            },
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 93,
+              "line_end": 103,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第93—103行。"
+            },
+            {
+              "title": "NO.1 从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "01-从师徒带教到AI辅助培训：FDE用AI破解制造业经验传承难题.md",
+              "document_sha256": "ecded47989bb5fb4636865464fa220b543e00598d4c6c56c2148b3319f36e4b2",
+              "line_start": 77,
+              "line_end": 91,
+              "locator": "原书页码：6–13；PDF 文件页码：7–14。 Markdown第77—91行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "非标制造企业AI报价",
+      "path": "下册-案例汇编/C-制造业/C02-非标制造企业AI报价.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-17",
+      "fragments": [
+        {
+          "source_fragment_id": "C-17-F01",
+          "title": "直接出价失准后改为分段协作",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "真实订单试用及上线后的报价协作，来源称企业已调整工作安排与KPI。",
+          "anchor": "c-17-f01",
+          "sources": [
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 85,
+              "line_end": 91,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第85—91行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 93,
+              "line_end": 103,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第93—103行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 111,
+              "line_end": 115,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第111—115行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 147,
+              "line_end": 153,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第147—153行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 119,
+              "line_end": 131,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第119—131行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 127,
+              "line_end": 131,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第127—131行。"
+            },
+            {
+              "title": "NO.17 从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "17-从老师傅报价到AI深度协同：FDE用AI重构非标制造售前链路.md",
+              "document_sha256": "cb6865c84fc8af45aa819a3d7aaa572fddd1768020bfaae53cbb05d9249a546f",
+              "line_start": 111,
+              "line_end": 123,
+              "locator": "原书页码：165–176；PDF 文件页码：166–177。 Markdown第111—123行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "制造企业驻场需求梳理",
+      "path": "下册-案例汇编/C-制造业/C03-制造企业驻场需求梳理.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-04",
+      "fragments": [
+        {
+          "source_fragment_id": "S-04-F01",
+          "title": "报销识别以后，费用要落到哪个订单",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "现场已进行需求与数据讨论；采集、看板、问答和智能体数量仍是计划。",
+          "anchor": "s-04-f01",
+          "sources": [
+            {
+              "title": "100家企业AI落地实录：从数据治理开始",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7676377970349237327",
+              "document": "7676377970349237327.md",
+              "document_sha256": "d3b56650bf1270f4b03b378ba91a84573cf220b1ca05f188783f2067b21adb8b",
+              "line_start": 100,
+              "line_end": 220,
+              "locator": "00:01:00.420"
+            },
+            {
+              "title": "100家企业AI落地实录：从数据治理开始",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7676377970349237327",
+              "document": "7676377970349237327.md",
+              "document_sha256": "d3b56650bf1270f4b03b378ba91a84573cf220b1ca05f188783f2067b21adb8b",
+              "line_start": 372,
+              "line_end": 500,
+              "locator": "00:03:13.050"
+            },
+            {
+              "title": "100家企业AI落地实录：从数据治理开始",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7676377970349237327",
+              "document": "7676377970349237327.md",
+              "document_sha256": "d3b56650bf1270f4b03b378ba91a84573cf220b1ca05f188783f2067b21adb8b",
+              "line_start": 220,
+              "line_end": 336,
+              "locator": "00:02:01.210"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "压力容器企业成本核算需求梳理",
+      "path": "下册-案例汇编/C-制造业/C04-压力容器企业成本核算需求梳理.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-05",
+      "fragments": [
+        {
+          "source_fragment_id": "S-05-F01",
+          "title": "企业为什么要求财务比原计划更早进入",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "发生的是需求核对和排期调整；尚未展示AI稳定执行或成本核算交付。",
+          "anchor": "s-05-f01",
+          "sources": [
+            {
+              "title": "100家企业AI落地实录 第四家：第一集",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7680181960627451619",
+              "document": "7680181960627451619.md",
+              "document_sha256": "627f41a9e8f8e8fb08f0abd96a8d1a3746201b0c99df616ab2610ba9aeae8110",
+              "line_start": 128,
+              "line_end": 332,
+              "locator": "00:01:34.270"
+            },
+            {
+              "title": "100家企业AI落地实录 第四家：第一集",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7680181960627451619",
+              "document": "7680181960627451619.md",
+              "document_sha256": "627f41a9e8f8e8fb08f0abd96a8d1a3746201b0c99df616ab2610ba9aeae8110",
+              "line_start": 16,
+              "line_end": 80,
+              "locator": "00:00:01.740"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "制造企业订单与岗位权限调整",
+      "path": "下册-案例汇编/C-制造业/C05-制造企业订单与岗位权限调整.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-06",
+      "fragments": [
+        {
+          "source_fragment_id": "S-06-F01",
+          "title": "同一订单，不同岗位需要不同字段和权限",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "来源称交付培训并走真实流程；现场仍在修订权限和单据，最终上线未知。",
+          "anchor": "s-06-f01",
+          "sources": [
+            {
+              "title": "100家企业AI落地实录·第三家",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7677934464790609763",
+              "document": "7677934464790609763.md",
+              "document_sha256": "ddecacec95972ef07f5d09f5700c75fe6c454a814e4156a0c9a8ec046f19fcc7",
+              "line_start": 124,
+              "line_end": 216,
+              "locator": "00:00:53.050"
+            },
+            {
+              "title": "100家企业AI落地实录·第三家",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7677934464790609763",
+              "document": "7677934464790609763.md",
+              "document_sha256": "ddecacec95972ef07f5d09f5700c75fe6c454a814e4156a0c9a8ec046f19fcc7",
+              "line_start": 336,
+              "line_end": 488,
+              "locator": "00:02:01.150"
+            },
+            {
+              "title": "100家企业AI落地实录·第三家",
+              "publisher": "皓月的创业分享",
+              "url": "https://www.douyin.com/video/7677934464790609763",
+              "document": "7677934464790609763.md",
+              "document_sha256": "ddecacec95972ef07f5d09f5700c75fe6c454a814e4156a0c9a8ec046f19fcc7",
+              "line_start": 632,
+              "line_end": 776,
+              "locator": "00:04:00.050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "电助力单车企业AI应用",
+      "path": "下册-案例汇编/C-制造业/C06-电助力单车企业AI应用.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "provisional",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-23",
+      "fragments": [
+        {
+          "source_fragment_id": "S-23-F01",
+          "title": "把供应商规格书变成可交互的需求讨论",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "分析真实规格书并做交互模拟器；未证明物理仪表生产验证或量产交付。",
+          "anchor": "s-23-f01",
+          "sources": [
+            {
+              "title": "20人公司，AI化改造，连续17个月增长",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7665274557162409257",
+              "document": "7665274557162409257.md",
+              "document_sha256": "5090a36a271aa7c6110a093bc45b9415f34ffff996305bb103c3a9e8b898a822",
+              "line_start": 350,
+              "line_end": 558,
+              "locator": "00:02:01.210"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-23-F02",
+          "title": "成交订单结构化以后，装配同事怎样接手",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "来源描述已用订单工作流；安装、实际履约仍由人。",
+          "anchor": "s-23-f02",
+          "sources": [
+            {
+              "title": "AI执行六个环节，电商部一个人年销售额超1000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7667129956081618226",
+              "document": "7667129956081618226.md",
+              "document_sha256": "5265f14634826d7548795109c790444a54081eecc81505910789fc6bcc4a3ab4",
+              "line_start": 67,
+              "line_end": 179,
+              "locator": "00:00:26.298"
+            },
+            {
+              "title": "AI执行六个环节，电商部一个人年销售额超1000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7667129956081618226",
+              "document": "7667129956081618226.md",
+              "document_sha256": "5265f14634826d7548795109c790444a54081eecc81505910789fc6bcc4a3ab4",
+              "line_start": 223,
+              "line_end": 407,
+              "locator": "00:01:44.453"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-23-F03",
+          "title": "老板的修改意见沉淀成下一次创作规范",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "创作岗位已用自述；单次审核数据不等于全公司错误率。",
+          "anchor": "s-23-f03",
+          "sources": [
+            {
+              "title": "20人公司，AI化改造，连续17个月增长",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7665274557162409257",
+              "document": "7665274557162409257.md",
+              "document_sha256": "5090a36a271aa7c6110a093bc45b9415f34ffff996305bb103c3a9e8b898a822",
+              "line_start": 886,
+              "line_end": 1146,
+              "locator": "00:06:05.740"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-23-F04",
+          "title": "AI汇总复盘以后，待办仍要到现场督办",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "复盘收集和汇总已有自述，任务执行与调解由老板；非所有会议通用。",
+          "anchor": "s-23-f04",
+          "sources": [
+            {
+              "title": "他把传统会议改成了“龙虾开会”，效率飞升",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7663052669866577215",
+              "document": "7663052669866577215.md",
+              "document_sha256": "69be2c9ecc24dbc81245285057bc91b035feb682d24a4ec3143dce9272fe9014",
+              "line_start": 140,
+              "line_end": 464,
+              "locator": "00:00:57.010"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-23-F05",
+          "title": "AI提出房租问题，实际谈判仍由人执行",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "节租为经营者自述；金额在两源不一致，未来多年累计尚未实现。",
+          "anchor": "s-23-f05",
+          "sources": [
+            {
+              "title": "20人公司，AI化改造，连续17个月增长",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7665274557162409257",
+              "document": "7665274557162409257.md",
+              "document_sha256": "5090a36a271aa7c6110a093bc45b9415f34ffff996305bb103c3a9e8b898a822",
+              "line_start": 1574,
+              "line_end": 1718,
+              "locator": "00:11:03.660"
+            },
+            {
+              "title": "AI决策Agent帮公司省下400万-操作指南",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7662313739689004303",
+              "document": "7662313739689004303.md",
+              "document_sha256": "f2daa15686a5a25c7ae81f40caf96358c5c6e2e1ff99ea2be9ed1a323b3f88c8",
+              "line_start": 16,
+              "line_end": 208,
+              "locator": "00:00:00.130"
+            },
+            {
+              "title": "AI决策Agent帮公司省下400万-操作指南",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7662313739689004303",
+              "document": "7662313739689004303.md",
+              "document_sha256": "f2daa15686a5a25c7ae81f40caf96358c5c6e2e1ff99ea2be9ed1a323b3f88c8",
+              "line_start": 512,
+              "line_end": 704,
+              "locator": "00:04:59.420"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "制造企业AI辅助研发试点",
+      "path": "下册-案例汇编/C-制造业/C07-制造企业AI辅助研发试点.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-07",
+      "fragments": [
+        {
+          "source_fragment_id": "C-07-F02",
+          "title": "编码与文档节时，测试持平",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "另一个匿名制造客户，三个小组、几天的短期反馈；不属于基金客户。",
+          "anchor": "c-07-f02",
+          "sources": [
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 119,
+              "line_end": 121,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第119—121行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "蚕丝工厂打样与库存管理",
+      "path": "下册-案例汇编/C-制造业/C08-蚕丝工厂打样与库存管理.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-18",
+      "fragments": [
+        {
+          "source_fragment_id": "S-18-F01",
+          "title": "先用统一款号看清货，再谈连接更多业务",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "内部系统已展示并给员工使用迭代；已有ERP仍在，接口自动化范围不清。",
+          "anchor": "s-18-f01",
+          "sources": [
+            {
+              "title": "逐字稿｜光羽的平行世界｜不懂技术的工厂老板如何AI搭建内部系统，撑起2000万的业务",
+              "publisher": "[光羽的平行世界](https://www.douyin.com/user/MS4wLjABAAAAqdHMdeHjfGm3Iw8gUVR2H950Y2d62z75vebh25HH36Pj4t8O_6OObEyZic80FxkP)",
+              "url": "https://www.douyin.com/video/7685716937539620142",
+              "document": "7685716937539620142.md",
+              "document_sha256": "9bf5cb8b1411546ea89d9919c77be7dbcf114d46333eb8e88ab19ca8ae231f32",
+              "line_start": 102,
+              "line_end": 200,
+              "locator": "01:17.700"
+            },
+            {
+              "title": "逐字稿｜光羽的平行世界｜不懂技术的工厂老板如何AI搭建内部系统，撑起2000万的业务",
+              "publisher": "[光羽的平行世界](https://www.douyin.com/user/MS4wLjABAAAAqdHMdeHjfGm3Iw8gUVR2H950Y2d62z75vebh25HH36Pj4t8O_6OObEyZic80FxkP)",
+              "url": "https://www.douyin.com/video/7685716937539620142",
+              "document": "7685716937539620142.md",
+              "document_sha256": "9bf5cb8b1411546ea89d9919c77be7dbcf114d46333eb8e88ab19ca8ae231f32",
+              "line_start": 212,
+              "line_end": 290,
+              "locator": "03:00.470"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-18-F02",
+          "title": "能修改业务细节的工具，仍需要持续产品工作",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "员工试用反馈和自然语言修改已有自述；没有长期维护及错误率资料。",
+          "anchor": "s-18-f02",
+          "sources": [
+            {
+              "title": "逐字稿｜光羽的平行世界｜不懂技术的工厂老板如何AI搭建内部系统，撑起2000万的业务",
+              "publisher": "[光羽的平行世界](https://www.douyin.com/user/MS4wLjABAAAAqdHMdeHjfGm3Iw8gUVR2H950Y2d62z75vebh25HH36Pj4t8O_6OObEyZic80FxkP)",
+              "url": "https://www.douyin.com/video/7685716937539620142",
+              "document": "7685716937539620142.md",
+              "document_sha256": "9bf5cb8b1411546ea89d9919c77be7dbcf114d46333eb8e88ab19ca8ae231f32",
+              "line_start": 402,
+              "line_end": 490,
+              "locator": "06:08.060"
+            },
+            {
+              "title": "逐字稿｜光羽的平行世界｜不懂技术的工厂老板如何AI搭建内部系统，撑起2000万的业务",
+              "publisher": "[光羽的平行世界](https://www.douyin.com/user/MS4wLjABAAAAqdHMdeHjfGm3Iw8gUVR2H950Y2d62z75vebh25HH36Pj4t8O_6OObEyZic80FxkP)",
+              "url": "https://www.douyin.com/video/7685716937539620142",
+              "document": "7685716937539620142.md",
+              "document_sha256": "9bf5cb8b1411546ea89d9919c77be7dbcf114d46333eb8e88ab19ca8ae231f32",
+              "line_start": 316,
+              "line_end": 378,
+              "locator": "04:37.970"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "迪欧家具AI应用",
+      "path": "下册-案例汇编/C-制造业/C09-迪欧家具AI应用.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-26",
+      "fragments": [
+        {
+          "source_fragment_id": "S-26-F01",
+          "title": "展厅培训先拆成问答与考核",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "企业经营者称正在做且看到成果；采用人数和量化效果未披露",
+          "anchor": "s-26-f01",
+          "sources": [
+            {
+              "title": "办公需要AI 办公室需要快乐～ 效率交给AI，快乐、碰撞和人与人的连接，还是得在线下发生。这期和黄雅悠聊聊，她是怎么用AI改造二十年的家具企业，怎样让办公更快乐。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7691170247029558555",
+              "document": "7691170247029558555.md",
+              "document_sha256": "c6dddb42ad89d1444b30ca3137ec5b9316f4fb13b6c995897a5944a9e7564dc3",
+              "line_start": 878,
+              "line_end": 1048,
+              "locator": "00:06:34.520"
+            },
+            {
+              "title": "办公需要AI 办公室需要快乐～ 效率交给AI，快乐、碰撞和人与人的连接，还是得在线下发生。这期和黄雅悠聊聊，她是怎么用AI改造二十年的家具企业，怎样让办公更快乐。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7691170247029558555",
+              "document": "7691170247029558555.md",
+              "document_sha256": "c6dddb42ad89d1444b30ca3137ec5b9316f4fb13b6c995897a5944a9e7564dc3",
+              "line_start": 1022,
+              "line_end": 1048,
+              "locator": "00:07:43.000"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-26-F02",
+          "title": "设计资料定时进入共享底座",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "企业经营者描述现用定时抓取与资料学习",
+          "anchor": "s-26-f02",
+          "sources": [
+            {
+              "title": "办公需要AI 办公室需要快乐～ 效率交给AI，快乐、碰撞和人与人的连接，还是得在线下发生。这期和黄雅悠聊聊，她是怎么用AI改造二十年的家具企业，怎样让办公更快乐。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7691170247029558555",
+              "document": "7691170247029558555.md",
+              "document_sha256": "c6dddb42ad89d1444b30ca3137ec5b9316f4fb13b6c995897a5944a9e7564dc3",
+              "line_start": 1190,
+              "line_end": 1272,
+              "locator": "00:08:52.320"
+            },
+            {
+              "title": "办公需要AI 办公室需要快乐～ 效率交给AI，快乐、碰撞和人与人的连接，还是得在线下发生。这期和黄雅悠聊聊，她是怎么用AI改造二十年的家具企业，怎样让办公更快乐。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7691170247029558555",
+              "document": "7691170247029558555.md",
+              "document_sha256": "c6dddb42ad89d1444b30ca3137ec5b9316f4fb13b6c995897a5944a9e7564dc3",
+              "line_start": 1274,
+              "line_end": 1392,
+              "locator": "00:09:38.780"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-26-F03",
+          "title": "售后复盘要回到产品标准",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "已有售后系统；跨部门知悉、复盘回工艺及产品标准的完整闭环是受访者描述的目标，未证实全部落地",
+          "anchor": "s-26-f03",
+          "sources": [
+            {
+              "title": "办公需要AI 办公室需要快乐～ 效率交给AI，快乐、碰撞和人与人的连接，还是得在线下发生。这期和黄雅悠聊聊，她是怎么用AI改造二十年的家具企业，怎样让办公更快乐。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7691170247029558555",
+              "document": "7691170247029558555.md",
+              "document_sha256": "c6dddb42ad89d1444b30ca3137ec5b9316f4fb13b6c995897a5944a9e7564dc3",
+              "line_start": 1050,
+              "line_end": 1176,
+              "locator": "00:07:56.440"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "生物材料上市公司数字化与AI应用",
+      "path": "下册-案例汇编/C-制造业/C10-生物材料上市公司数字化与AI应用.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "C-18",
+      "fragments": [
+        {
+          "source_fragment_id": "C-18-F01",
+          "title": "CRM基础与培训陪练分别看",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "CRM与知识库运行后增加陪练和考试；招聘自动一面为独立试点，非全面采用。",
+          "anchor": "c-18-f01",
+          "sources": [
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 57,
+              "line_end": 65,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第57—65行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 67,
+              "line_end": 71,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第67—71行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 69,
+              "line_end": 75,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第69—75行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 81,
+              "line_end": 81,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第81—81行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 83,
+              "line_end": 83,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第83—83行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 57,
+              "line_end": 75,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第57—75行。"
+            },
+            {
+              "title": "NO.18 从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "18-从纸质台账到AI经营：一家生物科技上市公司的0帧起手数智化.md",
+              "document_sha256": "3041e422734770291314e805abf8f0eab7c794eb2b221e60cf7faab2ae39d73a",
+              "line_start": 81,
+              "line_end": 85,
+              "locator": "原书页码：177–184；PDF 文件页码：178–185。 Markdown第81—85行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "澳洲乳企海外动销分析",
+      "path": "下册-案例汇编/C-制造业/C11-澳洲乳企海外动销分析.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-24",
+      "fragments": [
+        {
+          "source_fragment_id": "C-24-F01",
+          "title": "统一动销口径与可追溯审核",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "先跑中国一条产品线、再接越南的动销数据与费用预审，结论进入周会；非全部市场推广。",
+          "anchor": "c-24-f01",
+          "sources": [
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 75,
+              "line_end": 81,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第75—81行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 95,
+              "line_end": 101,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第95—101行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 103,
+              "line_end": 107,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第103—107行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 147,
+              "line_end": 155,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第147—155行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 111,
+              "line_end": 117,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第111—117行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 123,
+              "line_end": 129,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第123—129行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 95,
+              "line_end": 107,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第95—107行。"
+            },
+            {
+              "title": "NO.24 从发货到动销：FDE用AI打通跨境快消的海外数据断层",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "24-从发货到动销：FDE用AI打通跨境快消的海外数据断层.md",
+              "document_sha256": "ccb236dbbbd2d39402c54950829454ccd21a261963284286348f76d7bbf36c01",
+              "line_start": 123,
+              "line_end": 133,
+              "locator": "原书页码：233–243；PDF 文件页码：234–244。 Markdown第123—133行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "畜牧机器人研发与合作场试点",
+      "path": "下册-案例汇编/C-制造业/C12-畜牧机器人研发与合作场试点.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-30",
+      "fragments": [
+        {
+          "source_fragment_id": "S-30-F01",
+          "title": "样机在合作场里验证什么",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "第一代样机在战略伙伴处验证，第二代研发；其他客户只有采购意向",
+          "anchor": "s-30-f01",
+          "sources": [
+            {
+              "title": "AI走进养殖场 机器人创造新价值 带着机器人进猪舍，下牛棚，用AI声纹识别猪的异动，提前预警疾病；用AI视觉，实现24小时自动巡检。在畜牧机器人赛道，看看张燕如何用AI推动养殖场自动化",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7662366110108486964",
+              "document": "7662366110108486964.md",
+              "document_sha256": "85dbd7499a1f87d49ec124c96fc63396300ab489ed6e96ff28bfdf818fe1f8f6",
+              "line_start": 134,
+              "line_end": 172,
+              "locator": "00:01:08.020"
+            },
+            {
+              "title": "AI走进养殖场 机器人创造新价值 带着机器人进猪舍，下牛棚，用AI声纹识别猪的异动，提前预警疾病；用AI视觉，实现24小时自动巡检。在畜牧机器人赛道，看看张燕如何用AI推动养殖场自动化",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7662366110108486964",
+              "document": "7662366110108486964.md",
+              "document_sha256": "85dbd7499a1f87d49ec124c96fc63396300ab489ed6e96ff28bfdf818fe1f8f6",
+              "line_start": 570,
+              "line_end": 664,
+              "locator": "00:04:37.480"
+            },
+            {
+              "title": "AI走进养殖场 机器人创造新价值 带着机器人进猪舍，下牛棚，用AI声纹识别猪的异动，提前预警疾病；用AI视觉，实现24小时自动巡检。在畜牧机器人赛道，看看张燕如何用AI推动养殖场自动化",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7662366110108486964",
+              "document": "7662366110108486964.md",
+              "document_sha256": "85dbd7499a1f87d49ec124c96fc63396300ab489ed6e96ff28bfdf818fe1f8f6",
+              "line_start": 1350,
+              "line_end": 1380,
+              "locator": "00:10:42.930"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-30-F02",
+          "title": "可订货不等于已批量交付",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "供方报价和交期，未提供批量交付验收",
+          "anchor": "s-30-f02",
+          "sources": [
+            {
+              "title": "AI走进养殖场 机器人创造新价值 带着机器人进猪舍，下牛棚，用AI声纹识别猪的异动，提前预警疾病；用AI视觉，实现24小时自动巡检。在畜牧机器人赛道，看看张燕如何用AI推动养殖场自动化",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7662366110108486964",
+              "document": "7662366110108486964.md",
+              "document_sha256": "85dbd7499a1f87d49ec124c96fc63396300ab489ed6e96ff28bfdf818fe1f8f6",
+              "line_start": 866,
+              "line_end": 1000,
+              "locator": "00:06:52.050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "移动餐车出海企业AI销售准备",
+      "path": "下册-案例汇编/C-制造业/C13-移动餐车出海企业AI销售准备.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-36",
+      "fragments": [
+        {
+          "source_fragment_id": "S-36-F01",
+          "title": "把跟进准备变成共同动作",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "企业已整理自身经验与跟进要求；自动执行覆盖不明",
+          "anchor": "s-36-f01",
+          "sources": [
+            {
+              "title": "用AI跨境卖餐车 帮3万人实现美食创业梦 从摆摊卖奶茶到把移动餐车卖到全球85个国家，年入1.2亿。借助GEO开拓海外新流量，看看王乃墩老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7639644564847889718",
+              "document": "7639644564847889718.md",
+              "document_sha256": "913a09524f1439bf9578425b89fc27ff2c2a2ae7f32f1f2162a08b61ce20ef8e",
+              "line_start": 570,
+              "line_end": 664,
+              "locator": "00:04:47.350"
+            },
+            {
+              "title": "用AI跨境卖餐车 帮3万人实现美食创业梦 从摆摊卖奶茶到把移动餐车卖到全球85个国家，年入1.2亿。借助GEO开拓海外新流量，看看王乃墩老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7639644564847889718",
+              "document": "7639644564847889718.md",
+              "document_sha256": "913a09524f1439bf9578425b89fc27ff2c2a2ae7f32f1f2162a08b61ce20ef8e",
+              "line_start": 664,
+              "line_end": 796,
+              "locator": "00:05:24.560"
+            },
+            {
+              "title": "用AI跨境卖餐车 帮3万人实现美食创业梦 从摆摊卖奶茶到把移动餐车卖到全球85个国家，年入1.2亿。借助GEO开拓海外新流量，看看王乃墩老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7639644564847889718",
+              "document": "7639644564847889718.md",
+              "document_sha256": "913a09524f1439bf9578425b89fc27ff2c2a2ae7f32f1f2162a08b61ce20ef8e",
+              "line_start": 908,
+              "line_end": 932,
+              "locator": "00:07:19.110"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F01",
+      "title": "面向东南亚的服装跨境电商业务协同",
+      "path": "下册-案例汇编/F-批发与零售业/F01-面向东南亚的服装跨境电商业务协同.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "C-22",
+      "fragments": [
+        {
+          "source_fragment_id": "C-22-F01",
+          "title": "系统中转、照片回填与补货确认",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "物流照片回填、补货计算与供应商订单交付；实施方交付后不再取得客户权限。",
+          "anchor": "c-22-f01",
+          "sources": [
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 71,
+              "line_end": 79,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第71—79行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 81,
+              "line_end": 95,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第81—95行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 111,
+              "line_end": 111,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第111—111行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 111,
+              "line_end": 113,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第111—113行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 115,
+              "line_end": 115,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第115—115行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 111,
+              "line_end": 125,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第111—125行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 109,
+              "line_end": 125,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第109—125行。"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "C-22-F02",
+          "title": "库存开始关联广告判断，实际自动控制范围未明",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "库存影响广告的延伸描述；实际权限、批准流程与执行情况未披露。",
+          "anchor": "c-22-f02",
+          "sources": [
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 97,
+              "line_end": 103,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第97—103行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 111,
+              "line_end": 125,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第111—125行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "森马电商AI转型",
+      "path": "下册-案例汇编/F-批发与零售业/F02-森马电商AI转型.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-01",
+      "fragments": [
+        {
+          "source_fragment_id": "S-01-F01",
+          "title": "商品素材提速以后，谁负责确认货图一致",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "受访团队已有商品图、换色和话术工具；效果与审图工作为受访者自述。",
+          "anchor": "s-01-f01",
+          "sources": [
+            {
+              "title": "【完整版】增收了2个亿的森马AI化全流程",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680873641009040703",
+              "document": "7680873641009040703.md",
+              "document_sha256": "0039f3efb9c019361000aa2335afad6e2d18b29c976e1156cd28be6965c8aa5e",
+              "line_start": 516,
+              "line_end": 772,
+              "locator": "00:03:42.410"
+            },
+            {
+              "title": "森马用AI变革增收2个亿 @森创启睿",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7642252037626907958",
+              "document": "7642252037626907958.md",
+              "document_sha256": "5fab748fee6d21e53a24db4edeabbcdf962627dfc9a4de7eb3fca546fd2bd1f7",
+              "line_start": 588,
+              "line_end": 696,
+              "locator": "00:04:00.650"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-01-F02",
+          "title": "RPA执行规则，模型承担内容处理",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "原文明确常规工单自动化已经持续运行；不是全部由模型自由决策。",
+          "anchor": "s-01-f02",
+          "sources": [
+            {
+              "title": "【完整版】增收了2个亿的森马AI化全流程",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680873641009040703",
+              "document": "7680873641009040703.md",
+              "document_sha256": "0039f3efb9c019361000aa2335afad6e2d18b29c976e1156cd28be6965c8aa5e",
+              "line_start": 372,
+              "line_end": 500,
+              "locator": "00:02:43.020"
+            },
+            {
+              "title": "【完整版】增收了2个亿的森马AI化全流程",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680873641009040703",
+              "document": "7680873641009040703.md",
+              "document_sha256": "0039f3efb9c019361000aa2335afad6e2d18b29c976e1156cd28be6965c8aa5e",
+              "line_start": 924,
+              "line_end": 1048,
+              "locator": "00:07:10.910"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-01-F03",
+          "title": "夜间服务扩展与跨部门采用",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "夜间数字人及客服为已用自述；全公司改造程度没有统一验收资料。",
+          "anchor": "s-01-f03",
+          "sources": [
+            {
+              "title": "森马用AI变革增收2个亿 @森创启睿",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7642252037626907958",
+              "document": "7642252037626907958.md",
+              "document_sha256": "5fab748fee6d21e53a24db4edeabbcdf962627dfc9a4de7eb3fca546fd2bd1f7",
+              "line_start": 312,
+              "line_end": 428,
+              "locator": "00:02:00.940"
+            },
+            {
+              "title": "森马用AI变革增收2个亿 @森创启睿",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7642252037626907958",
+              "document": "7642252037626907958.md",
+              "document_sha256": "5fab748fee6d21e53a24db4edeabbcdf962627dfc9a4de7eb3fca546fd2bd1f7",
+              "line_start": 1380,
+              "line_end": 1540,
+              "locator": "00:09:51.270"
+            },
+            {
+              "title": "森马用AI变革增收2个亿 @森创启睿",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7642252037626907958",
+              "document": "7642252037626907958.md",
+              "document_sha256": "5fab748fee6d21e53a24db4edeabbcdf962627dfc9a4de7eb3fca546fd2bd1f7",
+              "line_start": 1636,
+              "line_end": 1768,
+              "locator": "00:12:00.390"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "童装电商AI选款与员工学习",
+      "path": "下册-案例汇编/F-批发与零售业/F03-童装电商AI选款与员工学习.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-03",
+      "fragments": [
+        {
+          "source_fragment_id": "S-03-F01",
+          "title": "先选图片，再决定制作哪些样衣",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "受访者描述当前选款方式；不能把图片视为实物样衣已验证。",
+          "anchor": "s-03-f01",
+          "sources": [
+            {
+              "title": "看童装电商老板怎么落地AI拿到结果",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7535701970699472179",
+              "document": "7535701970699472179.md",
+              "document_sha256": "93e110675ed1b86edced2577e0a2b987eb9899ef5692bfaeb5b3219e1a79dafd",
+              "line_start": 547,
+              "line_end": 731,
+              "locator": "00:04:00.300"
+            },
+            {
+              "title": "看童装电商老板怎么落地AI拿到结果",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7535701970699472179",
+              "document": "7535701970699472179.md",
+              "document_sha256": "93e110675ed1b86edced2577e0a2b987eb9899ef5692bfaeb5b3219e1a79dafd",
+              "line_start": 15,
+              "line_end": 147,
+              "locator": "00:00:00.000"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-03-F02",
+          "title": "学习月已经组织，趋势系统仍在推进",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "学习月、作业评分与人工校验已开展；趋势生成目标与现有PDF提词应分开。",
+          "anchor": "s-03-f02",
+          "sources": [
+            {
+              "title": "看童装电商老板怎么落地AI拿到结果",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7535701970699472179",
+              "document": "7535701970699472179.md",
+              "document_sha256": "93e110675ed1b86edced2577e0a2b987eb9899ef5692bfaeb5b3219e1a79dafd",
+              "line_start": 735,
+              "line_end": 859,
+              "locator": "00:05:09.523"
+            },
+            {
+              "title": "看童装电商老板怎么落地AI拿到结果",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7535701970699472179",
+              "document": "7535701970699472179.md",
+              "document_sha256": "93e110675ed1b86edced2577e0a2b987eb9899ef5692bfaeb5b3219e1a79dafd",
+              "line_start": 871,
+              "line_end": 907,
+              "locator": "00:06:17.484"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "女装直播企业AI应用",
+      "path": "下册-案例汇编/F-批发与零售业/F04-女装直播企业AI应用.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-21",
+      "fragments": [
+        {
+          "source_fragment_id": "S-21-F01",
+          "title": "先把货拦回来，再看客服和现金流",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "按条件筛选、定时取数、退款拦截均为已运行自述；主管处理AI不能处理的事项。",
+          "anchor": "s-21-f01",
+          "sources": [
+            {
+              "title": "AI如何帮一家女装公司省下500万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7670472262297881871",
+              "document": "7670472262297881871.md",
+              "document_sha256": "0360473f96d126c66c0671978276dd5990f4ddb8c74197f9f5c61757823e224b",
+              "line_start": 71,
+              "line_end": 339,
+              "locator": "00:00:24.032"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-21-F02",
+          "title": "样衣借出归还形成记录，损耗不能全归AI",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "扫码、集中板房、销量退板规则为已用自述，包含普通数字化。",
+          "anchor": "s-21-f02",
+          "sources": [
+            {
+              "title": "AI如何帮一家女装公司省下500万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7670472262297881871",
+              "document": "7670472262297881871.md",
+              "document_sha256": "0360473f96d126c66c0671978276dd5990f4ddb8c74197f9f5c61757823e224b",
+              "line_start": 399,
+              "line_end": 595,
+              "locator": "00:02:40.240"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-21-F03",
+          "title": "视觉先测试，再决定做货",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "图片流程与先测后生产为当前自述；实物质量和库存效果未测。",
+          "anchor": "s-21-f03",
+          "sources": [
+            {
+              "title": "AI如何帮一家女装公司省下500万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7670472262297881871",
+              "document": "7670472262297881871.md",
+              "document_sha256": "0360473f96d126c66c0671978276dd5990f4ddb8c74197f9f5c61757823e224b",
+              "line_start": 599,
+              "line_end": 859,
+              "locator": "00:04:00.465"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "title": "跨境拖鞋企业AI接待与选品",
+      "path": "下册-案例汇编/F-批发与零售业/F05-跨境拖鞋企业AI接待与选品.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-27",
+      "fragments": [
+        {
+          "source_fragment_id": "S-27-F01",
+          "title": "夜间先接待，定制大单交给人",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "经营者比较2023年与当前使用；样品/小单和定制大单明确分界",
+          "anchor": "s-27-f01",
+          "sources": [
+            {
+              "title": "靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——刘世奇@刘世奇Bob 。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7543858319371390260",
+              "document": "7543858319371390260.md",
+              "document_sha256": "0b91287601ab375c8a46a7b34fa5bd5e45912df8d182e53c576caa07b7fbb9cf",
+              "line_start": 210,
+              "line_end": 368,
+              "locator": "00:01:42.190"
+            },
+            {
+              "title": "靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——刘世奇@刘世奇Bob 。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7543858319371390260",
+              "document": "7543858319371390260.md",
+              "document_sha256": "0b91287601ab375c8a46a7b34fa5bd5e45912df8d182e53c576caa07b7fbb9cf",
+              "line_start": 370,
+              "line_end": 460,
+              "locator": "00:02:42.820"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-27-F02",
+          "title": "选品表把图交给工厂之前",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "现场展示多维表格及共享方式",
+          "anchor": "s-27-f02",
+          "sources": [
+            {
+              "title": "靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——刘世奇@刘世奇Bob 。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7543858319371390260",
+              "document": "7543858319371390260.md",
+              "document_sha256": "0b91287601ab375c8a46a7b34fa5bd5e45912df8d182e53c576caa07b7fbb9cf",
+              "line_start": 632,
+              "line_end": 756,
+              "locator": "00:04:40.260"
+            },
+            {
+              "title": "靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——刘世奇@刘世奇Bob 。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7543858319371390260",
+              "document": "7543858319371390260.md",
+              "document_sha256": "0b91287601ab375c8a46a7b34fa5bd5e45912df8d182e53c576caa07b7fbb9cf",
+              "line_start": 1150,
+              "line_end": 1420,
+              "locator": "00:08:00.230"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "女装批发企业AI入库与工牌试制",
+      "path": "下册-案例汇编/F-批发与零售业/F06-女装批发企业AI入库与工牌试制.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-35",
+      "fragments": [
+        {
+          "source_fragment_id": "S-35-F01",
+          "title": "先让供应商的单据进入自家ERP",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "经营者描述已用OCR及岗位时间变化",
+          "anchor": "s-35-f01",
+          "sources": [
+            {
+              "title": "5平米档口到4千万营收 AI重构批发行业 小夫妻从5 平米档口起步，扎进女装批发生意，如今服务超 15000 家零售门店，营收4000万。看看张峰如何用 AI 改造业务，如何用AI赚到钱。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7644439658335685940",
+              "document": "7644439658335685940.md",
+              "document_sha256": "98ebccee60daa770ec2bc82c8ef958f70e851fdaceacdd5dd1e9d3a7fa8aafc0",
+              "line_start": 290,
+              "line_end": 360,
+              "locator": "00:02:29.290"
+            },
+            {
+              "title": "5平米档口到4千万营收 AI重构批发行业 小夫妻从5 平米档口起步，扎进女装批发生意，如今服务超 15000 家零售门店，营收4000万。看看张峰如何用 AI 改造业务，如何用AI赚到钱。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7644439658335685940",
+              "document": "7644439658335685940.md",
+              "document_sha256": "98ebccee60daa770ec2bc82c8ef958f70e851fdaceacdd5dd1e9d3a7fa8aafc0",
+              "line_start": 150,
+              "line_end": 168,
+              "locator": "00:01:21.570"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-35-F02",
+          "title": "工牌做出一百套，还需证明使用",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "已有首批100套，描述功能和售价；未披露门店持续采用和效果",
+          "anchor": "s-35-f02",
+          "sources": [
+            {
+              "title": "5平米档口到4千万营收 AI重构批发行业 小夫妻从5 平米档口起步，扎进女装批发生意，如今服务超 15000 家零售门店，营收4000万。看看张峰如何用 AI 改造业务，如何用AI赚到钱。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7644439658335685940",
+              "document": "7644439658335685940.md",
+              "document_sha256": "98ebccee60daa770ec2bc82c8ef958f70e851fdaceacdd5dd1e9d3a7fa8aafc0",
+              "line_start": 750,
+              "line_end": 904,
+              "locator": "00:05:43.570"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "外贸礼品公司AI客户开发探索",
+      "path": "下册-案例汇编/F-批发与零售业/F07-外贸礼品公司AI客户开发探索.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-11",
+      "fragments": [
+        {
+          "source_fragment_id": "C-11-F01",
+          "title": "客户本地AI辅助开发与单次任务演示",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "客户本地环境中的任务包运行与测试，首阶段尚未完成。",
+          "anchor": "c-11-f01",
+          "sources": [
+            {
+              "title": "NO.11 从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "11-从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产.md",
+              "document_sha256": "21f2ae7d9dede11779097015d4e52d6b8711978623a467395ee397b5c6acfbb5",
+              "line_start": 93,
+              "line_end": 115,
+              "locator": "原书页码：105–117；PDF 文件页码：106–118。 Markdown第93—115行。"
+            },
+            {
+              "title": "NO.11 从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "11-从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产.md",
+              "document_sha256": "21f2ae7d9dede11779097015d4e52d6b8711978623a467395ee397b5c6acfbb5",
+              "line_start": 111,
+              "line_end": 115,
+              "locator": "原书页码：105–117；PDF 文件页码：106–118。 Markdown第111—115行。"
+            },
+            {
+              "title": "NO.11 从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "11-从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产.md",
+              "document_sha256": "21f2ae7d9dede11779097015d4e52d6b8711978623a467395ee397b5c6acfbb5",
+              "line_start": 127,
+              "line_end": 145,
+              "locator": "原书页码：105–117；PDF 文件页码：106–118。 Markdown第127—145行。"
+            },
+            {
+              "title": "NO.11 从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "11-从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产.md",
+              "document_sha256": "21f2ae7d9dede11779097015d4e52d6b8711978623a467395ee397b5c6acfbb5",
+              "line_start": 131,
+              "line_end": 139,
+              "locator": "原书页码：105–117；PDF 文件页码：106–118。 Markdown第131—139行。"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "C-11-F02",
+          "title": "角标尺单次资料理解演示",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "单次角标尺问题演示；人工耗时仅为老板预估。",
+          "anchor": "c-11-f02",
+          "sources": [
+            {
+              "title": "NO.11 从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "11-从文件散乱到随取随用：FDE用AI帮外贸企业把资料变成可用资产.md",
+              "document_sha256": "21f2ae7d9dede11779097015d4e52d6b8711978623a467395ee397b5c6acfbb5",
+              "line_start": 131,
+              "line_end": 139,
+              "locator": "原书页码：105–117；PDF 文件页码：106–118。 Markdown第131—139行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "省属国企电商子公司AI应用",
+      "path": "下册-案例汇编/F-批发与零售业/F08-省属国企电商子公司AI应用.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "C-14",
+      "fragments": [
+        {
+          "source_fragment_id": "C-14-F01",
+          "title": "技术完成未采用后，转向知识与培训",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "技术底座未被采用后，转向业务知识、培训，以及法务和行政的局部工具。",
+          "anchor": "c-14-f01",
+          "sources": [
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 53,
+              "line_end": 55,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第53—55行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 65,
+              "line_end": 97,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第65—97行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 99,
+              "line_end": 107,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第99—107行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 121,
+              "line_end": 133,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第121—133行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 113,
+              "line_end": 117,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第113—117行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 113,
+              "line_end": 133,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第113—133行。"
+            },
+            {
+              "title": "NO.14 从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "14-从技术交付到业务自驱：FDE用AI推动国企工作流程真正落地.md",
+              "document_sha256": "b499edfd638b244768d02f1ce9d98e9bbb1e8aafc3a7e0f80a2a1bd9bd808bbb",
+              "line_start": 153,
+              "line_end": 159,
+              "locator": "原书页码：135–144；PDF 文件页码：136–145。 Markdown第153—159行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "3C外贸企业AI自建业务系统",
+      "path": "下册-案例汇编/F-批发与零售业/F09-3C外贸企业AI自建业务系统.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-07",
+      "fragments": [
+        {
+          "source_fragment_id": "S-07-F01",
+          "title": "把产品数据建成系统，减少重复录单",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "装箱单工具是受访者已用自述；不是运行时每次由模型自由生成。",
+          "anchor": "s-07-f01",
+          "sources": [
+            {
+              "title": "白天做外贸 晚上搞AI 不会代码也能搭出自己的业务系统",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7683202923341286662",
+              "document": "7683202923341286662.md",
+              "document_sha256": "2ada128169a15be535b3785badfdf03fc685cf6515ba223c0ca82d3534576773",
+              "line_start": 452,
+              "line_end": 604,
+              "locator": "00:03:31.290"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-07-F02",
+          "title": "保留原始访谈，反复校准业务过程",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "HR访谈和反复追问已发生；几十个候选不等于几十个交付。",
+          "anchor": "s-07-f02",
+          "sources": [
+            {
+              "title": "白天做外贸 晚上搞AI 不会代码也能搭出自己的业务系统",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7683202923341286662",
+              "document": "7683202923341286662.md",
+              "document_sha256": "2ada128169a15be535b3785badfdf03fc685cf6515ba223c0ca82d3534576773",
+              "line_start": 840,
+              "line_end": 964,
+              "locator": "00:06:00.480"
+            },
+            {
+              "title": "白天做外贸 晚上搞AI 不会代码也能搭出自己的业务系统",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7683202923341286662",
+              "document": "7683202923341286662.md",
+              "document_sha256": "2ada128169a15be535b3785badfdf03fc685cf6515ba223c0ca82d3534576773",
+              "line_start": 1268,
+              "line_end": 1400,
+              "locator": "00:09:01.890"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-07-F03",
+          "title": "说明书迭代到约80%可用",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "第四次迭代可用率为受访者粗略判断，未证明长期批量运行。",
+          "anchor": "s-07-f03",
+          "sources": [
+            {
+              "title": "白天做外贸 晚上搞AI 不会代码也能搭出自己的业务系统",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7683202923341286662",
+              "document": "7683202923341286662.md",
+              "document_sha256": "2ada128169a15be535b3785badfdf03fc685cf6515ba223c0ca82d3534576773",
+              "line_start": 1124,
+              "line_end": 1188,
+              "locator": "00:07:59.330"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "上海消费品门店AI对账",
+      "path": "下册-案例汇编/F-批发与零售业/F10-上海消费品门店AI对账.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-10",
+      "fragments": [
+        {
+          "source_fragment_id": "C-10-F01",
+          "title": "自动首轮对账，人追真正差异",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "上海个位数门店的轻量对账试点与局部运行；其他区域和全网推广未确认。",
+          "anchor": "c-10-f01",
+          "sources": [
+            {
+              "title": "NO.10 从人工核对到智能对账：FDE用AI让线下零售对账又快又准",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "10-从人工核对到智能对账：FDE用AI让线下零售对账又快又准.md",
+              "document_sha256": "30f767274ea360e6403b79a58fc0f2b83490ce3d1cbf5a8400ff3b8233aa34f1",
+              "line_start": 61,
+              "line_end": 81,
+              "locator": "原书页码：95–104；PDF 文件页码：96–105。 Markdown第61—81行。"
+            },
+            {
+              "title": "NO.10 从人工核对到智能对账：FDE用AI让线下零售对账又快又准",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "10-从人工核对到智能对账：FDE用AI让线下零售对账又快又准.md",
+              "document_sha256": "30f767274ea360e6403b79a58fc0f2b83490ce3d1cbf5a8400ff3b8233aa34f1",
+              "line_start": 83,
+              "line_end": 103,
+              "locator": "原书页码：95–104；PDF 文件页码：96–105。 Markdown第83—103行。"
+            },
+            {
+              "title": "NO.10 从人工核对到智能对账：FDE用AI让线下零售对账又快又准",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "10-从人工核对到智能对账：FDE用AI让线下零售对账又快又准.md",
+              "document_sha256": "30f767274ea360e6403b79a58fc0f2b83490ce3d1cbf5a8400ff3b8233aa34f1",
+              "line_start": 109,
+              "line_end": 121,
+              "locator": "原书页码：95–104；PDF 文件页码：96–105。 Markdown第109—121行。"
+            },
+            {
+              "title": "NO.10 从人工核对到智能对账：FDE用AI让线下零售对账又快又准",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "10-从人工核对到智能对账：FDE用AI让线下零售对账又快又准.md",
+              "document_sha256": "30f767274ea360e6403b79a58fc0f2b83490ce3d1cbf5a8400ff3b8233aa34f1",
+              "line_start": 115,
+              "line_end": 119,
+              "locator": "原书页码：95–104；PDF 文件页码：96–105。 Markdown第115—119行。"
+            },
+            {
+              "title": "NO.10 从人工核对到智能对账：FDE用AI让线下零售对账又快又准",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "10-从人工核对到智能对账：FDE用AI让线下零售对账又快又准.md",
+              "document_sha256": "30f767274ea360e6403b79a58fc0f2b83490ce3d1cbf5a8400ff3b8233aa34f1",
+              "line_start": 105,
+              "line_end": 121,
+              "locator": "原书页码：95–104；PDF 文件页码：96–105。 Markdown第105—121行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "温州连锁烘焙企业AI经营管理",
+      "path": "下册-案例汇编/F-批发与零售业/F11-温州连锁烘焙企业AI经营管理.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-31",
+      "fragments": [
+        {
+          "source_fragment_id": "S-31-F01",
+          "title": "销量下降，为什么仍是一次改善",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "经营者自述已按7天标准检验促销调整",
+          "anchor": "s-31-f01",
+          "sources": [
+            {
+              "title": "50岁烘焙老兵 被AI再次点燃 50岁烘焙行业老兵，被AI再次点燃，Vibe coding手搓店长日报工具，汇总十几家门店经营信息",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7659990680017603878",
+              "document": "7659990680017603878.md",
+              "document_sha256": "cfc06a1aab045082beab6d9f4cd8fa79f72d7730ffc08cd3e214ae22101327ff",
+              "line_start": 718,
+              "line_end": 756,
+              "locator": "00:05:11.390"
+            },
+            {
+              "title": "50岁烘焙老兵 被AI再次点燃 50岁烘焙行业老兵，被AI再次点燃，Vibe coding手搓店长日报工具，汇总十几家门店经营信息",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7659990680017603878",
+              "document": "7659990680017603878.md",
+              "document_sha256": "cfc06a1aab045082beab6d9f4cd8fa79f72d7730ffc08cd3e214ae22101327ff",
+              "line_start": 758,
+              "line_end": 844,
+              "locator": "00:05:31.630"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-31-F02",
+          "title": "会议省下的时间，先花在会前",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "企业已改变会前准备方式，承认前置投入增加",
+          "anchor": "s-31-f02",
+          "sources": [
+            {
+              "title": "50岁烘焙老兵 被AI再次点燃 50岁烘焙行业老兵，被AI再次点燃，Vibe coding手搓店长日报工具，汇总十几家门店经营信息",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7659990680017603878",
+              "document": "7659990680017603878.md",
+              "document_sha256": "cfc06a1aab045082beab6d9f4cd8fa79f72d7730ffc08cd3e214ae22101327ff",
+              "line_start": 958,
+              "line_end": 1112,
+              "locator": "00:07:06.140"
+            },
+            {
+              "title": "50岁烘焙老兵 被AI再次点燃 50岁烘焙行业老兵，被AI再次点燃，Vibe coding手搓店长日报工具，汇总十几家门店经营信息",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7659990680017603878",
+              "document": "7659990680017603878.md",
+              "document_sha256": "cfc06a1aab045082beab6d9f4cd8fa79f72d7730ffc08cd3e214ae22101327ff",
+              "line_start": 1286,
+              "line_end": 1736,
+              "locator": "00:09:25.190"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-31-F03",
+          "title": "绩效计算工具是员工提出的改善",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "经营者转述人事已采用工具；具体运行时是否仍调用模型未披露",
+          "anchor": "s-31-f03",
+          "sources": [
+            {
+              "title": "50岁烘焙老兵 被AI再次点燃 50岁烘焙行业老兵，被AI再次点燃，Vibe coding手搓店长日报工具，汇总十几家门店经营信息",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7659990680017603878",
+              "document": "7659990680017603878.md",
+              "document_sha256": "cfc06a1aab045082beab6d9f4cd8fa79f72d7730ffc08cd3e214ae22101327ff",
+              "line_start": 1926,
+              "line_end": 1960,
+              "locator": "00:14:01.690"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "交个朋友虚拟IP内容生产",
+      "path": "下册-案例汇编/F-批发与零售业/F12-交个朋友虚拟IP内容生产.md",
+      "industry_code": "F",
+      "industry_name": "批发和零售业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-22",
+      "fragments": [
+        {
+          "source_fragment_id": "S-22-F01",
+          "title": "先统一编导的标签，再让AI重复拆解",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "依据仅音频的访谈自述；有详细平台与规则过程，未核验画面和长期合格率。",
+          "anchor": "s-22-f01",
+          "sources": [
+            {
+              "title": "AI做的虚拟IP，一个月卖货4000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680454386149100819",
+              "document": "7680454386149100819.md",
+              "document_sha256": "e878baee51a4621f75bcab26aad9e9efa3f800dc53117e30d17e727054ce371b",
+              "line_start": 593,
+              "line_end": 729,
+              "locator": "00:03:59.220"
+            },
+            {
+              "title": "AI做的虚拟IP，一个月卖货4000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680454386149100819",
+              "document": "7680454386149100819.md",
+              "document_sha256": "e878baee51a4621f75bcab26aad9e9efa3f800dc53117e30d17e727054ce371b",
+              "line_start": 733,
+              "line_end": 1097,
+              "locator": "00:05:03.290"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-22-F02",
+          "title": "虚拟IP业务规模与生成成本不是同一个结果",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "月销售和IP数量为来源自述；不证明经营收益由生成技术独立带来。",
+          "anchor": "s-22-f02",
+          "sources": [
+            {
+              "title": "AI做的虚拟IP，一个月卖货4000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680454386149100819",
+              "document": "7680454386149100819.md",
+              "document_sha256": "e878baee51a4621f75bcab26aad9e9efa3f800dc53117e30d17e727054ce371b",
+              "line_start": 593,
+              "line_end": 729,
+              "locator": "00:03:59.220"
+            },
+            {
+              "title": "AI做的虚拟IP，一个月卖货4000万",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7680454386149100819",
+              "document": "7680454386149100819.md",
+              "document_sha256": "e878baee51a4621f75bcab26aad9e9efa3f800dc53117e30d17e727054ce371b",
+              "line_start": 17,
+              "line_end": 97,
+              "locator": "00:00:00.070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H01",
+      "title": "老牌奶茶企业AI私域客服",
+      "path": "下册-案例汇编/H-住宿与餐饮业/H01-老牌奶茶企业AI私域客服.md",
+      "industry_code": "H",
+      "industry_name": "住宿和餐饮业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-24",
+      "fragments": [
+        {
+          "source_fragment_id": "S-24-F01",
+          "title": "已有私域资产如何进入服务与履约",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供应商转述匿名奶茶客户三四个月使用，人机配合；缺客户方核验及升级规则。",
+          "anchor": "s-24-f01",
+          "sources": [
+            {
+              "title": "AI私域销售，年营收超千万 @宏力Chris",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7644125913738710287",
+              "document": "7644125913738710287.md",
+              "document_sha256": "64fb885e36c588a57e24966bf3ee985dbdeff906068eb474cb7122a2e4c26484",
+              "line_start": 800,
+              "line_end": 916,
+              "locator": "00:05:20.000"
+            },
+            {
+              "title": "AI私域销售，年营收超千万 @宏力Chris",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7644125913738710287",
+              "document": "7644125913738710287.md",
+              "document_sha256": "64fb885e36c588a57e24966bf3ee985dbdeff906068eb474cb7122a2e4c26484",
+              "line_start": 920,
+              "line_end": 1040,
+              "locator": "00:06:17.520"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I01",
+      "title": "兴城泳装AI商拍服务",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I01-兴城泳装AI商拍服务.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-28",
+      "fragments": [
+        {
+          "source_fragment_id": "S-28-F01",
+          "title": "早期AI图为何反而更贵",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "早期服务阶段复盘，约80%靠PS补救；不是当前能力比例",
+          "anchor": "s-28-f01",
+          "sources": [
+            {
+              "title": "AI落地泳装产业带 一个环节年省百万 当AI落地到东北县城，一个传统的泳装生意也能跑出十倍效率",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7678014973284486419",
+              "document": "7678014973284486419.md",
+              "document_sha256": "ee3c78b08eae2f1c386152dcf879ae37cfa3c3974a1c809e1880ba53742cda91",
+              "line_start": 274,
+              "line_end": 424,
+              "locator": "00:02:44.880"
+            },
+            {
+              "title": "AI落地泳装产业带 一个环节年省百万 当AI落地到东北县城，一个传统的泳装生意也能跑出十倍效率",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7678014973284486419",
+              "document": "7678014973284486419.md",
+              "document_sha256": "ee3c78b08eae2f1c386152dcf879ae37cfa3c3974a1c809e1880ba53742cda91",
+              "line_start": 484,
+              "line_end": 680,
+              "locator": "00:04:22.170"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-28-F02",
+          "title": "泳装商拍必须守住真实衣服",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供方称2024年10月产品上线并服务客户；当前能力与规模为供方口径",
+          "anchor": "s-28-f02",
+          "sources": [
+            {
+              "title": "AI落地泳装产业带 一个环节年省百万 当AI落地到东北县城，一个传统的泳装生意也能跑出十倍效率",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7678014973284486419",
+              "document": "7678014973284486419.md",
+              "document_sha256": "ee3c78b08eae2f1c386152dcf879ae37cfa3c3974a1c809e1880ba53742cda91",
+              "line_start": 682,
+              "line_end": 908,
+              "locator": "00:05:39.690"
+            },
+            {
+              "title": "AI落地泳装产业带 一个环节年省百万 当AI落地到东北县城，一个传统的泳装生意也能跑出十倍效率",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7678014973284486419",
+              "document": "7678014973284486419.md",
+              "document_sha256": "ee3c78b08eae2f1c386152dcf879ae37cfa3c3974a1c809e1880ba53742cda91",
+              "line_start": 410,
+              "line_end": 448,
+              "locator": "00:03:47.200"
+            },
+            {
+              "title": "AI落地泳装产业带 一个环节年省百万 当AI落地到东北县城，一个传统的泳装生意也能跑出十倍效率",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7678014973284486419",
+              "document": "7678014973284486419.md",
+              "document_sha256": "ee3c78b08eae2f1c386152dcf879ae37cfa3c3974a1c809e1880ba53742cda91",
+              "line_start": 1394,
+              "line_end": 1730,
+              "locator": "00:10:50.170"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I02",
+      "title": "AI辅助ERP开发与架构探索",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I02-AI辅助ERP开发与架构探索.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-17",
+      "fragments": [
+        {
+          "source_fragment_id": "S-17-F01",
+          "title": "个人AI开发仍要逐项定义业务和检查偏离",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "作者称医疗企业ERP已有阶段性交付；未见客户验收和生产运行范围。",
+          "anchor": "s-17-f01",
+          "sources": [
+            {
+              "title": "一个人用AI做企业级ERP，真的交付了",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7637820130751171876",
+              "document": "7637820130751171876.md",
+              "document_sha256": "4a4bad5727c48eb676a2b450505575ebe36f4901ef0ccd16c3a5a15ae5adcee8",
+              "line_start": 48,
+              "line_end": 120,
+              "locator": "00:00:24.260"
+            },
+            {
+              "title": "一个人用AI做企业级ERP，真的交付了",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7637820130751171876",
+              "document": "7637820130751171876.md",
+              "document_sha256": "4a4bad5727c48eb676a2b450505575ebe36f4901ef0ccd16c3a5a15ae5adcee8",
+              "line_start": 952,
+              "line_end": 1104,
+              "locator": "00:09:36.050"
+            },
+            {
+              "title": "一个人用AI做企业级ERP，真的交付了",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7637820130751171876",
+              "document": "7637820130751171876.md",
+              "document_sha256": "4a4bad5727c48eb676a2b450505575ebe36f4901ef0ccd16c3a5a15ae5adcee8",
+              "line_start": 1680,
+              "line_end": 1856,
+              "locator": "00:17:35.750"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-17-F02",
+          "title": "网关架构的推演不等于制造客户事故处理",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "工厂质量异常和电商退货由“可以出现”“如果”引入；属于架构场景。",
+          "anchor": "s-17-f02",
+          "sources": [
+            {
+              "title": "我重做了ERP架构，让AI真正进入系统干活",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7664231309568527650",
+              "document": "7664231309568527650.md",
+              "document_sha256": "4b0eb5861d05ce8fbb779c308cc61a8da86ee1822ec62c72c37331f859d7da2f",
+              "line_start": 1332,
+              "line_end": 1508,
+              "locator": "00:15:14.990"
+            },
+            {
+              "title": "我重做了ERP架构，让AI真正进入系统干活",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7664231309568527650",
+              "document": "7664231309568527650.md",
+              "document_sha256": "4b0eb5861d05ce8fbb779c308cc61a8da86ee1822ec62c72c37331f859d7da2f",
+              "line_start": 1728,
+              "line_end": 1904,
+              "locator": "00:20:04.500"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-17-F03",
+          "title": "自动测试之后仍有人工验证",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "作者自述运行测试不到半小时；不等于全部覆盖或生产可靠性。",
+          "anchor": "s-17-f03",
+          "sources": [
+            {
+              "title": "我重做了ERP架构，让AI真正进入系统干活",
+              "publisher": "凡人AI传",
+              "url": "https://www.douyin.com/video/7664231309568527650",
+              "document": "7664231309568527650.md",
+              "document_sha256": "4b0eb5861d05ce8fbb779c308cc61a8da86ee1822ec62c72c37331f859d7da2f",
+              "line_start": 2052,
+              "line_end": 2260,
+              "locator": "00:23:43.430"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I03",
+      "title": "语音AI服务商内部应用与产品演示",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I03-语音AI服务商内部应用与产品演示.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-34",
+      "fragments": [
+        {
+          "source_fragment_id": "S-34-F01",
+          "title": "一通电话的现场演示能证明什么",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "现场构建课程前台接待，未调优演示；不等客户生产验收",
+          "anchor": "s-34-f01",
+          "sources": [
+            {
+              "title": "AI重构语音客服 月接打5千万通电话 用语音智能体帮客户一个月接打5000万通电话，解放职场中每天在重复呼叫的员工，让一线客服聚焦在更个性化、有价值的问题上。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7647023401281883401",
+              "document": "7647023401281883401.md",
+              "document_sha256": "d20b14eff9f0b8940a7d0f9928f1519e2ceb3c6a34145dda9479fa24e607fca7",
+              "line_start": 370,
+              "line_end": 672,
+              "locator": "00:03:04.790"
+            },
+            {
+              "title": "AI重构语音客服 月接打5千万通电话 用语音智能体帮客户一个月接打5000万通电话，解放职场中每天在重复呼叫的员工，让一线客服聚焦在更个性化、有价值的问题上。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7647023401281883401",
+              "document": "7647023401281883401.md",
+              "document_sha256": "d20b14eff9f0b8940a7d0f9928f1519e2ceb3c6a34145dda9479fa24e607fca7",
+              "line_start": 450,
+              "line_end": 596,
+              "locator": "00:03:41.570"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-34-F02",
+          "title": "用小额赏金推动内部采用",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "受访者描述企业现有每周分享及按需求赏金",
+          "anchor": "s-34-f02",
+          "sources": [
+            {
+              "title": "AI重构语音客服 月接打5千万通电话 用语音智能体帮客户一个月接打5000万通电话，解放职场中每天在重复呼叫的员工，让一线客服聚焦在更个性化、有价值的问题上。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7647023401281883401",
+              "document": "7647023401281883401.md",
+              "document_sha256": "d20b14eff9f0b8940a7d0f9928f1519e2ceb3c6a34145dda9479fa24e607fca7",
+              "line_start": 1170,
+              "line_end": 1300,
+              "locator": "00:09:42.550"
+            },
+            {
+              "title": "AI重构语音客服 月接打5千万通电话 用语音智能体帮客户一个月接打5000万通电话，解放职场中每天在重复呼叫的员工，让一线客服聚焦在更个性化、有价值的问题上。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7647023401281883401",
+              "document": "7647023401281883401.md",
+              "document_sha256": "d20b14eff9f0b8940a7d0f9928f1519e2ceb3c6a34145dda9479fa24e607fca7",
+              "line_start": 1302,
+              "line_end": 1412,
+              "locator": "00:10:55.020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I04",
+      "title": "运动门店SaaS企业AI应用",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I04-运动门店SaaS企业AI应用.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-39",
+      "fragments": [
+        {
+          "source_fragment_id": "S-39-F01",
+          "title": "代码之外，谁保证门店能开门",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "现有门店系统运行；AI主要在内部研发和内容采用",
+          "anchor": "s-39-f01",
+          "sources": [
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 582,
+              "line_end": 818,
+              "locator": "00:04:32.340"
+            },
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 1226,
+              "line_end": 1436,
+              "locator": "00:08:51.940"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-39-F02",
+          "title": "报表早已做好，为什么很少有人问",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "AI报表已有约两年，后台调用少；工作台已做好但未大推",
+          "anchor": "s-39-f02",
+          "sources": [
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 1614,
+              "line_end": 1744,
+              "locator": "00:11:40.840"
+            },
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 1690,
+              "line_end": 1764,
+              "locator": "00:12:07.540"
+            },
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 1914,
+              "line_end": 2060,
+              "locator": "00:13:39.780"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-39-F03",
+          "title": "录音工牌为何停在论证阶段",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "团队论证过，明确未做；未实施不等技术失败",
+          "anchor": "s-39-f03",
+          "sources": [
+            {
+              "title": "用AI重做To B软件？他还不太着急 AI来了，SaaS会被取代还是会变得更有壁垒？听听服务近万家门店的龚旭东老板怎么说",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7685786371759410451",
+              "document": "7685786371759410451.md",
+              "document_sha256": "79b8a444eed171788d5b548adaf2d6d2ec0689c93c7bca9302bb1f0ccdfdeccc",
+              "line_start": 2062,
+              "line_end": 2180,
+              "locator": "00:14:35.260"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I05",
+      "title": "AI员工服务商的教育销售交接实践",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I05-AI员工服务商的教育销售交接实践.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-40",
+      "fragments": [
+        {
+          "source_fragment_id": "S-40-F01",
+          "title": "教育销售中的自动准备与人工接手",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供方描述匿名在线教育客户运行；指标尚无独立材料",
+          "anchor": "s-40-f01",
+          "sources": [
+            {
+              "title": "企业到底怎么落地AI员工 创业12年，做过开源框架，玩过舞蹈自媒体，拿到过YC投资，看看李佳芮如何让数字员工落地千行百业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7657543904942973659",
+              "document": "7657543904942973659.md",
+              "document_sha256": "28faa63e0f8ed5b8b64373f00e228e83c2544ce6bef6db8a17ccdce4da5bf83f",
+              "line_start": 242,
+              "line_end": 550,
+              "locator": "00:02:11.600"
+            },
+            {
+              "title": "企业到底怎么落地AI员工 创业12年，做过开源框架，玩过舞蹈自媒体，拿到过YC投资，看看李佳芮如何让数字员工落地千行百业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7657543904942973659",
+              "document": "7657543904942973659.md",
+              "document_sha256": "28faa63e0f8ed5b8b64373f00e228e83c2544ce6bef6db8a17ccdce4da5bf83f",
+              "line_start": 646,
+              "line_end": 772,
+              "locator": "00:04:44.830"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-40-F02",
+          "title": "按结果收费，先说明结果是什么",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供方称已按结果出售，但结果不一定为增收；未见具体合同",
+          "anchor": "s-40-f02",
+          "sources": [
+            {
+              "title": "企业到底怎么落地AI员工 创业12年，做过开源框架，玩过舞蹈自媒体，拿到过YC投资，看看李佳芮如何让数字员工落地千行百业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7657543904942973659",
+              "document": "7657543904942973659.md",
+              "document_sha256": "28faa63e0f8ed5b8b64373f00e228e83c2544ce6bef6db8a17ccdce4da5bf83f",
+              "line_start": 1102,
+              "line_end": 1280,
+              "locator": "00:08:02.320"
+            },
+            {
+              "title": "企业到底怎么落地AI员工 创业12年，做过开源框架，玩过舞蹈自媒体，拿到过YC投资，看看李佳芮如何让数字员工落地千行百业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7657543904942973659",
+              "document": "7657543904942973659.md",
+              "document_sha256": "28faa63e0f8ed5b8b64373f00e228e83c2544ce6bef6db8a17ccdce4da5bf83f",
+              "line_start": 1414,
+              "line_end": 1844,
+              "locator": "00:10:18.380"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I06",
+      "title": "货运平台AI助手与履约协同",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I06-货运平台AI助手与履约协同.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-37",
+      "fragments": [
+        {
+          "source_fragment_id": "S-37-F01",
+          "title": "助手进入的是一条已有承运链",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "经营者描述数字化底座与当前AI助手；不等全平台活跃AI规模",
+          "anchor": "s-37-f01",
+          "sources": [
+            {
+              "title": "协同400万司机 AI重写物流生意 看看深耕货运物流数字化20多年，立志打造数字时代良性物流生态圈。解决数十万卡友安全与效率痛点的冯雷老板，如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7623425941062159656",
+              "document": "7623425941062159656.md",
+              "document_sha256": "790ab69d2cc8d6249b2956d0af5d7d192f741dade2198e1c1b127c740efaab68",
+              "line_start": 320,
+              "line_end": 456,
+              "locator": "00:02:21.670"
+            },
+            {
+              "title": "协同400万司机 AI重写物流生意 看看深耕货运物流数字化20多年，立志打造数字时代良性物流生态圈。解决数十万卡友安全与效率痛点的冯雷老板，如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7623425941062159656",
+              "document": "7623425941062159656.md",
+              "document_sha256": "790ab69d2cc8d6249b2956d0af5d7d192f741dade2198e1c1b127c740efaab68",
+              "line_start": 462,
+              "line_end": 588,
+              "locator": "00:03:37.310"
+            },
+            {
+              "title": "协同400万司机 AI重写物流生意 看看深耕货运物流数字化20多年，立志打造数字时代良性物流生态圈。解决数十万卡友安全与效率痛点的冯雷老板，如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7623425941062159656",
+              "document": "7623425941062159656.md",
+              "document_sha256": "790ab69d2cc8d6249b2956d0af5d7d192f741dade2198e1c1b127c740efaab68",
+              "line_start": 610,
+              "line_end": 664,
+              "locator": "00:04:47.400"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-37-F02",
+          "title": "一秒提取回单，不是一秒到账",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "主持人游学后记转述，未有客户原始验收",
+          "anchor": "s-37-f02",
+          "sources": [
+            {
+              "title": "协同400万司机 AI重写物流生意 看看深耕货运物流数字化20多年，立志打造数字时代良性物流生态圈。解决数十万卡友安全与效率痛点的冯雷老板，如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7623425941062159656",
+              "document": "7623425941062159656.md",
+              "document_sha256": "790ab69d2cc8d6249b2956d0af5d7d192f741dade2198e1c1b127c740efaab68",
+              "line_start": 1358,
+              "line_end": 1388,
+              "locator": "00:10:51.100"
+            },
+            {
+              "title": "协同400万司机 AI重写物流生意 看看深耕货运物流数字化20多年，立志打造数字时代良性物流生态圈。解决数十万卡友安全与效率痛点的冯雷老板，如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7623425941062159656",
+              "document": "7623425941062159656.md",
+              "document_sha256": "790ab69d2cc8d6249b2956d0af5d7d192f741dade2198e1c1b127c740efaab68",
+              "line_start": 910,
+              "line_end": 936,
+              "locator": "00:07:39.500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I07",
+      "title": "小球圈视频处理与产品迭代",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I07-小球圈视频处理与产品迭代.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-43",
+      "fragments": [
+        {
+          "source_fragment_id": "S-43-F01",
+          "title": "先让球友用，再决定怎样扩张",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "软件称已在应用商店发布并收费；未验证排名和用户效果",
+          "anchor": "s-43-f01",
+          "sources": [
+            {
+              "title": "用AI冲向小球运动赛道第一名 在大厂深耕大模型多年，转身切入小球运动赛道。打通软件、硬件到线下球馆全链路，打造AI剪辑和AI教练。半年零推广，靠口碑跑进国内小球赛道第一。在体育科技赛道，看看Leo老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7631437026658684198",
+              "document": "7631437026658684198.md",
+              "document_sha256": "1e23891107bab0fba2c09f98cdfa34f60808ff78a17f89deffd71d4ebcd36b1e",
+              "line_start": 178,
+              "line_end": 432,
+              "locator": "00:01:27.360"
+            },
+            {
+              "title": "用AI冲向小球运动赛道第一名 在大厂深耕大模型多年，转身切入小球运动赛道。打通软件、硬件到线下球馆全链路，打造AI剪辑和AI教练。半年零推广，靠口碑跑进国内小球赛道第一。在体育科技赛道，看看Leo老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7631437026658684198",
+              "document": "7631437026658684198.md",
+              "document_sha256": "1e23891107bab0fba2c09f98cdfa34f60808ff78a17f89deffd71d4ebcd36b1e",
+              "line_start": 826,
+              "line_end": 1168,
+              "locator": "00:07:08.250"
+            },
+            {
+              "title": "用AI冲向小球运动赛道第一名 在大厂深耕大模型多年，转身切入小球运动赛道。打通软件、硬件到线下球馆全链路，打造AI剪辑和AI教练。半年零推广，靠口碑跑进国内小球赛道第一。在体育科技赛道，看看Leo老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7631437026658684198",
+              "document": "7631437026658684198.md",
+              "document_sha256": "1e23891107bab0fba2c09f98cdfa34f60808ff78a17f89deffd71d4ebcd36b1e",
+              "line_start": 1190,
+              "line_end": 1412,
+              "locator": "00:09:50.200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "J01",
+      "title": "基金公司AI研发培训",
+      "path": "下册-案例汇编/J-金融业/J01-基金公司AI研发培训.md",
+      "industry_code": "J",
+      "industry_name": "金融业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-07",
+      "fragments": [
+        {
+          "source_fragment_id": "C-07-F01",
+          "title": "共创Spec与角色协作",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "基金客户三期培训、真实需求与Spec文档共创；未披露研发全周期效果。",
+          "anchor": "c-07-f01",
+          "sources": [
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 59,
+              "line_end": 85,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第59—85行。"
+            },
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 87,
+              "line_end": 103,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第87—103行。"
+            },
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 107,
+              "line_end": 117,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第107—117行。"
+            },
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 119,
+              "line_end": 121,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第119—121行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L01",
+      "title": "TikTok达人运营AI协作",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L01-TikTok达人运营AI协作.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "C-05",
+      "fragments": [
+        {
+          "source_fragment_id": "C-05-F01",
+          "title": "匹配与提醒连接履约，人保留关系判断",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "达人合作、收样、创作与提交的试运行；视频生成仍是后续方向。",
+          "anchor": "c-05-f01",
+          "sources": [
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 65,
+              "line_end": 75,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第65—75行。"
+            },
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 77,
+              "line_end": 83,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第77—83行。"
+            },
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 85,
+              "line_end": 97,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第85—97行。"
+            },
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 101,
+              "line_end": 111,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第101—111行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "title": "黄碧云零售咨询的AI应用",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L02-黄碧云零售咨询的AI应用.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-32",
+      "fragments": [
+        {
+          "source_fragment_id": "S-32-F01",
+          "title": "顾问的一人主体背后有付费伙伴",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "本人描述现用录音整理及横向合作；不是匿名客户的效果证明",
+          "anchor": "s-32-f01",
+          "sources": [
+            {
+              "title": "AI越强大 越要去现场 本期特别来宾黄碧云，罗振宇叫她“商业徐霞客”，从商超小店和供应链管理等场景，分享AI怎样管店控损、增加利润，更有她对消费趋势的新洞察",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7654622019224489254",
+              "document": "7654622019224489254.md",
+              "document_sha256": "7bf74e767b17dea7372688772235c0f198188c5990c9de9eb030a2fb5cc8f1d5",
+              "line_start": 2182,
+              "line_end": 2290,
+              "locator": "00:17:36.870"
+            },
+            {
+              "title": "AI越强大 越要去现场 本期特别来宾黄碧云，罗振宇叫她“商业徐霞客”，从商超小店和供应链管理等场景，分享AI怎样管店控损、增加利润，更有她对消费趋势的新洞察",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7654622019224489254",
+              "document": "7654622019224489254.md",
+              "document_sha256": "7bf74e767b17dea7372688772235c0f198188c5990c9de9eb030a2fb5cc8f1d5",
+              "line_start": 3262,
+              "line_end": 3360,
+              "locator": "00:25:34.670"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-32-F02",
+          "title": "仅作机制参考",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "顾问跨企业转述和假设示例；不标实测已交付成效",
+          "anchor": "s-32-f02",
+          "sources": [
+            {
+              "title": "AI越强大 越要去现场 本期特别来宾黄碧云，罗振宇叫她“商业徐霞客”，从商超小店和供应链管理等场景，分享AI怎样管店控损、增加利润，更有她对消费趋势的新洞察",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7654622019224489254",
+              "document": "7654622019224489254.md",
+              "document_sha256": "7bf74e767b17dea7372688772235c0f198188c5990c9de9eb030a2fb5cc8f1d5",
+              "line_start": 842,
+              "line_end": 1108,
+              "locator": "00:06:24.340"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "title": "餐饮本地生活代运营AI内容生产",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L03-餐饮本地生活代运营AI内容生产.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-15",
+      "fragments": [
+        {
+          "source_fragment_id": "C-15-F01",
+          "title": "结构化商户信息进入脚本生产",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "一期文案和脚本工作流已上线；拍摄、剪辑和投放的整体结果未披露。",
+          "anchor": "c-15-f01",
+          "sources": [
+            {
+              "title": "NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "15-从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产.md",
+              "document_sha256": "48832898cf6fc662a1df283eb554609ef5e2e3678d0af5d987eacbf31463258c",
+              "line_start": 93,
+              "line_end": 101,
+              "locator": "原书页码：145–156；PDF 文件页码：146–157。 Markdown第93—101行。"
+            },
+            {
+              "title": "NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "15-从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产.md",
+              "document_sha256": "48832898cf6fc662a1df283eb554609ef5e2e3678d0af5d987eacbf31463258c",
+              "line_start": 103,
+              "line_end": 117,
+              "locator": "原书页码：145–156；PDF 文件页码：146–157。 Markdown第103—117行。"
+            },
+            {
+              "title": "NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "15-从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产.md",
+              "document_sha256": "48832898cf6fc662a1df283eb554609ef5e2e3678d0af5d987eacbf31463258c",
+              "line_start": 119,
+              "line_end": 141,
+              "locator": "原书页码：145–156；PDF 文件页码：146–157。 Markdown第119—141行。"
+            },
+            {
+              "title": "NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "15-从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产.md",
+              "document_sha256": "48832898cf6fc662a1df283eb554609ef5e2e3678d0af5d987eacbf31463258c",
+              "line_start": 131,
+              "line_end": 141,
+              "locator": "原书页码：145–156；PDF 文件页码：146–157。 Markdown第131—141行。"
+            },
+            {
+              "title": "NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "15-从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产.md",
+              "document_sha256": "48832898cf6fc662a1df283eb554609ef5e2e3678d0af5d987eacbf31463258c",
+              "line_start": 109,
+              "line_end": 123,
+              "locator": "原书页码：145–156；PDF 文件页码：146–157。 Markdown第109—123行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "title": "户外媒体平台AI投放服务",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L04-户外媒体平台AI投放服务.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-42",
+      "fragments": [
+        {
+          "source_fragment_id": "S-42-F01",
+          "title": "下单成功之后，客户还要广告有效",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "程序化平台有交易自述和现场界面；AI效果归因未证实",
+          "anchor": "s-42-f01",
+          "sources": [
+            {
+              "title": "AI重构地标大屏 让线下广告也能千人千面 用AI重构线下大屏，路人花百元就能登上城市的地标；更用AI实现个性化推送，让线下广告也能千人千面。看看谭亚老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7641816570330631439",
+              "document": "7641816570330631439.md",
+              "document_sha256": "91d97edebae3ac28dd4cc0639b38c4eafa3de1a12f314cc4138c07a211f01c59",
+              "line_start": 214,
+              "line_end": 476,
+              "locator": "00:01:56.500"
+            },
+            {
+              "title": "AI重构地标大屏 让线下广告也能千人千面 用AI重构线下大屏，路人花百元就能登上城市的地标；更用AI实现个性化推送，让线下广告也能千人千面。看看谭亚老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7641816570330631439",
+              "document": "7641816570330631439.md",
+              "document_sha256": "91d97edebae3ac28dd4cc0639b38c4eafa3de1a12f314cc4138c07a211f01c59",
+              "line_start": 478,
+              "line_end": 712,
+              "locator": "00:03:44.120"
+            },
+            {
+              "title": "AI重构地标大屏 让线下广告也能千人千面 用AI重构线下大屏，路人花百元就能登上城市的地标；更用AI实现个性化推送，让线下广告也能千人千面。看看谭亚老板如何用AI赚到钱",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7641816570330631439",
+              "document": "7641816570330631439.md",
+              "document_sha256": "91d97edebae3ac28dd4cc0639b38c4eafa3de1a12f314cc4138c07a211f01c59",
+              "line_start": 764,
+              "line_end": 932,
+              "locator": "00:06:00.510"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L05",
+      "title": "CGL招聘AI协作",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L05-CGL招聘AI协作.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-20",
+      "fragments": [
+        {
+          "source_fragment_id": "S-20-F01",
+          "title": "候选人进入顾问手里以前，前道工作怎样改变",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "已有招聘流程和岗位操作自述；AI初步触达是第三方做法，后续顾问承接。",
+          "anchor": "s-20-f01",
+          "sources": [
+            {
+              "title": "AI+招聘，让这家公司飞速增长70%",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7672652135388974399",
+              "document": "7672652135388974399.md",
+              "document_sha256": "ae4b5ef3b008e7260b674edba4a728431448d38884c5e415feb1dee4c96dbba1",
+              "line_start": 200,
+              "line_end": 440,
+              "locator": "00:01:29.750"
+            },
+            {
+              "title": "AI+招聘，让这家公司飞速增长70%",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7672652135388974399",
+              "document": "7672652135388974399.md",
+              "document_sha256": "ae4b5ef3b008e7260b674edba4a728431448d38884c5e415feb1dee4c96dbba1",
+              "line_start": 656,
+              "line_end": 840,
+              "locator": "00:04:39.880"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-20-F02",
+          "title": "采用通过试验团队、技能回应和系统接入扩散",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "培训与知识库积累为已有过程；技能数量不等于独立项目或成功率。",
+          "anchor": "s-20-f02",
+          "sources": [
+            {
+              "title": "AI+招聘，让这家公司飞速增长70%",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7672652135388974399",
+              "document": "7672652135388974399.md",
+              "document_sha256": "ae4b5ef3b008e7260b674edba4a728431448d38884c5e415feb1dee4c96dbba1",
+              "line_start": 1208,
+              "line_end": 1500,
+              "locator": "00:08:46.930"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "title": "诉讼律师AI案件工作台",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L06-诉讼律师AI案件工作台.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-03",
+      "fragments": [
+        {
+          "source_fragment_id": "C-03-F01",
+          "title": "从反复讲背景转向持续案件上下文",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "案件工作台与所述单宗案件的材料分析；整体产品覆盖和长期稳定性未明。",
+          "anchor": "c-03-f01",
+          "sources": [
+            {
+              "title": "NO.3 从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "03-从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力.md",
+              "document_sha256": "47bbed423fdfd1dc1a9ab75d47b381d5b0f39f47125596d6e19f6b98f8700b35",
+              "line_start": 75,
+              "line_end": 81,
+              "locator": "原书页码：24–32；PDF 文件页码：25–33。 Markdown第75—81行。"
+            },
+            {
+              "title": "NO.3 从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "03-从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力.md",
+              "document_sha256": "47bbed423fdfd1dc1a9ab75d47b381d5b0f39f47125596d6e19f6b98f8700b35",
+              "line_start": 63,
+              "line_end": 69,
+              "locator": "原书页码：24–32；PDF 文件页码：25–33。 Markdown第63—69行。"
+            },
+            {
+              "title": "NO.3 从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "03-从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力.md",
+              "document_sha256": "47bbed423fdfd1dc1a9ab75d47b381d5b0f39f47125596d6e19f6b98f8700b35",
+              "line_start": 85,
+              "line_end": 89,
+              "locator": "原书页码：24–32；PDF 文件页码：25–33。 Markdown第85—89行。"
+            },
+            {
+              "title": "NO.3 从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "03-从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力.md",
+              "document_sha256": "47bbed423fdfd1dc1a9ab75d47b381d5b0f39f47125596d6e19f6b98f8700b35",
+              "line_start": 91,
+              "line_end": 95,
+              "locator": "原书页码：24–32；PDF 文件页码：25–33。 Markdown第91—95行。"
+            },
+            {
+              "title": "NO.3 从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "03-从案头工作到智能协作：FDE用AI优化诉讼律师的案件处理能力.md",
+              "document_sha256": "47bbed423fdfd1dc1a9ab75d47b381d5b0f39f47125596d6e19f6b98f8700b35",
+              "line_start": 83,
+              "line_end": 99,
+              "locator": "原书页码：24–32；PDF 文件页码：25–33。 Markdown第83—99行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L07",
+      "title": "AI法务服务与专业复核",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L07-AI法务服务与专业复核.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-29",
+      "fragments": [
+        {
+          "source_fragment_id": "S-29-F01",
+          "title": "工具初稿之后仍有专业服务",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "供方描述收费、客户服务和内部现用流程；无人完成全流程属于尝试",
+          "anchor": "s-29-f01",
+          "sources": [
+            {
+              "title": "一个不敢签字的AI 能不能当企业法务 在容错率极低的法律行业，看看格玛如何用AI赋能中小企业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7667792659909512482",
+              "document": "7667792659909512482.md",
+              "document_sha256": "5294971b1eff51132e54c99cda8b000fb918cff31ed3948b57018f05d2ca8671",
+              "line_start": 370,
+              "line_end": 440,
+              "locator": "00:03:14.410"
+            },
+            {
+              "title": "一个不敢签字的AI 能不能当企业法务 在容错率极低的法律行业，看看格玛如何用AI赋能中小企业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7667792659909512482",
+              "document": "7667792659909512482.md",
+              "document_sha256": "5294971b1eff51132e54c99cda8b000fb918cff31ed3948b57018f05d2ca8671",
+              "line_start": 610,
+              "line_end": 868,
+              "locator": "00:05:03.860"
+            },
+            {
+              "title": "一个不敢签字的AI 能不能当企业法务 在容错率极低的法律行业，看看格玛如何用AI赋能中小企业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7667792659909512482",
+              "document": "7667792659909512482.md",
+              "document_sha256": "5294971b1eff51132e54c99cda8b000fb918cff31ed3948b57018f05d2ca8671",
+              "line_start": 982,
+              "line_end": 1104,
+              "locator": "00:08:06.250"
+            },
+            {
+              "title": "一个不敢签字的AI 能不能当企业法务 在容错率极低的法律行业，看看格玛如何用AI赋能中小企业",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7667792659909512482",
+              "document": "7667792659909512482.md",
+              "document_sha256": "5294971b1eff51132e54c99cda8b000fb918cff31ed3948b57018f05d2ca8671",
+              "line_start": 1540,
+              "line_end": 1612,
+              "locator": "00:12:54.050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "title": "杭州市城市规划设计院AI辅助规划",
+      "path": "下册-案例汇编/M-科学研究与技术服务业/M01-杭州市城市规划设计院AI辅助规划.md",
+      "industry_code": "M",
+      "industry_name": "科学研究和技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-04",
+      "fragments": [
+        {
+          "source_fragment_id": "C-04-F01",
+          "title": "窄场景调用GIS与业务规则",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "一期限定区域、单元和工作流，来源称十个部门、二三十名专员试用；产物为可推敲报告初稿。",
+          "anchor": "c-04-f01",
+          "sources": [
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 103,
+              "line_end": 123,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第103—123行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 125,
+              "line_end": 143,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第125—143行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 183,
+              "line_end": 193,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第183—193行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 151,
+              "line_end": 157,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第151—157行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 153,
+              "line_end": 157,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第153—157行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 145,
+              "line_end": 173,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第145—173行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "消防维保企业数字化项目取舍",
+      "path": "下册-案例汇编/M-科学研究与技术服务业/M02-消防维保企业数字化项目取舍.md",
+      "industry_code": "M",
+      "industry_name": "科学研究和技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-13",
+      "fragments": [
+        {
+          "source_fragment_id": "C-13-F01",
+          "title": "监管约束下叫停重复建设",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "既有工具和小模块沉淀记录，停止重复平台建设；AI月检描述仍是方案方向。",
+          "anchor": "c-13-f01",
+          "sources": [
+            {
+              "title": "NO.13 从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "13-从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型.md",
+              "document_sha256": "90fe1367adb1b3d01ce072efb13b97b6cd7628f2529173bc78bc0072f6a1c707",
+              "line_start": 51,
+              "line_end": 59,
+              "locator": "原书页码：128–134；PDF 文件页码：129–135。 Markdown第51—59行。"
+            },
+            {
+              "title": "NO.13 从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "13-从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型.md",
+              "document_sha256": "90fe1367adb1b3d01ce072efb13b97b6cd7628f2529173bc78bc0072f6a1c707",
+              "line_start": 59,
+              "line_end": 65,
+              "locator": "原书页码：128–134；PDF 文件页码：129–135。 Markdown第59—65行。"
+            },
+            {
+              "title": "NO.13 从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "13-从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型.md",
+              "document_sha256": "90fe1367adb1b3d01ce072efb13b97b6cd7628f2529173bc78bc0072f6a1c707",
+              "line_start": 77,
+              "line_end": 77,
+              "locator": "原书页码：128–134；PDF 文件页码：129–135。 Markdown第77—77行。"
+            },
+            {
+              "title": "NO.13 从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "13-从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型.md",
+              "document_sha256": "90fe1367adb1b3d01ce072efb13b97b6cd7628f2529173bc78bc0072f6a1c707",
+              "line_start": 69,
+              "line_end": 75,
+              "locator": "原书页码：128–134；PDF 文件页码：129–135。 Markdown第69—75行。"
+            },
+            {
+              "title": "NO.13 从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "13-从纸质流程到数据驱动：FDE用AI推动传统消防维保企业数字化转型.md",
+              "document_sha256": "90fe1367adb1b3d01ce072efb13b97b6cd7628f2529173bc78bc0072f6a1c707",
+              "line_start": 59,
+              "line_end": 77,
+              "locator": "原书页码：128–134；PDF 文件页码：129–135。 Markdown第59—77行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "建筑消防设计AI辅助出图",
+      "path": "下册-案例汇编/M-科学研究与技术服务业/M03-建筑消防设计AI辅助出图.md",
+      "industry_code": "M",
+      "industry_name": "科学研究和技术服务业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-21",
+      "fragments": [
+        {
+          "source_fragment_id": "C-21-F01",
+          "title": "生成初稿后保留专业参数控制",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "消防图纸初稿生成与设计师参数调整；正式施工交付和验收效果未披露。",
+          "anchor": "c-21-f01",
+          "sources": [
+            {
+              "title": "NO.21 从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "21-从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程.md",
+              "document_sha256": "5b367e739be23c591f683abe8d3e0af1b831d3febb9b881a4c42bb5a63373537",
+              "line_start": 63,
+              "line_end": 79,
+              "locator": "原书页码：206–214；PDF 文件页码：207–215。 Markdown第63—79行。"
+            },
+            {
+              "title": "NO.21 从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "21-从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程.md",
+              "document_sha256": "5b367e739be23c591f683abe8d3e0af1b831d3febb9b881a4c42bb5a63373537",
+              "line_start": 109,
+              "line_end": 121,
+              "locator": "原书页码：206–214；PDF 文件页码：207–215。 Markdown第109—121行。"
+            },
+            {
+              "title": "NO.21 从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "21-从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程.md",
+              "document_sha256": "5b367e739be23c591f683abe8d3e0af1b831d3febb9b881a4c42bb5a63373537",
+              "line_start": 85,
+              "line_end": 89,
+              "locator": "原书页码：206–214；PDF 文件页码：207–215。 Markdown第85—89行。"
+            },
+            {
+              "title": "NO.21 从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "21-从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程.md",
+              "document_sha256": "5b367e739be23c591f683abe8d3e0af1b831d3febb9b881a4c42bb5a63373537",
+              "line_start": 83,
+              "line_end": 103,
+              "locator": "原书页码：206–214；PDF 文件页码：207–215。 Markdown第83—103行。"
+            },
+            {
+              "title": "NO.21 从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "21-从人工绘图到智能协作：FDE用AI重塑建筑图纸交付流程.md",
+              "document_sha256": "5b367e739be23c591f683abe8d3e0af1b831d3febb9b881a4c42bb5a63373537",
+              "line_start": 107,
+              "line_end": 127,
+              "locator": "原书页码：206–214；PDF 文件页码：207–215。 Markdown第107—127行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q01",
+      "title": "药师AI助手试用",
+      "path": "下册-案例汇编/Q-卫生与社会工作/Q01-药师AI助手试用.md",
+      "industry_code": "Q",
+      "industry_name": "卫生和社会工作",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "S-38",
+      "fragments": [
+        {
+          "source_fragment_id": "S-38-F01",
+          "title": "药师面对患者，助手处理记录与检索",
+          "stage": "pilot",
+          "stage_label": "试点",
+          "scope": "产品试用两三个月，有现场服务演示；不作诊疗效果判断",
+          "anchor": "s-38-f01",
+          "sources": [
+            {
+              "title": "30年药师再出发 用AI赋能医疗体系 从业30年，立志借助AI补齐药师岗位的人才缺口，把药师从窗口后面，真正拉进诊疗团队。打造AI药师助手，实现问诊、查询、出单的全流程AI化；还打造了人机交互的智慧药房，让患者就近扫码取药，药到，药师的服务也到。看看在传统的医院，王家伟，如何用好AI赋能医疗体系。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7628610424463707444",
+              "document": "7628610424463707444.md",
+              "document_sha256": "d51f4052d78f7f3db794efbaa1733d52606f0d9f822f21cfd10a08c5e399cf9f",
+              "line_start": 298,
+              "line_end": 448,
+              "locator": "00:02:35.800"
+            },
+            {
+              "title": "30年药师再出发 用AI赋能医疗体系 从业30年，立志借助AI补齐药师岗位的人才缺口，把药师从窗口后面，真正拉进诊疗团队。打造AI药师助手，实现问诊、查询、出单的全流程AI化；还打造了人机交互的智慧药房，让患者就近扫码取药，药到，药师的服务也到。看看在传统的医院，王家伟，如何用好AI赋能医疗体系。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7628610424463707444",
+              "document": "7628610424463707444.md",
+              "document_sha256": "d51f4052d78f7f3db794efbaa1733d52606f0d9f822f21cfd10a08c5e399cf9f",
+              "line_start": 702,
+              "line_end": 748,
+              "locator": "00:05:43.250"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-38-F02",
+          "title": "扩大服务覆盖还是岗位替代",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "扩大覆盖和从窗口到临床的方向；不能把80张床设想写为现用配置",
+          "anchor": "s-38-f02",
+          "sources": [
+            {
+              "title": "30年药师再出发 用AI赋能医疗体系 从业30年，立志借助AI补齐药师岗位的人才缺口，把药师从窗口后面，真正拉进诊疗团队。打造AI药师助手，实现问诊、查询、出单的全流程AI化；还打造了人机交互的智慧药房，让患者就近扫码取药，药到，药师的服务也到。看看在传统的医院，王家伟，如何用好AI赋能医疗体系。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7628610424463707444",
+              "document": "7628610424463707444.md",
+              "document_sha256": "d51f4052d78f7f3db794efbaa1733d52606f0d9f822f21cfd10a08c5e399cf9f",
+              "line_start": 226,
+              "line_end": 280,
+              "locator": "00:01:57.290"
+            },
+            {
+              "title": "30年药师再出发 用AI赋能医疗体系 从业30年，立志借助AI补齐药师岗位的人才缺口，把药师从窗口后面，真正拉进诊疗团队。打造AI药师助手，实现问诊、查询、出单的全流程AI化；还打造了人机交互的智慧药房，让患者就近扫码取药，药到，药师的服务也到。看看在传统的医院，王家伟，如何用好AI赋能医疗体系。",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7628610424463707444",
+              "document": "7628610424463707444.md",
+              "document_sha256": "d51f4052d78f7f3db794efbaa1733d52606f0d9f822f21cfd10a08c5e399cf9f",
+              "line_start": 850,
+              "line_end": 948,
+              "locator": "00:07:00.780"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R01",
+      "title": "瑜伽与普拉提门店AI应用",
+      "path": "下册-案例汇编/R-文化体育与娱乐业/R01-瑜伽与普拉提门店AI应用.md",
+      "industry_code": "R",
+      "industry_name": "文化、体育和娱乐业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-33",
+      "fragments": [
+        {
+          "source_fragment_id": "S-33-F01",
+          "title": "员工不用，先看工具离任务多远",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "模板文稿已经使用，客户答疑仍由人主导",
+          "anchor": "s-33-f01",
+          "sources": [
+            {
+              "title": "实体门店用AI 不盯结果盯过程 从学员训练规划，到销售陪练，用AI把原本靠老板和销冠经验撑起来的能力，拆成可以复制的技能",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7649613727477681460",
+              "document": "7649613727477681460.md",
+              "document_sha256": "74d9caccca07d29220214dbd609ccff0534e01b94227af32c24544866e0e6869",
+              "line_start": 614,
+              "line_end": 672,
+              "locator": "00:05:01.300"
+            },
+            {
+              "title": "实体门店用AI 不盯结果盯过程 从学员训练规划，到销售陪练，用AI把原本靠老板和销冠经验撑起来的能力，拆成可以复制的技能",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7649613727477681460",
+              "document": "7649613727477681460.md",
+              "document_sha256": "74d9caccca07d29220214dbd609ccff0534e01b94227af32c24544866e0e6869",
+              "line_start": 940,
+              "line_end": 984,
+              "locator": "00:07:30.580"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-33-F02",
+          "title": "陪练正在建设，续费指标另算",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "陪练正在做；经营变化不能归为已成熟陪练效果",
+          "anchor": "s-33-f02",
+          "sources": [
+            {
+              "title": "实体门店用AI 不盯结果盯过程 从学员训练规划，到销售陪练，用AI把原本靠老板和销冠经验撑起来的能力，拆成可以复制的技能",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7649613727477681460",
+              "document": "7649613727477681460.md",
+              "document_sha256": "74d9caccca07d29220214dbd609ccff0534e01b94227af32c24544866e0e6869",
+              "line_start": 686,
+              "line_end": 860,
+              "locator": "00:05:41.390"
+            },
+            {
+              "title": "实体门店用AI 不盯结果盯过程 从学员训练规划，到销售陪练，用AI把原本靠老板和销冠经验撑起来的能力，拆成可以复制的技能",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7649613727477681460",
+              "document": "7649613727477681460.md",
+              "document_sha256": "74d9caccca07d29220214dbd609ccff0534e01b94227af32c24544866e0e6869",
+              "line_start": 1186,
+              "line_end": 1236,
+              "locator": "00:09:29.440"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "程前朋友圈AI选题探索",
+      "path": "下册-案例汇编/R-文化体育与娱乐业/R02-程前朋友圈AI选题探索.md",
+      "industry_code": "R",
+      "industry_name": "文化、体育和娱乐业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "S-19",
+      "fragments": [
+        {
+          "source_fragment_id": "S-19-F01",
+          "title": "先找到影响内容投入的决定，再选择AI切口",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "三天岗位访谈与业务地图已完成；选题访谈预测系统仍为后续计划。",
+          "anchor": "s-19-f01",
+          "sources": [
+            {
+              "title": "程前朋友圈AI大改造。",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7654126612127976745",
+              "document": "7654126612127976745.md",
+              "document_sha256": "267f02111d7db6ee7460b3d5b459cb7e6bcfd905cc597f640018aaa72ab04a2e",
+              "line_start": 468,
+              "line_end": 588,
+              "locator": "00:03:57.980"
+            },
+            {
+              "title": "程前朋友圈AI大改造。",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7654126612127976745",
+              "document": "7654126612127976745.md",
+              "document_sha256": "267f02111d7db6ee7460b3d5b459cb7e6bcfd905cc597f640018aaa72ab04a2e",
+              "line_start": 588,
+              "line_end": 832,
+              "locator": "00:05:01.280"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-19-F02",
+          "title": "点赞预测小工具只证明做出了原型",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "用既有稿件及点赞制作演示工具；未见独立留出集、前瞻预测或真实选题收益。",
+          "anchor": "s-19-f02",
+          "sources": [
+            {
+              "title": "程前朋友圈AI大改造。",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7654126612127976745",
+              "document": "7654126612127976745.md",
+              "document_sha256": "267f02111d7db6ee7460b3d5b459cb7e6bcfd905cc597f640018aaa72ab04a2e",
+              "line_start": 944,
+              "line_end": 1184,
+              "locator": "00:07:44.460"
+            },
+            {
+              "title": "程前朋友圈AI大改造。",
+              "publisher": "光羽的平行世界",
+              "url": "https://www.douyin.com/video/7654126612127976745",
+              "document": "7654126612127976745.md",
+              "document_sha256": "267f02111d7db6ee7460b3d5b459cb7e6bcfd905cc597f640018aaa72ab04a2e",
+              "line_start": 1200,
+              "line_end": 1364,
+              "locator": "00:09:53.430"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S01",
+      "title": "浙江车管所AI网办审核",
+      "path": "下册-案例汇编/S-公共管理社会保障与社会组织/S01-浙江车管所AI网办审核.md",
+      "industry_code": "S",
+      "industry_name": "公共管理、社会保障和社会组织",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-02",
+      "fragments": [
+        {
+          "source_fragment_id": "C-02-F01",
+          "title": "从图片识别接到审核与跨系统执行",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "网办材料审核与既有系统操作，来源称已验收；最终制证寄递时长未披露。",
+          "anchor": "c-02-f01",
+          "sources": [
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 61,
+              "line_end": 65,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第61—65行。"
+            },
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 69,
+              "line_end": 73,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第69—73行。"
+            },
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 75,
+              "line_end": 81,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第75—81行。"
+            },
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 117,
+              "line_end": 123,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第117—123行。"
+            },
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 91,
+              "line_end": 107,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第91—107行。"
+            },
+            {
+              "title": "NO.2 从人工审材料到自动化办件：FDE用AI提升车管所网办效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "02-从人工审材料到自动化办件：FDE用AI提升车管所网办效率.md",
+              "document_sha256": "dd13be55a8cd2bf4cacae81b50f7a674e0d4a36b1a90f7f79750a1a6a606a469",
+              "line_start": 75,
+              "line_end": 89,
+              "locator": "原书页码：14–23；PDF 文件页码：15–24。 Markdown第75—89行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "待01",
+      "title": "海外工业企业物料诊断",
+      "path": "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md",
+      "industry_code": null,
+      "industry_name": "待定分类（非国标门类）",
+      "classification_status": "pending",
+      "entry_type": "single_project",
+      "source_record_id": "C-08",
+      "fragments": [
+        {
+          "source_fragment_id": "C-08-F01",
+          "title": "从搜索困难追到采购浪费",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "已发生问题诊断与优先级讨论；检索工具的实际运行阶段不明，采购节省未披露。",
+          "anchor": "c-08-f01",
+          "sources": [
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 67,
+              "line_end": 75,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第67—75行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 77,
+              "line_end": 81,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第77—81行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 85,
+              "line_end": 95,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—95行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 97,
+              "line_end": 107,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第97—107行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 85,
+              "line_end": 105,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—105行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 123,
+              "line_end": 129,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第123—129行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "待02",
+      "title": "汽车零部件供应链经营分析",
+      "path": "下册-案例汇编/待定-行业待核/待02-汽车零部件供应链经营分析.md",
+      "industry_code": null,
+      "industry_name": "待定分类（非国标门类）",
+      "classification_status": "pending",
+      "entry_type": "single_project",
+      "source_record_id": "C-20",
+      "fragments": [
+        {
+          "source_fragment_id": "C-20-F01",
+          "title": "保留ERP，先把经营关系与异常看清",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "刚上线的经营数据可见性与异常通知；处置结果、采购节省与利润尚未验证。",
+          "anchor": "c-20-f01",
+          "sources": [
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 71,
+              "line_end": 85,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第71—85行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 87,
+              "line_end": 95,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第87—95行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 155,
+              "line_end": 165,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第155—165行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 109,
+              "line_end": 125,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第109—125行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 105,
+              "line_end": 129,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第105—129行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 103,
+              "line_end": 129,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第103—129行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "待03",
+      "title": "消费品企业包装AI预检",
+      "path": "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md",
+      "industry_code": null,
+      "industry_name": "待定分类（非国标门类）",
+      "classification_status": "pending",
+      "entry_type": "single_project",
+      "source_record_id": "C-19",
+      "fragments": [
+        {
+          "source_fragment_id": "C-19-F01",
+          "title": "设计提交时预检，确定计算交给程序",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "设计提交后的包装预检与专业复核；运行规模、期限与返工率未明。",
+          "anchor": "c-19-f01",
+          "sources": [
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 89,
+              "line_end": 99,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第89—99行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 113,
+              "line_end": 117,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—117行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 117,
+              "line_end": 123,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第117—123行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 139,
+              "line_end": 151,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第139—151行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 113,
+              "line_end": 137,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—137行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "待04",
+      "title": "零一数科AI应用",
+      "path": "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md",
+      "industry_code": null,
+      "industry_name": "待定分类（非国标门类）",
+      "classification_status": "pending",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-11",
+      "fragments": [
+        {
+          "source_fragment_id": "S-11-F01",
+          "title": "先把业务工具做出来，再看各部门怎样协同",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "内容等工具和CRM为已运行自述；部门FDE的连点成网仍是规划。",
+          "anchor": "s-11-f01",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 420,
+              "line_end": 547,
+              "locator": "00:03:38.224"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 850,
+              "line_end": 967,
+              "locator": "00:07:48.727"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 783,
+              "line_end": 835,
+              "locator": "00:07:11.472"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-11-F02",
+          "title": "部门FDE和七类角色属于怎样的阶段",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "部门FDE连接、社区制及未来组织形态为计划或判断。",
+          "anchor": "s-11-f02",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 963,
+              "line_end": 1119,
+              "locator": "00:08:57.222"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 1431,
+              "line_end": 1583,
+              "locator": "00:12:50.826"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-11-F03",
+          "title": "业务标签支持招聘，技能服务仍要看交易证据",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "招聘标签和题目工具有展示；技能服务商品化包含现行尝试和未来收入判断。",
+          "anchor": "s-11-f03",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 640,
+              "line_end": 759,
+              "locator": "00:05:52.377"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 1123,
+              "line_end": 1419,
+              "locator": "00:10:23.465"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "待05",
+      "title": "小裂变AI研发与GEO服务探索",
+      "path": "下册-案例汇编/待定-行业待核/待05-小裂变AI研发与GEO服务探索.md",
+      "industry_code": null,
+      "industry_name": "待定分类（非国标门类）",
+      "classification_status": "pending",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-41",
+      "fragments": [
+        {
+          "source_fragment_id": "S-41-F01",
+          "title": "老板原型交给研发继续工程化",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "内部GEO系统由老板先搭原型，研发接手；对外获客效果另待证",
+          "anchor": "s-41-f01",
+          "sources": [
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 2222,
+              "line_end": 2290,
+              "locator": "00:18:43.080"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 2122,
+              "line_end": 2232,
+              "locator": "00:18:03.270"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-41-F02",
+          "title": "GEO工具与获客效果分开验收",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "工具功能、价格与供应商方法说明；客户成效缺定量佐证",
+          "anchor": "s-41-f02",
+          "sources": [
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 946,
+              "line_end": 1124,
+              "locator": "00:08:24.620"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 1546,
+              "line_end": 1768,
+              "locator": "00:13:23.750"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 1850,
+              "line_end": 1992,
+              "locator": "00:15:50.150"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附A01",
+      "title": "工作切片与SOP共创方法",
+      "path": "下册-案例汇编/附编A-跨行业方法/附A01-工作切片与SOP共创方法.md",
+      "industry_code": null,
+      "industry_name": "跨行业方法附编",
+      "classification_status": "not_applicable",
+      "entry_type": "method",
+      "source_record_id": "S-10",
+      "fragments": [
+        {
+          "source_fragment_id": "S-10-F01",
+          "title": "SOP先交员工校准，再交主管审核",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "受访实践者描述已在做的体系；具体客户和长期改善没有独立资料。",
+          "anchor": "s-10-f01",
+          "sources": [
+            {
+              "title": "那些真正用 AI 拿到结果的企业，到底做对了什么？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7674844944560917770",
+              "document": "7674844944560917770.md",
+              "document_sha256": "6831417c6debd40f8d6b9cef3bd49d21eb1009bd8915ada59f55c0b56640455f",
+              "line_start": 823,
+              "line_end": 1027,
+              "locator": "00:06:45.190"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B01",
+      "title": "跨境装载规划原型探索",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B01-跨境装载规划原型探索.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "C-06",
+      "fragments": [
+        {
+          "source_fragment_id": "C-06-F01",
+          "title": "算法摆放转为现场打印指导",
+          "stage": "prototype",
+          "stage_label": "原型",
+          "scope": "按真实车内尺寸与十一种货物规格模拟的原型验证；装车时间变化仍为预计。",
+          "anchor": "c-06-f01",
+          "sources": [
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 85,
+              "line_end": 115,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第85—115行。"
+            },
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 139,
+              "line_end": 155,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第139—155行。"
+            },
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 151,
+              "line_end": 155,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第151—155行。"
+            },
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 119,
+              "line_end": 121,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第119—121行。"
+            },
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 123,
+              "line_end": 129,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第123—129行。"
+            },
+            {
+              "title": "NO.6 从经验装车到智能规划：FDE用AI优化跨境物流装载效率",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "06-从经验装车到智能规划：FDE用AI优化跨境物流装载效率.md",
+              "document_sha256": "47184eedbc68a534f40eccfe337382f4f74351ddf2c49150fe10ab14a75db628",
+              "line_start": 117,
+              "line_end": 129,
+              "locator": "原书页码：55–66；PDF 文件页码：56–67。 Markdown第117—129行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B02",
+      "title": "企业AI中台与数据权限",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B02-企业AI中台与数据权限.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-02",
+      "fragments": [
+        {
+          "source_fragment_id": "S-02-F01",
+          "title": "数据权限为什么影响中台运作",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "作者观点和解释性流程；未披露客户项目或验收。",
+          "anchor": "s-02-f01",
+          "sources": [
+            {
+              "title": "为什么从 2026 年开始，中小企业都要搭建 AI 中台？",
+              "publisher": "狼格拉底（10月深圳FDE落地班）",
+              "url": "https://www.douyin.com/video/7654890394676743466",
+              "document": "7654890394676743466.md",
+              "document_sha256": "d79306ba24b9b9dbe5c244dc8e2d229f85e763c26ec47965a1e7d07ca9622c19",
+              "line_start": 810,
+              "line_end": 970,
+              "locator": "00:06:31.490"
+            },
+            {
+              "title": "为什么从 2026 年开始，中小企业都要搭建 AI 中台？",
+              "publisher": "狼格拉底（10月深圳FDE落地班）",
+              "url": "https://www.douyin.com/video/7654890394676743466",
+              "document": "7654890394676743466.md",
+              "document_sha256": "d79306ba24b9b9dbe5c244dc8e2d229f85e763c26ec47965a1e7d07ca9622c19",
+              "line_start": 1150,
+              "line_end": 1320,
+              "locator": "00:09:07.580"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B03",
+      "title": "WorkBuddy与企业微信待办生成演示",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B03-WorkBuddy与企业微信待办生成演示.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-08",
+      "fragments": [
+        {
+          "source_fragment_id": "S-08-F01",
+          "title": "从客户记录生成待办的工具参考",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "作者使用自己的会员运营及活动群演示；不是外部企业已验收交付。",
+          "anchor": "s-08-f01",
+          "sources": [
+            {
+              "title": "WorkBuddy+企微 管理和运营全搞定",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7692286416189000960",
+              "document": "7692286416189000960.md",
+              "document_sha256": "a3d233b0485c269c12e78d7927f74a4a043d402d1918ec8a0d3f2a45fe31f6db",
+              "line_start": 135,
+              "line_end": 275,
+              "locator": "00:01:00.419"
+            },
+            {
+              "title": "WorkBuddy+企微 管理和运营全搞定",
+              "publisher": "马想聊AI",
+              "url": "https://www.douyin.com/video/7692286416189000960",
+              "document": "7692286416189000960.md",
+              "document_sha256": "a3d233b0485c269c12e78d7927f74a4a043d402d1918ec8a0d3f2a45fe31f6db",
+              "line_start": 430,
+              "line_end": 579,
+              "locator": "00:03:45.100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B04",
+      "title": "工厂图纸与设备看板演示",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B04-工厂图纸与设备看板演示.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-09",
+      "fragments": [
+        {
+          "source_fragment_id": "S-09-F01",
+          "title": "图纸和设备看板的两种展示证据",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "首条有情景对白，第二条有急停与手机报警现场演示；长期生产效果未知。",
+          "anchor": "s-09-f01",
+          "sources": [
+            {
+              "title": "厂二代用AI重写工厂",
+              "publisher": "我叫迪巴拉",
+              "url": "https://www.douyin.com/video/7678523420997156581",
+              "document": "7678523420997156581.md",
+              "document_sha256": "0523c9c6b2b9f4fa1a2fbff8eb9bf224034083b14afd15c79cb9bbd14dd712f9",
+              "line_start": 155,
+              "line_end": 303,
+              "locator": "00:00:50.580"
+            },
+            {
+              "title": "回应一下质疑",
+              "publisher": "我叫迪巴拉",
+              "url": "https://www.douyin.com/video/7678992615152918266",
+              "document": "7678992615152918266.md",
+              "document_sha256": "0f493f646771eca109040dc4a47886cba0c7224f300d5a0f3419fd938c691c9a",
+              "line_start": 15,
+              "line_end": 111,
+              "locator": "00:00:00.000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B05",
+      "title": "CRM与ERP商机建档演示",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B05-CRM与ERP商机建档演示.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-14",
+      "fragments": [
+        {
+          "source_fragment_id": "S-14-F01",
+          "title": "跨系统建档的演示能说明什么",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "作者明确模拟商机，展示一次创建与同步；生产运行未知。",
+          "anchor": "s-14-f01",
+          "sources": [
+            {
+              "title": "FDE实战：AI打通CRM与ERP，商机赢单自动建档",
+              "publisher": "老关聊企业数字化 - 企业AI落地实操",
+              "url": "https://www.douyin.com/video/7690546716763770153",
+              "document": "7690546716763770153.md",
+              "document_sha256": "fbdf4e2096f445f0be7070c52c4026150271ea5113e0c6f3be517eaf770a2a5c",
+              "line_start": 15,
+              "line_end": 299,
+              "locator": "00:00:00.300"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B06",
+      "title": "ERP核价单更正演示",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B06-ERP核价单更正演示.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-15",
+      "fragments": [
+        {
+          "source_fragment_id": "S-15-F01",
+          "title": "核价单锁定后，解决方案必须符合系统动作",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "仅测试供应商、物料、核价单；最终是新建正确单，不是修改历史核准单。",
+          "anchor": "s-15-f01",
+          "sources": [
+            {
+              "title": "FDE实战：AI每个动作，都先过ERP规则与权限校验",
+              "publisher": "老关聊企业数字化 - 企业AI落地实操",
+              "url": "https://www.douyin.com/video/7692020772545596726",
+              "document": "7692020772545596726.md",
+              "document_sha256": "fbd40010960f4d91194616c546feb6e74d7552eb2c4a5a26705227a9987073e6",
+              "line_start": 16,
+              "line_end": 184,
+              "locator": "00:00:00.290"
+            },
+            {
+              "title": "FDE实战：AI每个动作，都先过ERP规则与权限校验",
+              "publisher": "老关聊企业数字化 - 企业AI落地实操",
+              "url": "https://www.douyin.com/video/7692020772545596726",
+              "document": "7692020772545596726.md",
+              "document_sha256": "fbd40010960f4d91194616c546feb6e74d7552eb2c4a5a26705227a9987073e6",
+              "line_start": 580,
+              "line_end": 750,
+              "locator": "00:05:52.530"
+            },
+            {
+              "title": "FDE实战：AI每个动作，都先过ERP规则与权限校验",
+              "publisher": "老关聊企业数字化 - 企业AI落地实操",
+              "url": "https://www.douyin.com/video/7692020772545596726",
+              "document": "7692020772545596726.md",
+              "document_sha256": "fbd40010960f4d91194616c546feb6e74d7552eb2c4a5a26705227a9987073e6",
+              "line_start": 996,
+              "line_end": 1264,
+              "locator": "00:09:00.290"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "附B07",
+      "title": "Odoo与飞书审批回传演示",
+      "path": "下册-案例汇编/附编B-原型与演示参考/附B07-Odoo与飞书审批回传演示.md",
+      "industry_code": null,
+      "industry_name": "方法与探索参考附录",
+      "classification_status": "not_applicable",
+      "entry_type": "reference",
+      "source_record_id": "S-16",
+      "fragments": [
+        {
+          "source_fragment_id": "S-16-F01",
+          "title": "审批消息发出以后，原系统还要收到结果",
+          "stage": "demo",
+          "stage_label": "演示",
+          "scope": "配置教学展示两级审批后确认订单；原稿未见模型推理任务。",
+          "anchor": "s-16-f01",
+          "sources": [
+            {
+              "title": "odoo自动化对接飞书审批",
+              "publisher": "老关聊企业数字化 - 企业AI落地实操",
+              "url": "https://www.douyin.com/video/7634747448119872806",
+              "document": "7634747448119872806.md",
+              "document_sha256": "a59cd6a84b4a952d445d9654cbbe16a4d542cee8ac0eb8890ce5e4970a6ab1f1",
+              "line_start": 15,
+              "line_end": 359,
+              "locator": "00:00:01.320"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
