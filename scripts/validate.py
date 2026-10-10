@@ -99,9 +99,9 @@ case_paths = {ROOT/e['path'] for e in entries}
 unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in p.parts and p.name!='README.md' and p not in case_paths]
 if unindexed:
     errors.append('Unindexed case documents: '+str(unindexed))
-chapters = list((ROOT/'上册-研究报告').glob('0[1-5]-*.md'))
-if len(chapters)!=5:
-    errors.append('Expected five upper-volume chapters')
+chapters = list((ROOT/'上册-研究报告').glob('0[1-6]-*.md'))
+if len(chapters)!=6:
+    errors.append('Expected five upper-volume chapters plus 结语')
 if len((ROOT/'LICENSE').read_text().splitlines()) < 15:
     errors.append('Missing complete license')
 summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'case_documents':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
