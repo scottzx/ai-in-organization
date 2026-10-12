@@ -1,0 +1,104 @@
+{
+  "slug": "11-goal-6-contracts",
+  "title": "目标6：围绕决策障碍推进至签约",
+  "description": "从客户反馈确认真实决策障碍，由销售主导沟通与谈判，再确认签约条件并完成履约交接。AI辅助汇集依据、准备选项与核对版本，承诺和签署按授权办理。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 10,
+    "title": 1,
+    "subtitle": 1,
+    "heading": 3,
+    "body": 18,
+    "subheading": 1
+  },
+  "visible_text": [
+    "图 2-11  /  业务举措",
+    "一芥智能研究院",
+    "目标6：围绕决策障碍推进至签约",
+    "客户反馈用于核实决策障碍，销售主导协商并落实签约与交接。",
+    "举措 6.1",
+    "识别当前决策障碍",
+    "查明角色、证据与采购步骤",
+    "区分事实、推测与待核实项",
+    "AI汇集记录，销售向客户确认",
+    "本步交付",
+    "有依据的待决事项",
+    "举措 6.2",
+    "沟通与谈判解决障碍",
+    "选择合适对象、时机与选项",
+    "AI辅助准备草稿与谈判材料",
+    "销售协商利益并争取决定",
+    "本步交付",
+    "客户决定与后续行动",
+    "举措 6.3",
+    "确认条件并完成签约",
+    "比对条款、批准版本与未决项",
+    "授权人员批准承诺并签署",
+    "工具提示事项并准备交接清单",
+    "本步交付",
+    "签约合同与履约交接安排",
+    "签约后，销售与交付团队共同确认履约交接",
+    "客户需求",
+    "合同承诺",
+    "履约条件",
+    "付款条件",
+    "交付团队确认接收",
+    "可靠的审批与签署状态支持发起交接，接收确认后进入实际履约。",
+    "对外发送、预约、谈判、承诺与签署按企业授权办理，生成材料和提醒不代替授权。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

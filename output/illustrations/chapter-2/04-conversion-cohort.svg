@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1630" height="1214" viewBox="85 50 1630 1214" role="img" aria-labelledby="title description">
+<title id="title">阶段转化率按同一批入段对象计算</title>
+<desc id="description">固定同一批进入本段的对象，跟踪至约定截止日。已经推进的本批对象构成分子，全部本批入段对象构成分母。</desc>
+<rect x="85" y="50" width="1630" height="1214" fill="#FFFFFF"/>
+<rect x="104" y="76" width="44" height="5" rx="0" fill="#1D4ED8"/>
+<text x="165" y="88" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">图 2-04  /  业务分析</text>
+<text x="1696" y="88" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="end">一芥智能研究院</text>
+<text x="104" y="177" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="58" font-weight="500" data-text-style="title" text-anchor="start">阶段转化率按同一批入段对象计算</text>
+<text x="104" y="237" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="300" data-text-style="subtitle" text-anchor="start">进入本段的全部对象构成分母，截止日前推进的本批对象构成分子。</text>
+<polyline points="198,361 1602,361" fill="none" stroke="#B8C9E6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="198" cy="361" r="7" fill="#1D4ED8"/>
+<circle cx="1602" cy="361" r="7" fill="#1D4ED8"/>
+<text x="198" y="332" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">按约定入段时间窗口选取</text>
+<text x="1602" y="332" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="end">跟踪至约定截止日</text>
+<rect x="104" y="526" width="548" height="249" rx="12" fill="#EAF1FF"/>
+<text x="145" y="578" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">固定入段批次</text>
+<text x="145" y="639" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">同一批进入本段的对象</text>
+<text x="145" y="695" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">本批全部对象始终构成分母。</text>
+<text x="145" y="741" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">线索与商机分别明确统计口径。</text>
+<polyline points="652,650 811,650" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="811,507 811,831" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="811" cy="650" r="5" fill="#1D4ED8"/>
+<polyline points="811,507 937,507" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="937,507 926.0,500.95 926.0,513.05" fill="#1D4ED8"/>
+<polyline points="811,669 937,669" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="937,669 926.0,662.95 926.0,675.05" fill="#1D4ED8"/>
+<polyline points="811,831 937,831" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="937,831 926.0,824.95 926.0,837.05" fill="#1D4ED8"/>
+<rect x="957" y="438" width="739" height="138" rx="10" fill="#EAF1FF"/>
+<rect x="957" y="438" width="5" height="138" rx="0" fill="#1D4ED8"/>
+<text x="990" y="489" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">已进入下一段</text>
+<text x="990" y="538" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">计入分子，同时保留在分母。</text>
+<rect x="957" y="600" width="739" height="138" rx="10" fill="#F3F6FC"/>
+<rect x="957" y="600" width="5" height="138" rx="0" fill="#B8C9E6"/>
+<text x="990" y="651" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">未进入下一段，仍在本段</text>
+<text x="990" y="700" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">保留在分母，继续跟踪后续进展。</text>
+<rect x="957" y="762" width="739" height="138" rx="10" fill="#F3F6FC"/>
+<rect x="957" y="762" width="5" height="138" rx="0" fill="#B8C9E6"/>
+<text x="990" y="813" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">未进入下一段，已经退出</text>
+<text x="990" y="862" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">保留在分母，记录退出原因。</text>
+<text x="104" y="1048" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">阶段转化率</text>
+<text x="347" y="1048" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">=</text>
+<text x="952" y="1008" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">该批截至截止日已进入下一段的对象数</text>
+<polyline points="487,1030 1417,1030" fill="none" stroke="#17365D" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="952" y="1075" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">该批进入本段的对象总数</text>
+<text x="1470" y="1048" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">× 100%</text>
+<polyline points="104,1152 1696,1152" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="104" y="1202" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">未推进和退出对象均保留在分母中。仍停留的对象尚不能判定为最终失败。</text>
+<text x="104" y="1243" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院</text>
+</svg>

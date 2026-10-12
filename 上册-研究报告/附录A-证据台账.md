@@ -1,6 +1,6 @@
 # 附录A　证据台账
 
-一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v8.0｜2026年10月11日
+一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v8.0｜2026年10月12日修订
 
 [上册索引](README.md) · [附录B 案例引用索引](附录B-案例引用索引.md) · [结语](06-结语.md)
 
@@ -28,11 +28,27 @@
 | --- | --- | --- | --- |
 | 执行能力有哪些新选择，怎样判断其业务价值 | 第一章 | P1 | 1 |
 | 怎样从岗位现状与业务目标推导具体举措 | 第二章 | P2 P3 | 59 |
-| 怎样改善跨岗位交接、审核与完整交付 | 第三章 | P7 P9 P10 P4 P5 P6 | 53 |
-| 怎样维持有效做法，安排发起、维护与反馈 | 第四章 | P12 P13 P11 P14 P15 P8 P5 | 48 |
+| 单点改善为何未必传到整体，怎样改善交接、审核与组织上下文 | 第三章 | P7 P9 P10 P4 P5 P6 | 53 |
+| 怎样让经验进入下一轮工作，在正向收益下加快业务周转 | 第四章 | P12 P13 P11 P14 P15 P8 P5 | 48 |
 | 怎样选择范围、验证试点并决定下一步投入 | 第五章 | P16 P17 P5 | 40 |
 
 ---
+
+第三章另用三项补充资料：
+
+- 3.1采用[DORA 2024报告](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf)（v.2024.3，第32页图7、第39页图10及第40页），观察个人生产率与团队交付表现的调查相关性。
+- 3.1采用Dillon等《[Shifting Work Patterns with Generative AI](https://www.nber.org/papers/w33795)》2025年11月修订稿摘要，观察随机现场实验中的个人节时与任务安排变化。
+- 3.1.5采用美国SEC《[Knight Capital行政令](https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf)》印刷第6—7页第15—19段呈现传统自动化事故，3.2.5分析完成状态与异常未传达的问题。
+
+三项不计入下册入口及上表的命题数量。
+
+第四章另用三项补充资料：
+
+- 4.2.2采用丰田《[Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)》官方说明的Jidoka与Just-in-Time两节，参照先把工作做顺、识别异常与持续改善，以及同步工序、减少物品和信息滞留的管理机制。
+- 4.3.5采用Inditex《[Annual Report 2015: Innovation in customer services](https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php)》四个业务环节的说明，参照客户需求分析、设计更新、小批量生产与持续上新的反馈衔接；每周两次为门店上新节奏。
+- 4.3.5采用Zelikman等《[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304v3)》2024年8月16日v3摘要，参照调用语言模型的程序改进自身的技术机制；语言模型本身未改变，作者将其与完整的递归自我改进区分。
+
+三项不计入下册62个入口、101个片段及上表的命题数量。丰田与Inditex为历史管理参照，STOP为技术机制参照，均不作为企业智力飞轮或ROI的效果实证。
 
 ## A.3 按命题的案例清单
 

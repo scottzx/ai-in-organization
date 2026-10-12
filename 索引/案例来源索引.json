@@ -2,7 +2,7 @@
   "title": "企业数智化转型研究报告·案例来源索引",
   "author": "一芥智能研究院",
   "version": "v7.0",
-  "updated_on": "2026-10-10",
+  "updated_on": "2026-10-12",
   "counts": {
     "entries": 62,
     "industry_and_pending_entries": 54,
@@ -14,6 +14,107 @@
     "all_fragments": 101
   },
   "source_note": "来源为公开资料及受访者自述；原文不在本仓库转载。整理稿行号与文件哈希用于回查研究底稿，不代表独立事实核验。",
+  "supplementary_chapter_sources": [
+    {
+      "id": "CH02-R01",
+      "title": "On the Economy of Machinery and Manufactures",
+      "authors": [
+        "Charles Babbage"
+      ],
+      "publication_date": "1832",
+      "url": "https://www.gutenberg.org/cache/epub/4238/pg4238.html",
+      "locator": "第19章第224—239节；第20章第241—250节",
+      "source_type": "历史著作（手工制造与智力劳动分工的思想参照，非当前AI效果实证）",
+      "used_in": "上册第一章1.1、第二章2.3",
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH03-R01",
+      "title": "Shifting Work Patterns with Generative AI",
+      "publisher": "National Bureau of Economic Research",
+      "working_paper_number": "33795",
+      "issue_date": "2025-05",
+      "revision_date": "2025-11",
+      "url": "https://www.nber.org/papers/w33795",
+      "locator": "2025年11月修订版摘要",
+      "source_type": "随机现场实验",
+      "used_in": "上册第三章3.1",
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH03-R02",
+      "title": "Knight Capital Americas LLC行政令（Exchange Act Release No. 70694）",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "release_number": "70694",
+      "publication_date": "2013-10-16",
+      "event_date": "2012-08-01",
+      "url": "https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf",
+      "locator": "印刷6–7页，第15–19段",
+      "source_type": "监管事故记录（传统自动化、非AI）",
+      "used_in": "上册第三章3.1.5、3.2.5",
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH03-R03",
+      "title": "2024 Accelerate State of DevOps Report",
+      "publisher": "DORA",
+      "version": "v.2024.3",
+      "url": "https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf",
+      "locator": "第32页图7、第39页图10及第40页说明",
+      "source_type": "软件研发年度问卷调查（统计相关性）",
+      "used_in": "上册第三章3.1",
+      "author_commentary": {
+        "title": "Highlights from the 10th DORA report",
+        "publisher": "Google Cloud Blog",
+        "authors": [
+          "Nathen Harvey",
+          "Derek DeBellis"
+        ],
+        "publication_date": "2024-10-22",
+        "url": "https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report?hl=en"
+      },
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH04-R01",
+      "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+      "publisher": "arXiv（COLM 2024会议论文）",
+      "authors": [
+        "Eric Zelikman",
+        "Eliana Lorch",
+        "Lester Mackey",
+        "Adam Tauman Kalai"
+      ],
+      "version": "v3",
+      "issue_date": "2023-10-03",
+      "revision_date": "2024-08-16",
+      "url": "https://arxiv.org/abs/2310.02304v3",
+      "locator": "v3摘要",
+      "source_type": "代码生成实验研究（技术机制参照，非企业经营实证）",
+      "used_in": "上册第四章4.3.5的RSI方法参照",
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH04-R02",
+      "title": "Toyota Production System",
+      "publisher": "Toyota Motor Corporation",
+      "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
+      "locator": "Jidoka及Just-in-Time两节",
+      "source_type": "企业官方生产方式说明（历史管理机制参照，非AI案例）",
+      "used_in": "上册第一章1.1、第三章3.2、第四章4.2.2",
+      "checked_on": "2026-10-12"
+    },
+    {
+      "id": "CH04-R03",
+      "title": "Inditex Annual Report 2015: Innovation in customer services",
+      "publisher": "Inditex",
+      "url": "https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php",
+      "locator": "Innovation in customer services节，四个业务环节的说明段落",
+      "source_type": "企业官方年报（历史管理机制参照，非AI案例）",
+      "used_in": "上册第四章4.3.5",
+      "checked_on": "2026-10-12"
+    }
+  ],
   "entries": [
     {
       "id": "A01",
@@ -1160,6 +1261,16 @@
               "line_start": 109,
               "line_end": 125,
               "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第109—125行。"
+            },
+            {
+              "title": "NO.22 从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "22-从库存割裂到业务联动：FDE用AI打通跨境电商的库存、补货与广告决策.md",
+              "document_sha256": "3efe7830589c88defeb5fb01dde882bfb427fd773b69c9782b91dea20416d1bf",
+              "line_start": 145,
+              "line_end": 153,
+              "locator": "原书页码：215–224；PDF 文件页码：216–225。 Markdown第145—153行。"
             }
           ]
         },
@@ -2740,6 +2851,26 @@
               "line_start": 119,
               "line_end": 121,
               "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第119—121行。"
+            },
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 19,
+              "line_end": 35,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第19—35行。"
+            },
+            {
+              "title": "NO.7 从个人提效到组织能力：FDE用AI推动企业研发转型",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "07-从个人提效到组织能力：FDE用AI推动企业研发转型.md",
+              "document_sha256": "0b41f4f5d9cfce584af80840f4fce2bf9b8c7adb5401cdb436a95a0c61477b54",
+              "line_start": 41,
+              "line_end": 53,
+              "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第41—53行。"
             }
           ]
         }
@@ -2802,6 +2933,26 @@
               "line_start": 101,
               "line_end": 111,
               "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第101—111行。"
+            },
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 45,
+              "line_end": 51,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第45—51行。"
+            },
+            {
+              "title": "NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "05-从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约.md",
+              "document_sha256": "b0c6797e60727b3f9838f4c77c0d730f81b6332ea637f30e9a97076946dbcb38",
+              "line_start": 117,
+              "line_end": 121,
+              "locator": "原书页码：46–54；PDF 文件页码：47–55。 Markdown第117—121行。"
             }
           ]
         }
@@ -3266,6 +3417,26 @@
               "line_start": 145,
               "line_end": 173,
               "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第145—173行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 25,
+              "line_end": 39,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第25—39行。"
+            },
+            {
+              "title": "NO.4 从人工研判到智能调度：FDE用AI重构城市规划研判流程",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "04-从人工研判到智能调度：FDE用AI重构城市规划研判流程.md",
+              "document_sha256": "f6a719cc888fab33c729a136c5ccdf87007858b9c702400b9a9993a2f521caa5",
+              "line_start": 57,
+              "line_end": 79,
+              "locator": "原书页码：33–45；PDF 文件页码：34–46。 Markdown第57—79行。"
             }
           ]
         }
@@ -3944,6 +4115,26 @@
               "line_start": 113,
               "line_end": 137,
               "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—137行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 21,
+              "line_end": 33,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第21—33行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 47,
+              "line_end": 61,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第47—61行。"
             }
           ]
         }

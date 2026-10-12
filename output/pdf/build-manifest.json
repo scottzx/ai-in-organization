@@ -1,61 +1,61 @@
 {
   "title": "企业数智化转型研究报告",
-  "manuscript_date": "2026-10-11",
+  "manuscript_date": "2026-10-12",
   "versions": {
     "upper": "v8.0",
     "lower": "v7.0"
   },
   "pdf": "企业数智化转型研究报告-上下册合订本.pdf",
-  "pages": 216,
-  "sha256": "3ab41f61c6cf62af176147dbacaf0126248bc9ec878d8a841c88f7f8d091d30b",
+  "pages": 238,
+  "sha256": "688325935a6bc7fd4b10db56026ed9418cc0d8a7ee3e3dc0053be765b27da84f",
   "source_files": [
     {
       "path": "上册-研究报告/README.md",
-      "sha256": "338a604f30dd95a01246db12ade900f6c1f3f1f546b2a2b083a0849f23411c46"
+      "sha256": "8f57b27ca7bc3f5cf584bac2a742eaa19989d440eb977bd4112dd7740555d7b1"
     },
     {
       "path": "上册-研究报告/00-导论.md",
-      "sha256": "e8dfbc25df38a65517e2d4018a80e1737b1b59a71cd9ba12a7ba8431e8163d65"
+      "sha256": "8d264559688833663a1fb1da28a6f1a4156251c84a553d3cdc237750c69b2167"
     },
     {
       "path": "上册-研究报告/01-智力即服务.md",
-      "sha256": "b7d8c779de23108e2030429030ac8c8587219a3dcb93f5ee2224e31cbae0aec7"
+      "sha256": "0fde05fe55daa6c1877842f8d639fe05cd30cc9ed974dfaebc26fec48d010239"
     },
     {
       "path": "上册-研究报告/02-最小执行单位-从人到任务.md",
-      "sha256": "d11f717da4f55c15cf58b5dc121d1df108b2034300b9c25750043bdd647690e2"
+      "sha256": "c62fab336407ebf031fdd400cd830393df96f083261689e33377455164076fc6"
     },
     {
       "path": "上册-研究报告/03-单点提效为何未传导到整体交付.md",
-      "sha256": "53b65e437096438d7b49aeee9a4027b66f276c48121ca533fbd00c6ed50feff2"
+      "sha256": "fb5d60a4339372bdc861f6aa000255b4db9f08161a6b79a493aff5722114f299"
     },
     {
       "path": "上册-研究报告/04-从被动响应到主动触发.md",
-      "sha256": "2e5c6d3825b6624d88b2a32b24c54c49f16071b1e5e3974ef7443e9810966fa7"
+      "sha256": "02078a21ecfd7e65ca85e7548a0835e303d8245ffca935daac81f095b6e93473"
     },
     {
       "path": "上册-研究报告/05-行动计划.md",
-      "sha256": "d1c780349b06bc6b225f0c1b8260b834f3f835c56d8ca38a3100f6ee2fba4867"
+      "sha256": "c5b3d39d3b512a54adeeb5401ce6606ef50c344433c9a30f2b99ed0b911bb745"
     },
     {
       "path": "上册-研究报告/06-结语.md",
-      "sha256": "cf2fb011fb4f24c91710bd168de7b901d74c9cff22a7012ee100356ce3dace35"
+      "sha256": "31da561f1566e184255a3e309b8a6984c1533eab2f3f6c5bc578fee0ce80ba0c"
     },
     {
       "path": "上册-研究报告/附录A-证据台账.md",
-      "sha256": "7dff6c74c0ce56a87e1f6199da2f28ddabff12a15b12dd1816f985dacd4e6f62"
+      "sha256": "942215eb43ac2668815d02f812b62f8a792753445e0cf2757290cef337e4e430"
     },
     {
       "path": "上册-研究报告/附录B-案例引用索引.md",
-      "sha256": "86800bb68d2017dca670ae64f391e16e65d9c79d777a22a3608ad4d19e999914"
+      "sha256": "631eec4c6865786fe2548ab92d5c5a21537c963b3b5e5f44cae4d10ceb741482"
     },
     {
       "path": "上册-研究报告/附录C-术语辨析表.md",
-      "sha256": "77e059670ae0f6daf556dc4e53b33d38709010f6c3ce6a72bde85de8393a9c22"
+      "sha256": "e0db8a9473d279bb9842baeaca88fcee0f4a6a977b545c86c771cbaec63573a4"
     },
     {
       "path": "上册-研究报告/附录D-知识网络建设细节.md",
-      "sha256": "121300a3504af59369e48fdee368e75d072240ea162af3983dc4487829554126"
+      "sha256": "537c93a8a45b568d23c199f360a0aed8ff83c427b7a7bd089cf15fa808712946"
     },
     {
       "path": "下册-案例汇编/README.md",
@@ -131,7 +131,7 @@
     },
     {
       "path": "下册-案例汇编/F-批发与零售业/F01-面向东南亚的服装跨境电商业务协同.md",
-      "sha256": "12d847f92e77ed199262caea8c283e5d15f1923a7e6985e7aca0a3259e530432"
+      "sha256": "6a17b069e0c60ca46ddf6b90cda8170e57409910c33301039dab03fcd752f075"
     },
     {
       "path": "下册-案例汇编/F-批发与零售业/F02-森马电商AI转型.md",
@@ -223,7 +223,7 @@
     },
     {
       "path": "下册-案例汇编/J-金融业/J01-基金公司AI研发培训.md",
-      "sha256": "960b82e3f7a21abb59a04edc72a34d3dc24e79dfe7e35d2b1957fcf30ac94205"
+      "sha256": "58a8da74f3ddf26015e838f5f1da43da1519979dd1f96d848965c2928401ebde"
     },
     {
       "path": "下册-案例汇编/L-租赁与商务服务业/README.md",
@@ -231,7 +231,7 @@
     },
     {
       "path": "下册-案例汇编/L-租赁与商务服务业/L01-TikTok达人运营AI协作.md",
-      "sha256": "6a4a641778e6e6b1d54894e7a584ca082ec3c70dea89be5a9cae5fcb199cbc6f"
+      "sha256": "845529359a1b485ea3100bd9e1016619ae7cfc9ca75f7972a72cb37f1e1a5b34"
     },
     {
       "path": "下册-案例汇编/L-租赁与商务服务业/L02-黄碧云零售咨询的AI应用.md",
@@ -263,7 +263,7 @@
     },
     {
       "path": "下册-案例汇编/M-科学研究与技术服务业/M01-杭州市城市规划设计院AI辅助规划.md",
-      "sha256": "3148dc7638d4f91f16b05716b40dd84632f51985b1a800e870be984c9bf9b399"
+      "sha256": "ad7c4874241791fb9c1584d45552102b7ef39fd1620e9cbcc9e07ede7e887ba6"
     },
     {
       "path": "下册-案例汇编/M-科学研究与技术服务业/M02-消防维保企业数字化项目取舍.md",
@@ -315,7 +315,7 @@
     },
     {
       "path": "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md",
-      "sha256": "323f2056a043df7d2c906a86e011ba4c2feddfd717c567dbb1d3dbf0197865b5"
+      "sha256": "1d5722dae543676a23111b0804a0cba4db375e7fed16ab3a6e5a2693aa72f330"
     },
     {
       "path": "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md",
@@ -367,120 +367,285 @@
     },
     {
       "path": "索引/阅读路径.md",
-      "sha256": "09fae8b611b3655c18073e9540db4f30aef181634bc090b2147179bd84f57f47"
+      "sha256": "70e9fa02c38dd5af60661c5b533474ce09062996aa6cacdc9dae1916c72f4686"
     },
     {
       "path": "索引/资料来源说明.md",
-      "sha256": "81cdb3ac26898ebc10b42ee50a7ce1b33e0517ed437caab451b7e640c2449064"
+      "sha256": "c5458818ee8e6bbaa61f65eab2c3b0e18a345acbcc5d460970440917728eec09"
     }
   ],
   "section_pages": {
     "上册-研究报告/README.md": 7,
     "上册-研究报告/00-导论.md": 9,
-    "上册-研究报告/01-智力即服务.md": 10,
-    "上册-研究报告/02-最小执行单位-从人到任务.md": 13,
-    "上册-研究报告/03-单点提效为何未传导到整体交付.md": 26,
-    "上册-研究报告/04-从被动响应到主动触发.md": 33,
-    "上册-研究报告/05-行动计划.md": 40,
-    "上册-研究报告/06-结语.md": 46,
-    "上册-研究报告/附录A-证据台账.md": 48,
-    "上册-研究报告/附录B-案例引用索引.md": 69,
-    "上册-研究报告/附录C-术语辨析表.md": 77,
-    "上册-研究报告/附录D-知识网络建设细节.md": 83,
-    "下册-案例汇编/README.md": 89,
-    "下册-案例汇编/A-农林牧渔业/README.md": 95,
-    "下册-案例汇编/A-农林牧渔业/A01-苏北大型主粮农场项目.md": 96,
-    "下册-案例汇编/C-制造业/README.md": 98,
-    "下册-案例汇编/C-制造业/C01-德国斯图加特零部件企业AI培训.md": 99,
-    "下册-案例汇编/C-制造业/C02-非标制造企业AI报价.md": 101,
-    "下册-案例汇编/C-制造业/C03-制造企业驻场需求梳理.md": 103,
-    "下册-案例汇编/C-制造业/C04-压力容器企业成本核算需求梳理.md": 104,
-    "下册-案例汇编/C-制造业/C05-制造企业订单与岗位权限调整.md": 105,
-    "下册-案例汇编/C-制造业/C06-电助力单车企业AI应用.md": 106,
-    "下册-案例汇编/C-制造业/C07-制造企业AI辅助研发试点.md": 109,
-    "下册-案例汇编/C-制造业/C08-蚕丝工厂打样与库存管理.md": 110,
-    "下册-案例汇编/C-制造业/C09-迪欧家具AI应用.md": 112,
-    "下册-案例汇编/C-制造业/C10-生物材料上市公司数字化与AI应用.md": 114,
-    "下册-案例汇编/C-制造业/C11-澳洲乳企海外动销分析.md": 116,
-    "下册-案例汇编/C-制造业/C12-畜牧机器人研发与合作场试点.md": 118,
-    "下册-案例汇编/C-制造业/C13-移动餐车出海企业AI销售准备.md": 120,
-    "下册-案例汇编/F-批发与零售业/README.md": 121,
-    "下册-案例汇编/F-批发与零售业/F01-面向东南亚的服装跨境电商业务协同.md": 122,
-    "下册-案例汇编/F-批发与零售业/F02-森马电商AI转型.md": 124,
-    "下册-案例汇编/F-批发与零售业/F03-童装电商AI选款与员工学习.md": 126,
-    "下册-案例汇编/F-批发与零售业/F04-女装直播企业AI应用.md": 128,
-    "下册-案例汇编/F-批发与零售业/F05-跨境拖鞋企业AI接待与选品.md": 130,
-    "下册-案例汇编/F-批发与零售业/F06-女装批发企业AI入库与工牌试制.md": 132,
-    "下册-案例汇编/F-批发与零售业/F07-外贸礼品公司AI客户开发探索.md": 134,
-    "下册-案例汇编/F-批发与零售业/F08-省属国企电商子公司AI应用.md": 136,
-    "下册-案例汇编/F-批发与零售业/F09-3C外贸企业AI自建业务系统.md": 138,
-    "下册-案例汇编/F-批发与零售业/F10-上海消费品门店AI对账.md": 140,
-    "下册-案例汇编/F-批发与零售业/F11-温州连锁烘焙企业AI经营管理.md": 141,
-    "下册-案例汇编/F-批发与零售业/F12-交个朋友虚拟IP内容生产.md": 143,
-    "下册-案例汇编/H-住宿与餐饮业/README.md": 145,
-    "下册-案例汇编/H-住宿与餐饮业/H01-老牌奶茶企业AI私域客服.md": 146,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/README.md": 147,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I01-兴城泳装AI商拍服务.md": 148,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I02-AI辅助ERP开发与架构探索.md": 150,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I03-语音AI服务商内部应用与产品演示.md": 152,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I04-运动门店SaaS企业AI应用.md": 154,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I05-AI员工服务商的教育销售交接实践.md": 156,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I06-货运平台AI助手与履约协同.md": 158,
-    "下册-案例汇编/I-信息传输软件与信息技术服务业/I07-小球圈视频处理与产品迭代.md": 160,
-    "下册-案例汇编/J-金融业/README.md": 161,
-    "下册-案例汇编/J-金融业/J01-基金公司AI研发培训.md": 162,
-    "下册-案例汇编/L-租赁与商务服务业/README.md": 163,
-    "下册-案例汇编/L-租赁与商务服务业/L01-TikTok达人运营AI协作.md": 164,
-    "下册-案例汇编/L-租赁与商务服务业/L02-黄碧云零售咨询的AI应用.md": 166,
-    "下册-案例汇编/L-租赁与商务服务业/L03-餐饮本地生活代运营AI内容生产.md": 168,
-    "下册-案例汇编/L-租赁与商务服务业/L04-户外媒体平台AI投放服务.md": 169,
-    "下册-案例汇编/L-租赁与商务服务业/L05-CGL招聘AI协作.md": 170,
-    "下册-案例汇编/L-租赁与商务服务业/L06-诉讼律师AI案件工作台.md": 172,
-    "下册-案例汇编/L-租赁与商务服务业/L07-AI法务服务与专业复核.md": 174,
-    "下册-案例汇编/M-科学研究与技术服务业/README.md": 175,
-    "下册-案例汇编/M-科学研究与技术服务业/M01-杭州市城市规划设计院AI辅助规划.md": 176,
-    "下册-案例汇编/M-科学研究与技术服务业/M02-消防维保企业数字化项目取舍.md": 178,
-    "下册-案例汇编/M-科学研究与技术服务业/M03-建筑消防设计AI辅助出图.md": 180,
-    "下册-案例汇编/Q-卫生与社会工作/README.md": 181,
-    "下册-案例汇编/Q-卫生与社会工作/Q01-药师AI助手试用.md": 182,
-    "下册-案例汇编/R-文化体育与娱乐业/README.md": 184,
-    "下册-案例汇编/R-文化体育与娱乐业/R01-瑜伽与普拉提门店AI应用.md": 185,
-    "下册-案例汇编/R-文化体育与娱乐业/R02-程前朋友圈AI选题探索.md": 187,
-    "下册-案例汇编/S-公共管理社会保障与社会组织/README.md": 189,
-    "下册-案例汇编/S-公共管理社会保障与社会组织/S01-浙江车管所AI网办审核.md": 190,
-    "下册-案例汇编/待定-行业待核/README.md": 192,
-    "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md": 193,
-    "下册-案例汇编/待定-行业待核/待02-汽车零部件供应链经营分析.md": 195,
-    "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md": 197,
-    "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md": 199,
-    "下册-案例汇编/待定-行业待核/待05-小裂变AI研发与GEO服务探索.md": 201,
-    "下册-案例汇编/附编A-跨行业方法/README.md": 203,
-    "下册-案例汇编/附编A-跨行业方法/附A01-工作切片与SOP共创方法.md": 204,
-    "下册-案例汇编/附编B-原型与演示参考/README.md": 205,
-    "下册-案例汇编/附编B-原型与演示参考/附B01-跨境装载规划原型探索.md": 206,
-    "下册-案例汇编/附编B-原型与演示参考/附B02-企业AI中台与数据权限.md": 208,
-    "下册-案例汇编/附编B-原型与演示参考/附B03-WorkBuddy与企业微信待办生成演示.md": 209,
-    "下册-案例汇编/附编B-原型与演示参考/附B04-工厂图纸与设备看板演示.md": 210,
-    "下册-案例汇编/附编B-原型与演示参考/附B05-CRM与ERP商机建档演示.md": 211,
-    "下册-案例汇编/附编B-原型与演示参考/附B06-ERP核价单更正演示.md": 212,
-    "下册-案例汇编/附编B-原型与演示参考/附B07-Odoo与飞书审批回传演示.md": 213,
-    "索引/阅读路径.md": 215,
-    "索引/资料来源说明.md": 216
+    "上册-研究报告/01-智力即服务.md": 11,
+    "上册-研究报告/02-最小执行单位-从人到任务.md": 14,
+    "上册-研究报告/03-单点提效为何未传导到整体交付.md": 38,
+    "上册-研究报告/04-从被动响应到主动触发.md": 48,
+    "上册-研究报告/05-行动计划.md": 56,
+    "上册-研究报告/06-结语.md": 62,
+    "上册-研究报告/附录A-证据台账.md": 64,
+    "上册-研究报告/附录B-案例引用索引.md": 86,
+    "上册-研究报告/附录C-术语辨析表.md": 95,
+    "上册-研究报告/附录D-知识网络建设细节.md": 102,
+    "下册-案例汇编/README.md": 108,
+    "下册-案例汇编/A-农林牧渔业/README.md": 114,
+    "下册-案例汇编/A-农林牧渔业/A01-苏北大型主粮农场项目.md": 115,
+    "下册-案例汇编/C-制造业/README.md": 117,
+    "下册-案例汇编/C-制造业/C01-德国斯图加特零部件企业AI培训.md": 118,
+    "下册-案例汇编/C-制造业/C02-非标制造企业AI报价.md": 120,
+    "下册-案例汇编/C-制造业/C03-制造企业驻场需求梳理.md": 122,
+    "下册-案例汇编/C-制造业/C04-压力容器企业成本核算需求梳理.md": 123,
+    "下册-案例汇编/C-制造业/C05-制造企业订单与岗位权限调整.md": 124,
+    "下册-案例汇编/C-制造业/C06-电助力单车企业AI应用.md": 125,
+    "下册-案例汇编/C-制造业/C07-制造企业AI辅助研发试点.md": 128,
+    "下册-案例汇编/C-制造业/C08-蚕丝工厂打样与库存管理.md": 129,
+    "下册-案例汇编/C-制造业/C09-迪欧家具AI应用.md": 131,
+    "下册-案例汇编/C-制造业/C10-生物材料上市公司数字化与AI应用.md": 133,
+    "下册-案例汇编/C-制造业/C11-澳洲乳企海外动销分析.md": 135,
+    "下册-案例汇编/C-制造业/C12-畜牧机器人研发与合作场试点.md": 137,
+    "下册-案例汇编/C-制造业/C13-移动餐车出海企业AI销售准备.md": 139,
+    "下册-案例汇编/F-批发与零售业/README.md": 140,
+    "下册-案例汇编/F-批发与零售业/F01-面向东南亚的服装跨境电商业务协同.md": 141,
+    "下册-案例汇编/F-批发与零售业/F02-森马电商AI转型.md": 143,
+    "下册-案例汇编/F-批发与零售业/F03-童装电商AI选款与员工学习.md": 145,
+    "下册-案例汇编/F-批发与零售业/F04-女装直播企业AI应用.md": 147,
+    "下册-案例汇编/F-批发与零售业/F05-跨境拖鞋企业AI接待与选品.md": 149,
+    "下册-案例汇编/F-批发与零售业/F06-女装批发企业AI入库与工牌试制.md": 151,
+    "下册-案例汇编/F-批发与零售业/F07-外贸礼品公司AI客户开发探索.md": 153,
+    "下册-案例汇编/F-批发与零售业/F08-省属国企电商子公司AI应用.md": 155,
+    "下册-案例汇编/F-批发与零售业/F09-3C外贸企业AI自建业务系统.md": 157,
+    "下册-案例汇编/F-批发与零售业/F10-上海消费品门店AI对账.md": 159,
+    "下册-案例汇编/F-批发与零售业/F11-温州连锁烘焙企业AI经营管理.md": 160,
+    "下册-案例汇编/F-批发与零售业/F12-交个朋友虚拟IP内容生产.md": 162,
+    "下册-案例汇编/H-住宿与餐饮业/README.md": 164,
+    "下册-案例汇编/H-住宿与餐饮业/H01-老牌奶茶企业AI私域客服.md": 165,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/README.md": 166,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I01-兴城泳装AI商拍服务.md": 167,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I02-AI辅助ERP开发与架构探索.md": 169,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I03-语音AI服务商内部应用与产品演示.md": 171,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I04-运动门店SaaS企业AI应用.md": 173,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I05-AI员工服务商的教育销售交接实践.md": 175,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I06-货运平台AI助手与履约协同.md": 177,
+    "下册-案例汇编/I-信息传输软件与信息技术服务业/I07-小球圈视频处理与产品迭代.md": 179,
+    "下册-案例汇编/J-金融业/README.md": 180,
+    "下册-案例汇编/J-金融业/J01-基金公司AI研发培训.md": 181,
+    "下册-案例汇编/L-租赁与商务服务业/README.md": 183,
+    "下册-案例汇编/L-租赁与商务服务业/L01-TikTok达人运营AI协作.md": 184,
+    "下册-案例汇编/L-租赁与商务服务业/L02-黄碧云零售咨询的AI应用.md": 186,
+    "下册-案例汇编/L-租赁与商务服务业/L03-餐饮本地生活代运营AI内容生产.md": 188,
+    "下册-案例汇编/L-租赁与商务服务业/L04-户外媒体平台AI投放服务.md": 189,
+    "下册-案例汇编/L-租赁与商务服务业/L05-CGL招聘AI协作.md": 190,
+    "下册-案例汇编/L-租赁与商务服务业/L06-诉讼律师AI案件工作台.md": 192,
+    "下册-案例汇编/L-租赁与商务服务业/L07-AI法务服务与专业复核.md": 194,
+    "下册-案例汇编/M-科学研究与技术服务业/README.md": 195,
+    "下册-案例汇编/M-科学研究与技术服务业/M01-杭州市城市规划设计院AI辅助规划.md": 196,
+    "下册-案例汇编/M-科学研究与技术服务业/M02-消防维保企业数字化项目取舍.md": 198,
+    "下册-案例汇编/M-科学研究与技术服务业/M03-建筑消防设计AI辅助出图.md": 200,
+    "下册-案例汇编/Q-卫生与社会工作/README.md": 201,
+    "下册-案例汇编/Q-卫生与社会工作/Q01-药师AI助手试用.md": 202,
+    "下册-案例汇编/R-文化体育与娱乐业/README.md": 204,
+    "下册-案例汇编/R-文化体育与娱乐业/R01-瑜伽与普拉提门店AI应用.md": 205,
+    "下册-案例汇编/R-文化体育与娱乐业/R02-程前朋友圈AI选题探索.md": 207,
+    "下册-案例汇编/S-公共管理社会保障与社会组织/README.md": 209,
+    "下册-案例汇编/S-公共管理社会保障与社会组织/S01-浙江车管所AI网办审核.md": 210,
+    "下册-案例汇编/待定-行业待核/README.md": 212,
+    "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md": 213,
+    "下册-案例汇编/待定-行业待核/待02-汽车零部件供应链经营分析.md": 215,
+    "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md": 217,
+    "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md": 219,
+    "下册-案例汇编/待定-行业待核/待05-小裂变AI研发与GEO服务探索.md": 221,
+    "下册-案例汇编/附编A-跨行业方法/README.md": 223,
+    "下册-案例汇编/附编A-跨行业方法/附A01-工作切片与SOP共创方法.md": 224,
+    "下册-案例汇编/附编B-原型与演示参考/README.md": 225,
+    "下册-案例汇编/附编B-原型与演示参考/附B01-跨境装载规划原型探索.md": 226,
+    "下册-案例汇编/附编B-原型与演示参考/附B02-企业AI中台与数据权限.md": 228,
+    "下册-案例汇编/附编B-原型与演示参考/附B03-WorkBuddy与企业微信待办生成演示.md": 229,
+    "下册-案例汇编/附编B-原型与演示参考/附B04-工厂图纸与设备看板演示.md": 230,
+    "下册-案例汇编/附编B-原型与演示参考/附B05-CRM与ERP商机建档演示.md": 231,
+    "下册-案例汇编/附编B-原型与演示参考/附B06-ERP核价单更正演示.md": 232,
+    "下册-案例汇编/附编B-原型与演示参考/附B07-Odoo与飞书审批回传演示.md": 233,
+    "索引/阅读路径.md": 235,
+    "索引/资料来源说明.md": 237
+  },
+  "content_checks": {
+    "visible_text_fragments": 4300,
+    "missing": 0,
+    "empty_body_pages": [],
+    "illustration_text_fragments": 607,
+    "missing_illustration_text": 0
+  },
+  "figure_count": 16,
+  "links": {
+    "internal": 371,
+    "repository": 9,
+    "external": 144
+  },
+  "pdf_link_annotations": {
+    "external": 198,
+    "internal": 581
   },
   "case_entries": 62,
   "scene_fragments": 101,
-  "content_checks": {
-    "visible_text_fragments": 4178,
-    "missing": 0,
-    "empty_body_pages": []
-  },
-  "links": {
-    "internal": 354,
-    "repository": 7,
-    "external": 111
-  },
-  "pdf_link_annotations": {
-    "external": 160,
-    "internal": 558
-  }
+  "illustrations": [
+    {
+      "path": "output/illustrations/chapter-2/01-ltc-responsibilities.png",
+      "rendered_source": "output/illustrations/chapter-2/01-ltc-responsibilities.svg",
+      "mode": "vector",
+      "sha256": "c7e9350b1bc1410abadb4b343533a8d2cfc0e042f3104b08186c8168f73808ae",
+      "assets": {
+        "output/illustrations/chapter-2/01-ltc-responsibilities.png": "b6f3f09d21a891bdec65b1298064510d847e47e970b1aab3f96369e1ed7f5c27",
+        "output/illustrations/chapter-2/01-ltc-responsibilities.svg": "c7e9350b1bc1410abadb4b343533a8d2cfc0e042f3104b08186c8168f73808ae"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/02-sales-funnel.png",
+      "rendered_source": "output/illustrations/chapter-2/02-sales-funnel.svg",
+      "mode": "vector",
+      "sha256": "664560cdaf110c8ca8451b1583734d6a8ef361144d7b9b4e369d6ac50aeccdda",
+      "assets": {
+        "output/illustrations/chapter-2/02-sales-funnel.png": "383ac38d497db745d1a51fc6ac2d7b472c6b799250d353e934e5b13f4680aa52",
+        "output/illustrations/chapter-2/02-sales-funnel.svg": "664560cdaf110c8ca8451b1583734d6a8ef361144d7b9b4e369d6ac50aeccdda"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/03-business-diagnosis.png",
+      "rendered_source": "output/illustrations/chapter-2/03-business-diagnosis.svg",
+      "mode": "vector",
+      "sha256": "abe5302630de76ff63b4baf9f404a0c679f4aa653ab6d889bb6983994727f214",
+      "assets": {
+        "output/illustrations/chapter-2/03-business-diagnosis.png": "125ac7ed519b9fb569222a23094888b84c74608cdb897054ebb570443a77c28b",
+        "output/illustrations/chapter-2/03-business-diagnosis.svg": "abe5302630de76ff63b4baf9f404a0c679f4aa653ab6d889bb6983994727f214"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/04-conversion-cohort.png",
+      "rendered_source": "output/illustrations/chapter-2/04-conversion-cohort.svg",
+      "mode": "vector",
+      "sha256": "479c91e67f9878aa884ff6f957dd69a45010368e7c277d055dfb14714674514f",
+      "assets": {
+        "output/illustrations/chapter-2/04-conversion-cohort.png": "4242e7283862500c41a1c47b73890c12bdf35b5e6181753c6fbe4b6b59c6d161",
+        "output/illustrations/chapter-2/04-conversion-cohort.svg": "479c91e67f9878aa884ff6f957dd69a45010368e7c277d055dfb14714674514f"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/05-task-allocation.png",
+      "rendered_source": "output/illustrations/chapter-2/05-task-allocation.svg",
+      "mode": "vector",
+      "sha256": "55fb685b7a075a7c159e11d3466506a56bd073c9270ce6e28656cca129fde3fe",
+      "assets": {
+        "output/illustrations/chapter-2/05-task-allocation.png": "1ab350dc686e681fbd70f6dbb53f5e8f8dedad9d6196610c56e40fb417d468cc",
+        "output/illustrations/chapter-2/05-task-allocation.svg": "55fb685b7a075a7c159e11d3466506a56bd073c9270ce6e28656cca129fde3fe"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/06-goal-1-leads.png",
+      "rendered_source": "output/illustrations/chapter-2/06-goal-1-leads.svg",
+      "mode": "vector",
+      "sha256": "2691a53da610945205e04e55fe8f91b725baa7f4174a1680bf86ba855ecef88b",
+      "assets": {
+        "output/illustrations/chapter-2/06-goal-1-leads.png": "82362f54e4594a1f9e9e4a81dddfccce8292b80b675e47a904a627aec5d8d1d7",
+        "output/illustrations/chapter-2/06-goal-1-leads.svg": "2691a53da610945205e04e55fe8f91b725baa7f4174a1680bf86ba855ecef88b"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/07-goal-2-opportunities.png",
+      "rendered_source": "output/illustrations/chapter-2/07-goal-2-opportunities.svg",
+      "mode": "vector",
+      "sha256": "fc9bc7e72810cdc12b69d3cea86cb20ef0ba3edd0cc8f035eeecf6f147b0d05e",
+      "assets": {
+        "output/illustrations/chapter-2/07-goal-2-opportunities.png": "e0176c4950940be3fae7831b877305f31185c173219d0a3bba387fc6e4465ce0",
+        "output/illustrations/chapter-2/07-goal-2-opportunities.svg": "fc9bc7e72810cdc12b69d3cea86cb20ef0ba3edd0cc8f035eeecf6f147b0d05e"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/08-goal-3-requirements.png",
+      "rendered_source": "output/illustrations/chapter-2/08-goal-3-requirements.svg",
+      "mode": "vector",
+      "sha256": "1da09ef78cb4acbfd0df4ffcf8c3124e0a34fe689d1e334d2676aa1250496c7e",
+      "assets": {
+        "output/illustrations/chapter-2/08-goal-3-requirements.png": "8cae851aa97ac832dda8ea079584bc9a91e52780f48b0fc68131d3f83e3bac53",
+        "output/illustrations/chapter-2/08-goal-3-requirements.svg": "1da09ef78cb4acbfd0df4ffcf8c3124e0a34fe689d1e334d2676aa1250496c7e"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/09-goal-4-proposals.png",
+      "rendered_source": "output/illustrations/chapter-2/09-goal-4-proposals.svg",
+      "mode": "vector",
+      "sha256": "9d1afee0cd56dd8d8dae1deb6683f95914e20e6354f9127d372d0ac5713582b1",
+      "assets": {
+        "output/illustrations/chapter-2/09-goal-4-proposals.png": "7db088cd8f68e11b943f4801bafa7c3409ed7883698ab04a20f15af25bdeec28",
+        "output/illustrations/chapter-2/09-goal-4-proposals.svg": "9d1afee0cd56dd8d8dae1deb6683f95914e20e6354f9127d372d0ac5713582b1"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/10-goal-5-execution.png",
+      "rendered_source": "output/illustrations/chapter-2/10-goal-5-execution.svg",
+      "mode": "vector",
+      "sha256": "cfa5c21aa1fd5ea64cb4179e2488aac977de8f8b675f333c658d687f7161c5b3",
+      "assets": {
+        "output/illustrations/chapter-2/10-goal-5-execution.png": "a0ecbdf1748e1de4350492a6a919bbd6ae34737a40fb1df25f4c800b0c261ff4",
+        "output/illustrations/chapter-2/10-goal-5-execution.svg": "cfa5c21aa1fd5ea64cb4179e2488aac977de8f8b675f333c658d687f7161c5b3"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/11-goal-6-contracts.png",
+      "rendered_source": "output/illustrations/chapter-2/11-goal-6-contracts.svg",
+      "mode": "vector",
+      "sha256": "7875b8f9bde11aaa367c959604e7f04aa9bd210df69d4fe6f2f5dcbb87c00720",
+      "assets": {
+        "output/illustrations/chapter-2/11-goal-6-contracts.png": "0111299925fdd92632aec244aa6fa38df80894c8b3949932235b7bb1e96f79e6",
+        "output/illustrations/chapter-2/11-goal-6-contracts.svg": "7875b8f9bde11aaa367c959604e7f04aa9bd210df69d4fe6f2f5dcbb87c00720"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/12-qualified-delivery-cost.png",
+      "rendered_source": "output/illustrations/chapter-2/12-qualified-delivery-cost.svg",
+      "mode": "vector",
+      "sha256": "52ee930b01acdfdd0bf470a331db9d08c67db022e50612ada032f277783c36d6",
+      "assets": {
+        "output/illustrations/chapter-2/12-qualified-delivery-cost.png": "7976481bf74940e1047fe1aa5cde36c4231b4885f2e495a0c6056423e0c51d6d",
+        "output/illustrations/chapter-2/12-qualified-delivery-cost.svg": "52ee930b01acdfdd0bf470a331db9d08c67db022e50612ada032f277783c36d6"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/13-capability-reuse.png",
+      "rendered_source": "output/illustrations/chapter-2/13-capability-reuse.svg",
+      "mode": "vector",
+      "sha256": "a25299fe7c3f05016112c9225a1832c417a12770f0d5d81bf351145f41a310d8",
+      "assets": {
+        "output/illustrations/chapter-2/13-capability-reuse.png": "a5df821a2a06d8a055e979333b4b6d8bf0990d02a9cccfae66be6cbaf33632f9",
+        "output/illustrations/chapter-2/13-capability-reuse.svg": "a25299fe7c3f05016112c9225a1832c417a12770f0d5d81bf351145f41a310d8"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/14-other-roles-a.png",
+      "rendered_source": "output/illustrations/chapter-2/14-other-roles-a.svg",
+      "mode": "vector",
+      "sha256": "bbc3a6e4fcd7d42e8f77cdb57505f05b3900b6bc616ab2ce3fb117f01e05e3dd",
+      "assets": {
+        "output/illustrations/chapter-2/14-other-roles-a.png": "54b29ac2a01a6f6cdba7e45396889354c582bbf0fb7adc01209da3eee0ca5585",
+        "output/illustrations/chapter-2/14-other-roles-a.svg": "bbc3a6e4fcd7d42e8f77cdb57505f05b3900b6bc616ab2ce3fb117f01e05e3dd"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/15-other-roles-b.png",
+      "rendered_source": "output/illustrations/chapter-2/15-other-roles-b.svg",
+      "mode": "vector",
+      "sha256": "771f19ffe80ef8509ea2135e067065734b1025d660450c301135048be6b749d6",
+      "assets": {
+        "output/illustrations/chapter-2/15-other-roles-b.png": "e31777b059f095899cb2fdf0f454f28407eec592cc9481e71e35266dba9297cf",
+        "output/illustrations/chapter-2/15-other-roles-b.svg": "771f19ffe80ef8509ea2135e067065734b1025d660450c301135048be6b749d6"
+      }
+    },
+    {
+      "path": "output/illustrations/chapter-2/16-chapter-summary.png",
+      "rendered_source": "output/illustrations/chapter-2/16-chapter-summary.svg",
+      "mode": "vector",
+      "sha256": "04ea0f67cb9cf47cb82769119c52864400b2b272502457287291ae127132cf20",
+      "assets": {
+        "output/illustrations/chapter-2/16-chapter-summary.png": "60861e9a679059e8ea90f5b102413093b5a333ac41411da665be6d295ffd4420",
+        "output/illustrations/chapter-2/16-chapter-summary.svg": "04ea0f67cb9cf47cb82769119c52864400b2b272502457287291ae127132cf20"
+      }
+    }
+  ]
 }

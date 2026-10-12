@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1630" height="1214" viewBox="85 50 1630 1214" role="img" aria-labelledby="title description">
+<title id="title">业务举措落实为可分工与可验收的任务</title>
+<desc id="description">业务目标经具体举措落实为任务；人、AI与程序按能力、业务要求和权限分别承担工作，验收与结果责任由人落实。</desc>
+<rect x="85" y="50" width="1630" height="1214" fill="#FFFFFF"/>
+<rect x="104" y="76" width="44" height="5" rx="0" fill="#1D4ED8"/>
+<text x="165" y="88" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">图 2-05  /  业务举措</text>
+<text x="1696" y="88" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="end">一芥智能研究院</text>
+<text x="104" y="177" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="58" font-weight="500" data-text-style="title" text-anchor="start">业务举措落实为可分工与可验收的任务</text>
+<text x="104" y="237" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="300" data-text-style="subtitle" text-anchor="start">先明确业务做法，再安排人、AI与程序承担具体工作。</text>
+<rect x="104" y="338" width="480" height="150" rx="10" fill="#EAF1FF"/>
+<text x="132" y="398" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">明确业务目标</text>
+<text x="132" y="450" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">改善线索、转化或交付表现。</text>
+<polyline points="602,411 641,411" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="641,411 630.0,404.95 630.0,417.05" fill="#1D4ED8"/>
+<rect x="660" y="338" width="480" height="150" rx="10" fill="#EAF1FF"/>
+<text x="688" y="398" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">展开业务举措</text>
+<text x="688" y="450" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">明确业务上应完成的具体工作。</text>
+<polyline points="1158,411 1197,411" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1197,411 1186.0,404.95 1186.0,417.05" fill="#1D4ED8"/>
+<rect x="1216" y="338" width="480" height="150" rx="10" fill="#EAF1FF"/>
+<text x="1244" y="398" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">写清任务约定</text>
+<text x="1244" y="450" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">落实输入、产物、执行与验收。</text>
+<polyline points="900,506 900,559" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="900,559 906.05,548.0 893.95,548.0" fill="#1D4ED8"/>
+<polyline points="104,610 584,610" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="104" y="678" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">人承担判断与责任</text>
+<text x="104" y="760" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">确定目标与判断标准。</text>
+<text x="104" y="826" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">核实事实与业务承诺。</text>
+<text x="104" y="892" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">验收产物并处理异常。</text>
+<polyline points="660,610 1140,610" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="660" y="678" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">AI辅助开放性处理</text>
+<text x="660" y="760" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">检索与整理有效资料。</text>
+<text x="660" y="826" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">起草方案与任务草稿。</text>
+<text x="660" y="892" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">提示缺项与前后矛盾。</text>
+<polyline points="1216,610 1696,610" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1216" y="678" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">程序执行明确规则</text>
+<text x="1216" y="760" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">按固定规则计算与比对。</text>
+<text x="1216" y="826" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">保存字段、版本与状态。</text>
+<text x="1216" y="892" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">落实授权内的登记与提醒。</text>
+<rect x="104" y="997" width="1592" height="92" rx="10" fill="#F3F6FC"/>
+<text x="900" y="1055" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="middle">资料、权限与验收条件支撑任务分工，结果责任由相应负责人承担。</text>
+<polyline points="104,1152 1696,1152" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="104" y="1202" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">分工需结合真实任务与当前可用能力验证，并按企业授权安排执行。</text>
+<text x="104" y="1243" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院</text>
+</svg>

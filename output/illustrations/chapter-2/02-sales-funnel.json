@@ -1,0 +1,103 @@
+{
+  "slug": "02-sales-funnel",
+  "title": "销售漏斗与六项业务改进目标",
+  "description": "目标1扩大有效线索基数，目标2改善线索转商机，目标3至6共同支持商机转合同。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 12,
+    "title": 1,
+    "subtitle": 1,
+    "subheading": 3,
+    "display": 3,
+    "dense_body": 2,
+    "heading": 3,
+    "body": 6
+  },
+  "visible_text": [
+    "图 2-02  /  业务分析",
+    "一芥智能研究院",
+    "销售漏斗与六项业务改进目标",
+    "有效线索基数与阶段转化率共同影响签约合同数量。",
+    "潜在线索",
+    "初筛与核实",
+    "有效线索",
+    "符合目标客群与可跟进标准",
+    "线索转商机率",
+    "商机",
+    "需求与推进条件经过验证",
+    "商机转合同率",
+    "签约合同",
+    "目标 1",
+    "持续增加有效线索",
+    "线索开发与筛选持续扩大有效基数。",
+    "目标 2",
+    "提高线索转为商机的比例",
+    "客户了解与机会验证支持阶段转化。",
+    "目标 3—6",
+    "共同支持商机转合同",
+    "03",
+    "准确确认需求与沟通输出",
+    "04",
+    "完善方案与商务准备",
+    "05",
+    "落实会后执行与验收",
+    "06",
+    "推进客户决策与签约",
+    "漏斗宽度仅作示意。六项改进的效果需结合企业基线与持续记录验证。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

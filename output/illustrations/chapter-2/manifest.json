@@ -1,0 +1,1802 @@
+{
+  "chapter": "第二章 最小执行单位：从人到任务",
+  "date": "2026-10-12",
+  "layout_dimensions": [
+    1800,
+    1280
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "figure_count": 16,
+  "figures": [
+    {
+      "slug": "01-ltc-responsibilities",
+      "title": "销售职责落实为可以交接的任务产物",
+      "description": "LTC三类管理过程与本章整理的六类销售任务相对应，销售牵头客户沟通和业务推进，各参与方按企业分工承担责任。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 16,
+        "title": 1,
+        "subtitle": 1,
+        "subheading": 3,
+        "step": 6,
+        "narrow_heading": 6,
+        "dense_body": 36,
+        "body": 1
+      },
+      "visible_text": [
+        "图 2-01  /  岗位现状",
+        "一芥智能研究院",
+        "销售职责落实为可以交接的任务产物",
+        "LTC的三类管理过程帮助梳理职责，销售任务落实为可以交接的产物。",
+        "管理线索",
+        "管理机会点",
+        "管理合同执行",
+        "01",
+        "开发与验证",
+        "完成的工作",
+        "获取并整理线索",
+        "核实、去重与初筛",
+        "分配并落实跟进",
+        "主要交接产物",
+        "有效线索记录",
+        "跟进责任人",
+        "下一步安排",
+        "02",
+        "培育与判断",
+        "完成的工作",
+        "了解业务与需求",
+        "核实采购与决策",
+        "判断推进条件",
+        "主要交接产物",
+        "经验证的商机",
+        "客户背景与需求",
+        "待确认条件",
+        "03",
+        "需求与方案",
+        "完成的工作",
+        "准备并开展沟通",
+        "确认沟通输出",
+        "协同形成方案",
+        "主要交接产物",
+        "已确认需求",
+        "方案与审核意见",
+        "会后任务",
+        "04",
+        "商务与签约",
+        "完成的工作",
+        "准备报价与材料",
+        "组织内部评审",
+        "推进决策与签约",
+        "主要交接产物",
+        "经批准的承诺",
+        "签约合同",
+        "履约及付款条件",
+        "05",
+        "履约与验收",
+        "完成的工作",
+        "交接合同与需求",
+        "跟进变更与问题",
+        "协调客户验收",
+        "主要交接产物",
+        "交接记录",
+        "变更确认",
+        "验收与未决事项",
+        "06",
+        "回款与客户经营",
+        "完成的工作",
+        "协同开票与收款",
+        "处理客户问题",
+        "复盘并发现机会",
+        "主要交接产物",
+        "回款进展",
+        "问题处理记录",
+        "复盘与新增线索",
+        "销售牵头客户沟通与业务推进，技术、交付、法务和财务按企业分工参与。",
+        "LTC三段来自华为公开资料。六类任务为本章应用整理，具体权限和责任由企业明确。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "02-sales-funnel",
+      "title": "销售漏斗与六项业务改进目标",
+      "description": "目标1扩大有效线索基数，目标2改善线索转商机，目标3至6共同支持商机转合同。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 12,
+        "title": 1,
+        "subtitle": 1,
+        "subheading": 3,
+        "display": 3,
+        "dense_body": 2,
+        "heading": 3,
+        "body": 6
+      },
+      "visible_text": [
+        "图 2-02  /  业务分析",
+        "一芥智能研究院",
+        "销售漏斗与六项业务改进目标",
+        "有效线索基数与阶段转化率共同影响签约合同数量。",
+        "潜在线索",
+        "初筛与核实",
+        "有效线索",
+        "符合目标客群与可跟进标准",
+        "线索转商机率",
+        "商机",
+        "需求与推进条件经过验证",
+        "商机转合同率",
+        "签约合同",
+        "目标 1",
+        "持续增加有效线索",
+        "线索开发与筛选持续扩大有效基数。",
+        "目标 2",
+        "提高线索转为商机的比例",
+        "客户了解与机会验证支持阶段转化。",
+        "目标 3—6",
+        "共同支持商机转合同",
+        "03",
+        "准确确认需求与沟通输出",
+        "04",
+        "完善方案与商务准备",
+        "05",
+        "落实会后执行与验收",
+        "06",
+        "推进客户决策与签约",
+        "漏斗宽度仅作示意。六项改进的效果需结合企业基线与持续记录验证。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "03-business-diagnosis",
+      "title": "业务差距经核实后形成改进目标",
+      "description": "诊断从待核实差距出发，经访谈、记录与真实任务核实工作问题，再选定目标、明确观察安排并跟踪结果。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 5,
+        "title": 1,
+        "subtitle": 1,
+        "step": 5,
+        "heading": 5,
+        "body": 19,
+        "subheading": 1,
+        "dense_body": 1
+      },
+      "visible_text": [
+        "图 2-03  /  业务分析",
+        "一芥智能研究院",
+        "业务差距经核实后形成改进目标",
+        "业务负责人从表现差距出发，核实工作问题并持续跟踪改进。",
+        "01",
+        "识别表现差距",
+        "检查有效线索基数",
+        "比较阶段转化情况",
+        "定位流失与停滞",
+        "02",
+        "核实工作问题",
+        "访谈业务人员",
+        "核对记录与真实任务",
+        "确认具体工作问题",
+        "03",
+        "选定重点目标",
+        "选择本轮改进重点",
+        "明确期望业务表现",
+        "对应六项改进目标",
+        "04",
+        "明确观察安排",
+        "登记当前值与目标值",
+        "固定观察期与口径",
+        "指定记录责任人",
+        "05",
+        "跟踪业务结果",
+        "持续记录线索与转化",
+        "核对丢单或延迟原因",
+        "复核本轮改进表现",
+        "跟踪结果用于复核与调整改进重点。",
+        "过程变化需要继续接受业务结果检验",
+        "整理工时 · 记录质量 · 方案返工",
+        "用于解释工作过程的变化。",
+        "继续检验",
+        "有效线索 · 阶段转化 · 签约合同",
+        "用于判断业务表现的改善。",
+        "差距需通过访谈、记录与真实任务核实。过程指标的改善仍需通过业务结果检验。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "04-conversion-cohort",
+      "title": "阶段转化率按同一批入段对象计算",
+      "description": "固定同一批进入本段的对象，跟踪至约定截止日。已经推进的本批对象构成分子，全部本批入段对象构成分母。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 5,
+        "title": 1,
+        "subtitle": 1,
+        "body": 6,
+        "heading": 5,
+        "dense_body": 1,
+        "subheading": 4
+      },
+      "visible_text": [
+        "图 2-04  /  业务分析",
+        "一芥智能研究院",
+        "阶段转化率按同一批入段对象计算",
+        "进入本段的全部对象构成分母，截止日前推进的本批对象构成分子。",
+        "按约定入段时间窗口选取",
+        "跟踪至约定截止日",
+        "固定入段批次",
+        "同一批进入本段的对象",
+        "本批全部对象始终构成分母。",
+        "线索与商机分别明确统计口径。",
+        "已进入下一段",
+        "计入分子，同时保留在分母。",
+        "未进入下一段，仍在本段",
+        "保留在分母，继续跟踪后续进展。",
+        "未进入下一段，已经退出",
+        "保留在分母，记录退出原因。",
+        "阶段转化率",
+        "=",
+        "该批截至截止日已进入下一段的对象数",
+        "该批进入本段的对象总数",
+        "× 100%",
+        "未推进和退出对象均保留在分母中。仍停留的对象尚不能判定为最终失败。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "05-task-allocation",
+      "title": "业务举措落实为可分工与可验收的任务",
+      "description": "业务目标经具体举措落实为任务；人、AI与程序按能力、业务要求和权限分别承担工作，验收与结果责任由人落实。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 4,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 6,
+        "body": 13
+      },
+      "visible_text": [
+        "图 2-05  /  业务举措",
+        "一芥智能研究院",
+        "业务举措落实为可分工与可验收的任务",
+        "先明确业务做法，再安排人、AI与程序承担具体工作。",
+        "明确业务目标",
+        "改善线索、转化或交付表现。",
+        "展开业务举措",
+        "明确业务上应完成的具体工作。",
+        "写清任务约定",
+        "落实输入、产物、执行与验收。",
+        "人承担判断与责任",
+        "确定目标与判断标准。",
+        "核实事实与业务承诺。",
+        "验收产物并处理异常。",
+        "AI辅助开放性处理",
+        "检索与整理有效资料。",
+        "起草方案与任务草稿。",
+        "提示缺项与前后矛盾。",
+        "程序执行明确规则",
+        "按固定规则计算与比对。",
+        "保存字段、版本与状态。",
+        "落实授权内的登记与提醒。",
+        "资料、权限与验收条件支撑任务分工，结果责任由相应负责人承担。",
+        "分工需结合真实任务与当前可用能力验证，并按企业授权安排执行。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "06-goal-1-leads",
+      "title": "目标1：持续增加可以跟进的有效线索",
+      "description": "目标客群与有效标准、线索来源复核、核实去重与跟进承接共同扩大有效线索基数。AI辅助整理与检索，程序记录与去重，销售确认有效性并落实联系。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 10,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 3,
+        "body": 12,
+        "subheading": 4,
+        "dense_body": 6
+      },
+      "visible_text": [
+        "图 2-06  /  业务举措",
+        "一芥智能研究院",
+        "目标1：持续增加可以跟进的有效线索",
+        "客群标准、来源复核与跟进承接共同扩大有效线索基数。",
+        "举措 1.1",
+        "明确客群与有效标准",
+        "结合产品能力与历史成交",
+        "核实客户需求与筛选依据",
+        "负责人决定本轮资源取舍",
+        "本步交付",
+        "目标客群与有效线索标准",
+        "举措 1.2",
+        "拓展并复核线索来源",
+        "经营渠道、转介绍与活动",
+        "复核候选客户及来源依据",
+        "观察后续跟进与推进情况",
+        "本步交付",
+        "带来源依据的候选清单",
+        "举措 1.3",
+        "核实、去重并分配跟进",
+        "核实客户与联系人可用性",
+        "去重后明确责任人与下一步",
+        "确认接手、联系并记录回应",
+        "本步交付",
+        "可跟进的有效线索记录",
+        "候选名单经核实并落实承接后，才能形成可以跟进的有效线索。",
+        "AI辅助整理与检索",
+        "归纳历史客户、检索候选资料",
+        "整理核实问题与跟进建议",
+        "程序保留记录与状态",
+        "按客户标识去重并记录分配",
+        "按可靠规则发起或周期检查",
+        "销售承担有效性与跟进责任",
+        "核实客户、确认接手并联系",
+        "接管异常，调整标准与来源",
+        "候选名单数量不直接计为有效线索。更新频率需与核实和跟进能力匹配。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "07-goal-2-opportunities",
+      "title": "目标2：提高线索转为商机的比例",
+      "description": "查清客户现状与历史、验证需求及推进条件，再由负责人决定推进、培育或退出。AI整理依据和信息缺口，评分与标签不能直接判定商机成立。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 7,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 6,
+        "body": 16,
+        "subheading": 2
+      },
+      "visible_text": [
+        "图 2-07  /  业务举措",
+        "一芥智能研究院",
+        "目标2：提高线索转为商机的比例",
+        "客户背景与推进条件经过验证后，负责人决定线索的后续投入。",
+        "举措 2.1",
+        "查清客户现状与历史",
+        "整理业务、联系人与历史承诺",
+        "AI形成带来源与时间的简报",
+        "销售补背景并核实资料可信度",
+        "举措 2.2",
+        "验证需求与推进条件",
+        "确认需求、角色与采购安排",
+        "AI准备问题并提示信息缺口",
+        "销售向客户核实真实意愿",
+        "举措 2.3",
+        "决定推进、培育与退出",
+        "保留事实、判断与待确认项",
+        "评分与建议供业务人员参考",
+        "负责人决定状态与资源投入",
+        "验证结果进入三类处置，并保留判断依据与后续安排。",
+        "推进为商机",
+        "需求与推进条件达到商机标准",
+        "记录验证依据与下一步安排",
+        "继续培育",
+        "写明尚未满足的条件",
+        "记录复查理由与日期",
+        "退出跟进",
+        "记录停止投入的依据",
+        "重要客户例外由负责人说明",
+        "记录维护支持持续复核",
+        "程序按日期提醒复查；关键条件变化后，再提出重新验证的任务。",
+        "意向标签与自动评分供销售继续验证。商机成立与资源投入仍由业务负责人判断。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "08-goal-3-requirements",
+      "title": "目标3：形成可以交接的沟通输出",
+      "description": "沟通前明确目的与待确认事项，沟通后保留事实、需求、分歧和承诺，再核对结论并确认接收者。AI形成整理稿，双方核对后才形成可交接的输出。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 10,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 3,
+        "body": 21,
+        "subheading": 2
+      },
+      "visible_text": [
+        "图 2-08  /  业务举措",
+        "一芥智能研究院",
+        "目标3：形成可以交接的沟通输出",
+        "原始记录经过核对与确认后，进入方案准备和会后执行。",
+        "举措 3.1",
+        "确定本轮沟通重点",
+        "结合客户背景与上次结论",
+        "明确待确认事项与沟通目的",
+        "安排议程、人员与会前材料",
+        "本步交付",
+        "议程与会前资料",
+        "举措 3.2",
+        "保留沟通依据",
+        "分类保存事实、需求与分歧",
+        "保留承诺并关联原始记录",
+        "区分客户原话与内部判断",
+        "本步交付",
+        "可回到原始依据的整理稿",
+        "举措 3.3",
+        "核对结论与输出",
+        "客户及内部人员核对原意",
+        "区分已达成一致与待确认",
+        "保留更正版本与接收关系",
+        "本步交付",
+        "经确认的输出与接收者",
+        "AI辅助准备、分类与查漏",
+        "从已有资料准备简报与待确认项",
+        "对照议程与原始记录整理输出",
+        "标出更正影响的材料与使用者",
+        "确认结果进入下一位使用者",
+        "已确认需求",
+        "方案人员",
+        "待确认事项",
+        "指定责任人",
+        "后续动作",
+        "执行与验收人",
+        "重要结论仍须双方核对。录音需经授权，录音、逐字稿和确认后的输出各有用途。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "09-goal-4-proposals",
+      "title": "目标4：提高方案与商务准备质量",
+      "description": "从已确认需求展开可比较方案，核实能力、报价、交期与承诺，再准备回应客户待决事项的汇报。AI辅助找依据和起草，程序完成计算与字段比对，有权限的人批准对外承诺。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 10,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 3,
+        "body": 12,
+        "subheading": 4,
+        "dense_body": 6
+      },
+      "visible_text": [
+        "图 2-09  /  业务举措",
+        "一芥智能研究院",
+        "目标4：提高方案与商务准备质量",
+        "已确认需求展开为可比较方案，商务承诺经批准后进入对外材料。",
+        "举措 4.1",
+        "展开可比较的解决思路",
+        "写清范围、假设与可选做法",
+        "核实产品适配与实现可行性",
+        "共同复核收益假设和取舍",
+        "本步交付",
+        "带依据的备选方案",
+        "举措 4.2",
+        "审核能力与商务承诺",
+        "核实能力、价格依据与交期",
+        "技术、商务及授权人员审核",
+        "保存可追溯的批准记录",
+        "本步交付",
+        "经批准的报价与承诺",
+        "举措 4.3",
+        "回应客户的决策事项",
+        "从已审核方案提炼汇报重点",
+        "准备证据、演示与答问清单",
+        "根据客户反馈更新相关部分",
+        "本步交付",
+        "支持客户决策的汇报材料",
+        "计算、整理与专业审核形成分工，审核依据和批准责任持续可追溯。",
+        "AI查依据与起草材料",
+        "整理备选思路与材料缺项",
+        "复用经验证的方法与模板",
+        "程序计算与字段比对",
+        "按固定公式计算并核对字段",
+        "检查产品、价格与版本有效性",
+        "专业人员审核并批准承诺",
+        "判断适配、可行性与收益假设",
+        "授权人员批准报价、交期与承诺",
+        "需求或商务条件变化后，受影响内容需复核或重审，并撤回过期版本。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "10-goal-5-execution",
+      "title": "目标5：让会后任务完成并通过验收",
+      "description": "把已确认决定落实为有输入、产物、执行者、期限和验收人的任务。执行者确认接手，完成并提交产物，验收通过后再关闭和交接，阻塞与退回分别进入协调和修改。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 11,
+        "title": 1,
+        "subtitle": 1,
+        "subheading": 7,
+        "dense_body": 5,
+        "heading": 3,
+        "body": 12
+      },
+      "visible_text": [
+        "图 2-10  /  业务举措",
+        "一芥智能研究院",
+        "目标5：让会后任务完成并通过验收",
+        "任务从已确认决定出发，经过实际执行与验收后进入下一步。",
+        "任务交接先写清五项约定",
+        "输入依据",
+        "使用已确认记录",
+        "交付产物",
+        "写明可检查的输出",
+        "执行者",
+        "确认接手与资源",
+        "完成期限",
+        "约定合理时间",
+        "验收人",
+        "依据标准判断可用",
+        "举措 5.1",
+        "将决定落实为任务",
+        "AI从确认记录提炼任务草稿",
+        "相关人员补齐约定并接手",
+        "表格或任务模块登记与去重",
+        "本步交付",
+        "已承接的任务记录",
+        "举措 5.2",
+        "执行任务并处理阻塞",
+        "执行者完成工作并提交产物",
+        "AI在验证范围内参与执行",
+        "缺资料、决策与资源及时协调",
+        "本步交付",
+        "产物与阻塞处理记录",
+        "举措 5.3",
+        "验收产物并更新状态",
+        "验收人按标准判断可用性",
+        "AI按清单辅助检查并留意见",
+        "通过后关闭并交给下游",
+        "本步交付",
+        "通过验收的产物与交接",
+        "退回意见进入修改",
+        "完成状态以实际产物与验收为依据；负责人协调逾期、阻塞与长期未验收事项。",
+        "自动执行需先验证真实任务，明确授权、失败记录、停止条件与人工接管。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "11-goal-6-contracts",
+      "title": "目标6：围绕决策障碍推进至签约",
+      "description": "从客户反馈确认真实决策障碍，由销售主导沟通与谈判，再确认签约条件并完成履约交接。AI辅助汇集依据、准备选项与核对版本，承诺和签署按授权办理。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 10,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 3,
+        "body": 18,
+        "subheading": 1
+      },
+      "visible_text": [
+        "图 2-11  /  业务举措",
+        "一芥智能研究院",
+        "目标6：围绕决策障碍推进至签约",
+        "客户反馈用于核实决策障碍，销售主导协商并落实签约与交接。",
+        "举措 6.1",
+        "识别当前决策障碍",
+        "查明角色、证据与采购步骤",
+        "区分事实、推测与待核实项",
+        "AI汇集记录，销售向客户确认",
+        "本步交付",
+        "有依据的待决事项",
+        "举措 6.2",
+        "沟通与谈判解决障碍",
+        "选择合适对象、时机与选项",
+        "AI辅助准备草稿与谈判材料",
+        "销售协商利益并争取决定",
+        "本步交付",
+        "客户决定与后续行动",
+        "举措 6.3",
+        "确认条件并完成签约",
+        "比对条款、批准版本与未决项",
+        "授权人员批准承诺并签署",
+        "工具提示事项并准备交接清单",
+        "本步交付",
+        "签约合同与履约交接安排",
+        "签约后，销售与交付团队共同确认履约交接",
+        "客户需求",
+        "合同承诺",
+        "履约条件",
+        "付款条件",
+        "交付团队确认接收",
+        "可靠的审批与签署状态支持发起交接，接收确认后进入实际履约。",
+        "对外发送、预约、谈判、承诺与签署按企业授权办理，生成材料和提醒不代替授权。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "12-qualified-delivery-cost",
+      "title": "合格交付成本按完整投入比较",
+      "description": "前后比较固定交付范围、质量和合格数量，分别计入资料准备、建设、调用、核验、返工及配套投入。数量变化时比较单位合格交付成本。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 4,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 3,
+        "body": 4,
+        "subheading": 10
+      },
+      "visible_text": [
+        "图 2-12  /  成本与效果",
+        "一芥智能研究院",
+        "合格交付成本按完整投入比较",
+        "前后对照固定交付范围、质量与合格数量，数量变化时比较单位成本。",
+        "原有做法",
+        "计入完成同等交付的全部投入。",
+        "保留采用情况与实际交付记录。",
+        "改进做法",
+        "计入完成同等交付的全部投入。",
+        "保留采用情况与实际交付记录。",
+        "前后两侧均纳入适用投入",
+        "资料准备与维护",
+        "必要建设与配套",
+        "工具调用与运行",
+        "人工核验与校准",
+        "退回修改与返工",
+        "协调与异常处置",
+        "单位合格交付成本",
+        "=",
+        "前后各自的总投入",
+        "对应的合格交付数量",
+        "节时、响应改善与经营结果分别记录。单次生成价格不能代表完整交付成本。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "13-capability-reuse",
+      "title": "个人工作方法经复用验证形成组织能力",
+      "description": "依据2.4客户拜访准备的说明性例子，展示资深销售与智能体完成客户简报，保留查找核实、退回与修改依据，整理为Skill、工具或任务示例，由其他销售提供新客户资料复用，经过检验后纳入日常使用并持续维护。三种载体按任务需要组合。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 10,
+        "title": 1,
+        "subtitle": 1,
+        "step": 5,
+        "subheading": 9,
+        "dense_body": 18,
+        "heading": 1
+      },
+      "visible_text": [
+        "图 2-13  /  能力沉淀",
+        "一芥智能研究院",
+        "个人工作方法经复用验证形成组织能力",
+        "资深销售的客户简报经验经过提炼、他人复用和验证，形成团队可以调用的方法。",
+        "01",
+        "完成真实任务",
+        "资深销售与智能体协作",
+        "准备客户拜访",
+        "修改简报直到可用",
+        "02",
+        "保留判断过程",
+        "关键判断关联具体产物",
+        "查找与核实依据",
+        "退回理由与修改示例",
+        "03",
+        "提炼复用方法",
+        "区分共性与本次条件",
+        "明确输入与处理步骤",
+        "保留判断和验收要求",
+        "04",
+        "他人复用验证",
+        "其他销售处理新客户",
+        "提供本次客户资料",
+        "调用方法并核对结果",
+        "05",
+        "进入组织日常",
+        "维护人根据反馈修订",
+        "记录仍需请教的问题",
+        "经验证的方法持续使用",
+        "反馈用于修订方法",
+        "客户简报经验按复用需要整理为三种载体",
+        "三种形式可以组合使用，分别保留任务方法、稳定操作和完整处理过程。",
+        "Skill：查找与核实方法",
+        "适用任务、资料输入和简报步骤",
+        "信息核实与交付检查要求",
+        "工具：稳定查询与操作",
+        "按任务需要封装查询或校验",
+        "使用者提供本次客户与资料",
+        "任务示例：对话与修改过程",
+        "保存必要背景、对话和修改依据",
+        "关联最终可用的客户简报",
+        "业务负责人确认适用范围、资料与工具条件、产物标准及人工判断事项。",
+        "维护人记录使用反馈、修订方法并维护版本，让后续任务继续使用有效做法。",
+        "示意依据本节客户拜访准备例子整理；以其他人在新任务中形成的合格产物检验复用成效。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "14-other-roles-a",
+      "title": "技术辅助围绕岗位业务目标展开",
+      "description": "电商、客服、市场和法务分别从业务目标出发确定辅助任务，人员核实依据、完成专业判断并承担交付责任。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 16,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 4,
+        "dense_body": 24
+      },
+      "visible_text": [
+        "图 2-14  /  其他岗位",
+        "一芥智能研究院",
+        "技术辅助围绕岗位业务目标展开",
+        "先确定业务目标，再明确技术辅助范围与人的责任。",
+        "电商运营与设计创意",
+        "业务目标",
+        "合格素材及时上架，实物投入",
+        "用于更值得经营的款式。",
+        "技术辅助",
+        "生成款式展示、商品图与视频；",
+        "店铺工具处理已有规则的操作。",
+        "人的责任",
+        "核对商品细节与实物，决定生产；",
+        "审核返工并确认素材可以上架。",
+        "客服与私域社群",
+        "业务目标",
+        "客户问题及时解决，需要继续",
+        "跟进的人得到合适回应。",
+        "技术辅助",
+        "常见问答有明确依据时辅助接待，",
+        "整理对话与待跟进事项。",
+        "人的责任",
+        "维护政策与知识，承接升级问题，",
+        "处理复杂投诉、授权与例外承诺。",
+        "市场与自媒体内容",
+        "业务目标",
+        "内容服务明确受众与业务目的，",
+        "减少无效制作和投放。",
+        "技术辅助",
+        "整理资料、选题和脚本初稿，",
+        "工具辅助剪辑与投放操作。",
+        "人的责任",
+        "判断证据、审美与可拍性，",
+        "决定创意、预算并验收交付。",
+        "法务与专业服务",
+        "业务目标",
+        "及时交付有依据、可复核的",
+        "专业成果。",
+        "技术辅助",
+        "整理材料、检索依据与起草，",
+        "计算和出图使用专业工具。",
+        "人的责任",
+        "补齐事实、核实依据及适用性，",
+        "完成专业判断与对外交付。",
+        "技术辅助需要可信资料、明确标准与人工承接。各岗位的采用范围仍需用真实任务验证。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "15-other-roles-b",
+      "title": "任务条件决定技术辅助的具体范围",
+      "description": "采购、研发、HR和经营分别确定资料、规则、环境与责任，技术辅助需要通过真实任务验证，业务结果由负责人持续检验。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 16,
+        "title": 1,
+        "subtitle": 1,
+        "heading": 4,
+        "dense_body": 24
+      },
+      "visible_text": [
+        "图 2-15  /  其他岗位",
+        "一芥智能研究院",
+        "任务条件决定技术辅助的具体范围",
+        "资料、规则和系统条件进入任务设计，专业判断与结果责任落实到人。",
+        "采购、仓储与供应链",
+        "业务目标",
+        "减少错买、重复采购、缺货",
+        "和单据等待。",
+        "技术辅助",
+        "从单据或照片提取、查找信息，",
+        "程序按确定公式计算补货。",
+        "人的责任",
+        "核实库存、字段与实际需求，",
+        "决定采购并处理收货和结算异常。",
+        "产品、研发与数据分析",
+        "业务目标",
+        "更快交付可用功能或可信分析，",
+        "接通测试、发布和后续维护。",
+        "技术辅助",
+        "辅助文档、编码、测试准备与取数，",
+        "以可用需求、数据和环境为前提。",
+        "人的责任",
+        "审查实现与口径，验证缺陷，",
+        "承担发布维护和结果解释。",
+        "HR与培训",
+        "业务目标",
+        "提高人岗匹配与上岗胜任，",
+        "将知识、练习、反馈与考核接通。",
+        "技术辅助",
+        "整理访谈与岗位知识，",
+        "辅助答疑、陪练与学习反馈。",
+        "人的责任",
+        "核实知识和评分尺度，",
+        "决定录用、上岗资格并持续纠错。",
+        "老板与经营",
+        "业务目标",
+        "及早识别经营问题，",
+        "让决定落实为有效行动。",
+        "技术辅助",
+        "汇集资料、追问缺项、提示异常，",
+        "系统保存来源、任务和处理状态。",
+        "人的责任",
+        "统一经营口径，判断原因和取舍，",
+        "协调资源、承担承诺并复盘结果。",
+        "辅助范围由任务、资料与权限条件决定。技术产出仍需被采用，并接受业务结果检验。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    },
+    {
+      "slug": "16-chapter-summary",
+      "title": "岗位改造以合格交付和业务结果接受检验",
+      "description": "从岗位和流程梳理业务差距，确定业务举措、任务分工与验收安排，随后检查合格交付、完整投入与业务结果。完整投入除以合格交付数量形成单位合格交付成本。",
+      "dimensions": [
+        1630,
+        1214
+      ],
+      "outer_margin_px": 16,
+      "typography": {
+        "font_family": "Heiti SC",
+        "font_index": 1,
+        "fonts": {
+          "body": "/System/Library/Fonts/STHeiti Light.ttc",
+          "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+        },
+        "styles": {
+          "title": {
+            "size_px": 58,
+            "weight": 500
+          },
+          "subtitle": {
+            "size_px": 30,
+            "weight": 300
+          },
+          "heading": {
+            "size_px": 36,
+            "weight": 500
+          },
+          "subheading": {
+            "size_px": 32,
+            "weight": 500
+          },
+          "narrow_heading": {
+            "size_px": 28,
+            "weight": 500
+          },
+          "body": {
+            "size_px": 28,
+            "weight": 300
+          },
+          "dense_body": {
+            "size_px": 26,
+            "weight": 300
+          },
+          "label": {
+            "size_px": 24,
+            "weight": 300
+          },
+          "step": {
+            "size_px": 40,
+            "weight": 500
+          },
+          "display": {
+            "size_px": 48,
+            "weight": 500
+          }
+        }
+      },
+      "text_style_counts": {
+        "label": 4,
+        "title": 1,
+        "subtitle": 1,
+        "step": 4,
+        "heading": 7,
+        "body": 22,
+        "subheading": 2
+      },
+      "visible_text": [
+        "图 2-16  /  本章小结",
+        "一芥智能研究院",
+        "岗位改造以合格交付和业务结果接受检验",
+        "从具体职责出发，逐项检验改造能否形成合格交付并改善业务。",
+        "01",
+        "岗位与流程",
+        "梳理岗位职责",
+        "展开工作过程",
+        "明确交接产物",
+        "02",
+        "业务差距",
+        "核实表现差距",
+        "选择改进目标",
+        "固定基线与口径",
+        "03",
+        "业务举措",
+        "明确业务做法",
+        "判断技术作用",
+        "核对资料与系统条件",
+        "04",
+        "任务分工与验收",
+        "安排人、AI与程序",
+        "落实执行与接手",
+        "明确标准与验收人",
+        "改造的评价同时检查交付、投入与业务结果",
+        "合格交付",
+        "产物通过验收并可被采用",
+        "固定同等交付范围与质量",
+        "记录实际通过验收的数量",
+        "完整投入",
+        "归集完成交付的全部投入",
+        "准备、调用、核验与返工",
+        "必要的建设、运行及维护",
+        "业务结果",
+        "持续观察成果的实际作用",
+        "记录成果是否实际采用",
+        "跟踪线索、转化、签约与回款",
+        "全部投入 ÷ 合格交付数量 = 单位合格交付成本",
+        "业务改善按约定口径持续验证。",
+        "成本比较需固定交付范围、质量与数量。节时、响应改善与经营结果分别核实。",
+        "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+      ]
+    }
+  ],
+  "dimensions": [
+    1630,
+    1214
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "08-goal-3-requirements",
+  "title": "目标3：形成可以交接的沟通输出",
+  "description": "沟通前明确目的与待确认事项，沟通后保留事实、需求、分歧和承诺，再核对结论并确认接收者。AI形成整理稿，双方核对后才形成可交接的输出。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 10,
+    "title": 1,
+    "subtitle": 1,
+    "heading": 3,
+    "body": 21,
+    "subheading": 2
+  },
+  "visible_text": [
+    "图 2-08  /  业务举措",
+    "一芥智能研究院",
+    "目标3：形成可以交接的沟通输出",
+    "原始记录经过核对与确认后，进入方案准备和会后执行。",
+    "举措 3.1",
+    "确定本轮沟通重点",
+    "结合客户背景与上次结论",
+    "明确待确认事项与沟通目的",
+    "安排议程、人员与会前材料",
+    "本步交付",
+    "议程与会前资料",
+    "举措 3.2",
+    "保留沟通依据",
+    "分类保存事实、需求与分歧",
+    "保留承诺并关联原始记录",
+    "区分客户原话与内部判断",
+    "本步交付",
+    "可回到原始依据的整理稿",
+    "举措 3.3",
+    "核对结论与输出",
+    "客户及内部人员核对原意",
+    "区分已达成一致与待确认",
+    "保留更正版本与接收关系",
+    "本步交付",
+    "经确认的输出与接收者",
+    "AI辅助准备、分类与查漏",
+    "从已有资料准备简报与待确认项",
+    "对照议程与原始记录整理输出",
+    "标出更正影响的材料与使用者",
+    "确认结果进入下一位使用者",
+    "已确认需求",
+    "方案人员",
+    "待确认事项",
+    "指定责任人",
+    "后续动作",
+    "执行与验收人",
+    "重要结论仍须双方核对。录音需经授权，录音、逐字稿和确认后的输出各有用途。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

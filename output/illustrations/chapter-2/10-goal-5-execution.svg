@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1630" height="1214" viewBox="85 50 1630 1214" role="img" aria-labelledby="title description">
+<title id="title">目标5：让会后任务完成并通过验收</title>
+<desc id="description">把已确认决定落实为有输入、产物、执行者、期限和验收人的任务。执行者确认接手，完成并提交产物，验收通过后再关闭和交接，阻塞与退回分别进入协调和修改。</desc>
+<rect x="85" y="50" width="1630" height="1214" fill="#FFFFFF"/>
+<rect x="104" y="76" width="44" height="5" rx="0" fill="#1D4ED8"/>
+<text x="165" y="88" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">图 2-10  /  业务举措</text>
+<text x="1696" y="88" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="end">一芥智能研究院</text>
+<text x="104" y="177" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="58" font-weight="500" data-text-style="title" text-anchor="start">目标5：让会后任务完成并通过验收</text>
+<text x="104" y="237" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="300" data-text-style="subtitle" text-anchor="start">任务从已确认决定出发，经过实际执行与验收后进入下一步。</text>
+<rect x="104" y="327" width="1592" height="190" rx="12" fill="#F3F6FC"/>
+<text x="137" y="376" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">任务交接先写清五项约定</text>
+<text x="137" y="434" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">输入依据</text>
+<text x="137" y="480" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">使用已确认记录</text>
+<polyline points="427,402 427,489" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="449" y="434" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">交付产物</text>
+<text x="449" y="480" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">写明可检查的输出</text>
+<polyline points="739,402 739,489" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="761" y="434" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">执行者</text>
+<text x="761" y="480" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">确认接手与资源</text>
+<polyline points="1051,402 1051,489" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1073" y="434" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">完成期限</text>
+<text x="1073" y="480" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">约定合理时间</text>
+<polyline points="1363,402 1363,489" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1385" y="434" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">验收人</text>
+<text x="1385" y="480" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="300" data-text-style="dense_body" text-anchor="start">依据标准判断可用</text>
+<rect x="104" y="555" width="500" height="420" rx="12" fill="#F3F6FC"/>
+<text x="136" y="604" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">举措 5.1</text>
+<text x="136" y="665" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">将决定落实为任务</text>
+<text x="136" y="731" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">AI从确认记录提炼任务草稿</text>
+<text x="136" y="776" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">相关人员补齐约定并接手</text>
+<text x="136" y="821" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">表格或任务模块登记与去重</text>
+<polyline points="136,854 572,854" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="136" y="897" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">本步交付</text>
+<text x="136" y="943" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">已承接的任务记录</text>
+<polyline points="614,753 640,753" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="640,753 631.0,748.05 631.0,757.95" fill="#1D4ED8"/>
+<rect x="650" y="555" width="500" height="420" rx="12" fill="#F3F6FC"/>
+<text x="682" y="604" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">举措 5.2</text>
+<text x="682" y="665" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">执行任务并处理阻塞</text>
+<text x="682" y="731" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">执行者完成工作并提交产物</text>
+<text x="682" y="776" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">AI在验证范围内参与执行</text>
+<text x="682" y="821" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">缺资料、决策与资源及时协调</text>
+<polyline points="682,854 1118,854" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="682" y="897" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">本步交付</text>
+<text x="682" y="943" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">产物与阻塞处理记录</text>
+<polyline points="1160,753 1186,753" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1186,753 1177.0,748.05 1177.0,757.95" fill="#1D4ED8"/>
+<rect x="1196" y="555" width="500" height="420" rx="12" fill="#EAF1FF"/>
+<text x="1228" y="604" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">举措 5.3</text>
+<text x="1228" y="665" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">验收产物并更新状态</text>
+<text x="1228" y="731" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">验收人按标准判断可用性</text>
+<text x="1228" y="776" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">AI按清单辅助检查并留意见</text>
+<text x="1228" y="821" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">通过后关闭并交给下游</text>
+<polyline points="1228,854 1664,854" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1228" y="897" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">本步交付</text>
+<text x="1228" y="943" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">通过验收的产物与交接</text>
+<polyline points="1446,990 1446,1038 900,1038" fill="none" stroke="#53657F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="900,1038 900,990" fill="none" stroke="#53657F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="900,990 895.05,999.0 904.95,999.0" fill="#53657F"/>
+<rect x="1008" y="1014" width="344" height="45" rx="0" fill="#FFFFFF"/>
+<text x="1180" y="1045" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="middle">退回意见进入修改</text>
+<text x="104" y="1104" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">完成状态以实际产物与验收为依据；负责人协调逾期、阻塞与长期未验收事项。</text>
+<polyline points="104,1152 1696,1152" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="104" y="1202" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">自动执行需先验证真实任务，明确授权、失败记录、停止条件与人工接管。</text>
+<text x="104" y="1243" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院</text>
+</svg>

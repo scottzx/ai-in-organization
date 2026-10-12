@@ -1,0 +1,103 @@
+{
+  "slug": "07-goal-2-opportunities",
+  "title": "目标2：提高线索转为商机的比例",
+  "description": "查清客户现状与历史、验证需求及推进条件，再由负责人决定推进、培育或退出。AI整理依据和信息缺口，评分与标签不能直接判定商机成立。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 7,
+    "title": 1,
+    "subtitle": 1,
+    "heading": 6,
+    "body": 16,
+    "subheading": 2
+  },
+  "visible_text": [
+    "图 2-07  /  业务举措",
+    "一芥智能研究院",
+    "目标2：提高线索转为商机的比例",
+    "客户背景与推进条件经过验证后，负责人决定线索的后续投入。",
+    "举措 2.1",
+    "查清客户现状与历史",
+    "整理业务、联系人与历史承诺",
+    "AI形成带来源与时间的简报",
+    "销售补背景并核实资料可信度",
+    "举措 2.2",
+    "验证需求与推进条件",
+    "确认需求、角色与采购安排",
+    "AI准备问题并提示信息缺口",
+    "销售向客户核实真实意愿",
+    "举措 2.3",
+    "决定推进、培育与退出",
+    "保留事实、判断与待确认项",
+    "评分与建议供业务人员参考",
+    "负责人决定状态与资源投入",
+    "验证结果进入三类处置，并保留判断依据与后续安排。",
+    "推进为商机",
+    "需求与推进条件达到商机标准",
+    "记录验证依据与下一步安排",
+    "继续培育",
+    "写明尚未满足的条件",
+    "记录复查理由与日期",
+    "退出跟进",
+    "记录停止投入的依据",
+    "重要客户例外由负责人说明",
+    "记录维护支持持续复核",
+    "程序按日期提醒复查；关键条件变化后，再提出重新验证的任务。",
+    "意向标签与自动评分供销售继续验证。商机成立与资源投入仍由业务负责人判断。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1630" height="1214" viewBox="85 50 1630 1214" role="img" aria-labelledby="title description">
+<title id="title">合格交付成本按完整投入比较</title>
+<desc id="description">前后比较固定交付范围、质量和合格数量，分别计入资料准备、建设、调用、核验、返工及配套投入。数量变化时比较单位合格交付成本。</desc>
+<rect x="85" y="50" width="1630" height="1214" fill="#FFFFFF"/>
+<rect x="104" y="76" width="44" height="5" rx="0" fill="#1D4ED8"/>
+<text x="165" y="88" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">图 2-12  /  成本与效果</text>
+<text x="1696" y="88" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="end">一芥智能研究院</text>
+<text x="104" y="177" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="58" font-weight="500" data-text-style="title" text-anchor="start">合格交付成本按完整投入比较</text>
+<text x="104" y="237" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="30" font-weight="300" data-text-style="subtitle" text-anchor="start">前后对照固定交付范围、质量与合格数量，数量变化时比较单位成本。</text>
+<rect x="104" y="330" width="743" height="194" rx="10" fill="#EAF1FF"/>
+<text x="139" y="396" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">原有做法</text>
+<text x="139" y="452" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">计入完成同等交付的全部投入。</text>
+<text x="139" y="495" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">保留采用情况与实际交付记录。</text>
+<rect x="953" y="330" width="743" height="194" rx="10" fill="#EAF1FF"/>
+<text x="988" y="396" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">改进做法</text>
+<text x="988" y="452" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">计入完成同等交付的全部投入。</text>
+<text x="988" y="495" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="28" font-weight="300" data-text-style="body" text-anchor="start">保留采用情况与实际交付记录。</text>
+<polyline points="475,541 475,572 1325,572 1325,541" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="900" y="631" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">前后两侧均纳入适用投入</text>
+<rect x="104" y="682" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="344" y="736" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">资料准备与维护</text>
+<rect x="660" y="682" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="900" y="736" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">必要建设与配套</text>
+<rect x="1216" y="682" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="1456" y="736" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">工具调用与运行</text>
+<rect x="104" y="793" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="344" y="847" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">人工核验与校准</text>
+<rect x="660" y="793" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="900" y="847" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">退回修改与返工</text>
+<rect x="1216" y="793" width="480" height="83" rx="8" fill="#F3F6FC"/>
+<text x="1456" y="847" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">协调与异常处置</text>
+<text x="104" y="1048" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="36" font-weight="500" data-text-style="heading" text-anchor="start">单位合格交付成本</text>
+<text x="439" y="1048" fill="#1D4ED8" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="start">=</text>
+<text x="1098" y="1008" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">前后各自的总投入</text>
+<polyline points="588,1030 1608,1030" fill="none" stroke="#17365D" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1098" y="1077" fill="#17365D" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" data-text-style="subheading" text-anchor="middle">对应的合格交付数量</text>
+<polyline points="104,1152 1696,1152" fill="none" stroke="#B8C9E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="104" y="1202" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">节时、响应改善与经营结果分别记录。单次生成价格不能代表完整交付成本。</text>
+<text x="104" y="1243" fill="#53657F" font-family="Heiti SC, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="300" data-text-style="label" text-anchor="start">《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院</text>
+</svg>

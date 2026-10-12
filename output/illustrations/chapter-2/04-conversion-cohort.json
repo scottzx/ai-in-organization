@@ -1,0 +1,94 @@
+{
+  "slug": "04-conversion-cohort",
+  "title": "阶段转化率按同一批入段对象计算",
+  "description": "固定同一批进入本段的对象，跟踪至约定截止日。已经推进的本批对象构成分子，全部本批入段对象构成分母。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 5,
+    "title": 1,
+    "subtitle": 1,
+    "body": 6,
+    "heading": 5,
+    "dense_body": 1,
+    "subheading": 4
+  },
+  "visible_text": [
+    "图 2-04  /  业务分析",
+    "一芥智能研究院",
+    "阶段转化率按同一批入段对象计算",
+    "进入本段的全部对象构成分母，截止日前推进的本批对象构成分子。",
+    "按约定入段时间窗口选取",
+    "跟踪至约定截止日",
+    "固定入段批次",
+    "同一批进入本段的对象",
+    "本批全部对象始终构成分母。",
+    "线索与商机分别明确统计口径。",
+    "已进入下一段",
+    "计入分子，同时保留在分母。",
+    "未进入下一段，仍在本段",
+    "保留在分母，继续跟踪后续进展。",
+    "未进入下一段，已经退出",
+    "保留在分母，记录退出原因。",
+    "阶段转化率",
+    "=",
+    "该批截至截止日已进入下一段的对象数",
+    "该批进入本段的对象总数",
+    "× 100%",
+    "未推进和退出对象均保留在分母中。仍停留的对象尚不能判定为最终失败。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

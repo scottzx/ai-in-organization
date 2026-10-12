@@ -1,0 +1,110 @@
+{
+  "slug": "03-business-diagnosis",
+  "title": "业务差距经核实后形成改进目标",
+  "description": "诊断从待核实差距出发，经访谈、记录与真实任务核实工作问题，再选定目标、明确观察安排并跟踪结果。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 5,
+    "title": 1,
+    "subtitle": 1,
+    "step": 5,
+    "heading": 5,
+    "body": 19,
+    "subheading": 1,
+    "dense_body": 1
+  },
+  "visible_text": [
+    "图 2-03  /  业务分析",
+    "一芥智能研究院",
+    "业务差距经核实后形成改进目标",
+    "业务负责人从表现差距出发，核实工作问题并持续跟踪改进。",
+    "01",
+    "识别表现差距",
+    "检查有效线索基数",
+    "比较阶段转化情况",
+    "定位流失与停滞",
+    "02",
+    "核实工作问题",
+    "访谈业务人员",
+    "核对记录与真实任务",
+    "确认具体工作问题",
+    "03",
+    "选定重点目标",
+    "选择本轮改进重点",
+    "明确期望业务表现",
+    "对应六项改进目标",
+    "04",
+    "明确观察安排",
+    "登记当前值与目标值",
+    "固定观察期与口径",
+    "指定记录责任人",
+    "05",
+    "跟踪业务结果",
+    "持续记录线索与转化",
+    "核对丢单或延迟原因",
+    "复核本轮改进表现",
+    "跟踪结果用于复核与调整改进重点。",
+    "过程变化需要继续接受业务结果检验",
+    "整理工时 · 记录质量 · 方案返工",
+    "用于解释工作过程的变化。",
+    "继续检验",
+    "有效线索 · 阶段转化 · 签约合同",
+    "用于判断业务表现的改善。",
+    "差距需通过访谈、记录与真实任务核实。过程指标的改善仍需通过业务结果检验。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "05-task-allocation",
+  "title": "业务举措落实为可分工与可验收的任务",
+  "description": "业务目标经具体举措落实为任务；人、AI与程序按能力、业务要求和权限分别承担工作，验收与结果责任由人落实。",
+  "dimensions": [
+    1630,
+    1214
+  ],
+  "outer_margin_px": 16,
+  "typography": {
+    "font_family": "Heiti SC",
+    "font_index": 1,
+    "fonts": {
+      "body": "/System/Library/Fonts/STHeiti Light.ttc",
+      "heading": "/System/Library/Fonts/STHeiti Medium.ttc"
+    },
+    "styles": {
+      "title": {
+        "size_px": 58,
+        "weight": 500
+      },
+      "subtitle": {
+        "size_px": 30,
+        "weight": 300
+      },
+      "heading": {
+        "size_px": 36,
+        "weight": 500
+      },
+      "subheading": {
+        "size_px": 32,
+        "weight": 500
+      },
+      "narrow_heading": {
+        "size_px": 28,
+        "weight": 500
+      },
+      "body": {
+        "size_px": 28,
+        "weight": 300
+      },
+      "dense_body": {
+        "size_px": 26,
+        "weight": 300
+      },
+      "label": {
+        "size_px": 24,
+        "weight": 300
+      },
+      "step": {
+        "size_px": 40,
+        "weight": 500
+      },
+      "display": {
+        "size_px": 48,
+        "weight": 500
+      }
+    }
+  },
+  "text_style_counts": {
+    "label": 4,
+    "title": 1,
+    "subtitle": 1,
+    "heading": 6,
+    "body": 13
+  },
+  "visible_text": [
+    "图 2-05  /  业务举措",
+    "一芥智能研究院",
+    "业务举措落实为可分工与可验收的任务",
+    "先明确业务做法，再安排人、AI与程序承担具体工作。",
+    "明确业务目标",
+    "改善线索、转化或交付表现。",
+    "展开业务举措",
+    "明确业务上应完成的具体工作。",
+    "写清任务约定",
+    "落实输入、产物、执行与验收。",
+    "人承担判断与责任",
+    "确定目标与判断标准。",
+    "核实事实与业务承诺。",
+    "验收产物并处理异常。",
+    "AI辅助开放性处理",
+    "检索与整理有效资料。",
+    "起草方案与任务草稿。",
+    "提示缺项与前后矛盾。",
+    "程序执行明确规则",
+    "按固定规则计算与比对。",
+    "保存字段、版本与状态。",
+    "落实授权内的登记与提醒。",
+    "资料、权限与验收条件支撑任务分工，结果责任由相应负责人承担。",
+    "分工需结合真实任务与当前可用能力验证，并按企业授权安排执行。",
+    "《企业数智化转型研究报告》 · 第二章 · 一芥智能研究院"
+  ]
+}
