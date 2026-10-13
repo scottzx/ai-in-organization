@@ -1,6 +1,6 @@
 # 附录A　证据台账
 
-一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v8.0｜2026年10月12日修订
+一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v8.0｜2026年10月13日修订
 
 [上册索引](README.md) · [附录B 案例引用索引](附录B-案例引用索引.md) · [结语](06-结语.md)
 
@@ -28,19 +28,25 @@
 | --- | --- | --- | --- |
 | 执行能力有哪些新选择，怎样判断其业务价值 | 第一章 | P1 | 1 |
 | 怎样从岗位现状与业务目标推导具体举措 | 第二章 | P2 P3 | 59 |
-| 单点改善为何未必传到整体，怎样改善交接、审核与组织上下文 | 第三章 | P7 P9 P10 P4 P5 P6 | 53 |
+| 怎样沿端到端流程找到受阻环节，调整跨部门协同与结果责任 | 第三章 | P7 P9 P10 P4 P5 P6 | 53 |
 | 怎样让经验进入下一轮工作，在正向收益下加快业务周转 | 第四章 | P12 P13 P11 P14 P15 P8 P5 | 48 |
 | 怎样选择范围、验证试点并决定下一步投入 | 第五章 | P16 P17 P5 | 40 |
 
 ---
 
-第三章另用三项补充资料：
+第二章借MTL展开市场与客户开发任务，六项目标与十八项举措属于应用设计。相关案例分别覆盖客户资料准备、内容制作、接待或交接等局部工作，尚未形成销售实际接手有效线索的同口径完整结果。
 
-- 3.1采用[DORA 2024报告](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf)（v.2024.3，第32页图7、第39页图10及第40页），观察个人生产率与团队交付表现的调查相关性。
-- 3.1采用Dillon等《[Shifting Work Patterns with Generative AI](https://www.nber.org/papers/w33795)》2025年11月修订稿摘要，观察随机现场实验中的个人节时与任务安排变化。
-- 3.1.5采用美国SEC《[Knight Capital行政令](https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf)》印刷第6—7页第15—19段呈现传统自动化事故，3.2.5分析完成状态与异常未传达的问题。
+第三章的MTL、IPD、LTC与ITR流程框架用于组织分析。下册案例主要呈现局部环节，尚缺完整市场到线索、产品开发、履约回款及客户问题解决的同口径结果，不能据53个相关案例认定四条流程已获得验证。
 
-三项不计入下册入口及上表的命题数量。
+第三章另用补充资料：
+
+- 3.2采用[DORA 2024报告](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf)（v.2024.3，第32页图7、第39页图10及第40页），观察个人生产率与团队交付表现的调查相关性。
+- 3.2采用Dillon等《[Shifting Work Patterns with Generative AI](https://www.nber.org/papers/w33795)》2025年11月修订稿摘要，观察随机现场实验中的个人节时与任务安排变化。
+- 3.2.3采用美国SEC《[Knight Capital行政令](https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf)》印刷第6—7页第15—19段分析传统自动化事故中的完成状态与异常未传达问题。
+
+- 3.1与3.4的流程框架参照华为《[ICT基础设施业务2024年可持续发展报告](https://www-file.huawei.com/admin/asset/v1/pro/view/8a5be0e3b04643aaa297b0d1cf235e4f.pdf#page=7)》第7页的三条主业务流程，以及《[网络安全立场文件](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)》印刷第33页的业务运作层；3.5参照华为《[公司治理](https://www.huawei.com/cn/corporate-governance)》中的流程责任说明。链接与定位来自本次修订讨论，本次访问受限未重新审读，具体范围见[资料来源说明](../索引/资料来源说明.md#第三章补充资料)。
+
+上述六项不计入下册入口及上表的命题数量，流程应用与组织改造设计为编者分析。
 
 第四章另用三项补充资料：
 

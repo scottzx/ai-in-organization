@@ -40,8 +40,8 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/pdf'
 TITLE = '企业数智化转型研究报告'
-DATE = '2026年10月12日'
-VERSION = '上册 v8.0 / 下册 v7.0'
+DATE = '2026年10月13日'
+VERSION = '上册 v8.0 / 下册 v8.0'
 PDF = OUT / (TITLE + '-上下册合订本.pdf')
 NAVY = colors.HexColor('#17365D')
 BLUE = colors.HexColor('#1D4ED8')
@@ -741,7 +741,7 @@ class Builder:
         self.story.extend([Anchor(['publication-note']),p])
         self.current=ROOT/'README.md'
         for text in [
-            f'本合订本根据{DATE}保存的稿件编排。上册为初稿 v8.0，下册为初稿 v7.0；两册沿用各自内容版本。',
+            f'本合订本根据{DATE}保存的稿件编排。上册与下册均为初稿 v8.0；下册案例按统一的七节结构重写。',
             '本书由一芥智能研究院编写，面向企业经营者、业务负责人和参与组织改造的实践者。上册按问题论证，下册按行业、公司或项目集中呈现案例。',
             '收录上册导论、五章正文、结语与四个附录，下册62个案例入口及行业索引，另附问题阅读路径与资料来源说明。草稿箱、思维导图编辑数据和历史更新记录不编入正文。',
             '正文区分来源事实、一芥分析与待验证判断，并保留使用阶段、效果口径和来源定位。本书未对案例效果作独立审计或完整事实核验。',
@@ -757,7 +757,7 @@ class Builder:
         self.story.append(toc)
         for title,sub,name,part_paths in [
             ('上册  研究报告','从智力服务到精益经营  |  初稿 v8.0','upper-volume',upper_paths),
-            ('下册  企业AI案例汇编','62个阅读入口 · 101个场景与证据片段  |  初稿 v7.0','lower-volume',lower_paths),
+            ('下册  企业AI案例汇编','62个阅读入口 · 101个场景与证据片段  |  初稿 v8.0','lower-volume',lower_paths),
             ('阅读与来源索引','按研究问题阅读 · 资料来源说明','source-indexes',extra_paths),
         ]:
             self.add_part(title,sub,name)
@@ -838,7 +838,7 @@ class Builder:
                     destination=a.get('/Dest') or a.get('/A',{}).get('/D')
                     if destination and destination[0].idnum not in page_ids:
                         raise ValueError('PDF internal link points outside this document')
-        manifest={'title':TITLE,'manuscript_date':'2026-10-12','versions':{'upper':'v8.0','lower':'v7.0'},
+        manifest={'title':TITLE,'manuscript_date':'2026-10-13','versions':{'upper':'v8.0','lower':'v8.0'},
                   'pdf':pdf.name,'pages':len(reader.pages),'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
                   'source_files':self.sources,'section_pages':doc.section_pages,
                   'body_start_page':doc.body_start_page,

@@ -3,6 +3,7 @@
 from pathlib import Path
 from collections import Counter
 from urllib.parse import unquote, urlsplit
+import importlib.util
 import json
 import re
 import sys
@@ -59,6 +60,12 @@ for path, text in texts.items():
 
 index = json.loads((ROOT/'索引/案例来源索引.json').read_text())
 entries = index['entries']
+structure_spec = importlib.util.spec_from_file_location('case_structure', ROOT/'scripts/check-case-structure.py')
+structure_checker = importlib.util.module_from_spec(structure_spec)
+structure_spec.loader.exec_module(structure_checker)
+for e in entries:
+    result = structure_checker.check_case(ROOT/e['path'])
+    errors.extend(e['id']+': '+message for message in result['errors'])
 ids = [e['id'] for e in entries]
 if len(ids) != len(set(ids)):
     errors.append('Duplicate publication case ID')
@@ -77,8 +84,13 @@ for e in entries:
         fragments.append(f['source_fragment_id'])
         if f['anchor'] not in anchors.get(path, set()):
             errors.append(e['id']+': missing scene '+f['source_fragment_id'])
-        if '**阶段：'+f['stage_label']+'。** '+f['scope'] not in text:
-            errors.append(e['id']+': scene stage/scope mismatch '+f['source_fragment_id'])
+        scene_anchor = re.search(r'<a\s+id="'+re.escape(f['anchor'])+r'"\s*>', text)
+        if scene_anchor:
+            following_anchor = re.search(r'<a\s+id="[^"]+"\s*>', text[scene_anchor.end():])
+            end = scene_anchor.end()+following_anchor.start() if following_anchor else len(text)
+            scene_text = text[scene_anchor.end():end]
+            if '**阶段：'+f['stage_label']+'。**' not in scene_text:
+                errors.append(e['id']+': scene stage mismatch '+f['source_fragment_id'])
         if not f['sources']:
             errors.append(e['id']+': no source '+f['source_fragment_id'])
         for s in f['sources']:
@@ -104,6 +116,6 @@ if len(chapters)!=6:
     errors.append('Expected five upper-volume chapters plus 结语')
 if len((ROOT/'LICENSE').read_text().splitlines()) < 15:
     errors.append('Missing complete license')
-summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'case_documents':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
+summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'case_documents':len(entries),'case_structures_checked':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
 print(json.dumps(summary, ensure_ascii=False, indent=2))
 sys.exit(0 if not errors else 1)
