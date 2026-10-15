@@ -1,0 +1,83 @@
+{
+  "title": "快：让企业更快完成有效业务循环",
+  "date": "2026-10-14",
+  "slides": 22,
+  "main_slides": 20,
+  "font": "Noto Sans CJK SC",
+  "source_revision": "713f5f442fd199235844b35b02bf806d20914d95",
+  "editable_text_boxes": 340,
+  "native_shapes": 563,
+  "raster_images": 0,
+  "sources": [
+    {
+      "id": "ch1",
+      "path": "上册-研究报告/01-智力即服务.md",
+      "sha256": "a67c5a0e7784e72d208310da197e0a09e6deb8524840782cf58be5966c4ee8c7"
+    },
+    {
+      "id": "ch2",
+      "path": "上册-研究报告/02-最小执行单位-从人到任务.md",
+      "sha256": "6f7b01bd747b001a9ccb0fc292714d6b6201a6ed42d1f0d120153a335778b957"
+    },
+    {
+      "id": "ch3",
+      "path": "上册-研究报告/03-单点提效为何未传导到整体交付.md",
+      "sha256": "2df908cff5a515ff4b7f0d9ea93b22a47b7a54a8159b05e6ad20b5ff09aab0c0"
+    },
+    {
+      "id": "ch4",
+      "path": "上册-研究报告/04-从被动响应到主动触发.md",
+      "sha256": "9860c64e9e4106e6c2efec7b9ab8ac0a4343985894ae476af9b8eeb409080b77"
+    },
+    {
+      "id": "ch5",
+      "path": "上册-研究报告/05-行动计划.md",
+      "sha256": "2a1c48e78c61d02c6424467e02f4e12945b49abb9e24e919649e5b18e34cd30a"
+    },
+    {
+      "id": "conclusion",
+      "path": "上册-研究报告/06-结语.md",
+      "sha256": "dee87afcff90602bb3f8a0f48060d4f24d86d50b2bfde812a79b62fe25449da0"
+    },
+    {
+      "id": "C11",
+      "path": "下册-案例汇编/C-制造业/C11-澳洲乳企海外动销分析.md",
+      "sha256": "cbcd6157052f20bfd48cae86d0819977b4a8915ac89684186f5722f8fb8c669e"
+    },
+    {
+      "id": "F11",
+      "path": "下册-案例汇编/F-批发与零售业/F11-温州连锁烘焙企业AI经营管理.md",
+      "sha256": "f4ad529eb31e4375824283710c4c4617c8a261381e7030e4949fd9c72fd89262"
+    },
+    {
+      "id": "I01",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I01-兴城泳装AI商拍服务.md",
+      "sha256": "e1fea6b747515cd8a4af26da84c916f7631e44d944003a77766e7a44118d2c68"
+    },
+    {
+      "id": "L01",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L01-TikTok达人运营AI协作.md",
+      "sha256": "7786228337b0540062927801453d136b7e927c164be9d76eaeacf68a78248622"
+    },
+    {
+      "id": "L05",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L05-CGL招聘AI协作.md",
+      "sha256": "d9cdb3d491a33c79c5a4c35d2b9e0a70eea1afdc5917b8c35e18f53f87d6f5d0"
+    },
+    {
+      "id": "M02",
+      "path": "下册-案例汇编/M-科学研究与技术服务业/M02-消防维保企业数字化项目取舍.md",
+      "sha256": "5d1ab8e649e96d62082c2acfcc9c5ca1746c7899c37161386efd08d7639d7f53"
+    }
+  ],
+  "pptx_sha256": "93eeb598a1ce30d795d2f16c5b537727d212f80520d872a36da7b9c6a58488fc",
+  "pdf_sha256": "5f92f449375b9da89cd85d6e0223b44d3a747daa697e54fbb828bc0e1395f342",
+  "checks": {
+    "pdf_pages": 22,
+    "text_boxes_checked": 340,
+    "missing_text_boxes": 0,
+    "empty_pages": [],
+    "text_outside_page": [],
+    "rendered_slides": 22
+  }
+}
