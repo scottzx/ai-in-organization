@@ -40,8 +40,8 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/pdf'
 TITLE = '企业数智化转型研究报告'
-MANUSCRIPT_DATE = '2026-10-16'
-DATE = '2026年10月16日'
+MANUSCRIPT_DATE = '2026-10-17'
+DATE = '2026年10月17日'
 UPPER_VERSION = 'v9.0'
 LOWER_VERSION = 'v8.0'
 VERSION = f'上册 {UPPER_VERSION} / 下册 {LOWER_VERSION}'

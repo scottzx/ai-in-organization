@@ -2,7 +2,7 @@
   "title": "企业数智化转型研究报告·案例来源索引",
   "author": "一芥智能研究院",
   "version": "v8.0",
-  "updated_on": "2026-10-13",
+  "updated_on": "2026-10-17",
   "counts": {
     "entries": 62,
     "industry_and_pending_entries": 54,
@@ -38,8 +38,10 @@
       "url": "https://www.nber.org/papers/w33795",
       "locator": "2025年11月修订版摘要",
       "source_type": "随机现场实验",
-      "used_in": "上册第三章3.2",
-      "checked_on": "2026-10-12"
+      "used_in": "历史版本第三章；2026-10-17重写后不再用于当前正文",
+      "checked_on": "2026-10-12",
+      "previous_used_in": "上册第三章3.2",
+      "usage_status": "historical"
     },
     {
       "id": "CH03-R02",
@@ -51,8 +53,10 @@
       "url": "https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf",
       "locator": "印刷6–7页，第15–19段",
       "source_type": "监管事故记录（传统自动化、非AI）",
-      "used_in": "上册第三章3.2.3",
-      "checked_on": "2026-10-12"
+      "used_in": "历史版本第三章；2026-10-17重写后不再用于当前正文",
+      "checked_on": "2026-10-12",
+      "previous_used_in": "上册第三章3.2.3",
+      "usage_status": "historical"
     },
     {
       "id": "CH03-R03",
@@ -62,7 +66,7 @@
       "url": "https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf",
       "locator": "第32页图7、第39页图10及第40页说明",
       "source_type": "软件研发年度问卷调查（统计相关性）",
-      "used_in": "上册第三章3.2",
+      "used_in": "历史版本第三章；2026-10-17重写后不再用于当前正文",
       "author_commentary": {
         "title": "Highlights from the 10th DORA report",
         "publisher": "Google Cloud Blog",
@@ -73,7 +77,9 @@
         "publication_date": "2024-10-22",
         "url": "https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report?hl=en"
       },
-      "checked_on": "2026-10-12"
+      "checked_on": "2026-10-12",
+      "previous_used_in": "上册第三章3.2",
+      "usage_status": "historical"
     },
     {
       "id": "CH04-R01",
@@ -91,8 +97,9 @@
       "url": "https://arxiv.org/abs/2310.02304v3",
       "locator": "v3摘要",
       "source_type": "代码生成实验研究（技术机制参照，非企业经营实证）",
-      "used_in": "上册第六章6.3.5的RSI方法参照（用于判断依据、方法、工具与分工的反馈改进分析）",
-      "checked_on": "2026-10-12"
+      "used_in": "上册附录C.4的RSI术语参照；2026-10-17移出第六章融合举措的论证",
+      "checked_on": "2026-10-17",
+      "previous_used_in": "上册第六章6.3.5的RSI方法参照（用于判断依据、方法、工具与分工的反馈改进分析）"
     },
     {
       "id": "CH04-R02",
@@ -101,8 +108,8 @@
       "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
       "locator": "Jidoka及Just-in-Time两节",
       "source_type": "企业官方生产方式说明（历史管理机制参照，非AI案例）",
-      "used_in": "上册第一章1.1、第三章3.2.4、第六章6.2.2的同步安排、异常与持续改善参照",
-      "checked_on": "2026-10-12"
+      "used_in": "上册第一章1.1、第六章6.2.2的执行协同、异常与持续改善参照",
+      "checked_on": "2026-10-17"
     },
     {
       "id": "CH04-R03",
@@ -111,18 +118,20 @@
       "url": "https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php",
       "locator": "Innovation in customer services节，四个业务环节的说明段落",
       "source_type": "企业官方年报（历史管理机制参照，非AI案例）",
-      "used_in": "上册第六章6.3.5的需求反馈进入产品与供给安排的历史机制参照",
-      "checked_on": "2026-10-12"
+      "used_in": "上册第六章6.3目标5举措5.1的需求反馈进入产品与供给安排的历史机制参照",
+      "checked_on": "2026-10-17"
     },
     {
       "id": "CH03-R04",
       "title": "ICT基础设施业务2024年可持续发展报告",
       "publisher": "Huawei",
       "url": "https://www-file.huawei.com/admin/asset/v1/pro/view/8a5be0e3b04643aaa297b0d1cf235e4f.pdf",
-      "locator": "第7页（用户提供定位）",
+      "locator": "印刷第7页、PDF第9页，可持续发展管理体系框架中的主业务流程",
       "source_type": "企业官方报告（IPD、LTC、ITR三条主业务流程口径；框架参照，非AI效果实证）",
-      "used_in": "上册第三章3.1、第四章流程架构参照",
-      "verification_note": "链接及定位来自2026-10-13修订讨论；本次直接访问被网络代理返回403，未重新审读原文。"
+      "used_in": "上册第三章3.1",
+      "verification_note": "2026-10-17已直接取得官方资料并审读下列定位；替代此前访问受限说明。",
+      "checked_on": "2026-10-17",
+      "source_file_sha256": "90b548f6d435c03a256931408e285b75fb056cb0862aeac0881db22c1453de18"
     },
     {
       "id": "CH03-R05",
@@ -130,21 +139,37 @@
       "publisher": "Huawei",
       "publication_date": "2019",
       "url": "https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf",
-      "locator": "印刷第33页、PDF第34页的流程架构（用户提供定位）",
+      "locator": "印刷第33页、PDF第34页的业务流程架构",
       "source_type": "企业官方立场文件（业务运作层并列MTL、IPD、LTC、ITR；框架参照，非AI效果实证）",
-      "used_in": "上册第二章2.1、第三章3.1、第四章与第五章流程架构参照",
-      "verification_note": "链接及定位来自2026-10-13修订讨论；本次直接访问被网络代理返回403，未重新审读原文。",
-      "application_note": "第二章仅借MTL名称及业务架构位置，六项目标、十八项举措与具体阶段为编者应用整理；不将架构图作为官方步骤定义。"
+      "used_in": "上册第二章2.1、第三章3.1",
+      "verification_note": "2026-10-17已直接取得官方资料并审读下列定位；替代此前访问受限说明。",
+      "application_note": "第二章仅借MTL名称及业务架构位置，六项目标、十八项举措与具体阶段为编者应用整理；不将架构图作为官方步骤定义。",
+      "checked_on": "2026-10-17",
+      "source_file_sha256": "a37df03479a984d9c1047666ca84d448c905445da3aa3298ce4ec4fe276cce1e"
     },
     {
       "id": "CH03-R06",
       "title": "公司治理",
       "publisher": "Huawei",
       "url": "https://www.huawei.com/cn/corporate-governance",
-      "locator": "流程责任说明（用户提供来源）",
+      "locator": "内部控制：控制活动、信息与沟通",
       "source_type": "企业官方治理说明（流程责任参照，非本报告方案效果实证）",
-      "used_in": "上册第三章3.5、第四章4.6、第五章5.4",
-      "verification_note": "链接及定位来自2026-10-13修订讨论；本次直接访问被网络代理返回403，未重新审读原文。"
+      "used_in": "上册第三章3.1、第四章4.4、第五章5.1的管理参照",
+      "verification_note": "2026-10-17已直接取得官方资料并审读下列定位；替代此前访问受限说明。",
+      "checked_on": "2026-10-17"
+    },
+    {
+      "id": "CH03-R07",
+      "title": "2012年年度报告",
+      "publisher": "Huawei",
+      "reporting_year": "2012",
+      "url": "https://www.huawei.com/-/media/corp2020/annual-report/pdf/2012-cn-hw_u_256091.pdf",
+      "locator": "印刷第91页、PDF第94页，管理变革；第六章另审读印刷第92—93页、PDF第95—96页，内部控制",
+      "source_type": "企业官方年报（流程目的及管理机制参照，非AI效果实证）",
+      "used_in": "上册第三章3.1、第四章4.1、第五章5.1、第六章6.2.1",
+      "checked_on": "2026-10-17",
+      "verification_note": "审读客户关系与线索到回款、客户问题管理、IPD及项目资源管理；第六章另审读流程责任人、关键控制点、职责分离和改进沟通。具体诊断、目标和人机举措为本报告应用整理。",
+      "source_file_sha256": "8484da02c2c93e29156b98b0b41cd1455d2364f8bd805206e870611e1cc04bcc"
     }
   ],
   "entries": [
