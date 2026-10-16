@@ -111,9 +111,13 @@ case_paths = {ROOT/e['path'] for e in entries}
 unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in p.parts and p.name!='README.md' and p not in case_paths]
 if unindexed:
     errors.append('Unindexed case documents: '+str(unindexed))
-chapters = list((ROOT/'上册-研究报告').glob('0[1-6]-*.md'))
-if len(chapters)!=6:
-    errors.append('Expected five upper-volume chapters plus 结语')
+upper_documents = sorted((ROOT/'上册-研究报告').glob('[0-9][0-9]-*.md'))
+expected_numbers = [f'{number:02d}' for number in range(9)]
+actual_numbers = [path.name[:2] for path in upper_documents]
+if actual_numbers != expected_numbers:
+    errors.append('Expected one upper-volume document for each number 00–08 '
+                  '(导论, seven chapters and 结语); found '+', '.join(actual_numbers))
+chapters = [path for path in upper_documents if path.name[:2] != '00']
 if len((ROOT/'LICENSE').read_text().splitlines()) < 15:
     errors.append('Missing complete license')
 summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'case_documents':len(entries),'case_structures_checked':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}

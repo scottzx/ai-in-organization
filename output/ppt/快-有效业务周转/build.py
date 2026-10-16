@@ -87,10 +87,21 @@ def rect_shape(s,kind,x,y,w,h,fill):
     return shape
 
 
+def repository_source_url(key):
+    source=DATA['sources'][key]
+    url='https://github.com/scottzx/ai-in-organization/blob/'+DATA['source_revision']+'/'+quote(source['path'])
+    return url+('#'+source['anchor'] if source.get('anchor') else '')
+
+
 def source_url(key):
     source=DATA['sources'][key]
-    if 'url' in source:return source['url']
-    return 'https://github.com/scottzx/ai-in-organization/blob/'+DATA['source_revision']+'/'+quote(source['path'])
+    return source.get('url') or repository_source_url(key)
+
+
+def source_bytes(source):
+    """Read the presentation's fixed source revision, independent of the worktree."""
+    return subprocess.run(['git','show',DATA['source_revision']+':'+source['path']],
+                          cwd=ROOT,check=True,capture_output=True).stdout
 
 
 def base(d, dark=False):
@@ -343,13 +354,13 @@ def manuscript():
     lines=['# 快：让企业更快完成有效业务循环','',
            '一芥智能研究院｜2026年10月14日｜20页主线＋2页附录｜建议20分钟','',
            '[演示PPT]('+STEM+'.pptx) · [PDF预览]('+STEM+'.pdf) · [制作说明](README.md)','',
+           '本讲稿对应2026年10月13日上册v8.0的五章及结语，来源固定为仓库版本`'+DATA['source_revision']+'`。当前上册已调整为七章及结语的v9.0；本演示保留原框架，正文中的章节编号均指v8.0。','',
            '以“快”为解决方案主线；四种快与指标表达为本次演示的管理归纳。案例沿用上册及对应下册的原有来源、阶段与口径。','']
     for d in DATA['slides']:
         lines.extend([f'## {d["number"]:02d}. {d["title"]}','',d['subtitle'],'',d['notes'],'','**依据与出处：**',''])
         for ref in d['refs']:
             src=DATA['sources'][ref]
-            local='../../../'+src['path']+('#'+src['anchor'] if src.get('anchor') else '')
-            lines.append('- ['+src['label']+']('+local+')'+('；阶段：'+src['stage'] if src.get('stage') else '')+'。')
+            lines.append('- ['+src['label']+']('+repository_source_url(ref)+')'+('；阶段：'+src['stage'] if src.get('stage') else '')+'。')
             if 'url' in src:lines.append('  原始出处：[公开来源]('+src['url']+')；定位：'+'；'.join(src['locators'])+'。')
         lines.append('')
     (HERE/'逐页讲稿.md').write_text('\n'.join(lines).rstrip()+'\n',encoding='utf-8')
@@ -411,7 +422,7 @@ def main():
     manifest={'title':DATA['title'],'date':DATA['date'],'slides':len(PRS.slides),'main_slides':20,
               'font':FONT,'source_revision':DATA['source_revision'],'editable_text_boxes':len(EXPECTED),
               'native_shapes':sum(len(s.shapes) for s in PRS.slides),'raster_images':0,
-              'sources':[{'id':key,'path':src['path'],'sha256':hashlib.sha256((ROOT/src['path']).read_bytes()).hexdigest()} for key,src in DATA['sources'].items()],
+              'sources':[{'id':key,'path':src['path'],'sha256':hashlib.sha256(source_bytes(src)).hexdigest()} for key,src in DATA['sources'].items()],
               'pptx_sha256':hashlib.sha256(pptx.read_bytes()).hexdigest()}
     if not args.no_pdf:
         subprocess.run(['soffice','--headless','--convert-to','pdf','--outdir',str(HERE),str(pptx)],check=True,capture_output=True,text=True)

@@ -1,8 +1,8 @@
 # 附录A　证据台账
 
-一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v8.0｜2026年10月13日修订
+一芥智能研究院｜《企业数智化转型研究报告》上册｜初稿 v9.0｜2026年10月16日修订
 
-[上册索引](README.md) · [附录B 案例引用索引](附录B-案例引用索引.md) · [结语](06-结语.md)
+[上册索引](README.md) · [附录B 案例引用索引](附录B-案例引用索引.md) · [结语](08-结语.md)
 
 ---
 
@@ -20,41 +20,40 @@
 
 ---
 
-## A.2 五章问题与相关证据
+## A.2 七章问题与相关证据
 
-下表按相关命题汇总材料，案例数按入口去重，表示材料与问题的关联，不是正文引用次数或方案验证次数。第一章的概念主要依据文献与机制分析，少量案例不能验证整个概念。
+下表将既有17条研究命题对应到七章问题。它说明正文从材料中分析什么，不表示相关命题已获完整验证。案例的实际引用位置与处数见[附录B](附录B-案例引用索引.md)；第一章的概念主要依据文献与机制分析。
 
-| 章节问题 | 出现于 | 相关命题 | 涉及案例数 |
+| 章节问题 | 出现于 | 相关命题 | 材料范围 |
 | --- | --- | --- | --- |
-| 执行能力有哪些新选择，怎样判断其业务价值 | 第一章 | P1 | 1 |
-| 怎样从岗位现状与业务目标推导具体举措 | 第二章 | P2 P3 | 59 |
-| 怎样沿端到端流程找到受阻环节，调整跨部门协同与结果责任 | 第三章 | P7 P9 P10 P4 P5 P6 | 53 |
-| 怎样让经验进入下一轮工作，在正向收益下加快业务周转 | 第四章 | P12 P13 P11 P14 P15 P8 P5 | 48 |
-| 怎样选择范围、验证试点并决定下一步投入 | 第五章 | P16 P17 P5 | 40 |
+| 执行能力有哪些新选择，怎样判断其业务价值 | 第一章 | P1 | 概念来源、历史分工参照及局部应用材料，不能据此验证整个概念 |
+| MTL怎样形成有效线索，怎样安排市场与客户开发任务 | 第二章 | P2 P3 | 客户资料准备、内容制作、接待与销售承接等局部任务 |
+| LTC怎样把销售承接延续到合同、履约、验收与回款 | 第三章 | P7 P9 P10 P4 P5 P6 P11 | 承诺与验收依据、订单、审批、更正和跨部门交接等局部环节 |
+| IPD怎样共同取舍需求，形成可销售、可交付的产品 | 第四章 | P2 P3 P7 P9 P13 P15 P16 | 研发辅助、交互原型、包装预检、合作场试点及产品知识采用；各自保留阶段和范围 |
+| ITR怎样组织处理客户问题，并确认实际解决结果 | 第五章 | P3 P9 P10 P11 P13 | 运行服务责任、专业承接及售后联动目标，不扩大为已验证的完整服务流程 |
+| 四条流程怎样相互促进，在正向收益下加快组织业务周转 | 第六章 | P12 P13 P11 P14 P15 P8 P5 | 方法沉淀、前道处理与专业接手、使用反馈进入工具修改等局部实践；四流程共同决定、资源安排与持续加速的整体机制为编者设计 |
+| 怎样选择范围、验证试点并决定下一步投入 | 第七章 | P16 P17 P5 | 业务取舍、采用情况及投入核算材料，不能以工具已上线替代价值判断 |
 
----
+第二至第五章分别展开MTL、LTC、IPD与ITR。四条流程围绕不同业务结果分工，存在并行协作与反馈关系；章次用于组织论述，不代表企业必须依次跑完四条流程。下册案例主要呈现局部环节，尚不足以证明四条流程的完整同口径效果。
 
-第二章借MTL展开市场与客户开发任务，六项目标与十八项举措属于应用设计。相关案例分别覆盖客户资料准备、内容制作、接待或交接等局部工作，尚未形成销售实际接手有效线索的同口径完整结果。
+第二章的六项目标与十八项举措，以及第三至第五章的业务节点、职责安排和人、AI、程序分工，属于本报告应用设计。命题清单中的相关案例数不能当作这些设计获得验证的数量。
 
-第三章的MTL、IPD、LTC与ITR流程框架用于组织分析。下册案例主要呈现局部环节，尚缺完整市场到线索、产品开发、履约回款及客户问题解决的同口径结果，不能据53个相关案例认定四条流程已获得验证。
+第三至第五章另用补充资料：
 
-第三章另用补充资料：
+- 第三章采用[DORA 2024报告](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf)（v.2024.3，第32页图7、第39页图10及第40页），观察个人生产率与团队交付表现的调查相关性。
+- 第三章采用Dillon等《[Shifting Work Patterns with Generative AI](https://www.nber.org/papers/w33795)》2025年11月修订稿摘要，观察随机现场实验中的个人节时与任务安排变化。
+- 第三章采用美国SEC《[Knight Capital行政令](https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf)》印刷第6—7页第15—19段分析传统自动化事故中的完成状态与异常未传达问题。
+- 第二至第五章的流程架构参照华为《[ICT基础设施业务2024年可持续发展报告](https://www-file.huawei.com/admin/asset/v1/pro/view/8a5be0e3b04643aaa297b0d1cf235e4f.pdf#page=7)》第7页的三条主业务流程，以及《[网络安全立场文件](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)》印刷第33页的业务运作层；第三至第五章还参照华为《[公司治理](https://www.huawei.com/cn/corporate-governance)》中的流程责任说明。三份资料的链接与定位来自2026年10月13日修订讨论，当时访问受限未重新审读；本轮沿用原有范围，具体见[资料来源说明](../索引/资料来源说明.md#第三至第五章补充资料)。
 
-- 3.2采用[DORA 2024报告](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf)（v.2024.3，第32页图7、第39页图10及第40页），观察个人生产率与团队交付表现的调查相关性。
-- 3.2采用Dillon等《[Shifting Work Patterns with Generative AI](https://www.nber.org/papers/w33795)》2025年11月修订稿摘要，观察随机现场实验中的个人节时与任务安排变化。
-- 3.2.3采用美国SEC《[Knight Capital行政令](https://www.sec.gov/files/litigation/admin/2013/34-70694.pdf)》印刷第6—7页第15—19段分析传统自动化事故中的完成状态与异常未传达问题。
+上述六项不计入下册入口及命题数量，流程应用与组织改造设计为编者分析。
 
-- 3.1与3.4的流程框架参照华为《[ICT基础设施业务2024年可持续发展报告](https://www-file.huawei.com/admin/asset/v1/pro/view/8a5be0e3b04643aaa297b0d1cf235e4f.pdf#page=7)》第7页的三条主业务流程，以及《[网络安全立场文件](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)》印刷第33页的业务运作层；3.5参照华为《[公司治理](https://www.huawei.com/cn/corporate-governance)》中的流程责任说明。链接与定位来自本次修订讨论，本次访问受限未重新审读，具体范围见[资料来源说明](../索引/资料来源说明.md#第三章补充资料)。
+第六章另用三项补充资料：
 
-上述六项不计入下册入口及上表的命题数量，流程应用与组织改造设计为编者分析。
+- 6.2.2采用丰田《[Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)》官方说明的Jidoka与Just-in-Time两节，参照工序同步、按需求组织生产、识别异常与持续改善；本章的四流程组织方案属于编者应用整理，第一章及第三章也借用其管理参照。
+- 6.3.5采用Inditex《[Annual Report 2015: Innovation in customer services](https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php)》四个业务环节的说明，参照需求反馈进入产品与供给安排的机制，包括客户需求分析、设计更新、小批量生产与持续上新；每周两次为门店上新节奏。
+- 6.3.5采用Zelikman等《[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304v3)》2024年8月16日v3摘要，参照调用语言模型的程序改进自身的技术机制；语言模型本身未改变，作者将其与完整的递归自我改进区分。将这一改进关系用于组织的判断依据、方法、工具和分工更新，为本报告的应用分析。
 
-第四章另用三项补充资料：
-
-- 4.2.2采用丰田《[Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)》官方说明的Jidoka与Just-in-Time两节，参照先把工作做顺、识别异常与持续改善，以及同步工序、减少物品和信息滞留的管理机制。
-- 4.3.5采用Inditex《[Annual Report 2015: Innovation in customer services](https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php)》四个业务环节的说明，参照客户需求分析、设计更新、小批量生产与持续上新的反馈衔接；每周两次为门店上新节奏。
-- 4.3.5采用Zelikman等《[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304v3)》2024年8月16日v3摘要，参照调用语言模型的程序改进自身的技术机制；语言模型本身未改变，作者将其与完整的递归自我改进区分。
-
-三项不计入下册62个入口、101个片段及上表的命题数量。丰田与Inditex为历史管理参照，STOP为技术机制参照，均不作为企业智力飞轮或ROI的效果实证。
+三项不计入下册62个入口、101个片段及命题数量。丰田与Inditex为历史管理参照，STOP为技术机制参照，均不作为企业智力飞轮或ROI的效果实证。CGL、教育销售交接与蚕丝工厂材料也只分别支持所引局部做法，不能合并为四条流程已共同运行的实证。
 
 ## A.3 按命题的案例清单
 
