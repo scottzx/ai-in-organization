@@ -13,7 +13,7 @@
       "kind": "指南／实施方案",
       "source_level": "工信部或联合部门正式资料",
       "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/202412/3231769ba0884dadb5a9257e86f09442.pdf",
-      "verification_scope": "来源、文件格式、页数、标题／封面已核；全文未逐页精读",
+      "verification_scope": "来源、文件格式、页数、标题／封面已核；2026-10-17全文审读；PDF第1—3、14—15页渲染核看；导论引用PDF第3页成效评估要求，政策要求不作已实现效果。",
       "format": "PDF",
       "pages": 22,
       "bytes": 1153116,
@@ -450,7 +450,7 @@
       "kind": "研究报告／白皮书",
       "source_level": "中国信通院及其研究所发布或联合发布",
       "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202501/P020250124516764358220.pdf",
-      "verification_scope": "来源、文件格式、页数、标题／封面已核；全文未逐页精读",
+      "verification_scope": "来源、文件格式、页数、标题／封面已核；2026-10-17选读第三章及相关趋势分析；封面、方法页及PDF第22、24—26页渲染核看；导论引用受访专精特新企业整合需求及约束，不泛化全体企业。",
       "format": "PDF",
       "pages": 53,
       "bytes": 6656110,
@@ -510,7 +510,7 @@
       "kind": "研究报告／白皮书",
       "source_level": "中国信通院及其研究所发布或联合发布",
       "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202512/P020251224537980612569.pdf",
-      "verification_scope": "来源、文件格式、页数、标题／封面已核；全文未逐页精读",
+      "verification_scope": "来源、文件格式、页数、标题／封面已核；2026-10-17选读两业融合相关内容，渲染核看印刷第4页／PDF第10页，导论引用SHEIN小单快反及订单规模；未将交货时间扩大为全球送达时间。",
       "format": "PDF",
       "pages": 48,
       "bytes": 1300239,
@@ -550,7 +550,7 @@
       "kind": "研究报告／白皮书",
       "source_level": "中国信通院及其研究所发布或联合发布",
       "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240701522112240850.pdf",
-      "verification_scope": "来源、文件格式、页数、标题／封面已核；全文未逐页精读",
+      "verification_scope": "来源、文件格式、页数、标题／封面已核；2026-10-17选读前言、第一部分及第三部分基础能力内容；PDF第21、23页渲染核看；导论引用印刷第15页／PDF第21页的2023年平台供给与知识基础。",
       "format": "PDF",
       "pages": 57,
       "bytes": 2473021,
@@ -1151,5 +1151,5 @@
     "full_case_entries": 100,
     "list_case_entries": 235
   },
-  "verification_note": "只核验书目、文件、目录与索引定位；研究阅读深度与案例效果须另行登记。"
+  "verification_note": "书目、文件、目录与索引定位已核；A01、C06、C01、C04供导论使用的阅读与核页范围另见各条verification_scope，其他资料未据此提升阅读深度，案例效果须另行核验。"
 }

@@ -191,7 +191,7 @@ def home_page(current):
 <div class="eyebrow">RESEARCH &amp; PRACTICE · 2026</div>
 <section class="hero"><div><span class="edition">{escape(edition.replace('·', ' / '))}</span>
 <h1>企业数智化转型<br>研究报告</h1><div class="subtitle">从智力服务到精益经营</div>
-<p>企业已经拥有数字记录和业务系统，为什么经营全貌仍要靠人拼接？从可信记录、可靠连接到分析与行动，研究 AI 怎样进入真实工作，推动业务协同与组织改进。</p>
+<p>过去为什么做数字化，建设到了什么程度，遇到了什么问题？由此研究今天为什么进一步推进数智化，以及怎样沿业务诊断、具体举措、跨线融合与组织变革落实改进。</p>
 <div class="hero-buttons"><a class="button primary" href="{href(current, UPPER[0])}">开始阅读 <span>→</span></a><a class="button" href="{link(pdf)}">下载合订 PDF <span>↓</span></a><button id="copy-link" class="plain-button">分享本页 ↗</button></div></div>
 <div class="book" aria-hidden="true"><small>YIJIE · RESEARCH 2026</small><div><div class="book-title">企业数智化<br>转型研究报告</div><div class="book-line"></div><div class="book-bottom">从智力服务到精益经营</div></div><div class="book-bottom">一芥智能研究院<br>研究报告 / 企业案例汇编</div></div></section>
 <div class="stats"><div class="stat"><strong>8</strong><span>章研究</span><small>从经营问题到实施验证</small></div><div class="stat"><strong>{counts['entries']}</strong><span>个案例入口</span><small>按行业、公司与项目组织</small></div><div class="stat"><strong>{counts['all_fragments']}</strong><span>个场景片段</span><small>保留来源、阶段与口径</small></div><div class="stat"><strong>4</strong><span>条业务线</span><small>MTL / LTC / IPD / ITR</small></div></div>
