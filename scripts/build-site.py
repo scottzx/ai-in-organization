@@ -148,6 +148,7 @@ def sidebar(current):
     for target, label in [('output/pdf/README.md', 'PDF 发行与下载'), ('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
         contents += nav_link(current, ROOT / target, label)
     contents += '<p class="nav-note">一芥智能研究院<br>从真实业务出发，研究组织中的 AI。</p>'
+    contents += '<p class="nav-contact">企业数智化转型咨询，<br>欢迎来电：<a href="tel:13185000425">13185000425</a></p>'
     return contents
 
 
