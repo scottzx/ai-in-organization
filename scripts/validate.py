@@ -112,14 +112,14 @@ unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in
 if unindexed:
     errors.append('Unindexed case documents: '+str(unindexed))
 upper_documents = sorted((ROOT/'上册-研究报告').glob('[0-9][0-9]-*.md'))
-expected_numbers = [f'{number:02d}' for number in range(9)]
+expected_numbers = [f'{number:02d}' for number in range(10)]
 actual_numbers = [path.name[:2] for path in upper_documents]
 if actual_numbers != expected_numbers:
-    errors.append('Expected one upper-volume document for each number 00–08 '
-                  '(导论, seven chapters and 结语); found '+', '.join(actual_numbers))
-chapters = [path for path in upper_documents if path.name[:2] != '00']
+    errors.append('Expected one upper-volume document for each number 00–09 '
+                  '(导论, eight chapters and 结语); found '+', '.join(actual_numbers))
+chapters = [path for path in upper_documents if path.name[:2] not in ('00', '09')]
 if len((ROOT/'LICENSE').read_text().splitlines()) < 15:
     errors.append('Missing complete license')
-summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'case_documents':len(entries),'case_structures_checked':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
+summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'upper_documents':len(upper_documents),'case_documents':len(entries),'case_structures_checked':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
 print(json.dumps(summary, ensure_ascii=False, indent=2))
 sys.exit(0 if not errors else 1)

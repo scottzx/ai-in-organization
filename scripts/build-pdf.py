@@ -2,6 +2,8 @@
 """Build the distribution PDF from the maintained Markdown (Pandoc + ReportLab).
 
 Usage: python3 scripts/build-pdf.py
+       python3 scripts/build-pdf.py --volume upper
+       python3 scripts/build-pdf.py --volume lower
        python3 scripts/build-pdf.py --chapter 上册-研究报告/02-最小执行单位-从人到任务.md
        python3 scripts/build-pdf.py --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
 Override BOOK_BODY_FONT, BOOK_HEADING_FONT and BOOK_KAI_FONT for Chinese TTF fonts.
@@ -42,7 +44,7 @@ OUT = ROOT / 'output/pdf'
 TITLE = '企业数智化转型研究报告'
 MANUSCRIPT_DATE = '2026-10-17'
 DATE = '2026年10月17日'
-UPPER_VERSION = 'v9.0'
+UPPER_VERSION = 'v11.0'
 LOWER_VERSION = 'v8.0'
 VERSION = f'上册 {UPPER_VERSION} / 下册 {LOWER_VERSION}'
 PDF = OUT / (TITLE + '-上下册合订本.pdf')
@@ -347,11 +349,12 @@ class ManuscriptImage(Flowable):
 
 
 class BookDoc(BaseDocTemplate):
-    def __init__(self, path, edition='上下册合订本', outline_offset=0, front_matter=True):
+    def __init__(self, path, edition='上下册合订本', outline_offset=0, front_matter=True,
+                 version=VERSION):
         super().__init__(str(path), pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
                          topMargin=23*mm, bottomMargin=22*mm,
                          title=TITLE, author='一芥智能研究院',
-                         subject=f'从智力服务到精益经营；{VERSION}；{DATE}',
+                         subject=f'从智力服务到精益经营；{edition}；{version}；{DATE}',
                          creator='一芥智能研究院 / Markdown + ReportLab')
         frame = Frame(MARGIN,22*mm,TEXT_WIDTH,HEIGHT-45*mm, leftPadding=0,
                       rightPadding=0,topPadding=0,bottomPadding=0)
@@ -427,8 +430,10 @@ class BookDoc(BaseDocTemplate):
 
 
 class Builder:
-    def __init__(self, output=None):
+    def __init__(self, output=None, volume='all'):
         self.output = Path(output).resolve() if output else None
+        self.volume = volume
+        self.body_start_source = ROOT/'上册-研究报告/00-导论.md'
         self.fonts = {
             'BookBody': font_path('BOOK_BODY_FONT', [
                 '/Applications/wpsoffice.app/Contents/Resources/office6/fonts/FangS-SC.ttf']),
@@ -586,7 +591,14 @@ class Builder:
                 text=plain(c)
                 if text:
                     self.coverage.append(text)
-                    out.append(self.para(self.inline(c),'cell' if cell else ('small' if text.startswith(('本节来源','来源定位：')) else 'body')))
+                    p=self.para(self.inline(c),'cell' if cell else ('small' if text.startswith(('本节来源','来源定位：')) else 'body'))
+                    # Short, wholly bold labels introduce the following case or stage.
+                    # Keep their first following block without changing body typography.
+                    if (not cell and len(text)<=60
+                            and any(item['t']=='Strong' for item in c)
+                            and all(item['t'] in ('Strong','Space','SoftBreak') for item in c)):
+                        p.keepWithNext=True
+                    out.append(p)
                 else:
                     names=[key(self.current,a) for x in c if x['t']=='RawInline'
                            for a in re.findall(r'id="([^"]+)"',x['c'][1])]
@@ -597,8 +609,9 @@ class Builder:
                 names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]))
                 while out and isinstance(out[-1],Anchor):
                     names.extend(out.pop().names)
-                previous_heading=out and isinstance(out[-1],Paragraph) and out[-1].style.name in ('h1','h2','h3','h4')
-                if level>1 and not previous_heading: out.append(CondPageBreak(100))
+                previous_keeps=out and isinstance(out[-1],Paragraph) and (
+                    out[-1].style.name in ('h1','h2','h3','h4') or out[-1].getKeepWithNext())
+                if level>1 and not previous_keeps: out.append(CondPageBreak(100))
                 out.append(Anchor(names))
                 p=self.para(self.inline(items),f'h{min(level,4)}')
                 if level==1:
@@ -608,7 +621,7 @@ class Builder:
                         p.toc_level=2
                     p.source_path=str(self.current.relative_to(ROOT))
                     p.running_title=title
-                    p.body_start=self.current==ROOT/'上册-研究报告/00-导论.md'
+                    p.body_start=self.current==self.body_start_source
                 elif '上册-研究报告' in self.current.parts:
                     p.book_entry=(level,title,names[0],level==2 and self.current.name!='README.md')
                 out.append(p); self.coverage.append(title)
@@ -721,36 +734,56 @@ class Builder:
     def run(self):
         OUT.mkdir(parents=True,exist_ok=True)
         upper=ROOT/'上册-研究报告'; lower=ROOT/'下册-案例汇编'
-        numbered_upper_paths=sorted(upper.glob('[0-9][0-9]-*.md'))
-        if [path.name[:2] for path in numbered_upper_paths] != [f'{number:02d}' for number in range(9)]:
-            raise ValueError('Expected one upper-volume document for each number 00–08 '
-                             '(导论, seven chapters and 结语)')
-        upper_paths=[upper/'README.md']+numbered_upper_paths+sorted(upper.glob('附录*.md'))
-        index=json.loads((ROOT/'索引/案例来源索引.json').read_text())
-        lower_paths=[lower/'README.md']
-        groups=[]
-        for e in index['entries']:
-            path=ROOT/e['path']
-            if path.parent not in groups:
-                groups.append(path.parent); lower_paths.append(path.parent/'README.md')
-            lower_paths.append(path)
+        upper_paths=[]; lower_paths=[]; index=None
+        if self.volume in ('upper','all'):
+            numbered_upper_paths=sorted(upper.glob('[0-9][0-9]-*.md'))
+            if [path.name[:2] for path in numbered_upper_paths] != [f'{number:02d}' for number in range(10)]:
+                raise ValueError('Expected one upper-volume document for each number 00–09 '
+                                 '(导论, eight chapters and 结语)')
+            upper_paths=[upper/'README.md']+numbered_upper_paths+sorted(upper.glob('附录*.md'))
+        if self.volume in ('lower','all'):
+            index=json.loads((ROOT/'索引/案例来源索引.json').read_text())
+            lower_paths=[lower/'README.md']
+            groups=[]
+            for e in index['entries']:
+                path=ROOT/e['path']
+                if path.parent not in groups:
+                    groups.append(path.parent); lower_paths.append(path.parent/'README.md')
+                lower_paths.append(path)
+        if self.volume=='lower':
+            self.body_start_source=lower/'README.md'
+        edition={'all':'上下册合订本','upper':'上册 · 研究报告','lower':'下册 · 企业AI案例汇编'}[self.volume]
+        version={'all':VERSION,'upper':f'上册 {UPPER_VERSION}','lower':f'下册 {LOWER_VERSION}'}[self.volume]
+        cover_volumes={'all':'上册 · 研究报告<br/>下册 · 企业AI案例汇编',
+                       'upper':'上册 · 研究报告','lower':'下册 · 企业AI案例汇编'}[self.volume]
+        cover_edition={'all':'两册初稿合订本','upper':'上册初稿','lower':'下册初稿'}[self.volume]
+        scope_note={
+            'all':f'本合订本根据{DATE}保存的稿件编排。上册为初稿 {UPPER_VERSION}，下册为初稿 {LOWER_VERSION}；下册案例按统一的七节结构重写。',
+            'upper':f'本上册根据{DATE}保存的稿件编排，为初稿 {UPPER_VERSION}。下册案例正文另册提供，跨册引用链接至项目仓库。',
+            'lower':f'本下册根据{DATE}保存的稿件编排，为初稿 {LOWER_VERSION}；案例按统一的七节结构重写。上册研究报告正文另册提供，跨册引用链接至项目仓库。',
+        }[self.volume]
+        contents_note={
+            'all':'收录上册导论、八章正文、结语与四个附录；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。下册收录62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
+            'upper':'收录上册导论、八章正文、结语与四个附录；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。另附问题阅读路径与资料来源说明。',
+            'lower':'收录下册62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
+        }[self.volume]+'草稿箱、思维导图编辑数据和历史更新记录不编入正文。'
         extra_paths=[ROOT/'索引/阅读路径.md',ROOT/'索引/资料来源说明.md']
         paths=upper_paths+lower_paths+extra_paths
         docs={path:self.load(path) for path in paths}
         for path,blocks in docs.items(): self.register(path,blocks)
         self.story.extend([Spacer(1,38*mm),self.para('企业数智化转型<br/>研究报告','cover_title'),
                            Spacer(1,10*mm),self.para('从智力服务到精益经营','cover_subtitle'),Spacer(1,17*mm),
-                           self.para('上册 · 研究报告<br/>下册 · 企业AI案例汇编','cover_meta'),
+                           self.para(cover_volumes,'cover_meta'),
                            Spacer(1,40*mm),self.para('一芥智能研究院','cover_meta'),
-                           Spacer(1,5*mm),self.para(f'两册初稿合订本  |  {VERSION}<br/>{DATE}','cover_note'),PageBreak()])
+                           Spacer(1,5*mm),self.para(f'{cover_edition}  |  {version}<br/>{DATE}','cover_note'),PageBreak()])
         p=self.para('版本与使用说明','h1')
         p.running_title='版本与使用说明'
         self.story.extend([Anchor(['publication-note']),p])
         self.current=ROOT/'README.md'
         for text in [
-            f'本合订本根据{DATE}保存的稿件编排。上册为初稿 {UPPER_VERSION}，下册为初稿 {LOWER_VERSION}；下册案例按统一的七节结构重写。',
+            scope_note,
             '本书由一芥智能研究院编写，面向企业经营者、业务负责人和参与组织改造的实践者。上册按问题论证，下册按行业、公司或项目集中呈现案例。',
-            '收录上册导论、七章正文、结语与四个附录；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。下册收录62个案例入口及行业索引，另附问题阅读路径与资料来源说明。草稿箱、思维导图编辑数据和历史更新记录不编入正文。',
+            contents_note,
             '正文区分来源事实、一芥分析与待验证判断，并保留使用阶段、效果口径和来源定位。本书未对案例效果作独立审计或完整事实核验。',
             '本书只作经营管理分析与案例整理，不构成法律、财务、税务、医疗或其他专业意见；涉及具体业务操作时，请咨询相应执业者。',
             'Copyright © 2026 一芥智能研究院。MIT许可适用于本仓库有权许可的原创正文、分析与索引；第三方音视频、图书和资料由相应权利人持有。',
@@ -767,6 +800,7 @@ class Builder:
             ('下册  企业AI案例汇编',f'62个阅读入口 · 101个场景与证据片段  |  初稿 {LOWER_VERSION}','lower-volume',lower_paths),
             ('阅读与来源索引','按研究问题阅读 · 资料来源说明','source-indexes',extra_paths),
         ]:
+            if not part_paths: continue
             self.add_part(title,sub,name)
             for i,path in enumerate(part_paths):
                 if i: self.story.append(PageBreak())
@@ -775,13 +809,16 @@ class Builder:
                 self.story.extend(self.blocks(docs[path]))
                 self.sources.append({'path':str(path.relative_to(ROOT)),
                                      'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-        pdf=self.output or PDF
+        pdf=self.output or (PDF if self.volume=='all' else OUT/(TITLE+f'-{self.volume_name()}.pdf'))
         pdf.parent.mkdir(parents=True,exist_ok=True)
-        doc=BookDoc(pdf)
+        doc=BookDoc(pdf,edition=edition,version=version)
         toc.formatter=doc.page_label
         doc.multiBuild(self.story)
-        manifest=pdf.with_suffix('.manifest.json') if self.output else OUT/'build-manifest.json'
-        self.verify_and_manifest(doc, pdf, manifest, index=index)
+        manifest=pdf.with_suffix('.manifest.json') if self.output or self.volume!='all' else OUT/'build-manifest.json'
+        self.verify_and_manifest(doc, pdf, manifest, index=index, volume=self.volume)
+
+    def volume_name(self):
+        return {'upper':'上册','lower':'下册','all':'上下册合订本'}[self.volume]
 
     def run_chapter(self, chapter):
         path = (ROOT / chapter).resolve()
@@ -805,7 +842,7 @@ class Builder:
         doc.multiBuild(self.story)
         self.verify_and_manifest(doc, pdf, pdf.with_suffix('.manifest.json'), chapter=path)
 
-    def verify_and_manifest(self, doc, pdf, manifest_path, index=None, chapter=None):
+    def verify_and_manifest(self, doc, pdf, manifest_path, index=None, chapter=None, volume=None):
         reader=PdfReader(pdf)
         page_texts=[]
         for number,page in enumerate(reader.pages,1):
@@ -845,7 +882,10 @@ class Builder:
                     destination=a.get('/Dest') or a.get('/A',{}).get('/D')
                     if destination and destination[0].idnum not in page_ids:
                         raise ValueError('PDF internal link points outside this document')
-        manifest={'title':TITLE,'manuscript_date':MANUSCRIPT_DATE,'versions':{'upper':UPPER_VERSION,'lower':LOWER_VERSION},
+        versions={'upper':UPPER_VERSION,'lower':LOWER_VERSION}
+        if volume in ('upper','lower'):
+            versions={volume:versions[volume]}
+        manifest={'title':TITLE,'manuscript_date':MANUSCRIPT_DATE,'versions':versions,
                   'pdf':pdf.name,'pages':len(reader.pages),'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
                   'source_files':self.sources,'section_pages':doc.section_pages,
                   'body_start_page':doc.body_start_page,
@@ -866,6 +906,8 @@ class Builder:
                   'links':dict(self.links),'pdf_link_annotations':dict(annotations)}
         if index is not None:
             manifest.update(case_entries=len(index['entries']), scene_fragments=index['counts']['all_fragments'])
+        if volume is not None:
+            manifest.update(volume=volume,edition=doc.edition)
         if chapter is not None:
             manifest['chapter'] = str(chapter.relative_to(ROOT))
         if self.figures: manifest['illustrations'] = self.figures
@@ -875,9 +917,12 @@ class Builder:
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--chapter', help='Build one Markdown chapter and its own PDF manifest')
+    scope=parser.add_mutually_exclusive_group()
+    scope.add_argument('--chapter', help='Build one Markdown chapter and its own PDF manifest')
+    scope.add_argument('--volume', choices=('upper','lower','all'), default='all',
+                       help='Build the upper volume, lower volume, or both (default: all)')
     parser.add_argument('--output', help='Save a separate preview PDF and manifest at this path')
     args = parser.parse_args()
-    builder = Builder(args.output)
+    builder = Builder(args.output,volume=args.volume)
     if args.chapter: builder.run_chapter(args.chapter)
     else: builder.run()

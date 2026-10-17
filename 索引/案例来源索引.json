@@ -25,7 +25,7 @@
       "url": "https://www.gutenberg.org/cache/epub/4238/pg4238.html",
       "locator": "第19章第224—239节；第20章第241—250节",
       "source_type": "历史著作（手工制造与智力劳动分工的思想参照，非当前AI效果实证）",
-      "used_in": "上册第一章1.1、第二章2.3",
+      "used_in": "上册第一章1.3、第二章2.3",
       "checked_on": "2026-10-12"
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
       "locator": "Jidoka及Just-in-Time两节",
       "source_type": "企业官方生产方式说明（历史管理机制参照，非AI案例）",
-      "used_in": "上册第一章1.1、第六章6.2.2的执行协同、异常与持续改善参照",
+      "used_in": "上册第一章1.4、第六章6.2.2的协同与持续改善参照；第七章7.4.1参照Jidoka中改进工作、技能与技术的说明",
       "checked_on": "2026-10-17"
     },
     {
@@ -170,6 +170,45 @@
       "checked_on": "2026-10-17",
       "verification_note": "审读客户关系与线索到回款、客户问题管理、IPD及项目资源管理；第六章另审读流程责任人、关键控制点、职责分离和改进沟通。具体诊断、目标和人机举措为本报告应用整理。",
       "source_file_sha256": "8484da02c2c93e29156b98b0b41cd1455d2364f8bd805206e870611e1cc04bcc"
+    },
+    {
+      "id": "CH01-R01",
+      "title": "《“十四五”信息化和工业化深度融合发展规划》解读",
+      "publisher": "工业和信息化部信息技术发展司",
+      "publication_date": "2021-11-30",
+      "url": "https://www.miit.gov.cn/jgsj/xxjsfzs/lhrh/art/2021/art_0c0c24fc82cc43f7881d1d8d0cf3bc91.html",
+      "locator": "总体考虑与主要举措",
+      "source_type": "官方政策解读（数字化、网络化、智能化发展及系统布局参照，非企业效果实证）",
+      "used_in": "上册第一章1.1；导论概述相应经营视角",
+      "application_note": "可信记录、跨系统与跨职能接续、分析行动为本报告经营视角的应用概括，不作为该解读的逐字定义或企业固定成熟度阶段。",
+      "checked_on": "2026-10-17"
+    },
+    {
+      "id": "CH01-R02",
+      "title": "《物联网新型基础设施建设三年行动计划（2021—2023年）》解读",
+      "publisher": "工业和信息化部",
+      "publication_date": "2021-09-29",
+      "url": "https://ythxxfb.miit.gov.cn/ythzxfwpt/hlwmh/zcwj/sbyw/gylydlxqcglxt/art/2022/art_992d32bd9b294bc6973eaca88fbd6829.html",
+      "locator": "第五问：如何推动物联网新型基础设施规模化部署",
+      "source_type": "官方政策解读（物理世界到数字世界映射的基础作用参照，非AI效果实证）",
+      "used_in": "上册第一章1.1",
+      "checked_on": "2026-10-17"
+    },
+    {
+      "id": "CH01-R03",
+      "title": "Token经济",
+      "authors": [
+        "白惠天",
+        "袁晓辉",
+        "司晓"
+      ],
+      "publisher": "中信出版集团",
+      "isbn": "9787521788815",
+      "url": "https://detail.youzan.com/show/goods?alias=278xflkurbbdrv7&from_source=gbox_seo",
+      "locator": "出版社公开导言与试读中的智力即服务概念段落",
+      "source_type": "出版社公开导言及试读（智力服务的概念来源，未据此声称已阅读全文）",
+      "used_in": "上册第一章1.2；任务要求及协作安排为本报告应用整理",
+      "checked_on": "2026-10-17"
     }
   ],
   "entries": [

@@ -5,9 +5,16 @@ __pycache__/
 .env
 .env.*
 
+# GitHub Pages：网页由正文自动生成
+/_site/
+
 # 思维导图：数据文件（*.json，含 ai-in-org.blueprint.json 与 scripts/fragments/）入库；
 # 生成脚本（*.mjs）不入库。若某个 .mjs 需要跟踪，用 git add -f。
 *.mjs
 
 # PDF排版与渲染检查的临时文件
 tmp/pdfs/
+
+# 工信部资料的本地研究副本；公开来源与校验信息见索引，不随书稿转载全文
+/资料库/工信部数字化转型原文/
+/tmp/miit-research-*.json
