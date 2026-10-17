@@ -6,7 +6,6 @@
 dialog{border:1px solid var(--line);border-radius:8px;padding:24px;width:min(650px,92vw);max-height:80vh;background:var(--paper);color:var(--ink);box-shadow:0 24px 100px #102e3440}dialog::backdrop{background:#112d2a70;backdrop-filter:blur(3px)}.search-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.search-top label{font-size:13px}.search-top button{background:none;border:0;font-size:22px;color:var(--muted)}#search-input{width:100%;padding:14px;border:1px solid var(--line);background:#fff;border-radius:4px;color:var(--ink);font-size:15px}#search-results{max-height:52vh;overflow:auto;font-size:12px;color:var(--muted);padding-top:15px}.search-result{display:block;padding:15px 8px;border-bottom:1px solid var(--line)}.search-result strong{display:block;font-size:14px;font-weight:500;margin-bottom:8px;color:var(--green)}.search-result span{display:block;line-height:1.8;color:var(--muted)}.search-count{font-size:11px}
 /* Warm metallic accents: champagne highlights over an aged gold base. */
 .topbar{border-bottom-color:var(--gold-line)}
-.brand-symbol{border:1px solid #cbb078;box-shadow:inset 0 0 0 2px #285b4d,inset 0 0 0 3px #cbb07866}
 .edition{border-color:var(--gold-line);background:linear-gradient(115deg,#f5efe2,#fbf9f3 55%,#f2ead9)}
 .book{background:linear-gradient(125deg,#315f50 0%,#234b40 42%,#183d33 100%);box-shadow:12px 15px 0 #eae6da,0 20px 30px #183b2712,inset 1px 0 0 #d9c18a66}
 .book small{color:#e3cb94}
