@@ -9,6 +9,7 @@ from html import escape
 from html.parser import HTMLParser
 from urllib.parse import quote, unquote, urlsplit
 from collections import Counter
+import hashlib
 import json
 import os
 import re
@@ -20,6 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
 REPO = 'https://github.com/scottzx/ai-in-organization'
 SITE = 'https://scottzx.github.io/ai-in-organization/'
+ASSETS = {
+    path.name: f'{path.stem}.{hashlib.sha256(path.read_bytes()).hexdigest()[:12]}{path.suffix}'
+    for path in (ROOT / 'web').iterdir()
+    if path.is_file() and path.suffix in ('.css', '.js', '.svg')
+}
 MD = MarkdownIt('commonmark', {'html': True}).enable('table').enable('strikethrough')
 
 
@@ -151,7 +157,7 @@ def footer():
 
 def page_shell(current, body, description):
     prefix = os.path.relpath('.', output_path(current).parent)
-    asset = lambda name: quote(prefix + '/assets/' + name, safe='/.-')
+    asset = lambda name: quote(prefix + '/assets/' + ASSETS[name], safe='/.-')
     title = '企业数智化转型研究报告' if current == ROOT / 'README.md' else TITLES[current]
     canonical = SITE + quote(str(output_path(current)), safe='/')
     return f'''<!doctype html>
@@ -224,9 +230,8 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / 'assets').mkdir(parents=True)
-    for asset in (ROOT / 'web').glob('*'):
-        if asset.is_file() and asset.suffix in ('.css', '.js', '.svg'):
-            shutil.copy2(asset, OUT / 'assets' / asset.name)
+    for name, versioned_name in ASSETS.items():
+        shutil.copy2(ROOT / 'web' / name, OUT / 'assets' / versioned_name)
     search_index = []
     for path in sorted(DOCS):
         content, headings = render_document(path)
