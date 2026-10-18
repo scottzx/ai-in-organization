@@ -45,7 +45,10 @@ VOLUMES = (
 UPPER = sorted((ROOT / '上册-研究报告').glob('[0-9][0-9]-*.md'))
 APPENDICES = [ROOT / '上册-研究报告/附录A-术语辨析表.md']
 PROCESS = ROOT / '过程稿'
-MIDDLE = sorted(path for path in (ROOT / '中册-行业解决方案').glob('*.md') if path.name != 'README.md')
+MIDDLE_PLAN = json.loads((ROOT / 'scripts/data/middle/编写范围.json').read_text())
+MIDDLE_GROUP_ENTRIES = {group['from'] for group in MIDDLE_PLAN.get('split_groups', [])}
+MIDDLE = sorted(path for path in (ROOT / '中册-行业解决方案').glob('*.md')
+                if path.name != 'README.md' and path.name not in MIDDLE_GROUP_ENTRIES)
 CASE_INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text())
 CASES = [ROOT / entry['path'] for entry in CASE_INDEX['entries']]
 DOCS = {ROOT / name for name in ('README.md', 'CONTRIBUTING.md', 'CHANGELOG.md')}

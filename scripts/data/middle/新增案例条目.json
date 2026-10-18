@@ -481,7 +481,9 @@
       "url": "https://wap.miit.gov.cn/jgsj/jns/wjfb/art/2021/art_a02d22c0b30e4787872bdf0b5f2b2b51.html",
       "locator": "三、（八）狠抓城市供水管网漏损控制",
       "source_type": "四部门指导意见，政策建设要求，不是企业效果实证",
-      "used_in": "中册D01，供水漏损治理范围"
+      "used_in": [
+        "D03-水务.md"
+      ]
     }
   ]
 }

@@ -81,6 +81,19 @@ def main():
  for asset in used_figures:
   actual=hashlib.sha256((MID/'assets'/asset).read_bytes()).hexdigest()
   if actual!=by_asset[asset]['asset_sha256']: errors.append('Figure changed after source registration: '+asset)
+ planned_files={r['file'] for r in plan['chapters']}
+ for group in plan.get('split_groups',[]):
+  entry=MID/group['from']
+  if group['from'] in planned_files:
+   errors.append('Combined entry must not be counted as an industry chapter: '+group['from'])
+  if not entry.is_file():
+   errors.append('Previous industry URL is missing its reading entry: '+group['from']);continue
+  entry_text=entry.read_text()
+  if re.search(r'!\[[^\]\n]*\]\(assets/',entry_text):
+   errors.append('Combined entry still duplicates industry figures: '+group['from'])
+  for target in group['to']:
+   if target not in planned_files or ']('+target+')' not in entry_text:
+    errors.append('Combined entry lacks its separate industry chapter: '+target)
  for rule in figure_rules['figures']:
   asset=rule['asset'];meta=by_asset.get(asset)
   if not meta:

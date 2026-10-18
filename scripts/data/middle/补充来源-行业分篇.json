@@ -1,0 +1,516 @@
+{
+  "title": "中册独立行业分篇补充来源",
+  "updated_on": "2026-10-18",
+  "records": [
+    {
+      "id": "SC-A01-01",
+      "title": "全国智慧农业行动计划（2024—2028年）",
+      "publisher": "农业农村部",
+      "source_type": "主管部门行动计划；公报PDF为2024年第11期，136页，行动计划占PDF16—18页",
+      "url": "https://www.moa.gov.cn/govpublic/SCYJJXXS/202410/t20241025_6465041.htm",
+      "format": "HTML / 公报PDF",
+      "published": "2024-10-25",
+      "used_in": [
+        "A01-农业.md",
+        "A03-畜牧业.md",
+        "A04-渔业.md"
+      ],
+      "locators": [
+        {
+          "section": "二（一）1—3",
+          "pdf_pages": "17",
+          "printed_pages": "17",
+          "content": "公共数据、用地一张图、基础模型；不是企业必须自建国家平台"
+        },
+        {
+          "section": "二（二）4",
+          "pdf_pages": "17",
+          "printed_pages": "17",
+          "content": "主要作物数字化种植方案、水肥管理、农机北斗、田间气象长势墒情病虫害监测"
+        },
+        {
+          "section": "二（二）5",
+          "pdf_pages": "17-18",
+          "printed_pages": "17-18",
+          "content": "明确分别列智慧农场、智慧牧场、智慧渔场：牧场含体征监测、环控、巡检消杀、诊断、配方饲喂、清污及废弃物处理；渔场含水质环境、增氧、巡检、投饲、行为、鱼病、分级计数"
+        },
+        {
+          "section": "二（二）6",
+          "pdf_pages": "18",
+          "printed_pages": "18",
+          "content": "全产业链产销、仓储保鲜冷链、质量追溯"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "document_number": "农市发〔2024〕4号",
+      "issued_date": "2024-10-23",
+      "published_date": "2024-10-25",
+      "pdf_sha256": "80924b942ffac5b6a245a4f3ad3af2d80222484654ad716aec14dc69455574c2",
+      "pdf_url": "https://www.moa.gov.cn/nybgb/2024/202411/202412/P020241218392734132968.pdf",
+      "caution": "其目标应标为文件计划，不写成已经实现；未规定统一的智慧牧场/渔场企业部署架构。",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-A01-01-全国智慧农业行动计划（2024—2028年）.pdf"
+    },
+    {
+      "id": "SC-A02-01",
+      "title": "中国智慧林业发展指导意见",
+      "publisher": "国家林业局",
+      "source_type": "主管部门行业指导文件，浙江政务云公开副本；封面明确国家林业局2013年8月，正文与官方2015复文所载文号吻合",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2144/site/res_base/jeecms_com_www/upload/article/file/2013_3/8_26/oiy8hktcvlqg.pdf",
+      "format": "PDF",
+      "published": "2013-08",
+      "used_in": [
+        "A02-林业.md"
+      ],
+      "locators": [
+        {
+          "section": "第二章五",
+          "pdf_pages": "22-25",
+          "printed_pages": "20-23",
+          "content": "四横两纵行业总体架构，设施层/数据层/支撑层/应用层，标准规范/安全与综合管理"
+        },
+        {
+          "section": "图4 智慧林业总体架构图",
+          "pdf_pages": "23",
+          "printed_pages": "21",
+          "content": "可裁切嵌入原图。已用2200px渲染视觉核对，图题完整。图是行业与公共体系参照，林场企业只选择适用部分。"
+        },
+        {
+          "section": "第三章一、二",
+          "pdf_pages": "26-31",
+          "printed_pages": "24-29",
+          "content": "立体感知、无线通信、遥感、资源档案、平台连接、决策支持"
+        },
+        {
+          "section": "第三章三（三）",
+          "pdf_pages": "32",
+          "printed_pages": "30",
+          "content": "智慧营造林管理"
+        },
+        {
+          "section": "第三章四（二）（三）（五）",
+          "pdf_pages": "34-35",
+          "printed_pages": "32-33",
+          "content": "林业企业生产装备和精细化管理，采伐运输至产品追溯、林地信息、林权交易、电商、物流"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "document_number": "林信发〔2013〕131号",
+      "pages": 40,
+      "pdf_sha256": "3e7757a9cddbbbd94503f2917461da734a5ac6a9882c3aee08e2c223cda0c37a",
+      "caution": "历史框架；不能把2013文件的建设目标、技术先进性或全国平台建成状态写作2026现状；不把林业木材加工混作第一产业林业，跨制造边界用交叉引用。",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-A02-01-中国智慧林业发展指导意见.pdf"
+    },
+    {
+      "id": "SC-A02-02",
+      "title": "国家林业和草原局关于促进林业和草原人工智能发展的指导意见",
+      "publisher": "国家林业和草原局",
+      "source_type": "主管部门应用体系指导意见",
+      "url": "https://www.forestry.gov.cn/c/www/gkzfwj/272575.jhtml",
+      "format": "HTML",
+      "published": "2019-11-21",
+      "used_in": [
+        "A02-林业.md"
+      ],
+      "locators": [
+        {
+          "section": "二（一）",
+          "content": "生态保护：森林动态监测、立体感知、野生动植物保护"
+        },
+        {
+          "section": "二（二）",
+          "content": "生态修复：种苗培育、营造林、专业分析与作业"
+        },
+        {
+          "section": "二（三）",
+          "content": "生态灾害防治：火情感知与指挥、有害生物监测"
+        },
+        {
+          "section": "二（四）",
+          "content": "生态产业：经济林、林下经济、竹藤花卉、木材加工、生态旅游"
+        },
+        {
+          "section": "二（五）",
+          "content": "生态管理：信息服务、决策服务"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "document_number": "林信发〔2019〕105号",
+      "issued_date": "2019-11-08",
+      "published_date": "2019-11-21",
+      "caution": "当作行业已有应用方向；第四节新增智力服务应限定资料整理/接口和工具协助/任务协调，不能再次把文件已有图像识别或监测算法算作新增。"
+    },
+    {
+      "id": "SC-A02-03",
+      "title": "国家发展改革委等部门关于加快建设现代化国有林场的意见",
+      "publisher": "国家发展改革委、财政部、人力资源社会保障部、自然资源部、交通运输部、国家林草局",
+      "source_type": "现行主管部门林场建设政策",
+      "url": "https://www.forestry.gov.cn/c/www/gsgg/649815.jhtml",
+      "format": "HTML",
+      "published": "2025-10-24",
+      "used_in": [
+        "A02-林业.md"
+      ],
+      "locators": [
+        {
+          "section": "二（二）",
+          "content": "资源管护、天空地监测、固定+移动站点智慧管护、火灾与有害生物"
+        },
+        {
+          "section": "四（七）（八）",
+          "content": "种苗/造林/抚育采伐/林果采收等适用装备，物联网大数据人工智能应用"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "document_number": "发改农经〔2025〕1343号",
+      "issued_date": "2025-10-24",
+      "caution": "适用国有林场，不泛推所有民营林企，更不能当成正式技术规范。"
+    },
+    {
+      "id": "SC-A04-01",
+      "title": "农业部关于加快推进渔业信息化建设的意见",
+      "publisher": "农业部",
+      "source_type": "主管部门渔业专项指导意见；网页日期/2019路径为迁移，正文落款2016-12-23",
+      "url": "https://yyj.moa.gov.cn/yqxx/201904/t20190428_6220093.htm",
+      "format": "HTML",
+      "published": "2016-12-28",
+      "used_in": [
+        "A04-渔业.md"
+      ],
+      "locators": [
+        {
+          "section": "三（八）（九）",
+          "content": "管理与生产服务、渔情监测，需区分政府能力与企业能力"
+        },
+        {
+          "section": "三（十）",
+          "content": "水体实时监测、自动增氧、精准投喂、病害预警、循环水控制、网箱升降、无人巡航、水产品追溯"
+        },
+        {
+          "section": "三（十一）（十二）",
+          "content": "业务协同、船港人、北斗通信、监测调度、安全监管；企业接入公共系统并管理自身船舶船员与航次，不复制监管部门建设职责"
+        },
+        {
+          "section": "三（十三）",
+          "content": "水产品与生产资料电商，生产和市场对接"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "issued_date": "2016-12-23",
+      "published_date": "2016-12-28",
+      "caution": "是渔业专属业务框架，但未附统一企业软件架构图；分养殖/捕捞讲应用，别把养殖水质传感写作捕捞的统一主线。"
+    },
+    {
+      "id": "SC-H01-04",
+      "title": "饭店智能化建设与服务指南",
+      "publisher": "国家旅游局",
+      "source_type": "正式推荐性旅游行业标准，扫描版；全国标准平台检索显示现行，但不要据此执行旧消防/布线规范号",
+      "url": "https://zwgk.mct.gov.cn/zfxxgkml/hybz/202012/W020201224436626349713.pdf",
+      "format": "PDF",
+      "published": "2013-01-14",
+      "used_in": [
+        "H01-住宿.md"
+      ],
+      "locators": [
+        {
+          "section": "4.1 前台服务智能化",
+          "pdf_pages": "5-6",
+          "printed_pages": "2-3",
+          "content": "信息发布、客房娱乐、点餐、会议等，按酒店经营范围选用"
+        },
+        {
+          "section": "4.2 后勤保障智能化",
+          "pdf_pages": "6-7",
+          "printed_pages": "3-4",
+          "content": "顾客服务管理/任务派工与留存、员工、购销库存、固定资产、经营查询、营销"
+        },
+        {
+          "section": "4.3 饭店环境智能化",
+          "pdf_pages": "8-9",
+          "printed_pages": "5-6",
+          "content": "温湿控制、调光、房态关联、数字监控、停车、楼宇设施、综合布线"
+        },
+        {
+          "section": "附录A",
+          "pdf_pages": "10-13",
+          "printed_pages": "7-10",
+          "content": "具体子系统示意图，不是完整酒店总体架构；不必硬抽一张当总体架构"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "issued_date": "2013-01-14",
+      "standard_number": "LB/T 020—2013",
+      "pages": 13,
+      "pdf_sha256": "0edf5e4b272b5d5b520761c3f025323b1a14e55721a61b83c7dd64a7612a78b6",
+      "caution": "资料属于2013已有数字化/自动控制能力，可支撑住宿模块厚度；新增智力服务另写经营背景理解、跨岗位任务、工具建造。不把标准中所有宜建设项写成所有酒店强制要求。",
+      "status_confirmation_url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F21F95BB19E05397BE0A0AB44A",
+      "landing_url": "https://zwgk.mct.gov.cn/zfxxgkml/hybz/202012/t20201224_920017.html",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-H01-04-饭店智能化建设与服务指南.pdf"
+    },
+    {
+      "id": "SC-H01-05",
+      "title": "旅游企业信息化服务指南",
+      "publisher": "国家旅游局",
+      "source_type": "正式旅游行业标准，文化和旅游部公开PDF文本",
+      "url": "https://zwgk.mct.gov.cn/zfxxgkml/hybz/202012/W020220118349697772900.pdf",
+      "format": "PDF",
+      "published": "2013-01-14",
+      "used_in": [
+        "H01-住宿.md"
+      ],
+      "locators": [
+        {
+          "section": "4.2—4.6",
+          "pdf_pages": "4-6",
+          "printed_pages": "73-75（汇编页码）",
+          "content": "咨询、预订、订单查询变更取消、支付退款、投诉与服务管理"
+        },
+        {
+          "section": "6 星级饭店",
+          "pdf_pages": "7",
+          "printed_pages": "76（汇编页码）",
+          "content": "店内信息、客房控制、门禁、服务查询、应急通信"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "issued_date": "2013-01-14",
+      "standard_number": "LB/T 021—2013",
+      "pages": 8,
+      "caution": "PDF为带汇编页码副本，应以PDF物理页定位；不把过时设备示例原封照搬。",
+      "landing_url": "https://zwgk.mct.gov.cn/zfxxgkml/hybz/202012/t20201224_920019.html"
+    },
+    {
+      "id": "SC-J01-01",
+      "title": "关于银行业保险业数字化转型的指导意见",
+      "publisher": "中国银保监会办公厅",
+      "source_type": "部门指导意见",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1034763&itemId=861",
+      "format": "HTML",
+      "published": "2022-01-26",
+      "document_number": "银保监办发〔2022〕2号",
+      "used_in": [
+        "J01-银行.md"
+      ],
+      "locators": [
+        {
+          "section": "三（八）至（十三）",
+          "content": "产业金融、个人金融、金融交易、数字运营、生态与专业风险应用"
+        },
+        {
+          "section": "四、五",
+          "content": "数据治理与科技能力建设"
+        }
+      ],
+      "audit_note": "官网搜索抓取核读全文相关段落，原站open部分返回403；成文落款为2022-01-10，网页结构化发文日期另列2022-01-17，本章只记2022年避免混用。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "SC-J01-02",
+      "title": "银行业保险业数字金融高质量发展实施方案",
+      "publisher": "国家金融监督管理总局办公厅",
+      "source_type": "部门实施方案",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/governmentDetail.html?docId=1239741&generaltype=1&itemId=861",
+      "format": "HTML",
+      "published": "2025-12-26",
+      "issued_date": "2025-12-22",
+      "document_number": "金办发〔2025〕95号",
+      "used_in": [
+        "J01-银行.md",
+        "J02-保险.md"
+      ],
+      "locators": [
+        {
+          "section": "二（一）第2项",
+          "content": "前台服务、中台运营、后台处理，信息业务资金流关联"
+        },
+        {
+          "section": "二（二）",
+          "content": "按客群与产业提供数字金融服务"
+        },
+        {
+          "section": "二（三）13—18",
+          "content": "AI、研发、资源与基础设施"
+        },
+        {
+          "section": "二（四）19—21",
+          "content": "数据治理与应用"
+        },
+        {
+          "section": "二（五）22—28",
+          "content": "专业模型和风险管理边界"
+        }
+      ],
+      "audit_url": "https://www.hunan.gov.cn/zqt/zcsd/202512/t20251229_33881984.html",
+      "audit_note": "原站搜索内容及湖南省政府官方转载完整全文交叉核读。监管数字化第29—33项不写成企业自建职责。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "SC-J01-03",
+      "title": "国家金融监督管理总局发布《关于银行业保险业人工智能安全开发应用的指导意见》",
+      "publisher": "国家金融监督管理总局",
+      "source_type": "主管部门发布说明",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1261708&generaltype=0&itemId=915",
+      "format": "HTML",
+      "published": "2026-06-18",
+      "used_in": [
+        "J01-银行.md",
+        "J02-保险.md"
+      ],
+      "locators": [
+        {
+          "section": "发布说明：七方面32项指导性意见概述",
+          "content": "开发应用治理、测评、数据、风险与全生命周期管理；不据未核全文写精确条款"
+        }
+      ],
+      "audit_note": "使用正式发布说明的概述范围；全文政府信息页Angular壳/403，不称已完整核读具体32条。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "SC-J02-01",
+      "title": "互联网保险业务监管办法",
+      "publisher": "中国银保监会",
+      "source_type": "部门规章（保险服务模块依据）",
+      "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=949137",
+      "format": "HTML",
+      "published": "2020-12-14",
+      "issued_date": "2020-12-07",
+      "document_number": "中国银保监会令〔2020〕13号",
+      "used_in": [
+        "J02-保险.md"
+      ],
+      "locators": [
+        {
+          "section": "第12—14条",
+          "content": "产品资料和服务信息"
+        },
+        {
+          "section": "第24—34条",
+          "content": "核保批改保全退保理赔投诉全流程、进程查询、实际服务及记录协同"
+        }
+      ],
+      "audit_note": "官网搜索抓取正文核读；引用范围限系统模块与工作关系，不给具体承保/赔付决策或法律适用建议。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "SC-J03-01",
+      "title": "证券公司数字化能力成熟度指引",
+      "publisher": "中国证券业协会",
+      "source_type": "行业协会团体标准",
+      "url": "https://www.csisc.cn/zbscbzw/c100467/202410/68598264f986474bb1673baf758717a2/files/《证券公司数字化能力成熟度指引》发布稿.pdf",
+      "format": "PDF",
+      "published": "2024-10-11",
+      "standard_number": "T/SAC 005—2024",
+      "pages": 20,
+      "used_in": [
+        "J03-证券服务.md"
+      ],
+      "locators": [
+        {
+          "pdf_pages": "6-7",
+          "printed_pages": "3-4",
+          "section": "第6章、表1",
+          "content": "9域、25子域、40能力项，按实际业务裁剪"
+        },
+        {
+          "pdf_pages": "9-19",
+          "printed_pages": "6-16",
+          "section": "第7章相关能力",
+          "content": "数据、技术、经营产品服务及内控"
+        }
+      ],
+      "checked_on": "2026-10-18",
+      "pdf_sha256": "60c147c15301da393af9cde9a7dba663e58dceed51dec1640c1a4e08ef9249fe",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-J03-01-证券公司数字化能力成熟度指引.pdf"
+    },
+    {
+      "id": "SC-J03-02",
+      "title": "公募基金管理公司数字化能力成熟度指引",
+      "publisher": "中国证券投资基金业协会",
+      "source_type": "行业协会团体标准",
+      "url": "https://www.amac.org.cn/xwfb/xhyw/202409/P020240927582027701737.pdf",
+      "format": "PDF",
+      "published": "2024-09-27",
+      "issued_date": "2024-09-25（发布公告成文）",
+      "standard_number": "T/AMAC 0003—2024",
+      "pages": 37,
+      "used_in": [
+        "J04-基金管理.md"
+      ],
+      "locators": [
+        {
+          "pdf_pages": "10-11",
+          "printed_pages": "4-5",
+          "section": "5.3、表1",
+          "content": "8域、24子域、70能力项，产品服务、研究投资交易营销与基金运营"
+        },
+        {
+          "pdf_pages": "25-34",
+          "printed_pages": "19-28",
+          "section": "6.4—6.7相关模块",
+          "content": "产品服务、经营管理、运营及内控"
+        },
+        {
+          "pdf_pages": "31-32",
+          "printed_pages": "25-26",
+          "section": "6.6.1、表18",
+          "content": "估值核算、投资清算、销售清算、信息披露、注册登记"
+        }
+      ],
+      "audit_note": "原始PDF封面发布日期与实施日期均为2024-09-27；公告落款2024-09-25，已区分。",
+      "checked_on": "2026-10-18",
+      "pdf_sha256": "4f958eb57c2f6d2708f77da7e4d0fe991aebb63cbfae0042c3be51e0d84ef573",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-J03-02-公募基金管理公司数字化能力成熟度指引.pdf"
+    },
+    {
+      "id": "SC-J03-03",
+      "title": "证券基金经营机构信息技术管理办法",
+      "publisher": "中国证监会",
+      "source_type": "部门规章（专业系统范围依据）",
+      "url": "https://www.csrc.gov.cn/csrc/c106256/c1653896/content.shtml",
+      "format": "HTML",
+      "published": "2021（修订文本）",
+      "issued_date": "2018-12-19公布、2021-01-15修订",
+      "document_number": "证监会令第152号；第179号修订",
+      "used_in": [
+        "J03-证券服务.md",
+        "J04-基金管理.md"
+      ],
+      "locators": [
+        {
+          "section": "第4、13条",
+          "content": "业务技术、风险管理与服务责任"
+        },
+        {
+          "section": "第18—25、28—33条",
+          "content": "记录、合同、研发变更与数据管理"
+        },
+        {
+          "section": "第63条",
+          "content": "集中交易、投资交易、产品销售、估值核算、份额登记、承销保荐底稿等重要系统"
+        }
+      ],
+      "audit_note": "证监会规章公开现行页面全文，引用范围限系统与工作职责。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "SC-J03-04",
+      "title": "关于资本市场做好金融“五篇大文章”的实施意见",
+      "publisher": "中国证监会",
+      "source_type": "部门实施意见",
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7537234/content.shtml",
+      "format": "HTML",
+      "published": "2025-02-07",
+      "issued_date": "2025-02-07",
+      "used_in": [
+        "J03-证券服务.md",
+        "J04-基金管理.md"
+      ],
+      "locators": [
+        {
+          "section": "六（十二）（十三）",
+          "content": "证券期货机构数字化、数据治理、互联互通与行业基础设施，区分公共监管和企业职责"
+        }
+      ],
+      "checked_on": "2026-10-18"
+    }
+  ]
+}

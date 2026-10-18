@@ -1,37 +1,78 @@
 {
   "title": "中册行业章节范围",
   "updated_on": "2026-10-18",
-  "edition": "v0.4",
+  "edition": "v0.5",
   "default_chapter_edition": "v0.3",
-  "revision_note": "全部29篇行业章采用工程机械v0.3五节正文与独立参考资料格式，重点展开行业架构、数字化应用模块和智力服务新增价值；共用实施方法集中于上册第八章。",
+  "revision_note": "按独立经营对象、专业流程和交付条件拆分16组合并主题，形成65篇行业与专业业务方案；同一产业链的角色关系在章内明确。旧合并页保留为分篇入口，不计作行业章。",
   "chapters": [
     {
-      "file": "A01-农业与养殖.md",
-      "title": "农业与养殖",
-      "scope": "农业、畜牧、农产品经营",
+      "file": "A01-农业.md",
+      "title": "农业",
+      "scope": "农业",
       "priority_source_ids": [
         "C09",
         "C10"
-      ]
+      ],
+      "edition": "v0.4",
+      "previous_group": "A01-农业与养殖.md"
     },
     {
-      "file": "B01-采矿.md",
-      "title": "采矿",
-      "scope": "煤矿、金属矿与非金属矿",
+      "file": "A02-林业.md",
+      "title": "林业",
+      "scope": "林业",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "A01-农业与养殖.md"
+    },
+    {
+      "file": "A03-畜牧业.md",
+      "title": "畜牧业",
+      "scope": "畜牧业",
+      "priority_source_ids": [
+        "C09"
+      ],
+      "edition": "v0.4",
+      "previous_group": "A01-农业与养殖.md"
+    },
+    {
+      "file": "A04-渔业.md",
+      "title": "渔业",
+      "scope": "渔业",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "A01-农业与养殖.md"
+    },
+    {
+      "file": "B01-煤矿.md",
+      "title": "煤矿",
+      "scope": "煤矿",
+      "priority_source_ids": [
+        "A13",
+        "D08"
+      ],
+      "edition": "v0.4",
+      "previous_group": "B01-采矿.md"
+    },
+    {
+      "file": "B02-铁矿采选.md",
+      "title": "铁矿采选",
+      "scope": "铁矿采选",
       "priority_source_ids": [
         "A13",
         "A16",
         "D08"
-      ]
+      ],
+      "edition": "v0.4",
+      "previous_group": "B01-采矿.md"
     },
     {
       "file": "C01-工程机械.md",
       "title": "工程机械",
       "scope": "工程机械及配套",
       "priority_source_ids": [
-        "A09",
         "A11",
-        "B02"
+        "B02",
+        "D05"
       ]
     },
     {
@@ -40,13 +81,14 @@
       "scope": "汽车、新能源汽车及零部件",
       "priority_source_ids": [
         "A10",
-        "A11"
+        "A11",
+        "D05"
       ]
     },
     {
       "file": "C03-机器人.md",
       "title": "机器人",
-      "scope": "工业与服务机器人",
+      "scope": "工业机器人零部件、本体与集成应用；服务机器人按具体场景核对",
       "priority_source_ids": [
         "A09",
         "A11"
@@ -57,7 +99,8 @@
       "title": "船舶",
       "scope": "船舶研发、建造与服务",
       "priority_source_ids": [
-        "B05"
+        "B05",
+        "D05"
       ]
     },
     {
@@ -66,8 +109,9 @@
       "scope": "钢铁生产与协同",
       "priority_source_ids": [
         "A03",
+        "A11",
         "B01",
-        "A11"
+        "D04"
       ]
     },
     {
@@ -76,8 +120,9 @@
       "scope": "石化与化工",
       "priority_source_ids": [
         "A03",
+        "A11",
         "B04",
-        "A11"
+        "D04"
       ]
     },
     {
@@ -89,57 +134,68 @@
       ]
     },
     {
-      "file": "C08-建材.md",
-      "title": "建材",
-      "scope": "水泥、玻璃、陶瓷等",
+      "file": "C08-水泥.md",
+      "title": "水泥",
+      "scope": "水泥",
       "priority_source_ids": [
-        "A03",
-        "A16"
-      ]
+        "A03"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C08-建材.md"
     },
     {
-      "file": "C09-电子信息与关键部件.md",
-      "title": "电子信息与关键部件",
-      "scope": "电子元器件、锂电池、光伏、印制板与智能终端",
+      "file": "C09-印制电路板与电子装联.md",
+      "title": "印制电路板与电子装联",
+      "scope": "印制电路板与电子装联",
       "priority_source_ids": [
         "A08",
-        "A11"
-      ]
+        "A11",
+        "D07"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C09-电子信息与关键部件.md"
     },
     {
-      "file": "C10-家电与轻工.md",
-      "title": "家电与轻工",
-      "scope": "家电、家具、造纸、皮革、美妆日化等",
+      "file": "C10-家电.md",
+      "title": "家电",
+      "scope": "家电",
       "priority_source_ids": [
         "A04",
-        "A11"
-      ]
+        "A11",
+        "D06"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C10-家电与轻工.md"
     },
     {
       "file": "C11-纺织服装.md",
-      "title": "纺织服装",
+      "title": "纺织服装产业链",
       "scope": "纺纱、织造、印染、化纤、服装、家纺",
       "priority_source_ids": [
         "A07"
-      ]
+      ],
+      "edition": "v0.4"
     },
     {
-      "file": "C12-食品饮料.md",
-      "title": "食品饮料",
-      "scope": "食品、饮料、乳品、制糖与酿酒",
+      "file": "C12-食品加工.md",
+      "title": "食品加工",
+      "scope": "食品加工",
       "priority_source_ids": [
         "A06",
-        "A11"
-      ]
+        "D06"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C12-食品饮料.md"
     },
     {
-      "file": "C13-医药与医疗装备.md",
-      "title": "医药与医疗装备",
-      "scope": "药品、医疗器械与装备制造",
+      "file": "C13-医药制造.md",
+      "title": "医药制造",
+      "scope": "医药制造",
       "priority_source_ids": [
-        "A05",
-        "A11"
-      ]
+        "A05"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C13-医药与医疗装备.md"
     },
     {
       "file": "C14-民爆.md",
@@ -150,75 +206,379 @@
       ]
     },
     {
-      "file": "D01-能源与公用事业.md",
-      "title": "能源与公用事业",
-      "scope": "发电、输配电、燃气、热力与水务",
+      "file": "C15-锂电池.md",
+      "title": "锂电池",
+      "scope": "锂电池",
+      "priority_source_ids": [
+        "A08",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C09-电子信息与关键部件.md"
+    },
+    {
+      "file": "C16-智能移动终端.md",
+      "title": "智能移动终端",
+      "scope": "智能移动终端",
+      "priority_source_ids": [
+        "A08",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C09-电子信息与关键部件.md"
+    },
+    {
+      "file": "C17-家具.md",
+      "title": "家具",
+      "scope": "家具",
+      "priority_source_ids": [
+        "A04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C10-家电与轻工.md"
+    },
+    {
+      "file": "C18-造纸.md",
+      "title": "造纸",
+      "scope": "造纸",
+      "priority_source_ids": [
+        "A04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C10-家电与轻工.md"
+    },
+    {
+      "file": "C19-皮革制造.md",
+      "title": "皮革制造",
+      "scope": "制革、皮革检测分级、裁切与下游制品设计协作",
+      "priority_source_ids": [
+        "A04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C10-家电与轻工.md"
+    },
+    {
+      "file": "C20-美妆日化.md",
+      "title": "美妆日化",
+      "scope": "美妆日化",
+      "priority_source_ids": [
+        "A04",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C10-家电与轻工.md"
+    },
+    {
+      "file": "C21-饮料.md",
+      "title": "饮料",
+      "scope": "饮料",
+      "priority_source_ids": [
+        "A06"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C12-食品饮料.md"
+    },
+    {
+      "file": "C22-乳制品.md",
+      "title": "乳制品",
+      "scope": "乳制品",
+      "priority_source_ids": [
+        "A06"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C12-食品饮料.md"
+    },
+    {
+      "file": "C23-制糖.md",
+      "title": "制糖",
+      "scope": "制糖",
+      "priority_source_ids": [
+        "A06",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C12-食品饮料.md"
+    },
+    {
+      "file": "C24-白酒.md",
+      "title": "白酒",
+      "scope": "白酒",
+      "priority_source_ids": [
+        "A06",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C12-食品饮料.md"
+    },
+    {
+      "file": "C25-医疗装备.md",
+      "title": "医疗装备",
+      "scope": "医疗装备",
+      "priority_source_ids": [
+        "A05",
+        "A11"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C13-医药与医疗装备.md"
+    },
+    {
+      "file": "C26-玻璃.md",
+      "title": "玻璃",
+      "scope": "玻璃",
+      "priority_source_ids": [
+        "A03",
+        "D04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C08-建材.md"
+    },
+    {
+      "file": "C27-建筑卫生陶瓷.md",
+      "title": "建筑卫生陶瓷",
+      "scope": "建筑卫生陶瓷",
+      "priority_source_ids": [
+        "A03"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C08-建材.md"
+    },
+    {
+      "file": "C28-商品混凝土.md",
+      "title": "商品混凝土",
+      "scope": "商品混凝土",
+      "priority_source_ids": [
+        "A03"
+      ],
+      "edition": "v0.4",
+      "previous_group": "C08-建材.md"
+    },
+    {
+      "file": "D01-电力.md",
+      "title": "电力",
+      "scope": "电力",
       "priority_source_ids": [
         "B03",
+        "D08"
+      ],
+      "edition": "v0.4",
+      "previous_group": "D01-能源与公用事业.md"
+    },
+    {
+      "file": "D02-燃气.md",
+      "title": "燃气",
+      "scope": "燃气",
+      "priority_source_ids": [
         "B06"
-      ]
+      ],
+      "edition": "v0.4",
+      "previous_group": "D01-能源与公用事业.md"
+    },
+    {
+      "file": "D03-水务.md",
+      "title": "水务",
+      "scope": "水务",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "D01-能源与公用事业.md"
     },
     {
       "file": "E01-建筑与工程.md",
       "title": "建筑与工程",
       "scope": "施工与装饰装修",
-      "priority_source_ids": [
-        "A16"
-      ]
-    },
-    {
-      "file": "F01-批发与零售.md",
-      "title": "批发与零售",
-      "scope": "批发、门店、电商与外贸",
-      "priority_source_ids": [
-        "C04"
-      ]
-    },
-    {
-      "file": "G01-运输仓储与物流.md",
-      "title": "运输仓储与物流",
-      "scope": "港口、货运、仓配、物流与油气运输",
-      "priority_source_ids": [
-        "B06",
-        "C04"
-      ]
-    },
-    {
-      "file": "H01-住宿与餐饮.md",
-      "title": "住宿与餐饮",
-      "scope": "酒店与连锁餐饮",
       "priority_source_ids": []
     },
     {
-      "file": "I01-软件与信息服务.md",
-      "title": "软件与信息服务",
-      "scope": "软件交付、SaaS、电信与信息服务",
-      "priority_source_ids": [
-        "C03",
-        "C17",
-        "C25"
-      ]
+      "file": "F01-批发.md",
+      "title": "批发",
+      "scope": "批发",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "F01-批发与零售.md"
     },
     {
-      "file": "J01-金融.md",
-      "title": "金融",
-      "scope": "银行、保险、证券与金融科技",
+      "file": "F02-零售.md",
+      "title": "零售",
+      "scope": "零售",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "F01-批发与零售.md"
+    },
+    {
+      "file": "G01-货运与综合物流.md",
+      "title": "货运与综合物流",
+      "scope": "货运与综合物流",
+      "priority_source_ids": [
+        "C04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "G01-运输仓储与物流.md"
+    },
+    {
+      "file": "G02-仓储.md",
+      "title": "仓储",
+      "scope": "仓储",
+      "priority_source_ids": [
+        "C04"
+      ],
+      "edition": "v0.4",
+      "previous_group": "G01-运输仓储与物流.md"
+    },
+    {
+      "file": "G03-油气储运.md",
+      "title": "油气储运",
+      "scope": "油气储运",
+      "priority_source_ids": [
+        "B06"
+      ],
+      "edition": "v0.4",
+      "previous_group": "G01-运输仓储与物流.md"
+    },
+    {
+      "file": "H01-住宿.md",
+      "title": "住宿",
+      "scope": "住宿",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "H01-住宿与餐饮.md"
+    },
+    {
+      "file": "H02-餐饮.md",
+      "title": "餐饮",
+      "scope": "餐饮",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "H01-住宿与餐饮.md"
+    },
+    {
+      "file": "I01-软件与信息技术服务.md",
+      "title": "软件与信息技术服务",
+      "scope": "软件与信息技术服务",
+      "priority_source_ids": [
+        "C03"
+      ],
+      "edition": "v0.4",
+      "previous_group": "I01-软件与信息服务.md"
+    },
+    {
+      "file": "I02-电信服务.md",
+      "title": "电信服务",
+      "scope": "电信服务",
+      "priority_source_ids": [
+        "C03",
+        "C25"
+      ],
+      "edition": "v0.4",
+      "previous_group": "I01-软件与信息服务.md"
+    },
+    {
+      "file": "I03-云计算与模型平台服务.md",
+      "title": "云计算与模型平台服务",
+      "scope": "云计算与模型平台服务",
+      "priority_source_ids": [
+        "C17"
+      ],
+      "edition": "v0.4",
+      "previous_group": "I01-软件与信息服务.md"
+    },
+    {
+      "file": "J01-银行.md",
+      "title": "银行",
+      "scope": "银行",
       "priority_source_ids": [
         "C07",
         "C08"
-      ]
+      ],
+      "edition": "v0.4",
+      "previous_group": "J01-金融.md"
     },
     {
-      "file": "L01-商务服务.md",
-      "title": "商务服务",
-      "scope": "招聘、咨询等商务服务",
-      "priority_source_ids": []
+      "file": "J02-保险.md",
+      "title": "保险",
+      "scope": "保险",
+      "priority_source_ids": [
+        "C07",
+        "C08"
+      ],
+      "edition": "v0.4",
+      "previous_group": "J01-金融.md"
     },
     {
-      "file": "M01-专业技术服务.md",
-      "title": "专业技术服务",
-      "scope": "设计、法律、检验检测和维保",
-      "priority_source_ids": []
+      "file": "J03-证券服务.md",
+      "title": "证券服务",
+      "scope": "证券服务",
+      "priority_source_ids": [
+        "C07",
+        "C08"
+      ],
+      "edition": "v0.4",
+      "previous_group": "J01-金融.md"
+    },
+    {
+      "file": "J04-基金管理.md",
+      "title": "基金管理",
+      "scope": "基金管理",
+      "priority_source_ids": [
+        "C07",
+        "C08"
+      ],
+      "edition": "v0.4",
+      "previous_group": "J01-金融.md"
+    },
+    {
+      "file": "L01-招聘与人力资源服务.md",
+      "title": "招聘与人力资源服务",
+      "scope": "招聘与人力资源服务",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "L01-商务服务.md"
+    },
+    {
+      "file": "L02-经营咨询.md",
+      "title": "经营咨询",
+      "scope": "经营咨询",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "L01-商务服务.md"
+    },
+    {
+      "file": "L03-法律服务.md",
+      "title": "法律服务",
+      "scope": "法律服务",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "L01-商务服务.md"
+    },
+    {
+      "file": "M01-规划设计.md",
+      "title": "规划设计",
+      "scope": "规划设计",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "M01-专业技术服务.md"
+    },
+    {
+      "file": "M02-检验检测.md",
+      "title": "检验检测",
+      "scope": "检验检测",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "M01-专业技术服务.md"
+    },
+    {
+      "file": "M03-设备维保服务.md",
+      "title": "设备维保服务",
+      "scope": "设备维保服务",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "M01-专业技术服务.md"
+    },
+    {
+      "file": "M04-工程设计.md",
+      "title": "工程设计",
+      "scope": "工程设计",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "M01-专业技术服务.md"
     },
     {
       "file": "P01-教育服务.md",
@@ -230,34 +590,218 @@
     },
     {
       "file": "Q01-医疗健康.md",
-      "title": "医疗健康",
-      "scope": "医院与健康服务",
+      "title": "医疗服务",
+      "scope": "医疗机构的就医、专业协作、院内管理与随访服务",
       "priority_source_ids": [
         "C11",
         "C12"
-      ]
+      ],
+      "edition": "v0.4"
     },
     {
-      "file": "R01-文化体育与文旅.md",
-      "title": "文化体育与文旅",
-      "scope": "内容、体育、文旅与在线服务",
+      "file": "R01-文化内容与传媒.md",
+      "title": "文化内容与传媒",
+      "scope": "文化内容与传媒",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "R01-文化体育与文旅.md"
+    },
+    {
+      "file": "R02-体育健身.md",
+      "title": "体育健身",
+      "scope": "体育健身",
+      "priority_source_ids": [],
+      "edition": "v0.4",
+      "previous_group": "R01-文化体育与文旅.md"
+    },
+    {
+      "file": "R03-旅游与景区.md",
+      "title": "旅游与景区",
+      "scope": "旅游与景区",
       "priority_source_ids": [
         "C15",
         "C24"
-      ]
+      ],
+      "edition": "v0.4",
+      "previous_group": "R01-文化体育与文旅.md"
     },
     {
       "file": "S01-政务与公共服务.md",
-      "title": "政务与公共服务",
-      "scope": "政务、城市运营和公共服务",
+      "title": "数字政务与城市治理",
+      "scope": "政务办理、机关协同和城市运行事件治理",
       "priority_source_ids": [
         "C13",
-        "C14",
-        "C15",
         "C16",
         "C26"
-      ]
+      ],
+      "edition": "v0.4"
     }
   ],
-  "current_chapter_edition": "v0.3"
+  "current_chapter_edition": "v0.4",
+  "split_groups": [
+    {
+      "from": "A01-农业与养殖.md",
+      "label": "农业与养殖",
+      "to": [
+        "A01-农业.md",
+        "A02-林业.md",
+        "A03-畜牧业.md",
+        "A04-渔业.md"
+      ],
+      "reason": "生产对象、生长周期、现场装备和专业管理分别组织。"
+    },
+    {
+      "from": "B01-采矿.md",
+      "label": "采矿",
+      "to": [
+        "B01-煤矿.md",
+        "B02-铁矿采选.md"
+      ],
+      "reason": "煤炭与铁矿的资源、质量及生产约束分别展开；煤矿章区分露天与井工。"
+    },
+    {
+      "from": "C08-建材.md",
+      "label": "建材",
+      "to": [
+        "C08-水泥.md",
+        "C26-玻璃.md",
+        "C27-建筑卫生陶瓷.md",
+        "C28-商品混凝土.md"
+      ],
+      "reason": "连续窑磨、玻璃熔制加工、陶瓷多工序和混凝土即时配送分别成章。"
+    },
+    {
+      "from": "C09-电子信息与关键部件.md",
+      "label": "电子信息与关键部件",
+      "to": [
+        "C09-印制电路板与电子装联.md",
+        "C15-锂电池.md",
+        "C16-智能移动终端.md"
+      ],
+      "reason": "板件工艺、电芯及电池制造、终端研发组装按各自图谱和专业模块成章。"
+    },
+    {
+      "from": "C10-家电与轻工.md",
+      "label": "家电与轻工",
+      "to": [
+        "C10-家电.md",
+        "C17-家具.md",
+        "C18-造纸.md",
+        "C19-皮革制造.md",
+        "C20-美妆日化.md"
+      ],
+      "reason": "产品、材料、生产工艺和交付关系不同，按指南专业条目分篇。"
+    },
+    {
+      "from": "C12-食品饮料.md",
+      "label": "食品饮料",
+      "to": [
+        "C12-食品加工.md",
+        "C21-饮料.md",
+        "C22-乳制品.md",
+        "C23-制糖.md",
+        "C24-白酒.md"
+      ],
+      "reason": "食品加工、液体灌装、乳品链条、制糖连续过程和白酒酿造分别展开。"
+    },
+    {
+      "from": "C13-医药与医疗装备.md",
+      "label": "医药与医疗装备",
+      "to": [
+        "C13-医药制造.md",
+        "C25-医疗装备.md"
+      ],
+      "reason": "药品工艺与批次质量、装备研发及生命周期服务分别展开。"
+    },
+    {
+      "from": "D01-能源与公用事业.md",
+      "label": "能源与公用事业",
+      "to": [
+        "D01-电力.md",
+        "D02-燃气.md",
+        "D03-水务.md"
+      ],
+      "reason": "供电、供气和水务有各自设施对象、运行管理和客户服务关系。"
+    },
+    {
+      "from": "F01-批发与零售.md",
+      "label": "批发与零售",
+      "to": [
+        "F01-批发.md",
+        "F02-零售.md"
+      ],
+      "reason": "面向企业客户的供货交易与面向消费者的门店渠道经营分别成章。"
+    },
+    {
+      "from": "G01-运输仓储与物流.md",
+      "label": "运输仓储与物流",
+      "to": [
+        "G01-货运与综合物流.md",
+        "G02-仓储.md",
+        "G03-油气储运.md"
+      ],
+      "reason": "运输履约、库内作业与专业油气储运分属不同核心设施和业务模块。"
+    },
+    {
+      "from": "H01-住宿与餐饮.md",
+      "label": "住宿与餐饮",
+      "to": [
+        "H01-住宿.md",
+        "H02-餐饮.md"
+      ],
+      "reason": "住宿以房间、房晚和接待服务为主线，餐饮以菜品、食材和供餐订单为主线。"
+    },
+    {
+      "from": "I01-软件与信息服务.md",
+      "label": "软件与信息服务",
+      "to": [
+        "I01-软件与信息技术服务.md",
+        "I02-电信服务.md",
+        "I03-云计算与模型平台服务.md"
+      ],
+      "reason": "软件研发交付、通信网络服务与算力模型平台供给分别组织。"
+    },
+    {
+      "from": "J01-金融.md",
+      "label": "金融",
+      "to": [
+        "J01-银行.md",
+        "J02-保险.md",
+        "J03-证券服务.md",
+        "J04-基金管理.md"
+      ],
+      "reason": "银行信贷、保险保单理赔、证券经纪交易和基金产品组合管理分别展开。"
+    },
+    {
+      "from": "L01-商务服务.md",
+      "label": "商务服务",
+      "to": [
+        "L01-招聘与人力资源服务.md",
+        "L02-经营咨询.md",
+        "L03-法律服务.md"
+      ],
+      "reason": "招聘围绕岗位和候选、咨询围绕问题及客户行动；法律服务由专业服务参照中独立。"
+    },
+    {
+      "from": "M01-专业技术服务.md",
+      "label": "专业技术服务",
+      "to": [
+        "M01-规划设计.md",
+        "M02-检验检测.md",
+        "M03-设备维保服务.md",
+        "M04-工程设计.md"
+      ],
+      "reason": "空间方案、测量报告、现场维护及工程图纸有不同对象和责任交付。"
+    },
+    {
+      "from": "R01-文化体育与文旅.md",
+      "label": "文化体育与文旅",
+      "to": [
+        "R01-文化内容与传媒.md",
+        "R02-体育健身.md",
+        "R03-旅游与景区.md"
+      ],
+      "reason": "内容生产传播、体育场馆课程与游客场所服务分别展开。"
+    }
+  ]
 }

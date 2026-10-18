@@ -23,7 +23,7 @@ def main():
  plan=json.loads((DATA/'编写范围.json').read_text())
  edition=plan['edition']
  planned=plan['chapters']
- chapters=sorted(p for p in MIDDLE.glob('*.md') if re.match(r'[A-Z]\d\d-',p.name))
+ chapters=[MIDDLE/item['file'] for item in planned]
  lines=['# 中册 行业数智化解决方案','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
  '[全书首页](../README.md) · [上册研究报告](../上册-研究报告/README.md) · [下册企业案例](../下册-案例汇编/README.md)','',
  '本册集中展示各行业解决方案：先充分讲解行业数字化总体架构、主要模块、建设内容与业务价值，再说明智力服务的新增作用。行业数字化建设具有独立价值，方案列出的联网、工业模型及智能应用按其功能与条件展开；企业是否已建需核实。','',
@@ -34,9 +34,10 @@ def main():
  for name in INTRO:
   p=MIDDLE/name
   if p.exists(): lines.append(f'- [{title(p)}]({name})')
- scope=(f'本册覆盖{len(chapters)}个行业主题。' if len(chapters)==len(planned)
+ scope=(f'本册提供{len(chapters)}篇行业与专业业务方案。' if len(chapters)==len(planned)
         else f'当前可读行业章共{len(chapters)}篇，按大纲与依据成熟度继续编写。')
- lines+=['','## 分行业阅读','',scope+'读者可按企业类型、业务环节和建设目标选择适用章节；各章分别说明行业方案提供的参考能力、企业需要核实的现有条件，以及智力服务可增加的任务与价值。','', '| 行业方案 | 阅读重点 |','| --- | --- |']
+ lines+=['','## 分行业阅读','',scope+'读者可按企业类型、业务环节和建设目标选择适用章节；各章分别说明行业方案提供的参考能力、企业需要核实的现有条件，以及智力服务可增加的任务与价值。','',
+ '住宿与餐饮、农林牧渔等按独立经营对象分篇；同一产业链的整机与配套角色在章内说明。旧合并网址保留为分篇入口，具体调整和当前覆盖范围见[行业分篇说明](../索引/中册行业分篇说明.md)。','', '| 行业方案 | 阅读重点 |','| --- | --- |']
  cross=[]
  for p in chapters:
   text=p.read_text()

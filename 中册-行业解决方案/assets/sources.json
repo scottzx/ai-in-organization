@@ -763,7 +763,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -824,7 +824,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -885,7 +885,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -946,7 +946,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1007,7 +1007,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1068,7 +1068,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1129,7 +1129,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1190,7 +1190,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C12-食品饮料.md"
+        "C23-制糖.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1251,7 +1251,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C12-食品饮料.md"
+        "C24-白酒.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1312,7 +1312,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C12-食品饮料.md"
+        "C24-白酒.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1373,7 +1373,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C10-家电与轻工.md"
+        "C20-美妆日化.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
@@ -1409,7 +1409,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C10-家电与轻工.md"
+        "C20-美妆日化.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1470,7 +1470,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1531,7 +1531,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1592,7 +1592,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1653,7 +1653,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C09-印制电路板与电子装联.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1714,7 +1714,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C09-印制电路板与电子装联.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -1775,7 +1775,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C16-智能移动终端.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
@@ -1811,7 +1811,7 @@
         "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
       },
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C16-智能移动终端.md"
       ],
       "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
       "crop": {
@@ -2311,7 +2311,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "D01-能源与公用事业.md"
+        "D01-电力.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 13,
@@ -2636,8 +2636,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "D01-能源与公用事业.md",
-        "G01-运输仓储与物流.md"
+        "G03-油气储运.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 21,
@@ -2702,7 +2701,10 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "J01-金融.md"
+        "J01-银行.md",
+        "J02-保险.md",
+        "J03-证券服务.md",
+        "J04-基金管理.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 2,
@@ -2767,7 +2769,8 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "J01-金融.md"
+        "J01-银行.md",
+        "J04-基金管理.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 27,
@@ -2832,7 +2835,8 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "J01-金融.md"
+        "J02-保险.md",
+        "J03-证券服务.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 28,
@@ -2897,7 +2901,8 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "A01-农业与养殖.md"
+        "A01-农业.md",
+        "A03-畜牧业.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 2,
@@ -2962,7 +2967,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "A01-农业与养殖.md"
+        "A01-农业.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 4,
@@ -3220,7 +3225,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "I01-软件与信息服务.md"
+        "I03-云计算与模型平台服务.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 35,
@@ -3285,7 +3290,7 @@
       },
       "required_in": [
         "P01-教育服务.md",
-        "R01-文化体育与文旅.md"
+        "R03-旅游与景区.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
@@ -3350,7 +3355,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "required_in": [
-        "I01-软件与信息服务.md"
+        "I02-电信服务.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
       "printed_page": 17,
@@ -3448,6 +3453,70 @@
       }
     },
     {
+      "asset": "SC-A02-01-智慧林业架构-23.png",
+      "source_id": "SC-A02-01",
+      "source_title": "中国智慧林业发展指导意见",
+      "pdf_page": 23,
+      "source_url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2144/site/res_base/jeecms_com_www/upload/article/file/2013_3/8_26/oiy8hktcvlqg.pdf#page=23",
+      "source_sha256": "3e7757a9cddbbbd94503f2917461da734a5ac6a9882c3aee08e2c223cda0c37a",
+      "asset_sha256": "102acf791a6d5b281ecccb3e145a44255d34346f22ee4bb66fe8172ee11a50cc",
+      "output_size_px": [
+        1616,
+        1452
+      ],
+      "content_detection": {
+        "method": "full-native-PDF-page-render-cropped-to-complete-image-object-plus-native-caption-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          86.0,
+          67.9,
+          510.9,
+          449.762
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.401,
+        "page_height_removed_fraction": 0.5464,
+        "review_note": "整页及裁片视觉核验；保留完整图形、文字、连线与原生图题，4pt留边；未改绘或移除水印。"
+      },
+      "required_in": [
+        "A02-林业.md"
+      ],
+      "page_number_handling": "正文标PDF第23页／印刷第21页；图题与页脚之间为其他正文，仅裁图与图题。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 21,
+      "figure_titles": [
+        "图4 智慧林业总体架构图"
+      ],
+      "crop": {
+        "method": "full-native-PDF-page-render-cropped-to-complete-image-object-plus-native-caption-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          86.0,
+          67.9,
+          510.9,
+          449.762
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.401,
+        "page_height_removed_fraction": 0.5464,
+        "review_note": "整页及裁片视觉核验；保留完整图形、文字、连线与原生图题，4pt留边；未改绘或移除水印。",
+        "pixel_bbox": [
+          326,
+          258,
+          1942,
+          1710
+        ]
+      }
+    },
+    {
       "asset": "SC-H01-03-餐饮产业链-20.png",
       "source_id": "SC-H01-03",
       "source_title": "中国餐饮业数字化发展报告（2024）",
@@ -3478,7 +3547,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
       },
       "required_in": [
-        "H01-住宿与餐饮.md"
+        "H02-餐饮.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
@@ -3542,7 +3611,7 @@
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
       },
       "required_in": [
-        "H01-住宿与餐饮.md"
+        "H02-餐饮.md"
       ],
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",

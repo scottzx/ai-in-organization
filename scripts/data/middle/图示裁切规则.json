@@ -105,6 +105,12 @@
       "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-H01-03-中国餐饮业数字化发展报告-2024.pdf",
       "url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf",
       "sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3"
+    },
+    "SC-A02-01": {
+      "title": "中国智慧林业发展指导意见",
+      "local_pdf": "资料库/工信部数字化转型原文/pdf/补充/SC-A02-01-中国智慧林业发展指导意见.pdf",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2144/site/res_base/jeecms_com_www/upload/article/file/2013_3/8_26/oiy8hktcvlqg.pdf",
+      "sha256": "3e7757a9cddbbbd94503f2917461da734a5ac6a9882c3aee08e2c223cda0c37a"
     }
   },
   "figures": [
@@ -397,7 +403,7 @@
       "industry": "医疗装备",
       "pdf_page": 32,
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_size_points": [
         1190.55,
@@ -419,7 +425,7 @@
       "industry": "医疗装备",
       "pdf_page": 33,
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_size_points": [
         1190.55,
@@ -441,7 +447,7 @@
       "industry": "医疗装备",
       "pdf_page": 34,
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_size_points": [
         1190.55,
@@ -463,7 +469,7 @@
       "industry": "医疗装备",
       "pdf_page": 35,
       "required_in": [
-        "C13-医药与医疗装备.md"
+        "C25-医疗装备.md"
       ],
       "page_size_points": [
         1190.55,
@@ -485,7 +491,7 @@
       "industry": "家电",
       "pdf_page": 37,
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_size_points": [
         1190.55,
@@ -507,7 +513,7 @@
       "industry": "家电",
       "pdf_page": 38,
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_size_points": [
         1190.55,
@@ -529,7 +535,7 @@
       "industry": "家电",
       "pdf_page": 39,
       "required_in": [
-        "C10-家电与轻工.md"
+        "C10-家电.md"
       ],
       "page_size_points": [
         1190.55,
@@ -551,7 +557,7 @@
       "industry": "制糖",
       "pdf_page": 41,
       "required_in": [
-        "C12-食品饮料.md"
+        "C23-制糖.md"
       ],
       "page_size_points": [
         1190.55,
@@ -573,7 +579,7 @@
       "industry": "白酒",
       "pdf_page": 43,
       "required_in": [
-        "C12-食品饮料.md"
+        "C24-白酒.md"
       ],
       "page_size_points": [
         1190.55,
@@ -595,7 +601,7 @@
       "industry": "白酒",
       "pdf_page": 44,
       "required_in": [
-        "C12-食品饮料.md"
+        "C24-白酒.md"
       ],
       "page_size_points": [
         1190.55,
@@ -617,7 +623,7 @@
       "industry": "美妆日化",
       "pdf_page": 46,
       "required_in": [
-        "C10-家电与轻工.md"
+        "C20-美妆日化.md"
       ],
       "page_size_points": [
         1190.55,
@@ -634,7 +640,7 @@
       "industry": "美妆日化",
       "pdf_page": 47,
       "required_in": [
-        "C10-家电与轻工.md"
+        "C20-美妆日化.md"
       ],
       "page_size_points": [
         1190.55,
@@ -656,7 +662,7 @@
       "industry": "锂电池",
       "pdf_page": 49,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_size_points": [
         1190.55,
@@ -678,7 +684,7 @@
       "industry": "锂电池",
       "pdf_page": 50,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_size_points": [
         1190.55,
@@ -700,7 +706,7 @@
       "industry": "锂电池",
       "pdf_page": 51,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C15-锂电池.md"
       ],
       "page_size_points": [
         1190.55,
@@ -722,7 +728,7 @@
       "industry": "印制板",
       "pdf_page": 53,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C09-印制电路板与电子装联.md"
       ],
       "page_size_points": [
         1190.55,
@@ -744,7 +750,7 @@
       "industry": "印制板",
       "pdf_page": 54,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C09-印制电路板与电子装联.md"
       ],
       "page_size_points": [
         1190.55,
@@ -766,7 +772,7 @@
       "industry": "智能移动终端",
       "pdf_page": 56,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C16-智能移动终端.md"
       ],
       "page_size_points": [
         1190.55,
@@ -783,7 +789,7 @@
       "industry": "智能移动终端",
       "pdf_page": 57,
       "required_in": [
-        "C09-电子信息与关键部件.md"
+        "C16-智能移动终端.md"
       ],
       "page_size_points": [
         1190.55,
@@ -971,7 +977,7 @@
       "industry": "电力",
       "pdf_page": 20,
       "required_in": [
-        "D01-能源与公用事业.md"
+        "D01-电力.md"
       ],
       "page_size_points": [
         595.3,
@@ -1101,8 +1107,7 @@
       "industry": "油气储运",
       "pdf_page": 26,
       "required_in": [
-        "D01-能源与公用事业.md",
-        "G01-运输仓储与物流.md"
+        "G03-油气储运.md"
       ],
       "page_size_points": [
         841.9,
@@ -1128,7 +1133,10 @@
       "industry": "数字金融",
       "pdf_page": 9,
       "required_in": [
-        "J01-金融.md"
+        "J01-银行.md",
+        "J02-保险.md",
+        "J03-证券服务.md",
+        "J04-基金管理.md"
       ],
       "page_size_points": [
         595.2756,
@@ -1154,7 +1162,8 @@
       "industry": "数字金融",
       "pdf_page": 34,
       "required_in": [
-        "J01-金融.md"
+        "J01-银行.md",
+        "J04-基金管理.md"
       ],
       "page_size_points": [
         595.2756,
@@ -1180,7 +1189,8 @@
       "industry": "数字金融",
       "pdf_page": 35,
       "required_in": [
-        "J01-金融.md"
+        "J02-保险.md",
+        "J03-证券服务.md"
       ],
       "page_size_points": [
         595.2756,
@@ -1206,7 +1216,8 @@
       "industry": "智慧农业",
       "pdf_page": 9,
       "required_in": [
-        "A01-农业与养殖.md"
+        "A01-农业.md",
+        "A03-畜牧业.md"
       ],
       "page_size_points": [
         595.32,
@@ -1232,7 +1243,7 @@
       "industry": "数字乡村",
       "pdf_page": 11,
       "required_in": [
-        "A01-农业与养殖.md"
+        "A01-农业.md"
       ],
       "page_size_points": [
         595.3,
@@ -1337,7 +1348,7 @@
       "industry": "智能云",
       "pdf_page": 41,
       "required_in": [
-        "I01-软件与信息服务.md"
+        "I03-云计算与模型平台服务.md"
       ],
       "page_size_points": [
         595.32,
@@ -1379,7 +1390,7 @@
       "method": "native-figure-caption-and-source-union",
       "required_in": [
         "P01-教育服务.md",
-        "R01-文化体育与文旅.md"
+        "R03-旅游与景区.md"
       ],
       "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。"
@@ -1390,7 +1401,7 @@
       "industry": "电信",
       "pdf_page": 23,
       "required_in": [
-        "I01-软件与信息服务.md"
+        "I02-电信服务.md"
       ],
       "page_size_points": [
         595.3,
@@ -1437,6 +1448,32 @@
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。"
     },
     {
+      "asset": "SC-A02-01-智慧林业架构-23.png",
+      "source_id": "SC-A02-01",
+      "industry": "智慧林业架构",
+      "pdf_page": 23,
+      "printed_page": 21,
+      "figure_titles": [
+        "图4 智慧林业总体架构图"
+      ],
+      "page_size_points": [
+        595.32,
+        841.92
+      ],
+      "crop_pdf_bbox": [
+        86.0,
+        67.9,
+        510.9,
+        449.762
+      ],
+      "method": "full-native-PDF-page-render-cropped-to-complete-image-object-plus-native-caption-union",
+      "required_in": [
+        "A02-林业.md"
+      ],
+      "review_note": "整页及裁片视觉核验；保留完整图形、文字、连线与原生图题，4pt留边；未改绘或移除水印。",
+      "page_number_handling": "正文标PDF第23页／印刷第21页；图题与页脚之间为其他正文，仅裁图与图题。"
+    },
+    {
       "asset": "SC-H01-03-餐饮产业链-20.png",
       "source_id": "SC-H01-03",
       "industry": "餐饮产业链",
@@ -1457,7 +1494,7 @@
       ],
       "method": "native-figure-caption-and-source-union",
       "required_in": [
-        "H01-住宿与餐饮.md"
+        "H02-餐饮.md"
       ],
       "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。"
@@ -1483,7 +1520,7 @@
       ],
       "method": "native-figure-caption-and-source-union",
       "required_in": [
-        "H01-住宿与餐饮.md"
+        "H02-餐饮.md"
       ],
       "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
       "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。"
