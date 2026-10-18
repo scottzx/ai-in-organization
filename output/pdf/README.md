@@ -2,7 +2,7 @@
 
 2026年10月17日，按现有排版设计重新生成最新书稿：上册初稿v11.0、下册初稿v8.0。上册收录导论、八章正文、结语及四个附录，包括四条业务线的三项能力分析、组织变革，以及供应链经营传导与中册承接。中册仍处于编写构思阶段，本轮PDF不收录中册正文。
 
-同日随后修订的Markdown已在第二至第六章增加“总体思路”并调整节号；导论随后补入数字化的经营意义、十年建设成效与遗留问题，第一章突出智力服务的作用与价值，并同步结语。下列PDF保留此前的导出内容，尚未收入这些修订；当前正文以Markdown为准。
+同日随后修订的Markdown已在第二至第六章增加“总体思路”并调整节号；导论随后补入数字化的经营意义、十年建设成效与遗留问题，第一章突出智力服务的作用与价值，并同步结语。2026年10月18日，第一章进一步明确服务特点、任务交付、价值检验与三化机制，第二章另建[MTL新稿](../../上册-研究报告/02-MTL-从市场到有效线索.md)，按五类原因、整体安排和六个流程环节重写，未采用原有MTL插图；[重写前原稿](../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md)保留备份。下列PDF保留此前的导出内容，尚未收入这些修订；当前正文以Markdown为准。
 
 ## 最新排版预览
 
@@ -45,10 +45,10 @@ python3 scripts/build-pdf.py --volume all --output output/pdf/企业数智化转
 python3 scripts/validate.py
 ```
 
-生成器仍支持`--chapter`单章导出。其他环境可通过`BOOK_BODY_FONT`、`BOOK_HEADING_FONT`、`BOOK_KAI_FONT`、`BOOK_DIAGRAM_FONT`与`BOOK_DIAGRAM_HEADING_FONT`指定覆盖中文的TrueType字体；不同字体可能改变分页，应重新检查并更新页数。
+生成器仍支持`--chapter`单章导出，例如`python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md`。其他环境可通过`BOOK_BODY_FONT`、`BOOK_HEADING_FONT`、`BOOK_KAI_FONT`、`BOOK_DIAGRAM_FONT`与`BOOK_DIAGRAM_HEADING_FONT`指定覆盖中文的TrueType字体；不同字体可能改变分页，应重新检查并更新页数。
 
 ## 历史发行文件
 
 [10月12日上下册合订本](企业数智化转型研究报告-上下册合订本.pdf)为238页，上册v8.0、下册v7.0，保留当时导论、五章正文、结语与案例版本。
 
-[10月12日第二章配图版](第二章-最小执行单位-从人到任务-配图版.pdf)为31页，采用当时销售岗位版正文及16张插图。图稿见[历史销售版插图索引](../illustrations/chapter-2/README.md)。当前MTL正文与13张在用插图见[上册目录](../../上册-研究报告/README.md)及[MTL插图维护说明](../illustrations/chapter-2-mtl/README.md)。
+[10月12日第二章配图版](第二章-最小执行单位-从人到任务-配图版.pdf)为31页，采用当时销售岗位版正文及16张插图。图稿见[历史销售版插图索引](../illustrations/chapter-2/README.md)。现行[MTL正文](../../上册-研究报告/02-MTL-从市场到有效线索.md)未使用旧图。[MTL历史插图索引](../illustrations/chapter-2-mtl/README.md)保留16张图稿及重写前13张已采用插图的位置。

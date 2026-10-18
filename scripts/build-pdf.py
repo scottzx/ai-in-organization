@@ -4,7 +4,7 @@
 Usage: python3 scripts/build-pdf.py
        python3 scripts/build-pdf.py --volume upper
        python3 scripts/build-pdf.py --volume lower
-       python3 scripts/build-pdf.py --chapter 上册-研究报告/02-最小执行单位-从人到任务.md
+       python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md
        python3 scripts/build-pdf.py --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
 Override BOOK_BODY_FONT, BOOK_HEADING_FONT and BOOK_KAI_FONT for Chinese TTF fonts.
 BOOK_DIAGRAM_FONT and BOOK_DIAGRAM_HEADING_FONT override illustration faces.

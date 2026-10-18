@@ -45,7 +45,11 @@ CASES = [ROOT / entry['path'] for entry in CASE_INDEX['entries']]
 DOCS = {ROOT / name for name in ('README.md', 'CONTRIBUTING.md', 'CHANGELOG.md')}
 for folder in ('上册-研究报告', '中册-行业解决方案', '下册-案例汇编', '索引', 'templates'):
     DOCS.update((ROOT / folder).rglob('*.md'))
-DOCS = {path for path in DOCS if '研究记录' not in path.relative_to(ROOT).parts}
+DOCS = {
+    path for path in DOCS
+    if '研究记录' not in path.relative_to(ROOT).parts
+    and not (path.parent == ROOT / '上册-研究报告' and path.name.startswith('备份-'))
+}
 DOCS.update((ROOT / 'output').rglob('*.md'))
 TITLES = {path: re.search(r'^#\s+(.+)$', path.read_text(), re.M)[1] for path in DOCS}
 COPIED = set()

@@ -1,35 +1,35 @@
-# 第二章 MTL 插图索引
+# 第二章 MTL 历史插图索引
 
-本组保留16张原创插图，当前第二章“MTL：从市场到有效线索”使用其中13张。原“能力沉淀”的图2-13及原“其他岗位”的图2-14、图2-15作为历史素材保留，能力建造与判断训练的正文已集中到第七章。图中六类工作、六项改进子目标、18项举措及各项关系均由本报告整理，不代表华为官方流程阶段或定义。候选对象的核实、销售实际接手和完整投入共同用于检验业务表现。
+本组16张原创插图全部作为历史素材保留。2026年10月18日重写前的第二章使用其中13张，位置见下表；图2-13、图2-14和图2-15在该备份中也未采用。现行第二章按业务原因和流程配合重写，未使用本组旧图。
 
-图号沿用既有素材编号；正文按论证需要安排位置，图2-02置于总体思路之后，用于承接六个子目标。
+图号和图内文字保留原稿含义，其中六类工作、六项改进子目标、18项举措及各项关系为当时本报告的应用整理，不代表华为官方流程阶段或定义。下表位置均指向重写前备份，不对应现行章节结构。
 
-[返回第二章](../../../上册-研究报告/02-最小执行单位-从人到任务.md) · [查看整章插图总览](chapter-2-overview.png)
+[阅读现行第二章](../../../上册-研究报告/02-MTL-从市场到有效线索.md) · [重写前第二章备份](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md) · [历史插图总览](chapter-2-overview.png)
 
-| 编号 | 所在章节 | 图题 | 文件 |
+| 编号 | 原稿位置 | 图题 | 文件 |
 | --- | --- | --- | --- |
-| 图2-01 | 2.1 | MTL职责落实为可以交接的任务产物 | [PNG](01-mtl-responsibilities.png) · [SVG](01-mtl-responsibilities.svg) |
-| 图2-02 | 2.3 总体思路 | MTL的业务结果与六项改进子目标 | [PNG](02-mtl-results.png) · [SVG](02-mtl-results.svg) |
-| 图2-03 | 2.2 | 业务差距经核实后形成改进目标 | [PNG](03-business-diagnosis.png) · [SVG](03-business-diagnosis.svg) |
-| 图2-04 | 2.2 | 有效率与接收率按同一批对象计算 | [PNG](04-conversion-cohort.png) · [SVG](04-conversion-cohort.svg) |
-| 图2-05 | 2.4 | 业务举措落实为可分工与可验收的任务 | [PNG](05-task-allocation.png) · [SVG](05-task-allocation.svg) |
-| 图2-06 | 2.4 子目标1 | 目标1：明确目标市场与客户 | [PNG](06-goal-1-market-customers.png) · [SVG](06-goal-1-market-customers.svg) |
-| 图2-07 | 2.4 子目标2 | 目标2：形成准确的价值表达 | [PNG](07-goal-2-value-expression.png) · [SVG](07-goal-2-value-expression.svg) |
-| 图2-08 | 2.4 子目标3 | 目标3：让市场活动产生可追踪回应 | [PNG](08-goal-3-market-response.png) · [SVG](08-goal-3-market-response.svg) |
-| 图2-09 | 2.4 子目标4 | 目标4：及时接住询盘并留下背景 | [PNG](09-goal-4-inquiry-context.png) · [SVG](09-goal-4-inquiry-context.svg) |
-| 图2-10 | 2.4 子目标5 | 目标5：提高候选对象成为有效线索的比例 | [PNG](10-goal-5-qualified-leads.png) · [SVG](10-goal-5-qualified-leads.svg) |
-| 图2-11 | 2.4 子目标6 | 目标6：让有效线索被销售实际接手 | [PNG](11-goal-6-sales-handoff.png) · [SVG](11-goal-6-sales-handoff.svg) |
-| 图2-12 | 2.4 成本比较 | 合格交付成本按完整投入比较 | [PNG](12-qualified-delivery-cost.png) · [SVG](12-qualified-delivery-cost.svg) |
-| 图2-13 | 原2.4历史素材，当前正文未采用 | 个人工作方法经复用验证形成组织能力 | [PNG](13-capability-reuse.png) · [SVG](13-capability-reuse.svg) |
-| 图2-14 | 历史素材，当前正文未采用 | 技术辅助围绕岗位业务目标展开 | [PNG](14-other-roles-a.png) · [SVG](14-other-roles-a.svg) |
-| 图2-15 | 历史素材，当前正文未采用 | 任务条件决定技术辅助的具体范围 | [PNG](15-other-roles-b.png) · [SVG](15-other-roles-b.svg) |
-| 图2-16 | 2.5 本章小结 | MTL岗位改造按任务分工与业务结果检验 | [PNG](16-chapter-summary.png) · [SVG](16-chapter-summary.svg) |
+| 图2-01 | [备份2.1](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-1) | MTL职责落实为可以交接的任务产物 | [PNG](01-mtl-responsibilities.png) · [SVG](01-mtl-responsibilities.svg) |
+| 图2-02 | [备份2.3 总体思路](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-3) | MTL的业务结果与六项改进子目标 | [PNG](02-mtl-results.png) · [SVG](02-mtl-results.svg) |
+| 图2-03 | [备份2.2](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-2) | 业务差距经核实后形成改进目标 | [PNG](03-business-diagnosis.png) · [SVG](03-business-diagnosis.svg) |
+| 图2-04 | [备份2.2](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-2) | 有效率与接收率按同一批对象计算 | [PNG](04-conversion-cohort.png) · [SVG](04-conversion-cohort.svg) |
+| 图2-05 | [备份2.4](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-4) | 业务举措落实为可分工与可验收的任务 | [PNG](05-task-allocation.png) · [SVG](05-task-allocation.svg) |
+| 图2-06 | [备份2.4 子目标1](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标1明确值得经营的目标市场与客户) | 目标1：明确目标市场与客户 | [PNG](06-goal-1-market-customers.png) · [SVG](06-goal-1-market-customers.svg) |
+| 图2-07 | [备份2.4 子目标2](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标2形成准确的价值表达) | 目标2：形成准确的价值表达 | [PNG](07-goal-2-value-expression.png) · [SVG](07-goal-2-value-expression.svg) |
+| 图2-08 | [备份2.4 子目标3](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标3让市场活动产生可追踪的回应) | 目标3：让市场活动产生可追踪回应 | [PNG](08-goal-3-market-response.png) · [SVG](08-goal-3-market-response.svg) |
+| 图2-09 | [备份2.4 子目标4](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标4及时接住询盘并留下可用背景) | 目标4：及时接住询盘并留下背景 | [PNG](09-goal-4-inquiry-context.png) · [SVG](09-goal-4-inquiry-context.svg) |
+| 图2-10 | [备份2.4 子目标5](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标5提高候选对象成为有效线索的比例) | 目标5：提高候选对象成为有效线索的比例 | [PNG](10-goal-5-qualified-leads.png) · [SVG](10-goal-5-qualified-leads.svg) |
+| 图2-11 | [备份2.4 子目标6](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#子目标6让有效线索被销售实际接手并反馈) | 目标6：让有效线索被销售实际接手 | [PNG](11-goal-6-sales-handoff.png) · [SVG](11-goal-6-sales-handoff.svg) |
+| 图2-12 | [备份2.4 成本比较](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#举措63按同批对象复盘来源退回与完整投入) | 合格交付成本按完整投入比较 | [PNG](12-qualified-delivery-cost.png) · [SVG](12-qualified-delivery-cost.svg) |
+| 图2-13 | 更早稿历史素材，重写前备份未采用 | 个人工作方法经复用验证形成组织能力 | [PNG](13-capability-reuse.png) · [SVG](13-capability-reuse.svg) |
+| 图2-14 | 更早稿历史素材，重写前备份未采用 | 技术辅助围绕岗位业务目标展开 | [PNG](14-other-roles-a.png) · [SVG](14-other-roles-a.svg) |
+| 图2-15 | 更早稿历史素材，重写前备份未采用 | 任务条件决定技术辅助的具体范围 | [PNG](15-other-roles-b.png) · [SVG](15-other-roles-b.svg) |
+| 图2-16 | [备份2.5 本章小结](../../../上册-研究报告/备份-第二章-MTL-重写前-20261018.md#section-2-5) | MTL岗位改造按任务分工与业务结果检验 | [PNG](16-chapter-summary.png) · [SVG](16-chapter-summary.svg) |
 
 历史图2-13以市场人员准备线索交接客户简报为例，保留原第二章标注；当前相关论述见[第七章的方法建造与复用](../../../上册-研究报告/07-组织变革与精益管理.md#section-7-3-1)。图2-12、图2-14和图2-15沿用原版的通用任务分析；旧版目录`chapter-2`继续保留，供历史发行PDF及其索引使用。
 
 ## 生成与校验
 
-PNG与SVG由同一组图元和文字生成，正文引用PNG，PDF构建读取同名SVG，以保留矢量线条和可检索文字。修改图内文字时编辑[figures.py](figures.py)或[supplemental_figures.py](supplemental_figures.py)，再运行[build.py](build.py)，不要直接修改PNG。
+PNG与SVG由同一组图元和文字生成，原稿引用PNG，PDF构建读取同名SVG，以保留矢量线条和可检索文字。修改图内文字时编辑[figures.py](figures.py)或[supplemental_figures.py](supplemental_figures.py)，再运行[build.py](build.py)，不要直接修改PNG。
 
 图内保留浅蓝底、深蓝文字和蓝色强调风格。内部布局使用1800×1280坐标，导出按实际内容裁切，四边统一保留16px白色边距。单图JSON与[manifest.json](manifest.json)记录图题、可见文字、文字边界、实际尺寸、裁切原点、字体与来源说明。
 

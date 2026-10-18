@@ -4,7 +4,7 @@
 
 本组16张原创插图采用浅蓝底、深蓝文字和蓝色强调风格。图题、图内标注及图注采用陈述式，分别服务职责梳理、业务诊断、任务分工与结果验证。图中关系属于本报告的分析设计，案例事实与效果口径继续以章节原文和出处为准。
 
-[当前第二章MTL正文](../../../上册-研究报告/02-最小执行单位-从人到任务.md) · [阅读第二章配图版PDF](../../pdf/第二章-最小执行单位-从人到任务-配图版.pdf) · [查看整章插图总览](chapter-2-overview.png)
+[当前第二章MTL正文](../../../上册-研究报告/02-MTL-从市场到有效线索.md) · [阅读第二章配图版PDF](../../pdf/第二章-最小执行单位-从人到任务-配图版.pdf) · [查看整章插图总览](chapter-2-overview.png)
 
 图2-13依据10月12日销售版2.4的客户拜访准备例子细化：资深销售留下判断与修改依据，经验分别整理为Skill、工具或任务示例，其他销售换入新客户资料复用，并将使用反馈带回方法修订。工具按任务需要选择，图示属于本节方法说明。
 
@@ -54,7 +54,7 @@ PNG与SVG按实际内容边界导出，四周统一保留16px留白，便于嵌�
 
 ```bash
 python3 output/illustrations/chapter-2/build.py
-python3 scripts/build-pdf.py --chapter 上册-研究报告/02-最小执行单位-从人到任务.md
+python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md
 python3 scripts/build-pdf.py
 python3 scripts/validate.py
 ```
