@@ -514,6 +514,8 @@ class Builder:
             self.links['external']+=1
             return escape(target,quote=True)
         dest=(self.current.parent/unquote(parsed.path)).resolve() if parsed.path else self.current
+        if dest.is_relative_to(ROOT/'过程稿'):
+            raise ValueError(f'Publication links to internal process file: {self.current}: {target}')
         if dest == ROOT/'README.md' and self.publication_note:
             self.links['internal']+=1
             return '#publication-note'
@@ -740,7 +742,7 @@ class Builder:
             if [path.name[:2] for path in numbered_upper_paths] != [f'{number:02d}' for number in range(10)]:
                 raise ValueError('Expected one upper-volume document for each number 00–09 '
                                  '(导论, eight chapters and 结语)')
-            upper_paths=[upper/'README.md']+numbered_upper_paths+sorted(upper.glob('附录*.md'))
+            upper_paths=[upper/'README.md']+numbered_upper_paths+[upper/'附录C-术语辨析表.md']
         if self.volume in ('lower','all'):
             index=json.loads((ROOT/'索引/案例来源索引.json').read_text())
             lower_paths=[lower/'README.md']
@@ -763,10 +765,10 @@ class Builder:
             'lower':f'本下册根据{DATE}保存的稿件编排，为初稿 {LOWER_VERSION}；案例按统一的七节结构重写。上册研究报告正文另册提供，跨册引用链接至项目仓库。',
         }[self.volume]
         contents_note={
-            'all':'收录上册导论、八章正文、结语与四个附录；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。下册收录62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
-            'upper':'收录上册导论、八章正文、结语与四个附录；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。另附问题阅读路径与资料来源说明。',
+            'all':'收录上册导论、八章正文、结语与附录C术语辨析表；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。下册收录62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
+            'upper':'收录上册导论、八章正文、结语与附录C术语辨析表；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。另附问题阅读路径与资料来源说明。',
             'lower':'收录下册62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
-        }[self.volume]+'草稿箱、思维导图编辑数据和历史更新记录不编入正文。'
+        }[self.volume]+'过程稿、草稿箱、思维导图编辑数据和历史更新记录不编入正文。'
         extra_paths=[ROOT/'索引/阅读路径.md',ROOT/'索引/资料来源说明.md']
         paths=upper_paths+lower_paths+extra_paths
         docs={path:self.load(path) for path in paths}
@@ -823,6 +825,8 @@ class Builder:
     def run_chapter(self, chapter):
         path = (ROOT / chapter).resolve()
         path.relative_to(ROOT)
+        if path.is_relative_to(ROOT/'过程稿'):
+            raise ValueError(f'Internal process file is not a publication chapter: {chapter}')
         if path.suffix.lower() != '.md' or not path.is_file():
             raise ValueError(f'Chapter must be a repository Markdown file: {chapter}')
         OUT.mkdir(parents=True, exist_ok=True)

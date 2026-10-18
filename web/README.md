@@ -2,11 +2,11 @@
 
 [在线阅读与分享](https://scottzx.github.io/ai-in-organization/) · [返回仓库首页](../README.md)
 
-网页直接从仓库现有Markdown生成。请在原章节或案例文件修改内容，不必再维护一份网页正文。上册章节、中册行业方案、附录、下册案例、公开索引与PDF发行说明都可直接阅读；草稿箱不生成网页，其已有引用保留为GitHub源文档链接。本地资料库与内部审读底稿保存在本机，不随公开书稿提交。
+网页直接从仓库现有Markdown生成。请在原章节或案例文件修改内容，不必再维护一份网页正文。上册章节、中册行业方案、附录、下册案例、公开索引与PDF发行说明都可直接阅读；过程稿与草稿箱不生成网页；正式内容不得链接到过程稿，草稿箱的既有引用保留为GitHub源文档链接。本地资料库与内部审读底稿保存在本机，不随公开书稿提交。
 
 ## 自动发布
 
-推送到main分支后，GitHub Actions执行文档校验、生成静态网页并部署至GitHub Pages。也可以在Actions中的“Publish report website”手动运行。工作流见[pages.yml](../.github/workflows/pages.yml)。PDF沿用仓库现有文件，网页发布不重新编排PDF。
+推送到main分支后，GitHub Actions执行文档校验、生成静态网页并部署至GitHub Pages。也可以在Actions中的“Publish report website”手动运行。工作流见[pages.yml](../.github/workflows/pages.yml)。旧PDF通过GitHub历史归档查阅，不打包到当前站点；网页发布不重新编排PDF。
 
 仓库Pages的发布来源设置为GitHub Actions。每章保留独立网址、本页目录、相邻章节与分享按钮；全文搜索在浏览器本地完成，搜索内容从站点自身加载。
 

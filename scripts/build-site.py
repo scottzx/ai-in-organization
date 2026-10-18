@@ -38,7 +38,8 @@ def render_text(renderer, tokens, index, options, env):
 
 MD.add_render_rule('text', render_text)
 UPPER = sorted((ROOT / '上册-研究报告').glob('[0-9][0-9]-*.md'))
-APPENDICES = sorted((ROOT / '上册-研究报告').glob('附录*.md'))
+APPENDICES = [ROOT / '上册-研究报告/附录C-术语辨析表.md']
+PROCESS = ROOT / '过程稿'
 MIDDLE = sorted(path for path in (ROOT / '中册-行业解决方案').glob('*.md') if path.name != 'README.md')
 CASE_INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text())
 CASES = [ROOT / entry['path'] for entry in CASE_INDEX['entries']]
@@ -48,7 +49,10 @@ for folder in ('上册-研究报告', '中册-行业解决方案', '下册-案�
 DOCS = {
     path for path in DOCS
     if '研究记录' not in path.relative_to(ROOT).parts
-    and not (path.parent == ROOT / '上册-研究报告' and path.name.startswith('备份-'))
+    and not path.is_relative_to(PROCESS)
+    and not (path.parent == ROOT / '上册-研究报告'
+             and (path.name.startswith('备份-')
+                  or (path.name.startswith('附录') and path not in APPENDICES)))
 }
 DOCS.update((ROOT / 'output').rglob('*.md'))
 TITLES = {path: re.search(r'^#\s+(.+)$', path.read_text(), re.M)[1] for path in DOCS}
@@ -68,6 +72,8 @@ def href(source, destination, fragment=''):
 
 
 def copy_asset(path):
+    if path.is_relative_to(PROCESS):
+        raise ValueError(f'Internal process file cannot be published: {path.name}')
     if path in COPIED:
         return
     target = OUT / path.relative_to(ROOT)
@@ -83,6 +89,11 @@ def rewrite_url(source, value):
     destination = (source.parent / unquote(parsed.path)).resolve()
     if not destination.is_relative_to(ROOT) or not destination.exists():
         raise ValueError(f'Missing or out-of-repository link: {source.name}: {value}')
+    if destination.is_relative_to(PROCESS):
+        raise ValueError(f'Publication links to internal process file: {source.name}: {value}')
+    if destination.parent == ROOT / 'output/pdf' and destination.suffix in ('.pdf', '.json'):
+        # Existing exports describe earlier manuscripts and stay in the repository archive.
+        return REPO + '/blob/main/' + quote(str(destination.relative_to(ROOT)), safe='/')
     if destination not in DOCS:
         # Drafts, scripts and editorial files can still be consulted on GitHub.
         relative_parts = destination.relative_to(ROOT).parts
@@ -169,7 +180,7 @@ def sidebar(current):
                 contents += nav_link(current, target)
         contents += '</details>'
     contents += '<p class="nav-label">资料与下载</p>'
-    for target, label in [('output/pdf/README.md', 'PDF 发行与下载'), ('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
+    for target, label in [('output/pdf/README.md', '历史 PDF 归档'), ('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
         contents += nav_link(current, ROOT / target, label)
     contents += '<p class="nav-note">一芥智能研究院<br>从真实业务出发，研究组织中的 AI。</p>'
     contents += '<p class="nav-contact">企业数智化转型咨询，<br>欢迎来电：<a href="tel:13185000425">13185000425</a></p>'
@@ -203,7 +214,6 @@ def page_shell(current, body, description):
 def home_page(current):
     def link(target):
         return href(current, ROOT / target)
-    pdf = 'output/pdf/企业数智化转型研究报告-排版预览版.pdf'
     counts = CASE_INDEX['counts']
     edition = re.search(r'\*\*一芥智能研究院\*\*｜.*?｜(.+?)\n', current.read_text())[1]
     rows = ''
@@ -216,7 +226,7 @@ def home_page(current):
 <section class="hero"><div><span class="edition">{escape(edition.replace('·', ' / '))}</span>
 <h1>企业数智化转型<br>研究报告</h1><div class="subtitle">从智力服务到精益经营</div>
 <p>过去为什么做数字化，建设到了什么程度，遇到了什么问题？由此研究今天为什么进一步推进数智化，以及怎样沿业务诊断、具体举措、跨线融合与组织变革落实改进。</p>
-<div class="hero-buttons"><a class="button primary" href="{href(current, UPPER[0])}">开始阅读 <span>→</span></a><a class="button" href="{link(pdf)}">下载合订 PDF <span>↓</span></a><button id="copy-link" class="plain-button">分享本页 ↗</button></div></div>
+<div class="hero-buttons"><a class="button primary" href="{href(current, UPPER[0])}">开始阅读 <span>→</span></a><a class="button" href="{link('上册-研究报告/README.md')}">查看上册目录 <span>→</span></a><button id="copy-link" class="plain-button">分享本页 ↗</button></div></div>
 <div class="book" aria-hidden="true"><small>YIJIE · RESEARCH 2026</small><div><div class="book-title">企业数智化<br>转型研究报告</div><div class="book-line"></div><div class="book-bottom">从智力服务到精益经营</div></div><div class="book-bottom">一芥智能研究院<br>研究报告 / 企业案例汇编</div></div></section>
 <div class="stats"><div class="stat"><strong>8</strong><span>章研究</span><small>从经营问题到实施验证</small></div><div class="stat"><strong>{counts['entries']}</strong><span>个案例入口</span><small>按行业、公司与项目组织</small></div><div class="stat"><strong>{counts['all_fragments']}</strong><span>个场景片段</span><small>保留来源、阶段与口径</small></div><div class="stat"><strong>4</strong><span>条业务线</span><small>MTL / LTC / IPD / ITR</small></div></div>
 <div class="section-heading"><h2>选择你的阅读路径</h2><a href="{link('索引/阅读路径.md')}">按经营问题查找 →</a></div>
@@ -224,9 +234,9 @@ def home_page(current):
 <article class="volume-card"><span class="card-label">VOLUME 02 / 行业解决方案</span><h3>沿行业架构增加智力服务</h3><p>引用行业图谱，展开业务功能和应用模块，写清三化怎样协同建设，以及建什么、怎么建、怎样验收。</p><div class="flow-tags"><span>行业架构与模块</span><span>智力服务</span><span>建设与验收</span></div><a class="text-link" href="{link('中册-行业解决方案/README.md')}">查看中册行业方案 →</a></article>
 <article class="volume-card"><span class="card-label">VOLUME 03 / 案例汇编</span><h3>在真实业务中看数字化与数智化</h3><p>按行业、公司或项目呈现业务背景、问题、实施过程、效果与启示。区分实际使用、试点、原型和设想。</p><div class="flow-tags"><span>制造业</span><span>批发与零售</span><span>信息技术</span><span>商务服务</span><span>更多行业</span></div><a class="text-link" href="{link('下册-案例汇编/README.md')}">浏览全部 {counts['entries']} 个入口 →</a></article></div>
 <div class="section-heading"><h2>沿着问题，逐章展开</h2><span>导论 · 八章正文 · 结语</span></div><div class="chapter-grid">{rows}</div>
-<div class="section-heading"><h2>资料与完整版本</h2><a href="{link('output/pdf/README.md')}">PDF 发行说明 →</a></div>
-<div class="resource-row"><a class="button" href="{link(pdf)}">上下册合订 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-上册-排版预览版.pdf')}">上册 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-下册-排版预览版.pdf')}">下册 PDF <span>↓</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
-<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。现有下载PDF保留其发行时内容。</p>
+<div class="section-heading"><h2>资料与版本</h2><a href="{link('output/pdf/README.md')}">历史 PDF 归档 →</a></div>
+<div class="resource-row"><a class="button" href="{link('output/pdf/README.md')}">历史 PDF 归档 <span>→</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
+<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。旧PDF作为历史版本保留，现行书稿以在线阅读版为准。</p>
 {footer()}</main>'''
 
 
