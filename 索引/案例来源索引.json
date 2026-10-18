@@ -108,8 +108,9 @@
       "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
       "locator": "Jidoka及Just-in-Time两节",
       "source_type": "企业官方生产方式说明（历史管理机制参照，非AI案例）",
-      "used_in": "上册第六章6.2.2的协同与持续改善参照；第七章7.4.1参照Jidoka中改进工作、技能与技术的说明",
-      "checked_on": "2026-10-17"
+      "used_in": "上册第七章7.4.1参照Jidoka中改进工作、技能与技术的说明；2026-10-18退出第六章",
+      "checked_on": "2026-10-17",
+      "previous_used_in": "上册第六章6.2.2的协同与持续改善参照；第七章7.4.1参照Jidoka中改进工作、技能与技术的说明"
     },
     {
       "id": "CH04-R03",
@@ -118,8 +119,9 @@
       "url": "https://static.inditex.com/annual_report_2015/en/our-priorities/innovation-in-customer-services.php",
       "locator": "Innovation in customer services节，四个业务环节的说明段落",
       "source_type": "企业官方年报（历史管理机制参照，非AI案例）",
-      "used_in": "上册第六章6.4子目标5举措5.1的需求反馈进入产品与供给安排的历史机制参照",
-      "checked_on": "2026-10-17"
+      "used_in": "历史管理机制资料；2026-10-18重写第六章后退出当前正文，保留原使用范围",
+      "checked_on": "2026-10-17",
+      "previous_used_in": "上册第六章6.4子目标5举措5.1的需求反馈进入产品与供给安排的历史机制参照"
     },
     {
       "id": "CH03-R04",
@@ -166,7 +168,7 @@
       "url": "https://www.huawei.com/-/media/corp2020/annual-report/pdf/2012-cn-hw_u_256091.pdf",
       "locator": "印刷第91页、PDF第94页，管理变革；第六章另审读印刷第92—93页、PDF第95—96页，内部控制",
       "source_type": "企业官方年报（流程目的及管理机制参照，非AI效果实证）",
-      "used_in": "上册第三章3.3.1、第四章4.1、第五章5.1、第六章6.2.1",
+      "used_in": "上册第三章3.3.1、第四章4.1、第五章5.1、第六章6.3",
       "checked_on": "2026-10-17",
       "verification_note": "审读客户关系与线索到回款、客户问题管理、IPD及项目资源管理；第六章另审读流程责任人、关键控制点、职责分离和改进沟通。具体诊断、目标和人机举措为本报告应用整理。",
       "source_file_sha256": "8484da02c2c93e29156b98b0b41cd1455d2364f8bd805206e870611e1cc04bcc"
