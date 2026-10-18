@@ -1,66 +1,64 @@
-# 腾讯云报告镜像更新器
+# GitHub Actions 静态报告镜像发布
 
-将公共仓库 `scottzx/ai-in-organization` 的 `main` 分支构建为静态站，发布到：
+公开入口：<https://www.dreammate.work/report/ai-transformation-2026/>。
 
-```text
-https://www.dreammate.work/report/ai-transformation-2026/
-```
+GitHub Actions 在仓库更新后完成校验和静态构建，通过报告发布专用 SSH 密钥，将完整 `_site` 打包传给腾讯云的 `receive.py`。服务器只接收静态成品并原子发布，不访问 GitHub、不安装构建依赖、不定时拉取源码。
 
-这组文件只负责报告更新。当前使用现有官网域名的 `/report/` 入口，避免等待新子域名的 DNS 配置。安装者在该域名现有 Nginx 虚拟主机中添加独立 `location /report/`，通过 `alias /var/www/report.dreammate.work/` 提供文件，并允许跟随本目录内的软链；不改其他 URL 的处理规则。
-
-`REPORT_SITE_URL` 可覆盖构建所用公开地址，service 已设置为上面的官网入口。将来绑定 `report.dreammate.work` 后，可以调整该环境变量；脚本默认地址为 `https://report.dreammate.work/ai-transformation-2026/`。缓存与发布的物理目录不随 URL 变化。
-
-## 目录和权限
+## 服务器文件和权限
 
 ```text
 /opt/ai-report-mirror/
-  update.py              安装的更新器
-  venv/                  预先安装的 Python 依赖
-  cache/                 更新器自己创建的源码归档缓存和归属标记
-  update.lock            flock 并发锁
+  receive.py             root 安装的接收器，运行用户不可修改
+  receive.lock           reportmirror 可写的并发锁
+  .ssh/authorized_keys   仅报告发布专用公钥，restrict + forced command
 /var/www/report.dreammate.work/
-  releases/<完整 commit>/  完整、已校验的静态网站
-  ai-transformation-2026 -> releases/<完整 commit>
+  releases/<完整 SHA>/    完整静态站和接收器生成的完成标记
+  ai-transformation-2026 -> releases/<完整 SHA>
 ```
 
-使用独立系统用户 `reportmirror`，禁止 SSH 登录，不授予 sudo。只允许它写自己的工作目录和新报告站点目录；Nginx 工作进程需要目录遍历和文件读取权限。不要将用户工作区、现有站点目录或已有 Git 仓库放到缓存位置。预先存在但没有正确归属标记的缓存会导致更新停止，更新器不会自行重置或删除它。
+接收器只依赖标准库 Python 3.11。使用已有的独立用户 `reportmirror`，不授予 sudo，不授予其他网站目录的写入权限。SSH 为执行 forced command 需要该用户使用 `/bin/sh`；专用公钥必须包含以下限制，禁止它执行自选 shell 命令、分配终端或转发连接：
 
-## 首次安装与手动更新
+```text
+restrict,command="/usr/bin/python3 -I /opt/ai-report-mirror/receive.py" ssh-ed25519 <报告发布专用公钥> report-publish
+```
 
-以下由有权限的安装者在服务器执行。需要 curl、Python 3.10 及以上、`venv` 和 systemd，不需要 Git 或 GitHub token；先确认 Python 版本也满足仓库构建脚本。`markdown-it-py` 由安装者预装，定时任务不会安装或升级依赖。
+`/opt/ai-report-mirror`、`receive.py` 和公钥配置由 root 管理。预先创建 `receive.lock`，允许 `reportmirror` 读写；报告 public 根目录和 `releases` 允许 `reportmirror` 写入、Nginx 读取。公钥目录与文件需满足 sshd 的读取与 StrictModes 权限要求；固定 forced command 的配置不可由发布用户修改。私钥仅用于报告发布，存入 GitHub Actions 的专用 secret，不能复用个人 SSH 密钥或服务器管理密钥。
+
+例如，由管理员完成接收器及锁文件的首次安装（部署前确认 Python 版本）：
 
 ```sh
-useradd --system --user-group --home-dir /opt/ai-report-mirror --no-create-home --shell /usr/sbin/nologin reportmirror
-install -d -m 0755 -o reportmirror -g reportmirror /opt/ai-report-mirror /var/www/report.dreammate.work
-python3 -m venv /opt/ai-report-mirror/venv
-/opt/ai-report-mirror/venv/bin/pip install 'markdown-it-py==4'
-install -m 0644 scripts/deploy/report-mirror/update.py /opt/ai-report-mirror/update.py
-runuser -u reportmirror -- env REPORT_SITE_URL=https://www.dreammate.work/report/ai-transformation-2026/ /opt/ai-report-mirror/venv/bin/python /opt/ai-report-mirror/update.py
+install -d -m 0755 -o root -g root /opt/ai-report-mirror
+install -m 0644 -o root -g root scripts/deploy/report-mirror/receive.py /opt/ai-report-mirror/receive.py
+install -m 0600 -o reportmirror -g reportmirror /dev/null /opt/ai-report-mirror/receive.lock
 ```
 
-先检查新目录中的软链和网站首页，再启用定时任务。构建器必须支持 `REPORT_SITE_URL` 环境变量，用于站点地图和规范链接。不要把已含其他内容的目录直接交给安装命令或递归修改其所有权。
+之后不应在发布执行期间替换锁文件。不要递归修改其他站点或已有不明目录的所有权。
 
-## 定时更新
+## Actions 发送协议
+
+工作流由仓库的 `.github/workflows/` 管理。发送前依次运行通用校验、中册校验和静态构建；构建时设置：
+
+```text
+REPORT_SITE_URL=https://www.dreammate.work/report/ai-transformation-2026/
+```
+
+将 `_site` 本身的内容打包，不添加额外顶层目录。标准 tar 产生的 `./` 路径可用：
 
 ```sh
-install -m 0644 scripts/deploy/report-mirror/report-mirror-update.service /etc/systemd/system/report-mirror-update.service
-install -m 0644 scripts/deploy/report-mirror/report-mirror-update.timer /etc/systemd/system/report-mirror-update.timer
-systemctl daemon-reload
-systemctl enable --now report-mirror-update.timer
-systemctl list-timers report-mirror-update.timer
-journalctl -u report-mirror-update.service -n 40 --no-pager
+tar -czf report-site.tar.gz -C _site .
+ssh -i <报告发布专用私钥> -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes reportmirror@<服务器地址> "publish <40位小写完整commit SHA>" < report-site.tar.gz
 ```
 
-开机两分钟后首次检查，随后在上次执行结束五分钟后再次检查。服务以 `reportmirror` 运行，systemd 也将可写位置限制在上述两个目录。也可随时由安装者运行 `systemctl start report-mirror-update.service` 触发检查。
+工作流应固定服务器 host key，并通过 Actions 的发布并发组串行执行；不要关闭 host key 校验。服务端只接受完全匹配 `publish <40位小写SHA>` 的 `SSH_ORIGINAL_COMMAND`，不会执行任何传入命令。
 
-## 更新与失败行为
+## 接收与原子发布
 
-每次通过 `api.github.com` 的公共分支引用 API 读取 `main` 的完整 commit SHA，仅当版本变化时从 `codeload.github.com/scottzx/ai-in-organization/tar.gz/<SHA>` 下载官方源码归档，不连接 `github.com`、不使用 token。curl 禁用用户配置，连接超时 10 秒、总超时 120 秒。API 限流或网络失败时保留线上版本，等待下次定时检查。
+接收器持有 `receive.lock` 后，将 stdin 完整保存到 `releases/.incoming-...` 内，只接受 gzip tar。压缩输入和解压后的文件内容分别最多 1 GiB，文件与目录条目合计最多 10,000，tar 元数据与填充也有额外硬上限。路径必须相对；拒绝绝对路径、`..`、重复路径、软硬链接、稀疏文件和其他特殊文件，拒绝上传接收器专用完成标记。
 
-归档缓存带归属标记；下载通过临时文件完整落盘后才保存。解包前检查所有条目，只接受唯一顶层目录下的普通文件和目录，安全剥除该目录前缀，拒绝路径穿越、软/硬链接和特殊文件。源码解到站点根目录以外的独立临时目录，用当前虚拟环境的 Python 依次运行 `scripts/validate.py`、`scripts/validate-middle.py`、`scripts/build-site.py`。各个构建/校验命令均有 120 秒超时；锁被占用或 commit 未变化时跳过。
+解包后要求非空 `index.html` 和非空对象/数组格式的合法 `search-index.json`。接收器自行写入 `.report-mirror-release.json`，记录仓库、完整 SHA 和固定公开 URL；文件统一为 0644，目录为 0755。只有全部成功后，才将完整目录移到 `releases/<SHA>`，用临时软链和 `os.replace` 原子切换公开入口。
 
-只有三步成功并生成首页后，才移动完整 `_site` 到新的 release，写入归属标记，并通过临时软链和 `os.replace` 原子切换访问入口。更新失败返回非零状态，保留当前线上软链。更新器不会 reset 用户仓库、删除不明文件或清理历史 release；磁盘空间由管理员定期检查。
+同 SHA 已存在时，只接受完成标记匹配的 release，并仍完整消费和校验上传内容，再幂等发布；不覆盖不明目录。失败返回非零状态并保留线上版本。历史 release 不自动删除，可由管理员核查后处理。日志仅记录固定诊断和 SHA，不打印传入命令、密钥或归档内容。
 
-release 标记同时记录构建 URL。若调整 `REPORT_SITE_URL`，请配合仓库的一个新 commit 重新构建；对于同一 commit 已存在但 URL 不同的 release，更新器会停止，避免复用旧的站点地图或覆盖不明目录。
+## Nginx 入口
 
-日志只记录阶段、commit 简写和结果，不打印网络命令中的凭据或子命令输出。排查构建失败时，可在隔离的临时源码目录中，用同一虚拟环境手动运行对应校验命令；不要使用线上 release 作为构建工作区。
+保留的 `nginx-www-location.conf` 应包含在现有 `www.dreammate.work` 的 HTTPS server 中。它仅为 `/report/` 添加独立 alias，静态文件仍在 `/var/www/report.dreammate.work`，不覆盖官网其他内容。管理员修改后先执行 `nginx -t`，再平滑重载。

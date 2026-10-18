@@ -8,7 +8,7 @@
 
 推送到main分支后，GitHub Actions执行文档校验、生成静态网页并部署至GitHub Pages。也可以在Actions中的“Publish report website”手动运行。工作流见[pages.yml](../.github/workflows/pages.yml)。旧PDF通过GitHub历史归档查阅，不打包到当前站点；网页发布不重新编排PDF。
 
-国内入口部署在现有腾讯云官网的 `/report/ai-transformation-2026/` 路径，复用官网域名和HTTPS证书，报告文件单独存放。专用系统用户每5分钟通过GitHub公共API检查main分支；有新版本时从官方codeload下载源码，校验、构建后原子切换，失败时保留上次成功版本。首次部署通过Tailscale上传，后续无需保持本机在线。服务配置与维护方法见[腾讯云报告镜像更新器](../scripts/deploy/report-mirror/README.md)。
+国内入口部署在现有腾讯云官网的 `/report/ai-transformation-2026/` 路径，复用官网域名和HTTPS证书，报告文件单独存放。同一次GitHub Actions发布流程构建国内阅读版，并通过专用SSH密钥推送静态成品；服务器的报告接收器校验归档后原子切换，失败时保留上次成功版本。专用系统用户没有sudo权限，密钥限制为报告接收命令。首次部署通过Tailscale上传，后续无需保持本机在线。服务配置与维护方法见[腾讯云报告镜像更新器](../scripts/deploy/report-mirror/README.md)。
 
 仓库Pages的发布来源设置为GitHub Actions。每章保留独立网址、本页目录、相邻章节与分享按钮；全文搜索在浏览器本地完成，搜索内容从站点自身加载。
 
