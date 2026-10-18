@@ -1,9 +1,9 @@
 {
   "title": "中册行业章节范围",
   "updated_on": "2026-10-18",
-  "edition": "v0.3",
-  "default_chapter_edition": "v0.1",
-  "revision_note": "共用实施方法集中于上册第八章。工程机械样章更新为v0.3，保留四节行业方案正文和第五节适用结论，参考资料独立列示；其余28篇保留v0.1行业初稿，待依模板扩写。",
+  "edition": "v0.4",
+  "default_chapter_edition": "v0.3",
+  "revision_note": "全部29篇行业章采用工程机械v0.3五节正文与独立参考资料格式，重点展开行业架构、数字化应用模块和智力服务新增价值；共用实施方法集中于上册第八章。",
   "chapters": [
     {
       "file": "A01-农业与养殖.md",
@@ -26,7 +26,6 @@
     },
     {
       "file": "C01-工程机械.md",
-      "edition": "v0.3",
       "title": "工程机械",
       "scope": "工程机械及配套",
       "priority_source_ids": [

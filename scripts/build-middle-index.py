@@ -12,16 +12,23 @@ INTRO=['00-导读.md']
 def title(p):
  return re.search(r'^#\s+(.+)$',p.read_text(),re.M)[1]
 
+def case_links(text):
+ # Keep scene links used in the prose; omit a duplicate unanchored bibliography link.
+ links=set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',text))
+ links={link for link in links if not link.split('#',1)[0].endswith('/README.md')}
+ anchored={link.split('#',1)[0] for link in links if '#' in link}
+ return sorted(link for link in links if '#' in link or link not in anchored)
+
 def main():
  plan=json.loads((DATA/'编写范围.json').read_text())
  edition=plan['edition']
  planned=plan['chapters']
- chapter_editions={item['file']:item.get('edition',plan['default_chapter_edition']) for item in planned}
  chapters=sorted(p for p in MIDDLE.glob('*.md') if re.match(r'[A-Z]\d\d-',p.name))
  lines=['# 中册 行业数智化解决方案','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
  '[全书首页](../README.md) · [上册研究报告](../上册-研究报告/README.md) · [下册企业案例](../下册-案例汇编/README.md)','',
  '本册集中展示各行业解决方案：先充分讲解行业数字化总体架构、主要模块、建设内容与业务价值，再说明智力服务的新增作用。行业数字化建设具有独立价值，方案列出的联网、工业模型及智能应用按其功能与条件展开；企业是否已建需核实。','',
  '通用的“摸清现状—确认目标—画蓝图—制定计划”及建设、验收、反馈方法统一见[上册第八章](../上册-研究报告/08-实施建议-从改造机会到可验证行动.md)。企业可按自身类型与所需专业模块选择建设范围，结合上册方法确定复用、补建和服务增补安排。','',
+ '各行业章均采用行业特点、总体架构、数字化模块、智力服务和适用结论五节正文，章末独立列参考资料。','',
  '## 引言','']
  for name in INTRO:
   p=MIDDLE/name
@@ -32,24 +39,23 @@ def main():
  cross=[]
  for p in chapters:
   text=p.read_text()
-  chapter_edition=chapter_editions[p.name]
-  focus_text=re.split(r'^##\s+',text,flags=re.M)[3] if chapter_edition in ('v0.2','v0.3') else text
+  focus_text=re.split(r'^##\s+',text,flags=re.M)[3]
   h=re.findall(r'^###\s+(.+)$',focus_text,re.M)
-  focus='、'.join(h[:3]) if h else '行业架构、模块增强、建设实施与验收'
+  focus='、'.join(re.sub(r'^\d+[.．、]\s*','',label) for label in h[:3]) if h else '行业架构、数字化应用模块与智力服务'
   lines.append(f'| [{title(p)}]({p.name}) | {focus} |')
-  refs=sorted(link for link in set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',text)) if not link.split('#',1)[0].endswith('/README.md'))
+  refs=case_links(text)
   figures=sorted(set(re.findall(r'!\[[^\]]*\]\((assets/[^)]+)\)',text)))
   cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':figures})
  for name in INTRO:
   p=MIDDLE/name
   if p.exists():
-   refs=sorted(link for link in set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',p.read_text())) if not link.split('#',1)[0].endswith('/README.md'))
+   refs=case_links(p.read_text())
    cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':[]})
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
  by_path={e['path']:e for e in entries}
  table=['# 附录B 行业架构、来源图示与企业案例对照','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
         '[中册目录](README.md) · [行业资料库](../索引/工信部行业数字化转型资料汇总.md) · [原图来源](assets/README.md)','',
-        '原图给出行业参考架构和模块，企业案例说明实际建设范围，智力服务增补按各章的方案设计与验收安排理解。表中只列当前正文已经使用的引用。','',
+        '原图给出行业参考架构和模块，企业案例说明实际建设范围，智力服务新增作用按各章的模块说明与服务应用理解。表中只列当前正文已经使用的引用。','',
         '| 章节 | 下册企业参照 | 原图摘引 |','| --- | --- | --- |']
  unique_cases=set()
  for row in sorted(cross,key=lambda row:row['chapter']):
@@ -66,10 +72,10 @@ def main():
   table.append(f"| [{row['title']}]({row['chapter']}) | {'；'.join(case_labels) or '按本章引用的行业方案展开'} | {'；'.join(figures) or '原文入口见章内来源'} |")
  table+=['',f'当前正文共引用下册{len(unique_cases)}个案例入口。行业方案提供的参考能力、企业已建能力与新增服务各有证据范围；图谱评级及所引案例成效不作为新增服务的实测结果。','']
  (MIDDLE/'附录B-原架构原图与案例对照.md').write_text('\n'.join(table))
- lines+=['','## 工作表与引用依据','']
+ lines+=['','## 选用对照与引用依据','']
  for p in sorted(MIDDLE.glob('附录*.md')): lines.append(f'- [{title(p)}]({p.name})')
- lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [整体大纲与行业章节模板](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',
- '本册为持续编写的初稿。原图内容归属原发布者与编制者，正文新增方案按编者设计表达，企业成效按各篇来源与阶段理解。','']
+ lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [行业解决方案章节模板](../templates/行业解决方案章节模板.md)','- [整体编写大纲](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',
+ '本册为持续编写的初稿。原图内容归属原发布者与编制者，服务应用为方案建议，企业成效按各篇来源与阶段理解。','']
  (MIDDLE/'README.md').write_text('\n'.join(lines))
  (MIDDLE/'研究记录').mkdir(exist_ok=True)
  (MIDDLE/'研究记录/章节引用清单.json').write_text(json.dumps({'updated_on':'2026-10-18','chapters':cross},ensure_ascii=False,indent=2)+'\n')
