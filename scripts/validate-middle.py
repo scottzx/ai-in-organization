@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check middle-volume scope, eight-section chapters, case links and figure provenance.
+"""Check middle-volume scope, chapter sections, case links and figure provenance.
 
 This checks publication consistency; factual review remains in the editorial records.
 """
@@ -24,6 +24,7 @@ def main():
  structures={
   'v0.1':[('行业特点、适用企业与业务目标',),('行业数字化方案架构与应用模块',),('企业现状、差距与本轮增强思路',),('围绕应用模块展开具体方案','围绕业务任务展开具体方案'),('跨模块及产业链协同',),('建设实施与运行责任',),('投入、验收与扩展条件',),('适用结论、企业参照与资料来源',)],
   'v0.2':[('行业特点、适用企业与业务目标',),('行业数字化方案的总体架构',),('主要数字化模块、建设内容与业务价值',),('在数字化基础上增加智力服务',),('企业现状、目标与建设蓝图',),('建设计划、交付与运行责任',),('投入、验收与扩展条件',),('适用结论、企业参照与资料来源',)],
+  'v0.3':[('行业特点、适用企业与业务目标',),('行业数字化方案的总体架构',),('主要数字化模块、建设内容与业务价值',),('在数字化基础上增加智力服务',),('适用结论',),('参考资料',)],
  }
  for item in plan['chapters']:
   p=MID/item['file']
@@ -35,8 +36,8 @@ def main():
    errors.append(item['file']+': unknown chapter edition '+edition)
    continue
   heads=re.findall(r'^##\s+(.+)$',text,re.M)
-  if len(heads)!=8 or any(not any(label in actual for label in expected) for expected,actual in zip(descriptors,heads)):
-   errors.append(item['file']+': eight-section structure differs')
+  if len(heads)!=len(descriptors) or any(not any(label in actual for label in expected) for expected,actual in zip(descriptors,heads)):
+   errors.append(item['file']+': section structure differs')
   if '初稿 '+edition not in text: errors.append(item['file']+': edition metadata differs from scope record')
   if not re.search(r'https://',text): errors.append(item['file']+': no public original source')
   if len(re.findall(r'[\u4e00-\u9fff]',text))<2200: errors.append(item['file']+': needs substantive editorial review (short)')
