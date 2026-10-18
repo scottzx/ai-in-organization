@@ -388,6 +388,32 @@ def main():
         destination.write_text(page_shell(path, body, description), encoding='utf-8')
         search_index.append({'title': TITLES[path], 'url': quote(str(output_path(path)), safe='/'), 'text': text})
     (OUT / 'search-index.json').write_text(json.dumps(search_index, ensure_ascii=False), encoding='utf-8')
+    # Keep published case URLs usable after a classification migration. Aliases
+    # redirect to one live page and never become extra search/case entries.
+    redirects = {}
+    active_case_folders = {path.parent for path in CASES}
+    for entry in CASE_INDEX['entries']:
+        for previous_path in entry.get('previous_paths', []):
+            source = ROOT / previous_path
+            target = ROOT / entry['path']
+            if source in redirects or source in DOCS:
+                raise ValueError(f'Overlapping migrated case URL: {previous_path}')
+            redirects[source] = target
+            if source.parent not in active_case_folders:
+                redirects[source.parent / 'README.md'] = ROOT / '下册-案例汇编/README.md'
+    for source, target in redirects.items():
+        relative = href(source, target)
+        destination = OUT / output_path(source)
+        if destination.exists():
+            raise ValueError(f'Migration redirect would overwrite a page: {source}')
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(
+            '<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<title>案例已更新分类</title><script>location.replace('
+            + json.dumps(relative) + '+location.search+location.hash);</script>'
+            '<p>案例已更新分类，<a href="' + escape(relative, quote=True)
+            + '">前往现行页面</a>。</p></html>', encoding='utf-8')
     (OUT / '.nojekyll').touch()
     (OUT / '404.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>页面未找到</title><body style="font-family:system-ui;padding:10%;background:#f8f7f3;color:#285b4d"><h1>这篇内容可能已经调整</h1><p>请从报告首页重新查找，或使用首页的全文搜索。</p><a href="' + SITE + '">返回报告首页 →</a></body></html>', encoding='utf-8')
     # Validate the deployed paths, including cross-volume case anchors and assets.
@@ -411,7 +437,7 @@ def main():
                 errors.append(f'{path.relative_to(OUT)}: missing fragment {link}')
     if errors:
         raise ValueError('\n'.join(errors))
-    print(json.dumps({'pages': len(pages), 'search_documents': len(search_index), 'assets': len(COPIED), 'cases': len(CASES), 'internal_links': 'passed', 'output': '_site'}, ensure_ascii=False, indent=2))
+    print(json.dumps({'pages': len(pages), 'search_documents': len(search_index), 'case_redirects': len(redirects), 'assets': len(COPIED), 'cases': len(CASES), 'internal_links': 'passed', 'output': '_site'}, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':

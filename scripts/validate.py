@@ -69,6 +69,151 @@ for e in entries:
 ids = [e['id'] for e in entries]
 if len(ids) != len(set(ids)):
     errors.append('Duplicate publication case ID')
+paths = [e['path'] for e in entries]
+if len(paths) != len(set(paths)):
+    errors.append('Duplicate publication case path')
+
+# Industry is a single, mutually exclusive placement of the case subject.
+# Scene topics and the customer's industry do not create extra placements.
+industry_names = {
+    'A': '农、林、牧、渔业', 'B': '采矿业', 'C': '制造业',
+    'D': '电力、热力、燃气及水生产和供应业', 'E': '建筑业',
+    'F': '批发和零售业', 'G': '交通运输、仓储和邮政业',
+    'H': '住宿和餐饮业', 'I': '信息传输、软件和信息技术服务业',
+    'J': '金融业', 'K': '房地产业', 'L': '租赁和商务服务业',
+    'M': '科学研究和技术服务业', 'N': '水利、环境和公共设施管理业',
+    'O': '居民服务、修理和其他服务业', 'P': '教育',
+    'Q': '卫生和社会工作', 'R': '文化、体育和娱乐业',
+    'S': '公共管理、社会保障和社会组织', 'T': '国际组织',
+}
+industry_folders = {
+    'A': '农林牧渔业', 'B': '采矿业', 'C': '制造业',
+    'D': '电力热力燃气及水生产和供应业', 'E': '建筑业',
+    'F': '批发与零售业', 'G': '交通运输仓储与邮政业',
+    'H': '住宿与餐饮业', 'I': '信息传输软件与信息技术服务业',
+    'J': '金融业', 'K': '房地产业', 'L': '租赁与商务服务业',
+    'M': '科学研究与技术服务业', 'N': '水利环境与公共设施管理业',
+    'O': '居民服务修理与其他服务业', 'P': '教育',
+    'Q': '卫生与社会工作', 'R': '文化体育与娱乐业',
+    'S': '公共管理社会保障与社会组织', 'T': '国际组织',
+}
+for e in entries:
+    case_id = e['id']
+    code = e.get('industry_code')
+    status = e.get('classification_status')
+    entry_type = e.get('entry_type')
+    path = Path(e['path'])
+    if status in ('supported', 'provisional'):
+        if code not in industry_names:
+            errors.append(case_id+': classified case needs one valid industry code')
+            continue
+        if e.get('industry_name') != industry_names[code]:
+            errors.append(case_id+': industry name does not match its code')
+        if not re.fullmatch(re.escape(code)+r'\d{2}', case_id):
+            errors.append(case_id+': publication ID does not match its industry code')
+        expected_folder = code+'-'+industry_folders[code]
+        if entry_type in ('method', 'reference'):
+            errors.append(case_id+': method/reference must use not_applicable classification')
+    elif status == 'pending':
+        expected_folder = '待定-行业待核'
+        if code is not None or not re.fullmatch(r'待\d{2}', case_id):
+            errors.append(case_id+': pending case needs a temporary ID and null industry code')
+        if e.get('industry_name') != '待定分类（非国标门类）':
+            errors.append(case_id+': pending industry name mismatch')
+        if entry_type in ('method', 'reference'):
+            errors.append(case_id+': method/reference cannot be a pending industry case')
+    elif status == 'not_applicable':
+        appendix = {
+            'method': ('附A', '附编A-跨行业方法', '跨行业方法附编'),
+            'reference': ('附B', '附编B-原型与演示参考', '方法与探索参考附录'),
+        }.get(entry_type)
+        if appendix is None:
+            errors.append(case_id+': not_applicable is only valid for method/reference entries')
+            continue
+        prefix, expected_folder, expected_name = appendix
+        if code is not None or not re.fullmatch(re.escape(prefix)+r'\d{2}', case_id):
+            errors.append(case_id+': appendix needs the matching ID prefix and null industry code')
+        if e.get('industry_name') != expected_name:
+            errors.append(case_id+': appendix industry name mismatch')
+    else:
+        errors.append(case_id+': invalid classification status '+str(status))
+        continue
+    if path.parent != Path('下册-案例汇编')/expected_folder:
+        errors.append(case_id+': case directory does not match its classification')
+    if path.name != case_id+'-'+e['title']+'.md':
+        errors.append(case_id+': case filename does not match its ID and title')
+
+# Old identifiers remain traceable without creating a second live placement.
+previous_ids = []
+previous_paths = []
+for e in entries:
+    aliases = e.get('previous_ids', [])
+    old_paths = e.get('previous_paths', [])
+    if len(aliases) != len(old_paths):
+        errors.append(e['id']+': migration ID/path counts differ')
+    previous_ids.extend(aliases)
+    previous_paths.extend(old_paths)
+    for old_path in old_paths:
+        resolved = (ROOT/old_path).resolve()
+        if not resolved.is_relative_to(ROOT/'下册-案例汇编') or resolved.suffix != '.md':
+            errors.append(e['id']+': migration path must be a lower-volume Markdown path')
+        if resolved.exists():
+            errors.append(e['id']+': migrated case still exists at old path '+old_path)
+    if aliases and not e.get('classification_review', {}).get('basis'):
+        errors.append(e['id']+': migrated case needs a classification review')
+if len(previous_ids) != len(set(previous_ids)) or set(previous_ids).intersection(ids):
+    errors.append('A previous case ID is duplicated or overlaps a current case ID')
+if len(previous_paths) != len(set(previous_paths)) or set(previous_paths).intersection(paths):
+    errors.append('A previous case path is duplicated or overlaps a current case path')
+
+# Editable manuscripts, including drafts and backups, use current filenames and
+# citation labels. Explicit migration records can still name the old identifier.
+old_filenames = {Path(old_path).name for old_path in previous_paths}
+for path, text in texts.items():
+    if path.name in old_filenames:
+        errors.append(f'{path.relative_to(ROOT)}: case file still uses its previous name')
+    for old_filename in old_filenames:
+        if old_filename in unquote(text):
+            errors.append(f'{path.relative_to(ROOT)}: reference uses previous filename {old_filename}')
+    for old_id in previous_ids:
+        escaped = re.escape(old_id)
+        if re.search(r'^#\s+'+escaped+r'\s|\['+escaped+r'\s|（'+escaped+r'）|\('+escaped+r'\)', text, re.M):
+            errors.append(f'{path.relative_to(ROOT)}: title or citation uses previous case ID {old_id}')
+
+# Each case has one table row in the book index and its own industry index.
+# Other navigation links are deliberately excluded from row counting.
+case_row = re.compile(
+    r'^\|\s*((?:附[A-B]|[A-T]|待)\d{2})\s*\|\s*'
+    r'\[([^\]\n]+)\]\(([^)\n]+)\)\s*\|', re.M)
+def check_case_index(index_path, expected_entries):
+    rows = case_row.findall(texts.get(index_path, ''))
+    row_counts = Counter(row[0] for row in rows)
+    expected = {e['id']: e for e in expected_entries}
+    for case_id, entry in expected.items():
+        if row_counts[case_id] != 1:
+            errors.append(f'{index_path.relative_to(ROOT)}: expected one row for {case_id}; found {row_counts[case_id]}')
+    for case_id, title, target in rows:
+        if case_id not in expected:
+            errors.append(f'{index_path.relative_to(ROOT)}: unexpected case row {case_id}')
+            continue
+        parsed = urlsplit(target.strip().strip('<>'))
+        dest = (index_path.parent/unquote(parsed.path)).resolve()
+        if parsed.scheme or parsed.netloc or parsed.fragment or dest != (ROOT/expected[case_id]['path']).resolve():
+            errors.append(f'{index_path.relative_to(ROOT)}: wrong case target for {case_id}')
+        if title != expected[case_id]['title']:
+            errors.append(f'{index_path.relative_to(ROOT)}: wrong case title for {case_id}')
+
+check_case_index(ROOT/'下册-案例汇编/README.md', entries)
+by_folder = {}
+for e in entries:
+    by_folder.setdefault(Path(e['path']).parent, []).append(e)
+for folder, folder_entries in by_folder.items():
+    check_case_index(ROOT/folder/'README.md', folder_entries)
+# Also catch stale rows left behind in a now-empty industry directory.
+for index_path in (ROOT/'下册-案例汇编').glob('*/README.md'):
+    if index_path.parent.relative_to(ROOT) not in by_folder:
+        check_case_index(index_path, [])
+
 fragments = []
 source_records = set()
 for e in entries:
@@ -103,10 +248,19 @@ for e in entries:
 
 if len(fragments)!=len(set(fragments)):
     errors.append('A source scene is duplicated across case documents')
-if len(source_records)!=index['counts']['source_records_main_fragment']:
-    errors.append('Practice source-record count mismatch')
-if len(entries)!=index['counts']['entries'] or len(fragments)!=index['counts']['all_fragments']:
-    errors.append('Entry/scene totals mismatch')
+expected_counts = {
+    'entries': len(entries),
+    'industry_and_pending_entries': sum(e['entry_type'] not in ('reference', 'method') for e in entries),
+    'methods': sum(e['entry_type'] == 'method' for e in entries),
+    'references': sum(e['entry_type'] == 'reference' for e in entries),
+    'source_records_main_fragment': len(source_records),
+    'practice_fragments': sum(len(e['fragments']) for e in entries if e['entry_type'] != 'reference'),
+    'reference_fragments': sum(len(e['fragments']) for e in entries if e['entry_type'] == 'reference'),
+    'all_fragments': len(fragments),
+}
+for name, count in expected_counts.items():
+    if index['counts'].get(name) != count:
+        errors.append(f'Case index count mismatch: {name} expected {count}, found {index["counts"].get(name)}')
 case_paths = {ROOT/e['path'] for e in entries}
 unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in p.parts and p.name!='README.md' and p not in case_paths]
 if unindexed:

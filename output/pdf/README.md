@@ -1,4 +1,22 @@
-# 历史PDF归档
+# PDF发布与历史归档
+
+## 2026年10月18日三册版
+
+已移除各章署名“一芥智能研究院”的自引参考条目，并修复历史讨论稿的相对链接；根据当前Markdown重新生成，上册v11.0、中册v0.5、下册v9.0。合订本按上、中、下顺序收录，各分册和合订本均附阅读路径与资料来源说明。历史PDF保留在下方归档。
+
+| 阅读范围 | 页数 | PDF与构建清单 |
+| --- | --- | --- |
+| 上册研究报告 | 124 | [PDF](企业数智化转型研究报告-上册.pdf) · [构建清单](企业数智化转型研究报告-上册.manifest.json) |
+| 中册行业解决方案 | 418 | [PDF](企业数智化转型研究报告-中册.pdf) · [构建清单](企业数智化转型研究报告-中册.manifest.json) |
+| 下册案例汇编 | 227 | [PDF](企业数智化转型研究报告-下册.pdf) · [构建清单](企业数智化转型研究报告-下册.manifest.json) |
+| 上中下册合订本 | 734 | [PDF](企业数智化转型研究报告-上中下册合订本.pdf) · [构建清单](企业数智化转型研究报告-上中下册合订本.manifest.json) |
+
+中册目录与书签按“16个产业大类 → 65篇行业方案”分层，与下册的分类阅读结构一致。中册收录引言、65篇行业与专业业务方案、两项附录，共69份本册源文档，包含68处原图引用。下册收录75个案例入口、114个场景与证据片段。修复生成器漏读带链接图片的问题，68处原图引用逐项核对路径与文件校验值，均已收录。
+
+[更新后检查记录](pdf-refresh-audit-20261018.json)核对四份PDF与源文档校验值、正文及图表覆盖，代表页面另作渲染抽查。此前的[版面检查记录](pdf-audit-20261018.json)：源文档与图片校验、正文片段及图表标题覆盖、页码标签、书签目标、内部链接、全页文字边界和正文左右边距检查通过；合订本源文档集合与三册并集一致。初版渲染抽查36页，覆盖四份封面、目录、章首、册间过渡、行业原图、表格和末页；目录分组调整后再次审看中册与合订本目录、农业和制造业章首，未发现明显裁切、重叠或缺字。16个产业大类下的65篇方案书签归属及顺序核对通过。图片内文字保留为原始位图，不作为可检索文本核验；版面视觉检查为代表页面抽查。
+
+## 历史版本说明
+
 
 现行上册附录为A《术语辨析表》。证据台账、案例引用索引及知识网络建设细节已转为内部过程稿。以下PDF按发行时内容归档，仍含当时的附录与章节，不能作为当前定稿使用；现行内容见[在线阅读版](https://research.dreammate.work/report/ai-transformation-2026/)、[GitHub Pages备用入口](https://scottzx.github.io/ai-in-organization/)及[上册目录](../../上册-研究报告/README.md)。
 
@@ -38,12 +56,15 @@ A4竖版。正文小四（12磅），固定行距28磅，段前、段后0磅，�
 
 ## 复现与更新
 
+生成器现已覆盖上、中、下三册。`--volume middle`单独导出中册，默认`--volume all`按上、中、下顺序生成三册合订本；默认文件名为`企业数智化转型研究报告-上中下册合订本.pdf`。中册跳过旧合并入口，收录引言、65篇行业与专业业务方案及附录；案例数量随来源索引更新。上方2026年10月18日三册版已按当前正文重新生成，下方旧预览版保留历史内容。
+
 先维护Markdown正文，再使用安装了`reportlab`和`pypdf`的Python环境运行生成器；另需Pandoc。渲染检查使用Poppler的`pdftoppm`、`pdftotext`及`pdfinfo`。
 
 ```bash
-python3 scripts/build-pdf.py --volume upper --output output/pdf/企业数智化转型研究报告-上册-排版预览版.pdf
-python3 scripts/build-pdf.py --volume lower --output output/pdf/企业数智化转型研究报告-下册-排版预览版.pdf
-python3 scripts/build-pdf.py --volume all --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
+python3 scripts/build-pdf.py --volume upper --output output/pdf/企业数智化转型研究报告-上册.pdf
+python3 scripts/build-pdf.py --volume middle --output output/pdf/企业数智化转型研究报告-中册.pdf
+python3 scripts/build-pdf.py --volume lower --output output/pdf/企业数智化转型研究报告-下册.pdf
+python3 scripts/build-pdf.py --volume all --output output/pdf/企业数智化转型研究报告-上中下册合订本.pdf
 python3 scripts/validate.py
 ```
 

@@ -1823,6 +1823,325 @@
       ]
     },
     {
+      "id": "C23",
+      "title": "汽车零部件供应链经营分析",
+      "path": "下册-案例汇编/C-制造业/C23-汽车零部件供应链经营分析.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "C-20",
+      "fragments": [
+        {
+          "source_fragment_id": "C-20-F01",
+          "title": "保留ERP，先把经营关系与异常看清",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "刚上线的经营数据可见性与异常通知；处置结果、采购节省与利润尚未验证。",
+          "anchor": "c-20-f01",
+          "sources": [
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 71,
+              "line_end": 85,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第71—85行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 87,
+              "line_end": 95,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第87—95行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 155,
+              "line_end": 165,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第155—165行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 109,
+              "line_end": 125,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第109—125行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 105,
+              "line_end": 129,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第105—129行。"
+            },
+            {
+              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
+              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
+              "line_start": 103,
+              "line_end": 129,
+              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第103—129行。"
+            }
+          ]
+        }
+      ],
+      "previous_ids": [
+        "待02"
+      ],
+      "previous_paths": [
+        "下册-案例汇编/待定-行业待核/待02-汽车零部件供应链经营分析.md"
+      ],
+      "classification_review": {
+        "reviewed_on": "2026-10-18",
+        "basis": "原文Q1明确从上游采购零部件，经加工、组合和组装形成产品交付；Q5称本案为制造业案例。按来源披露的制造活动归C，销售自产产品和轻生产形态不另列F。制造与转售的增加值或收入占比未披露，本判断用于研究编排。",
+        "sources": [
+          {
+            "title": "Datawhale FDE案例NO.20",
+            "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=197",
+            "locator": "Q1、Q5；整理稿L21–25、L37、L147–159；原书196–205页，PDF197–206页。"
+          }
+        ],
+        "basis_type": "source_supported_research_classification"
+      }
+    },
+    {
+      "id": "C24",
+      "title": "海外工业企业物料诊断",
+      "path": "下册-案例汇编/C-制造业/C24-海外工业企业物料诊断.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "C-08",
+      "fragments": [
+        {
+          "source_fragment_id": "C-08-F01",
+          "title": "从搜索困难追到采购浪费",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "已发生问题诊断与优先级讨论；检索工具的实际运行阶段不明，采购节省未披露。",
+          "anchor": "c-08-f01",
+          "sources": [
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 67,
+              "line_end": 75,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第67—75行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 77,
+              "line_end": 81,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第77—81行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 85,
+              "line_end": 95,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—95行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 97,
+              "line_end": 107,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第97—107行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 85,
+              "line_end": 105,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—105行。"
+            },
+            {
+              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
+              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
+              "line_start": 123,
+              "line_end": 129,
+              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第123—129行。"
+            }
+          ]
+        }
+      ],
+      "classification_review": {
+        "reviewed_on": "2026-10-18",
+        "basis": "作者于2026年10月18日确认将本案主体按生产企业界定，本书据此暂归C制造业。原来源只披露工业物料与资产管理，未披露具体生产活动与主营构成。归属用于本书编排，不扩大来源事实，不认定细分统计代码；每案仅在C列一次。",
+        "sources": [
+          {
+            "title": "Datawhale FDE案例NO.8",
+            "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=77",
+            "locator": "原书76–85页，PDF77–86页；整理稿全文，重点L13、L23、L31、L37。"
+          }
+        ],
+        "scene_tags": [
+          "工业物料与资产管理",
+          "采购与库存诊断"
+        ],
+        "basis_type": "editorial_scope_confirmed_by_author",
+        "author_scope_confirmed_on": "2026-10-18"
+      },
+      "previous_ids": [
+        "待01"
+      ],
+      "previous_paths": [
+        "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md"
+      ]
+    },
+    {
+      "id": "C25",
+      "title": "消费品企业包装AI预检",
+      "path": "下册-案例汇编/C-制造业/C25-消费品企业包装AI预检.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "provisional",
+      "entry_type": "single_project",
+      "source_record_id": "C-19",
+      "fragments": [
+        {
+          "source_fragment_id": "C-19-F01",
+          "title": "设计提交时预检，确定计算交给程序",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "设计提交后的包装预检与专业复核；运行规模、期限与返工率未明。",
+          "anchor": "c-19-f01",
+          "sources": [
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 89,
+              "line_end": 99,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第89—99行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 113,
+              "line_end": 117,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—117行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 117,
+              "line_end": 123,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第117—123行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 139,
+              "line_end": 151,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第139—151行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 113,
+              "line_end": 137,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—137行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 21,
+              "line_end": 33,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第21—33行。"
+            },
+            {
+              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
+              "publisher": "Datawhale FDE案例集",
+              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
+              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
+              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
+              "line_start": 47,
+              "line_end": 61,
+              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第47—61行。"
+            }
+          ]
+        }
+      ],
+      "classification_review": {
+        "reviewed_on": "2026-10-18",
+        "basis": "作者于2026年10月18日确认将本案主体按生产企业界定，本书据此暂归C制造业。原来源披露食品研发与包装审核，并涉及品牌、工厂及渠道，未披露本案主体的生产方式与主营构成。归属用于本书编排，不扩大来源事实，不认定细分统计代码；每案仅在C列一次。",
+        "sources": [
+          {
+            "title": "Datawhale FDE案例NO.19",
+            "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=186",
+            "locator": "Q1–Q4；整理稿L19–25、L47、L119、L155；原书185–195页，PDF186–196页。"
+          }
+        ],
+        "scene_tags": [
+          "食品产品研发与包装审核"
+        ],
+        "basis_type": "editorial_scope_confirmed_by_author",
+        "author_scope_confirmed_on": "2026-10-18"
+      },
+      "previous_ids": [
+        "待03"
+      ],
+      "previous_paths": [
+        "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md"
+      ]
+    },
+    {
       "id": "D01",
       "title": "国能广投北海电厂5G工程与运行管理",
       "path": "下册-案例汇编/D-电力热力燃气及水生产和供应业/D01-国能广投北海电厂5G工程与运行管理.md",
@@ -3479,6 +3798,111 @@
       ]
     },
     {
+      "id": "I08",
+      "title": "小裂变AI研发与GEO服务探索",
+      "path": "下册-案例汇编/I-信息传输软件与信息技术服务业/I08-小裂变AI研发与GEO服务探索.md",
+      "industry_code": "I",
+      "industry_name": "信息传输、软件和信息技术服务业",
+      "classification_status": "provisional",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-41",
+      "fragments": [
+        {
+          "source_fragment_id": "S-41-F01",
+          "title": "老板原型交给研发继续工程化",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "内部GEO系统由老板先搭原型，研发接手；对外获客效果另待证",
+          "anchor": "s-41-f01",
+          "sources": [
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 2222,
+              "line_end": 2290,
+              "locator": "00:18:43.080"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 2122,
+              "line_end": 2232,
+              "locator": "00:18:03.270"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-41-F02",
+          "title": "GEO工具与获客效果分开验收",
+          "stage": "unknown",
+          "stage_label": "阶段未明",
+          "scope": "工具功能、价格与供应商方法说明；客户成效缺定量佐证",
+          "anchor": "s-41-f02",
+          "sources": [
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 946,
+              "line_end": 1124,
+              "locator": "00:08:24.620"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 1546,
+              "line_end": 1768,
+              "locator": "00:13:23.750"
+            },
+            {
+              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
+              "publisher": "原始材料发布者",
+              "url": "https://www.douyin.com/video/7664978268931509514",
+              "document": "7664978268931509514.md",
+              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
+              "line_start": 1850,
+              "line_end": 1992,
+              "locator": "00:15:50.150"
+            }
+          ]
+        }
+      ],
+      "previous_ids": [
+        "待05"
+      ],
+      "previous_paths": [
+        "下册-案例汇编/待定-行业待核/待05-小裂变AI研发与GEO服务探索.md"
+      ],
+      "classification_review": {
+        "reviewed_on": "2026-10-18",
+        "basis": "官网记录张东晴创立、将增长玩法产品化为SaaS及上线SCRM；投资方公告将其称为SCRM服务商，并披露系统工具、定制化部署及代运营。暂按软件产品与技术服务归I，因收入占比未披露保留provisional；不同时列入L。",
+        "sources": [
+          {
+            "title": "小裂变官网：关于我们",
+            "url": "https://www.xiaoliebian.com/menu_about.html",
+            "locator": "发展历程2018、2019、2020年。"
+          },
+          {
+            "title": "有赞：战略投资小裂变",
+            "url": "https://www.youzan.com/cms/article/7328.html",
+            "locator": "2022-04-20，SCRM服务商、系统工具、定制部署及代运营说明。"
+          }
+        ],
+        "basis_type": "source_supported_research_classification"
+      }
+    },
+    {
       "id": "J01",
       "title": "基金公司AI研发培训",
       "path": "下册-案例汇编/J-金融业/J01-基金公司AI研发培训.md",
@@ -4025,6 +4449,141 @@
       ]
     },
     {
+      "id": "L08",
+      "title": "零一数科AI应用",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L08-零一数科AI应用.md",
+      "industry_code": "L",
+      "industry_name": "租赁和商务服务业",
+      "classification_status": "supported",
+      "entry_type": "multi_case_company",
+      "source_record_id": "S-11",
+      "fragments": [
+        {
+          "source_fragment_id": "S-11-F01",
+          "title": "先把业务工具做出来，再看各部门怎样协同",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "内容等工具和CRM为已运行自述；部门FDE的连点成网仍是规划。",
+          "anchor": "s-11-f01",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 420,
+              "line_end": 547,
+              "locator": "00:03:38.224"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 850,
+              "line_end": 967,
+              "locator": "00:07:48.727"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 783,
+              "line_end": 835,
+              "locator": "00:07:11.472"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-11-F02",
+          "title": "部门FDE和七类角色属于怎样的阶段",
+          "stage": "concept",
+          "stage_label": "需求与设想",
+          "scope": "部门FDE连接、社区制及未来组织形态为计划或判断。",
+          "anchor": "s-11-f02",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 963,
+              "line_end": 1119,
+              "locator": "00:08:57.222"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 1431,
+              "line_end": 1583,
+              "locator": "00:12:50.826"
+            }
+          ]
+        },
+        {
+          "source_fragment_id": "S-11-F03",
+          "title": "业务标签支持招聘，技能服务仍要看交易证据",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "招聘标签和题目工具有展示；技能服务商品化包含现行尝试和未来收入判断。",
+          "anchor": "s-11-f03",
+          "sources": [
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 640,
+              "line_end": 759,
+              "locator": "00:05:52.377"
+            },
+            {
+              "title": "AI时代下零一数科 如何进化为AI Native组织？",
+              "publisher": "大树AI创业圈｜TTM",
+              "url": "https://www.douyin.com/video/7685721852701953286",
+              "document": "7685721852701953286.md",
+              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
+              "line_start": 1123,
+              "line_end": 1419,
+              "locator": "00:10:23.465"
+            }
+          ]
+        }
+      ],
+      "previous_ids": [
+        "待04"
+      ],
+      "previous_paths": [
+        "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md"
+      ],
+      "classification_review": {
+        "reviewed_on": "2026-10-18",
+        "basis": "核对受访企业为零一数科（深圳）科技有限公司，公开业务以品牌全域营销、私域及视频号代运营为主，按运营服务归L。内部AI开发、招聘工具和零售客户行业不形成额外行业入口。",
+        "sources": [
+          {
+            "title": "广州市广告行业协会会员介绍：零一数科（深圳）科技有限公司",
+            "url": "https://cngzaa.cn/h-pd-222.html",
+            "locator": "公司简介、私域代运营及视频号直播代运营业务。"
+          },
+          {
+            "title": "深圳市民政局：行业协会商会负责人人选公示",
+            "url": "https://mzj.sz.gov.cn/szmz/pc/bmxx/mzfwzy/shzz/tzgg/content/post_11707828.html",
+            "locator": "2024-11-07，一、会长单位（代表）候选人第2项，魏鑑锋与公司对应关系。"
+          }
+        ],
+        "basis_type": "source_supported_research_classification"
+      }
+    },
+    {
       "id": "M01",
       "title": "杭州市城市规划设计院AI辅助规划",
       "path": "下册-案例汇编/M-科学研究与技术服务业/M01-杭州市城市规划设计院AI辅助规划.md",
@@ -4569,456 +5128,6 @@
       ]
     },
     {
-      "id": "待01",
-      "title": "海外工业企业物料诊断",
-      "path": "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md",
-      "industry_code": null,
-      "industry_name": "待定分类（非国标门类）",
-      "classification_status": "pending",
-      "entry_type": "single_project",
-      "source_record_id": "C-08",
-      "fragments": [
-        {
-          "source_fragment_id": "C-08-F01",
-          "title": "从搜索困难追到采购浪费",
-          "stage": "unknown",
-          "stage_label": "阶段未明",
-          "scope": "已发生问题诊断与优先级讨论；检索工具的实际运行阶段不明，采购节省未披露。",
-          "anchor": "c-08-f01",
-          "sources": [
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 67,
-              "line_end": 75,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第67—75行。"
-            },
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 77,
-              "line_end": 81,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第77—81行。"
-            },
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 85,
-              "line_end": 95,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—95行。"
-            },
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 97,
-              "line_end": 107,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第97—107行。"
-            },
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 85,
-              "line_end": 105,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第85—105行。"
-            },
-            {
-              "title": "NO.8 从物料难找到精准定位：FDE用AI减少工业企业采购浪费",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "08-从物料难找到精准定位：FDE用AI减少工业企业采购浪费.md",
-              "document_sha256": "57a3d937985c94bf1f1369c8557e1b8a8e3cb0def1cb450b8315ea1f2195bc8b",
-              "line_start": 123,
-              "line_end": 129,
-              "locator": "原书页码：76–85；PDF 文件页码：77–86。 Markdown第123—129行。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "待02",
-      "title": "汽车零部件供应链经营分析",
-      "path": "下册-案例汇编/待定-行业待核/待02-汽车零部件供应链经营分析.md",
-      "industry_code": null,
-      "industry_name": "待定分类（非国标门类）",
-      "classification_status": "pending",
-      "entry_type": "single_project",
-      "source_record_id": "C-20",
-      "fragments": [
-        {
-          "source_fragment_id": "C-20-F01",
-          "title": "保留ERP，先把经营关系与异常看清",
-          "stage": "partial_live",
-          "stage_label": "局部使用",
-          "scope": "刚上线的经营数据可见性与异常通知；处置结果、采购节省与利润尚未验证。",
-          "anchor": "c-20-f01",
-          "sources": [
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 71,
-              "line_end": 85,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第71—85行。"
-            },
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 87,
-              "line_end": 95,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第87—95行。"
-            },
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 155,
-              "line_end": 165,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第155—165行。"
-            },
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 109,
-              "line_end": 125,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第109—125行。"
-            },
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 105,
-              "line_end": 129,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第105—129行。"
-            },
-            {
-              "title": "NO.20 从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "20-从看不清订单到看清经营：FDE用AI让制造企业的经营流程更透明.md",
-              "document_sha256": "3c498a287a1269a8bdc309dcdf82c5cef00c0119b0fb6f1d6f584a0937553d4d",
-              "line_start": 103,
-              "line_end": 129,
-              "locator": "原书页码：196–205；PDF 文件页码：197–206。 Markdown第103—129行。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "待03",
-      "title": "消费品企业包装AI预检",
-      "path": "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md",
-      "industry_code": null,
-      "industry_name": "待定分类（非国标门类）",
-      "classification_status": "pending",
-      "entry_type": "single_project",
-      "source_record_id": "C-19",
-      "fragments": [
-        {
-          "source_fragment_id": "C-19-F01",
-          "title": "设计提交时预检，确定计算交给程序",
-          "stage": "partial_live",
-          "stage_label": "局部使用",
-          "scope": "设计提交后的包装预检与专业复核；运行规模、期限与返工率未明。",
-          "anchor": "c-19-f01",
-          "sources": [
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 89,
-              "line_end": 99,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第89—99行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 113,
-              "line_end": 117,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—117行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 117,
-              "line_end": 123,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第117—123行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 139,
-              "line_end": 151,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第139—151行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 113,
-              "line_end": 137,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第113—137行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 21,
-              "line_end": 33,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第21—33行。"
-            },
-            {
-              "title": "NO.19 从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核",
-              "publisher": "Datawhale FDE案例集",
-              "url": "https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf",
-              "document": "19-从人工排队到审核前置：FDE用AI重构消费品研发协同与包装审核.md",
-              "document_sha256": "e9da46044cdbe79e3a8c97d2d2b7adf486c3ecc33da853bb2dbe87f950fbfc71",
-              "line_start": 47,
-              "line_end": 61,
-              "locator": "原书页码：185–195；PDF 文件页码：186–196。 Markdown第47—61行。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "待04",
-      "title": "零一数科AI应用",
-      "path": "下册-案例汇编/待定-行业待核/待04-零一数科AI应用.md",
-      "industry_code": null,
-      "industry_name": "待定分类（非国标门类）",
-      "classification_status": "pending",
-      "entry_type": "multi_case_company",
-      "source_record_id": "S-11",
-      "fragments": [
-        {
-          "source_fragment_id": "S-11-F01",
-          "title": "先把业务工具做出来，再看各部门怎样协同",
-          "stage": "partial_live",
-          "stage_label": "局部使用",
-          "scope": "内容等工具和CRM为已运行自述；部门FDE的连点成网仍是规划。",
-          "anchor": "s-11-f01",
-          "sources": [
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 420,
-              "line_end": 547,
-              "locator": "00:03:38.224"
-            },
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 850,
-              "line_end": 967,
-              "locator": "00:07:48.727"
-            },
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 783,
-              "line_end": 835,
-              "locator": "00:07:11.472"
-            }
-          ]
-        },
-        {
-          "source_fragment_id": "S-11-F02",
-          "title": "部门FDE和七类角色属于怎样的阶段",
-          "stage": "concept",
-          "stage_label": "需求与设想",
-          "scope": "部门FDE连接、社区制及未来组织形态为计划或判断。",
-          "anchor": "s-11-f02",
-          "sources": [
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 963,
-              "line_end": 1119,
-              "locator": "00:08:57.222"
-            },
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 1431,
-              "line_end": 1583,
-              "locator": "00:12:50.826"
-            }
-          ]
-        },
-        {
-          "source_fragment_id": "S-11-F03",
-          "title": "业务标签支持招聘，技能服务仍要看交易证据",
-          "stage": "partial_live",
-          "stage_label": "局部使用",
-          "scope": "招聘标签和题目工具有展示；技能服务商品化包含现行尝试和未来收入判断。",
-          "anchor": "s-11-f03",
-          "sources": [
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 640,
-              "line_end": 759,
-              "locator": "00:05:52.377"
-            },
-            {
-              "title": "AI时代下零一数科 如何进化为AI Native组织？",
-              "publisher": "大树AI创业圈｜TTM",
-              "url": "https://www.douyin.com/video/7685721852701953286",
-              "document": "7685721852701953286.md",
-              "document_sha256": "edfbadd698b80ae605dae2fe4bb1d87d9c30d40b083f2b2736d787a14cdbd055",
-              "line_start": 1123,
-              "line_end": 1419,
-              "locator": "00:10:23.465"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "待05",
-      "title": "小裂变AI研发与GEO服务探索",
-      "path": "下册-案例汇编/待定-行业待核/待05-小裂变AI研发与GEO服务探索.md",
-      "industry_code": null,
-      "industry_name": "待定分类（非国标门类）",
-      "classification_status": "pending",
-      "entry_type": "multi_case_company",
-      "source_record_id": "S-41",
-      "fragments": [
-        {
-          "source_fragment_id": "S-41-F01",
-          "title": "老板原型交给研发继续工程化",
-          "stage": "partial_live",
-          "stage_label": "局部使用",
-          "scope": "内部GEO系统由老板先搭原型，研发接手；对外获客效果另待证",
-          "anchor": "s-41-f01",
-          "sources": [
-            {
-              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
-              "publisher": "原始材料发布者",
-              "url": "https://www.douyin.com/video/7664978268931509514",
-              "document": "7664978268931509514.md",
-              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
-              "line_start": 2222,
-              "line_end": 2290,
-              "locator": "00:18:43.080"
-            },
-            {
-              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
-              "publisher": "原始材料发布者",
-              "url": "https://www.douyin.com/video/7664978268931509514",
-              "document": "7664978268931509514.md",
-              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
-              "line_start": 2122,
-              "line_end": 2232,
-              "locator": "00:18:03.270"
-            }
-          ]
-        },
-        {
-          "source_fragment_id": "S-41-F02",
-          "title": "GEO工具与获客效果分开验收",
-          "stage": "unknown",
-          "stage_label": "阶段未明",
-          "scope": "工具功能、价格与供应商方法说明；客户成效缺定量佐证",
-          "anchor": "s-41-f02",
-          "sources": [
-            {
-              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
-              "publisher": "原始材料发布者",
-              "url": "https://www.douyin.com/video/7664978268931509514",
-              "document": "7664978268931509514.md",
-              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
-              "line_start": 946,
-              "line_end": 1124,
-              "locator": "00:08:24.620"
-            },
-            {
-              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
-              "publisher": "原始材料发布者",
-              "url": "https://www.douyin.com/video/7664978268931509514",
-              "document": "7664978268931509514.md",
-              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
-              "line_start": 1546,
-              "line_end": 1768,
-              "locator": "00:13:23.750"
-            },
-            {
-              "title": "AI时代做增长 GEO成为新基建 GEO到底能不能获客？GEO到底是不是风口？老板怎么做GEO，带着这些困惑访谈了张东晴，很有启发",
-              "publisher": "原始材料发布者",
-              "url": "https://www.douyin.com/video/7664978268931509514",
-              "document": "7664978268931509514.md",
-              "document_sha256": "8274a77ae7c6ee724c9431fd49c4e1bae16ace3eaf6b2324072913ef5c736f89",
-              "line_start": 1850,
-              "line_end": 1992,
-              "locator": "00:15:50.150"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "附A01",
       "title": "工作切片与SOP共创方法",
       "path": "下册-案例汇编/附编A-跨行业方法/附A01-工作切片与SOP共创方法.md",
@@ -5374,5 +5483,14 @@
         }
       ]
     }
-  ]
+  ],
+  "classification_policy": {
+    "standard": "GB/T 4754—2017（按第1号修改单修订）",
+    "standard_url": "https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/202302/P020230213400314380798.pdf",
+    "unit": "以案例中实际研究的企业、业务组织或项目主体为单位；实施方与使用方分别辨认。",
+    "single_placement": "每个案例仅有一个主行业归属；AI任务、客户行业及供应链环节可作场景标签，不重复建篇。",
+    "uncertainty": "有依据但兼营主次未明时保留provisional；无法唯一确定门类的保留pending并记录原因，不补造主营事实。",
+    "identity": "同主体新场景补入原篇；匿名客户不因业务相似合并；同来源涉及不同客户可分别建篇。",
+    "numbering": "迁移时保留previous_ids和previous_paths，来源记录、片段、锚点及应用阶段不变。"
+  }
 }

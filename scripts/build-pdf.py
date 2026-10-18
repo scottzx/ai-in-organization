@@ -3,6 +3,7 @@
 
 Usage: python3 scripts/build-pdf.py
        python3 scripts/build-pdf.py --volume upper
+       python3 scripts/build-pdf.py --volume middle
        python3 scripts/build-pdf.py --volume lower
        python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md
        python3 scripts/build-pdf.py --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
@@ -42,12 +43,13 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/pdf'
 TITLE = '企业数智化转型研究报告'
-MANUSCRIPT_DATE = '2026-10-17'
-DATE = '2026年10月17日'
+MANUSCRIPT_DATE = '2026-10-18'
+DATE = '2026年10月18日'
 UPPER_VERSION = 'v11.0'
-LOWER_VERSION = 'v8.0'
-VERSION = f'上册 {UPPER_VERSION} / 下册 {LOWER_VERSION}'
-PDF = OUT / (TITLE + '-上下册合订本.pdf')
+MIDDLE_VERSION = 'v0.5'
+LOWER_VERSION = 'v9.0'
+VERSION = f'上册 {UPPER_VERSION} / 中册 {MIDDLE_VERSION} / 下册 {LOWER_VERSION}'
+PDF = OUT / (TITLE + '-上中下册合订本.pdf')
 NAVY = colors.HexColor('#17365D')
 BLUE = colors.HexColor('#1D4ED8')
 TABLE_BLUE = colors.HexColor('#3D73C6')
@@ -349,7 +351,7 @@ class ManuscriptImage(Flowable):
 
 
 class BookDoc(BaseDocTemplate):
-    def __init__(self, path, edition='上下册合订本', outline_offset=0, front_matter=True,
+    def __init__(self, path, edition='上中下册合订本', outline_offset=0, front_matter=True,
                  version=VERSION):
         super().__init__(str(path), pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
                          topMargin=23*mm, bottomMargin=22*mm,
@@ -495,6 +497,7 @@ class Builder:
         self.heading_context=''
         self.figure_text=[]
         self.publication_note=True
+        self.middle_industry_groups=False
 
     def para(self,text,style='body'):
         # Preserve markup and entities while covering symbols absent in FangSong.
@@ -584,6 +587,9 @@ class Builder:
         for b in blocks:
             t,c=b['t'],b.get('c')
             if t in ('Para','Plain'):
+                # A linked image is still a figure; its link only opens the original.
+                c=[item['c'][1][0] if item['t']=='Link' and len(item['c'][1])==1
+                   and item['c'][1][0]['t']=='Image' else item for item in c]
                 images=[x for x in c if x['t']=='Image']
                 if images:
                     if any(x['t'] not in ('Image','Space','SoftBreak','LineBreak') for x in c):
@@ -617,8 +623,11 @@ class Builder:
                 out.append(Anchor(names))
                 p=self.para(self.inline(items),f'h{min(level,4)}')
                 if level==1:
-                    is_volume_index = self.current.name=='README.md' and self.current.parent.name in ('上册-研究报告','下册-案例汇编')
-                    p.book_entry=(1,title,key(self.current),not is_volume_index)
+                    is_volume_index = self.current.name=='README.md' and self.current.parent.name in ('上册-研究报告','中册-行业解决方案','下册-案例汇编')
+                    is_middle_industry = (self.middle_industry_groups
+                                          and self.current.parent.name=='中册-行业解决方案'
+                                          and bool(re.match(r'[A-Z][0-9]{2}-',self.current.name)))
+                    p.book_entry=(2 if is_middle_industry else 1,title,key(self.current),not is_volume_index)
                     if '下册-案例汇编' in self.current.parts and self.current.name!='README.md':
                         p.toc_level=2
                     p.source_path=str(self.current.relative_to(ROOT))
@@ -735,14 +744,20 @@ class Builder:
 
     def run(self):
         OUT.mkdir(parents=True,exist_ok=True)
-        upper=ROOT/'上册-研究报告'; lower=ROOT/'下册-案例汇编'
-        upper_paths=[]; lower_paths=[]; index=None
+        upper=ROOT/'上册-研究报告'; middle=ROOT/'中册-行业解决方案'; lower=ROOT/'下册-案例汇编'
+        upper_paths=[]; middle_paths=[]; lower_paths=[]; index=None
         if self.volume in ('upper','all'):
             numbered_upper_paths=sorted(upper.glob('[0-9][0-9]-*.md'))
             if [path.name[:2] for path in numbered_upper_paths] != [f'{number:02d}' for number in range(10)]:
                 raise ValueError('Expected one upper-volume document for each number 00–09 '
                                  '(导论, eight chapters and 结语)')
             upper_paths=[upper/'README.md']+numbered_upper_paths+[upper/'附录A-术语辨析表.md']
+        if self.volume in ('middle','all'):
+            plan=json.loads((ROOT/'scripts/data/middle/编写范围.json').read_text())
+            group_entries={group['from'] for group in plan.get('split_groups', [])}
+            middle_paths=[middle/'README.md']+sorted(
+                path for path in middle.glob('*.md')
+                if path.name != 'README.md' and path.name not in group_entries)
         if self.volume in ('lower','all'):
             index=json.loads((ROOT/'索引/案例来源索引.json').read_text())
             lower_paths=[lower/'README.md']
@@ -752,25 +767,29 @@ class Builder:
                 if path.parent not in groups:
                     groups.append(path.parent); lower_paths.append(path.parent/'README.md')
                 lower_paths.append(path)
-        if self.volume=='lower':
-            self.body_start_source=lower/'README.md'
-        edition={'all':'上下册合订本','upper':'上册 · 研究报告','lower':'下册 · 企业AI案例汇编'}[self.volume]
-        version={'all':VERSION,'upper':f'上册 {UPPER_VERSION}','lower':f'下册 {LOWER_VERSION}'}[self.volume]
-        cover_volumes={'all':'上册 · 研究报告<br/>下册 · 企业AI案例汇编',
-                       'upper':'上册 · 研究报告','lower':'下册 · 企业AI案例汇编'}[self.volume]
-        cover_edition={'all':'两册初稿合订本','upper':'上册初稿','lower':'下册初稿'}[self.volume]
-        scope_note={
-            'all':f'本合订本根据{DATE}保存的稿件编排。上册为初稿 {UPPER_VERSION}，下册为初稿 {LOWER_VERSION}；下册案例按统一的七节结构重写。',
-            'upper':f'本上册根据{DATE}保存的稿件编排，为初稿 {UPPER_VERSION}。下册案例正文另册提供，跨册引用链接至项目仓库。',
-            'lower':f'本下册根据{DATE}保存的稿件编排，为初稿 {LOWER_VERSION}；案例按统一的七节结构重写。上册研究报告正文另册提供，跨册引用链接至项目仓库。',
-        }[self.volume]
-        contents_note={
-            'all':'收录上册导论、八章正文、结语与附录A术语辨析表；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。下册收录62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
-            'upper':'收录上册导论、八章正文、结语与附录A术语辨析表；第二至五章分别展开MTL、LTC、IPD与ITR四条业务流程。另附问题阅读路径与资料来源说明。',
-            'lower':'收录下册62个案例入口及行业索引，另附问题阅读路径与资料来源说明。',
-        }[self.volume]+'过程稿、草稿箱、思维导图编辑数据和历史更新记录不编入正文。'
+        if self.volume in ('middle','lower'):
+            self.body_start_source={'middle':middle,'lower':lower}[self.volume]/'README.md'
+        labels={'upper':'上册 · 研究报告','middle':'中册 · 行业解决方案',
+                'lower':'下册 · 企业数字化与数智化案例汇编'}
+        versions={'upper':UPPER_VERSION,'middle':MIDDLE_VERSION,'lower':LOWER_VERSION}
+        edition='上中下册合订本' if self.volume=='all' else labels[self.volume]
+        version=VERSION if self.volume=='all' else f'{self.volume_name()} {versions[self.volume]}'
+        cover_volumes='<br/>'.join(labels.values()) if self.volume=='all' else labels[self.volume]
+        cover_edition='三册初稿合订本' if self.volume=='all' else f'{self.volume_name()}初稿'
+        scope_note=f'本书根据{DATE}保存的稿件编排，版本为{version}。单册未收录的跨册引用链接至项目仓库。'
+        case_count=len(index['entries']) if index else 0
+        scene_count=index['counts']['all_fragments'] if index else 0
+        middle_count=sum(bool(re.match(r'[A-Z][0-9]{2}-',path.name)) for path in middle_paths)
+        notes={
+            'upper':'上册收录导论、八章正文、结语与附录A术语辨析表。',
+            'middle':f'中册收录引言、{middle_count}篇行业与专业业务方案及附录。',
+            'lower':f'下册收录{case_count}个案例入口、{scene_count}个场景与证据片段及行业索引。',
+        }
+        contents_note=''.join(notes.values()) if self.volume=='all' else notes[self.volume]
+        contents_note+='另附问题阅读路径与资料来源说明。过程稿、草稿箱、思维导图编辑数据和历史更新记录不编入正文。'
         extra_paths=[ROOT/'索引/阅读路径.md',ROOT/'索引/资料来源说明.md']
-        paths=upper_paths+lower_paths+extra_paths
+        self.middle_industry_groups=bool(middle_paths)
+        paths=upper_paths+middle_paths+lower_paths+extra_paths
         docs={path:self.load(path) for path in paths}
         for path,blocks in docs.items(): self.register(path,blocks)
         self.story.extend([Spacer(1,38*mm),self.para('企业数智化转型<br/>研究报告','cover_title'),
@@ -784,11 +803,11 @@ class Builder:
         self.current=ROOT/'README.md'
         for text in [
             scope_note,
-            '本书由一芥智能研究院编写，面向企业经营者、业务负责人和参与组织改造的实践者。上册按问题论证，下册按行业、公司或项目集中呈现案例。',
+            '本书由一芥智能研究院编写，面向企业经营者、业务负责人和参与组织改造的实践者。上册按问题论证，中册展示行业数字化方案与智力服务应用，下册按行业、公司或项目集中呈现案例。',
             contents_note,
             '正文区分来源事实、一芥分析与待验证判断，并保留使用阶段、效果口径和来源定位。本书未对案例效果作独立审计或完整事实核验。',
             '本书只作经营管理分析与案例整理，不构成法律、财务、税务、医疗或其他专业意见；涉及具体业务操作时，请咨询相应执业者。',
-            'Copyright © 2026 一芥智能研究院。MIT许可适用于本仓库有权许可的原创正文、分析与索引；第三方音视频、图书和资料由相应权利人持有。',
+            'Copyright © 2026 一芥智能研究院。MIT许可适用于本仓库有权许可的原创正文、分析与索引；第三方音视频、图书、行业架构原图和资料由相应权利人持有；中册引用图示保留来源与页码，不纳入原创内容的MIT许可。',
             '目录、书签和文内案例引用可跳转；公开出处可点击访问。结构化来源索引与历史更新记录通过项目仓库查阅。',
         ]: self.story.append(self.para(escape(text)))
         self.story.append(self.para('<a href="https://github.com/scottzx/ai-in-organization" color="#1D4ED8">项目仓库与持续更新</a>  ·  <a href="https://github.com/scottzx/ai-in-organization/blob/main/LICENSE" color="#1D4ED8">完整MIT许可证</a>'))
@@ -799,14 +818,26 @@ class Builder:
         self.story.append(toc)
         for title,sub,name,part_paths in [
             ('上册  研究报告',f'从智力服务到精益经营  |  初稿 {UPPER_VERSION}','upper-volume',upper_paths),
-            ('下册  企业AI案例汇编',f'62个阅读入口 · 101个场景与证据片段  |  初稿 {LOWER_VERSION}','lower-volume',lower_paths),
+            ('中册  行业解决方案',f'{middle_count}篇行业与专业业务方案  |  初稿 {MIDDLE_VERSION}','middle-volume',middle_paths),
+            ('下册  企业数字化与数智化案例汇编',f'{case_count}个阅读入口 · {scene_count}个场景与证据片段  |  初稿 {LOWER_VERSION}','lower-volume',lower_paths),
             ('阅读与来源索引','按研究问题阅读 · 资料来源说明','source-indexes',extra_paths),
         ]:
             if not part_paths: continue
             self.add_part(title,sub,name)
+            current_middle_group=None
             for i,path in enumerate(part_paths):
                 if i: self.story.append(PageBreak())
                 self.current=path
+                if path in middle_paths and re.match(r'[A-Z][0-9]{2}-',path.name):
+                    group=path.name[0]
+                    if group != current_middle_group:
+                        heading=f"{group}-{plan['industry_groups'][group]}"
+                        p=self.para(escape(heading),'h1')
+                        p.book_entry=(1,heading,f'middle-industry-{group}',True)
+                        p.running_title=heading
+                        p.keepWithNext=True
+                        self.story.append(p)
+                        current_middle_group=group
                 self.story.append(Anchor([key(path)]))
                 self.story.extend(self.blocks(docs[path]))
                 self.sources.append({'path':str(path.relative_to(ROOT)),
@@ -820,7 +851,7 @@ class Builder:
         self.verify_and_manifest(doc, pdf, manifest, index=index, volume=self.volume)
 
     def volume_name(self):
-        return {'upper':'上册','lower':'下册','all':'上下册合订本'}[self.volume]
+        return {'upper':'上册','middle':'中册','lower':'下册','all':'上中下册合订本'}[self.volume]
 
     def run_chapter(self, chapter):
         path = (ROOT / chapter).resolve()
@@ -886,8 +917,8 @@ class Builder:
                     destination=a.get('/Dest') or a.get('/A',{}).get('/D')
                     if destination and destination[0].idnum not in page_ids:
                         raise ValueError('PDF internal link points outside this document')
-        versions={'upper':UPPER_VERSION,'lower':LOWER_VERSION}
-        if volume in ('upper','lower'):
+        versions={'upper':UPPER_VERSION,'middle':MIDDLE_VERSION,'lower':LOWER_VERSION}
+        if volume in ('upper','middle','lower'):
             versions={volume:versions[volume]}
         manifest={'title':TITLE,'manuscript_date':MANUSCRIPT_DATE,'versions':versions,
                   'pdf':pdf.name,'pages':len(reader.pages),'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
@@ -923,8 +954,8 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     scope=parser.add_mutually_exclusive_group()
     scope.add_argument('--chapter', help='Build one Markdown chapter and its own PDF manifest')
-    scope.add_argument('--volume', choices=('upper','lower','all'), default='all',
-                       help='Build the upper volume, lower volume, or both (default: all)')
+    scope.add_argument('--volume', choices=('upper','middle','lower','all'), default='all',
+                       help='Build one volume or all three in a combined PDF (default: all)')
     parser.add_argument('--output', help='Save a separate preview PDF and manifest at this path')
     args = parser.parse_args()
     builder = Builder(args.output,volume=args.volume)

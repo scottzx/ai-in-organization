@@ -37,9 +37,14 @@ def main():
  scope=(f'本册提供{len(chapters)}篇行业与专业业务方案。' if len(chapters)==len(planned)
         else f'当前可读行业章共{len(chapters)}篇，按大纲与依据成熟度继续编写。')
  lines+=['','## 分行业阅读','',scope+'读者可按企业类型、业务环节和建设目标选择适用章节；各章分别说明行业方案提供的参考能力、企业需要核实的现有条件，以及智力服务可增加的任务与价值。','',
- '住宿与餐饮、农林牧渔等按独立经营对象分篇；同一产业链的整机与配套角色在章内说明。旧合并网址保留为分篇入口，具体调整和当前覆盖范围见[行业分篇说明](../索引/中册行业分篇说明.md)。','', '| 行业方案 | 阅读重点 |','| --- | --- |']
+ '住宿与餐饮、农林牧渔等按独立经营对象分篇；同一产业链的整机与配套角色在章内说明。旧合并网址保留为分篇入口，具体调整和当前覆盖范围见[行业分篇说明](../索引/中册行业分篇说明.md)。','']
  cross=[]
+ current_group=None
  for p in chapters:
+  group=p.name[0]
+  if group != current_group:
+   lines+=['',f"### {group}-{plan['industry_groups'][group]}",'', '| 行业方案 | 阅读重点 |','| --- | --- |']
+   current_group=group
   text=p.read_text()
   focus_text=re.split(r'^##\s+',text,flags=re.M)[3]
   h=re.findall(r'^###\s+(.+)$',focus_text,re.M)
