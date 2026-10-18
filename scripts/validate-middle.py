@@ -20,6 +20,8 @@ def main():
  by_path={e['path']:e for e in entries}
  figures=json.loads((MID/'assets/sources.json').read_text())['figures']
  by_asset={r['asset']:r for r in figures}
+ figure_rules=json.loads((DATA/'图示裁切规则.json').read_text())
+ inline_uses={}
  errors=[]; checks=[]; used_cases=set(); used_figures=set()
  descriptors=[
   '第一节　行业特点、适用企业与业务目标',
@@ -33,6 +35,10 @@ def main():
   p=MID/item['file']
   if not p.is_file(): errors.append('Missing planned chapter: '+item['file']); continue
   text=p.read_text()
+  for asset in re.findall(r'!\[[^\]\n]*\]\(assets/([^()\n]+\.png)\)',text):
+   inline_uses.setdefault(asset,set()).add(p.name)
+   if not re.search(r'\[!\[[^\]\n]*\]\(assets/'+re.escape(asset)+r'\)\]\(assets/'+re.escape(asset)+r'\)',text):
+    errors.append(p.name+': inline figure lacks full-size image link: '+asset)
   edition=item.get('edition',plan['default_chapter_edition'])
   heads=re.findall(r'^##\s+(.+)$',text,re.M)
   if heads!=descriptors:
@@ -75,6 +81,25 @@ def main():
  for asset in used_figures:
   actual=hashlib.sha256((MID/'assets'/asset).read_bytes()).hexdigest()
   if actual!=by_asset[asset]['asset_sha256']: errors.append('Figure changed after source registration: '+asset)
+ for rule in figure_rules['figures']:
+  asset=rule['asset'];meta=by_asset.get(asset)
+  if not meta:
+   errors.append('Reviewed figure missing from source manifest: '+asset);continue
+  if inline_uses.get(asset,set())!=set(rule['required_in']):
+   errors.append('Figure must be embedded in its planned chapter(s), rather than only linked: '+asset)
+  source=figure_rules['sources'][rule['source_id']]
+  source_url=source['url']+'#page='+str(rule['pdf_page'])
+  if meta['source_sha256']!=source['sha256'] or meta['source_url']!=source_url:
+   errors.append('Figure provenance differs from reviewed source: '+asset)
+  if meta.get('crop',{}).get('pdf_bbox_points')!=rule['crop_pdf_bbox']:
+   errors.append('Figure crop differs from reviewed element bounds: '+asset)
+  for chapter in rule['required_in']:
+   text=(MID/chapter).read_text()
+   if source_url not in text: errors.append(chapter+': figure lacks original PDF page link: '+asset)
+   if rule.get('printed_page') and not re.search(r'印刷第'+str(rule['printed_page'])+r'页',text):
+    errors.append(chapter+': figure lacks printed page locator: '+asset)
+ if set(by_asset)!=set(r['asset'] for r in figure_rules['figures']):
+  errors.append('Figure manifest and reviewed figure inventory differ')
  intake=json.loads((DATA/'新增案例条目.json').read_text())
  for e in intake['entries']:
   for f in e['fragments']:
@@ -83,7 +108,7 @@ def main():
     if p.exists():
      if hashlib.sha256(p.read_bytes()).hexdigest()!=source['document_sha256']: errors.append(e['id']+': source text hash differs')
      if not 1<=source['line_start']<=source['line_end']<=len(p.read_text().splitlines()): errors.append(e['id']+': source line range invalid')
- report={'passed':not errors,'expected_industry_chapters':len(plan['chapters']),'checked_industry_chapters':len(checks),'referenced_case_entries':len(used_cases),'cited_figure_pages':len(used_figures),'new_cases_with_source_records':len(intake['entries']),'chapters':checks,'errors':errors}
+ report={'passed':not errors,'expected_industry_chapters':len(plan['chapters']),'checked_industry_chapters':len(checks),'referenced_case_entries':len(used_cases),'cited_figure_pages':len(used_figures),'inline_figure_placements':sum(len(chapters) for chapters in inline_uses.values()),'new_cases_with_source_records':len(intake['entries']),'chapters':checks,'errors':errors}
  (MID/'研究记录').mkdir(exist_ok=True)
  (MID/'研究记录/结构与引用核验.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({k:v for k,v in report.items() if k!='chapters'},ensure_ascii=False,indent=2))

@@ -1,5 +1,5 @@
 {
-  "title": "中册原图摘引来源",
+  "title": "中册行业图示摘引来源",
   "updated_on": "2026-10-18",
   "figures": [
     {
@@ -9,8 +9,59 @@
       "pdf_page": 13,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=13",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b18cdfbb81e04161dc241a78bd0f1c67f571ccc4442e7f90f0f91627de15ecb0",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "a287b411e3981fa922ad8c6897c707797618a0230c9c4d4e43829de9203d3d1d",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2992,
+        2235
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9359,
+          5.9289,
+          1158.8546,
+          836.9255
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.07,
+        "page_height_removed_fraction": 0.0129,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C05-钢铁.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9359,
+          5.9289,
+          1158.8546,
+          836.9255
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.07,
+        "page_height_removed_fraction": 0.0129,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          15,
+          3115,
+          2250
+        ]
+      },
+      "uncropped_asset_sha256": "b18cdfbb81e04161dc241a78bd0f1c67f571ccc4442e7f90f0f91627de15ecb0"
     },
     {
       "asset": "A11-钢铁-14.png",
@@ -19,8 +70,59 @@
       "pdf_page": 14,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=14",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b8a2365eb3107392dfec7e1f548472d8d5d210d13f7df065335296c9d8b4a638",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "ef0bcbe6d1652cd4679a4dbc879c49351cb9ea5450a90efd4cd3ed83ad3b0daf",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2929,
+        2248
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.7652,
+          5.9289,
+          1135.1706,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.093,
+        "page_height_removed_fraction": 0.007,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C05-钢铁.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.7652,
+          5.9289,
+          1135.1706,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.093,
+        "page_height_removed_fraction": 0.007,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          15,
+          3052,
+          2263
+        ]
+      },
+      "uncropped_asset_sha256": "b8a2365eb3107392dfec7e1f548472d8d5d210d13f7df065335296c9d8b4a638"
     },
     {
       "asset": "A11-石化-16.png",
@@ -29,8 +131,59 @@
       "pdf_page": 16,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=16",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "c1cd3007c8436f5186be8a6df719bd6cf51cbf6d1ed05b61c183391d9be7facb",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "92c116b451cad024ad6848352c994248a6e8734431d6080926293a1fb2445870",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2982,
+        2237
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          834.3633
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0117,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          834.3633
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0117,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          6,
+          3105,
+          2243
+        ]
+      },
+      "uncropped_asset_sha256": "c1cd3007c8436f5186be8a6df719bd6cf51cbf6d1ed05b61c183391d9be7facb"
     },
     {
       "asset": "A11-石化-17.png",
@@ -39,8 +192,59 @@
       "pdf_page": 17,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=17",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b74ef390c704af0a6346cb8452a79ced558fdaf287aad839bbc7d0ccbf990c0e",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "813aa6f97bf677476433c268818d75901356fcfcaa3ec477058fe5cc2efa63ee",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2982,
+        2126
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          793.1356
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0606,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          793.1356
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0606,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          6,
+          3105,
+          2132
+        ]
+      },
+      "uncropped_asset_sha256": "b74ef390c704af0a6346cb8452a79ced558fdaf287aad839bbc7d0ccbf990c0e"
     },
     {
       "asset": "A11-石化-18.png",
@@ -49,8 +253,59 @@
       "pdf_page": 18,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=18",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "ae218cd4b28d076cb29cf78415475130f41bbd86a11a1a606d1475084bdc0a86",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "cc32381c107673eb3c1cf9b7d6ba618233cd685cb9f9c6a8df2f6d116117aa6e",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2982,
+        2050
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          764.5863
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0945,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.2904999999999998,
+          1154.9934,
+          764.5863
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.073,
+        "page_height_removed_fraction": 0.0945,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          6,
+          3105,
+          2056
+        ]
+      },
+      "uncropped_asset_sha256": "ae218cd4b28d076cb29cf78415475130f41bbd86a11a1a606d1475084bdc0a86"
     },
     {
       "asset": "A11-石化-19.png",
@@ -59,8 +314,59 @@
       "pdf_page": 19,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=19",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b16485434e5702d7c4a2f852e61f37be55884d9942eb8b716450bd6a3bfc681a",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "1823f4c7ae52cbc3312dcf759910a7b3019f671dd22699ef43f7a1c3e75d6b9e",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2974,
+        2225
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9239,
+          2.2904999999999998,
+          1152.0077,
+          829.8154
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.076,
+        "page_height_removed_fraction": 0.0171,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9239,
+          2.2904999999999998,
+          1152.0077,
+          829.8154
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.076,
+        "page_height_removed_fraction": 0.0171,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          6,
+          3097,
+          2231
+        ]
+      },
+      "uncropped_asset_sha256": "b16485434e5702d7c4a2f852e61f37be55884d9942eb8b716450bd6a3bfc681a"
     },
     {
       "asset": "A11-石化-20.png",
@@ -69,8 +375,59 @@
       "pdf_page": 20,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=20",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "edb5faf405871acb78c4e3118e11c71a7af652e3d8eaa1abb40c70b0fa1274ef",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "a5b5b7de61e71a95fac7fce6e299f2e060625ffe6b1430d364cac6021bc0520e",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3011,
+        2177
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9239,
+          2.2904999999999998,
+          1165.826,
+          812.011
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.063,
+        "page_height_removed_fraction": 0.0382,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9239,
+          2.2904999999999998,
+          1165.826,
+          812.011
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.063,
+        "page_height_removed_fraction": 0.0382,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          6,
+          3134,
+          2183
+        ]
+      },
+      "uncropped_asset_sha256": "edb5faf405871acb78c4e3118e11c71a7af652e3d8eaa1abb40c70b0fa1274ef"
     },
     {
       "asset": "A11-工程机械-22.png",
@@ -80,23 +437,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=22",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "221de991569a51f7bc8f4b632a7cbca8c5c9f0543f1ec2cf7b51505fa840b06f",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
       "content_detection": {
-        "method": "visible-pdf-element-union",
-        "pdf_bbox_points": [
-          16.657,
-          4.498,
-          1171.4212,
-          841.89
-        ],
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
         "page_size_points": [
           1190.55,
           841.89
         ],
-        "same_width_display_gain": 1.031,
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
         "cropped": false,
-        "image_object": null
-      }
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "required_in": [
+        "C01-工程机械.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-工程机械-23.png",
@@ -106,23 +473,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=23",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "ff4afc399f1f4a2a7cf34d9e7cdacf7c68bff77ea9fcb287e155e062ddbacbed",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
       "content_detection": {
-        "method": "visible-pdf-element-union",
-        "pdf_bbox_points": [
-          16.6933,
-          4.498,
-          1171.4936,
-          841.89
-        ],
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
         "page_size_points": [
           1190.55,
           841.89
         ],
-        "same_width_display_gain": 1.031,
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
         "cropped": false,
-        "image_object": null
-      }
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "required_in": [
+        "C01-工程机械.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-新能源汽车-25.png",
@@ -132,7 +509,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=25",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "991c4addd242b87f494430d4c7eef27f88114256008ed06b1fb664bdf4da0874",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
+        "cropped": false,
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C02-汽车与零部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-新能源汽车-26.png",
@@ -142,7 +545,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=26",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "80d3fff8a593856994c2c8d4a8ee93eca98e295903a6ac0d12715d807c12258a",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
+        "cropped": false,
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C02-汽车与零部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-新能源汽车-27.png",
@@ -152,7 +581,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=27",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "74873bff02c5ab5ea7392d93e6354b0cee7462f9760b584ea8e1410c6036363f",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
+        "cropped": false,
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C02-汽车与零部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-机器人-29.png",
@@ -161,8 +616,59 @@
       "pdf_page": 29,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=29",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "45199ff7b184408fcf88fd20118883005cd09f122cf33b44b94ced9998dc94d8",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "e8760bdbef74ed3946c713188d7208c614fd16f0706b761171d1a58bb82def49",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2254
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.0491,
+          1139.0881,
+          840.2476
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0044,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C03-机器人.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.0491,
+          1139.0881,
+          840.2476
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0044,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          5,
+          3062,
+          2259
+        ]
+      },
+      "uncropped_asset_sha256": "45199ff7b184408fcf88fd20118883005cd09f122cf33b44b94ced9998dc94d8"
     },
     {
       "asset": "A11-机器人-30.png",
@@ -171,8 +677,59 @@
       "pdf_page": 30,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=30",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b4f833ed8e666036bcec7d5d8aaafc23989affa10b13d9b86d6cb7aeebb204aa",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "6907851b66f74418273cfceff4c786ab855048c65b1918d48e6faab339e88c12",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2243
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          4.1468,
+          1139.0881,
+          838.3514
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0091,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C03-机器人.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          4.1468,
+          1139.0881,
+          838.3514
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0091,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          11,
+          3062,
+          2254
+        ]
+      },
+      "uncropped_asset_sha256": "b4f833ed8e666036bcec7d5d8aaafc23989affa10b13d9b86d6cb7aeebb204aa"
     },
     {
       "asset": "A11-医疗装备-32.png",
@@ -181,8 +738,59 @@
       "pdf_page": 32,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=32",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "a5570ff7a890510490a5ae68313e8583c4bccda1c31531ecbe3a01fa7de03285",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "d1d957451db33ef49dfe2f4968a8b30eb1508fd273de0a2f10e1f4d0f4bc6a64",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2230
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0761,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0148,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C13-医药与医疗装备.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0761,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0148,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3062,
+          2263
+        ]
+      },
+      "uncropped_asset_sha256": "a5570ff7a890510490a5ae68313e8583c4bccda1c31531ecbe3a01fa7de03285"
     },
     {
       "asset": "A11-医疗装备-33.png",
@@ -191,8 +799,59 @@
       "pdf_page": 33,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=33",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "4cb353437a6e84f4c5fd187b7395cce86b86a8178c381f9f4ebe62ca09298fac",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f41b891a03c219702421712984b1f5e63b5a95a605329b1e687de1bbd0b8449e",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2218
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0316,
+          837.3357
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0203,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C13-医药与医疗装备.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0316,
+          837.3357
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0203,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3062,
+          2251
+        ]
+      },
+      "uncropped_asset_sha256": "4cb353437a6e84f4c5fd187b7395cce86b86a8178c381f9f4ebe62ca09298fac"
     },
     {
       "asset": "A11-医疗装备-34.png",
@@ -201,8 +860,59 @@
       "pdf_page": 34,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=34",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "be64134acbce7c5349d9c8482b3ff4a46cb6c462d599ffe3d75cd9ebda182b9b",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "75fb93a256a5800f63c06d5f96131e31bec90915a115f1ffa29ea1b81e5fe874",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2951,
+        2205
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          41.5775,
+          12.5,
+          1139.0762,
+          832.5233
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.085,
+        "page_height_removed_fraction": 0.026,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C13-医药与医疗装备.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          41.5775,
+          12.5,
+          1139.0762,
+          832.5233
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.085,
+        "page_height_removed_fraction": 0.026,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          111,
+          33,
+          3062,
+          2238
+        ]
+      },
+      "uncropped_asset_sha256": "be64134acbce7c5349d9c8482b3ff4a46cb6c462d599ffe3d75cd9ebda182b9b"
     },
     {
       "asset": "A11-医疗装备-35.png",
@@ -211,8 +921,59 @@
       "pdf_page": 35,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=35",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "1fafe65987e6b7ca411a83020bd5aa58278180b71fbce5f6a3c689362234b6c1",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "49f2bc356eb7c911d14d701d77612f7b6e4f42dba8f814a539f0796c8096eb46",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2138
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0317,
+          807.4083
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0558,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C13-医药与医疗装备.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          12.5,
+          1139.0317,
+          807.4083
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0558,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3062,
+          2171
+        ]
+      },
+      "uncropped_asset_sha256": "1fafe65987e6b7ca411a83020bd5aa58278180b71fbce5f6a3c689362234b6c1"
     },
     {
       "asset": "A11-家电-37.png",
@@ -221,8 +982,59 @@
       "pdf_page": 37,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=37",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "8d8104cee4c9a8c2b355fcdc901bf67db69a362a031e39aed2a28ab2075cfea4",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "3e99f28186e16c12faa691aaec421c8052701b8a7a40db8da5f771a7eab51bef",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2946,
+        2147
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          49.5927,
+          12.4629,
+          1145.4023,
+          810.9384
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.086,
+        "page_height_removed_fraction": 0.0516,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C10-家电与轻工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          49.5927,
+          12.4629,
+          1145.4023,
+          810.9384
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.086,
+        "page_height_removed_fraction": 0.0516,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          133,
+          33,
+          3079,
+          2180
+        ]
+      },
+      "uncropped_asset_sha256": "8d8104cee4c9a8c2b355fcdc901bf67db69a362a031e39aed2a28ab2075cfea4"
     },
     {
       "asset": "A11-家电-38.png",
@@ -231,8 +1043,59 @@
       "pdf_page": 38,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=38",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b00761a9eac0ede3bdcfe842daa2e1730845a6ffb8c0e1a3c36b81123a4beb6d",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "0e2dc7fc89c93fe7fc6419a292866dd142b0d0763ab7946fbb657bac88ce2250",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2921,
+        2134
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          53.0267,
+          12.4629,
+          1139.3242,
+          806.0662
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.096,
+        "page_height_removed_fraction": 0.0574,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C10-家电与轻工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          53.0267,
+          12.4629,
+          1139.3242,
+          806.0662
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.096,
+        "page_height_removed_fraction": 0.0574,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          142,
+          33,
+          3063,
+          2167
+        ]
+      },
+      "uncropped_asset_sha256": "b00761a9eac0ede3bdcfe842daa2e1730845a6ffb8c0e1a3c36b81123a4beb6d"
     },
     {
       "asset": "A11-家电-39.png",
@@ -241,8 +1104,59 @@
       "pdf_page": 39,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=39",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "44cb87f86e5f2e41dbba4dcbbe2d928021e51679e8e95f2746fa3d84e8a190e1",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "aa6b11c8dc084b894491949ba35863ddd8005b3d08d620c5607eb004e8a07dab",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2941,
+        1974
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          52.9821,
+          12.4629,
+          1147.006,
+          746.6638
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.088,
+        "page_height_removed_fraction": 0.1279,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C10-家电与轻工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          52.9821,
+          12.4629,
+          1147.006,
+          746.6638
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.088,
+        "page_height_removed_fraction": 0.1279,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          142,
+          33,
+          3083,
+          2007
+        ]
+      },
+      "uncropped_asset_sha256": "44cb87f86e5f2e41dbba4dcbbe2d928021e51679e8e95f2746fa3d84e8a190e1"
     },
     {
       "asset": "A11-制糖-41.png",
@@ -251,8 +1165,59 @@
       "pdf_page": 41,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=41",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "ab489d1ac5051ad42acb61526d4d8c95b43d65df930acf1cb36eb519a5a6d4be",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "748aa60b9ba6c48e8fa0b3769ba8a2b77a4dac1f81bcb0bbcbe2910f218fd8e5",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3016,
+        2256
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.6432,
+          1167.7664,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.061,
+        "page_height_removed_fraction": 0.0031,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C12-食品饮料.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          2.6432,
+          1167.7664,
+          841.89
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.061,
+        "page_height_removed_fraction": 0.0031,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          7,
+          3139,
+          2263
+        ]
+      },
+      "uncropped_asset_sha256": "ab489d1ac5051ad42acb61526d4d8c95b43d65df930acf1cb36eb519a5a6d4be"
     },
     {
       "asset": "A11-白酒-43.png",
@@ -261,8 +1226,59 @@
       "pdf_page": 43,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=43",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "b7a118ffe9a7854806f96446b7d6850fba62e633d4790a2dd38ab35e28371f96",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "70259a3432cf2aa999e5df59b1979dcf921322a5c4590862219c60503e801d89",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2951,
+        1878
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0324,
+          27.9438,
+          1143.353,
+          726.3131
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.085,
+        "page_height_removed_fraction": 0.1705,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C12-食品饮料.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0324,
+          27.9438,
+          1143.353,
+          726.3131
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.085,
+        "page_height_removed_fraction": 0.1705,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          75,
+          3074,
+          1953
+        ]
+      },
+      "uncropped_asset_sha256": "b7a118ffe9a7854806f96446b7d6850fba62e633d4790a2dd38ab35e28371f96"
     },
     {
       "asset": "A11-白酒-44.png",
@@ -271,8 +1287,59 @@
       "pdf_page": 44,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=44",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "4d14a376b5948d6aa86d46e52d49ac3828aa131ab3412d124f1e016f613bf928",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "537b943bb6e6088100ae3dd0362d019b3f518c759df178766fa88dab2eb41fe2",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2133
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          53.1158,
+          26.3846,
+          1146.204,
+          819.548
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0579,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C12-食品饮料.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          53.1158,
+          26.3846,
+          1146.204,
+          819.548
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0579,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          142,
+          70,
+          3081,
+          2203
+        ]
+      },
+      "uncropped_asset_sha256": "4d14a376b5948d6aa86d46e52d49ac3828aa131ab3412d124f1e016f613bf928"
     },
     {
       "asset": "A11-美妆日化-46.png",
@@ -282,7 +1349,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=46",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "9f4739230737f2e46d3c13daf8e02b74d47ecd39a37918eaf735774f01c6fffa",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
+        "cropped": false,
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C10-家电与轻工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-美妆日化-47.png",
@@ -291,8 +1384,59 @@
       "pdf_page": 47,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=47",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "bb0805f3e67e3a4437dda461f90ce27c5a521dff446f281b48d077a51fff53c7",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "ac6286a68fcf81854de25eb980d83ee4414b395f9783748d287c23d3b7dc0937",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3062,
+        1150
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          25.2279,
+          15.250599999999999,
+          1163.8441,
+          442.6606
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.046,
+        "page_height_removed_fraction": 0.4923,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C10-家电与轻工.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          25.2279,
+          15.250599999999999,
+          1163.8441,
+          442.6606
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.046,
+        "page_height_removed_fraction": 0.4923,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          67,
+          40,
+          3129,
+          1190
+        ]
+      },
+      "uncropped_asset_sha256": "bb0805f3e67e3a4437dda461f90ce27c5a521dff446f281b48d077a51fff53c7"
     },
     {
       "asset": "A11-锂电池-49.png",
@@ -301,8 +1445,59 @@
       "pdf_page": 49,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=49",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "fdb7b5df5789aaecd43760628ae98b44c04da4a7a9c3d871e7d78827391ab1d8",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "628e231da8c735d6ac34921250033b14a9a1153d3ee5d73706997ca4b022fe64",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2989,
+        2210
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          12.4999,
+          1157.7102,
+          834.4932
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.071,
+        "page_height_removed_fraction": 0.0236,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          12.4999,
+          1157.7102,
+          834.4932
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.071,
+        "page_height_removed_fraction": 0.0236,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3112,
+          2243
+        ]
+      },
+      "uncropped_asset_sha256": "fdb7b5df5789aaecd43760628ae98b44c04da4a7a9c3d871e7d78827391ab1d8"
     },
     {
       "asset": "A11-锂电池-50.png",
@@ -311,8 +1506,59 @@
       "pdf_page": 50,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=50",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "de267fe905b8bf8b847dd3fda63a331d2d611b2f1842b6d3809f53196fa95e69",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "e93cba277d4e69d0d3e52bf130e5cf3bd7fb32283a104a0eefa1c3a22056e4d5",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2980,
+        2064
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0167,
+          12.4999,
+          1154.2798,
+          779.9379
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.074,
+        "page_height_removed_fraction": 0.0884,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0167,
+          12.4999,
+          1154.2798,
+          779.9379
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.074,
+        "page_height_removed_fraction": 0.0884,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3103,
+          2097
+        ]
+      },
+      "uncropped_asset_sha256": "de267fe905b8bf8b847dd3fda63a331d2d611b2f1842b6d3809f53196fa95e69"
     },
     {
       "asset": "A11-锂电池-51.png",
@@ -321,8 +1567,59 @@
       "pdf_page": 51,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=51",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "d80f3b0561ba15c8c46662c62c2f77e207f65ab65475e0fd518cd61777e62cbc",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "9c4646fe95d1151371fc05260a7501ddacd80442fb178772cb47ce3e70c882d4",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2955,
+        2042
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0204,
+          12.4999,
+          1144.836,
+          771.7116
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.083,
+        "page_height_removed_fraction": 0.0982,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          46.0204,
+          12.4999,
+          1144.836,
+          771.7116
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.083,
+        "page_height_removed_fraction": 0.0982,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3078,
+          2075
+        ]
+      },
+      "uncropped_asset_sha256": "d80f3b0561ba15c8c46662c62c2f77e207f65ab65475e0fd518cd61777e62cbc"
     },
     {
       "asset": "A11-印制板-53.png",
@@ -331,8 +1628,59 @@
       "pdf_page": 53,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=53",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "2a88a1c83697596060a494dbfea4b39b2e061b8aa9bfaaae40268d16cfe04154",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "e38a4a88a4088091631ade20997ae8ec8ea8cafbd6e49edd75afda145ddd0d85",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2988,
+        2224
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          43.5664,
+          13.2425,
+          1154.9035,
+          840.3776
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.071,
+        "page_height_removed_fraction": 0.0175,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          43.5664,
+          13.2425,
+          1154.9035,
+          840.3776
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.071,
+        "page_height_removed_fraction": 0.0175,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          117,
+          35,
+          3105,
+          2259
+        ]
+      },
+      "uncropped_asset_sha256": "2a88a1c83697596060a494dbfea4b39b2e061b8aa9bfaaae40268d16cfe04154"
     },
     {
       "asset": "A11-印制板-54.png",
@@ -341,8 +1689,59 @@
       "pdf_page": 54,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=54",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "792efbb2916b72c39c940036369f82ec2aabbdaaa1ddbc7cd374797ab4a14f42",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "2a1a975e2dce414667a17fd07df58049d68581e49000c257e4242322eaaba600",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2939,
+        2178
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          12.4999,
+          1139.0881,
+          822.4432
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0379,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9313,
+          12.4999,
+          1139.0881,
+          822.4432
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.089,
+        "page_height_removed_fraction": 0.0379,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          33,
+          3062,
+          2211
+        ]
+      },
+      "uncropped_asset_sha256": "792efbb2916b72c39c940036369f82ec2aabbdaaa1ddbc7cd374797ab4a14f42"
     },
     {
       "asset": "A11-智能移动终端-56.png",
@@ -352,7 +1751,33 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=56",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "726297e9b80d99b75457b791ff75c4cccb3a3b6294813d5c79cb488c5302c763",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3200,
+        2263
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          0,
+          0,
+          1190.55,
+          841.89
+        ],
+        "cropped": false,
+        "same_width_display_gain": 1,
+        "page_height_removed_fraction": 0,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
     },
     {
       "asset": "A11-智能移动终端-57.png",
@@ -361,8 +1786,59 @@
       "pdf_page": 57,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=57",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "05eb25f5e18e506d855347f7105a842221e28a79035a65f79dff4a80a8b3437d",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "fd219effb875709c260028227a581bb7f2ee6b4b89872021a099bfe7d5dc1856",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3102,
+        1194
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          15.471599999999999,
+          12.5,
+          1169.0564,
+          456.378
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.032,
+        "page_height_removed_fraction": 0.4728,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C09-电子信息与关键部件.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          15.471599999999999,
+          12.5,
+          1169.0564,
+          456.378
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.032,
+        "page_height_removed_fraction": 0.4728,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          41,
+          33,
+          3143,
+          1227
+        ]
+      },
+      "uncropped_asset_sha256": "05eb25f5e18e506d855347f7105a842221e28a79035a65f79dff4a80a8b3437d"
     },
     {
       "asset": "A11-民爆-59.png",
@@ -371,8 +1847,59 @@
       "pdf_page": 59,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=59",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "7f78203bf6fc4793feedf7bc90b9ab39cef6e6a87556de88501c1ed8e32dba5b",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "5e43adfa6f6d9cfe6f61994f9d2a821e0c88eec0d76784f5b5d7f248a2e058f7",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2979,
+        2195
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          14.2549,
+          1153.7774,
+          830.5806
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.075,
+        "page_height_removed_fraction": 0.0304,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C14-民爆.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          14.2549,
+          1153.7774,
+          830.5806
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.075,
+        "page_height_removed_fraction": 0.0304,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          38,
+          3102,
+          2233
+        ]
+      },
+      "uncropped_asset_sha256": "7f78203bf6fc4793feedf7bc90b9ab39cef6e6a87556de88501c1ed8e32dba5b"
     },
     {
       "asset": "A11-民爆-60.png",
@@ -381,8 +1908,59 @@
       "pdf_page": 60,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=60",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "79513abebe87cedf67a786c84b7966b67a9c55e98c522287abc8273bcc837750",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "58949981de49e2215235fa5073842353894b0edb8bc4958d0dcbb0d4308f6e31",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2979,
+        2214
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          14.772400000000001,
+          1153.733,
+          837.9056
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.075,
+        "page_height_removed_fraction": 0.0223,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C14-民爆.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          45.9433,
+          14.772400000000001,
+          1153.733,
+          837.9056
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.075,
+        "page_height_removed_fraction": 0.0223,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          123,
+          39,
+          3102,
+          2253
+        ]
+      },
+      "uncropped_asset_sha256": "79513abebe87cedf67a786c84b7966b67a9c55e98c522287abc8273bcc837750"
     },
     {
       "asset": "A11-民爆-61.png",
@@ -391,8 +1969,59 @@
       "pdf_page": 61,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=61",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "fed7923cb03389076103a7afb9560239730524442956ffa8d537fa121c18576a",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "1e99ebe20cec4ccf625016176bdb44abd0eb49d1d03d7cc7a980a36c0eda8fdd",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3043,
+        2213
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          34.1823,
+          14.2549,
+          1165.6276,
+          837.188
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.052,
+        "page_height_removed_fraction": 0.0225,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C14-民爆.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          34.1823,
+          14.2549,
+          1165.6276,
+          837.188
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.052,
+        "page_height_removed_fraction": 0.0225,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          91,
+          38,
+          3134,
+          2251
+        ]
+      },
+      "uncropped_asset_sha256": "fed7923cb03389076103a7afb9560239730524442956ffa8d537fa121c18576a"
     },
     {
       "asset": "A11-民爆-62.png",
@@ -401,8 +2030,59 @@
       "pdf_page": 62,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=62",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "198abf61786ac6756a48fc5c9650cad1a438fa6568441d212feec42a7171590f",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f3ef7b8c86a839ba37a87e391e68c38740304d1595a002f3fb9b06c9b32608ac",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        3042,
+        2147
+      ],
+      "content_detection": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          34.1823,
+          14.2549,
+          1165.583,
+          812.6896
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.052,
+        "page_height_removed_fraction": 0.0516,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
+      },
+      "required_in": [
+        "C14-民爆.md"
+      ],
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "crop": {
+        "method": "visible-pdf-element-union-with-4pt-padding",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          34.1823,
+          14.2549,
+          1165.583,
+          812.6896
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.052,
+        "page_height_removed_fraction": 0.0516,
+        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
+        "pixel_bbox": [
+          91,
+          38,
+          3133,
+          2185
+        ]
+      },
+      "uncropped_asset_sha256": "198abf61786ac6756a48fc5c9650cad1a438fa6568441d212feec42a7171590f"
     },
     {
       "asset": "B01-钢铁-41.png",
@@ -411,8 +2091,63 @@
       "pdf_page": 41,
       "source_url": "https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=41",
       "source_sha256": "9b09986aa1f7ac090352bdc1df4b21c6045b29614fe7fce7b80de9caeab27c84",
-      "asset_sha256": "f2c4a1f438a9b7ae6288fb569a1735ca2f03e16efb7f9a5dda0a582b685c5342",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "65d744102a37514c4d0b2fc45a634d563e6451f0f06d77c6cfd120d0c62fb674",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1472,
+        1055
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          103.44,
+          504.84,
+          490.56,
+          782.03
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.538,
+        "page_height_removed_fraction": 0.6708,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C05-钢铁.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 30,
+      "figure_titles": [
+        "图3-1 融合创新应用总体架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          103.44,
+          504.84,
+          490.56,
+          782.03
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.538,
+        "page_height_removed_fraction": 0.6708,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          393,
+          1918,
+          1865,
+          2973
+        ]
+      },
+      "uncropped_asset_sha256": "f2c4a1f438a9b7ae6288fb569a1735ca2f03e16efb7f9a5dda0a582b685c5342"
     },
     {
       "asset": "B01-钢铁-43.png",
@@ -421,8 +2156,63 @@
       "pdf_page": 43,
       "source_url": "https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=43",
       "source_sha256": "9b09986aa1f7ac090352bdc1df4b21c6045b29614fe7fce7b80de9caeab27c84",
-      "asset_sha256": "06699a245631e47f00c8c75d5385e3f11bc3d883f66d8cdae403309bbff093c5",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f8863bb6902788c01913334d38875a646e4c22bb135d8facabd7fa606f59bd07",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2587,
+        1687
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "pdf_bbox_points": [
+          81.96,
+          92.04,
+          762.24,
+          535.43
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.238,
+        "page_height_removed_fraction": 0.2552,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C05-钢铁.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 32,
+      "figure_titles": [
+        "图3-2 钢铁行业工业互联网融合创新实施架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "pdf_bbox_points": [
+          81.96,
+          92.04,
+          762.24,
+          535.43
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.238,
+        "page_height_removed_fraction": 0.2552,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          311,
+          349,
+          2898,
+          2036
+        ]
+      },
+      "uncropped_asset_sha256": "06699a245631e47f00c8c75d5385e3f11bc3d883f66d8cdae403309bbff093c5"
     },
     {
       "asset": "B02-工程机械-57.png",
@@ -431,74 +2221,62 @@
       "pdf_page": 57,
       "source_url": "https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57",
       "source_sha256": "019e9266060a9a062a673074e494055cf6e22b773166c4fa73248727738cb2bb",
-      "asset_sha256": "fb504f9f21a02fab8d10df970c8f98a3ba6c541b2e38bc343f4eb1b47a77f5a1",
-      "use": "图示摘引；按PDF图形边界裁去页面留白，图内文字、连线与模块保持；图题与来源在正文注明，不计入本书原创内容的MIT许可",
+      "asset_sha256": "d40a38d309b3a96d640e52b5bffdcd844d362363056778d312ae4208000dcceb",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
       "content_detection": {
-        "method": "largest-embedded-diagram-bounds",
-        "pdf_bbox_points": [
-          191.56,
-          123.04,
-          650.24,
-          395.36
-        ],
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
         "page_size_points": [
           841.9,
           595.3
         ],
-        "same_width_display_gain": 1.835,
-        "cropped": true,
-        "image_object": "IM290",
-        "page_text_outside_diagram": [
-          "（二）融合创新实施架构",
-          "图",
-          "3-2",
-          "工程机械行业工业互联网融合创新实施架构8",
-          "8",
-          "参考：工业互联网产业联盟，《工业互联网体系架构2.0》，2019",
-          "51"
+        "pdf_bbox_points": [
+          69.0,
+          122.04,
+          651.24,
+          516.88
         ],
-        "pixel_bbox": [
-          728,
-          467,
-          2472,
-          1503
-        ]
+        "cropped": true,
+        "same_width_display_gain": 1.446,
+        "page_height_removed_fraction": 0.3367,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
       },
       "crop": {
-        "method": "largest-embedded-diagram-bounds",
-        "pdf_bbox_points": [
-          191.56,
-          123.04,
-          650.24,
-          395.36
-        ],
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
         "page_size_points": [
           841.9,
           595.3
         ],
-        "same_width_display_gain": 1.835,
-        "cropped": true,
-        "image_object": "IM290",
-        "page_text_outside_diagram": [
-          "（二）融合创新实施架构",
-          "图",
-          "3-2",
-          "工程机械行业工业互联网融合创新实施架构8",
-          "8",
-          "参考：工业互联网产业联盟，《工业互联网体系架构2.0》，2019",
-          "51"
+        "pdf_bbox_points": [
+          69.0,
+          122.04,
+          651.24,
+          516.88
         ],
+        "cropped": true,
+        "same_width_display_gain": 1.446,
+        "page_height_removed_fraction": 0.3367,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
         "pixel_bbox": [
-          728,
-          467,
-          2472,
-          1503
+          262,
+          463,
+          2476,
+          1965
         ]
       },
       "uncropped_asset_sha256": "28bb0fa205797c23f730decf288b56582bf71dfef6c90675a665934c1e0c821b",
       "output_size_px": [
-        1744,
-        1036
+        2214,
+        1502
+      ],
+      "required_in": [
+        "C01-工程机械.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 51,
+      "figure_titles": [
+        "图3-2 工程机械行业工业互联网融合创新实施架构"
       ]
     },
     {
@@ -508,8 +2286,63 @@
       "pdf_page": 20,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20249/7d9030c7509741a0a3b3c14611634965.pdf#page=20",
       "source_sha256": "c5290b14e7cf5600fe04896bca2ac9ebe5e69df873fd7cef4c2e04eed502225d",
-      "asset_sha256": "ca66fce154e3fb45e44d65a89c158ba947f80fa0e911e6e813eb56aa9dcadd06",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "e65907e486683e676df4e997d40e03ffa1871063b11a447e88ddd95ab80abe6d",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1704,
+        986
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          76.32,
+          156.36,
+          524.52,
+          415.49
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.328,
+        "page_height_removed_fraction": 0.6922,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "D01-能源与公用事业.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 13,
+      "figure_titles": [
+        "图2-2 电力行业工业互联网融合创新实施架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          76.32,
+          156.36,
+          524.52,
+          415.49
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.328,
+        "page_height_removed_fraction": 0.6922,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          290,
+          594,
+          1994,
+          1580
+        ]
+      },
+      "uncropped_asset_sha256": "ca66fce154e3fb45e44d65a89c158ba947f80fa0e911e6e813eb56aa9dcadd06"
     },
     {
       "asset": "B04-石化-14.png",
@@ -518,8 +2351,63 @@
       "pdf_page": 14,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=14",
       "source_sha256": "851595295943b13b75be4b137747cb38294dc875c163bbbe353791f3b4951572",
-      "asset_sha256": "e982dc0b469eaac0f51f1e8fecfd7f922f2dc5e687dcf9a45ddc23e593b4f7d1",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "2b31c4ce3d165a28894cbe9ba7d33907aa6f71bcf031eeaac7143005c64e0854",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1717,
+        1245
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          73.56,
+          370.44,
+          524.88,
+          697.8
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.319,
+        "page_height_removed_fraction": 0.6112,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 8,
+      "figure_titles": [
+        "图2-1 融合应用总体架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          73.56,
+          370.44,
+          524.88,
+          697.8
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.319,
+        "page_height_removed_fraction": 0.6112,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          279,
+          1408,
+          1996,
+          2653
+        ]
+      },
+      "uncropped_asset_sha256": "e982dc0b469eaac0f51f1e8fecfd7f922f2dc5e687dcf9a45ddc23e593b4f7d1"
     },
     {
       "asset": "B04-石化-16.png",
@@ -528,8 +2416,63 @@
       "pdf_page": 16,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=16",
       "source_sha256": "851595295943b13b75be4b137747cb38294dc875c163bbbe353791f3b4951572",
-      "asset_sha256": "fdae434bf8f3e38be3fe7cbcc9acd2024fd47517d416786ffade333fe13e3a32",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f25df7e8cadd363d026807650bf4e017944287d70bc791b75fbd64596b695ece",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2927,
+        1963
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          29.4,
+          62.28,
+          1118.16,
+          792.28
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.093,
+        "page_height_removed_fraction": 0.1329,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C06-石化化工.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 10,
+      "figure_titles": [
+        "图3-1 工业互联网与石化化工行业融合应用场景总览"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          1190.55,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          29.4,
+          62.28,
+          1118.16,
+          792.28
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.093,
+        "page_height_removed_fraction": 0.1329,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          79,
+          167,
+          3006,
+          2130
+        ]
+      },
+      "uncropped_asset_sha256": "fdae434bf8f3e38be3fe7cbcc9acd2024fd47517d416786ffade333fe13e3a32"
     },
     {
       "asset": "B05-船舶-17.png",
@@ -538,8 +2481,63 @@
       "pdf_page": 17,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17",
       "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f175acc3d8f018fc980a8db398d246c05af23af327d89056bc512f345daab18f",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1631,
+        2631
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          87,
+          100.56,
+          515.88,
+          792.64
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.388,
+        "page_height_removed_fraction": 0.178,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C04-船舶.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 11,
+      "figure_titles": [
+        "图3-2 工业互联网与船舶行业融合应用场景总览"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          87,
+          100.56,
+          515.88,
+          792.64
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.388,
+        "page_height_removed_fraction": 0.178,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          330,
+          382,
+          1961,
+          3013
+        ]
+      },
+      "uncropped_asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03"
     },
     {
       "asset": "B05-船舶-44.png",
@@ -548,8 +2546,63 @@
       "pdf_page": 44,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=44",
       "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "1a9fe44152d6f5eb8c7b0498036c6d9cf9edcc7bca6bd7dfc1fcb89a6ed17b4a",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "f3d989a6046bc9adac9b683bb6ce9d94204a15f64e8b23176adaf7768c65f0ad",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1602,
+        1024
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          87,
+          127.32,
+          508.08,
+          396.36
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.414,
+        "page_height_removed_fraction": 0.6804,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "C04-船舶.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 38,
+      "figure_titles": [
+        "图4-2 融合创新实施架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          87,
+          127.32,
+          508.08,
+          396.36
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.414,
+        "page_height_removed_fraction": 0.6804,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          330,
+          483,
+          1932,
+          1507
+        ]
+      },
+      "uncropped_asset_sha256": "1a9fe44152d6f5eb8c7b0498036c6d9cf9edcc7bca6bd7dfc1fcb89a6ed17b4a"
     },
     {
       "asset": "B06-油气储运-26.png",
@@ -558,8 +2611,64 @@
       "pdf_page": 26,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20264/52fcd95580bb4d7f89131f5378f522f7.pdf#page=26",
       "source_sha256": "66188e3f3a69b824a4f14b65995711517548050b6f46f294c2bc7e7d88e1e8bb",
-      "asset_sha256": "e0badee6952b9f1a38911c46c5c34a980778fb0ea3fe195edad9a38252f6c48e",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "be33e0ba650e48ab93f8524cfa835d3ded29f2de46a1afea62fb7c591f8849a8",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        2612,
+        1739
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "pdf_bbox_points": [
+          67.8,
+          107.28,
+          754.68,
+          564.52
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.226,
+        "page_height_removed_fraction": 0.2319,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "D01-能源与公用事业.md",
+        "G01-运输仓储与物流.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 21,
+      "figure_titles": [
+        "图2-2 油气储运行业工业互联网融合创新实施架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "pdf_bbox_points": [
+          67.8,
+          107.28,
+          754.68,
+          564.52
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.226,
+        "page_height_removed_fraction": 0.2319,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          257,
+          407,
+          2869,
+          2146
+        ]
+      },
+      "uncropped_asset_sha256": "e0badee6952b9f1a38911c46c5c34a980778fb0ea3fe195edad9a38252f6c48e"
     },
     {
       "asset": "C07-数字金融-9.png",
@@ -568,8 +2677,63 @@
       "pdf_page": 9,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=9",
       "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "e9561cc10db4864f316567fc864e3b179b9a80a0db86ecceee1312b3d58c7c4a",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "d922d597178ffe42d04110479c225a4548146a3ae9f148f305823520d059fc1c",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1592,
+        982
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          90.37,
+          338.84,
+          508.83,
+          596.94
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.423,
+        "page_height_removed_fraction": 0.6934,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "J01-金融.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 2,
+      "figure_titles": [
+        "图1 数字金融体系架构"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          90.37,
+          338.84,
+          508.83,
+          596.94
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.423,
+        "page_height_removed_fraction": 0.6934,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          343,
+          1287,
+          1935,
+          2269
+        ]
+      },
+      "uncropped_asset_sha256": "e9561cc10db4864f316567fc864e3b179b9a80a0db86ecceee1312b3d58c7c4a"
     },
     {
       "asset": "C07-数字金融-34.png",
@@ -578,8 +2742,63 @@
       "pdf_page": 34,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=34",
       "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "cbb5540a05bf59f3650c4b034c2078e58a11d7c2e92546d32611727f51237912",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "d081abf7c287e43ec0a738bed611f68d6c14d3aa2f3ae21c98fb4387cccdb72a",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1603,
+        973
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          87.47,
+          174.22,
+          508.83,
+          429.9
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.6963,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "J01-金融.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 27,
+      "figure_titles": [
+        "图4 金融数据智能化治理全流程技术框架"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          87.47,
+          174.22,
+          508.83,
+          429.9
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.6963,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          332,
+          662,
+          1935,
+          1635
+        ]
+      },
+      "uncropped_asset_sha256": "cbb5540a05bf59f3650c4b034c2078e58a11d7c2e92546d32611727f51237912"
     },
     {
       "asset": "C07-数字金融-35.png",
@@ -588,8 +2807,63 @@
       "pdf_page": 35,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=35",
       "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "813cf71f3d1853471d9dcda1da9fb826d380859957e27b525dd762baf262eceb",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "fc113e30976f43cb9e309e3a0888d717e9e88b35e16c4d778ba3f828db4eed2b",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1603,
+        960
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          87.47,
+          458.39,
+          508.83,
+          710.7
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.7003,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "J01-金融.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 28,
+      "figure_titles": [
+        "图5 金融领域大模型应用场景清单"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.2756,
+          841.8898
+        ],
+        "pdf_bbox_points": [
+          87.47,
+          458.39,
+          508.83,
+          710.7
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.7003,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          332,
+          1742,
+          1935,
+          2702
+        ]
+      },
+      "uncropped_asset_sha256": "813cf71f3d1853471d9dcda1da9fb826d380859957e27b525dd762baf262eceb"
     },
     {
       "asset": "C09-智慧农业-9.png",
@@ -598,8 +2872,63 @@
       "pdf_page": 9,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf#page=9",
       "source_sha256": "a037e48bf25bc5a1624f7f15482e7681b389dbcd55ae413a808977cb56172ce3",
-      "asset_sha256": "a95d0be422e48ae6f0ecdd8097b35953639b63d9ac9d74bbfa717a00f636f72f",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "663050da39adc89e0465fba401fc4b9716f4a49da7619f10d82c1a590872fbd8",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1603,
+        1057
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          86.85,
+          76.6,
+          508.44,
+          354.44
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.412,
+        "page_height_removed_fraction": 0.67,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "A01-农业与养殖.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 2,
+      "figure_titles": [
+        "图1 智慧农业框架结构1.0"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          86.85,
+          76.6,
+          508.44,
+          354.44
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.412,
+        "page_height_removed_fraction": 0.67,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          330,
+          291,
+          1933,
+          1348
+        ]
+      },
+      "uncropped_asset_sha256": "a95d0be422e48ae6f0ecdd8097b35953639b63d9ac9d74bbfa717a00f636f72f"
     },
     {
       "asset": "C10-数字乡村-11.png",
@@ -608,8 +2937,256 @@
       "pdf_page": 11,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11",
       "source_sha256": "b6c51fc4bd3b78a160d377e642214bba22085ba13adf47de5568ab0000d3e0a2",
-      "asset_sha256": "401df9928ce8f991955200e0c3265caa2b57edd45eb8fee4fbe4df3af732a96d",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "c585385c98e768ff6d39079d656a41e1d667852847d3ffa2897efe59c801cfc7",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1603,
+        1011
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          78.6,
+          360.36,
+          499.92,
+          626.16
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.6843,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "A01-农业与养殖.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 4,
+      "figure_titles": [
+        "图1 数字乡村建设总体框架"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          78.6,
+          360.36,
+          499.92,
+          626.16
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.413,
+        "page_height_removed_fraction": 0.6843,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          298,
+          1369,
+          1901,
+          2380
+        ]
+      },
+      "uncropped_asset_sha256": "401df9928ce8f991955200e0c3265caa2b57edd45eb8fee4fbe4df3af732a96d"
+    },
+    {
+      "asset": "C11-智慧医疗-13.png",
+      "source_id": "C11",
+      "source_title": "5G时代智慧医疗健康白皮书",
+      "pdf_page": 13,
+      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=13",
+      "source_sha256": "ce7d34b9f2a4335ce7899382597a12b654bf4f06028b0a7e8a6de7151b5809e0",
+      "asset_sha256": "60d83f247698c7379ae3c4badacded624dace84145a7e428059735f90f05b8a4",
+      "output_size_px": [
+        1467,
+        1139
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          101.32,
+          77.7,
+          487.07,
+          377.2
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.543,
+        "page_height_removed_fraction": 0.6443,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "Q01-医疗健康.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 6,
+      "figure_titles": [
+        "图1-1 5G医疗技术架构图"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          101.32,
+          77.7,
+          487.07,
+          377.2
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.543,
+        "page_height_removed_fraction": 0.6443,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          385,
+          295,
+          1852,
+          1434
+        ]
+      }
+    },
+    {
+      "asset": "C11-远程会诊-31.png",
+      "source_id": "C11",
+      "source_title": "5G时代智慧医疗健康白皮书",
+      "pdf_page": 31,
+      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=31",
+      "source_sha256": "ce7d34b9f2a4335ce7899382597a12b654bf4f06028b0a7e8a6de7151b5809e0",
+      "asset_sha256": "2e7e99f9c528ad4cad0cb92609607865bd7ee4e1e0f9324f8acce79fbabd0ed9",
+      "output_size_px": [
+        1594,
+        1396
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          109.0,
+          389.37,
+          528.12,
+          756.33
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.42,
+        "page_height_removed_fraction": 0.5641,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "Q01-医疗健康.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 24,
+      "figure_titles": [
+        "图4-1 远程会诊方案架构",
+        "图4-2 远程会诊应用场景"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          109.0,
+          389.37,
+          528.12,
+          756.33
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.42,
+        "page_height_removed_fraction": 0.5641,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          414,
+          1479,
+          2008,
+          2875
+        ]
+      }
+    },
+    {
+      "asset": "C16-城市运管中心-27.png",
+      "source_id": "C16",
+      "source_title": "后疫情时代城市运行管理中心行业报告（2020年）",
+      "pdf_page": 27,
+      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202009/P020200917537374351025.pdf#page=27",
+      "source_sha256": "173a238fcfbc39dcebbb722c067f55c36ab68aebe6bcbdc468e3d81f4f08f591",
+      "asset_sha256": "7241a6ae5248578ce4c4067164ed2a7f78a5450f01442e949c45439598995d1e",
+      "output_size_px": [
+        1619,
+        640
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          88.0,
+          290.94,
+          513.77,
+          459.01
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.398,
+        "page_height_removed_fraction": 0.8004,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "S01-政务与公共服务.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 20,
+      "figure_titles": [
+        "图4 总体架构图"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          88.0,
+          290.94,
+          513.77,
+          459.01
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.398,
+        "page_height_removed_fraction": 0.8004,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          334,
+          1105,
+          1953,
+          1745
+        ]
+      }
     },
     {
       "asset": "C17-智能云-41.png",
@@ -618,8 +3195,128 @@
       "pdf_page": 41,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240723334151523502.pdf#page=41",
       "source_sha256": "4f9c5cafdd8a63de690e83c6bb12c767d25c289ab3d2ebdfdfe91c88c314156d",
-      "asset_sha256": "ec17a25dae6782f5e0bf335076dca9945c7a5beba9ae8ffe6208e1ba095c7d84",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "cf4412828da836a1aee2576c8ed8014cb548ba2920266ace7a117270082fb3bb",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1686,
+        889
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          807.96
+        ],
+        "pdf_bbox_points": [
+          86.88,
+          384.12,
+          512.52,
+          608.45
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.399,
+        "page_height_removed_fraction": 0.7224,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "I01-软件与信息服务.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 35,
+      "figure_titles": [
+        "图17 智能云体系架构图"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          807.96
+        ],
+        "pdf_bbox_points": [
+          86.88,
+          384.12,
+          512.52,
+          608.45
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.399,
+        "page_height_removed_fraction": 0.7224,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          344,
+          1521,
+          2030,
+          2410
+        ]
+      },
+      "uncropped_asset_sha256": "ec17a25dae6782f5e0bf335076dca9945c7a5beba9ae8ffe6208e1ba095c7d84"
+    },
+    {
+      "asset": "C24-实时互动-39.png",
+      "source_id": "C24",
+      "source_title": "实时互动产业发展研究报告——互联网的下一个十年（2022年）",
+      "pdf_page": 39,
+      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202206/P020220614564340133801.pdf#page=39",
+      "source_sha256": "b7f5d85550ac6d051fb9010e9013c4ac12b600ee28b8f73547388cbfdedf41e9",
+      "asset_sha256": "f6f06e269f81928c23aa34411eb6d4e1b843295b8be9ca231f083725927f8dae",
+      "output_size_px": [
+        1596,
+        802
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          87.85,
+          201.0,
+          507.39,
+          411.64
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.419,
+        "page_height_removed_fraction": 0.7498,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "P01-教育服务.md",
+        "R01-文化体育与文旅.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 31,
+      "figure_titles": [
+        "图8 实时互动关键技术"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          841.92
+        ],
+        "pdf_bbox_points": [
+          87.85,
+          201.0,
+          507.39,
+          411.64
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.419,
+        "page_height_removed_fraction": 0.7498,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          333,
+          763,
+          1929,
+          1565
+        ]
+      }
     },
     {
       "asset": "C25-电信-23.png",
@@ -628,8 +3325,256 @@
       "pdf_page": 23,
       "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202409/P020240926401677616677.pdf#page=23",
       "source_sha256": "a9ce9dbbf765411df171d7617f0d8a03e1f430fba7a488485699f9a63e5521a5",
-      "asset_sha256": "b29c3f689314164d521f82edce87d37362dae04ed70584e2b3676426a605edbe",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "c39f8bf412a07f4948eaa84e3fc19502812a2ebbbe68b078a5cca97f1ec5b8c3",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "output_size_px": [
+        1430,
+        1232
+      ],
+      "content_detection": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          132.12,
+          75,
+          508.21,
+          398.88
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.583,
+        "page_height_removed_fraction": 0.6153,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      },
+      "required_in": [
+        "I01-软件与信息服务.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
+      "printed_page": 17,
+      "figure_titles": [
+        "图7 电信业智能化变革路径示意图"
+      ],
+      "crop": {
+        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.3,
+          841.9
+        ],
+        "pdf_bbox_points": [
+          132.12,
+          75,
+          508.21,
+          398.88
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.583,
+        "page_height_removed_fraction": 0.6153,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
+        "pixel_bbox": [
+          502,
+          285,
+          1932,
+          1517
+        ]
+      },
+      "uncropped_asset_sha256": "b29c3f689314164d521f82edce87d37362dae04ed70584e2b3676426a605edbe"
+    },
+    {
+      "asset": "C26-数字政府-20.png",
+      "source_id": "C26",
+      "source_title": "数字政府一体化建设白皮书（2024年）",
+      "pdf_page": 20,
+      "source_url": "https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20",
+      "source_sha256": "6300bd118e22f7a3fd8995c946f15ffc5c5b4e8e8b1f86b548e8b67ec3102e34",
+      "asset_sha256": "3bc499a37060f05fc7739b3b51071899598e264c72ab7ef3d522dba858ad31cf",
+      "output_size_px": [
+        1341,
+        1050
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          807.96
+        ],
+        "pdf_bbox_points": [
+          169.18,
+          71.7,
+          507.58,
+          336.56
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.759,
+        "page_height_removed_fraction": 0.6722,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "S01-政务与公共服务.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 14,
+      "figure_titles": [
+        "图3 数字政府一体化建设框架图"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.32,
+          807.96
+        ],
+        "pdf_bbox_points": [
+          169.18,
+          71.7,
+          507.58,
+          336.56
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.759,
+        "page_height_removed_fraction": 0.6722,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          670,
+          283,
+          2011,
+          1333
+        ]
+      }
+    },
+    {
+      "asset": "SC-H01-03-餐饮产业链-20.png",
+      "source_id": "SC-H01-03",
+      "source_title": "中国餐饮业数字化发展报告（2024）",
+      "pdf_page": 20,
+      "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=20",
+      "source_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3",
+      "asset_sha256": "0fd191e61a155692eb9c79c7db96af4f95e4e99d0d148e2f51829357362931c2",
+      "output_size_px": [
+        1528,
+        891
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.276,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          96.77,
+          99.1,
+          498.51,
+          333.29
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.482,
+        "page_height_removed_fraction": 0.7218,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "H01-住宿与餐饮.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 19,
+      "figure_titles": [
+        "图3-1 餐饮业产业链逻辑架构"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.276,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          96.77,
+          99.1,
+          498.51,
+          333.29
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.482,
+        "page_height_removed_fraction": 0.7218,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          367,
+          376,
+          1895,
+          1267
+        ]
+      }
+    },
+    {
+      "asset": "SC-H01-03-餐饮数字化矩阵-21.png",
+      "source_id": "SC-H01-03",
+      "source_title": "中国餐饮业数字化发展报告（2024）",
+      "pdf_page": 21,
+      "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=21",
+      "source_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3",
+      "asset_sha256": "62cc0ec69f7061b815d8e68409ecc671912f7878748bdaac6315582c89233ac6",
+      "output_size_px": [
+        1302,
+        913
+      ],
+      "content_detection": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.276,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          126.88,
+          174.81,
+          469.12,
+          414.71
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.739,
+        "page_height_removed_fraction": 0.715,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      },
+      "required_in": [
+        "H01-住宿与餐饮.md"
+      ],
+      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
+      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可",
+      "printed_page": 20,
+      "figure_titles": [
+        "图3-2 餐饮业数字化重要环节内容矩阵式分布"
+      ],
+      "crop": {
+        "method": "native-figure-caption-and-source-union",
+        "reviewed_on": "2026-10-18",
+        "page_size_points": [
+          595.276,
+          841.89
+        ],
+        "pdf_bbox_points": [
+          126.88,
+          174.81,
+          469.12,
+          414.71
+        ],
+        "cropped": true,
+        "same_width_display_gain": 1.739,
+        "page_height_removed_fraction": 0.715,
+        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
+        "pixel_bbox": [
+          482,
+          664,
+          1784,
+          1577
+        ]
+      }
     }
-  ]
+  ],
+  "crop_rules": "../../scripts/data/middle/图示裁切规则.json"
 }
