@@ -57,10 +57,29 @@ input.addEventListener('input', async () => {
 
 const menu = document.querySelector('#menu-toggle');
 const sidebar = document.querySelector('#sidebar');
+const sidebarScroll = document.querySelector('.sidebar-scroll');
+const currentPage = sidebarScroll.querySelector('[aria-current="page"]');
+const revealCurrentPage = () => {
+  if (!currentPage) return;
+  const item = currentPage.getBoundingClientRect();
+  const viewport = sidebarScroll.getBoundingClientRect();
+  if (item.top < viewport.top || item.bottom > viewport.bottom) {
+    sidebarScroll.scrollTop += item.top - viewport.top - viewport.height / 3;
+  }
+};
+revealCurrentPage();
 menu.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(open));
   sidebar.classList.toggle('is-open', open);
+  if (open) revealCurrentPage();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && sidebar.classList.contains('is-open')) {
+    menu.setAttribute('aria-expanded', 'false');
+    sidebar.classList.remove('is-open');
+    menu.focus();
+  }
 });
 document.querySelector('#copy-link').addEventListener('click', async event => {
   const button = event.currentTarget;

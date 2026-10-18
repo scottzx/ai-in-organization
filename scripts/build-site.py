@@ -37,6 +37,11 @@ def render_text(renderer, tokens, index, options, env):
 
 
 MD.add_render_rule('text', render_text)
+VOLUMES = (
+    ('上册-研究报告', '上册', '研究报告'),
+    ('中册-行业解决方案', '中册', '行业方案'),
+    ('下册-案例汇编', '下册', '案例汇编'),
+)
 UPPER = sorted((ROOT / '上册-研究报告').glob('[0-9][0-9]-*.md'))
 APPENDICES = [ROOT / '上册-研究报告/附录A-术语辨析表.md']
 PROCESS = ROOT / '过程稿'
@@ -154,37 +159,70 @@ def nav_link(current, target, label=None):
     return f'<a href="{href(current, target)}"{selected}>{escape(label or TITLES[target])}</a>'
 
 
+def current_volume(current):
+    folder = current.relative_to(ROOT).parts[0]
+    return next((volume for volume in VOLUMES if volume[0] == folder), None)
+
+
+def volume_navigation(current):
+    active = current_volume(current)
+    links = ''
+    for volume in VOLUMES:
+        folder, number, label = volume
+        short_label = {'上册': '报告', '中册': '方案', '下册': '案例'}[number]
+        selected = ' class="current" aria-current="true"' if volume == active else ''
+        links += (f'<a href="{href(current, ROOT / folder / "README.md")}"{selected}>'
+                  f'<span class="volume-full">{number} · {label}</span>'
+                  f'<span class="volume-short">{short_label}</span></a>')
+    return f'<nav class="volume-nav" aria-label="分册导航">{links}</nav>'
+
+
 def sidebar(current):
-    contents = '<p class="nav-label">报告导航</p>'
-    for target, label in [('README.md', '报告首页'), ('上册-研究报告/README.md', '上册 · 研究报告'), ('中册-行业解决方案/README.md', '中册 · 行业方案'), ('下册-案例汇编/README.md', '下册 · 案例汇编'), ('索引/阅读路径.md', '按问题阅读')]:
-        contents += nav_link(current, ROOT / target, label)
-    contents += '<p class="nav-label">上册章节</p>'
-    for target in UPPER:
-        title = TITLES[target]
-        label = title.replace('第一章\u3000', '01　').replace('第二章\u3000', '02　').replace('第三章\u3000', '03　').replace('第四章\u3000', '04　').replace('第五章\u3000', '05　').replace('第六章\u3000', '06　').replace('第七章\u3000', '07　').replace('第八章\u3000', '08　')
-        contents += nav_link(current, target, label.split('：')[0])
-    middle_open = ' open' if current.parent.name == '中册-行业解决方案' else ''
-    contents += f'<details{middle_open}><summary>中册 · 行业解决方案</summary>'
-    for target in MIDDLE:
-        contents += nav_link(current, target)
-    contents += '</details>'
-    contents += '<p class="nav-label">附录与案例</p>'
-    for target in APPENDICES:
-        contents += nav_link(current, target)
-    for folder in sorted({path.parent for path in CASES}):
-        open_attr = ' open' if current.parent == folder else ''
-        label = folder.name.replace('-', ' · ', 1)
-        contents += f'<details{open_attr}><summary>{escape(label)}</summary>'
-        for target in CASES:
-            if target.parent == folder:
+    volume = current_volume(current)
+    if volume:
+        folder, number, label = volume
+        contents = f'<p class="nav-label">{number} · {label}</p>'
+        contents += nav_link(current, ROOT / folder / 'README.md', '本册总览')
+        if volume == VOLUMES[0]:
+            contents += '<p class="nav-label">章节目录</p>'
+            for target in UPPER:
+                title = TITLES[target]
+                for index, numeral in enumerate('一二三四五六七八', 1):
+                    title = title.replace(f'第{numeral}章\u3000', f'{index:02d}　')
+                contents += nav_link(current, target, title.split('：')[0])
+            contents += '<p class="nav-label">附录</p>'
+            for target in APPENDICES:
                 contents += nav_link(current, target)
-        contents += '</details>'
+        elif volume == VOLUMES[1]:
+            contents += '<p class="nav-label">行业方案与附录</p>'
+            for target in MIDDLE:
+                contents += nav_link(current, target, TITLES[target].split('：')[0])
+        else:
+            contents += '<p class="nav-label">行业案例与附编</p>'
+            for folder in sorted({path.parent for path in CASES}):
+                open_attr = ' open' if current.parent == folder else ''
+                label = folder.name.replace('-', ' · ', 1)
+                contents += f'<details{open_attr}><summary>{escape(label)}</summary>'
+                contents += nav_link(current, folder / 'README.md', '查看本类概览')
+                for target in CASES:
+                    if target.parent == folder:
+                        contents += nav_link(current, target)
+                contents += '</details>'
+    else:
+        contents = '<p class="nav-label">全书导航</p>'
+        contents += nav_link(current, ROOT / 'README.md', '报告首页')
+        for folder, number, label in VOLUMES:
+            contents += nav_link(current, ROOT / folder / 'README.md', f'{number} · {label}')
+    contents += '<p class="nav-label">阅读指引</p>'
+    contents += nav_link(current, ROOT / '索引/阅读路径.md', '按问题阅读')
     contents += '<p class="nav-label">资料与下载</p>'
     for target, label in [('output/pdf/README.md', '历史 PDF 归档'), ('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
         contents += nav_link(current, ROOT / target, label)
-    contents += '<p class="nav-note">一芥智能研究院<br>从真实业务出发，研究组织中的 AI。</p>'
-    contents += '<p class="nav-contact">企业数智化转型咨询，<br>欢迎来电：<a href="tel:13185000425">13185000425</a></p>'
-    return contents
+    nav_label = f'{volume[1]}目录' if volume else '全书导航'
+    return (f'<nav class="sidebar-scroll" aria-label="{nav_label}" tabindex="0">{contents}</nav>'
+            '<div class="sidebar-contact">'
+            '<p class="nav-contact"><strong>联系电话：<a href="tel:13185000425">13185000425</a></strong></p>'
+            '<p class="nav-address">联系地址：杭州市西湖区云谷中心</p></div>')
 
 
 def footer():
@@ -204,9 +242,9 @@ def page_shell(current, body, description):
 <link rel="canonical" href="{canonical}"><link rel="icon" href="{asset('favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{asset('site.css')}">
 <script src="{asset('site.js')}" data-site defer></script></head><body>
 <a class="skip" href="#main">跳到正文</a>
-<header class="topbar"><a class="brand" href="{href(current, ROOT / 'README.md')}"><span class="brand-symbol">芥</span><span><strong>一芥智能研究院</strong><small>YIJIE INTELLIGENCE INSTITUTE</small></span></a>
-<div class="header-actions"><a class="header-link" href="{href(current, ROOT / '上册-研究报告/README.md')}">研究报告</a><a class="header-link" href="{href(current, ROOT / '中册-行业解决方案/README.md')}">行业方案</a><a class="header-link" href="{href(current, ROOT / '下册-案例汇编/README.md')}">企业案例</a><button class="search-trigger" data-search aria-haspopup="dialog">搜索内容 <kbd>⌘ K</kbd></button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="sidebar">目录 ☰</button></div></header>
-<div class="layout"><nav id="sidebar" class="sidebar" aria-label="全书目录">{sidebar(current)}</nav><div class="workspace">{body}</div></div>
+<header class="topbar"><a class="brand" aria-label="一芥智能研究院首页" href="{href(current, ROOT / 'README.md')}"><span class="brand-symbol">芥</span><span class="brand-text"><strong>一芥智能研究院</strong><small>YIJIE INTELLIGENCE INSTITUTE</small></span></a>
+<div class="header-actions">{volume_navigation(current)}<button class="search-trigger" data-search aria-haspopup="dialog">搜索内容 <kbd>⌘ K</kbd></button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="sidebar">目录 ☰</button></div></header>
+<div class="layout"><aside id="sidebar" class="sidebar" aria-label="阅读导航">{sidebar(current)}</aside><div class="workspace">{body}</div></div>
 <dialog id="search-dialog" aria-labelledby="search-label"><div class="search-top"><label id="search-label" for="search-input">搜索报告与案例</label><button id="search-close" aria-label="关闭搜索">×</button></div><input id="search-input" type="search" placeholder="试试：线索、制造业、组织变革…" autocomplete="off"><div id="search-results" aria-live="polite">输入关键词，搜索报告、案例与资料索引。</div></dialog>
 </body></html>'''
 
@@ -240,6 +278,46 @@ def home_page(current):
 {footer()}</main>'''
 
 
+def volume_directory(current):
+    volume = current_volume(current)
+    headings = []
+    content = f'<h1>{volume[1]} · {volume[2]}</h1>'
+
+    def link(target, label=None, count=None, anchor=None):
+        identifier = f' id="{escape(anchor, quote=True)}"' if anchor else ''
+        detail = f'{count} 篇 ' if count is not None else ''
+        return (f'<a class="directory-link"{identifier} href="{href(current, target)}">'
+                f'<span>{escape(label or TITLES[target])}</span>'
+                f'<span class="directory-count">{detail}<span aria-hidden="true">→</span></span></a>')
+
+    def section(title, links):
+        anchor = slug(title)
+        headings.append(('2', title, anchor))
+        return (f'<h2 id="{anchor}">{title}</h2>'
+                f'<nav class="directory-grid" aria-label="{title}">{"".join(links)}</nav>')
+
+    if volume == VOLUMES[0]:
+        content += section('章节目录', [link(path) for path in UPPER])
+        content += section('附录', [link(path) for path in APPENDICES])
+    elif volume == VOLUMES[1]:
+        content += section('引言', [link(path) for path in MIDDLE if path.name.startswith('00-')])
+        content += section('分行业阅读', [link(path, TITLES[path].split('：')[0]) for path in MIDDLE
+                                       if not path.name.startswith(('00-', '附录'))])
+        content += section('选用对照与引用依据', [link(path) for path in MIDDLE if path.name.startswith('附录')])
+    else:
+        folders = sorted({path.parent for path in CASES})
+        for title, groups in [('按行业阅读', [folder for folder in folders if not folder.name.startswith('附编')]),
+                              ('附编', [folder for folder in folders if folder.name.startswith('附编')])]:
+            content += section(title, [link(folder / 'README.md', folder.name.replace('-', ' · ', 1),
+                                            sum(path.parent == folder for path in CASES), slug(folder.name))
+                                       for folder in groups])
+        content += section('原始出处与研究材料', [
+            link(ROOT / '索引/资料来源说明.md', '案例来源与使用说明'),
+            link(ROOT / '索引/工信部行业数字化转型资料汇总.md', '行业原文与企业资料'),
+        ])
+    return content, headings
+
+
 class PageParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -270,7 +348,9 @@ def main():
         shutil.copy2(ROOT / 'web' / name, OUT / 'assets' / versioned_name)
     search_index = []
     for path in sorted(DOCS):
-        content, headings = render_document(path)
+        volume = current_volume(path)
+        is_volume_directory = volume and path == ROOT / volume[0] / 'README.md'
+        content, headings = volume_directory(path) if is_volume_directory else render_document(path)
         plain = PageParser()
         plain.feed(content)
         text = re.sub(r'\s+', ' ', ' '.join(plain.words)).strip()
@@ -279,7 +359,10 @@ def main():
             body = home_page(path)
         else:
             toc = '<p class="toc-title">本页目录</p>' + ''.join(f'<a class="level-{level}" href="#{quote(anchor)}">{escape(title)}</a>' for level, title, anchor in headings)
-            label = '研究报告' if path.parent.name == '上册-研究报告' else ('行业解决方案' if path in MIDDLE else ('案例汇编' if path in CASES else '阅读资料'))
+            volume = current_volume(path)
+            label = volume[1] + ' · ' + volume[2] if volume else '阅读资料'
+            if volume and path != ROOT / volume[0] / 'README.md':
+                label = f'<a href="{href(path, ROOT / volume[0] / "README.md")}">{label}</a>'
             source_url = REPO + '/blob/main/' + quote(str(path.relative_to(ROOT)), safe='/')
             turn = ''
             sequence = MIDDLE if path in MIDDLE else UPPER + APPENDICES
