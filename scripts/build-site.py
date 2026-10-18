@@ -38,7 +38,7 @@ def render_text(renderer, tokens, index, options, env):
 
 MD.add_render_rule('text', render_text)
 UPPER = sorted((ROOT / '上册-研究报告').glob('[0-9][0-9]-*.md'))
-APPENDICES = [ROOT / '上册-研究报告/附录C-术语辨析表.md']
+APPENDICES = [ROOT / '上册-研究报告/附录A-术语辨析表.md']
 PROCESS = ROOT / '过程稿'
 MIDDLE = sorted(path for path in (ROOT / '中册-行业解决方案').glob('*.md') if path.name != 'README.md')
 CASE_INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text())

@@ -119,8 +119,8 @@ if actual_numbers != expected_numbers:
                   '(导论, eight chapters and 结语); found '+', '.join(actual_numbers))
 chapters = [path for path in upper_documents if path.name[:2] not in ('00', '09')]
 appendices = {path.name for path in (ROOT/'上册-研究报告').glob('附录*.md')}
-if appendices != {'附录C-术语辨析表.md'}:
-    errors.append('Only appendix C belongs in the published upper volume; found '+str(sorted(appendices)))
+if appendices != {'附录A-术语辨析表.md'}:
+    errors.append('Only appendix A belongs in the published upper volume; found '+str(sorted(appendices)))
 if len((ROOT/'LICENSE').read_text().splitlines()) < 15:
     errors.append('Missing complete license')
 summary = {'passed':not errors,'markdown_documents':len(documents),'upper_chapters':len(chapters),'upper_documents':len(upper_documents),'case_documents':len(entries),'case_structures_checked':len(entries),'scene_fragments':len(fragments),'local_links_checked':link_count,'errors':errors}
