@@ -80,7 +80,23 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=22",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "221de991569a51f7bc8f4b632a7cbca8c5c9f0543f1ec2cf7b51505fa840b06f",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可",
+      "content_detection": {
+        "method": "visible-pdf-element-union",
+        "pdf_bbox_points": [
+          16.657,
+          4.498,
+          1171.4212,
+          841.89
+        ],
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "same_width_display_gain": 1.031,
+        "cropped": false,
+        "image_object": null
+      }
     },
     {
       "asset": "A11-工程机械-23.png",
@@ -90,7 +106,23 @@
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=23",
       "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
       "asset_sha256": "ff4afc399f1f4a2a7cf34d9e7cdacf7c68bff77ea9fcb287e155e062ddbacbed",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可",
+      "content_detection": {
+        "method": "visible-pdf-element-union",
+        "pdf_bbox_points": [
+          16.6933,
+          4.498,
+          1171.4936,
+          841.89
+        ],
+        "page_size_points": [
+          1190.55,
+          841.89
+        ],
+        "same_width_display_gain": 1.031,
+        "cropped": false,
+        "image_object": null
+      }
     },
     {
       "asset": "A11-新能源汽车-25.png",
@@ -399,8 +431,75 @@
       "pdf_page": 57,
       "source_url": "https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57",
       "source_sha256": "019e9266060a9a062a673074e494055cf6e22b773166c4fa73248727738cb2bb",
-      "asset_sha256": "28bb0fa205797c23f730decf288b56582bf71dfef6c90675a665934c1e0c821b",
-      "use": "原图摘引；保留原内容和来源，不计入本书原创内容的MIT许可"
+      "asset_sha256": "fb504f9f21a02fab8d10df970c8f98a3ba6c541b2e38bc343f4eb1b47a77f5a1",
+      "use": "图示摘引；按PDF图形边界裁去页面留白，图内文字、连线与模块保持；图题与来源在正文注明，不计入本书原创内容的MIT许可",
+      "content_detection": {
+        "method": "largest-embedded-diagram-bounds",
+        "pdf_bbox_points": [
+          191.56,
+          123.04,
+          650.24,
+          395.36
+        ],
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "same_width_display_gain": 1.835,
+        "cropped": true,
+        "image_object": "IM290",
+        "page_text_outside_diagram": [
+          "（二）融合创新实施架构",
+          "图",
+          "3-2",
+          "工程机械行业工业互联网融合创新实施架构8",
+          "8",
+          "参考：工业互联网产业联盟，《工业互联网体系架构2.0》，2019",
+          "51"
+        ],
+        "pixel_bbox": [
+          728,
+          467,
+          2472,
+          1503
+        ]
+      },
+      "crop": {
+        "method": "largest-embedded-diagram-bounds",
+        "pdf_bbox_points": [
+          191.56,
+          123.04,
+          650.24,
+          395.36
+        ],
+        "page_size_points": [
+          841.9,
+          595.3
+        ],
+        "same_width_display_gain": 1.835,
+        "cropped": true,
+        "image_object": "IM290",
+        "page_text_outside_diagram": [
+          "（二）融合创新实施架构",
+          "图",
+          "3-2",
+          "工程机械行业工业互联网融合创新实施架构8",
+          "8",
+          "参考：工业互联网产业联盟，《工业互联网体系架构2.0》，2019",
+          "51"
+        ],
+        "pixel_bbox": [
+          728,
+          467,
+          2472,
+          1503
+        ]
+      },
+      "uncropped_asset_sha256": "28bb0fa205797c23f730decf288b56582bf71dfef6c90675a665934c1e0c821b",
+      "output_size_px": [
+        1744,
+        1036
+      ]
     },
     {
       "asset": "B03-电力-20.png",

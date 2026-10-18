@@ -53,6 +53,7 @@ DOCS = {
 DOCS.update((ROOT / 'output').rglob('*.md'))
 TITLES = {path: re.search(r'^#\s+(.+)$', path.read_text(), re.M)[1] for path in DOCS}
 COPIED = set()
+IMAGE_VERSIONS = {}
 
 
 def output_path(path):
@@ -92,8 +93,13 @@ def rewrite_url(source, value):
         else:
             return REPO + '/blob/main/' + quote(str(destination.relative_to(ROOT)), safe='/') + ('#' + quote(unquote(parsed.fragment)) if parsed.fragment else '')
     result = href(source, destination, unquote(parsed.fragment))
-    if parsed.query:
-        result = result.split('#')[0] + '?' + parsed.query + ('#' + quote(unquote(parsed.fragment)) if parsed.fragment else '')
+    query = parsed.query
+    if destination in COPIED and destination.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.svg'):
+        if destination not in IMAGE_VERSIONS:
+            IMAGE_VERSIONS[destination] = hashlib.sha256(destination.read_bytes()).hexdigest()[:12]
+        query += ('&' if query else '') + 'v=' + IMAGE_VERSIONS[destination]
+    if query:
+        result = result.split('#')[0] + '?' + query + ('#' + quote(unquote(parsed.fragment)) if parsed.fragment else '')
     return result
 
 
@@ -147,7 +153,7 @@ def sidebar(current):
         label = title.replace('第一章\u3000', '01　').replace('第二章\u3000', '02　').replace('第三章\u3000', '03　').replace('第四章\u3000', '04　').replace('第五章\u3000', '05　').replace('第六章\u3000', '06　').replace('第七章\u3000', '07　').replace('第八章\u3000', '08　')
         contents += nav_link(current, target, label.split('：')[0])
     middle_open = ' open' if current.parent.name == '中册-行业解决方案' else ''
-    contents += f'<details{middle_open}><summary>中册 · 方法与行业方案</summary>'
+    contents += f'<details{middle_open}><summary>中册 · 行业解决方案</summary>'
     for target in MIDDLE:
         contents += nav_link(current, target)
     contents += '</details>'
@@ -215,12 +221,12 @@ def home_page(current):
 <div class="stats"><div class="stat"><strong>8</strong><span>章研究</span><small>从经营问题到实施验证</small></div><div class="stat"><strong>{counts['entries']}</strong><span>个案例入口</span><small>按行业、公司与项目组织</small></div><div class="stat"><strong>{counts['all_fragments']}</strong><span>个场景片段</span><small>保留来源、阶段与口径</small></div><div class="stat"><strong>4</strong><span>条业务线</span><small>MTL / LTC / IPD / ITR</small></div></div>
 <div class="section-heading"><h2>选择你的阅读路径</h2><a href="{link('索引/阅读路径.md')}">按经营问题查找 →</a></div>
 <div class="volume-grid"><article class="volume-card"><span class="card-label">VOLUME 01 / 研究报告</span><h3>从智力服务到精益经营</h3><p>面向企业老板与业务负责人，沿业务现状、分析和改造举措，研究流程协同、组织分工与持续改进。</p><div class="flow-tags"><span>MTL 市场到线索</span><span>LTC 线索到回款</span><span>IPD 产品开发</span><span>ITR 问题到解决</span></div><a class="text-link" href="{link('上册-研究报告/README.md')}">查看上册目录 →</a></article>
-<article class="volume-card"><span class="card-label">VOLUME 02 / 行业解决方案</span><h3>沿行业架构增加智力服务</h3><p>引用原行业图谱和应用模块，写清三化怎样协同建设，以及建什么、怎么建、怎样验收。</p><div class="flow-tags"><span>原架构与模块</span><span>智力服务</span><span>建设与验收</span></div><a class="text-link" href="{link('中册-行业解决方案/README.md')}">查看中册行业方案 →</a></article>
+<article class="volume-card"><span class="card-label">VOLUME 02 / 行业解决方案</span><h3>沿行业架构增加智力服务</h3><p>引用行业图谱，展开业务功能和应用模块，写清三化怎样协同建设，以及建什么、怎么建、怎样验收。</p><div class="flow-tags"><span>行业架构与模块</span><span>智力服务</span><span>建设与验收</span></div><a class="text-link" href="{link('中册-行业解决方案/README.md')}">查看中册行业方案 →</a></article>
 <article class="volume-card"><span class="card-label">VOLUME 03 / 案例汇编</span><h3>在真实业务中看数字化与数智化</h3><p>按行业、公司或项目呈现业务背景、问题、实施过程、效果与启示。区分实际使用、试点、原型和设想。</p><div class="flow-tags"><span>制造业</span><span>批发与零售</span><span>信息技术</span><span>商务服务</span><span>更多行业</span></div><a class="text-link" href="{link('下册-案例汇编/README.md')}">浏览全部 {counts['entries']} 个入口 →</a></article></div>
 <div class="section-heading"><h2>沿着问题，逐章展开</h2><span>导论 · 八章正文 · 结语</span></div><div class="chapter-grid">{rows}</div>
 <div class="section-heading"><h2>资料与完整版本</h2><a href="{link('output/pdf/README.md')}">PDF 发行说明 →</a></div>
 <div class="resource-row"><a class="button" href="{link(pdf)}">上下册合订 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-上册-排版预览版.pdf')}">上册 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-下册-排版预览版.pdf')}">下册 PDF <span>↓</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
-<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按原行业方案持续扩充，数字化基础和新增服务分别检验。现有下载PDF保留其发行时内容。</p>
+<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。现有下载PDF保留其发行时内容。</p>
 {footer()}</main>'''
 
 

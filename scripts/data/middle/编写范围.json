@@ -1,6 +1,9 @@
 {
   "title": "中册行业章节范围",
   "updated_on": "2026-10-18",
+  "edition": "v0.3",
+  "default_chapter_edition": "v0.1",
+  "revision_note": "本轮合并原导读与第一章为引言，将共用实施方法移至上册第八章。工程机械保留v0.2新结构样章，其余28篇保留v0.1行业初稿，待依模板扩写。",
   "chapters": [
     {
       "file": "A01-农业与养殖.md",
@@ -23,6 +26,7 @@
     },
     {
       "file": "C01-工程机械.md",
+      "edition": "v0.2",
       "title": "工程机械",
       "scope": "工程机械及配套",
       "priority_source_ids": [
@@ -255,5 +259,6 @@
         "C26"
       ]
     }
-  ]
+  ],
+  "current_chapter_edition": "v0.2"
 }
