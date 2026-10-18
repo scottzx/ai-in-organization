@@ -33,13 +33,13 @@ def main():
   focus='、'.join(h[:3]) if h else '原架构、模块增强、建设实施与验收'
   if len(focus)>65: focus=focus[:65]+'等'
   lines.append(f'| [{title(p)}]({p.name}) | {focus} |')
-  refs=sorted(set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',text)))
+  refs=sorted(link for link in set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',text)) if not link.split('#',1)[0].endswith('/README.md'))
   figures=sorted(set(re.findall(r'!\[[^\]]*\]\((assets/[^)]+)\)',text)))
   cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':figures})
  for name in COMMON:
   p=MIDDLE/name
   if p.exists():
-   refs=sorted(set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',p.read_text())))
+   refs=sorted(link for link in set(re.findall(r'\]\((\.\./下册-案例汇编/[^)]+)\)',p.read_text())) if not link.split('#',1)[0].endswith('/README.md'))
    cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':[]})
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
  by_path={e['path']:e for e in entries}
