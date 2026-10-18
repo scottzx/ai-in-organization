@@ -55,7 +55,7 @@ jobs:
       - run: python -m pip install -r scripts/requirements-site.txt
       - name: Build the domestic reader
         env:
-          REPORT_SITE_URL: https://www.dreammate.work/report/ai-transformation-2026/
+          REPORT_SITE_URL: https://research.dreammate.work/report/ai-transformation-2026/
         run: python scripts/build-site.py
       - name: Publish to Tencent Cloud
         env:
@@ -67,16 +67,10 @@ jobs:
           trap 'rm -f "$report_ssh_dir/key"' EXIT
           printf '%s\n' "$REPORT_MIRROR_SSH_KEY" > "$report_ssh_dir/key"
           chmod 600 "$report_ssh_dir/key"
-          python - <<'PY'
-          import os, tarfile
-          from pathlib import Path
-          site = Path('_site')
-          with tarfile.open(Path(os.environ['RUNNER_TEMP']) / 'report-site.tar.gz', 'w:gz') as archive:
-              for path in sorted(site.rglob('*')):
-                  if path.is_file():
-                      archive.add(path, arcname=str(path.relative_to(site)), recursive=False)
-          PY
-          ssh -i "$report_ssh_dir/key" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 \
-            -o ServerAliveInterval=20 -o StrictHostKeyChecking=yes \
-            -o UserKnownHostsFile=.github/report-mirror-known-hosts \
-            reportmirror@49.235.24.95 "publish $GITHUB_SHA" < "$RUNNER_TEMP/report-site.tar.gz"
+          report_ssh=(ssh -i "$report_ssh_dir/key" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15
+            -o ServerAliveInterval=20 -o StrictHostKeyChecking=yes
+            -o UserKnownHostsFile=.github/report-mirror-known-hosts reportmirror@49.235.24.95)
+          "${report_ssh[@]}" manifest > "$RUNNER_TEMP/report-base.json"
+          python scripts/deploy/report-mirror/package.py --site _site \
+            --base-manifest "$RUNNER_TEMP/report-base.json" --output "$RUNNER_TEMP/report-site.tar.gz"
+          "${report_ssh[@]}" "publish $GITHUB_SHA" < "$RUNNER_TEMP/report-site.tar.gz"

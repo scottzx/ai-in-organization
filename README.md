@@ -10,9 +10,9 @@
 
 ## 开始阅读
 
-**[国内在线阅读与分享报告](https://www.dreammate.work/report/ai-transformation-2026/)** · [GitHub Pages 备用入口](https://scottzx.github.io/ai-in-organization/)：支持逐章阅读、案例导航、全文搜索；各章和案例均有独立链接。网页从本仓库正文自动生成，推送到main分支后，GitHub Pages自动更新，腾讯云镜像由GitHub Actions构建后自动推送更新。发布方法见[网页维护说明](web/README.md)。
+**[国内在线阅读与分享报告](https://research.dreammate.work/report/ai-transformation-2026/)** · [GitHub Pages 备用入口](https://scottzx.github.io/ai-in-organization/)：支持逐章阅读、案例导航、全文搜索；各章和案例均有独立链接。网页从本仓库正文自动生成，推送到main分支后，GitHub Pages自动更新，腾讯云镜像由GitHub Actions构建后自动推送更新。发布方法见[网页维护说明](web/README.md)。
 
-现行书稿以[在线阅读版](https://www.dreammate.work/report/ai-transformation-2026/)及各册Markdown为准。此前PDF保留为[历史归档](output/pdf/README.md)，未反映当前章节与附录调整。
+现行书稿以[在线阅读版](https://research.dreammate.work/report/ai-transformation-2026/)及各册Markdown为准。此前PDF保留为[历史归档](output/pdf/README.md)，未反映当前章节与附录调整。
 
 [主题演示：快——让企业更快完成有效业务循环](output/ppt/快-有效业务周转/README.md)，包含22页可编辑PPT、PDF预览与逐页讲稿，以决策快、试错快、复制快和切换快展开解决方案主线；该演示保留10月13日上册v8.0的五章框架。
 
