@@ -20,7 +20,7 @@ from markdown_it import MarkdownIt
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
 REPO = 'https://github.com/scottzx/ai-in-organization'
-SITE = 'https://scottzx.github.io/ai-in-organization/'
+SITE = os.environ.get('REPORT_SITE_URL', 'https://scottzx.github.io/ai-in-organization/').rstrip('/') + '/'
 ASSETS = {
     path.name: f'{path.stem}.{hashlib.sha256(path.read_bytes()).hexdigest()[:12]}{path.suffix}'
     for path in (ROOT / 'web').iterdir()

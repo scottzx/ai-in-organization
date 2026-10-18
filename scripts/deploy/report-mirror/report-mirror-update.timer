@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for report updates every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=5min
+AccuracySec=15s
+Unit=report-mirror-update.service
+
+[Install]
+WantedBy=timers.target
