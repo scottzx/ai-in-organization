@@ -296,6 +296,39 @@
       "source_type": "官方发布会（自感知、自决策、自执行、自适应、自学习等特征，非具体服务能力证明）",
       "used_in": "上册第一章1.4智能化基本含义",
       "checked_on": "2026-10-17"
+    },
+    {
+      "id": "CH09-R01",
+      "title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
+      "publisher": "Meta",
+      "publication_date": "2026-09-08",
+      "revision_date": "2026-09-30",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "locator": "How It Works；Looking Ahead",
+      "source_type": "企业官方产品公告（功能与推出范围，非市场普及率证明）",
+      "used_in": "上册结语第二节参考资料",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "CH09-R02",
+      "title": "Muse Shopping",
+      "publisher": "Meta",
+      "url": "https://ai.meta.com/muse/shopping/",
+      "locator": "Finds the best deals等购物功能说明",
+      "source_type": "企业官方功能说明（跨零售商研究、比价与获批购买）",
+      "used_in": "上册结语第二节",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "CH09-R03",
+      "title": "Meta channel",
+      "publisher": "Shopify",
+      "url": "https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/meta",
+      "locator": "商品发现、商家资格、直接结账及商家责任",
+      "source_type": "企业官方帮助文档（符合条件的商家接入与结账，非全部独立站覆盖）",
+      "used_in": "上册结语第二节",
+      "checked_on": "2026-10-18",
+      "application_note": "未来一两年购买习惯变化及要求向供应链传导，为本报告展望与分析。"
     }
   ],
   "entries": [
