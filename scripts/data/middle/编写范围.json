@@ -1,0 +1,259 @@
+{
+  "title": "中册行业章节范围",
+  "updated_on": "2026-10-18",
+  "chapters": [
+    {
+      "file": "A01-农业与养殖.md",
+      "title": "农业与养殖",
+      "scope": "农业、畜牧、农产品经营",
+      "priority_source_ids": [
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "file": "B01-采矿.md",
+      "title": "采矿",
+      "scope": "煤矿、金属矿与非金属矿",
+      "priority_source_ids": [
+        "A13",
+        "A16",
+        "D08"
+      ]
+    },
+    {
+      "file": "C01-工程机械.md",
+      "title": "工程机械",
+      "scope": "工程机械及配套",
+      "priority_source_ids": [
+        "A09",
+        "A11",
+        "B02"
+      ]
+    },
+    {
+      "file": "C02-汽车与零部件.md",
+      "title": "汽车与零部件",
+      "scope": "汽车、新能源汽车及零部件",
+      "priority_source_ids": [
+        "A10",
+        "A11"
+      ]
+    },
+    {
+      "file": "C03-机器人.md",
+      "title": "机器人",
+      "scope": "工业与服务机器人",
+      "priority_source_ids": [
+        "A09",
+        "A11"
+      ]
+    },
+    {
+      "file": "C04-船舶.md",
+      "title": "船舶",
+      "scope": "船舶研发、建造与服务",
+      "priority_source_ids": [
+        "B05"
+      ]
+    },
+    {
+      "file": "C05-钢铁.md",
+      "title": "钢铁",
+      "scope": "钢铁生产与协同",
+      "priority_source_ids": [
+        "A03",
+        "B01",
+        "A11"
+      ]
+    },
+    {
+      "file": "C06-石化化工.md",
+      "title": "石化化工",
+      "scope": "石化与化工",
+      "priority_source_ids": [
+        "A03",
+        "B04",
+        "A11"
+      ]
+    },
+    {
+      "file": "C07-有色金属.md",
+      "title": "有色金属",
+      "scope": "有色采选、冶炼与加工",
+      "priority_source_ids": [
+        "A03"
+      ]
+    },
+    {
+      "file": "C08-建材.md",
+      "title": "建材",
+      "scope": "水泥、玻璃、陶瓷等",
+      "priority_source_ids": [
+        "A03",
+        "A16"
+      ]
+    },
+    {
+      "file": "C09-电子信息与关键部件.md",
+      "title": "电子信息与关键部件",
+      "scope": "电子元器件、锂电池、光伏、印制板与智能终端",
+      "priority_source_ids": [
+        "A08",
+        "A11"
+      ]
+    },
+    {
+      "file": "C10-家电与轻工.md",
+      "title": "家电与轻工",
+      "scope": "家电、家具、造纸、皮革、美妆日化等",
+      "priority_source_ids": [
+        "A04",
+        "A11"
+      ]
+    },
+    {
+      "file": "C11-纺织服装.md",
+      "title": "纺织服装",
+      "scope": "纺纱、织造、印染、化纤、服装、家纺",
+      "priority_source_ids": [
+        "A07"
+      ]
+    },
+    {
+      "file": "C12-食品饮料.md",
+      "title": "食品饮料",
+      "scope": "食品、饮料、乳品、制糖与酿酒",
+      "priority_source_ids": [
+        "A06",
+        "A11"
+      ]
+    },
+    {
+      "file": "C13-医药与医疗装备.md",
+      "title": "医药与医疗装备",
+      "scope": "药品、医疗器械与装备制造",
+      "priority_source_ids": [
+        "A05",
+        "A11"
+      ]
+    },
+    {
+      "file": "C14-民爆.md",
+      "title": "民爆",
+      "scope": "乳化炸药与电子雷管制造",
+      "priority_source_ids": [
+        "A11"
+      ]
+    },
+    {
+      "file": "D01-能源与公用事业.md",
+      "title": "能源与公用事业",
+      "scope": "发电、输配电、燃气、热力与水务",
+      "priority_source_ids": [
+        "B03",
+        "B06"
+      ]
+    },
+    {
+      "file": "E01-建筑与工程.md",
+      "title": "建筑与工程",
+      "scope": "施工与装饰装修",
+      "priority_source_ids": [
+        "A16"
+      ]
+    },
+    {
+      "file": "F01-批发与零售.md",
+      "title": "批发与零售",
+      "scope": "批发、门店、电商与外贸",
+      "priority_source_ids": [
+        "C04"
+      ]
+    },
+    {
+      "file": "G01-运输仓储与物流.md",
+      "title": "运输仓储与物流",
+      "scope": "港口、货运、仓配、物流与油气运输",
+      "priority_source_ids": [
+        "B06",
+        "C04"
+      ]
+    },
+    {
+      "file": "H01-住宿与餐饮.md",
+      "title": "住宿与餐饮",
+      "scope": "酒店与连锁餐饮",
+      "priority_source_ids": []
+    },
+    {
+      "file": "I01-软件与信息服务.md",
+      "title": "软件与信息服务",
+      "scope": "软件交付、SaaS、电信与信息服务",
+      "priority_source_ids": [
+        "C03",
+        "C17",
+        "C25"
+      ]
+    },
+    {
+      "file": "J01-金融.md",
+      "title": "金融",
+      "scope": "银行、保险、证券与金融科技",
+      "priority_source_ids": [
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "file": "L01-商务服务.md",
+      "title": "商务服务",
+      "scope": "招聘、咨询等商务服务",
+      "priority_source_ids": []
+    },
+    {
+      "file": "M01-专业技术服务.md",
+      "title": "专业技术服务",
+      "scope": "设计、法律、检验检测和维保",
+      "priority_source_ids": []
+    },
+    {
+      "file": "P01-教育服务.md",
+      "title": "教育服务",
+      "scope": "教育及培训",
+      "priority_source_ids": [
+        "C24"
+      ]
+    },
+    {
+      "file": "Q01-医疗健康.md",
+      "title": "医疗健康",
+      "scope": "医院与健康服务",
+      "priority_source_ids": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "file": "R01-文化体育与文旅.md",
+      "title": "文化体育与文旅",
+      "scope": "内容、体育、文旅与在线服务",
+      "priority_source_ids": [
+        "C15",
+        "C24"
+      ]
+    },
+    {
+      "file": "S01-政务与公共服务.md",
+      "title": "政务与公共服务",
+      "scope": "政务、城市运营和公共服务",
+      "priority_source_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C26"
+      ]
+    }
+  ]
+}

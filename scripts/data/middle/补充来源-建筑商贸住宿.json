@@ -1,0 +1,200 @@
+{
+  "title": "中册补充来源元数据",
+  "updated_on": "2026-10-18",
+  "records": [
+    {
+      "id": "SC-E01-01",
+      "title": "智能建造技术导则（试行）",
+      "publisher": "住房城乡建设部办公厅",
+      "source_type": "部门技术导则",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202503/P020250319509626711853.pdf",
+      "format": "PDF",
+      "pages": 30,
+      "issued_date": "2025-03-17",
+      "used_in": [
+        "E01-建筑与工程.md"
+      ],
+      "locators": [
+        {
+          "pdf_pages": "1-4",
+          "section": "一、总则：适用范围、术语、通用要求"
+        },
+        {
+          "pdf_pages": "5-7",
+          "section": "二、数字勘察：采集处理、应用、交付"
+        },
+        {
+          "pdf_pages": "7-11",
+          "section": "三、数字设计：BIM、协同、智能辅助、交付"
+        },
+        {
+          "pdf_pages": "11-17",
+          "section": "四、智能生产：数字化管理、产线、物流、交付"
+        },
+        {
+          "pdf_pages": "17-27",
+          "section": "五、智能施工：数据管理、各专业施工、机器人、交付"
+        },
+        {
+          "pdf_pages": "27-30",
+          "section": "六、智慧运维：平台、结构健康、功能维护、应急"
+        }
+      ],
+      "local_audit_sha256": "122505bf82674d8011ef38464c0176c6dca271ea5f3f4f3feafe8c8f3c57521d",
+      "pdf_sha256": "122505bf82674d8011ef38464c0176c6dca271ea5f3f4f3feafe8c8f3c57521d"
+    },
+    {
+      "id": "SC-F01-01",
+      "title": "零售业创新提升工程实施方案",
+      "publisher": "商务部等7部门办公厅",
+      "source_type": "部门实施方案",
+      "url": "https://www.mofcom.gov.cn/gztz/art/2024/art_61f886b3f6a74e45a78ca3df7f900621.html",
+      "format": "HTML",
+      "issued_date": "2024-11-15",
+      "published_date": "2024-12-16",
+      "used_in": [
+        "F01-批发与零售.md"
+      ],
+      "locators": [
+        {
+          "section": "二、主要任务（一）至（五）",
+          "content": "场景化改造、品质化供给、数字化赋能、多元化创新、供应链提升"
+        },
+        {
+          "section": "二（三）",
+          "content": "商品条码、标准流程、进销存、物流、追溯、售后及共性数字化方案"
+        },
+        {
+          "section": "二（五）",
+          "content": "库存协同、集采集配、统仓统配、自动补货与供应链服务"
+        }
+      ]
+    },
+    {
+      "id": "SC-F01-02",
+      "title": "关于完善现代商贸流通体系推动批发零售业高质量发展的行动计划",
+      "publisher": "商务部等9部门",
+      "source_type": "部门行动计划",
+      "url": "https://www.mofcom.gov.cn/ghjh/art/2024/art_2fb3e28909d24967b79c96b4e7a48f8f.html",
+      "format": "HTML",
+      "issued_date": "2024-11-28",
+      "published_date": "2024-12-03",
+      "used_in": [
+        "F01-批发与零售.md"
+      ],
+      "locators": [
+        {
+          "section": "三（四）（五）",
+          "content": "批发业平台化、零售创新提升"
+        },
+        {
+          "section": "四（六）",
+          "content": "供应链创新与应用，产供销储运协同"
+        },
+        {
+          "section": "四（七）",
+          "content": "载具、编码、智能仓储物流和逆向物流"
+        },
+        {
+          "section": "四（八）",
+          "content": "数字化转型、中小企业方案及需求库存物流互通"
+        }
+      ]
+    },
+    {
+      "id": "SC-H01-01",
+      "title": "关于促进住宿业高质量发展的指导意见",
+      "publisher": "商务部等9部门",
+      "source_type": "部门指导意见",
+      "url": "https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/fwmy/art/2025/art_0104a36fd3154fffb67022a4370a6a69.html",
+      "format": "HTML",
+      "issued_date": "2025-09-30",
+      "published_date": "2025-10-17",
+      "used_in": [
+        "H01-住宿与餐饮.md"
+      ],
+      "locators": [
+        {
+          "section": "二（二）",
+          "content": "改造升级，建筑、装饰、水电气热和设备更新"
+        },
+        {
+          "section": "三（五）（六）",
+          "content": "智慧化转型、涉外接待，流程、运营、市场和接待能力"
+        },
+        {
+          "section": "四（七）（八）",
+          "content": "低碳环保、绿色饭店建设"
+        },
+        {
+          "section": "五（九）",
+          "content": "数据、消费者权益、预订退订与规范经营"
+        }
+      ]
+    },
+    {
+      "id": "SC-H01-02",
+      "title": "关于促进餐饮业高质量发展的指导意见",
+      "publisher": "商务部等9部门",
+      "source_type": "部门指导意见",
+      "url": "https://fms.mofcom.gov.cn/zcfg/zhzcfg/art/2024/art_7004a66192cf43a0be51c32039ec9b88.html",
+      "format": "HTML",
+      "document_number": "商服贸发〔2024〕46号",
+      "issued_date": "2024-03-04",
+      "published_date": "2024-03-28",
+      "used_in": [
+        "H01-住宿与餐饮.md"
+      ],
+      "locators": [
+        {
+          "section": "二（一）",
+          "content": "质量安全、进货查验、明厨亮灶、基地中央厨房门店模式"
+        },
+        {
+          "section": "四（七）",
+          "content": "数字+餐饮、数字技术和智能设备应用"
+        },
+        {
+          "section": "六（十三）（十四）",
+          "content": "反浪费、低碳环保、绿色餐饮"
+        },
+        {
+          "section": "七（十八）",
+          "content": "经营服务、人工渠道和个人信息等方向"
+        }
+      ]
+    },
+    {
+      "id": "SC-H01-03",
+      "title": "中国餐饮业数字化发展报告（2024）",
+      "publisher": "国家信息中心",
+      "source_type": "政府研究机构研究报告",
+      "url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf",
+      "format": "PDF",
+      "published_month": "2024-10",
+      "pages": 46,
+      "used_in": [
+        "H01-住宿与餐饮.md"
+      ],
+      "locators": [
+        {
+          "pdf_pages": "19",
+          "printed_pages": "18",
+          "section": "三、餐饮业数字化指标体系构建：内涵和产业链理论基础"
+        },
+        {
+          "pdf_pages": "20",
+          "printed_pages": "19",
+          "figure": "图3-1 餐饮业产业链逻辑架构"
+        },
+        {
+          "pdf_pages": "21-22",
+          "printed_pages": "20-21",
+          "section": "图3-2及表3-1，数字供应、数字加工、数字管理、数字销售"
+        }
+      ],
+      "local_audit_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3",
+      "pdf_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3"
+    }
+  ]
+}

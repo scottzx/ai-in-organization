@@ -1,0 +1,487 @@
+{
+  "title": "中册新增下册案例及补充来源",
+  "updated_on": "2026-10-18",
+  "entries": [
+    {
+      "id": "C14",
+      "title": "铁拓机械5G研发生产与设备协同",
+      "path": "下册-案例汇编/C-制造业/C14-铁拓机械5G研发生产与设备协同.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D05-09",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D05-09-F01",
+          "title": "铁拓机械5G研发生产与设备协同",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d05-09-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（装备工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/2c88143cc3474d1b91cf59d5d8ec9cc4.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F046.txt",
+              "document_sha256": "99a8e66f02052db8cbbb968fd82cfa348c50777f3426de6ac4e82fcbf96126f6",
+              "line_start": 1491,
+              "line_end": 1663,
+              "locator": "PDF第35—38页；印刷第33—36页；主体：福建省铁拓机械股份有限公司",
+              "source_file_sha256": "18328633e0fdd14f690e5bd6210dd12ffdd7027fe17ecd8b5dd2547901f0397f",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "安庆威灵5G零部件制造与追溯",
+      "path": "下册-案例汇编/C-制造业/C15-安庆威灵5G零部件制造与追溯.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D05-15",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D05-15-F01",
+          "title": "安庆威灵5G零部件制造与追溯",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d05-15-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（装备工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/2c88143cc3474d1b91cf59d5d8ec9cc4.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F046.txt",
+              "document_sha256": "99a8e66f02052db8cbbb968fd82cfa348c50777f3426de6ac4e82fcbf96126f6",
+              "line_start": 2489,
+              "line_end": 2706,
+              "locator": "PDF第59—63页；印刷第57—61页；主体：安庆威灵汽车部件有限公司",
+              "source_file_sha256": "18328633e0fdd14f690e5bd6210dd12ffdd7027fe17ecd8b5dd2547901f0397f",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "title": "大连中远海运重工5G船舶修造协同",
+      "path": "下册-案例汇编/C-制造业/C16-大连中远海运重工5G船舶修造协同.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D05-19",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D05-19-F01",
+          "title": "大连中远海运重工5G船舶修造协同",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d05-19-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（装备工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/2c88143cc3474d1b91cf59d5d8ec9cc4.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F046.txt",
+              "document_sha256": "99a8e66f02052db8cbbb968fd82cfa348c50777f3426de6ac4e82fcbf96126f6",
+              "line_start": 3181,
+              "line_end": 3355,
+              "locator": "PDF第76—79页；印刷第74—77页；主体：大连中远海运重工有限公司",
+              "source_file_sha256": "18328633e0fdd14f690e5bd6210dd12ffdd7027fe17ecd8b5dd2547901f0397f",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "title": "宝钢湛江钢铁5G生产协同",
+      "path": "下册-案例汇编/C-制造业/C17-宝钢湛江钢铁5G生产协同.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D04-08",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D04-08-F01",
+          "title": "宝钢湛江钢铁5G生产协同",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d04-08-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（原材料工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/f911ca4f96534bc28427547fcf035c54.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F045.txt",
+              "document_sha256": "d4c3fd8069f4aeb598c78b7183a45f511c14869ee70ac8eadb7b9bb90a4d9c43",
+              "line_start": 1354,
+              "line_end": 1517,
+              "locator": "PDF第35—38页；印刷第31—34页；主体：宝钢湛江钢铁有限公司",
+              "source_file_sha256": "5ce1d64b24fe605f18bc457263cc3949f1482312a2d8f452ae520a4c4d74abf8",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "title": "广州石化5G设备与作业管控",
+      "path": "下册-案例汇编/C-制造业/C18-广州石化5G设备与作业管控.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D04-01",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D04-01-F01",
+          "title": "广州石化5G设备与作业管控",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d04-01-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（原材料工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/f911ca4f96534bc28427547fcf035c54.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F045.txt",
+              "document_sha256": "d4c3fd8069f4aeb598c78b7183a45f511c14869ee70ac8eadb7b9bb90a4d9c43",
+              "line_start": 136,
+              "line_end": 334,
+              "locator": "PDF第5—9页；印刷第1—5页；主体：中国石油化工股份有限公司广州分公司",
+              "source_file_sha256": "5ce1d64b24fe605f18bc457263cc3949f1482312a2d8f452ae520a4c4d74abf8",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "title": "中建材宜兴新能源5G超薄玻璃生产",
+      "path": "下册-案例汇编/C-制造业/C19-中建材宜兴新能源5G超薄玻璃生产.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D04-13",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D04-13-F01",
+          "title": "中建材宜兴新能源5G超薄玻璃生产",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d04-13-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（原材料工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/f911ca4f96534bc28427547fcf035c54.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F045.txt",
+              "document_sha256": "d4c3fd8069f4aeb598c78b7183a45f511c14869ee70ac8eadb7b9bb90a4d9c43",
+              "line_start": 2180,
+              "line_end": 2337,
+              "locator": "PDF第55—58页；印刷第51—54页；主体：中建材（宜兴）新能源有限公司",
+              "source_file_sha256": "5ce1d64b24fe605f18bc457263cc3949f1482312a2d8f452ae520a4c4d74abf8",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C20",
+      "title": "海天宿迁调味品5G生产与质量追溯",
+      "path": "下册-案例汇编/C-制造业/C20-海天宿迁调味品5G生产与质量追溯.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D06-23",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D06-23-F01",
+          "title": "海天宿迁调味品5G生产与质量追溯",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d06-23-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（消费品工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/49f30c6df8164aad96c1d1e7a67a3fcf.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F047.txt",
+              "document_sha256": "215f00ebaaf418be958d4f9ce43542932241c3c6065eec8902965363934d245b",
+              "line_start": 3391,
+              "line_end": 3554,
+              "locator": "PDF第84—87页；印刷第82—85页；主体：佛山市海天（宿迁）调味食品有限公司",
+              "source_file_sha256": "d1ada3d0b5053ffbb2f367e00c8905e033c12a722ffe02ddb5a0eb0d412751e3",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "title": "合肥美的洗衣机5G工艺与物流协同",
+      "path": "下册-案例汇编/C-制造业/C21-合肥美的洗衣机5G工艺与物流协同.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D06-07",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D06-07-F01",
+          "title": "合肥美的洗衣机5G工艺与物流协同",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d06-07-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（消费品工业）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/49f30c6df8164aad96c1d1e7a67a3fcf.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F047.txt",
+              "document_sha256": "215f00ebaaf418be958d4f9ce43542932241c3c6065eec8902965363934d245b",
+              "line_start": 975,
+              "line_end": 1128,
+              "locator": "PDF第25—28页；印刷第23—26页；主体：合肥美的洗衣机有限公司",
+              "source_file_sha256": "d1ada3d0b5053ffbb2f367e00c8905e033c12a722ffe02ddb5a0eb0d412751e3",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D01",
+      "title": "国能广投北海电厂5G工程与运行管理",
+      "path": "下册-案例汇编/D-电力热力燃气及水生产和供应业/D01-国能广投北海电厂5G工程与运行管理.md",
+      "industry_code": "D",
+      "industry_name": "电力、热力、燃气及水生产和供应业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D08-04",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D08-04-F01",
+          "title": "国能广投北海电厂5G工程与运行管理",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，预计及未来方向分别保留，未经独立审计",
+          "anchor": "miit-d08-04-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（能源交通）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/27c523061a404fdaa33a11b04cf9bbbe.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F049.txt",
+              "document_sha256": "32a19a61378241487abdcb8d19ff70d7724c7e0db8196b9f033736d7dbde8e61",
+              "line_start": 552,
+              "line_end": 713,
+              "locator": "PDF第15—18页；印刷第13—16页；主体：国能广投北海发电有限公司",
+              "source_file_sha256": "e84170f1f9787431bd967d531b6983648dd2e1be2d97185437d517b3d906bcc6",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "title": "盐城维信电子5G柔性电路板协同制造",
+      "path": "下册-案例汇编/C-制造业/C22-盐城维信电子5G柔性电路板协同制造.md",
+      "industry_code": "C",
+      "industry_name": "制造业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D07-01",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D07-01-F01",
+          "title": "盐城维信电子5G柔性电路板协同制造",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，未经独立审计",
+          "anchor": "miit-d07-01-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（电子信息）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/ad2bf3bb9f2148d891bdb02bf4b59c07.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F048.txt",
+              "document_sha256": "6c597330a2dd0f7fdb4af610e5ae327634cecde0d73d52b2dcff3cef1bddd72a",
+              "line_start": 45,
+              "line_end": 263,
+              "locator": "PDF第3—7页；印刷第1—5页；主体：盐城维信电子有限公司",
+              "source_file_sha256": "eed611c9f15b042e64eefda0893d69ea65c4cc6d977824711938ef1dbe47615e",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01",
+      "title": "石头梅露天煤矿5G采运与安全监测",
+      "path": "下册-案例汇编/B-采矿业/B01-石头梅露天煤矿5G采运与安全监测.md",
+      "industry_code": "B",
+      "industry_name": "采矿业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "MIIT-D08-01",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D08-01-F01",
+          "title": "石头梅露天煤矿5G采运与安全监测",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "项目汇编披露的部署与使用，实际与预计效果分开；未独立审计",
+          "anchor": "miit-d08-01-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（能源交通）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/27c523061a404fdaa33a11b04cf9bbbe.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F049.txt",
+              "document_sha256": "32a19a61378241487abdcb8d19ff70d7724c7e0db8196b9f033736d7dbde8e61",
+              "line_start": 45,
+              "line_end": 174,
+              "locator": "PDF第3—5页；印刷第1—3页；主体：新疆哈密三塘湖能源开发建设有限责任公司",
+              "source_file_sha256": "e84170f1f9787431bd967d531b6983648dd2e1be2d97185437d517b3d906bcc6",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "城山煤矿5G井下生产与协同",
+      "path": "下册-案例汇编/B-采矿业/B02-城山煤矿5G井下生产与协同.md",
+      "industry_code": "B",
+      "industry_name": "采矿业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "MIIT-D08-02",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D08-02-F01",
+          "title": "城山煤矿5G井下生产与协同",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "项目汇编披露的部署与使用，实际与预计效果分开；未独立审计",
+          "anchor": "miit-d08-02-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（能源交通）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/27c523061a404fdaa33a11b04cf9bbbe.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F049.txt",
+              "document_sha256": "32a19a61378241487abdcb8d19ff70d7724c7e0db8196b9f033736d7dbde8e61",
+              "line_start": 174,
+              "line_end": 341,
+              "locator": "PDF第6—9页；印刷第4—7页；主体：鸡西矿业（集团）有限责任公司",
+              "source_file_sha256": "e84170f1f9787431bd967d531b6983648dd2e1be2d97185437d517b3d906bcc6",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "title": "攀钢朱兰铁矿5G远程采矿与配矿",
+      "path": "下册-案例汇编/B-采矿业/B03-攀钢朱兰铁矿5G远程采矿与配矿.md",
+      "industry_code": "B",
+      "industry_name": "采矿业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "MIIT-D08-03",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D08-03-F01",
+          "title": "攀钢朱兰铁矿5G远程采矿与配矿",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "项目汇编披露的部署与使用，实际与预计效果分开；未独立审计",
+          "anchor": "miit-d08-03-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（能源交通）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/27c523061a404fdaa33a11b04cf9bbbe.pdf",
+              "document": "资料库/工信部数字化转型原文/text/F049.txt",
+              "document_sha256": "32a19a61378241487abdcb8d19ff70d7724c7e0db8196b9f033736d7dbde8e61",
+              "line_start": 341,
+              "line_end": 552,
+              "locator": "PDF第10—14页；印刷第8—12页；主体：攀钢集团矿业有限公司",
+              "source_file_sha256": "e84170f1f9787431bd967d531b6983648dd2e1be2d97185437d517b3d906bcc6",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "supplementary_sources": [
+    {
+      "id": "MID-D01-W01",
+      "title": "四部门关于加强城市节水工作的指导意见",
+      "issuer": "住房城乡建设部办公厅、国家发展改革委办公厅、水利部办公厅、工业和信息化部办公厅",
+      "document_number": "建办城〔2021〕51号",
+      "publication_date": "2021-12-30",
+      "url": "https://wap.miit.gov.cn/jgsj/jns/wjfb/art/2021/art_a02d22c0b30e4787872bdf0b5f2b2b51.html",
+      "locator": "三、（八）狠抓城市供水管网漏损控制",
+      "source_type": "四部门指导意见，政策建设要求，不是企业效果实证",
+      "used_in": "中册D01，供水漏损治理范围"
+    }
+  ]
+}

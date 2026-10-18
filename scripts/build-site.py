@@ -39,11 +39,13 @@ def render_text(renderer, tokens, index, options, env):
 MD.add_render_rule('text', render_text)
 UPPER = sorted((ROOT / '上册-研究报告').glob('[0-9][0-9]-*.md'))
 APPENDICES = sorted((ROOT / '上册-研究报告').glob('附录*.md'))
+MIDDLE = sorted(path for path in (ROOT / '中册-行业解决方案').glob('*.md') if path.name != 'README.md')
 CASE_INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text())
 CASES = [ROOT / entry['path'] for entry in CASE_INDEX['entries']]
 DOCS = {ROOT / name for name in ('README.md', 'CONTRIBUTING.md', 'CHANGELOG.md')}
-for folder in ('上册-研究报告', '下册-案例汇编', '索引', 'templates'):
+for folder in ('上册-研究报告', '中册-行业解决方案', '下册-案例汇编', '索引', 'templates'):
     DOCS.update((ROOT / folder).rglob('*.md'))
+DOCS = {path for path in DOCS if '研究记录' not in path.relative_to(ROOT).parts}
 DOCS.update((ROOT / 'output').rglob('*.md'))
 TITLES = {path: re.search(r'^#\s+(.+)$', path.read_text(), re.M)[1] for path in DOCS}
 COPIED = set()
@@ -78,7 +80,9 @@ def rewrite_url(source, value):
         raise ValueError(f'Missing or out-of-repository link: {source.name}: {value}')
     if destination not in DOCS:
         # Drafts, scripts and editorial files can still be consulted on GitHub.
-        allowed = destination.parts[len(ROOT.parts)] in ('output', '索引')
+        relative_parts = destination.relative_to(ROOT).parts
+        allowed = (relative_parts[0] in ('output', '索引')
+                   or relative_parts[:2] == ('中册-行业解决方案', 'assets'))
         if allowed and destination.is_file() and destination.suffix in ('.png', '.svg', '.jpg', '.jpeg', '.webp', '.pdf', '.pptx', '.json', '.csv'):
             copy_asset(destination)
         else:
@@ -112,7 +116,12 @@ def render_document(path):
         for child in token.children or []:
             if child.type in ('link_open', 'image'):
                 attr = 'src' if child.type == 'image' else 'href'
-                child.attrSet(attr, rewrite_url(path, child.attrGet(attr)))
+                original_url = child.attrGet(attr)
+                rewritten_url = rewrite_url(path, original_url)
+                if (child.type == 'image' and not urlsplit(original_url).scheme
+                        and urlsplit(rewritten_url).scheme):
+                    raise ValueError(f'Local publication image not packaged: {path.name}: {original_url}')
+                child.attrSet(attr, rewritten_url)
                 if child.type == 'image':
                     child.attrSet('loading', 'lazy')
                     child.attrSet('decoding', 'async')
@@ -126,13 +135,18 @@ def nav_link(current, target, label=None):
 
 def sidebar(current):
     contents = '<p class="nav-label">报告导航</p>'
-    for target, label in [('README.md', '报告首页'), ('上册-研究报告/README.md', '上册 · 研究报告'), ('下册-案例汇编/README.md', '下册 · 案例汇编'), ('索引/阅读路径.md', '按问题阅读')]:
+    for target, label in [('README.md', '报告首页'), ('上册-研究报告/README.md', '上册 · 研究报告'), ('中册-行业解决方案/README.md', '中册 · 行业方案'), ('下册-案例汇编/README.md', '下册 · 案例汇编'), ('索引/阅读路径.md', '按问题阅读')]:
         contents += nav_link(current, ROOT / target, label)
     contents += '<p class="nav-label">上册章节</p>'
     for target in UPPER:
         title = TITLES[target]
         label = title.replace('第一章\u3000', '01　').replace('第二章\u3000', '02　').replace('第三章\u3000', '03　').replace('第四章\u3000', '04　').replace('第五章\u3000', '05　').replace('第六章\u3000', '06　').replace('第七章\u3000', '07　').replace('第八章\u3000', '08　')
         contents += nav_link(current, target, label.split('：')[0])
+    middle_open = ' open' if current.parent.name == '中册-行业解决方案' else ''
+    contents += f'<details{middle_open}><summary>中册 · 方法与行业方案</summary>'
+    for target in MIDDLE:
+        contents += nav_link(current, target)
+    contents += '</details>'
     contents += '<p class="nav-label">附录与案例</p>'
     for target in APPENDICES:
         contents += nav_link(current, target)
@@ -170,7 +184,7 @@ def page_shell(current, body, description):
 <script src="{asset('site.js')}" data-site defer></script></head><body>
 <a class="skip" href="#main">跳到正文</a>
 <header class="topbar"><a class="brand" href="{href(current, ROOT / 'README.md')}"><span class="brand-symbol">芥</span><span><strong>一芥智能研究院</strong><small>YIJIE INTELLIGENCE INSTITUTE</small></span></a>
-<div class="header-actions"><a class="header-link" href="{href(current, ROOT / '上册-研究报告/README.md')}">研究报告</a><a class="header-link" href="{href(current, ROOT / '下册-案例汇编/README.md')}">企业案例</a><button class="search-trigger" data-search aria-haspopup="dialog">搜索内容 <kbd>⌘ K</kbd></button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="sidebar">目录 ☰</button></div></header>
+<div class="header-actions"><a class="header-link" href="{href(current, ROOT / '上册-研究报告/README.md')}">研究报告</a><a class="header-link" href="{href(current, ROOT / '中册-行业解决方案/README.md')}">行业方案</a><a class="header-link" href="{href(current, ROOT / '下册-案例汇编/README.md')}">企业案例</a><button class="search-trigger" data-search aria-haspopup="dialog">搜索内容 <kbd>⌘ K</kbd></button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="sidebar">目录 ☰</button></div></header>
 <div class="layout"><nav id="sidebar" class="sidebar" aria-label="全书目录">{sidebar(current)}</nav><div class="workspace">{body}</div></div>
 <dialog id="search-dialog" aria-labelledby="search-label"><div class="search-top"><label id="search-label" for="search-input">搜索报告与案例</label><button id="search-close" aria-label="关闭搜索">×</button></div><input id="search-input" type="search" placeholder="试试：线索、制造业、组织变革…" autocomplete="off"><div id="search-results" aria-live="polite">输入关键词，搜索报告、案例与资料索引。</div></dialog>
 </body></html>'''
@@ -197,11 +211,12 @@ def home_page(current):
 <div class="stats"><div class="stat"><strong>8</strong><span>章研究</span><small>从经营问题到实施验证</small></div><div class="stat"><strong>{counts['entries']}</strong><span>个案例入口</span><small>按行业、公司与项目组织</small></div><div class="stat"><strong>{counts['all_fragments']}</strong><span>个场景片段</span><small>保留来源、阶段与口径</small></div><div class="stat"><strong>4</strong><span>条业务线</span><small>MTL / LTC / IPD / ITR</small></div></div>
 <div class="section-heading"><h2>选择你的阅读路径</h2><a href="{link('索引/阅读路径.md')}">按经营问题查找 →</a></div>
 <div class="volume-grid"><article class="volume-card"><span class="card-label">VOLUME 01 / 研究报告</span><h3>从智力服务到精益经营</h3><p>面向企业老板与业务负责人，沿业务现状、分析和改造举措，研究流程协同、组织分工与持续改进。</p><div class="flow-tags"><span>MTL 市场到线索</span><span>LTC 线索到回款</span><span>IPD 产品开发</span><span>ITR 问题到解决</span></div><a class="text-link" href="{link('上册-研究报告/README.md')}">查看上册目录 →</a></article>
-<article class="volume-card"><span class="card-label">VOLUME 02 / 案例汇编</span><h3>在真实业务中看 AI 应用</h3><p>按行业、公司或项目呈现业务背景、问题、实施过程、效果与启示。区分实际使用、试点、原型和设想。</p><div class="flow-tags"><span>制造业</span><span>批发与零售</span><span>信息技术</span><span>商务服务</span><span>更多行业</span></div><a class="text-link" href="{link('下册-案例汇编/README.md')}">浏览全部 {counts['entries']} 个入口 →</a></article></div>
+<article class="volume-card"><span class="card-label">VOLUME 02 / 行业解决方案</span><h3>沿行业架构增加智力服务</h3><p>引用原行业图谱和应用模块，写清三化怎样协同建设，以及建什么、怎么建、怎样验收。</p><div class="flow-tags"><span>原架构与模块</span><span>智力服务</span><span>建设与验收</span></div><a class="text-link" href="{link('中册-行业解决方案/README.md')}">查看中册行业方案 →</a></article>
+<article class="volume-card"><span class="card-label">VOLUME 03 / 案例汇编</span><h3>在真实业务中看数字化与数智化</h3><p>按行业、公司或项目呈现业务背景、问题、实施过程、效果与启示。区分实际使用、试点、原型和设想。</p><div class="flow-tags"><span>制造业</span><span>批发与零售</span><span>信息技术</span><span>商务服务</span><span>更多行业</span></div><a class="text-link" href="{link('下册-案例汇编/README.md')}">浏览全部 {counts['entries']} 个入口 →</a></article></div>
 <div class="section-heading"><h2>沿着问题，逐章展开</h2><span>导论 · 八章正文 · 结语</span></div><div class="chapter-grid">{rows}</div>
 <div class="section-heading"><h2>资料与完整版本</h2><a href="{link('output/pdf/README.md')}">PDF 发行说明 →</a></div>
 <div class="resource-row"><a class="button" href="{link(pdf)}">上下册合订 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-上册-排版预览版.pdf')}">上册 PDF <span>↓</span></a><a class="button" href="{link('output/pdf/企业数智化转型研究报告-下册-排版预览版.pdf')}">下册 PDF <span>↓</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
-<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。计划中的中册行业解决方案尚未纳入。</p>
+<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按原行业方案持续扩充，数字化基础和新增服务分别检验。现有下载PDF保留其发行时内容。</p>
 {footer()}</main>'''
 
 
@@ -244,10 +259,10 @@ def main():
             body = home_page(path)
         else:
             toc = '<p class="toc-title">本页目录</p>' + ''.join(f'<a class="level-{level}" href="#{quote(anchor)}">{escape(title)}</a>' for level, title, anchor in headings)
-            label = '研究报告' if path.parent.name == '上册-研究报告' else ('案例汇编' if path in CASES else '阅读资料')
+            label = '研究报告' if path.parent.name == '上册-研究报告' else ('行业解决方案' if path in MIDDLE else ('案例汇编' if path in CASES else '阅读资料'))
             source_url = REPO + '/blob/main/' + quote(str(path.relative_to(ROOT)), safe='/')
             turn = ''
-            sequence = UPPER + APPENDICES
+            sequence = MIDDLE if path in MIDDLE else UPPER + APPENDICES
             if path in sequence:
                 position = sequence.index(path)
                 if position > 0:

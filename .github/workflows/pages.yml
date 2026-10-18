@@ -24,6 +24,7 @@ jobs:
           cache-dependency-path: scripts/requirements-site.txt
       - run: python -m pip install -r scripts/requirements-site.txt
       - run: python scripts/validate.py
+      - run: python scripts/validate-middle.py
       - run: python scripts/build-site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,29 @@
+{
+  "title": "中册补充来源元数据",
+  "updated_on": "2026-10-18",
+  "records": [
+    {
+      "id": "SC-M01-01",
+      "title": "国家质检中心提质优化三年行动方案（2026—2028年）",
+      "publisher": "国家市场监督管理总局",
+      "source_type": "部门行动方案；主要面向国家质检中心，非全行业软件架构",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/rkjcs/art/2026/art_597cf492ec224868b106f113c59ff530.html",
+      "format": "HTML",
+      "issued_date": "2026-08-22",
+      "published_date": "2026-08-26",
+      "used_in": [
+        "M01-专业技术服务.md"
+      ],
+      "locators": [
+        {
+          "section": "二（三）第10项",
+          "content": "样品、检验过程、数据记录、报告出具的质量控制"
+        },
+        {
+          "section": "二（三）第11项",
+          "content": "检测设备、数据采集、业务流程和管理决策数字化方向"
+        }
+      ]
+    }
+  ]
+}
