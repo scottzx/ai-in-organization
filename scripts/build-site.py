@@ -20,7 +20,8 @@ from markdown_it import MarkdownIt
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
 REPO = 'https://github.com/scottzx/ai-in-organization'
-SITE = os.environ.get('REPORT_SITE_URL', 'https://scottzx.github.io/ai-in-organization/').rstrip('/') + '/'
+SITE = os.environ.get('REPORT_SITE_URL', 'https://research.dreammate.work/report/ai-transformation-2026/').rstrip('/') + '/'
+BACKUP_SITE = 'https://scottzx.github.io/ai-in-organization/'
 ASSETS = {
     path.name: f'{path.stem}.{hashlib.sha256(path.read_bytes()).hexdigest()[:12]}{path.suffix}'
     for path in (ROOT / 'web').iterdir()
@@ -228,8 +229,12 @@ def sidebar(current):
             '<p class="nav-address">联系地址：杭州市西湖区云谷中心</p></div>')
 
 
-def footer():
-    return f'<footer class="footer"><span>© 2026 一芥智能研究院 · 原创内容采用 MIT 许可</span><a href="{REPO}">GitHub 源文档 ↗</a></footer>'
+def footer(current):
+    page = quote(str(output_path(current)), safe='/')
+    return (f'<footer class="footer"><span>© 2026 一芥智能研究院 · 原创内容采用 MIT 许可</span>'
+            f'<span><a href="{SITE + page}">在线阅读</a> · '
+            f'<a href="{BACKUP_SITE + page}">GitHub Pages 备用入口</a> · '
+            f'<a href="{REPO}">GitHub 源文档 ↗</a></span></footer>')
 
 
 def page_shell(current, body, description):
@@ -278,7 +283,7 @@ def home_page(current):
 <div class="section-heading"><h2>资料与版本</h2><a href="{link('output/pdf/README.md')}">历史 PDF 归档 →</a></div>
 <div class="resource-row"><a class="button" href="{link('output/pdf/README.md')}">历史 PDF 归档 <span>→</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
 <p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。旧PDF作为历史版本保留，现行书稿以在线阅读版为准。</p>
-{footer()}</main>'''
+{footer(current)}</main>'''
 
 
 def volume_directory(current):
@@ -377,7 +382,7 @@ def main():
                 if position < len(sequence) - 1:
                     following = sequence[position + 1]
                     turn += f'<a href="{href(path, following)}"><small>下一篇 →</small>{escape(TITLES[following])}</a>'
-            body = f'<div class="reading-layout"><main id="main" class="reading-main"><div class="breadcrumb"><a href="{href(path, ROOT / "README.md")}">报告首页</a> / {label}</div><div class="page-tools"><a href="{source_url}">查看 Markdown 源文档 ↗</a><button id="copy-link" class="plain-button">分享本页 ↗</button></div><article class="prose">{content}</article><nav class="page-turn" aria-label="相邻章节">{turn}</nav>{footer()}</main><aside class="toc" aria-label="本页目录">{toc}</aside></div>'
+            body = f'<div class="reading-layout"><main id="main" class="reading-main"><div class="breadcrumb"><a href="{href(path, ROOT / "README.md")}">报告首页</a> / {label}</div><div class="page-tools"><a href="{source_url}">查看 Markdown 源文档 ↗</a><button id="copy-link" class="plain-button">分享本页 ↗</button></div><article class="prose">{content}</article><nav class="page-turn" aria-label="相邻章节">{turn}</nav>{footer(path)}</main><aside class="toc" aria-label="本页目录">{toc}</aside></div>'
         destination = OUT / output_path(path)
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(page_shell(path, body, description), encoding='utf-8')

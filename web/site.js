@@ -83,10 +83,12 @@ document.addEventListener('keydown', event => {
 });
 document.querySelector('#copy-link').addEventListener('click', async event => {
   const button = event.currentTarget;
+  const shareLink = new URL(document.querySelector('link[rel="canonical"]').href);
+  shareLink.hash = location.hash;
   try {
-    await navigator.clipboard.writeText(location.href);
+    await navigator.clipboard.writeText(shareLink.href);
     button.textContent = '链接已复制';
-  } catch { button.textContent = '请复制浏览器地址分享'; }
+  } catch { button.textContent = '请复制页尾“在线阅读”地址分享'; }
   setTimeout(() => { button.textContent = '分享本页 ↗'; }, 2500);
 });
 document.querySelectorAll('.prose table').forEach(table => {

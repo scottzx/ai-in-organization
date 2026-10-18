@@ -1,6 +1,6 @@
 # 报告网页维护说明
 
-[国内在线阅读](https://research.dreammate.work/report/ai-transformation-2026/) · [GitHub Pages](https://scottzx.github.io/ai-in-organization/) · [返回仓库首页](../README.md)
+[国内在线阅读](https://research.dreammate.work/report/ai-transformation-2026/) · [GitHub Pages 备用入口](https://scottzx.github.io/ai-in-organization/) · [返回仓库首页](../README.md)
 
 网页直接从仓库现有Markdown生成。请在原章节或案例文件修改内容，不必再维护一份网页正文。上册章节、中册行业方案、附录、下册案例、公开索引与PDF发行说明都可直接阅读；过程稿与草稿箱不生成网页；正式内容不得链接到过程稿，草稿箱的既有引用保留为GitHub源文档链接。本地资料库与内部审读底稿保存在本机，不随公开书稿提交。
 
@@ -10,7 +10,7 @@
 
 国内入口部署在现有腾讯云服务器的 `research.dreammate.work/report/ai-transformation-2026/`，使用独立域名与HTTPS证书，报告文件单独存放。官网旧 `/report/` 地址跳转到新入口。同一次GitHub Actions发布流程构建国内阅读版，并通过专用SSH密钥推送静态成品；服务器的报告接收器校验归档后原子切换，失败时保留上次成功版本。专用系统用户没有sudo权限，密钥限制为报告接收命令。首次部署通过Tailscale上传，后续无需保持本机在线。服务配置与维护方法见[腾讯云报告镜像更新器](../scripts/deploy/report-mirror/README.md)。
 
-仓库Pages的发布来源设置为GitHub Actions。每章保留独立网址、本页目录、相邻章节与分享按钮；全文搜索在浏览器本地完成，搜索内容从站点自身加载。
+仓库Pages的发布来源设置为GitHub Actions。每章保留独立网址、本页目录、相邻章节与分享按钮；两处站点的规范链接、分享地址和社交预览链接均使用research域名。分享保留章节锚点，去掉临时查询参数；各页页尾提供对应正文的在线阅读与GitHub Pages备用入口。全文搜索在浏览器本地完成，搜索内容从站点自身加载。
 
 顶部切换上、中、下三册并标出当前册。左侧只显示当前册的章节、行业方案或分类案例，右侧按当前正文生成本页目录；全书首页与公共资料页显示全书入口。左侧目录独立滚动，联系电话与地址固定在侧栏底部，滚动正文或目录均可见。窄屏入口简写为“报告、方案、案例”，与搜索、目录按钮保持在同一行；手机窄屏保留品牌图标，通过“目录”展开左栏，联系信息保留在展开侧栏底部。
 
@@ -30,6 +30,6 @@ python3 -m http.server 8000 --directory _site
 
 打开本机8000端口即可预览。构建器检查所有生成页面的站内链接、图片与锚点，输出目录`_site`不提交。首页案例与场景数从现有案例索引读取，版本文字从仓库首页读取；样式和阅读交互分别维护在[site.css](site.css)与[site.js](site.js)。
 
-站内链接使用相对路径。默认构建以GitHub Pages为发布地址；其他域名和目录通过环境变量 `REPORT_SITE_URL` 指定规范链接和404返回入口，例如 `REPORT_SITE_URL=https://research.dreammate.work/report/ai-transformation-2026/ python3 scripts/build-site.py`。更换源码仓库时修改[构建器](../scripts/build-site.py)的REPO；新增公开入口时同步仓库首页和本说明。
+站内导航使用相对路径，保留当前站点内的阅读体验。默认规范链接、分享地址和404返回首页均为 `https://research.dreammate.work/report/ai-transformation-2026/`，GitHub Pages仅作备用入口。环境变量 `REPORT_SITE_URL` 可覆盖其他报告发行地址；当前两处发布均沿用research主入口。更换源码仓库时修改[构建器](../scripts/build-site.py)的REPO；新增公开入口时同步仓库首页和本说明。
 
 中册目录、补充书目和新增案例的编辑配置位于[scripts/data/middle](../scripts/data/middle/README.md)。更新配置后可重新生成相应索引；日常网页发布使用仓库中的已成稿正文、索引和图片，不需要本地PDF全文或审读记录。
