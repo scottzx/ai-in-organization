@@ -127,8 +127,47 @@ def slug(text):
     return re.sub(r'[^\w\-\s]', '', text.lower()).replace(' ', '-')
 
 
+def reading_sequence(path):
+    if path in MIDDLE:
+        return MIDDLE
+    if path in UPPER + APPENDICES:
+        return UPPER + APPENDICES
+    return []
+
+
+def without_trailing_navigation(path, tokens):
+    sequence = reading_sequence(path)
+    if not sequence or len(tokens) < 3:
+        return tokens
+    opening, inline, closing = tokens[-3:]
+    if (opening.type != 'paragraph_open' or opening.level != 0
+            or inline.type != 'inline' or closing.type != 'paragraph_close'):
+        return tokens
+    targets = set(sequence) | {ROOT / folder / 'README.md' for folder, _, _ in VOLUMES}
+    in_link = False
+    links = 0
+    for child in inline.children or []:
+        if child.type == 'link_open':
+            parsed = urlsplit(child.attrGet('href'))
+            if (parsed.scheme or parsed.netloc or parsed.fragment or not parsed.path
+                    or (path.parent / unquote(parsed.path)).resolve() not in targets):
+                return tokens
+            in_link = True
+            links += 1
+        elif child.type == 'link_close':
+            in_link = False
+        elif not in_link and (child.type != 'text' or child.content.strip(' ·|')):
+            return tokens
+    if not links:
+        return tokens
+    tokens = tokens[:-3]
+    if tokens and tokens[-1].type == 'hr':
+        tokens = tokens[:-1]
+    return tokens
+
+
 def render_document(path):
-    tokens = MD.parse(path.read_text())
+    tokens = without_trailing_navigation(path, MD.parse(path.read_text()))
     headings = []
     counts = Counter()
     for index, token in enumerate(tokens):
@@ -166,6 +205,24 @@ def nav_link(current, target, label=None):
 def current_volume(current):
     folder = current.relative_to(ROOT).parts[0]
     return next((volume for volume in VOLUMES if volume[0] == folder), None)
+
+
+def reading_navigation(current):
+    sequence = reading_sequence(current)
+    if not sequence:
+        return ''
+    volume = current_volume(current)
+    directory = ROOT / volume[0] / 'README.md'
+    links = [f'<a href="{href(current, directory)}">返回本章导航</a>']
+    position = sequence.index(current)
+    for offset, label, relation in [(-1, '上一章', 'prev'), (1, '下一章', 'next')]:
+        neighbor = position + offset
+        if 0 <= neighbor < len(sequence):
+            target = sequence[neighbor]
+            links.append(f'<a href="{href(current, target)}" rel="{relation}" '
+                         f'title="{escape(TITLES[target], quote=True)}">{label}</a>')
+    separator = '<span aria-hidden="true">·</span>'
+    return f'<nav class="page-turn" aria-label="章节导航">{separator.join(links)}</nav>'
 
 
 def volume_navigation(current):
@@ -372,17 +429,8 @@ def main():
             if volume and path != ROOT / volume[0] / 'README.md':
                 label = f'<a href="{href(path, ROOT / volume[0] / "README.md")}">{label}</a>'
             source_url = REPO + '/blob/main/' + quote(str(path.relative_to(ROOT)), safe='/')
-            turn = ''
-            sequence = MIDDLE if path in MIDDLE else UPPER + APPENDICES
-            if path in sequence:
-                position = sequence.index(path)
-                if position > 0:
-                    previous = sequence[position - 1]
-                    turn += f'<a href="{href(path, previous)}"><small>← 上一篇</small>{escape(TITLES[previous])}</a>'
-                if position < len(sequence) - 1:
-                    following = sequence[position + 1]
-                    turn += f'<a href="{href(path, following)}"><small>下一篇 →</small>{escape(TITLES[following])}</a>'
-            body = f'<div class="reading-layout"><main id="main" class="reading-main"><div class="breadcrumb"><a href="{href(path, ROOT / "README.md")}">报告首页</a> / {label}</div><div class="page-tools"><a href="{source_url}">查看 Markdown 源文档 ↗</a><button id="copy-link" class="plain-button">分享本页 ↗</button></div><article class="prose">{content}</article><nav class="page-turn" aria-label="相邻章节">{turn}</nav>{footer(path)}</main><aside class="toc" aria-label="本页目录">{toc}</aside></div>'
+            turn = reading_navigation(path)
+            body = f'<div class="reading-layout"><main id="main" class="reading-main"><div class="breadcrumb"><a href="{href(path, ROOT / "README.md")}">报告首页</a> / {label}</div><div class="page-tools"><a href="{source_url}">查看 Markdown 源文档 ↗</a><button id="copy-link" class="plain-button">分享本页 ↗</button></div><article class="prose">{content}</article>{turn}{footer(path)}</main><aside class="toc" aria-label="本页目录">{toc}</aside></div>'
         destination = OUT / output_path(path)
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(page_shell(path, body, description), encoding='utf-8')
