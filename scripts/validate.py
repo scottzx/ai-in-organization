@@ -15,7 +15,42 @@ texts = {p: p.read_text(encoding='utf-8') for p in documents}
 anchors = {}
 link_count = 0
 
+PUBLICATION_FOLDERS = {'上册-研究报告', '中册-行业解决方案', '下册-案例汇编'}
+
+def reference_self_citations(path, text):
+    """Keep numbered bibliography entries external; ordinary navigation is allowed."""
+    if path.relative_to(ROOT).parts[0] not in PUBLICATION_FOLDERS or path.name.startswith('备份-'):
+        return []
+    issues = []
+    text = re.sub(r'```[\s\S]*?```', '', text)
+    numbers = [int(n) for n in re.findall(r'^\[(\d+)\]\s+', text, re.M)]
+    if numbers and numbers != list(range(1, len(numbers)+1)):
+        issues.append(f'{path.relative_to(ROOT)}: references must be numbered consecutively from [1]')
+    for paragraph in re.split(r'\n\s*\n', text):
+        record = re.match(r'^\[(\d+)\]\s+(.+)', paragraph.strip(), re.S)
+        if not record:
+            continue
+        number, content = record.groups()
+        is_self_citation = '企业数智化转型研究报告' in content
+        for target in re.findall(r'!?\[[^\]\n]*\]\(([^)\n]+)\)', content):
+            parsed = urlsplit(unquote(target.strip().strip('<>')))
+            if parsed.scheme or parsed.netloc:
+                if parsed.hostname == 'research.dreammate.work' and parsed.path.startswith('/report/ai-transformation-2026/'):
+                    is_self_citation = True
+                if parsed.hostname == 'scottzx.github.io' and parsed.path.startswith('/ai-in-organization/'):
+                    is_self_citation = True
+                if parsed.hostname == 'github.com' and parsed.path.startswith('/scottzx/ai-in-organization/'):
+                    is_self_citation = True
+            else:
+                dest = (path.parent / parsed.path).resolve() if parsed.path else path
+                if dest.is_relative_to(ROOT) and dest.relative_to(ROOT).parts and dest.relative_to(ROOT).parts[0] in PUBLICATION_FOLDERS:
+                    is_self_citation = True
+        if is_self_citation:
+            issues.append(f'{path.relative_to(ROOT)}: reference [{number}] cites this report; cite the original source and use ordinary links for internal navigation')
+    return issues
+
 for path, text in texts.items():
+    errors.extend(reference_self_citations(path, text))
     explicit = re.findall(r'<a\s+id="([^"]+)"\s*>', text)
     duplicates = [k for k,v in Counter(explicit).items() if v > 1]
     if duplicates:
