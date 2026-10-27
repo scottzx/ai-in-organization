@@ -25,7 +25,7 @@ BACKUP_SITE = 'https://scottzx.github.io/ai-in-organization/'
 ASSETS = {
     path.name: f'{path.stem}.{hashlib.sha256(path.read_bytes()).hexdigest()[:12]}{path.suffix}'
     for path in (ROOT / 'web').iterdir()
-    if path.is_file() and path.suffix in ('.css', '.js', '.svg')
+    if path.is_file() and path.suffix in ('.css', '.js', '.svg', '.png')
 }
 MD = MarkdownIt('commonmark', {'html': True}).enable('table').enable('strikethrough')
 
@@ -288,7 +288,12 @@ def sidebar(current):
 
 def footer(current):
     page = quote(str(output_path(current)), safe='/')
-    return (f'<footer class="footer"><span>© 2026 一芥智能研究院 · 原创内容采用 MIT 许可</span>'
+    prefix = os.path.relpath('.', output_path(current).parent)
+    badge = quote(prefix + '/assets/' + ASSETS['cc-by-nc-sa-80x15.png'], safe='/.-')
+    deed = 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans'
+    return (f'<footer class="footer"><span class="footer-license">© 2026 一芥智能研究院 · '
+            f'<a rel="license" href="{deed}">本作品采用 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0) 进行许可</a>'
+            f'<a rel="license" href="{deed}"><img class="cc-badge" alt="CC BY-NC-SA 4.0" src="{badge}" width="80" height="15"></a></span>'
             f'<span><a href="{SITE + page}">在线阅读</a> · '
             f'<a href="{BACKUP_SITE + page}">GitHub Pages 备用入口</a> · '
             f'<a href="{REPO}">GitHub 源文档 ↗</a></span></footer>')
