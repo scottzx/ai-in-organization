@@ -101,7 +101,7 @@ def main():
             'output_size_px': list(struct.unpack('>II', output.read_bytes()[16:24])),
             'content_detection': analysis, 'required_in': rule['required_in'],
             'page_number_handling': rule['page_number_handling'],
-            'use': '图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的MIT许可',
+            'use': '图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可',
         }
         for key in ('printed_page', 'figure_titles'):
             if key in rule:

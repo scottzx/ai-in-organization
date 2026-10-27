@@ -807,10 +807,10 @@ class Builder:
             contents_note,
             '正文区分来源事实、一芥分析与待验证判断，并保留使用阶段、效果口径和来源定位。本书未对案例效果作独立审计或完整事实核验。',
             '本书只作经营管理分析与案例整理，不构成法律、财务、税务、医疗或其他专业意见；涉及具体业务操作时，请咨询相应执业者。',
-            'Copyright © 2026 一芥智能研究院。MIT许可适用于本仓库有权许可的原创正文、分析与索引；第三方音视频、图书、行业架构原图和资料由相应权利人持有；中册引用图示保留来源与页码，不纳入原创内容的MIT许可。',
+            'Copyright © 2026 一芥智能研究院。本作品采用 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0) 进行许可，适用于本仓库有权许可的原创正文、分析与索引。第三方音视频、图书、行业架构原图和资料由相应权利人持有；中册引用图示保留来源与页码，不纳入原创内容的 CC BY-NC-SA 4.0 许可。本次变更之前已发布的版本仍按当时随附的 MIT 许可证提供。',
             '目录、书签和文内案例引用可跳转；公开出处可点击访问。结构化来源索引与历史更新记录通过项目仓库查阅。',
         ]: self.story.append(self.para(escape(text)))
-        self.story.append(self.para('<a href="https://github.com/scottzx/ai-in-organization" color="#1D4ED8">项目仓库与持续更新</a>  ·  <a href="https://github.com/scottzx/ai-in-organization/blob/main/LICENSE" color="#1D4ED8">完整MIT许可证</a>'))
+        self.story.append(self.para('<a href="https://github.com/scottzx/ai-in-organization" color="#1D4ED8">项目仓库与持续更新</a>  ·  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" color="#1D4ED8">CC BY-NC-SA 4.0 许可协议</a>  ·  <a href="https://github.com/scottzx/ai-in-organization/blob/main/LICENSE" color="#1D4ED8">法律文本</a>'))
         toc_title=self.para('目录','h1'); toc_title.running_title='目录'
         self.story.extend([PageBreak(),toc_title])
         toc=TableOfContents(); toc.levelStyles=[self.styles[f'toc{i}'] for i in range(3)]
