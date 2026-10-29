@@ -4,14 +4,14 @@
   "version": "v9.0",
   "updated_on": "2026-10-20",
   "counts": {
-    "entries": 80,
-    "industry_and_pending_entries": 72,
+    "entries": 81,
+    "industry_and_pending_entries": 73,
     "methods": 1,
     "references": 7,
-    "source_records_main_fragment": 72,
-    "practice_fragments": 112,
+    "source_records_main_fragment": 73,
+    "practice_fragments": 113,
     "reference_fragments": 7,
-    "all_fragments": 119
+    "all_fragments": 120
   },
   "source_note": "来源为公开资料及受访者自述；原文不在本仓库转载。整理稿行号与文件哈希用于回查研究底稿，不代表独立事实核验。",
   "supplementary_chapter_sources": [
@@ -4164,6 +4164,67 @@
               "line_start": 41,
               "line_end": 53,
               "locator": "原书页码：67–75；PDF 文件页码：68–76。 Markdown第41—53行。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "J02",
+      "title": "招商银行大模型工作项梳理与应用",
+      "path": "下册-案例汇编/J-金融业/J02-招商银行大模型工作项梳理与应用.md",
+      "industry_code": "J",
+      "industry_name": "金融业",
+      "classification_status": "supported",
+      "entry_type": "single_project",
+      "source_record_id": "CMB-2025",
+      "fragments": [
+        {
+          "source_fragment_id": "CMB-2025-F01",
+          "title": "大模型工作项梳理与岗位小助",
+          "stage": "live",
+          "stage_label": "已使用",
+          "scope": "2025年度报告与业绩发布会披露的场景、覆盖率和效果；企业口径，未独立审计",
+          "anchor": "cmb-2025-f01",
+          "sources": [
+            {
+              "title": "招商银行2025年度报告（A股）",
+              "publisher": "招商银行股份有限公司（企业披露）",
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+              "document": "资料库/上市公司年报/cmb-2025-annual.txt",
+              "document_sha256": "9f9b02c0157daea52bf18f54fe72ee99768a6450f27beefda48325da9510b59a",
+              "line_start": 1862,
+              "line_end": 1917,
+              "locator": "PDF第44—45页；印刷第43—44页",
+              "source_file_sha256": "abe612a273468072b176dd51ea460c1e1596f8ca729cbc6db3fa28ba9a57ea79",
+              "source_type": "上市公司年度报告与业绩发布会实录；企业自述，未独立审计",
+              "publication_date": "2026-03-28"
+            },
+            {
+              "title": "招商银行2025年度业绩发布会问答环节实录",
+              "publisher": "招商银行股份有限公司（企业披露）",
+              "url": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260331/a1620cd2-b567-4db0-ba02-9ee174aa4693.pdf",
+              "document": "资料库/上市公司年报/cmb-2025-briefing.txt",
+              "document_sha256": "018b09e5f2f5e451fdf31fc260df22b1e38c6f5c95f55e5bc1e11585e180a02e",
+              "line_start": 63,
+              "line_end": 130,
+              "locator": "PDF第3—6页",
+              "source_file_sha256": "3ecc1d4d63eb18d9e465345638e1f2005af9b6976ec5f1d0748491fd97907034",
+              "source_type": "上市公司年度报告与业绩发布会实录；企业自述，未独立审计",
+              "publication_date": "2026-03-31"
+            },
+            {
+              "title": "招商银行2025年度业绩发布会问答环节实录",
+              "publisher": "招商银行股份有限公司（企业披露）",
+              "url": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260331/a1620cd2-b567-4db0-ba02-9ee174aa4693.pdf",
+              "document": "资料库/上市公司年报/cmb-2025-briefing.txt",
+              "document_sha256": "018b09e5f2f5e451fdf31fc260df22b1e38c6f5c95f55e5bc1e11585e180a02e",
+              "line_start": 388,
+              "line_end": 440,
+              "locator": "PDF第17—19页",
+              "source_file_sha256": "3ecc1d4d63eb18d9e465345638e1f2005af9b6976ec5f1d0748491fd97907034",
+              "source_type": "上市公司年度报告与业绩发布会实录；企业自述，未独立审计",
+              "publication_date": "2026-03-31"
             }
           ]
         }
