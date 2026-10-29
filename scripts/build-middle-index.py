@@ -107,7 +107,7 @@ def main():
  lines+=['','## 选用对照与引用依据','']
  for p in sorted(MIDDLE.glob('附录*.md')): lines.append(f'- [{title(p)}]({p.name})')
  lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [行业解决方案章节模板](../templates/行业解决方案章节模板.md)','- [整体编写大纲](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',
- '本册为持续编写的初稿。原图内容归属原发布者与编制者，服务应用为方案建议，企业成效按各篇来源与阶段理解。','']
+ '原图内容归属原发布者与编制者，服务应用为方案建议，企业成效按各篇来源与阶段理解。','']
  (MIDDLE/'README.md').write_text('\n'.join(lines))
  (MIDDLE/'研究记录').mkdir(exist_ok=True)
  (MIDDLE/'研究记录/章节引用清单.json').write_text(json.dumps({'updated_on':'2026-10-18','chapters':cross},ensure_ascii=False,indent=2)+'\n')
