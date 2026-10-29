@@ -2800,7 +2800,7 @@
           "source_fragment_id": "C-11-F02",
           "title": "角标尺单次资料理解演示",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "单次角标尺问题演示；人工耗时仅为老板预估。",
           "anchor": "c-11-f02",
           "sources": [
@@ -4831,8 +4831,8 @@
     },
     {
       "id": "M01",
-      "title": "某甲级城市规划设计院AI辅助规划",
-      "path": "下册-案例汇编/M-科学研究与技术服务业/M01-某甲级城市规划设计院AI辅助规划.md",
+      "title": "某城市规划设计院AI辅助规划",
+      "path": "下册-案例汇编/M-科学研究与技术服务业/M01-某城市规划设计院AI辅助规划.md",
       "industry_code": "M",
       "industry_name": "科学研究和技术服务业",
       "classification_status": "supported",
@@ -5419,7 +5419,7 @@
           "source_fragment_id": "C-06-F01",
           "title": "算法摆放转为现场打印指导",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "按真实车内尺寸与十一种货物规格模拟的原型验证；装车时间变化仍为预计。",
           "anchor": "c-06-f01",
           "sources": [
