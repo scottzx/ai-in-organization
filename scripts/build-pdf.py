@@ -14,6 +14,7 @@ prints each external URL after its title in reference entries (参考文献/参�
 remain title-only and internal links never print a URL.
 Override BOOK_BODY_FONT, BOOK_HEADING_FONT and BOOK_KAI_FONT for Chinese TTF fonts.
 BOOK_DIAGRAM_FONT and BOOK_DIAGRAM_HEADING_FONT override illustration faces.
+依赖：python3 -m pip install -r scripts/requirements-pdf.txt（锁定ReportLab 5.1.0，换版本可能改变分页与页码）。
 """
 from pathlib import Path
 from collections import Counter
