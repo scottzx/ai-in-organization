@@ -79,7 +79,7 @@ def pdf_version_hits(path):
     out += [f'PDF属性：{h}' for h in version_hits(meta)]
     return out
 
-COPYRIGHT_MARKERS_DEFAULT = ['版权页', '版权所有', '著作权人', 'CC BY', '知识共享']
+COPYRIGHT_MARKERS_DEFAULT = ['版权页', '版权所有', '著作权人']   # 单独的“CC BY”“知识共享”不算（中册附录B 图源索引表多处出现）
 def pdf_url_hits(path, copyright_markers=None):
     """PDF 文字层中的网址按形态分类：印刷版补印的“（https…）”、参考文献原文著录的“. https…”、
     版权页上的网址（CC 许可协议、项目仓库地址，总编辑定为允许范围），其余算正文裸链。"""
