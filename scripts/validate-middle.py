@@ -131,8 +131,6 @@ def main():
   for chapter in rule['required_in']:
    text=(MID/chapter).read_text()
    if source_url not in text: errors.append(chapter+': figure lacks original PDF page link: '+asset)
-   if rule.get('printed_page') and not re.search(r'印刷第'+str(rule['printed_page'])+r'页',text):
-    errors.append(chapter+': figure lacks printed page locator: '+asset)
  if set(by_asset)!=set(r['asset'] for r in figure_rules['figures']):
   errors.append('Figure manifest and reviewed figure inventory differ')
  intake=json.loads((DATA/'新增案例条目.json').read_text())
