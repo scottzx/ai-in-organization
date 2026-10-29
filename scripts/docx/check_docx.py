@@ -133,6 +133,7 @@ def main():
             for c in row.cells:
                 paras += [(p, True) for p in c.paragraphs]
     chapter = '前置'; body_started = False
+    in_front = False; front_caps = []   # 当前一级标题是否为 front 篇目的「导言」；front 篇目内题注
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
@@ -183,7 +184,8 @@ def main():
         # 编号
         if key == 'h1':
             ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
-            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True   # 仅 front 篇目可用「导言」
+            in_front = False
+            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True; in_front = True   # 仅 front 篇目可用「导言」
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)
@@ -194,8 +196,11 @@ def main():
             m = re.match(r'^((?:\d+|[A-Z])(?:\.\d+){%d}) ' % (int(key[1]) - 1), txt)
             check(f'{key} 编号层级“X.Y{".Z" * (int(key[1]) - 2)}”', bool(m), where)
         if key == 'caption':
-            m = re.match(r'^([图表]) ([0-9A-Z]+)-(\d+)', txt)
-            check('图题/表题 编号“图/表 X-Y”', bool(m), where)
+            # 章号为 1 起的数字或附录字母；front 篇目（导言）内只能用“导”（图导-N／表导-N）；“0”一律不合格
+            m = re.match(r'^([图表]) ?(导|[1-9]\d*|[A-Z])-(\d+)', txt)
+            if m and (m.group(2) == '导') != in_front: m = None
+            if m and in_front: front_caps.append(p._p)
+            check('图题/表题 编号“图/表 X-Y”（front 篇目为“图/表 导-Y”）', bool(m), where)
             if m:
                 k = (m.group(1), m.group(2)); prev = cap_seq.get(k, 0)
                 check('图题/表题 章内连续编号', int(m.group(3)) == prev + 1, where + f' 前一号为{prev}')
@@ -390,7 +395,7 @@ def main():
     caps = [k for k, p in enumerate(ps) if p.style.name == 'Caption' and p.text.startswith('图')]
     for k in caps:
         p = ps[k]; nx = ps[k + 1].text.strip() if k + 1 < len(ps) else ''
-        check('图题格式“图X-Y　标题”且居中', bool(re.match(r'^图 ?\d+-\d+\u3000\S', p.text)) and eff_pf(p, 'alignment') == 1, p.text[:20])
+        check('图题格式“图X-Y　标题”（front 篇目“图导-Y”）且居中', bool(re.match(r'^图 ?导-\d+\u3000\S' if any(p._p is e for e in front_caps) else r'^图 ?(?:[1-9]\d*|[A-Z])-\d+\u3000\S', p.text)) and eff_pf(p, 'alignment') == 1, p.text[:20])
         check('图题下一行为资料来源/数据来源', bool(re.match(r'^(资料来源|数据来源)', nx)), p.text[:20])
     # 输出
     total_fail = sum(1 for v in items.values() if v[1])

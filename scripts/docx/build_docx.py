@@ -305,9 +305,11 @@ class Builder:
                 self.heading_raw(1, self.cfg['numbering']['chapter_format'].format(cn=cn_num(host), title=self.demote[host]) if isinstance(host, int)
                                  else f'附录{host}\u3000{self.demote[host]}')
             self.whole = ch in self.demote and len(self.members.get(ch, [])) == 1 and self.is_guide is False and ch in self.whole_ch
-        label = str(ch) if ch is not None else '0'
+        # 册首 front 篇目（style.yaml volumes.<vol>.front，如下册 00-导言.md）不编章号：图表号用“导”，即 图导-1／表导-1；其余不编号篇目仍按 0 计
+        _front = {f"{v['dir']}/{f}" for v in self.cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
+        label = str(ch) if ch is not None else ('导' if rel in _front else '0')
         self.label = label; self.cur_file = rel
-        # 图表号按“全书章号”计：同一章的后续篇目接着上一篇的序号；不编号的导读页（label 0）单独计
+        # 图表号按“全书章号”计：同一章的后续篇目接着上一篇的序号；不编号的导读页（label 0）、front 篇目（label 导）各自单独计
         self.ntab, self.nfig = self.chap_counters.get(label, (0, 0))
         self.tab_base = self.ntab   # 本篇第一个表在本章中的序号偏移（表题按本篇内序号取）
         self.titles = [t['title'] for t in self.table_titles.get(rel, [])]
