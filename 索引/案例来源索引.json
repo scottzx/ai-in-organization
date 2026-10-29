@@ -710,7 +710,7 @@
           "source_fragment_id": "S-04-F01",
           "title": "报销识别以后，费用要落到哪个订单",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "现场已进行需求与数据讨论；采集、看板、问答和智能体数量仍是计划。",
           "anchor": "s-04-f01",
           "sources": [
@@ -762,7 +762,7 @@
           "source_fragment_id": "S-05-F01",
           "title": "企业为什么要求财务比原计划更早进入",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "发生的是需求核对和排期调整；尚未展示AI稳定执行或成本核算交付。",
           "anchor": "s-05-f01",
           "sources": [
@@ -803,8 +803,8 @@
         {
           "source_fragment_id": "S-06-F01",
           "title": "同一订单，不同岗位需要不同字段和权限",
-          "stage": "pilot",
-          "stage_label": "试点",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
           "scope": "来源称交付培训并走真实流程；现场仍在修订权限和单据，最终上线未知。",
           "anchor": "s-06-f01",
           "sources": [
@@ -1162,7 +1162,7 @@
           "source_fragment_id": "S-26-F03",
           "title": "售后复盘要回到产品标准",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "已有售后系统；跨部门知悉、复盘回工艺及产品标准的完整闭环是受访者描述的目标，未证实全部落地",
           "anchor": "s-26-f03",
           "sources": [
@@ -1387,8 +1387,8 @@
         {
           "source_fragment_id": "S-30-F01",
           "title": "样机在合作场里验证什么",
-          "stage": "pilot",
-          "stage_label": "试点",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
           "scope": "第一代样机在战略伙伴处验证，第二代研发；其他客户只有采购意向",
           "anchor": "s-30-f01",
           "sources": [
@@ -3431,8 +3431,8 @@
         {
           "source_fragment_id": "S-28-F01",
           "title": "早期AI图为何反而更贵",
-          "stage": "pilot",
-          "stage_label": "试点",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
           "scope": "早期服务阶段复盘，约80%靠PS补救；不是当前能力比例",
           "anchor": "s-28-f01",
           "sources": [
@@ -3554,7 +3554,7 @@
           "source_fragment_id": "S-17-F02",
           "title": "网关架构的推演不等于制造客户事故处理",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "工厂质量异常和电商退货由“可以出现”“如果”引入；属于架构场景。",
           "anchor": "s-17-f02",
           "sources": [
@@ -3758,7 +3758,7 @@
           "source_fragment_id": "S-39-F03",
           "title": "录音工牌为何停在论证阶段",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "团队论证过，明确未做；未实施不等技术失败",
           "anchor": "s-39-f03",
           "sources": [
@@ -4025,8 +4025,8 @@
         {
           "source_fragment_id": "S-41-F02",
           "title": "GEO工具与获客效果分开验收",
-          "stage": "unknown",
-          "stage_label": "阶段未明",
+          "stage": "concept",
+          "stage_label": "预计",
           "scope": "工具功能、价格与供应商方法说明；客户成效缺定量佐证",
           "anchor": "s-41-f02",
           "sources": [
@@ -4355,8 +4355,8 @@
         {
           "source_fragment_id": "S-32-F02",
           "title": "仅作机制参考",
-          "stage": "unknown",
-          "stage_label": "阶段未明",
+          "stage": "concept",
+          "stage_label": "预计",
           "scope": "顾问跨企业转述和假设示例；不标实测已交付成效",
           "anchor": "s-32-f02",
           "sources": [
@@ -4748,7 +4748,7 @@
           "source_fragment_id": "S-11-F02",
           "title": "部门FDE和七类角色属于怎样的阶段",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "部门FDE连接、社区制及未来组织形态为计划或判断。",
           "anchor": "s-11-f02",
           "sources": [
@@ -5088,8 +5088,8 @@
         {
           "source_fragment_id": "S-38-F01",
           "title": "药师面对患者，助手处理记录与检索",
-          "stage": "pilot",
-          "stage_label": "试点",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
           "scope": "产品试用两三个月，有现场服务演示；不作诊疗效果判断",
           "anchor": "s-38-f01",
           "sources": [
@@ -5119,7 +5119,7 @@
           "source_fragment_id": "S-38-F02",
           "title": "扩大服务覆盖还是岗位替代",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "扩大覆盖和从窗口到临床的方向；不能把80张床设想写为现用配置",
           "anchor": "s-38-f02",
           "sources": [
@@ -5232,8 +5232,8 @@
         {
           "source_fragment_id": "S-19-F01",
           "title": "先找到影响内容投入的决定，再选择AI切口",
-          "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
           "scope": "三天岗位访谈与业务地图已完成；选题访谈预测系统仍为后续计划。",
           "anchor": "s-19-f01",
           "sources": [
@@ -5501,7 +5501,7 @@
           "source_fragment_id": "S-02-F01",
           "title": "数据权限为什么影响中台运作",
           "stage": "concept",
-          "stage_label": "需求与设想",
+          "stage_label": "预计",
           "scope": "作者观点和解释性流程；未披露客户项目或验收。",
           "anchor": "s-02-f01",
           "sources": [
