@@ -60,7 +60,7 @@ def main():
    cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':[]})
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
  by_path={e['path']:e for e in entries}
- table=['# 附录B 行业架构、来源图示与企业案例对照','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
+ table=['# 附录B　行业架构、来源图示与企业案例对照','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
         '[中册目录](README.md) · [行业资料库](../索引/工信部行业数字化转型资料汇总.md) · [原图来源](assets/README.md)','',
         '原图给出行业参考架构和模块，企业案例说明实际建设范围，智力服务新增作用按各章的模块说明与服务应用理解。表中只列当前正文已经使用的引用。','',
         '| 章节 | 下册企业参照 | 原图摘引 |','| --- | --- | --- |']

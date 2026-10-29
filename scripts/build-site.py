@@ -344,7 +344,7 @@ def home_page(current):
 <div class="section-heading"><h2>沿着问题，逐章展开</h2><span>导论 · 八章正文 · 结语</span></div><div class="chapter-grid">{rows}</div>
 <div class="section-heading"><h2>资料与版本</h2><a href="{link('output/pdf/README.md')}">历史 PDF 归档 →</a></div>
 <div class="resource-row"><a class="button" href="{link('output/pdf/README.md')}">历史 PDF 归档 <span>→</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
-<p class="evidence-note">本报告为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。旧PDF作为历史版本保留，现行书稿以在线阅读版为准。</p>
+<p class="evidence-note">本书为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。旧PDF作为历史版本保留，现行书稿以在线阅读版为准。</p>
 {footer(current)}</main>'''
 
 
