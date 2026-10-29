@@ -21,3 +21,6 @@ tmp/pdfs/
 
 # 中册本地审读与核验底稿；公开编写配置见 scripts/data/middle/
 /中册-行业解决方案/研究记录/
+
+# 成品 PDF 交付时现场生成，不进仓库
+output/pdf/*.pdf

@@ -101,6 +101,12 @@ def plain(items):
     return ''.join(result)
 
 
+def section_anchor(title):
+    # Numbered headings keep their historical section-N-M link targets.
+    number=re.match(r'(\d+(?:\.\d+)+)\s',title)
+    return 'section-'+number[1].replace('.','-') if number else None
+
+
 def slug(text):
     return re.sub(r'[^\w\-\s]', '', text.lower()).replace(' ', '-')
 
@@ -428,6 +434,7 @@ class BookDoc(BaseDocTemplate):
 
 class Builder:
     def __init__(self, output=None, volume='all'):
+        self.note_number=0; self.pending_notes=[]
         self.output = Path(output).resolve() if output else None
         self.volume = volume
         self.body_start_source = ROOT/'上册-研究报告/00-导论.md'
@@ -549,8 +556,34 @@ class Builder:
             elif t=='Quoted': result.append('“'+self.inline(c[1],strong=strong)+'”')
             elif t=='RawInline':
                 for anchor in re.findall(r'id="([^"]+)"',c[1]): result.append(f'<a name="{key(self.current,anchor)}"/>')
+            elif t=='Note':
+                # Markdown footnotes become superscript links to chapter endnotes.
+                self.note_number+=1; n=self.note_number
+                name=key(self.current,f'fn-{n}'); ref=key(self.current,f'fnref-{n}')
+                self.pending_notes.append((n,c))
+                result.append(f'<a name="{ref}"/><super><a href="#{name}" color="#1D4ED8">{n}</a></super>')
             else: raise ValueError(f'Unsupported inline {t}')
         return ''.join(result)
+
+    def document_blocks(self,blocks):
+        # Footnote numbers restart in every chapter and print at the chapter end.
+        self.note_number=0; self.pending_notes=[]
+        out=self.blocks(blocks)
+        if self.pending_notes:
+            title=self.para('注释','h4'); title.keepWithNext=True
+            out.extend([CondPageBreak(60),Anchor([key(self.current,'本章参考资料')]),title])
+            i=0
+            while i<len(self.pending_notes):
+                n,note=self.pending_notes[i]; i+=1
+                name=key(self.current,f'fn-{n}'); ref=key(self.current,f'fnref-{n}')
+                flows=self.blocks(note)
+                label=f'<a name="{name}"/><a href="#{ref}" color="#1D4ED8">{n}.</a> '
+                if flows and isinstance(flows[0],Paragraph):
+                    flows[0]=self.para(label+flows[0].text,'small')
+                else: flows.insert(0,self.para(label,'small'))
+                out.extend(flows)
+        self.pending_notes=[]
+        return out
 
     def load(self,path):
         text=path.read_text()
@@ -570,10 +603,14 @@ class Builder:
         self.anchors.add(key(path))
         for anchor in re.findall(r'<a\s+id="([^"]+)"',path.read_text()):
             self.anchors.add(key(path,anchor))
+        if re.search(r'^\[\^[^\]]+\]:',path.read_text(),re.M):
+            # Chapter references moved into footnotes; old 本章参考资料 links open the endnotes.
+            self.anchors.add(key(path,'本章参考资料'))
         for b in blocks:
             if b['t']=='Header':
                 self.anchors.add(key(path,b['c'][1][0]))
                 self.anchors.add(key(path,slug(plain(b['c'][2]))))
+                if section_anchor(plain(b['c'][2])): self.anchors.add(key(path,section_anchor(plain(b['c'][2]))))
             elif b['t']=='RawBlock':
                 for a in re.findall(r'id="([^"]+)"',b['c'][1]): self.anchors.add(key(path,a))
 
@@ -609,7 +646,8 @@ class Builder:
             elif t=='Header':
                 level,attrs,items=c; title=plain(items)
                 self.heading_context=title
-                names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]))
+                names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]
+                                         +([key(self.current,section_anchor(title))] if section_anchor(title) else [])))
                 while out and isinstance(out[-1],Anchor):
                     names.extend(out.pop().names)
                 previous_keeps=out and isinstance(out[-1],Paragraph) and (
@@ -832,7 +870,7 @@ class Builder:
                         self.story.append(p)
                         current_middle_group=group
                 self.story.append(Anchor([key(path)]))
-                self.story.extend(self.blocks(docs[path]))
+                self.story.extend(self.document_blocks(docs[path]))
                 self.sources.append({'path':str(path.relative_to(ROOT)),
                                      'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         pdf=self.output or (PDF if self.volume=='all' else OUT/(TITLE+f'-{self.volume_name()}.pdf'))
@@ -859,7 +897,7 @@ class Builder:
         self.register(path, blocks)
         self.current = path
         self.story.append(Anchor([key(path)]))
-        self.story.extend(self.blocks(blocks))
+        self.story.extend(self.document_blocks(blocks))
         self.sources.append({'path': str(path.relative_to(ROOT)),
                              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         title = next((plain(b['c'][2]) for b in blocks if b['t'] == 'Header' and b['c'][0] == 1), path.stem)
