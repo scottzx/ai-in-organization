@@ -226,11 +226,13 @@ def main():
     # 各级标题编号层次（中册降级版式：X.Y / X.Y.Z / （n））
     demote = json.loads(_side.read_text('utf-8')).get('demote') if _side.exists() else False
     if demote:
+        dm_ch = json.loads(_side.read_text('utf-8')).get('demote_chapters'); dm_ch = {c for c in dm_ch if isinstance(c, int)} if dm_ch else None
         ch = sec = sub = n4 = 0; ch_t = ''; app_h2 = []; guides = sum(1 for x in json.loads(_side.read_text('utf-8'))['chapters'] if x.get('chapter') is None); seen = set()
         for i, p in enumerate(doc.paragraphs):
             sn, t = p.style.name, p.text.strip(); w = f'段{i+1}「{t[:24]}」'
             if sn == 'Heading 1':
                 m = re.match(r'^第(.+?)章', t); ch = CNV.get(m.group(1)) if m else t[:3]; ch_t = t; sec = sub = n4 = 0
+                if dm_ch is not None and isinstance(ch, int) and ch not in dm_ch: ch = None   # 合订本中未降级的章（上册）不按降级版式核
             elif isinstance(ch, str) and sn == 'Heading 2' and re.match(r'^附录[A-Z]', ch_t):
                 L_ = ch_t[2]; m = re.match(r'^([A-Z])\.(\d+) \S', t)
                 check('附录 h2 编号为“A.Y”且字母=所在附录', bool(m) and m.group(1) == L_, w)
