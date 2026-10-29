@@ -1023,3 +1023,13 @@ images:
   redraw_file: null
   note: "资料来源：本书绘制，据本节正文整理，为定性示意，不含数据。"
   manual_review: null
+- file: fig-00-1-下册各门类案例篇数.png
+  chapters: 00-导言
+  action: keep
+  advice: 本书新绘（rev/figures）
+  source: 本书绘制
+  url: null
+  not_cc: false
+  redraw_file: null
+  note: "资料来源：据本书下册目录整理。"
+  manual_review: null
