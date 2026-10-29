@@ -1,0 +1,695 @@
+images:
+- file: A11-制糖-41.png
+  chapters: C23-制糖
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第41页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=41
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-医疗装备-32.png
+  chapters: C25-医疗装备
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第32页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=32
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-医疗装备-33.png
+  chapters: C25-医疗装备
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第33页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=33
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-医疗装备-34.png
+  chapters: C25-医疗装备
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第34页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=34
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-医疗装备-35.png
+  chapters: C25-医疗装备
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第35页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=35
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-印制板-53.png
+  chapters: C09-印制电路板与电子装联
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第53页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=53
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-印制板-54.png
+  chapters: C09-印制电路板与电子装联
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第54页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=54
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-家电-37.png
+  chapters: C10-家电
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第37页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=37
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-家电-38.png
+  chapters: C10-家电
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第38页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=38
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-家电-39.png
+  chapters: C10-家电
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第39页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=39
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-工程机械-22.png
+  chapters: C01-工程机械
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第22页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=22
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-工程机械-23.png
+  chapters: C01-工程机械
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第23页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=23
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-新能源汽车-25.png
+  chapters: C02-汽车与零部件
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第25页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=25
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-新能源汽车-26.png
+  chapters: C02-汽车与零部件
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第26页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=26
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-新能源汽车-27.png
+  chapters: C02-汽车与零部件
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第27页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=27
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-智能移动终端-56.png
+  chapters: C16-智能移动终端
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第56页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=56
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-智能移动终端-57.png
+  chapters: C16-智能移动终端
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第57页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=57
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-机器人-29.png
+  chapters: C03-机器人
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第29页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=29
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-机器人-30.png
+  chapters: C03-机器人
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第30页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=30
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-民爆-59.png
+  chapters: C14-民爆
+  action: delete
+  advice: 删除（或重绘为管理信息流程图）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第59页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=59
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-民爆-60.png
+  chapters: C14-民爆
+  action: delete
+  advice: 删除（或重绘为管理信息流程图）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第60页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=60
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-民爆-61.png
+  chapters: C14-民爆
+  action: delete
+  advice: 删除（或重绘为管理信息流程图）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第61页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=61
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-民爆-62.png
+  chapters: C14-民爆
+  action: delete
+  advice: 删除（或重绘为管理信息流程图）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第62页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=62
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-白酒-43.png
+  chapters: C24-白酒
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第43页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=43
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-白酒-44.png
+  chapters: C24-白酒
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第44页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=44
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-石化-16.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第16页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=16
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-石化-17.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第17页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=17
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-石化-18.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第18页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=18
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-石化-19.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第19页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=19
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-石化-20.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第20页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=20
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-美妆日化-46.png
+  chapters: C20-美妆日化
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第46页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=46
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-美妆日化-47.png
+  chapters: C20-美妆日化
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第47页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=47
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-钢铁-13.png
+  chapters: C05-钢铁
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第13页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=13
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-钢铁-14.png
+  chapters: C05-钢铁
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第14页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=14
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-锂电池-49.png
+  chapters: C15-锂电池
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第49页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=49
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-锂电池-50.png
+  chapters: C15-锂电池
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第50页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=50
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: A11-锂电池-51.png
+  chapters: C15-锂电池
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第51页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=51
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B01-钢铁-41.png
+  chapters: C05-钢铁
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部钢铁行业数字化转型指南(2021) 第41页
+  url: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=41
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B01-钢铁-43.png
+  chapters: C05-钢铁
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部钢铁行业数字化转型指南(2021) 第43页
+  url: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=43
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B02-工程机械-57.png
+  chapters: C01-工程机械
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部工程机械指南(2023,gov.cn) 第57页
+  url: https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B03-电力-20.png
+  chapters: D01-电力
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部电力指南(2024) 第20页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20249/7d9030c7509741a0a3b3c14611634965.pdf#page=20
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B04-石化-14.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部石化指南(2025) 第14页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=14
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B04-石化-16.png
+  chapters: C06-石化化工
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部石化指南(2025) 第16页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=16
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B05-船舶-17.png
+  chapters: C04-船舶
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部船舶指南(2025) 第17页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B05-船舶-44.png
+  chapters: C04-船舶
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部船舶指南(2025) 第44页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=44
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: B06-油气储运-26.png
+  chapters: G03-油气储运
+  action:
+    ebook: keep
+    print: redraw
+  advice: 保留（电子书）/重绘（纸书）
+  source: 工信部油气储运指南(2026) 第26页
+  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20264/52fcd95580bb4d7f89131f5378f522f7.pdf#page=26
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C07-数字金融-34.png
+  chapters: J01-银行, J04-基金管理
+  action: redraw
+  advice: 重绘1张，其余删除
+  source: 中国信通院《数字金融》(2025) 第34页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=34
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: true
+- file: C07-数字金融-35.png
+  chapters: J02-保险, J03-证券服务
+  action: redraw
+  advice: 重绘1张，其余删除
+  source: 中国信通院《数字金融》(2025) 第35页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=35
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: true
+- file: C07-数字金融-9.png
+  chapters: J01-银行, J02-保险, J03-证券服务, J04-基金管理
+  action: redraw
+  advice: 重绘1张，其余删除
+  source: 中国信通院《数字金融》(2025) 第9页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=9
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: true
+- file: C09-智慧农业-9.png
+  chapters: A01-农业, A03-畜牧业
+  action: redraw
+  advice: 重绘
+  source: 中国信通院智慧农业 第9页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf#page=9
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C10-数字乡村-11.png
+  chapters: A01-农业
+  action: redraw
+  advice: 重绘
+  source: 中国信通院数字乡村(2024) 第11页
+  url: https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C11-智慧医疗-13.png
+  chapters: Q01-医疗健康
+  action: delete
+  advice: 删除，改文字引用
+  source: 中国信通院5G智慧医疗(2019) 第13页
+  url: https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=13
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C11-远程会诊-31.png
+  chapters: Q01-医疗健康
+  action: delete
+  advice: 删除，改文字引用
+  source: 中国信通院5G智慧医疗(2019) 第31页
+  url: https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=31
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C16-城市运管中心-27.png
+  chapters: S01-政务与公共服务
+  action: delete
+  advice: 删除，改文字引用
+  source: 中国信通院城市运管中心(2020) 第27页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202009/P020200917537374351025.pdf#page=27
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C17-智能云-41.png
+  chapters: I03-云计算与模型平台服务
+  action: redraw
+  advice: 重绘
+  source: 中国信通院云计算(2024) 第41页
+  url: https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240723334151523502.pdf#page=41
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C24-实时互动-39.png
+  chapters: P01-教育服务, R03-旅游与景区
+  action: redraw
+  advice: 重绘
+  source: 中国信通院实时互动(2022) 第39页
+  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202206/P020220614564340133801.pdf#page=39
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C25-电信-23.png
+  chapters: I02-电信服务
+  action: redraw
+  advice: 重绘
+  source: 中国信通院电信蓝皮书(2024) 第23页
+  url: https://www.caict.ac.cn/kxyj/qwfb/bps/202409/P020240926401677616677.pdf#page=23
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: C26-数字政府-20.png
+  chapters: S01-政务与公共服务
+  action: redraw
+  advice: 重绘
+  source: 中国信通院数字政府(2024) 第20页
+  url: https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: SC-A02-01-智慧林业架构-23.png
+  chapters: A02-林业
+  action: delete
+  advice: 删除，改文字引用
+  source: 《中国智慧林业发展指导意见》(2013) 第23页
+  url: https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2144/site/res_base/jeecms_com_www/upload/article/file/2013_3/8_26/oiy8hktcvlqg.pdf#page=23
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: SC-H01-03-餐饮产业链-20.png
+  chapters: H02-餐饮
+  action: redraw
+  advice: 重绘
+  source: 国家信息中心餐饮数字化报告(2024) 第20页
+  url: https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=20
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
+- file: SC-H01-03-餐饮数字化矩阵-21.png
+  chapters: H02-餐饮
+  action: redraw
+  advice: 重绘
+  source: 国家信息中心餐饮数字化报告(2024) 第21页
+  url: https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=21
+  not_cc: true
+  redraw_file: null
+  note: null
+  manual_review: null
