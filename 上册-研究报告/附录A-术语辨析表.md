@@ -1,7 +1,5 @@
 # 附录A　术语辨析表
 
-[上册索引](README.md) · [下册案例汇编](../下册-案例汇编/README.md)
-
 ---
 
 ## A.1 为什么要单独列一张表
@@ -153,5 +151,3 @@ RSI的技术参照来自Zelikman等《[Self-Taught Optimizer (STOP): Recursively
 三条都过了，再讨论这段表述支持什么结论。
 
 ---
-
-[上册索引](README.md) · [下册案例汇编](../下册-案例汇编/README.md)
