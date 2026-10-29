@@ -2677,7 +2677,7 @@
       "title": "燃气隐患从监测预警到抢修处置的流转",
       "disposition": "本书新绘",
       "attribution": "据国家数据局《城市全域数字化转型典型案例集之四十三｜合肥：统筹推进城市生命线安全工程 提升城市安全韧性水平》（访问日期：2026-10-28）绘制，见本节参考资料[5]；为定性示意，不含数据",
-      "asset_sha256": "b37b75386c305aec988fb22e75ff3066d5ac60bc4054cad288a662f4f9a58487",
+      "asset_sha256": "03b46c8a507f1af0e13a15702a24a0dbd216e6bfd59c140f3534db2ea48b5eea",
       "generator": "scripts/figures/render.py",
       "required_in": [
         "D02-燃气.md"
@@ -2809,7 +2809,7 @@
       "title": "排课变化的协调流程",
       "disposition": "本书新绘",
       "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
-      "asset_sha256": "802d83f8bc1852320073507cdaa11c37170b56292f03163d2d00d01da07ba2cd",
+      "asset_sha256": "56b4d77608368ef7a98f067906e5eb640a874e59479c54049a764640a061968b",
       "generator": "scripts/figures/render.py",
       "required_in": [
         "R02-体育健身.md"
