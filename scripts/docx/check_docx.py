@@ -132,6 +132,10 @@ def main():
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
+    BODY_INDENT_CHARS = 2   # Scott 2026-10-29 确认：正文首行缩进 4 个英文字符＝2 个中文字符
+    check(f'style.yaml 正文首行缩进={BODY_INDENT_CHARS}字符（4 个英文字符）', L['body'].get('first_line_chars') == BODY_INDENT_CHARS, f"style.yaml levels.body.first_line_chars 为 {L['body'].get('first_line_chars')}")
+    _ns = doc.styles['Normal'].element.pPr; _ni = _ns.find(qn('w:ind')) if _ns is not None else None
+    check(f'Normal 样式首行缩进={BODY_INDENT_CHARS}字符（firstLineChars={BODY_INDENT_CHARS * 100}）', _ni is not None and _ni.get(qn('w:firstLineChars')) == str(BODY_INDENT_CHARS * 100) and _ni.get(qn('w:firstLine')) == str(int(L['body']['size_pt'] * BODY_INDENT_CHARS * 20)), f'Normal 实为 {None if _ni is None else dict(_ni.attrib)}')
     for idx, (p, intab) in enumerate(paras):
         key = classify(p, intab)
         txt = p.text.strip()

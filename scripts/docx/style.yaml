@@ -28,7 +28,7 @@ levels:
   h2: {font: 楷体_GB2312,   size_pt: 15, bold: true, align: left}   # 楷体_GB2312 小三
   h3: {font: 仿宋_GB2312,   size_pt: 14, bold: true, align: left}
   h4: {font: 仿宋_GB2312,   size_pt: 12, bold: true,  align: left}
-  body: {font: 仿宋_GB2312, size_pt: 12, bold: false, align: justify, first_line_chars: 4}  # Scott 已定：4 字符（firstLineChars=400，等效 48pt）
+  body: {font: 仿宋_GB2312, size_pt: 12, bold: false, align: justify, first_line_chars: 2}  # Scott 已定（2026-10-29）：4 个英文字符＝2 个中文字符（firstLineChars=200，12pt 时 firstLine=480 twips＝24pt）
   caption: {font: 黑体,     size_pt: 12, bold: false, align: center}   # TODO 图题表题字体字号待确认
   table: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: left}  # TODO 表内字号待确认
   footnote: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: justify}   # 五号
