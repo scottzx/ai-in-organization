@@ -133,7 +133,7 @@ def main():
             for c in row.cells:
                 paras += [(p, True) for p in c.paragraphs]
     chapter = '前置'; body_started = False
-    in_front = False; front_caps = []   # 当前一级标题是否为 front 篇目的「导言」；front 篇目内题注
+    in_front = False; front_caps = []; front_no = 0   # 当前一级标题是否为 front 篇目的「导言」；front 篇目内题注；第几个 front 篇目（每篇“导”号单独连续）
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
@@ -185,7 +185,7 @@ def main():
         if key == 'h1':
             ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
             in_front = False
-            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True; in_front = True   # 仅 front 篇目可用「导言」
+            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True; in_front = True; front_no += 1   # 仅 front 篇目可用「导言」
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)
@@ -202,7 +202,7 @@ def main():
             if m and in_front: front_caps.append(p._p)
             check('图题/表题 编号“图/表 X-Y”（front 篇目为“图/表 导-Y”）', bool(m), where)
             if m:
-                k = (m.group(1), m.group(2)); prev = cap_seq.get(k, 0)
+                k = (m.group(1), m.group(2), front_no if in_front else 0); prev = cap_seq.get(k, 0)
                 check('图题/表题 章内连续编号', int(m.group(3)) == prev + 1, where + f' 前一号为{prev}')
                 cap_seq[k] = int(m.group(3))
                 check('表题 有标题文字', len(txt.split('　', 1)) > 1, where + ' 仅有编号，缺表题')
