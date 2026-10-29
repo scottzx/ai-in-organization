@@ -57,8 +57,7 @@ def main():
   text=p.read_text()
   for asset in re.findall(r'!\[[^\]\n]*\]\(assets/([^()\n]+\.png)\)',text):
    inline_uses.setdefault(asset,set()).add(p.name)
-   if not re.search(r'\[!\[[^\]\n]*\]\(assets/'+re.escape(asset)+r'\)\]\(assets/'+re.escape(asset)+r'\)',text):
-    errors.append(p.name+': inline figure lacks full-size image link: '+asset)
+   # 总编辑定（2026-10-29）：接受 ![图题](assets/…)，不要求外层全尺寸链接。
   edition=item.get('edition',plan['default_chapter_edition'])
   heads=re.findall(r'^##\s+(.+)$',text,re.M)
   if heads!=descriptors:
