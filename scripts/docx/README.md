@@ -32,7 +32,7 @@ python3 build_docx.py --volume upper --print -o ../../output/docx/样张-上册-
 # 或：BOOK_EDITION=print python3 build_docx.py ...
 ```
 
-四册均可导出：`--volume upper`（上册，第一至八章）、`--volume middle`（中册，第九至二十章）、`--volume lower`（下册，第二十一至三十四章，每个行业门类一章、案例为 X.Y，附编A/B 为附录A/B）、`--volume all`（合订本，三册合排、一个目录，章号与各册单独导出时相同，附录字母全书连续：上册A、中册B/C、下册D/E）。配置见 `style.yaml` 的 `volumes`（`files` / `chapters` / `groups` / `include`）。
+四册均可导出：`--volume upper`（上册，第一至八章）、`--volume middle`（中册，第九至二十章）、`--volume lower`（下册，第二十一至三十四章，每个行业门类一章、案例为 X.Y，附编A/B 为附录A/B）、`--volume all`（合订本，三册合排、一个目录，章号与各册单独导出时相同，附录字母全书连续：上册A、中册B/C、下册D/E）。配置见 `style.yaml` 的 `volumes`（`files` / `chapters` / `groups` / `include`）；下册 `front` 列册首不编号篇目（`00-导言.md`），排在第二十一章之前。
 
 ```bash
 python3 build_docx.py --volume lower -o ../../output/docx/样张-下册.docx

@@ -178,7 +178,7 @@ def main():
             check(f'{key} 对齐={c["align"]}', eff_pf(p, 'alignment') in AL[c['align']], where + f' 实为{eff_pf(p, "alignment")}')
         # 编号
         if key == 'h1':
-            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
+            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|导言|结语|附录[A-Z])', txt))
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)

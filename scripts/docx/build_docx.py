@@ -734,7 +734,7 @@ def volume_items(cfg, repo, name, relabel=None):
         for sub in v['include']: out += volume_items(cfg, repo, sub, (v.get('appendix_relabel') or {}).get(sub))
         return out
     if 'groups' in v:
-        items = []
+        items = [(repo / v['dir'] / f, None) for f in v.get('front', [])]   # 册首不编号篇目（下册导言），排在各章之前
         for c, sub in v['groups'].items():
             d = repo / v['dir'] / sub
             if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
@@ -830,7 +830,7 @@ def main():
             rel = path.relative_to(repo).as_posix()
             if ch in bb.demote: nxt = ch; bb.members.setdefault(ch, []).append(rel)
             elif ch is not None: nxt = None   # 合订本：未降级的章（上册）及附录隔断，其前的不编号篇目不归入后面的降级章
-            bb.host[rel] = ch if ch is not None else nxt
+            bb.host[rel] = ch if ch is not None else (nxt if guide_kind(cfg, rel, path.name) == 'x00' else None)   # 册首导言等非门类导读页不归入后面的章
     b0 = Builder(cfg, repo); b0.allow_web = a.allow_web_residue; demote_setup(b0); b0.front_matter()
     for path, ch in items: b0.chapter(path, ch)
     b = Builder(cfg, repo, registry=b0.collect); b.print_edition = a.print_edition; b.allow_web = a.allow_web_residue; demote_setup(b); b.log['skipped'] = skipped; b.front_matter()
