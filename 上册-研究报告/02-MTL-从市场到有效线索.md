@@ -186,9 +186,9 @@ MTL的整体改进，需要以销售实际接手、能够继续跟进的有效�
 
 [1] 华为. Huawei’s Position Paper on Cyber Security[R/OL]. 2019. https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34.[^c02-1]
 
-[2] Datawhale FDE案例集. NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产[EB/OL]. https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=146.[^c02-2]
+[2] Datawhale FDE案例集. NO.15从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产[EB/OL]. https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=146.[^c02-2]
 
-[3] 马想聊AI. 靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——×××。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！[EB/OL]. https://www.douyin.com/video/7543858319371390260.[^c02-3]
+[3] 马想聊AI. 靠AI跨境卖拖鞋28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——×××。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！[EB/OL]. https://www.douyin.com/video/7543858319371390260.[^c02-3]
 
 [4] 马想聊AI. 企业到底怎么落地AI员工 创业12年，做过开源框架，玩过舞蹈自媒体，拿到过YC投资，看看×××如何让数字员工落地千行百业[EB/OL]. https://www.douyin.com/video/7657543904942973659.[^c02-4]
 
