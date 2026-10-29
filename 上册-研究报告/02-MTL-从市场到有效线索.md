@@ -6,7 +6,7 @@ MTL（Market to Lead，从市场到线索）可以用来观察这段工作。本
 
 ## 2.1 业务现状与问题：从市场到销售接手发生了什么
 
-MTL负责把市场与客户需求转为销售能够接手、继续跟进的有效线索，工作从认识市场、选择客群开始，经过传播触达、询盘接待和线索核实，到销售接收并返回反馈。这些职责可以由市场、客户开发和销售分担，也可以由同一人兼任。华为[2019年网络安全立场文件的流程架构，印刷第33页](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)将MTL列入业务运作层；本章借用这一范围，具体工作划分与问题分析为本书整理。
+MTL负责把市场与客户需求转为销售能够接手、继续跟进的有效线索，工作从认识市场、选择客群开始，经过传播触达、询盘接待和线索核实，到销售接收并返回反馈。这些职责可以由市场、客户开发和销售分担，也可以由同一人兼任。华为[2019年网络安全立场文件的流程架构，PDF第34页](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)将MTL列入业务运作层；本章借用这一范围，具体工作划分与问题分析为本书整理。
 
 工作首先是了解客户需要，并确定值得经营的对象。市场与客户开发人员从访谈、日常询问、已有客户反馈及公开资料中取得信息，结合企业现有产品与服务，判断哪些使用场景值得关注、哪些客户适合继续接触。客户资料、访谈记录和历史沟通，可能保存在Excel、邮件或客户管理系统中，供本轮客群选择与后续内容准备使用。
 
@@ -182,15 +182,15 @@ MTL的整体改进，需要以销售实际接手、能够继续跟进的有效�
 
 ## 参考文献
 
-[1] 华为. Huawei’s Position Paper on Cyber Security[R/OL]. 2019. https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34.[^c02-1]
+[1] 华为. [Huawei’s Position Paper on Cyber Security](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)[R/OL]. 2019.[^c02-1]
 
-[2] 马想聊AI. 据抖音视频（7543858319371390260，2025-08-29）受访者自述[EB/OL]. https://www.douyin.com/video/7543858319371390260.[^c02-3]
+[2] 马想聊AI. [据抖音视频（7543858319371390260，2025-08-29）受访者自述](https://www.douyin.com/video/7543858319371390260)[EB/OL].[^c02-3]
 
-[3] 马想聊AI. 据抖音视频（7657543904942973659，2026-07-01）受访者自述[EB/OL]. https://www.douyin.com/video/7657543904942973659.[^c02-4]
+[3] 马想聊AI. [据抖音视频（7657543904942973659，2026-07-01）受访者自述](https://www.douyin.com/video/7657543904942973659)[EB/OL].[^c02-4]
 
-[4] 马想聊AI. 据抖音视频（7639644564847889718，2026-05-14）受访者自述[EB/OL]. https://www.douyin.com/video/7639644564847889718.[^c02-5]
+[4] 马想聊AI. [据抖音视频（7639644564847889718，2026-05-14）受访者自述](https://www.douyin.com/video/7639644564847889718)[EB/OL].[^c02-5]
 
-[^c02-1]: 印刷第33页、PDF第34页。引用范围：MTL的流程名称与业务运作层定位；本章原因分析、环节划分与处理办法为本书应用整理。
+[^c02-1]: PDF第34页。引用范围：MTL的流程名称与业务运作层定位；本章原因分析、环节划分与处理办法为本书应用整理。
 
 [^c02-3]: 定位：00:01:42.190；00:02:42.820。跨境拖鞋企业夜间接待与人工跟进，局部使用，经营者自述。
 
