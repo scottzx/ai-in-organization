@@ -44,7 +44,7 @@
 
 **资料性质：**第三方实施者访谈自述；结果属于达人运营试运行。
 
-**资料来源：**Datawhale《FDE案例100》，[NO.5 从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约](https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=47)，原书第46–54页、PDF第47–55页，访问日期：2026-10-28。
+**资料来源：**Datawhale《FDE案例100》，[NO.5从大海捞针到全链路提效：FDE用AI重构TikTok达人建联与履约](https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=47)，原书第46–54页、PDF第47–55页，访问日期：2026-10-28。
 
 > 本案例根据公开资料整理，来源：Datawhale《FDE案例100》（实施者自述）（访问日期：2026-10-28）。文中情况和数据为来源方口径，未经独立核实，仅作研究说明，不构成推荐、保证或投资建议。
 
