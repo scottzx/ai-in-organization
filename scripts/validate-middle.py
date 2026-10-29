@@ -55,7 +55,7 @@ def main():
     errors.append(item['file']+': reference ['+number+'] lacks institution, linked title or year in the upper-volume format')
   if not re.search(r'^###\s+',digital,re.M):
    errors.append(item['file']+': missing independently explained digital application modules')
-  if '初稿 '+edition not in text: errors.append(item['file']+': edition metadata differs from scope record')
+  if '初稿 v' in text or '一芥智能研究院' in text: errors.append(item['file']+': page header or draft edition residue in body text')
   if not re.search(r'https://',text): errors.append(item['file']+': no public original source')
   if len(re.findall(r'[\u4e00-\u9fff]',text))<2200: errors.append(item['file']+': needs substantive editorial review (short)')
   if re.search(r'TODO|FIXME|\{行业\}|\{企业\}',text): errors.append(item['file']+': unreplaced placeholder')
