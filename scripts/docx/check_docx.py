@@ -267,6 +267,16 @@ def main():
     check('图号/表号 全书无重复', not dups, f'重复：{dups}')
     import re as _re
     check('跨文件引用 无未解析', not any(_re.search(r'【[图表]引用错误：', p.text) or _re.search(r'\{\{(fig|tab):', p.text) for p in doc.paragraphs), '正文中有【引用错误】或未替换的 {{fig:}}/{{tab:}}')
+    # 附录字母/附录图表号引用：正文（不含标题、目录、题注）中的“附录X”须有该附录的一级标题，“表X-n/图X-n”须有对应题注（合订本附录字母重排后不得悬空）
+    app_heads = {m.group(1) for p in doc.paragraphs if p.style.name == 'Heading 1' for m in [_re.match(r'^附录([A-Z])', p.text)] if m}
+    cap_set = set(caps)
+    for i, (p, _t) in enumerate(paras):
+        if p.style.name.startswith(('Heading', 'TOC', 'toc')) or p.style.name == 'Caption' or '\t' in p.text: continue
+        for m in _re.finditer(r'附录\s?([A-Z])(?![A-Za-z])', p.text):
+            check('附录字母引用 有对应附录（不悬空）', m.group(1) in app_heads, f'段{i+1}「{p.text[max(0, m.start()-12):m.end()+12]}」')
+        for m in _re.finditer(r'([图表])\s?([A-Z])\s?-\s?(\d+)', p.text):
+            check('附录字母引用 有对应附录（不悬空）', f'{m.group(1)}{m.group(2)}-{m.group(3)}' in cap_set, f'段{i+1}「{m.group(0)}」')
+    check('附录字母引用 有对应附录（不悬空）', True, '')   # 无引用时也列出本项
     web = []
     NAVW = r'(上册|中册|下册|全书)?(目录|索引|首页|研究报告|行业解决方案|企业案例|案例汇编)|上一章|下一章|返回|行业分篇说明|行业资料库'
     for i, p in enumerate(doc.paragraphs):
