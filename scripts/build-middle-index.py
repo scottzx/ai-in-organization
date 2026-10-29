@@ -19,6 +19,46 @@ def case_links(text):
  anchored={link.split('#',1)[0] for link in links if '#' in link}
  return sorted(link for link in links if '#' in link or link not in anchored)
 
+APPENDIX_B='附录B-中册图源索引表.md'
+NOTE_RE=re.compile(r'^(.*?)（(.+)正文引用此图）$')
+
+def _cells(line):
+ return [c.strip() for c in line.strip().strip('|').split('|')]
+
+def dedupe_figure_index(text,order):
+ """Collapse repeated figure rows in 附录B: keep the row of the chapter that comes first
+ in 编写范围.json, note the other chapters in 原篇目, and recount the summary line.
+ Deleted rows (图号 —) are left as they are. Idempotent on an already collapsed table."""
+ rank={name:i for i,name in enumerate(order)}
+ lines=text.split('\n')
+ rows=[(i,_cells(l)) for i,l in enumerate(lines) if l.startswith('| ') and not l.startswith('| 图号 |') and not l.startswith('| ---')]
+ groups={}
+ for i,c in rows:
+  if c[0]=='—': continue
+  m=NOTE_RE.match(c[6]); home=m[1] if m else c[6]
+  others=m[2].split('、') if m else []
+  groups.setdefault((c[1],c[2]),[]).append((i,home,others))
+ drop=set(); notes={}
+ for members in groups.values():
+  if len(members)<2 and not members[0][2]: continue
+  members.sort(key=lambda m:rank.get(m[1],len(rank)))
+  keep=members[0]; cited=list(keep[2])
+  for i,home,others in members[1:]:
+   drop.add(i); cited+=[home]+others
+  cited=sorted(dict.fromkeys(cited),key=lambda n:rank.get(n,len(rank)))
+  notes[keep[0]]=f"{keep[1]}（{'、'.join(cited)}正文引用此图）" if cited else keep[1]
+ out=[]
+ for i,l in enumerate(lines):
+  if i in drop: continue
+  if i in notes:
+   c=_cells(l); c[6]=notes[i]; l='| '+' | '.join(c)+' |'
+  out.append(l)
+ kept=[_cells(l) for i,l in enumerate(lines) if i not in drop and (i,_cells(l)) in rows]
+ count=lambda word:sum(1 for c in kept if c[3].startswith(word))
+ summary=re.compile(r'^统计（按引用处）：保留\d+处，重绘\d+处，删除\d+处。')
+ out=[summary.sub(f'统计（按引用处）：保留{count("保留")}处，重绘{count("重绘")}处，删除{count("删除")}处。',l) for l in out]
+ return '\n'.join(out)
+
 def main():
  plan=json.loads((DATA/'编写范围.json').read_text())
  edition=plan['edition']
@@ -60,25 +100,8 @@ def main():
    cross.append({'chapter':p.name,'title':title(p),'case_links':refs,'figures':[]})
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
  by_path={e['path']:e for e in entries}
- table=['# 附录B　行业架构、来源图示与企业案例对照','',f'一芥智能研究院｜《企业数智化转型研究报告》中册｜初稿 {edition}｜2026年10月18日','',
-        '[中册目录](README.md) · [行业资料库](../索引/工信部行业数字化转型资料汇总.md) · [原图来源](assets/README.md)','',
-        '原图给出行业参考架构和模块，企业案例说明实际建设范围，智力服务新增作用按各章的模块说明与服务应用理解。表中只列当前正文已经使用的引用。','',
-        '| 章节 | 下册企业参照 | 原图摘引 |','| --- | --- | --- |']
- unique_cases=set()
- for row in sorted(cross,key=lambda row:row['chapter']):
-  case_labels=[]
-  for link in row['case_links']:
-   path=link.split('#',1)[0].removeprefix('../')
-   entry=by_path.get(path)
-   if entry:
-    unique_cases.add(entry['id'])
-    label=f"{entry['id']} {entry['title']}"
-   else: label=Path(path).stem
-   case_labels.append(f'[{label}]({link})')
-  figures=[f'[{Path(link).stem}]({link})' for link in row['figures']]
-  table.append(f"| [{row['title']}]({row['chapter']}) | {'；'.join(case_labels) or '按本章引用的行业方案展开'} | {'；'.join(figures) or '原文入口见章内来源'} |")
- table+=['',f'当前正文共引用下册{len(unique_cases)}个案例入口。行业方案提供的参考能力、企业已建能力与新增服务各有证据范围；图谱评级及所引案例成效不作为新增服务的实测结果。','']
- (MIDDLE/'附录B-中册图源索引表.md').write_text('\n'.join(table))
+ appendix=MIDDLE/APPENDIX_B
+ appendix.write_text(dedupe_figure_index(appendix.read_text(),[item['file'].removesuffix('.md') for item in planned]))
  lines+=['','## 选用对照与引用依据','']
  for p in sorted(MIDDLE.glob('附录*.md')): lines.append(f'- [{title(p)}]({p.name})')
  lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [行业解决方案章节模板](../templates/行业解决方案章节模板.md)','- [整体编写大纲](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',
