@@ -186,7 +186,7 @@ MTL的整体改进，需要以销售实际接手、能够继续跟进的有效�
 
 [1] 华为．[Huawei’s Position Paper on Cyber Security](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)．2019，印刷第33页、PDF第34页。引用范围：MTL的流程名称与业务运作层定位；本章原因分析、环节划分与处理办法为本报告应用整理。
 
-[2] Datawhale FDE案例集．[NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产](https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=146)．原书145–156页，PDF146–157页。餐饮本地生活代运营一期内容工作流，已使用；客户反馈由实施者转述。
+[2] Datawhale FDE案例集．[NO.15 从经验写稿到稳定量产：FDE用AI重构本地生活短视频内容生产](https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf#page=146)．原书145—156页，PDF146—157页。餐饮本地生活代运营一期内容工作流，已使用；客户反馈由实施者转述。
 
 [3] 马想聊AI．[靠AI跨境卖拖鞋 28岁年入 访谈100位用AI赚钱的老板，本期嘉宾：靠AI跨境卖拖鞋，28岁年入3000万的老板——刘世奇@刘世奇Bob 。6个人的团队，人效竟能达到500万，看他怎么用AI赚到钱！](https://www.douyin.com/video/7543858319371390260)．定位：00:01:42.190；00:02:42.820。跨境拖鞋企业夜间接待与人工跟进，局部使用，经营者自述。
 
