@@ -276,8 +276,8 @@ def sidebar(current):
             contents += nav_link(current, ROOT / folder / 'README.md', f'{number} · {label}')
     contents += '<p class="nav-label">阅读指引</p>'
     contents += nav_link(current, ROOT / '索引/阅读路径.md', '按问题阅读')
-    contents += '<p class="nav-label">资料与下载</p>'
-    for target, label in [('output/pdf/README.md', '历史 PDF 归档'), ('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
+    contents += '<p class="nav-label">资料与来源</p>'
+    for target, label in [('索引/工信部行业数字化转型资料汇总.md', '工信部资料索引'), ('索引/资料来源说明.md', '资料来源与使用'), ('CHANGELOG.md', '修订记录')]:
         contents += nav_link(current, ROOT / target, label)
     nav_label = f'{volume[1]}目录' if volume else '全书导航'
     return (f'<nav class="sidebar-scroll" aria-label="{nav_label}" tabindex="0">{contents}</nav>'
@@ -342,8 +342,8 @@ def home_page(current):
 <article class="volume-card"><span class="card-label">VOLUME 02 / 行业解决方案</span><h3>沿行业架构增加智力服务</h3><p>引用行业图谱，展开业务功能和应用模块，写清三化怎样协同建设，以及建什么、怎么建、怎样验收。</p><div class="flow-tags"><span>行业架构与模块</span><span>智力服务</span><span>建设与验收</span></div><a class="text-link" href="{link('中册-行业解决方案/README.md')}">查看中册行业方案 →</a></article>
 <article class="volume-card"><span class="card-label">VOLUME 03 / 案例汇编</span><h3>在真实业务中看数字化与数智化</h3><p>按行业、公司或项目呈现业务背景、问题、实施过程、效果与启示。区分实际使用、试点、原型和设想。</p><div class="flow-tags"><span>制造业</span><span>批发与零售</span><span>信息技术</span><span>商务服务</span><span>更多行业</span></div><a class="text-link" href="{link('下册-案例汇编/README.md')}">浏览全部 {counts['entries']} 个入口 →</a></article></div>
 <div class="section-heading"><h2>沿着问题，逐章展开</h2><span>导论 · 八章正文 · 结语</span></div><div class="chapter-grid">{rows}</div>
-<div class="section-heading"><h2>资料与版本</h2><a href="{link('output/pdf/README.md')}">历史 PDF 归档 →</a></div>
-<div class="resource-row"><a class="button" href="{link('output/pdf/README.md')}">历史 PDF 归档 <span>→</span></a><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
+<div class="section-heading"><h2>资料与版本</h2><a href="{link('CHANGELOG.md')}">修订记录 →</a></div>
+<div class="resource-row"><a class="button" href="{link('索引/工信部行业数字化转型资料汇总.md')}">工信部资料索引 <span>→</span></a></div>
 <p class="evidence-note">本书为持续修订的初稿。案例入口数不等于独立公司数或成功交付数；资料主要来自公开信息、受访者自述与演示，效果未经独立审计。原始来源、实施阶段和分析边界见各篇正文。中册按行业数字化方案持续扩充，数字化基础和新增服务分别检验。旧PDF作为历史版本保留，现行书稿以在线阅读版为准。</p>
 {footer(current)}</main>'''
 
