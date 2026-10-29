@@ -2539,7 +2539,14 @@
       "attribution": "据中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心《中国智慧农业发展研究报告——新一代信息技术助力乡村振兴》（2021年）图1（PDF第9页）改绘",
       "asset_sha256": "a9676d18a49fcf606d7328f43a2d091366dc88ad43e53e0ea3000a3a4607b2b2",
       "generator": "scripts/redraw-middle-figures.py",
-      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者",
+      "year_basis": {
+        "year": "2021年",
+        "evidence": "原PDF封面（PDF第1页）署“2021 年 12 月”，发布者为中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心",
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf",
+        "pdf_sha256": "a037e48bf25bc5a1624f7f15482e7681b389dbcd55ae413a808977cb56172ce3",
+        "checked_on": "2026-10-28"
+      }
     },
     {
       "asset": "redraw-数字乡村框架示意.png",
