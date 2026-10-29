@@ -24,3 +24,6 @@ tmp/pdfs/
 
 # 成品 PDF 交付时现场生成，不进仓库
 output/pdf/*.pdf
+
+# PDF构建清单与检查记录随生成产生，不进仓库
+output/pdf/*.json
