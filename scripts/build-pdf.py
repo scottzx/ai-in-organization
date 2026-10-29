@@ -523,6 +523,11 @@ class Builder:
                      ''.join(ch if ord(ch)<128 or ord(ch) in self.body_characters else
                              f'<font name="BookKai">{escape(ch)}</font>' for ch in part)
                      for part in re.split(r'(<[^>]*>)',text))
+        # ReportLab 5.1 的 CJK 断行回溯遇到 <a name/> 生成的空文本片段会 ord('') 崩溃，
+        # 因此把段内锚点统一移到段首（段首片段不在回溯范围内）；锚点不占宽度，正文排版不变。
+        anchors=re.findall(r'<a name="[^"]*"/>',text)
+        if anchors and not text.startswith(''.join(anchors)):
+            text=''.join(anchors)+re.sub(r'<a name="[^"]*"/>','',text)
         return Paragraph(text,self.styles[style])
 
     def text_markup(self,text):
