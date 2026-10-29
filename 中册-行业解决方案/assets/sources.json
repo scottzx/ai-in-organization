@@ -2659,6 +2659,330 @@
       "asset_sha256": "0db53b8215afa0fdca52732739357f135be1220092094dfc8526b52ee0ade688",
       "generator": "scripts/redraw-middle-figures.py",
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
+    },
+    {
+      "asset": "fig-D02-1-城市燃气方案架构.png",
+      "title": "城市燃气数字化方案总体架构",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文及中国工业互联网研究院等《工业互联网与油气储运行业融合应用参考指南（2026年）》（PDF第89—92页）整理，为定性示意，不含数据",
+      "asset_sha256": "ac711dc357924318ccda6caff3300587b5585a0efeedbb685ea52b6575bac687",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D02-燃气.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-D02-2-燃气隐患流转.png",
+      "title": "燃气隐患从监测预警到抢修处置的流转",
+      "disposition": "本书新绘",
+      "attribution": "据国家数据局《城市全域数字化转型典型案例集之四十三｜合肥：统筹推进城市生命线安全工程 提升城市安全韧性水平》（访问日期：2026-10-28）绘制，见本节参考资料[5]；为定性示意，不含数据",
+      "asset_sha256": "b37b75386c305aec988fb22e75ff3066d5ac60bc4054cad288a662f4f9a58487",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D02-燃气.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-D03-1-漏损治理闭环.png",
+      "title": "管网漏损治理闭环：底数—分区计量—检漏—维修—复查",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "9ff717ff4bd8028dd9b1d659cd249e7f7035d5a8196aba1f7f1a52e9d39f2b80",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D03-水务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-D03-2-荆门综合漏损率.png",
+      "title": "荆门市水务集团综合漏损率变化（2014年与2023年）",
+      "disposition": "本书新绘",
+      "attribution": "国际在线湖北频道《荆门供水管网漏控经验获住建部推广》（访问日期：2026-10-28），见本节参考资料[4]。图中为综合漏损率，未扣除标准规定的修正值，不宜直接与10%、12%的评定值比较",
+      "asset_sha256": "8ade044cf4c4c52ca6d5bf9333568fd24d9886353a34721dfe431a75b8431dd2",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D03-水务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；数据引自正文脚注所列来源"
+    },
+    {
+      "asset": "fig-F01-1-批发业务架构.png",
+      "title": "批发业务数字化架构：商品—订单—库存—配送—账期",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "5eeb5bd2ae3858f34e4db82b861e2d379f543672f26cd2cc1d76de1eedf92739",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "F01-批发.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-F01-2-批发市场追溯.png",
+      "title": "批发市场全链条追溯：产地预申报到交易去向",
+      "disposition": "本书新绘",
+      "attribution": "据江苏省物流产业促进会《商务部发布〈数智供应链案例集〉，苏州南环桥入选十大典型案例》（访问日期：2026-10-28）绘制，见本节参考资料[4]；为定性示意，不含数据",
+      "asset_sha256": "2606366d402ba88d2c3bff6b0eed2a43cc6f93857ee7960a06a40bd25e361a4c",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "F01-批发.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-G01-1-货运履约链.png",
+      "title": "货运履约链：订单—派车—在途—签收回单—结算",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "090bb51790b73d60556d4501eb2c33c3628e7bee112e3a11811249db2be68c1e",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G01-货运与综合物流.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-G01-2-中储智运业务量增速.png",
+      "title": "中储智运2023年主要业务量同比增速",
+      "disposition": "本书新绘",
+      "attribution": "宣城市交通运输局《首批交通物流降本提质增效典型案例名单公布 江苏四案例入选》（访问日期：2026-10-28），见本节参考资料[4]；企业披露数据，本书未独立核实",
+      "asset_sha256": "0128a511294a5c700d7ac113b6fc8dc41751ac429c2e659ec8b6a66b64ef357f",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G01-货运与综合物流.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；数据引自正文脚注所列来源"
+    },
+    {
+      "asset": "fig-G02-1-仓储作业流程.png",
+      "title": "仓储作业流程：收货检验—上架—库存库位—拣选复核—出库—盘点",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "599d67e5605cdc9e9a12259611ade69ec5b8f49b33912d5abf8b9f2a8c37daab",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G02-仓储.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-G02-2-产前物流系统衔接.png",
+      "title": "产前物流系统衔接：ERP／LES—WMS—WCS—设备",
+      "disposition": "本书新绘",
+      "attribution": "据国家发展和改革委员会政策研究室《典型案例｜顺丰集团——产前物流一体化服务》（访问日期：2026-10-28）绘制，见本节参考资料[4]；为定性示意，不含数据",
+      "asset_sha256": "7b33c656e1504772cd7b9d39debf15d0966e4fd4ed1b3228ede999e15a47f806",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G02-仓储.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-R01-1-内容生产链.png",
+      "title": "内容生产链：选题—素材—脚本制作—审校发布—反馈",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "ce9d775ad49db69175a8db6b67c02bff089d40128218cd3a3ef4a8afba86dac5",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R01-文化内容与传媒.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-R02-1-体育健身经营架构.png",
+      "title": "体育健身经营架构：会员—课程教练—排课场地—到课记录—余额费用",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "dadd11702d5a44c7f66b1fcf0ed351aca3fdf38ec39b94cb9b632d0612aa639b",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R02-体育健身.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-R02-2-排课变化协调.png",
+      "title": "排课变化的协调流程",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "802d83f8bc1852320073507cdaa11c37170b56292f03163d2d00d01da07ba2cd",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R02-体育健身.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-I01-1-软件交付链.png",
+      "title": "软件交付链：需求—代码测试—部署集成—客户采用—运维支持",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "4c9332d06a41e27db95f32ff127c0c314aefbe39aca466cf69419f0cd5815bfb",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "I01-软件与信息技术服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-I01-2-软件业务收入构成.png",
+      "title": "2025年软件业务收入构成",
+      "disposition": "本书新绘",
+      "attribution": "工业和信息化部运行监测协调局《2025年软件业运行情况》（访问日期：2026-10-28），见本节参考资料[2]；只画正文引用的两项，其余部分未画",
+      "asset_sha256": "45e8b61a5c939c4dedc271ed1be65a5ae164d0599cd33a7e2d6d3bef0f43488b",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "I01-软件与信息技术服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；数据引自正文脚注所列来源"
+    },
+    {
+      "asset": "fig-L01-1-招聘服务流程.png",
+      "title": "招聘服务流程：职位需求—人才资料—匹配—沟通面试—顾问接手",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "03a72146aa85a84e2db5faf863240f78ac22225cb72732479dfe5d8ff9751ce2",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L01-招聘与人力资源服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-L01-2-就业平台六类通道.png",
+      "title": "公共就业数智平台的六类服务通道",
+      "disposition": "本书新绘",
+      "attribution": "据人民网《四川成都：秒推岗位！就业数智平台帮扶1.4万人就业》（中国就业网转载，访问日期：2026-10-28）绘制，见本节参考资料[4]；为定性示意，不含数据",
+      "asset_sha256": "23d501da1b8d04d398b2ef5f51e6bf930ef01d68424d6c161938fa7b5c5c4f34",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L01-招聘与人力资源服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-L02-1-咨询项目链.png",
+      "title": "咨询项目链：委托—调研证据—分析—建议—客户行动",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "f18f7ac6a5f4143ae0c090b38607df00f1c5745d47079b254266c9bbe0b2df5d",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L02-经营咨询.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-L02-2-武汉诊断改造验收.png",
+      "title": "武汉中小企业数字化转型：诊断—改造—验收（主管部门披露数据）",
+      "disposition": "本书新绘",
+      "attribution": "武汉市经济和信息化局《给企业“把脉”“开方”“抓药”，创新中心推动500余家中小企业开展数字化改造》（访问日期：2026-10-28），见本节参考资料[4]；数据截至2025年8月底，“余”按下限绘制，不含企业自述的改造成效",
+      "asset_sha256": "bda7ae25192bc0fb9173b96685fa3bd1717ca586e32859b32c385e9053e78bc1",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L02-经营咨询.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；数据引自正文脚注所列来源"
+    },
+    {
+      "asset": "fig-M01-1-规划研判对比.png",
+      "title": "规划研判前后流程对比：人工研判与“一张图”自动比对",
+      "disposition": "本书新绘",
+      "attribution": "据湖北日报《速度刷新！当天进件当天出证》（武汉市自然资源和城乡建设局网站，访问日期：2026-10-28）绘制，见本节参考资料[3]；时长为原文表述，不按比例绘制",
+      "asset_sha256": "78c3b868221d39ba13d7c91afb29411df007322b77d94b0492f0dd9ee803e597",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M01-规划设计.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；数据引自正文脚注所列来源"
+    },
+    {
+      "asset": "fig-M02-1-检验检测业务链.png",
+      "title": "检验检测业务链：受理—样品流转—方法仪器—数据采集—报告",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "537c7e01e14647c8330ee6eabc2cfb80eaaa8fec6f2dd46392901fd6ee45818f",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M02-检验检测.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-M02-2-LIMS在线委托.png",
+      "title": "实验室信息化（LIMS）在线委托到电子报告",
+      "disposition": "本书新绘",
+      "attribution": "据陕西省市场监督管理局《数智赋能检验检测 助力企业提质增效》（访问日期：2026-10-28）绘制，见本节参考资料[4]；为定性示意，不含数据",
+      "asset_sha256": "9f35bce4bec7fb32065ce7d66407f0c3ee61d85d134a1e2d9862bb9b64a56caa",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M02-检验检测.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-M03-1-设备维保闭环.png",
+      "title": "设备维保闭环：设备资料—计划—现场检查—工单备件—复查确认",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "42d18364c560b937432088955994423175fc13a609f65aa524bdeef8d6cdd8f7",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M03-设备维保服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-M03-2-消防物联网维保闭环.png",
+      "title": "消防物联网平台三端互通与维保强制闭环",
+      "disposition": "本书新绘",
+      "attribution": "据新疆哈密市消防救援支队《新疆哈密市消防救援支队研发推广消防物联网 强化风险管控与隐患排查治理》（应急管理部网站，访问日期：2026-10-28）绘制，见本节参考资料[3]；为定性示意，不含数据",
+      "asset_sha256": "75e20fab13a74133c7f6083f703c51b06970177d8fbe1f9bc33cc83180a44534",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M03-设备维保服务.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-M04-1-工程设计数据流.png",
+      "title": "工程设计数据流：设计输入—专业模型—协同变更—图纸校审—发布",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文整理，为定性示意，不含数据",
+      "asset_sha256": "d8ec9a0df5df52cc1d13211d48d9cba3cf69ea96423e07fd7b9a0343a1d764dd",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M04-工程设计.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-M04-2-施工图审查对比.png",
+      "title": "施工图审查：传统二维审查与二三维并行（BIM）对比",
+      "disposition": "本书新绘",
+      "attribution": "据广州市住房和城乡建设局《关于市政协十四届二次会议第3091号提案答复的函》（访问日期：2026-10-28）绘制，见本节参考资料[3]；为定性示意，不含数据",
+      "asset_sha256": "b934b26c64b960d81bfc2d91e053987a695fbc339bde19e9cd0592923c3c7e56",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M04-工程设计.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
+    },
+    {
+      "asset": "fig-C14-1-许可监管资料流程.png",
+      "title": "民爆企业许可与监管资料的管理信息流程",
+      "disposition": "本书新绘",
+      "attribution": "本书绘制，据本节正文及工业和信息化部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》（PDF第60、62页）“许可监管”场景整理，为通用管理信息示意，不涉及工艺、配方与安防细节，不含数据",
+      "asset_sha256": "12378111c4c5c7d879e5f5733eacc2e1068934026b9df6581763d107df97df3d",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "C14-民爆.md"
+      ],
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；定性示意，不含数据"
     }
   ],
   "crop_rules": "../../scripts/data/middle/图示裁切规则.json",
