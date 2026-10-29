@@ -190,3 +190,6 @@ images:
   note_format: "资料来源：{source}。{cc}"
   cc_note: "本图不适用本书 CC BY-NC-SA 4.0 许可。"
   edition: ebook        # ebook / print：审读意见“保留（电子书）/重绘（纸书）”按此取舍
+checks:
+  # 版权页识别标记：PDF 某页含任一标记即视为版权页，页内网址（CC 许可协议、项目仓库地址）不算裸链（总编辑定）
+  copyright_page_markers: [版权页, 版权所有, 著作权人, CC BY, 知识共享]

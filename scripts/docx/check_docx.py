@@ -79,22 +79,32 @@ def pdf_version_hits(path):
     out += [f'PDF属性：{h}' for h in version_hits(meta)]
     return out
 
-def pdf_url_hits(path):
-    """PDF 文字层中的网址按形态分类：印刷版补印的“（https…）”、参考文献原文著录的“. https…”，其余算正文裸链。"""
+COPYRIGHT_MARKERS_DEFAULT = ['版权页', '版权所有', '著作权人', 'CC BY', '知识共享']
+def pdf_url_hits(path, copyright_markers=None):
+    """PDF 文字层中的网址按形态分类：印刷版补印的“（https…）”、参考文献原文著录的“. https…”、
+    版权页上的网址（CC 许可协议、项目仓库地址，总编辑定为允许范围），其余算正文裸链。"""
+    markers = [re.sub(r'\s+', '', m) for m in (copyright_markers or COPYRIGHT_MARKERS_DEFAULT)]
     import subprocess
     txt = subprocess.run(['pdftotext', '-enc', 'UTF-8', str(path), '-'], capture_output=True, text=True, check=True).stdout
-    pages = []
+    pages, allow = [], []   # allow：版权页在拼接文本中的 [起, 止) 区间
     for pg in txt.split('\f'):   # 去掉页眉（书名＋篇名两行）与页码，避免跨页网址被页眉隔开
         ls = [l for l in pg.splitlines() if l.strip()]
         if len(ls) > 3: ls = ls[2:]
         if ls and re.fullmatch(r'\s*[\divxlcIVXLC]+\s*', ls[-1]): ls = ls[:-1]
-        pages.append(''.join(ls))
-    txt = re.sub(r'\s+', '', ''.join(pages))
-    printed, literal, bare = [], [], []
+        seg = re.sub(r'\s+', '', ''.join(ls))
+        start = sum(len(x) for x in pages)
+        if any(mk in seg for mk in markers): allow.append((start, start + len(seg)))
+        pages.append(seg)
+    txt = ''.join(pages)
+    printed, literal, bare, copyr = [], [], [], []
     for m in re.finditer(r'https?://', txt):
         pre = txt[max(0, m.start() - 1):m.start()]; ctx = txt[max(0, m.start() - 30):m.start() + 50]
+        if any(a <= m.start() < b for a, b in allow): copyr.append(ctx); continue
+        # 两端对齐的短行里 pdftotext 可能把“（”提到同行前面（如“[1]（Huawei．…报告https…”），回看 40 字内未闭合的“（”也算补印
+        back = txt[max(0, m.start() - 40):m.start()]
+        if pre != '（' and '（' in back and '）' not in back[back.rfind('（'):]: pre = '（'
         (printed if pre == '（' else literal if pre == '.' else bare).append(ctx)
-    return printed, literal, bare
+    return printed, literal, bare, copyr
 
 def main():
     ap = argparse.ArgumentParser()
@@ -280,8 +290,8 @@ def main():
     if a.pdf:
         ph = pdf_version_hits(a.pdf)
         check(f'PDF 无本书版本号（{Path(a.pdf).name}）', not ph, '；'.join(ph[:10]) + (f' 等{len(ph)}处' if len(ph) > 10 else ''))
-        pu, lu, bu = pdf_url_hits(a.pdf)
-        check('PDF 正文无裸链（网址只出现在参考文献/来源行）', not bu, '；'.join(bu[:5]) + (f' 等{len(bu)}处' if len(bu) > 5 else ''))
+        pu, lu, bu, cu = pdf_url_hits(a.pdf, cfg.get('checks', {}).get('copyright_page_markers'))
+        check(f'PDF 正文无裸链（网址只出现在参考文献/来源行与版权页；版权页放行 {len(cu)} 处）', not bu, '；'.join(bu[:5]) + (f' 等{len(bu)}处' if len(bu) > 5 else ''))
         if a.print_edition:
             check('PDF 印刷版：参考文献与来源行印出网址（题名（网址））', bool(pu), f'补印 {len(pu)} 处')
         else:
