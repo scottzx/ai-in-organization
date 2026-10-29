@@ -141,7 +141,7 @@ def chain(steps, notes=None, feedback=None, base=None, accent_steps=(), box_h=1.
     xs = []
     for i, s in enumerate(steps):
         x = m + i * (bw + gap); xs.append(x)
-        f.box(x, y, bw, box_h, s, accent=i in accent_steps)
+        f.box(x, y, bw, box_h, s, accent=i in accent_steps, wrapw='\n' not in s)
         if i: f.arrow((x - gap, y + box_h / 2), (x, y + box_h / 2))
     if feedback:
         i, j, t = feedback if isinstance(feedback, tuple) else (n - 1, 0, feedback)
