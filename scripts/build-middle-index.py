@@ -78,7 +78,7 @@ def main():
   figures=[f'[{Path(link).stem}]({link})' for link in row['figures']]
   table.append(f"| [{row['title']}]({row['chapter']}) | {'；'.join(case_labels) or '按本章引用的行业方案展开'} | {'；'.join(figures) or '原文入口见章内来源'} |")
  table+=['',f'当前正文共引用下册{len(unique_cases)}个案例入口。行业方案提供的参考能力、企业已建能力与新增服务各有证据范围；图谱评级及所引案例成效不作为新增服务的实测结果。','']
- (MIDDLE/'附录B-原架构原图与案例对照.md').write_text('\n'.join(table))
+ (MIDDLE/'附录B-中册图源索引表.md').write_text('\n'.join(table))
  lines+=['','## 选用对照与引用依据','']
  for p in sorted(MIDDLE.glob('附录*.md')): lines.append(f'- [{title(p)}]({p.name})')
  lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [行业解决方案章节模板](../templates/行业解决方案章节模板.md)','- [整体编写大纲](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',

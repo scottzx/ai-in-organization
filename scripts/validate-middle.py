@@ -61,7 +61,7 @@ def main():
   if re.search(r'TODO|FIXME|\{行业\}|\{企业\}',text): errors.append(item['file']+': unreplaced placeholder')
   checks.append({'file':item['file'],'edition':edition,'sections':len(heads),'digital_modules':len(re.findall(r'^###\s+',digital,re.M)),'service_applications':len(re.findall(r'^###\s+',service,re.M)),'reference_entries':len(reference_lines),'digital_han':len(re.findall(r'[\u4e00-\u9fff]',digital)),'service_han':len(re.findall(r'[\u4e00-\u9fff]',service)),'han':len(re.findall(r'[\u4e00-\u9fff]',text))})
  for p in MID.glob('*.md'):
-  if p.name in ['README.md','附录B-原架构原图与案例对照.md']: continue
+  if p.name in ['README.md','附录B-中册图源索引表.md']: continue
   text=p.read_text()
   for target in re.findall(r'!?\[[^\]\n]*\]\(([^)\n]+)\)',text):
    if target.startswith('研究记录/'):
