@@ -22,21 +22,47 @@ plt.rcParams['font.family'] = FONT
 plt.rcParams['axes.unicode_minus'] = False
 
 
+ISSUES = []          # 渲染后仍溢出的文字，由 render.py 汇总
+MIN_FS = 7.0         # 自动缩字号下限 pt
+PAD = 0.08           # 文字距框边最小留白 cm
+
+
+def max_chars(width_cm, fs=FS):
+    """框内一行可容纳的最大字数（中文按全角字宽≈字号计，留 8% 余量）。"""
+    return max(2, int(width_cm / (fs * CM_PER_PT * 1.08)))
+
+
+try:
+    import jieba; jieba.setLogLevel(60)
+    for w in ('派车', '差异', '委托', '智力服务', '维保', '一张图', '台账', '工单', '回款', '复核', '业主单位', '立体库', '消防救援机构'): jieba.add_word(w)
+    def _tokens(t): return list(jieba.cut(t))
+except ImportError:                       # 无 jieba 时退回逐字
+    def _tokens(t): return list(t)
+NO_HEAD = '、，。：；）」』”’！？%·／'      # 不能出现在行首的字符
+NO_TAIL = '（「『“‘'                       # 不能出现在行尾的字符
+
+
 def wrap(text, width_cm, fs=FS):
-    """按框宽自动折行（中文按字计），保留手工 \n。"""
-    n = max(2, int(width_cm / (fs * CM_PER_PT * 1.08)))
+    """按框宽折行：按词断（jieba），各行尽量等长，保留手工 \n；单词超过一行时才逐字拆。"""
+    n = max_chars(width_cm, fs)
     out = []
     for part in text.split('\n'):
         if len(part) <= n: out.append(part); continue
-        k = math.ceil(len(part) / n); L = math.ceil(len(part) / k)
-        while len(part) > n:
-            cut = L
-            for d in (0, 1, -1, 2, -2):          # 尽量在标点后断行
-                c = L + d
-                if 0 < c < len(part) and part[c - 1] in '、，：／）':
-                    cut = c; break
-            out.append(part[:cut]); part = part[cut:]
-        if part: out.append(part)
+        toks = []
+        for t in _tokens(part):
+            if toks and (t[0] in NO_HEAD or toks[-1][-1] in NO_TAIL): toks[-1] += t
+            elif len(t) > n: toks += list(t)
+            else: toks.append(t)
+        k = math.ceil(len(part) / n)
+        while True:
+            L = math.ceil(len(part) / k); lines = ['']
+            for t in toks:
+                cur = lines[-1]
+                if cur and (len(cur) + len(t) > n or (len(cur) >= L and len(lines) < k)): lines.append(t)
+                else: lines[-1] = cur + t
+            if all(len(x) <= n for x in lines) or k > len(part): break
+            k += 1
+        out += lines
     return '\n'.join(out)
 
 
@@ -46,6 +72,29 @@ class Fig:
         self.fig = plt.figure(figsize=(W / 2.54, h / 2.54), dpi=DPI)
         self.ax = self.fig.add_axes([0, 0, 1, 1])
         self.ax.set_xlim(0, W); self.ax.set_ylim(0, h); self.ax.axis('off')
+        self.boxed = []
+
+    def _ext(self, a, r):
+        """文字外框（cm 坐标）。"""
+        bb = a.get_window_extent(r).transformed(self.ax.transData.inverted())
+        return bb.x0, bb.y0, bb.x1, bb.y1
+
+    def fit(self, name=''):
+        """碰撞检测：框内文字超出框（留 PAD）则重新折行并逐级缩字号；仍超出或越出画布则记入 ISSUES。"""
+        r = self.fig.canvas.get_renderer()
+        for a, (x, y, w, h), text, wrapw in self.boxed:
+            def bad():
+                x0, y0, x1, y1 = self._ext(a, r)
+                return x0 < x + PAD or x1 > x + w - PAD or y0 < y + PAD or y1 > y + h - PAD
+            fs = a.get_fontsize()
+            while bad() and fs > MIN_FS:
+                fs = max(MIN_FS, fs - 0.5); a.set_fontsize(fs)
+                if wrapw: a.set_text(wrap(text, w - 0.25, fs))
+            if bad(): ISSUES.append(f'{name}: 框内文字放不下（已缩到 {fs}pt）：{text}')
+        for a in self.ax.texts:
+            x0, y0, x1, y1 = self._ext(a, r)
+            if x0 < 0 or y0 < 0 or x1 > W or y1 > self.h:
+                ISSUES.append(f'{name}: 文字越出画布：{a.get_text()!r}')
 
     def box(self, x, y, w, h, text, accent=False, fill=None, fs=FS, bold=False, wrapw=True, align='center'):
         """(x, y) 为左下角。"""
@@ -54,9 +103,10 @@ class Fig:
                            fc=fill or (ACC_FILL if accent else FILL), zorder=2)
         self.ax.add_patch(p)
         t = wrap(text, w - 0.25, fs) if wrapw else text
-        self.ax.text(x + w / 2 if align == 'center' else x + 0.15, y + h / 2, t, ha=align, va='center',
+        a = self.ax.text(x + w / 2 if align == 'center' else x + 0.15, y + h / 2, t, ha=align, va='center',
                      fontsize=fs, color=ACCENT if accent else INK, linespacing=1.3,
                      fontweight='bold' if bold else 'normal', zorder=3)
+        if text: self.boxed.append((a, (x, y, w, h), text, wrapw))
         return (x, y, w, h)
 
     def text(self, x, y, s, fs=FS, color=INK, ha='center', va='center', bold=False, **kw):
@@ -180,7 +230,7 @@ def cycle(steps, center=None, r=2.5, bw=3.4, bh=0.95):
 
 def hbar(labels, values, texts, xlabel, xmax=None, h=5.0, accent_idx=None):
     fig = plt.figure(figsize=(W / 2.54, h / 2.54), dpi=DPI)
-    ax = fig.add_axes([0.30, 0.24, 0.62, 0.70])
+    ax = fig.add_axes([0.30, 0.29, 0.62, 0.66])
     ys = list(range(len(labels)))[::-1]
     cols = [ACCENT if (accent_idx is None or i in accent_idx) else '#8C8C8C' for i in range(len(labels))]
     ax.barh(ys, values, color=cols, height=0.55)
@@ -196,7 +246,7 @@ def hbar(labels, values, texts, xlabel, xmax=None, h=5.0, accent_idx=None):
 
 def vbar(labels, values, texts, ylabel, ymax=None, h=6.0, colors=None):
     fig = plt.figure(figsize=(W / 2.54, h / 2.54), dpi=DPI)
-    ax = fig.add_axes([0.14, 0.14, 0.8, 0.8])
+    ax = fig.add_axes([0.17, 0.16, 0.78, 0.76])
     xs = range(len(labels))
     ax.bar(xs, values, color=colors or [ACCENT] * len(values), width=0.5)
     for x, v, t in zip(xs, values, texts):
