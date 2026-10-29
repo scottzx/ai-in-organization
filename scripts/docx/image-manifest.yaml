@@ -1003,7 +1003,7 @@ images:
   redraw_file: null
   note: "资料来源：本书绘制，据本节正文整理，为定性示意，不含数据。"
   manual_review: null
-- file: fig-07-2-智力飞轮.png
+- file: fig-07-3-智力飞轮.png
   chapters: 07-组织变革与精益管理
   action: keep
   advice: 本书新绘（rev/figures）
@@ -1013,7 +1013,7 @@ images:
   redraw_file: null
   note: "资料来源：本书绘制，据本节正文整理，为定性示意，不含数据。"
   manual_review: null
-- file: fig-07-3-逐份审核转向抽样校准.png
+- file: fig-07-2-逐份审核转向抽样校准.png
   chapters: 07-组织变革与精益管理
   action: keep
   advice: 本书新绘（rev/figures）
