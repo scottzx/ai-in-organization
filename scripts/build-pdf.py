@@ -806,7 +806,7 @@ class Builder:
                 'lower':'下册 · 企业数字化与数智化案例汇编'}
         edition='上中下册合订本' if self.volume=='all' else labels[self.volume]
         cover_volumes='<br/>'.join(labels.values()) if self.volume=='all' else labels[self.volume]
-        cover_edition='三册初稿合订本' if self.volume=='all' else f'{self.volume_name()}初稿'
+        cover_edition='合订本' if self.volume=='all' else self.volume_name()
         scope_note=f'本书根据{DATE}保存的稿件编排。单册未收录的跨册引用链接至项目仓库。'
         case_count=len(index['entries']) if index else 0
         scene_count=index['counts']['all_fragments'] if index else 0
