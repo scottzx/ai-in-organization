@@ -101,6 +101,12 @@ def plain(items):
     return ''.join(result)
 
 
+def section_anchor(title):
+    # Numbered headings keep their historical section-N-M link targets.
+    number=re.match(r'(\d+(?:\.\d+)+)\s',title)
+    return 'section-'+number[1].replace('.','-') if number else None
+
+
 def slug(text):
     return re.sub(r'[^\w\-\s]', '', text.lower()).replace(' ', '-')
 
@@ -565,7 +571,7 @@ class Builder:
         out=self.blocks(blocks)
         if self.pending_notes:
             title=self.para('注释','h4'); title.keepWithNext=True
-            out.extend([CondPageBreak(60),title])
+            out.extend([CondPageBreak(60),Anchor([key(self.current,'本章参考资料')]),title])
             i=0
             while i<len(self.pending_notes):
                 n,note=self.pending_notes[i]; i+=1
@@ -597,10 +603,14 @@ class Builder:
         self.anchors.add(key(path))
         for anchor in re.findall(r'<a\s+id="([^"]+)"',path.read_text()):
             self.anchors.add(key(path,anchor))
+        if re.search(r'^\[\^[^\]]+\]:',path.read_text(),re.M):
+            # Chapter references moved into footnotes; old 本章参考资料 links open the endnotes.
+            self.anchors.add(key(path,'本章参考资料'))
         for b in blocks:
             if b['t']=='Header':
                 self.anchors.add(key(path,b['c'][1][0]))
                 self.anchors.add(key(path,slug(plain(b['c'][2]))))
+                if section_anchor(plain(b['c'][2])): self.anchors.add(key(path,section_anchor(plain(b['c'][2]))))
             elif b['t']=='RawBlock':
                 for a in re.findall(r'id="([^"]+)"',b['c'][1]): self.anchors.add(key(path,a))
 
@@ -636,7 +646,8 @@ class Builder:
             elif t=='Header':
                 level,attrs,items=c; title=plain(items)
                 self.heading_context=title
-                names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]))
+                names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]
+                                         +([key(self.current,section_anchor(title))] if section_anchor(title) else [])))
                 while out and isinstance(out[-1],Anchor):
                     names.extend(out.pop().names)
                 previous_keeps=out and isinstance(out[-1],Paragraph) and (
