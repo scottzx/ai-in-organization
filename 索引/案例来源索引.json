@@ -5627,7 +5627,7 @@
           "source_fragment_id": "S-14-F01",
           "title": "跨系统建档的演示能说明什么",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "作者明确模拟商机，展示一次创建与同步；生产运行未知。",
           "anchor": "s-14-f01",
           "sources": [
