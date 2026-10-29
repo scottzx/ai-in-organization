@@ -45,10 +45,6 @@ OUT = ROOT / 'output/pdf'
 TITLE = '企业数智化转型研究报告'
 MANUSCRIPT_DATE = '2026-10-18'
 DATE = '2026年10月18日'
-UPPER_VERSION = 'v11.0'
-MIDDLE_VERSION = 'v0.5'
-LOWER_VERSION = 'v9.0'
-VERSION = f'上册 {UPPER_VERSION} / 中册 {MIDDLE_VERSION} / 下册 {LOWER_VERSION}'
 PDF = OUT / (TITLE + '-上中下册合订本.pdf')
 NAVY = colors.HexColor('#17365D')
 BLUE = colors.HexColor('#1D4ED8')
@@ -351,12 +347,11 @@ class ManuscriptImage(Flowable):
 
 
 class BookDoc(BaseDocTemplate):
-    def __init__(self, path, edition='上中下册合订本', outline_offset=0, front_matter=True,
-                 version=VERSION):
+    def __init__(self, path, edition='上中下册合订本', outline_offset=0, front_matter=True):
         super().__init__(str(path), pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
                          topMargin=23*mm, bottomMargin=22*mm,
                          title=TITLE, author='一芥智能研究院',
-                         subject=f'从智力服务到精益经营；{edition}；{version}；{DATE}',
+                         subject=f'从智力服务到精益经营；{edition}；{DATE}',
                          creator='一芥智能研究院 / Markdown + ReportLab')
         frame = Frame(MARGIN,22*mm,TEXT_WIDTH,HEIGHT-45*mm, leftPadding=0,
                       rightPadding=0,topPadding=0,bottomPadding=0)
@@ -771,12 +766,10 @@ class Builder:
             self.body_start_source={'middle':middle,'lower':lower}[self.volume]/'README.md'
         labels={'upper':'上册 · 研究报告','middle':'中册 · 行业解决方案',
                 'lower':'下册 · 企业数字化与数智化案例汇编'}
-        versions={'upper':UPPER_VERSION,'middle':MIDDLE_VERSION,'lower':LOWER_VERSION}
         edition='上中下册合订本' if self.volume=='all' else labels[self.volume]
-        version=VERSION if self.volume=='all' else f'{self.volume_name()} {versions[self.volume]}'
         cover_volumes='<br/>'.join(labels.values()) if self.volume=='all' else labels[self.volume]
         cover_edition='三册初稿合订本' if self.volume=='all' else f'{self.volume_name()}初稿'
-        scope_note=f'本书根据{DATE}保存的稿件编排，版本为{version}。单册未收录的跨册引用链接至项目仓库。'
+        scope_note=f'本书根据{DATE}保存的稿件编排。单册未收录的跨册引用链接至项目仓库。'
         case_count=len(index['entries']) if index else 0
         scene_count=index['counts']['all_fragments'] if index else 0
         middle_count=sum(bool(re.match(r'[A-Z][0-9]{2}-',path.name)) for path in middle_paths)
@@ -796,7 +789,7 @@ class Builder:
                            Spacer(1,10*mm),self.para('从智力服务到精益经营','cover_subtitle'),Spacer(1,17*mm),
                            self.para(cover_volumes,'cover_meta'),
                            Spacer(1,40*mm),self.para('一芥智能研究院','cover_meta'),
-                           Spacer(1,5*mm),self.para(f'{cover_edition}  |  {version}<br/>{DATE}','cover_note'),PageBreak()])
+                           Spacer(1,5*mm),self.para(f'{cover_edition}<br/>{DATE}','cover_note'),PageBreak()])
         p=self.para('版本与使用说明','h1')
         p.running_title='版本与使用说明'
         self.story.extend([Anchor(['publication-note']),p])
@@ -817,9 +810,9 @@ class Builder:
         toc.dotsMinLevel=0
         self.story.append(toc)
         for title,sub,name,part_paths in [
-            ('上册  研究报告',f'从智力服务到精益经营  |  初稿 {UPPER_VERSION}','upper-volume',upper_paths),
-            ('中册  行业解决方案',f'{middle_count}篇行业与专业业务方案  |  初稿 {MIDDLE_VERSION}','middle-volume',middle_paths),
-            ('下册  企业数字化与数智化案例汇编',f'{case_count}个阅读入口 · {scene_count}个场景与证据片段  |  初稿 {LOWER_VERSION}','lower-volume',lower_paths),
+            ('上册  研究报告',f'从智力服务到精益经营','upper-volume',upper_paths),
+            ('中册  行业解决方案',f'{middle_count}篇行业与专业业务方案','middle-volume',middle_paths),
+            ('下册  企业数字化与数智化案例汇编',f'{case_count}个阅读入口 · {scene_count}个场景与证据片段','lower-volume',lower_paths),
             ('阅读与来源索引','按研究问题阅读 · 资料来源说明','source-indexes',extra_paths),
         ]:
             if not part_paths: continue
@@ -844,7 +837,7 @@ class Builder:
                                      'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         pdf=self.output or (PDF if self.volume=='all' else OUT/(TITLE+f'-{self.volume_name()}.pdf'))
         pdf.parent.mkdir(parents=True,exist_ok=True)
-        doc=BookDoc(pdf,edition=edition,version=version)
+        doc=BookDoc(pdf,edition=edition)
         toc.formatter=doc.page_label
         doc.multiBuild(self.story)
         manifest=pdf.with_suffix('.manifest.json') if self.output or self.volume!='all' else OUT/'build-manifest.json'
@@ -917,10 +910,7 @@ class Builder:
                     destination=a.get('/Dest') or a.get('/A',{}).get('/D')
                     if destination and destination[0].idnum not in page_ids:
                         raise ValueError('PDF internal link points outside this document')
-        versions={'upper':UPPER_VERSION,'middle':MIDDLE_VERSION,'lower':LOWER_VERSION}
-        if volume in ('upper','middle','lower'):
-            versions={volume:versions[volume]}
-        manifest={'title':TITLE,'manuscript_date':MANUSCRIPT_DATE,'versions':versions,
+        manifest={'title':TITLE,'manuscript_date':MANUSCRIPT_DATE,
                   'pdf':pdf.name,'pages':len(reader.pages),'sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
                   'source_files':self.sources,'section_pages':doc.section_pages,
                   'body_start_page':doc.body_start_page,
