@@ -1,6 +1,6 @@
 {
   "title": "中册行业图示摘引来源",
-  "updated_on": "2026-10-18",
+  "updated_on": "2026-10-28",
   "figures": [
     {
       "asset": "A11-钢铁-13.png",
@@ -61,7 +61,9 @@
           2250
         ]
       },
-      "uncropped_asset_sha256": "b18cdfbb81e04161dc241a78bd0f1c67f571ccc4442e7f90f0f91627de15ecb0"
+      "uncropped_asset_sha256": "b18cdfbb81e04161dc241a78bd0f1c67f571ccc4442e7f90f0f91627de15ecb0",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-钢铁-14.png",
@@ -122,7 +124,9 @@
           2263
         ]
       },
-      "uncropped_asset_sha256": "b8a2365eb3107392dfec7e1f548472d8d5d210d13f7df065335296c9d8b4a638"
+      "uncropped_asset_sha256": "b8a2365eb3107392dfec7e1f548472d8d5d210d13f7df065335296c9d8b4a638",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-石化-16.png",
@@ -183,7 +187,9 @@
           2243
         ]
       },
-      "uncropped_asset_sha256": "c1cd3007c8436f5186be8a6df719bd6cf51cbf6d1ed05b61c183391d9be7facb"
+      "uncropped_asset_sha256": "c1cd3007c8436f5186be8a6df719bd6cf51cbf6d1ed05b61c183391d9be7facb",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-石化-17.png",
@@ -244,7 +250,9 @@
           2132
         ]
       },
-      "uncropped_asset_sha256": "b74ef390c704af0a6346cb8452a79ced558fdaf287aad839bbc7d0ccbf990c0e"
+      "uncropped_asset_sha256": "b74ef390c704af0a6346cb8452a79ced558fdaf287aad839bbc7d0ccbf990c0e",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-石化-18.png",
@@ -305,7 +313,9 @@
           2056
         ]
       },
-      "uncropped_asset_sha256": "ae218cd4b28d076cb29cf78415475130f41bbd86a11a1a606d1475084bdc0a86"
+      "uncropped_asset_sha256": "ae218cd4b28d076cb29cf78415475130f41bbd86a11a1a606d1475084bdc0a86",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-石化-19.png",
@@ -366,7 +376,9 @@
           2231
         ]
       },
-      "uncropped_asset_sha256": "b16485434e5702d7c4a2f852e61f37be55884d9942eb8b716450bd6a3bfc681a"
+      "uncropped_asset_sha256": "b16485434e5702d7c4a2f852e61f37be55884d9942eb8b716450bd6a3bfc681a",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-石化-20.png",
@@ -427,7 +439,9 @@
           2183
         ]
       },
-      "uncropped_asset_sha256": "edb5faf405871acb78c4e3118e11c71a7af652e3d8eaa1abb40c70b0fa1274ef"
+      "uncropped_asset_sha256": "edb5faf405871acb78c4e3118e11c71a7af652e3d8eaa1abb40c70b0fa1274ef",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-工程机械-22.png",
@@ -463,7 +477,9 @@
       "required_in": [
         "C01-工程机械.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-工程机械-23.png",
@@ -499,7 +515,9 @@
       "required_in": [
         "C01-工程机械.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-新能源汽车-25.png",
@@ -535,7 +553,9 @@
       "required_in": [
         "C02-汽车与零部件.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-新能源汽车-26.png",
@@ -571,7 +591,9 @@
       "required_in": [
         "C02-汽车与零部件.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-新能源汽车-27.png",
@@ -607,7 +629,9 @@
       "required_in": [
         "C02-汽车与零部件.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-机器人-29.png",
@@ -668,7 +692,9 @@
           2259
         ]
       },
-      "uncropped_asset_sha256": "45199ff7b184408fcf88fd20118883005cd09f122cf33b44b94ced9998dc94d8"
+      "uncropped_asset_sha256": "45199ff7b184408fcf88fd20118883005cd09f122cf33b44b94ced9998dc94d8",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-机器人-30.png",
@@ -729,7 +755,9 @@
           2254
         ]
       },
-      "uncropped_asset_sha256": "b4f833ed8e666036bcec7d5d8aaafc23989affa10b13d9b86d6cb7aeebb204aa"
+      "uncropped_asset_sha256": "b4f833ed8e666036bcec7d5d8aaafc23989affa10b13d9b86d6cb7aeebb204aa",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-医疗装备-32.png",
@@ -790,7 +818,9 @@
           2263
         ]
       },
-      "uncropped_asset_sha256": "a5570ff7a890510490a5ae68313e8583c4bccda1c31531ecbe3a01fa7de03285"
+      "uncropped_asset_sha256": "a5570ff7a890510490a5ae68313e8583c4bccda1c31531ecbe3a01fa7de03285",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-医疗装备-33.png",
@@ -851,7 +881,9 @@
           2251
         ]
       },
-      "uncropped_asset_sha256": "4cb353437a6e84f4c5fd187b7395cce86b86a8178c381f9f4ebe62ca09298fac"
+      "uncropped_asset_sha256": "4cb353437a6e84f4c5fd187b7395cce86b86a8178c381f9f4ebe62ca09298fac",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-医疗装备-34.png",
@@ -912,7 +944,9 @@
           2238
         ]
       },
-      "uncropped_asset_sha256": "be64134acbce7c5349d9c8482b3ff4a46cb6c462d599ffe3d75cd9ebda182b9b"
+      "uncropped_asset_sha256": "be64134acbce7c5349d9c8482b3ff4a46cb6c462d599ffe3d75cd9ebda182b9b",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-医疗装备-35.png",
@@ -973,7 +1007,9 @@
           2171
         ]
       },
-      "uncropped_asset_sha256": "1fafe65987e6b7ca411a83020bd5aa58278180b71fbce5f6a3c689362234b6c1"
+      "uncropped_asset_sha256": "1fafe65987e6b7ca411a83020bd5aa58278180b71fbce5f6a3c689362234b6c1",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-家电-37.png",
@@ -1034,7 +1070,9 @@
           2180
         ]
       },
-      "uncropped_asset_sha256": "8d8104cee4c9a8c2b355fcdc901bf67db69a362a031e39aed2a28ab2075cfea4"
+      "uncropped_asset_sha256": "8d8104cee4c9a8c2b355fcdc901bf67db69a362a031e39aed2a28ab2075cfea4",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-家电-38.png",
@@ -1095,7 +1133,9 @@
           2167
         ]
       },
-      "uncropped_asset_sha256": "b00761a9eac0ede3bdcfe842daa2e1730845a6ffb8c0e1a3c36b81123a4beb6d"
+      "uncropped_asset_sha256": "b00761a9eac0ede3bdcfe842daa2e1730845a6ffb8c0e1a3c36b81123a4beb6d",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-家电-39.png",
@@ -1156,7 +1196,9 @@
           2007
         ]
       },
-      "uncropped_asset_sha256": "44cb87f86e5f2e41dbba4dcbbe2d928021e51679e8e95f2746fa3d84e8a190e1"
+      "uncropped_asset_sha256": "44cb87f86e5f2e41dbba4dcbbe2d928021e51679e8e95f2746fa3d84e8a190e1",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-制糖-41.png",
@@ -1217,7 +1259,9 @@
           2263
         ]
       },
-      "uncropped_asset_sha256": "ab489d1ac5051ad42acb61526d4d8c95b43d65df930acf1cb36eb519a5a6d4be"
+      "uncropped_asset_sha256": "ab489d1ac5051ad42acb61526d4d8c95b43d65df930acf1cb36eb519a5a6d4be",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-白酒-43.png",
@@ -1278,7 +1322,9 @@
           1953
         ]
       },
-      "uncropped_asset_sha256": "b7a118ffe9a7854806f96446b7d6850fba62e633d4790a2dd38ab35e28371f96"
+      "uncropped_asset_sha256": "b7a118ffe9a7854806f96446b7d6850fba62e633d4790a2dd38ab35e28371f96",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-白酒-44.png",
@@ -1339,7 +1385,9 @@
           2203
         ]
       },
-      "uncropped_asset_sha256": "4d14a376b5948d6aa86d46e52d49ac3828aa131ab3412d124f1e016f613bf928"
+      "uncropped_asset_sha256": "4d14a376b5948d6aa86d46e52d49ac3828aa131ab3412d124f1e016f613bf928",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-美妆日化-46.png",
@@ -1375,7 +1423,9 @@
       "required_in": [
         "C20-美妆日化.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-美妆日化-47.png",
@@ -1436,7 +1486,9 @@
           1190
         ]
       },
-      "uncropped_asset_sha256": "bb0805f3e67e3a4437dda461f90ce27c5a521dff446f281b48d077a51fff53c7"
+      "uncropped_asset_sha256": "bb0805f3e67e3a4437dda461f90ce27c5a521dff446f281b48d077a51fff53c7",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-锂电池-49.png",
@@ -1497,7 +1549,9 @@
           2243
         ]
       },
-      "uncropped_asset_sha256": "fdb7b5df5789aaecd43760628ae98b44c04da4a7a9c3d871e7d78827391ab1d8"
+      "uncropped_asset_sha256": "fdb7b5df5789aaecd43760628ae98b44c04da4a7a9c3d871e7d78827391ab1d8",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-锂电池-50.png",
@@ -1558,7 +1612,9 @@
           2097
         ]
       },
-      "uncropped_asset_sha256": "de267fe905b8bf8b847dd3fda63a331d2d611b2f1842b6d3809f53196fa95e69"
+      "uncropped_asset_sha256": "de267fe905b8bf8b847dd3fda63a331d2d611b2f1842b6d3809f53196fa95e69",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-锂电池-51.png",
@@ -1619,7 +1675,9 @@
           2075
         ]
       },
-      "uncropped_asset_sha256": "d80f3b0561ba15c8c46662c62c2f77e207f65ab65475e0fd518cd61777e62cbc"
+      "uncropped_asset_sha256": "d80f3b0561ba15c8c46662c62c2f77e207f65ab65475e0fd518cd61777e62cbc",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-印制板-53.png",
@@ -1680,7 +1738,9 @@
           2259
         ]
       },
-      "uncropped_asset_sha256": "2a88a1c83697596060a494dbfea4b39b2e061b8aa9bfaaae40268d16cfe04154"
+      "uncropped_asset_sha256": "2a88a1c83697596060a494dbfea4b39b2e061b8aa9bfaaae40268d16cfe04154",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-印制板-54.png",
@@ -1741,7 +1801,9 @@
           2211
         ]
       },
-      "uncropped_asset_sha256": "792efbb2916b72c39c940036369f82ec2aabbdaaa1ddbc7cd374797ab4a14f42"
+      "uncropped_asset_sha256": "792efbb2916b72c39c940036369f82ec2aabbdaaa1ddbc7cd374797ab4a14f42",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-智能移动终端-56.png",
@@ -1777,7 +1839,9 @@
       "required_in": [
         "C16-智能移动终端.md"
       ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。"
+      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "A11-智能移动终端-57.png",
@@ -1838,251 +1902,9 @@
           1227
         ]
       },
-      "uncropped_asset_sha256": "05eb25f5e18e506d855347f7105a842221e28a79035a65f79dff4a80a8b3437d"
-    },
-    {
-      "asset": "A11-民爆-59.png",
-      "source_id": "A11",
-      "source_title": "场景化、图谱化推进重点行业数字化转型的参考指引（2025版）",
-      "pdf_page": 59,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=59",
-      "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "5e43adfa6f6d9cfe6f61994f9d2a821e0c88eec0d76784f5b5d7f248a2e058f7",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        2979,
-        2195
-      ],
-      "content_detection": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          45.9433,
-          14.2549,
-          1153.7774,
-          830.5806
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.075,
-        "page_height_removed_fraction": 0.0304,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
-      },
-      "required_in": [
-        "C14-民爆.md"
-      ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
-      "crop": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          45.9433,
-          14.2549,
-          1153.7774,
-          830.5806
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.075,
-        "page_height_removed_fraction": 0.0304,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
-        "pixel_bbox": [
-          123,
-          38,
-          3102,
-          2233
-        ]
-      },
-      "uncropped_asset_sha256": "7f78203bf6fc4793feedf7bc90b9ab39cef6e6a87556de88501c1ed8e32dba5b"
-    },
-    {
-      "asset": "A11-民爆-60.png",
-      "source_id": "A11",
-      "source_title": "场景化、图谱化推进重点行业数字化转型的参考指引（2025版）",
-      "pdf_page": 60,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=60",
-      "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "58949981de49e2215235fa5073842353894b0edb8bc4958d0dcbb0d4308f6e31",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        2979,
-        2214
-      ],
-      "content_detection": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          45.9433,
-          14.772400000000001,
-          1153.733,
-          837.9056
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.075,
-        "page_height_removed_fraction": 0.0223,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
-      },
-      "required_in": [
-        "C14-民爆.md"
-      ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
-      "crop": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          45.9433,
-          14.772400000000001,
-          1153.733,
-          837.9056
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.075,
-        "page_height_removed_fraction": 0.0223,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
-        "pixel_bbox": [
-          123,
-          39,
-          3102,
-          2253
-        ]
-      },
-      "uncropped_asset_sha256": "79513abebe87cedf67a786c84b7966b67a9c55e98c522287abc8273bcc837750"
-    },
-    {
-      "asset": "A11-民爆-61.png",
-      "source_id": "A11",
-      "source_title": "场景化、图谱化推进重点行业数字化转型的参考指引（2025版）",
-      "pdf_page": 61,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=61",
-      "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "1e99ebe20cec4ccf625016176bdb44abd0eb49d1d03d7cc7a980a36c0eda8fdd",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        3043,
-        2213
-      ],
-      "content_detection": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          34.1823,
-          14.2549,
-          1165.6276,
-          837.188
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.052,
-        "page_height_removed_fraction": 0.0225,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
-      },
-      "required_in": [
-        "C14-民爆.md"
-      ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
-      "crop": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          34.1823,
-          14.2549,
-          1165.6276,
-          837.188
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.052,
-        "page_height_removed_fraction": 0.0225,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
-        "pixel_bbox": [
-          91,
-          38,
-          3134,
-          2251
-        ]
-      },
-      "uncropped_asset_sha256": "fed7923cb03389076103a7afb9560239730524442956ffa8d537fa121c18576a"
-    },
-    {
-      "asset": "A11-民爆-62.png",
-      "source_id": "A11",
-      "source_title": "场景化、图谱化推进重点行业数字化转型的参考指引（2025版）",
-      "pdf_page": 62,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=62",
-      "source_sha256": "2abbd7d7e676e233d3bd3fe8df3a7663750a0807ceeb6567979c03f73ea8a295",
-      "asset_sha256": "f3ef7b8c86a839ba37a87e391e68c38740304d1595a002f3fb9b06c9b32608ac",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        3042,
-        2147
-      ],
-      "content_detection": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          34.1823,
-          14.2549,
-          1165.583,
-          812.6896
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.052,
-        "page_height_removed_fraction": 0.0516,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。"
-      },
-      "required_in": [
-        "C14-民爆.md"
-      ],
-      "page_number_handling": "正文注明PDF文件页码并链接完整来源页。",
-      "crop": {
-        "method": "visible-pdf-element-union-with-4pt-padding",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          34.1823,
-          14.2549,
-          1165.583,
-          812.6896
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.052,
-        "page_height_removed_fraction": 0.0516,
-        "review_note": "已核查图题、文字、连线、图例及编制说明；4pt留边外非白像素为0。",
-        "pixel_bbox": [
-          91,
-          38,
-          3133,
-          2185
-        ]
-      },
-      "uncropped_asset_sha256": "198abf61786ac6756a48fc5c9650cad1a438fa6568441d212feec42a7171590f"
+      "uncropped_asset_sha256": "05eb25f5e18e506d855347f7105a842221e28a79035a65f79dff4a80a8b3437d",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B01-钢铁-41.png",
@@ -2147,7 +1969,9 @@
           2973
         ]
       },
-      "uncropped_asset_sha256": "f2c4a1f438a9b7ae6288fb569a1735ca2f03e16efb7f9a5dda0a582b685c5342"
+      "uncropped_asset_sha256": "f2c4a1f438a9b7ae6288fb569a1735ca2f03e16efb7f9a5dda0a582b685c5342",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B01-钢铁-43.png",
@@ -2212,7 +2036,9 @@
           2036
         ]
       },
-      "uncropped_asset_sha256": "06699a245631e47f00c8c75d5385e3f11bc3d883f66d8cdae403309bbff093c5"
+      "uncropped_asset_sha256": "06699a245631e47f00c8c75d5385e3f11bc3d883f66d8cdae403309bbff093c5",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B02-工程机械-57.png",
@@ -2277,7 +2103,9 @@
       "printed_page": 51,
       "figure_titles": [
         "图3-2 工程机械行业工业互联网融合创新实施架构"
-      ]
+      ],
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B03-电力-20.png",
@@ -2342,7 +2170,9 @@
           1580
         ]
       },
-      "uncropped_asset_sha256": "ca66fce154e3fb45e44d65a89c158ba947f80fa0e911e6e813eb56aa9dcadd06"
+      "uncropped_asset_sha256": "ca66fce154e3fb45e44d65a89c158ba947f80fa0e911e6e813eb56aa9dcadd06",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B04-石化-14.png",
@@ -2407,7 +2237,9 @@
           2653
         ]
       },
-      "uncropped_asset_sha256": "e982dc0b469eaac0f51f1e8fecfd7f922f2dc5e687dcf9a45ddc23e593b4f7d1"
+      "uncropped_asset_sha256": "e982dc0b469eaac0f51f1e8fecfd7f922f2dc5e687dcf9a45ddc23e593b4f7d1",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B04-石化-16.png",
@@ -2472,7 +2304,9 @@
           2130
         ]
       },
-      "uncropped_asset_sha256": "fdae434bf8f3e38be3fe7cbcc9acd2024fd47517d416786ffade333fe13e3a32"
+      "uncropped_asset_sha256": "fdae434bf8f3e38be3fe7cbcc9acd2024fd47517d416786ffade333fe13e3a32",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B05-船舶-17.png",
@@ -2537,7 +2371,9 @@
           3013
         ]
       },
-      "uncropped_asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03"
+      "uncropped_asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B05-船舶-44.png",
@@ -2602,7 +2438,9 @@
           1507
         ]
       },
-      "uncropped_asset_sha256": "1a9fe44152d6f5eb8c7b0498036c6d9cf9edcc7bca6bd7dfc1fcb89a6ed17b4a"
+      "uncropped_asset_sha256": "1a9fe44152d6f5eb8c7b0498036c6d9cf9edcc7bca6bd7dfc1fcb89a6ed17b4a",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
       "asset": "B06-油气储运-26.png",
@@ -2667,983 +2505,162 @@
           2146
         ]
       },
-      "uncropped_asset_sha256": "e0badee6952b9f1a38911c46c5c34a980778fb0ea3fe195edad9a38252f6c48e"
+      "uncropped_asset_sha256": "e0badee6952b9f1a38911c46c5c34a980778fb0ea3fe195edad9a38252f6c48e",
+      "disposition": "保留",
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
-      "asset": "C07-数字金融-9.png",
-      "source_id": "C07",
-      "source_title": "数字金融创新发展研究报告（2025年）",
-      "pdf_page": 9,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=9",
-      "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "d922d597178ffe42d04110479c225a4548146a3ae9f148f305823520d059fc1c",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1592,
-        982
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          90.37,
-          338.84,
-          508.83,
-          596.94
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.423,
-        "page_height_removed_fraction": 0.6934,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      "asset": "redraw-数字金融体系示意.png",
+      "title": "数字金融体系分层示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C07-数字金融-9.png",
+        "source_id": "C07",
+        "source_title": "数字金融创新发展研究报告（2025年）",
+        "pdf_page": 9,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=9"
       },
-      "required_in": [
-        "J01-银行.md",
-        "J02-保险.md",
-        "J03-证券服务.md",
-        "J04-基金管理.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 2,
-      "figure_titles": [
-        "图1 数字金融体系架构"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          90.37,
-          338.84,
-          508.83,
-          596.94
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.423,
-        "page_height_removed_fraction": 0.6934,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          343,
-          1287,
-          1935,
-          2269
-        ]
-      },
-      "uncropped_asset_sha256": "e9561cc10db4864f316567fc864e3b179b9a80a0db86ecceee1312b3d58c7c4a"
+      "attribution": "据中国信息通信研究院云计算与数字化研究所《数字金融创新发展研究报告（2025年）》图1（PDF第9页）改绘",
+      "asset_sha256": "03e66d3f029f957a8dd4be848c86b1c2270ab05b6fd4fa1f56ce86f8bf7b0976",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C07-数字金融-34.png",
-      "source_id": "C07",
-      "source_title": "数字金融创新发展研究报告（2025年）",
-      "pdf_page": 34,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=34",
-      "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "d081abf7c287e43ec0a738bed611f68d6c14d3aa2f3ae21c98fb4387cccdb72a",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1603,
-        973
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          87.47,
-          174.22,
-          508.83,
-          429.9
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.6963,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      "asset": "redraw-智慧农业三层框架示意.png",
+      "title": "智慧农业三层框架示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C09-智慧农业-9.png",
+        "source_id": "C09",
+        "source_title": "中国智慧农业发展研究报告——新一代信息技术助力乡村振兴",
+        "pdf_page": 9,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf#page=9"
       },
-      "required_in": [
-        "J01-银行.md",
-        "J04-基金管理.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 27,
-      "figure_titles": [
-        "图4 金融数据智能化治理全流程技术框架"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          87.47,
-          174.22,
-          508.83,
-          429.9
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.6963,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          332,
-          662,
-          1935,
-          1635
-        ]
-      },
-      "uncropped_asset_sha256": "cbb5540a05bf59f3650c4b034c2078e58a11d7c2e92546d32611727f51237912"
-    },
-    {
-      "asset": "C07-数字金融-35.png",
-      "source_id": "C07",
-      "source_title": "数字金融创新发展研究报告（2025年）",
-      "pdf_page": 35,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=35",
-      "source_sha256": "9d99b0e77fb8825196069b2867d26332ea7d2f3f2f69a57c02887ddd7ac7db52",
-      "asset_sha256": "fc113e30976f43cb9e309e3a0888d717e9e88b35e16c4d778ba3f828db4eed2b",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1603,
-        960
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          87.47,
-          458.39,
-          508.83,
-          710.7
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.7003,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "required_in": [
-        "J02-保险.md",
-        "J03-证券服务.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 28,
-      "figure_titles": [
-        "图5 金融领域大模型应用场景清单"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.2756,
-          841.8898
-        ],
-        "pdf_bbox_points": [
-          87.47,
-          458.39,
-          508.83,
-          710.7
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.7003,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          332,
-          1742,
-          1935,
-          2702
-        ]
-      },
-      "uncropped_asset_sha256": "813cf71f3d1853471d9dcda1da9fb826d380859957e27b525dd762baf262eceb"
-    },
-    {
-      "asset": "C09-智慧农业-9.png",
-      "source_id": "C09",
-      "source_title": "中国智慧农业发展研究报告——新一代信息技术助力乡村振兴",
-      "pdf_page": 9,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf#page=9",
-      "source_sha256": "a037e48bf25bc5a1624f7f15482e7681b389dbcd55ae413a808977cb56172ce3",
-      "asset_sha256": "663050da39adc89e0465fba401fc4b9716f4a49da7619f10d82c1a590872fbd8",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1603,
-        1057
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          86.85,
-          76.6,
-          508.44,
-          354.44
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.412,
-        "page_height_removed_fraction": 0.67,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "required_in": [
-        "A01-农业.md",
-        "A03-畜牧业.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 2,
-      "figure_titles": [
-        "图1 智慧农业框架结构1.0"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          86.85,
-          76.6,
-          508.44,
-          354.44
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.412,
-        "page_height_removed_fraction": 0.67,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          330,
-          291,
-          1933,
-          1348
-        ]
-      },
-      "uncropped_asset_sha256": "a95d0be422e48ae6f0ecdd8097b35953639b63d9ac9d74bbfa717a00f636f72f"
-    },
-    {
-      "asset": "C10-数字乡村-11.png",
-      "source_id": "C10",
-      "source_title": "数字乡村发展实践白皮书（2024年）",
-      "pdf_page": 11,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11",
-      "source_sha256": "b6c51fc4bd3b78a160d377e642214bba22085ba13adf47de5568ab0000d3e0a2",
-      "asset_sha256": "c585385c98e768ff6d39079d656a41e1d667852847d3ffa2897efe59c801cfc7",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1603,
-        1011
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          78.6,
-          360.36,
-          499.92,
-          626.16
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.6843,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "required_in": [
-        "A01-农业.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 4,
-      "figure_titles": [
-        "图1 数字乡村建设总体框架"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          78.6,
-          360.36,
-          499.92,
-          626.16
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.413,
-        "page_height_removed_fraction": 0.6843,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          298,
-          1369,
-          1901,
-          2380
-        ]
-      },
-      "uncropped_asset_sha256": "401df9928ce8f991955200e0c3265caa2b57edd45eb8fee4fbe4df3af732a96d"
-    },
-    {
-      "asset": "C11-智慧医疗-13.png",
-      "source_id": "C11",
-      "source_title": "5G时代智慧医疗健康白皮书",
-      "pdf_page": 13,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=13",
-      "source_sha256": "ce7d34b9f2a4335ce7899382597a12b654bf4f06028b0a7e8a6de7151b5809e0",
-      "asset_sha256": "60d83f247698c7379ae3c4badacded624dace84145a7e428059735f90f05b8a4",
-      "output_size_px": [
-        1467,
-        1139
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          101.32,
-          77.7,
-          487.07,
-          377.2
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.543,
-        "page_height_removed_fraction": 0.6443,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
-      },
-      "required_in": [
-        "Q01-医疗健康.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 6,
-      "figure_titles": [
-        "图1-1 5G医疗技术架构图"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          101.32,
-          77.7,
-          487.07,
-          377.2
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.543,
-        "page_height_removed_fraction": 0.6443,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          385,
-          295,
-          1852,
-          1434
-        ]
+      "attribution": "据中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心《中国智慧农业发展研究报告——新一代信息技术助力乡村振兴》（2021年）图1（PDF第9页）改绘",
+      "asset_sha256": "a9676d18a49fcf606d7328f43a2d091366dc88ad43e53e0ea3000a3a4607b2b2",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者",
+      "year_basis": {
+        "year": "2021年",
+        "evidence": "原PDF封面（PDF第1页）署“2021 年 12 月”，发布者为中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心",
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf",
+        "pdf_sha256": "a037e48bf25bc5a1624f7f15482e7681b389dbcd55ae413a808977cb56172ce3",
+        "checked_on": "2026-10-28"
       }
     },
     {
-      "asset": "C11-远程会诊-31.png",
-      "source_id": "C11",
-      "source_title": "5G时代智慧医疗健康白皮书",
-      "pdf_page": 31,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=31",
-      "source_sha256": "ce7d34b9f2a4335ce7899382597a12b654bf4f06028b0a7e8a6de7151b5809e0",
-      "asset_sha256": "2e7e99f9c528ad4cad0cb92609607865bd7ee4e1e0f9324f8acce79fbabd0ed9",
-      "output_size_px": [
-        1594,
-        1396
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          109.0,
-          389.37,
-          528.12,
-          756.33
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.42,
-        "page_height_removed_fraction": 0.5641,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      "asset": "redraw-数字乡村框架示意.png",
+      "title": "数字乡村建设框架示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C10-数字乡村-11.png",
+        "source_id": "C10",
+        "source_title": "数字乡村发展实践白皮书（2024年）",
+        "pdf_page": 11,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11"
       },
-      "required_in": [
-        "Q01-医疗健康.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 24,
-      "figure_titles": [
-        "图4-1 远程会诊方案架构",
-        "图4-2 远程会诊应用场景"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          109.0,
-          389.37,
-          528.12,
-          756.33
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.42,
-        "page_height_removed_fraction": 0.5641,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          414,
-          1479,
-          2008,
-          2875
-        ]
-      }
+      "attribution": "据中国信息通信研究院《数字乡村发展实践白皮书（2024年）》图1（PDF第11页）改绘",
+      "asset_sha256": "fcadff3532a8eaa554cb9f4f4942260b6573f252d1773c5a6ff3a39942e5474b",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C16-城市运管中心-27.png",
-      "source_id": "C16",
-      "source_title": "后疫情时代城市运行管理中心行业报告（2020年）",
-      "pdf_page": 27,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202009/P020200917537374351025.pdf#page=27",
-      "source_sha256": "173a238fcfbc39dcebbb722c067f55c36ab68aebe6bcbdc468e3d81f4f08f591",
-      "asset_sha256": "7241a6ae5248578ce4c4067164ed2a7f78a5450f01442e949c45439598995d1e",
-      "output_size_px": [
-        1619,
-        640
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          88.0,
-          290.94,
-          513.77,
-          459.01
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.398,
-        "page_height_removed_fraction": 0.8004,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      "asset": "redraw-智能云服务分层示意.png",
+      "title": "智能云服务分层示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C17-智能云-41.png",
+        "source_id": "C17",
+        "source_title": "云计算白皮书（2024年）",
+        "pdf_page": 41,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240723334151523502.pdf#page=41"
       },
-      "required_in": [
-        "S01-政务与公共服务.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 20,
-      "figure_titles": [
-        "图4 总体架构图"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          88.0,
-          290.94,
-          513.77,
-          459.01
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.398,
-        "page_height_removed_fraction": 0.8004,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          334,
-          1105,
-          1953,
-          1745
-        ]
-      }
+      "attribution": "据中国信息通信研究院《云计算白皮书（2024年）》图17（PDF第41页）改绘",
+      "asset_sha256": "ce11843bba51fcb9053e81e27e1d1cbf0a472dd8174d068e4114d926390cc040",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C17-智能云-41.png",
-      "source_id": "C17",
-      "source_title": "云计算白皮书（2024年）",
-      "pdf_page": 41,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240723334151523502.pdf#page=41",
-      "source_sha256": "4f9c5cafdd8a63de690e83c6bb12c767d25c289ab3d2ebdfdfe91c88c314156d",
-      "asset_sha256": "cf4412828da836a1aee2576c8ed8014cb548ba2920266ace7a117270082fb3bb",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1686,
-        889
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          807.96
-        ],
-        "pdf_bbox_points": [
-          86.88,
-          384.12,
-          512.52,
-          608.45
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.399,
-        "page_height_removed_fraction": 0.7224,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      "asset": "redraw-实时互动技术构成示意.png",
+      "title": "实时互动技术构成示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C24-实时互动-39.png",
+        "source_id": "C24",
+        "source_title": "实时互动产业发展研究报告——互联网的下一个十年（2022年）",
+        "pdf_page": 39,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202206/P020220614564340133801.pdf#page=39"
       },
-      "required_in": [
-        "I03-云计算与模型平台服务.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 35,
-      "figure_titles": [
-        "图17 智能云体系架构图"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          807.96
-        ],
-        "pdf_bbox_points": [
-          86.88,
-          384.12,
-          512.52,
-          608.45
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.399,
-        "page_height_removed_fraction": 0.7224,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          344,
-          1521,
-          2030,
-          2410
-        ]
-      },
-      "uncropped_asset_sha256": "ec17a25dae6782f5e0bf335076dca9945c7a5beba9ae8ffe6208e1ba095c7d84"
+      "attribution": "据中国信息通信研究院泰尔终端实验室《实时互动产业发展研究报告——互联网的下一个十年（2022年）》图8（PDF第39页）改绘",
+      "asset_sha256": "e5478475b3c85dfeea2f93cabc956767584f4a96eaac5dbc1a4d119738e4bf32",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C24-实时互动-39.png",
-      "source_id": "C24",
-      "source_title": "实时互动产业发展研究报告——互联网的下一个十年（2022年）",
-      "pdf_page": 39,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202206/P020220614564340133801.pdf#page=39",
-      "source_sha256": "b7f5d85550ac6d051fb9010e9013c4ac12b600ee28b8f73547388cbfdedf41e9",
-      "asset_sha256": "f6f06e269f81928c23aa34411eb6d4e1b843295b8be9ca231f083725927f8dae",
-      "output_size_px": [
-        1596,
-        802
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          87.85,
-          201.0,
-          507.39,
-          411.64
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.419,
-        "page_height_removed_fraction": 0.7498,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      "asset": "redraw-电信业智能化路径示意.png",
+      "title": "电信业智能化变革方向示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C25-电信-23.png",
+        "source_id": "C25",
+        "source_title": "电信业发展蓝皮书——智能化发展（2024年）",
+        "pdf_page": 23,
+        "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202409/P020240926401677616677.pdf#page=23"
       },
-      "required_in": [
-        "P01-教育服务.md",
-        "R03-旅游与景区.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 31,
-      "figure_titles": [
-        "图8 实时互动关键技术"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          87.85,
-          201.0,
-          507.39,
-          411.64
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.419,
-        "page_height_removed_fraction": 0.7498,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          333,
-          763,
-          1929,
-          1565
-        ]
-      }
+      "attribution": "据中国信息通信研究院等《电信业发展蓝皮书——智能化发展（2024年）》图7（PDF第23页）改绘",
+      "asset_sha256": "b87889f0dbb0aa3e2f43a9589d8713ea854a843fba47c6f2b9c339d55b6e27b4",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C25-电信-23.png",
-      "source_id": "C25",
-      "source_title": "电信业发展蓝皮书——智能化发展（2024年）",
-      "pdf_page": 23,
-      "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202409/P020240926401677616677.pdf#page=23",
-      "source_sha256": "a9ce9dbbf765411df171d7617f0d8a03e1f430fba7a488485699f9a63e5521a5",
-      "asset_sha256": "c39f8bf412a07f4948eaa84e3fc19502812a2ebbbe68b078a5cca97f1ec5b8c3",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1430,
-        1232
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          132.12,
-          75,
-          508.21,
-          398.88
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.583,
-        "page_height_removed_fraction": 0.6153,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
+      "asset": "redraw-数字政府一体化框架示意.png",
+      "title": "数字政府一体化建设框架示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "C26-数字政府-20.png",
+        "source_id": "C26",
+        "source_title": "数字政府一体化建设白皮书（2024年）",
+        "pdf_page": 20,
+        "source_url": "https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20"
       },
-      "required_in": [
-        "I02-电信服务.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 17,
-      "figure_titles": [
-        "图7 电信业智能化变革路径示意图"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          132.12,
-          75,
-          508.21,
-          398.88
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.583,
-        "page_height_removed_fraction": 0.6153,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          502,
-          285,
-          1932,
-          1517
-        ]
-      },
-      "uncropped_asset_sha256": "b29c3f689314164d521f82edce87d37362dae04ed70584e2b3676426a605edbe"
+      "attribution": "据中国信息通信研究院《数字政府一体化建设白皮书（2024年）》图3（PDF第20页）改绘",
+      "asset_sha256": "d048fa58e79c70d1561eeaff3ac8eed4917cfaa292935182a90562f8e216a56a",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "C26-数字政府-20.png",
-      "source_id": "C26",
-      "source_title": "数字政府一体化建设白皮书（2024年）",
-      "pdf_page": 20,
-      "source_url": "https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20",
-      "source_sha256": "6300bd118e22f7a3fd8995c946f15ffc5c5b4e8e8b1f86b548e8b67ec3102e34",
-      "asset_sha256": "3bc499a37060f05fc7739b3b51071899598e264c72ab7ef3d522dba858ad31cf",
-      "output_size_px": [
-        1341,
-        1050
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          807.96
-        ],
-        "pdf_bbox_points": [
-          169.18,
-          71.7,
-          507.58,
-          336.56
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.759,
-        "page_height_removed_fraction": 0.6722,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
+      "asset": "redraw-餐饮产业链示意.png",
+      "title": "餐饮业数字化产业链示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "SC-H01-03-餐饮产业链-20.png",
+        "source_id": "SC-H01-03",
+        "source_title": "中国餐饮业数字化发展报告（2024）",
+        "pdf_page": 20,
+        "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=20"
       },
-      "required_in": [
-        "S01-政务与公共服务.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 14,
-      "figure_titles": [
-        "图3 数字政府一体化建设框架图"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          807.96
-        ],
-        "pdf_bbox_points": [
-          169.18,
-          71.7,
-          507.58,
-          336.56
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.759,
-        "page_height_removed_fraction": 0.6722,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          670,
-          283,
-          2011,
-          1333
-        ]
-      }
+      "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-1（PDF第20页）改绘",
+      "asset_sha256": "a24e16a9b0da4734370048092e94465c687535535a5e81d56b27d1f4d4eabc9b",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
-      "asset": "SC-A02-01-智慧林业架构-23.png",
-      "source_id": "SC-A02-01",
-      "source_title": "中国智慧林业发展指导意见",
-      "pdf_page": 23,
-      "source_url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2144/site/res_base/jeecms_com_www/upload/article/file/2013_3/8_26/oiy8hktcvlqg.pdf#page=23",
-      "source_sha256": "3e7757a9cddbbbd94503f2917461da734a5ac6a9882c3aee08e2c223cda0c37a",
-      "asset_sha256": "102acf791a6d5b281ecccb3e145a44255d34346f22ee4bb66fe8172ee11a50cc",
-      "output_size_px": [
-        1616,
-        1452
-      ],
-      "content_detection": {
-        "method": "full-native-PDF-page-render-cropped-to-complete-image-object-plus-native-caption-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          86.0,
-          67.9,
-          510.9,
-          449.762
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.401,
-        "page_height_removed_fraction": 0.5464,
-        "review_note": "整页及裁片视觉核验；保留完整图形、文字、连线与原生图题，4pt留边；未改绘或移除水印。"
+      "asset": "redraw-餐饮数字化环节矩阵示意.png",
+      "title": "餐饮业数字化重要环节示意",
+      "disposition": "重绘",
+      "redrawn_from": {
+        "asset": "SC-H01-03-餐饮数字化矩阵-21.png",
+        "source_id": "SC-H01-03",
+        "source_title": "中国餐饮业数字化发展报告（2024）",
+        "pdf_page": 21,
+        "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=21"
       },
-      "required_in": [
-        "A02-林业.md"
-      ],
-      "page_number_handling": "正文标PDF第23页／印刷第21页；图题与页脚之间为其他正文，仅裁图与图题。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 21,
-      "figure_titles": [
-        "图4 智慧林业总体架构图"
-      ],
-      "crop": {
-        "method": "full-native-PDF-page-render-cropped-to-complete-image-object-plus-native-caption-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.32,
-          841.92
-        ],
-        "pdf_bbox_points": [
-          86.0,
-          67.9,
-          510.9,
-          449.762
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.401,
-        "page_height_removed_fraction": 0.5464,
-        "review_note": "整页及裁片视觉核验；保留完整图形、文字、连线与原生图题，4pt留边；未改绘或移除水印。",
-        "pixel_bbox": [
-          326,
-          258,
-          1942,
-          1710
-        ]
-      }
-    },
-    {
-      "asset": "SC-H01-03-餐饮产业链-20.png",
-      "source_id": "SC-H01-03",
-      "source_title": "中国餐饮业数字化发展报告（2024）",
-      "pdf_page": 20,
-      "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=20",
-      "source_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3",
-      "asset_sha256": "0fd191e61a155692eb9c79c7db96af4f95e4e99d0d148e2f51829357362931c2",
-      "output_size_px": [
-        1528,
-        891
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.276,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          96.77,
-          99.1,
-          498.51,
-          333.29
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.482,
-        "page_height_removed_fraction": 0.7218,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
-      },
-      "required_in": [
-        "H02-餐饮.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 19,
-      "figure_titles": [
-        "图3-1 餐饮业产业链逻辑架构"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.276,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          96.77,
-          99.1,
-          498.51,
-          333.29
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.482,
-        "page_height_removed_fraction": 0.7218,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          367,
-          376,
-          1895,
-          1267
-        ]
-      }
-    },
-    {
-      "asset": "SC-H01-03-餐饮数字化矩阵-21.png",
-      "source_id": "SC-H01-03",
-      "source_title": "中国餐饮业数字化发展报告（2024）",
-      "pdf_page": 21,
-      "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=21",
-      "source_sha256": "86ee812a77179694780359e768795295404410a2c61957e44203b747af1132a3",
-      "asset_sha256": "62cc0ec69f7061b815d8e68409ecc671912f7878748bdaac6315582c89233ac6",
-      "output_size_px": [
-        1302,
-        913
-      ],
-      "content_detection": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.276,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          126.88,
-          174.81,
-          469.12,
-          414.71
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.739,
-        "page_height_removed_fraction": 0.715,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。"
-      },
-      "required_in": [
-        "H02-餐饮.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码，并链接完整来源页。",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "printed_page": 20,
-      "figure_titles": [
-        "图3-2 餐饮业数字化重要环节内容矩阵式分布"
-      ],
-      "crop": {
-        "method": "native-figure-caption-and-source-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.276,
-          841.89
-        ],
-        "pdf_bbox_points": [
-          126.88,
-          174.81,
-          469.12,
-          414.71
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.739,
-        "page_height_removed_fraction": 0.715,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印。",
-        "pixel_bbox": [
-          482,
-          664,
-          1784,
-          1577
-        ]
-      }
+      "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-2（PDF第21页）改绘",
+      "asset_sha256": "0db53b8215afa0fdca52732739357f135be1220092094dfc8526b52ee0ade688",
+      "generator": "scripts/redraw-middle-figures.py",
+      "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     }
   ],
-  "crop_rules": "../../scripts/data/middle/图示裁切规则.json"
+  "crop_rules": "../../scripts/data/middle/图示裁切规则.json",
+  "disposition_note": "依据 review/image-rights.md：删除10张（民爆4、过时4、C07重复2），重绘9张，保留42张；现存51张。"
 }
