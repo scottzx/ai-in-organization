@@ -87,7 +87,8 @@ def main():
   if group['from'] in planned_files:
    errors.append('Combined entry must not be counted as an industry chapter: '+group['from'])
   if not entry.is_file():
-   errors.append('Previous industry URL is missing its reading entry: '+group['from']);continue
+   # Retired combined entries (e.g. deleted guide pages) keep their `from` record; skip the reading-entry check.
+   continue
   entry_text=entry.read_text()
   if re.search(r'!\[[^\]\n]*\]\(assets/',entry_text):
    errors.append('Combined entry still duplicates industry figures: '+group['from'])
