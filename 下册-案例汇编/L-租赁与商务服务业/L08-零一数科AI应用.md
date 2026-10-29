@@ -94,7 +94,7 @@
 
 **公开来源：**[AI时代下零一数科 如何进化为AI Native组织？](https://www.douyin.com/video/7685721852701953286)，大树AI创业圈｜TTM。
 
-**同一企业公开专访（§2）：**[1000人做的事，他想用10个人重做一遍](https://www.163.com/dy/article/L9APJCPG05118PFV.html)，访问日期：2026-10-29。
+**同一企业公开专访（§2）：**[1000人做的事，他想用10个人重做一遍](https://www.163.com/dy/article/L9APJCPG05118PFV.html)，笔记侠（网易号转载），2026-10-16，访问日期：2026-10-29。
 
 **行业复核：**2026年10月18日核对[广州市广告行业协会会员介绍](https://cngzaa.cn/h-pd-222.html)中的公司全称、私域及视频号代运营业务，以及[深圳市民政局负责人公示](https://mzj.sz.gov.cn/szmz/pc/bmxx/mzfwzy/shzz/tzgg/content/post_11707828.html)中的魏鑑锋与公司对应关系。行业按运营服务作研究归集；原临时编号待04，现编号L08。
 
