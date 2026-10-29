@@ -733,7 +733,7 @@ def volume_items(cfg, repo, name, relabel=None):
         for sub in v['include']: out += volume_items(cfg, repo, sub, (v.get('appendix_relabel') or {}).get(sub))
         return out
     if 'groups' in v:
-        items = []
+        items = [(repo / v['dir'] / f, None) for f in v.get('front', [])]   # 册首不编号篇目（下册导言），排在各章之前
         for c, sub in v['groups'].items():
             d = repo / v['dir'] / sub
             if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
