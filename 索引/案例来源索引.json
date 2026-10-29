@@ -856,7 +856,7 @@
           "source_fragment_id": "S-23-F01",
           "title": "把供应商规格书变成可交互的需求讨论",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "分析真实规格书并做交互模拟器；未证明物理仪表生产验证或量产交付。",
           "anchor": "s-23-f01",
           "sources": [
@@ -1428,7 +1428,7 @@
           "source_fragment_id": "S-30-F02",
           "title": "可订货不等于已批量交付",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "供方报价和交期，未提供批量交付验收",
           "anchor": "s-30-f02",
           "sources": [
@@ -2718,7 +2718,7 @@
           "source_fragment_id": "S-35-F02",
           "title": "工牌做出一百套，还需证明使用",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "已有首批100套，描述功能和售价；未披露门店持续采用和效果",
           "anchor": "s-35-f02",
           "sources": [
@@ -2974,7 +2974,7 @@
           "source_fragment_id": "S-07-F03",
           "title": "说明书迭代到约80%可用",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "第四次迭代可用率为受访者粗略判断，未证明长期批量运行。",
           "anchor": "s-07-f03",
           "sources": [
@@ -3514,7 +3514,7 @@
           "source_fragment_id": "S-17-F01",
           "title": "个人AI开发仍要逐项定义业务和检查偏离",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "作者称医疗企业ERP已有阶段性交付；未见客户验收和生产运行范围。",
           "anchor": "s-17-f01",
           "sources": [
@@ -3584,7 +3584,7 @@
           "source_fragment_id": "S-17-F03",
           "title": "自动测试之后仍有人工验证",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "作者自述运行测试不到半小时；不等于全部覆盖或生产可靠性。",
           "anchor": "s-17-f03",
           "sources": [
@@ -3616,7 +3616,7 @@
           "source_fragment_id": "S-34-F01",
           "title": "一通电话的现场演示能证明什么",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "现场构建课程前台接待，未调优演示；不等客户生产验收",
           "anchor": "s-34-f01",
           "sources": [
@@ -5191,7 +5191,7 @@
           "source_fragment_id": "S-33-F02",
           "title": "陪练正在建设，续费指标另算",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "陪练正在做；经营变化不能归为已成熟陪练效果",
           "anchor": "s-33-f02",
           "sources": [
@@ -5263,7 +5263,7 @@
           "source_fragment_id": "S-19-F02",
           "title": "点赞预测小工具只证明做出了原型",
           "stage": "prototype",
-          "stage_label": "原型",
+          "stage_label": "预计（已有原型）",
           "scope": "用既有稿件及点赞制作演示工具；未见独立留出集、前瞻预测或真实选题收益。",
           "anchor": "s-19-f02",
           "sources": [
@@ -5543,7 +5543,7 @@
           "source_fragment_id": "S-08-F01",
           "title": "从客户记录生成待办的工具参考",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "作者使用自己的会员运营及活动群演示；不是外部企业已验收交付。",
           "anchor": "s-08-f01",
           "sources": [
@@ -5585,7 +5585,7 @@
           "source_fragment_id": "S-09-F01",
           "title": "图纸和设备看板的两种展示证据",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "首条有情景对白，第二条有急停与手机报警现场演示；长期生产效果未知。",
           "anchor": "s-09-f01",
           "sources": [
@@ -5627,7 +5627,7 @@
           "source_fragment_id": "S-14-F01",
           "title": "跨系统建档的演示能说明什么",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "作者明确模拟商机，展示一次创建与同步；生产运行未知。",
           "anchor": "s-14-f01",
           "sources": [
@@ -5659,7 +5659,7 @@
           "source_fragment_id": "S-15-F01",
           "title": "核价单锁定后，解决方案必须符合系统动作",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "仅测试供应商、物料、核价单；最终是新建正确单，不是修改历史核准单。",
           "anchor": "s-15-f01",
           "sources": [
@@ -5711,7 +5711,7 @@
           "source_fragment_id": "S-16-F01",
           "title": "审批消息发出以后，原系统还要收到结果",
           "stage": "demo",
-          "stage_label": "演示",
+          "stage_label": "预计（已有演示）",
           "scope": "配置教学展示两级审批后确认订单；原稿未见模型推理任务。",
           "anchor": "s-16-f01",
           "sources": [
