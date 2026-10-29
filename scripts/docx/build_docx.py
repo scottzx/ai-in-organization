@@ -829,7 +829,7 @@ def main():
             rel = path.relative_to(repo).as_posix()
             if ch in bb.demote: nxt = ch; bb.members.setdefault(ch, []).append(rel)
             elif ch is not None: nxt = None   # 合订本：未降级的章（上册）及附录隔断，其前的不编号篇目不归入后面的降级章
-            bb.host[rel] = ch if ch is not None else nxt
+            bb.host[rel] = ch if ch is not None else (nxt if guide_kind(cfg, rel, path.name) == 'x00' else None)   # 册首导言等非门类导读页不归入后面的章
     b0 = Builder(cfg, repo); b0.allow_web = a.allow_web_residue; demote_setup(b0); b0.front_matter()
     for path, ch in items: b0.chapter(path, ch)
     b = Builder(cfg, repo, registry=b0.collect); b.print_edition = a.print_edition; b.allow_web = a.allow_web_residue; demote_setup(b); b.log['skipped'] = skipped; b.front_matter()
