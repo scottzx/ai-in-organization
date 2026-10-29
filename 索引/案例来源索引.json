@@ -4,7 +4,7 @@
   "version": "v9.0",
   "updated_on": "2026-10-20",
   "counts": {
-    "entries": 76,
+    "entries": 77,
     "industry_and_pending_entries": 67,
     "methods": 1,
     "references": 7,
@@ -3219,6 +3219,39 @@
               "line_start": 17,
               "line_end": 97,
               "locator": "00:00:00.070"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G01",
+      "title": "青岛前湾集装箱码头5G自组网与智能调度",
+      "path": "下册-案例汇编/G-交通运输仓储和邮政业/G01-青岛前湾集装箱码头5G自组网与智能调度.md",
+      "industry_code": "G",
+      "industry_name": "交通运输、仓储和邮政业",
+      "classification_status": "supported",
+      "entry_type": "single_company",
+      "source_record_id": "MIIT-D08-06",
+      "fragments": [
+        {
+          "source_fragment_id": "MIIT-D08-06-F01",
+          "title": "青岛前湾集装箱码头5G自组网与智能调度",
+          "stage": "partial_live",
+          "stage_label": "局部使用",
+          "scope": "官方项目汇编披露的部署与应用；各效果按原场景口径，测算与推广类表述单列，未经独立审计",
+          "anchor": "miit-d08-06-f01",
+          "sources": [
+            {
+              "title": "2025年5G工厂典型应用实践（能源交通）",
+              "publisher": "工业和信息化部（官方遴选汇编，项目方建设与成效披露）",
+              "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/27c523061a404fdaa33a11b04cf9bbbe.pdf",
+              "locator": "PDF第22—26页；印刷第20—24页；主体：青岛前湾集装箱码头有限责任公司",
+              "source_file_sha256": "e84170f1f9787431bd967d531b6983648dd2e1be2d97185437d517b3d906bcc6",
+              "source_type": "官方遴选项目汇编中的建设与成效披露；未独立审计",
+              "publication_date": "2026-03-30",
+              "source_page": "https://www.miit.gov.cn/ztzl/rdzt/gyhlw/wjfb/art/2026/art_6b35987d001445d49487650795eac294.html",
+              "checked_on": "2026-10-29"
             }
           ]
         }
