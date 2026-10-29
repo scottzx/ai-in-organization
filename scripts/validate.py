@@ -85,7 +85,7 @@ for path, text in texts.items():
     text = re.sub(r'```[\s\S]*?```', '', text)
     for target in re.findall(r'!?\[[^\]\n]*\]\(([^)\n]+)\)', text):
         check_link(path, target)
-    defs = dict(re.findall(r'^\[([^\]\n]+)\]:\s*(\S+)', text, re.M))
+    defs = dict(re.findall(r'^\[([^\]\n^][^\]\n]*)\]:\s*(\S+)', text, re.M))   # [^x]: 为脚注定义，不是引用式链接
     uses = re.findall(r'(?<!!)\[[^\]\n]+\]\[([^\]\n]+)\]', text)
     for name in uses:
         if name not in defs:
@@ -297,7 +297,7 @@ for name, count in expected_counts.items():
     if index['counts'].get(name) != count:
         errors.append(f'Case index count mismatch: {name} expected {count}, found {index["counts"].get(name)}')
 case_paths = {ROOT/e['path'] for e in entries}
-unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in p.parts and p.name!='README.md' and p not in case_paths]
+unindexed = [str(p.relative_to(ROOT)) for p in texts if '下册-案例汇编' in p.parts and p.name not in ('README.md', '00-导言.md') and p not in case_paths]
 if unindexed:
     errors.append('Unindexed case documents: '+str(unindexed))
 upper_documents = sorted((ROOT/'上册-研究报告').glob('[0-9][0-9]-*.md'))
