@@ -32,7 +32,16 @@ python3 build_docx.py --volume upper --print -o ../../output/docx/样张-上册-
 # 或：BOOK_EDITION=print python3 build_docx.py ...
 ```
 
-其他常用参数：`--volume middle`（中册）、`--only N`（只导出第 N 章）、`--no-toc-pages`（不预排目录，在 Word 中按 F9 更新）、`--allow-web-residue`（源稿残留网页导航行时临时放行出样张）。
+四册均可导出：`--volume upper`（上册，第一至八章）、`--volume middle`（中册，第九至二十章）、`--volume lower`（下册，第二十一至三十四章，每个行业门类一章、案例为 X.Y，附编A/B 为附录A/B）、`--volume all`（合订本，三册合排、一个目录，章号与各册单独导出时相同，附录字母全书连续：上册A、中册B/C、下册D/E）。配置见 `style.yaml` 的 `volumes`（`files` / `chapters` / `groups` / `include`）。
+
+```bash
+python3 build_docx.py --volume lower -o ../../output/docx/样张-下册.docx
+python3 build_docx.py --volume all -o ../../output/docx/样张-合订本.docx
+```
+
+**下册不做导航页判定：** `style.yaml` 的 `exclude.nav_page_detect_exempt_dirs: [下册-案例汇编]` 使整个下册目录都不按“导航页”特征（短正文＋多链接）自动剔除，否则附编B 等短篇案例会被误删。下册各门类的 `README.md`（门类索引页）由文件名规则 `exclude.patterns` 中的 `README.md` 剔除，不靠导航页判定。因此，今后若在下册新增其他导航/索引页（文件名不是 `README.md`），构建不会自动识别，会当作案例排入正文；需改名为 `README.md`，或加入 `exclude.files`。
+
+其他常用参数：`--only N`（只导出第 N 章）、`--no-toc-pages`（不预排目录，在 Word 中按 F9 更新）、`--allow-web-residue`（源稿残留网页导航行时临时放行出样张）。
 
 ## 格式自检
 

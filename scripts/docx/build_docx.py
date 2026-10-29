@@ -300,10 +300,11 @@ class Builder:
         self.is_guide = guide_kind(self.cfg, rel, md_path.name) == 'x00'
         if self.demote:
             host = self.host.get(rel, ch)
-            if isinstance(host, int) and host != self.last_ch:   # 本章第一篇（或导读页）前印章标题
+            if host in self.demote and host != self.last_ch:   # 本章第一篇（或导读页）前印章标题；下册附编按附录字母印“附录X　标题”
                 self.last_ch = host; self.sec.setdefault(host, 0)
-                self.heading_raw(1, self.cfg['numbering']['chapter_format'].format(cn=cn_num(host), title=self.demote[host]))
-            self.whole = isinstance(ch, int) and len(self.members.get(ch, [])) == 1 and self.is_guide is False and ch in self.whole_ch
+                self.heading_raw(1, self.cfg['numbering']['chapter_format'].format(cn=cn_num(host), title=self.demote[host]) if isinstance(host, int)
+                                 else f'附录{host}\u3000{self.demote[host]}')
+            self.whole = ch in self.demote and len(self.members.get(ch, [])) == 1 and self.is_guide is False and ch in self.whole_ch
         label = str(ch) if ch is not None else '0'
         self.label = label; self.cur_file = rel
         # 图表号按“全书章号”计：同一章的后续篇目接着上一篇的序号；不编号的导读页（label 0）单独计
@@ -454,12 +455,14 @@ class Builder:
     def heading(self, level, text):
         text = re.sub(r'<a id="[^"]*"></a>', '', text).strip()
         ch = self.ch
+        if self.demote and (ch in self.demote or (ch is None and self.is_guide)):   # 合订本：只降级配置了 chapter_titles 的章（中册、下册）
+            return self.heading_demoted(level, text, ch)
+        if isinstance(ch, str) and re.fullmatch(r'[A-Z]', ch) and level == 1:   # 附录题：字母随本书编排（合订本重排字母）
+            text = re.sub(r'^附录[A-Z]', f'附录{ch}', re.sub(r'<a id="[^"]*"></a>', '', text).strip())
         if isinstance(ch, str) and re.fullmatch(r'[A-Z]', ch) and level == 2:   # 附录二级标题：脚本编号 A.1、A.2…（同正文 X.Y）
             self.app_n = (self.app_n + 1) if getattr(self, 'app_ch', None) == ch else 1; self.app_ch = ch
             body = re.sub(r'^((?:[A-Z]|\d+)(?:\.\d+)*|[一二三四五六七八九十]+、|第[一二三四五六七八九十]+节|\d+\s*[.、．)）])[\s　]*', '', text)
             return self.heading_raw(2, f'{ch}.{self.app_n} {body}')
-        if self.demote and (isinstance(ch, int) or (ch is None and self.is_guide)):
-            return self.heading_demoted(level, text, ch)
         if level == 1:
             if isinstance(ch, int):
                 title = re.sub(r'^第[一二三四五六七八九十百零\d]+章[\s　]*', '', text)
@@ -503,7 +506,7 @@ class Builder:
         if lv <= 0: return   # 整章篇目的 #：与章标题重复，不印
         if lv == 1:
             self.sec[ch] += 1; self.n2 = self.sec[ch]; self.n3 = self.n4 = 0
-            body = strip_sec(re.sub(r'^(第[一二三四五六七八九十百零\d]+章|[A-Z]\d{2})[\s　]*', '', text))
+            body = strip_sec(re.sub(r'^(第[一二三四五六七八九十百零\d]+章|附?[A-Z]\d{2})[\s　]*', '', text))
             return self.heading_raw(2, f'{ch}.{self.n2} {body}')
         if lv == 2:
             if re.match(r'^(参考资料|参考文献|资料来源)$', text): return self.heading_raw(3, text)   # 节末参考资料：不编号
@@ -707,6 +710,7 @@ def excluded(cfg, repo, path):
         if in_dir and any(fnmatch.fnmatch(path.name, p) for p in gp.get('x00_patterns', [])):
             return None if gp.get('mode') == 'include_x00' else '门类导读页（X00）'
     if rel in ex.get('force_include', []): return None
+    if any(rel.startswith(d.rstrip('/') + '/') for d in ex.get('nav_page_detect_exempt_dirs', [])): return None   # 下册：短篇案例链接多，不按导航页判定
     if ex.get('nav_page_detect') and path.suffix == '.md':
         t = path.read_text('utf-8')
         links = len(re.findall(r'\]\([^)]+\)', t))
@@ -717,6 +721,57 @@ def excluded(cfg, repo, path):
 def parse_ch(v):
     if v in (None, 'null', 'None', ''): return None
     return int(v) if str(v).isdigit() else str(v)
+
+def volume_items(cfg, repo, name, relabel=None):
+    """按 style.yaml 的 volumes.<name> 列出 (篇目路径, 章号)。
+    files：逐篇列章号（上册）；chapters：{章号: [篇目]}（中册）；groups：{章号或附录字母: 子目录}，
+    目录内篇目按文件名排序、同属一章（下册）；include：按序合并各册（合订本），relabel 重排附录字母。"""
+    v = cfg['volumes'][name]; relabel = relabel or {}
+    def lab(c): return relabel.get(c, c) if isinstance(c, str) else c
+    if 'include' in v:
+        out = []
+        for sub in v['include']: out += volume_items(cfg, repo, sub, (v.get('appendix_relabel') or {}).get(sub))
+        return out
+    if 'groups' in v:
+        items = []
+        for c, sub in v['groups'].items():
+            d = repo / v['dir'] / sub
+            if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
+            items += [(p, lab(parse_ch(c))) for p in sorted(d.glob('*.md'))]   # README.md（门类导读）由 exclude.patterns 剔除
+        return items
+    if 'chapters' in v:   # 按全书章号映射：{章号: [篇目...]}；未列出的 X00 导读页不编号，附录按字母
+        fmap = {alt.strip(): ch for ch, fs in v['chapters'].items() for f in fs for alt in str(f).split('|')}
+        for f in v.get('unnumbered', []):
+            for alt in str(f).split('|'): fmap[alt.strip()] = None
+        allf = sorted(p.name for p in (repo / v['dir']).glob('*.md'))
+        items = []
+        for f in allf:
+            if f in fmap: items.append((repo / v['dir'] / f, parse_ch(fmap[f])))
+            elif guide_kind(cfg, f"{v['dir']}/{f}", f) == 'x00': items.append((repo / v['dir'] / f, None))
+            elif re.match(r'^附录([A-Z])', f): items.append((repo / v['dir'] / f, re.match(r'^附录([A-Z])', f).group(1)))
+            else: items.append((repo / v['dir'] / f, '__unmapped__'))
+        un = [p.name for p, c in items if c == '__unmapped__' and not excluded(cfg, repo, p)]
+        if un: sys.exit('以下篇目未在 style.yaml 映射章号：' + '、'.join(un))
+        items = [(p, c) for p, c in items if c != '__unmapped__']
+        # 按章号排序（导读页、附录随文件名顺序就近；章内保持文件名顺序）
+        order = {alt.strip(): i for i, f in enumerate(v.get('order', [])) for alt in str(f).split('|')}   # “旧名 | 新名”任取其一
+        if order: items.sort(key=lambda pc: order.get(pc[0].name, 10**6))
+        return [(p, lab(c)) for p, c in items]
+    return [(repo / v['dir'] / f, lab(parse_ch(c))) for f, c in v['files']]
+
+def volume_demote(cfg, name, relabel=None):
+    """降级版式的章：{章号或附录字母: 章名}，以及整章即一篇的章号集合。"""
+    v = cfg['volumes'].get(name, {}); relabel = relabel or {}
+    if 'include' in v:
+        dm, wh = {}, set()
+        for sub in v['include']:
+            d, w = volume_demote(cfg, sub, (v.get('appendix_relabel') or {}).get(sub)); dm.update(d); wh |= w
+        return dm, wh
+    if not v.get('demote'): return {}, set()
+    dm = {}
+    for k, t in v['chapter_titles'].items():
+        c = parse_ch(k); dm[relabel.get(c, c) if isinstance(c, str) else c] = t
+    return dm, {int(k) for k in v.get('whole_chapter', [])}
 
 def main():
     ap = argparse.ArgumentParser()
@@ -742,30 +797,8 @@ def main():
         items = [(p, None) for p in sorted((repo / a.dir).glob('*.md'))]
     else:
         if a.volume not in cfg.get('volumes', {}):
-            sys.exit(f'{ {"lower": "下册"}.get(a.volume, a.volume)}尚未纳入排版配置（style.yaml 的 volumes 下没有 {a.volume}），暂不能导出。')
-        v = cfg['volumes'][a.volume]
-        if 'chapters' in v:   # 按全书章号映射：{章号: [篇目...]}；未列出的 X00 导读页不编号，附录按字母
-            fmap = {alt.strip(): ch for ch, fs in v['chapters'].items() for f in fs for alt in str(f).split('|')}
-            for f in v.get('unnumbered', []):
-                for alt in str(f).split('|'): fmap[alt.strip()] = None
-            allf = sorted(p.name for p in (repo / v['dir']).glob('*.md'))
-            items = []
-            for f in allf:
-                if f in fmap: items.append((repo / v['dir'] / f, parse_ch(fmap[f])))
-                elif guide_kind(cfg, f"{v['dir']}/{f}", f) == 'x00': items.append((repo / v['dir'] / f, None))
-                elif re.match(r'^附录([A-Z])', f): items.append((repo / v['dir'] / f, re.match(r'^附录([A-Z])', f).group(1)))
-                else: items.append((repo / v['dir'] / f, '__unmapped__'))
-            un = [p.name for p, c in items if c == '__unmapped__' and not excluded(cfg, repo, p)]
-            if un: sys.exit('以下篇目未在 style.yaml 映射章号：' + '、'.join(un))
-            items = [(p, c) for p, c in items if c != '__unmapped__']
-            # 按章号排序（导读页、附录随文件名顺序就近；章内保持文件名顺序）
-            order = {alt.strip(): i for i, f in enumerate(v.get('order', [])) for alt in str(f).split('|')}   # “旧名 | 新名”任取其一
-            def key(pc):
-                p, c = pc
-                return order.get(p.name, 10**6)
-            if order: items.sort(key=key)
-        else:
-            items = [(repo / v['dir'] / f, parse_ch(c)) for f, c in v['files']]
+            sys.exit(f'{ {"lower": "下册", "all": "合订本"}.get(a.volume, a.volume)}尚未纳入排版配置（style.yaml 的 volumes 下没有 {a.volume}），暂不能导出。')
+        items = volume_items(cfg, repo, a.volume)
     kept, skipped = [], []
     for path, ch in items:
         why = excluded(cfg, repo, path)
@@ -781,13 +814,12 @@ def main():
     for f, why in skipped: print(f'  跳过 {f}（{why}）')
     # 两轮：第一轮收集全书图题/表题 → 编号，第二轮据此解析 {{fig:}}/{{tab:}}
     def demote_setup(bb):
-        v = cfg['volumes'].get(a.volume, {}) if not (a.files or a.dir) else {}
-        if not v.get('demote'): return
-        bb.demote = {int(k): t for k, t in v['chapter_titles'].items()}
-        bb.whole_ch = {int(k) for k in v.get('whole_chapter', [])}
+        if a.files or a.dir: return
+        bb.demote, bb.whole_ch = volume_demote(cfg, a.volume)
+        if not bb.demote: return
         cnt = {}
         for path, ch in items:   # 预排节号：篇目代号 → “X.Y 节名”
-            if isinstance(ch, int) and ch not in bb.whole_ch:
+            if ch in bb.demote and ch not in bb.whole_ch:
                 cnt[ch] = cnt.get(ch, 0) + 1
                 h = next((l for l in path.read_text('utf-8').splitlines() if l.startswith('# ')), '# ' + path.stem)[2:].strip()
                 code = re.match(r'^([A-Z]\d{2})', path.name)
@@ -795,7 +827,8 @@ def main():
         nxt = None
         for path, ch in reversed(items):   # 导读页归属其后第一篇所在章
             rel = path.relative_to(repo).as_posix()
-            if isinstance(ch, int): nxt = ch; bb.members.setdefault(ch, []).append(rel)
+            if ch in bb.demote: nxt = ch; bb.members.setdefault(ch, []).append(rel)
+            elif ch is not None: nxt = None   # 合订本：未降级的章（上册）及附录隔断，其前的不编号篇目不归入后面的降级章
             bb.host[rel] = ch if ch is not None else nxt
     b0 = Builder(cfg, repo); b0.allow_web = a.allow_web_residue; demote_setup(b0); b0.front_matter()
     for path, ch in items: b0.chapter(path, ch)
@@ -807,6 +840,7 @@ def main():
     b.log['duplicate_titles'] = [{'kind': k[0], 'title': k[1], 'hits': v} for k, v in dup.items()]
     b.log['ref_errors'] = b.ref_errors
     b.log['demote'] = bool(b.demote)
+    b.log['demote_chapters'] = [c for c in b.demote]   # 合订本：只有这些章（中册、下册）按降级版式编号，check_docx 据此只核这些章
     b.log['web_residue'] = b.nav_hits; b.log['caption_numbers'] = b.caption_hits
     mism=[e for e in b.fig_errors if '不一致' in e]
     if a.allow_caption_mismatch:
