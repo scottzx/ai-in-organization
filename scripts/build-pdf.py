@@ -7,6 +7,11 @@ Usage: python3 scripts/build-pdf.py
        python3 scripts/build-pdf.py --volume lower
        python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md
        python3 scripts/build-pdf.py --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
+       python3 scripts/build-pdf.py --volume upper --print   (or BOOK_EDITION=print)
+The default e-book edition shows linked titles only. The print edition additionally
+prints each external URL after its title in reference entries (参考文献/参考资料/
+本章参考资料/资料来源 sections, chapter endnotes and 索引/资料来源说明.md); body links
+remain title-only and internal links never print a URL.
 Override BOOK_BODY_FONT, BOOK_HEADING_FONT and BOOK_KAI_FONT for Chinese TTF fonts.
 BOOK_DIAGRAM_FONT and BOOK_DIAGRAM_HEADING_FONT override illustration faces.
 """
@@ -54,6 +59,10 @@ WIDTH, HEIGHT = A4
 MARGIN = 21 * mm
 TEXT_WIDTH = WIDTH - 2 * MARGIN
 INK = colors.HexColor('#202020')
+# Headings whose section lists reference entries or case source lines.
+REFERENCE_HEADING = re.compile(r'(参考资料|参考文献|资料来源)\s*$')
+# Whole documents that are themselves source lists.
+REFERENCE_FILES = ('索引/资料来源说明.md',)
 # ReportLab's default CJK rules omit common full-width Chinese punctuation.
 textsplit.ALL_CANNOT_START += '，；：！？）》〉】〕”’…％'
 paragraph_module.ALL_CANNOT_START = textsplit.ALL_CANNOT_START
@@ -433,8 +442,15 @@ class BookDoc(BaseDocTemplate):
 
 
 class Builder:
-    def __init__(self, output=None, volume='all'):
+    def __init__(self, output=None, volume='all', print_edition=False):
         self.note_number=0; self.pending_notes=[]
+        self.print_edition = print_edition
+        self.reference_level = None  # heading level of the open reference section
+        self.reference_file = False
+        self.in_notes = False
+        self.printed_urls = []
+        self.literal_urls = []  # URLs typed as text inside reference entries
+        self.bare_urls = []  # URLs typed as text outside reference scope
         self.output = Path(output).resolve() if output else None
         self.volume = volume
         self.body_start_source = ROOT/'上册-研究报告/00-导论.md'
@@ -535,11 +551,23 @@ class Builder:
         if parsed.fragment: url+='#'+quote(unquote(parsed.fragment))
         return escape(url,quote=True)
 
+    def in_reference(self):
+        return self.reference_file or self.in_notes or self.reference_level is not None
+
+    def printed_url(self,url):
+        # Plain-text URL; the CJK line breaker splits an over-long URL inside the
+        # frame (no zero-width spaces: the book fonts have no glyph for them).
+        self.printed_urls.append(url)
+        return '<font color="#202020">'+escape(url)+'</font>'
+
     def inline(self,items,strong=False):
         result=[]
         for x in items:
             t,c=x['t'],x.get('c')
-            if t=='Str': result.append(self.text_markup(c))
+            if t=='Str':
+                for u in re.findall(r'https?://',c):
+                    (self.literal_urls if self.in_reference() else self.bare_urls).append(c)
+                result.append(self.text_markup(c))
             elif t in ('Space','SoftBreak'): result.append(' ')
             elif t=='LineBreak': result.append('<br/>')
             elif t in ('Strong','SmallCaps'):
@@ -550,6 +578,9 @@ class Builder:
             elif t=='Link':
                 color='#000000' if strong else '#1D4ED8'
                 result.append(f'<a href="{self.href(c[2][0])}" color="{color}">{self.inline(c[1],strong=strong)}</a>')
+                if (self.print_edition and self.in_reference()
+                        and urlsplit(c[2][0]).scheme in ('http','https')):
+                    result.append('（'+self.printed_url(c[2][0])+'）')
             elif t=='Code': result.append(escape(c[1]))
             elif t=='Image': raise ValueError('Images must occupy their own Markdown paragraph')
             elif t in ('Span','Cite'): result.append(self.inline(c[1],strong=strong))
@@ -568,7 +599,10 @@ class Builder:
     def document_blocks(self,blocks):
         # Footnote numbers restart in every chapter and print at the chapter end.
         self.note_number=0; self.pending_notes=[]
+        self.reference_level=None; self.in_notes=False
+        self.reference_file=str(self.current.relative_to(ROOT)) in REFERENCE_FILES
         out=self.blocks(blocks)
+        self.reference_level=None; self.in_notes=True
         if self.pending_notes:
             title=self.para('注释','h4'); title.keepWithNext=True
             out.extend([CondPageBreak(60),Anchor([key(self.current,'本章参考资料')]),title])
@@ -583,6 +617,7 @@ class Builder:
                 else: flows.insert(0,self.para(label,'small'))
                 out.extend(flows)
         self.pending_notes=[]
+        self.in_notes=False
         return out
 
     def load(self,path):
@@ -646,6 +681,9 @@ class Builder:
             elif t=='Header':
                 level,attrs,items=c; title=plain(items)
                 self.heading_context=title
+                if self.reference_level is not None and level<=self.reference_level:
+                    self.reference_level=None
+                if REFERENCE_HEADING.search(title): self.reference_level=level
                 names=list(dict.fromkeys([key(self.current,attrs[0]),key(self.current,slug(title))]
                                          +([key(self.current,section_anchor(title))] if section_anchor(title) else [])))
                 while out and isinstance(out[-1],Anchor):
@@ -874,6 +912,7 @@ class Builder:
                 self.sources.append({'path':str(path.relative_to(ROOT)),
                                      'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         pdf=self.output or (PDF if self.volume=='all' else OUT/(TITLE+f'-{self.volume_name()}.pdf'))
+        if self.print_edition and not self.output: pdf=pdf.with_name(pdf.stem+'-印刷版.pdf')
         pdf.parent.mkdir(parents=True,exist_ok=True)
         doc=BookDoc(pdf,edition=edition)
         toc.formatter=doc.page_label
@@ -902,7 +941,7 @@ class Builder:
                              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         title = next((plain(b['c'][2]) for b in blocks if b['t'] == 'Header' and b['c'][0] == 1), path.stem)
         filename = re.sub(r'[\s<>:"/\\|?*：]+', '-', title).strip('-')
-        pdf = self.output or OUT / f'{filename}-配图版.pdf'
+        pdf = self.output or OUT / f'{filename}-配图版{"-印刷版" if self.print_edition else ""}.pdf'
         pdf.parent.mkdir(parents=True,exist_ok=True)
         doc = BookDoc(pdf, edition='上册 · 单章阅读版', outline_offset=1, front_matter=False)
         doc.multiBuild(self.story)
@@ -931,6 +970,10 @@ class Builder:
         if empty: raise ValueError(f'Empty PDF body pages: {empty}')
         normalize=lambda s:re.sub(r'\s+','',s)
         compact=normalize(extracted)
+        url_text=compact
+        # Manuscript text is checked without the URLs added by the print edition.
+        for url in sorted(set(self.printed_urls),key=len,reverse=True):
+            compact=compact.replace('（'+normalize(url)+'）','')
         missing=[t for t in self.coverage if normalize(t) not in compact]
         if missing: raise ValueError(f'PDF content check failed ({len(missing)}): {missing[:3]}')
         missing_figures=[t for t in self.figure_text if normalize(t) not in compact]
@@ -938,6 +981,16 @@ class Builder:
         captions=self.figure_captions+[table['caption'] for table in self.tables]
         missing_captions=[title for title in captions if normalize(title) not in compact]
         if missing_captions: raise ValueError(f'PDF caption check failed: {missing_captions[:3]}')
+        if self.print_edition:
+            missing_urls=[u for u in self.printed_urls if normalize(u) not in url_text]
+            if missing_urls: raise ValueError(f'Print edition URL check failed ({len(missing_urls)}): {missing_urls[:3]}')
+        # Body text must not carry bare URLs; every URL in the text layer must
+        # belong to a reference entry (printed from a link or typed literally).
+        if self.bare_urls: raise ValueError(f'Bare URLs outside reference sections: {self.bare_urls[:3]}')
+        url_count=len(re.findall(r'https?://',url_text))
+        expected=len(self.printed_urls)+len(self.literal_urls)
+        if url_count!=expected:
+            raise ValueError(f'Unexpected URL text in PDF: {url_count} found, {expected} expected in references')
         annotations=Counter()
         page_ids={page.indirect_reference.idnum for page in reader.pages}
         for page in reader.pages:
@@ -966,7 +1019,8 @@ class Builder:
                                     'captions':len(captions),'missing_captions':len(missing_captions)},
                   'figure_count':len(self.figures),
                   'table_count':len(self.tables),'tables':self.tables,'figure_captions':self.figure_captions,
-                  'links':dict(self.links),'pdf_link_annotations':dict(annotations)}
+                  'links':dict(self.links),'pdf_link_annotations':dict(annotations),
+                  'print_edition':self.print_edition,'printed_urls':len(self.printed_urls),'literal_reference_urls':len(self.literal_urls)}
         if index is not None:
             manifest.update(case_entries=len(index['entries']), scene_fragments=index['counts']['all_fragments'])
         if volume is not None:
@@ -985,7 +1039,10 @@ if __name__=='__main__':
     scope.add_argument('--volume', choices=('upper','middle','lower','all'), default='all',
                        help='Build one volume or all three in a combined PDF (default: all)')
     parser.add_argument('--output', help='Save a separate preview PDF and manifest at this path')
+    parser.add_argument('--print', dest='print_edition', action='store_true',
+                        default=os.environ.get('BOOK_EDITION','').lower()=='print',
+                        help='Print edition: show URLs after titles in references and source lines')
     args = parser.parse_args()
-    builder = Builder(args.output,volume=args.volume)
+    builder = Builder(args.output,volume=args.volume,print_edition=args.print_edition)
     if args.chapter: builder.run_chapter(args.chapter)
     else: builder.run()
