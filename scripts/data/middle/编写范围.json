@@ -14,7 +14,7 @@
         "C10"
       ],
       "edition": "v0.4",
-      "previous_group": "A01-农业与养殖.md"
+      "previous_group": "A00-农业与养殖导读.md"
     },
     {
       "file": "A02-林业.md",
@@ -22,7 +22,7 @@
       "scope": "林业",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "A01-农业与养殖.md"
+      "previous_group": "A00-农业与养殖导读.md"
     },
     {
       "file": "A03-畜牧业.md",
@@ -32,7 +32,7 @@
         "C09"
       ],
       "edition": "v0.4",
-      "previous_group": "A01-农业与养殖.md"
+      "previous_group": "A00-农业与养殖导读.md"
     },
     {
       "file": "A04-渔业.md",
@@ -40,7 +40,7 @@
       "scope": "渔业",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "A01-农业与养殖.md"
+      "previous_group": "A00-农业与养殖导读.md"
     },
     {
       "file": "B01-煤矿.md",
@@ -51,7 +51,7 @@
         "D08"
       ],
       "edition": "v0.4",
-      "previous_group": "B01-采矿.md"
+      "previous_group": "B00-采矿导读.md"
     },
     {
       "file": "B02-铁矿采选.md",
@@ -63,7 +63,7 @@
         "D08"
       ],
       "edition": "v0.4",
-      "previous_group": "B01-采矿.md"
+      "previous_group": "B00-采矿导读.md"
     },
     {
       "file": "C01-工程机械.md",
@@ -141,7 +141,7 @@
         "A03"
       ],
       "edition": "v0.4",
-      "previous_group": "C08-建材.md"
+      "previous_group": "C08-00-建材导读.md"
     },
     {
       "file": "C09-印制电路板与电子装联.md",
@@ -153,7 +153,7 @@
         "D07"
       ],
       "edition": "v0.4",
-      "previous_group": "C09-电子信息与关键部件.md"
+      "previous_group": "C09-00-电子信息与关键部件导读.md"
     },
     {
       "file": "C10-家电.md",
@@ -165,7 +165,7 @@
         "D06"
       ],
       "edition": "v0.4",
-      "previous_group": "C10-家电与轻工.md"
+      "previous_group": "C10-00-家电与轻工导读.md"
     },
     {
       "file": "C11-纺织服装.md",
@@ -185,7 +185,7 @@
         "D06"
       ],
       "edition": "v0.4",
-      "previous_group": "C12-食品饮料.md"
+      "previous_group": "C12-00-食品饮料导读.md"
     },
     {
       "file": "C13-医药制造.md",
@@ -195,7 +195,7 @@
         "A05"
       ],
       "edition": "v0.4",
-      "previous_group": "C13-医药与医疗装备.md"
+      "previous_group": "C13-00-医药与医疗装备导读.md"
     },
     {
       "file": "C14-民爆.md",
@@ -214,7 +214,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C09-电子信息与关键部件.md"
+      "previous_group": "C09-00-电子信息与关键部件导读.md"
     },
     {
       "file": "C16-智能移动终端.md",
@@ -225,7 +225,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C09-电子信息与关键部件.md"
+      "previous_group": "C09-00-电子信息与关键部件导读.md"
     },
     {
       "file": "C17-家具.md",
@@ -235,7 +235,7 @@
         "A04"
       ],
       "edition": "v0.4",
-      "previous_group": "C10-家电与轻工.md"
+      "previous_group": "C10-00-家电与轻工导读.md"
     },
     {
       "file": "C18-造纸.md",
@@ -245,7 +245,7 @@
         "A04"
       ],
       "edition": "v0.4",
-      "previous_group": "C10-家电与轻工.md"
+      "previous_group": "C10-00-家电与轻工导读.md"
     },
     {
       "file": "C19-皮革制造.md",
@@ -255,7 +255,7 @@
         "A04"
       ],
       "edition": "v0.4",
-      "previous_group": "C10-家电与轻工.md"
+      "previous_group": "C10-00-家电与轻工导读.md"
     },
     {
       "file": "C20-美妆日化.md",
@@ -266,7 +266,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C10-家电与轻工.md"
+      "previous_group": "C10-00-家电与轻工导读.md"
     },
     {
       "file": "C21-饮料.md",
@@ -276,7 +276,7 @@
         "A06"
       ],
       "edition": "v0.4",
-      "previous_group": "C12-食品饮料.md"
+      "previous_group": "C12-00-食品饮料导读.md"
     },
     {
       "file": "C22-乳制品.md",
@@ -286,7 +286,7 @@
         "A06"
       ],
       "edition": "v0.4",
-      "previous_group": "C12-食品饮料.md"
+      "previous_group": "C12-00-食品饮料导读.md"
     },
     {
       "file": "C23-制糖.md",
@@ -297,7 +297,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C12-食品饮料.md"
+      "previous_group": "C12-00-食品饮料导读.md"
     },
     {
       "file": "C24-白酒.md",
@@ -308,7 +308,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C12-食品饮料.md"
+      "previous_group": "C12-00-食品饮料导读.md"
     },
     {
       "file": "C25-医疗装备.md",
@@ -319,7 +319,7 @@
         "A11"
       ],
       "edition": "v0.4",
-      "previous_group": "C13-医药与医疗装备.md"
+      "previous_group": "C13-00-医药与医疗装备导读.md"
     },
     {
       "file": "C26-玻璃.md",
@@ -330,7 +330,7 @@
         "D04"
       ],
       "edition": "v0.4",
-      "previous_group": "C08-建材.md"
+      "previous_group": "C08-00-建材导读.md"
     },
     {
       "file": "C27-建筑卫生陶瓷.md",
@@ -340,7 +340,7 @@
         "A03"
       ],
       "edition": "v0.4",
-      "previous_group": "C08-建材.md"
+      "previous_group": "C08-00-建材导读.md"
     },
     {
       "file": "C28-商品混凝土.md",
@@ -350,7 +350,7 @@
         "A03"
       ],
       "edition": "v0.4",
-      "previous_group": "C08-建材.md"
+      "previous_group": "C08-00-建材导读.md"
     },
     {
       "file": "D01-电力.md",
@@ -361,7 +361,7 @@
         "D08"
       ],
       "edition": "v0.4",
-      "previous_group": "D01-能源与公用事业.md"
+      "previous_group": "D00-能源与公用事业导读.md"
     },
     {
       "file": "D02-燃气.md",
@@ -371,7 +371,7 @@
         "B06"
       ],
       "edition": "v0.4",
-      "previous_group": "D01-能源与公用事业.md"
+      "previous_group": "D00-能源与公用事业导读.md"
     },
     {
       "file": "D03-水务.md",
@@ -379,7 +379,7 @@
       "scope": "水务",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "D01-能源与公用事业.md"
+      "previous_group": "D00-能源与公用事业导读.md"
     },
     {
       "file": "E01-建筑与工程.md",
@@ -393,7 +393,7 @@
       "scope": "批发",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "F01-批发与零售.md"
+      "previous_group": "F00-批发与零售导读.md"
     },
     {
       "file": "F02-零售.md",
@@ -401,7 +401,7 @@
       "scope": "零售",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "F01-批发与零售.md"
+      "previous_group": "F00-批发与零售导读.md"
     },
     {
       "file": "G01-货运与综合物流.md",
@@ -411,7 +411,7 @@
         "C04"
       ],
       "edition": "v0.4",
-      "previous_group": "G01-运输仓储与物流.md"
+      "previous_group": "G00-运输仓储与物流导读.md"
     },
     {
       "file": "G02-仓储.md",
@@ -421,7 +421,7 @@
         "C04"
       ],
       "edition": "v0.4",
-      "previous_group": "G01-运输仓储与物流.md"
+      "previous_group": "G00-运输仓储与物流导读.md"
     },
     {
       "file": "G03-油气储运.md",
@@ -431,7 +431,7 @@
         "B06"
       ],
       "edition": "v0.4",
-      "previous_group": "G01-运输仓储与物流.md"
+      "previous_group": "G00-运输仓储与物流导读.md"
     },
     {
       "file": "H01-住宿.md",
@@ -439,7 +439,7 @@
       "scope": "住宿",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "H01-住宿与餐饮.md"
+      "previous_group": "H00-住宿与餐饮导读.md"
     },
     {
       "file": "H02-餐饮.md",
@@ -447,7 +447,7 @@
       "scope": "餐饮",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "H01-住宿与餐饮.md"
+      "previous_group": "H00-住宿与餐饮导读.md"
     },
     {
       "file": "I01-软件与信息技术服务.md",
@@ -457,7 +457,7 @@
         "C03"
       ],
       "edition": "v0.4",
-      "previous_group": "I01-软件与信息服务.md"
+      "previous_group": "I00-软件与信息服务导读.md"
     },
     {
       "file": "I02-电信服务.md",
@@ -468,7 +468,7 @@
         "C25"
       ],
       "edition": "v0.4",
-      "previous_group": "I01-软件与信息服务.md"
+      "previous_group": "I00-软件与信息服务导读.md"
     },
     {
       "file": "I03-云计算与模型平台服务.md",
@@ -478,7 +478,7 @@
         "C17"
       ],
       "edition": "v0.4",
-      "previous_group": "I01-软件与信息服务.md"
+      "previous_group": "I00-软件与信息服务导读.md"
     },
     {
       "file": "J01-银行.md",
@@ -489,7 +489,7 @@
         "C08"
       ],
       "edition": "v0.4",
-      "previous_group": "J01-金融.md"
+      "previous_group": "J00-金融导读.md"
     },
     {
       "file": "J02-保险.md",
@@ -500,7 +500,7 @@
         "C08"
       ],
       "edition": "v0.4",
-      "previous_group": "J01-金融.md"
+      "previous_group": "J00-金融导读.md"
     },
     {
       "file": "J03-证券服务.md",
@@ -511,7 +511,7 @@
         "C08"
       ],
       "edition": "v0.4",
-      "previous_group": "J01-金融.md"
+      "previous_group": "J00-金融导读.md"
     },
     {
       "file": "J04-基金管理.md",
@@ -522,7 +522,7 @@
         "C08"
       ],
       "edition": "v0.4",
-      "previous_group": "J01-金融.md"
+      "previous_group": "J00-金融导读.md"
     },
     {
       "file": "L01-招聘与人力资源服务.md",
@@ -530,7 +530,7 @@
       "scope": "招聘与人力资源服务",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "L01-商务服务.md"
+      "previous_group": "L00-商务服务导读.md"
     },
     {
       "file": "L02-经营咨询.md",
@@ -538,7 +538,7 @@
       "scope": "经营咨询",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "L01-商务服务.md"
+      "previous_group": "L00-商务服务导读.md"
     },
     {
       "file": "L03-法律服务.md",
@@ -546,7 +546,7 @@
       "scope": "法律服务",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "L01-商务服务.md"
+      "previous_group": "L00-商务服务导读.md"
     },
     {
       "file": "M01-规划设计.md",
@@ -554,7 +554,7 @@
       "scope": "规划设计",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "M01-专业技术服务.md"
+      "previous_group": "M00-专业技术服务导读.md"
     },
     {
       "file": "M02-检验检测.md",
@@ -562,7 +562,7 @@
       "scope": "检验检测",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "M01-专业技术服务.md"
+      "previous_group": "M00-专业技术服务导读.md"
     },
     {
       "file": "M03-设备维保服务.md",
@@ -570,7 +570,7 @@
       "scope": "设备维保服务",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "M01-专业技术服务.md"
+      "previous_group": "M00-专业技术服务导读.md"
     },
     {
       "file": "M04-工程设计.md",
@@ -578,7 +578,7 @@
       "scope": "工程设计",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "M01-专业技术服务.md"
+      "previous_group": "M00-专业技术服务导读.md"
     },
     {
       "file": "P01-教育服务.md",
@@ -604,7 +604,7 @@
       "scope": "文化内容与传媒",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "R01-文化体育与文旅.md"
+      "previous_group": "R00-文化体育与文旅导读.md"
     },
     {
       "file": "R02-体育健身.md",
@@ -612,7 +612,7 @@
       "scope": "体育健身",
       "priority_source_ids": [],
       "edition": "v0.4",
-      "previous_group": "R01-文化体育与文旅.md"
+      "previous_group": "R00-文化体育与文旅导读.md"
     },
     {
       "file": "R03-旅游与景区.md",
@@ -623,7 +623,7 @@
         "C24"
       ],
       "edition": "v0.4",
-      "previous_group": "R01-文化体育与文旅.md"
+      "previous_group": "R00-文化体育与文旅导读.md"
     },
     {
       "file": "S01-政务与公共服务.md",
@@ -640,7 +640,7 @@
   "current_chapter_edition": "v0.4",
   "split_groups": [
     {
-      "from": "A01-农业与养殖.md",
+      "from": "A00-农业与养殖导读.md",
       "label": "农业与养殖",
       "to": [
         "A01-农业.md",
@@ -651,7 +651,7 @@
       "reason": "生产对象、生长周期、现场装备和专业管理分别组织。"
     },
     {
-      "from": "B01-采矿.md",
+      "from": "B00-采矿导读.md",
       "label": "采矿",
       "to": [
         "B01-煤矿.md",
@@ -660,7 +660,7 @@
       "reason": "煤炭与铁矿的资源、质量及生产约束分别展开；煤矿章区分露天与井工。"
     },
     {
-      "from": "C08-建材.md",
+      "from": "C08-00-建材导读.md",
       "label": "建材",
       "to": [
         "C08-水泥.md",
@@ -671,7 +671,7 @@
       "reason": "连续窑磨、玻璃熔制加工、陶瓷多工序和混凝土即时配送分别成章。"
     },
     {
-      "from": "C09-电子信息与关键部件.md",
+      "from": "C09-00-电子信息与关键部件导读.md",
       "label": "电子信息与关键部件",
       "to": [
         "C09-印制电路板与电子装联.md",
@@ -681,7 +681,7 @@
       "reason": "板件工艺、电芯及电池制造、终端研发组装按各自图谱和专业模块成章。"
     },
     {
-      "from": "C10-家电与轻工.md",
+      "from": "C10-00-家电与轻工导读.md",
       "label": "家电与轻工",
       "to": [
         "C10-家电.md",
@@ -693,7 +693,7 @@
       "reason": "产品、材料、生产工艺和交付关系不同，按指南专业条目分篇。"
     },
     {
-      "from": "C12-食品饮料.md",
+      "from": "C12-00-食品饮料导读.md",
       "label": "食品饮料",
       "to": [
         "C12-食品加工.md",
@@ -705,7 +705,7 @@
       "reason": "食品加工、液体灌装、乳品链条、制糖连续过程和白酒酿造分别展开。"
     },
     {
-      "from": "C13-医药与医疗装备.md",
+      "from": "C13-00-医药与医疗装备导读.md",
       "label": "医药与医疗装备",
       "to": [
         "C13-医药制造.md",
@@ -714,7 +714,7 @@
       "reason": "药品工艺与批次质量、装备研发及生命周期服务分别展开。"
     },
     {
-      "from": "D01-能源与公用事业.md",
+      "from": "D00-能源与公用事业导读.md",
       "label": "能源与公用事业",
       "to": [
         "D01-电力.md",
@@ -724,7 +724,7 @@
       "reason": "供电、供气和水务有各自设施对象、运行管理和客户服务关系。"
     },
     {
-      "from": "F01-批发与零售.md",
+      "from": "F00-批发与零售导读.md",
       "label": "批发与零售",
       "to": [
         "F01-批发.md",
@@ -733,7 +733,7 @@
       "reason": "面向企业客户的供货交易与面向消费者的门店渠道经营分别成章。"
     },
     {
-      "from": "G01-运输仓储与物流.md",
+      "from": "G00-运输仓储与物流导读.md",
       "label": "运输仓储与物流",
       "to": [
         "G01-货运与综合物流.md",
@@ -743,7 +743,7 @@
       "reason": "运输履约、库内作业与专业油气储运分属不同核心设施和业务模块。"
     },
     {
-      "from": "H01-住宿与餐饮.md",
+      "from": "H00-住宿与餐饮导读.md",
       "label": "住宿与餐饮",
       "to": [
         "H01-住宿.md",
@@ -752,7 +752,7 @@
       "reason": "住宿以房间、房晚和接待服务为主线，餐饮以菜品、食材和供餐订单为主线。"
     },
     {
-      "from": "I01-软件与信息服务.md",
+      "from": "I00-软件与信息服务导读.md",
       "label": "软件与信息服务",
       "to": [
         "I01-软件与信息技术服务.md",
@@ -762,7 +762,7 @@
       "reason": "软件研发交付、通信网络服务与算力模型平台供给分别组织。"
     },
     {
-      "from": "J01-金融.md",
+      "from": "J00-金融导读.md",
       "label": "金融",
       "to": [
         "J01-银行.md",
@@ -773,7 +773,7 @@
       "reason": "银行信贷、保险保单理赔、证券经纪交易和基金产品组合管理分别展开。"
     },
     {
-      "from": "L01-商务服务.md",
+      "from": "L00-商务服务导读.md",
       "label": "商务服务",
       "to": [
         "L01-招聘与人力资源服务.md",
@@ -783,7 +783,7 @@
       "reason": "招聘围绕岗位和候选、咨询围绕问题及客户行动；法律服务由专业服务参照中独立。"
     },
     {
-      "from": "M01-专业技术服务.md",
+      "from": "M00-专业技术服务导读.md",
       "label": "专业技术服务",
       "to": [
         "M01-规划设计.md",
@@ -794,7 +794,7 @@
       "reason": "空间方案、测量报告、现场维护及工程图纸有不同对象和责任交付。"
     },
     {
-      "from": "R01-文化体育与文旅.md",
+      "from": "R00-文化体育与文旅导读.md",
       "label": "文化体育与文旅",
       "to": [
         "R01-文化内容与传媒.md",
