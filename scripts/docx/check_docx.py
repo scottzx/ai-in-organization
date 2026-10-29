@@ -118,6 +118,8 @@ def main():
     doc = Document(a.docx)
     _side = Path(a.docx).with_suffix('.build.json')
     unnumbered = sum(1 for x in json.loads(_side.read_text('utf-8')).get('chapters', []) if x.get('chapter') is None and '导读' in x.get('file', '').rsplit('/', 1)[-1] and re.match(r'^[A-Z]', x['file'].rsplit('/', 1)[-1])) if _side.exists() else 0
+    _fronts = {f"{v['dir']}/{f}" for v in cfg.get('volumes', {}).values() for f in (v.get('front') or [])}   # 册首不编号篇目（下册导言）
+    front_left = sum(1 for x in json.loads(_side.read_text('utf-8')).get('chapters', []) if x.get('chapter') is None and x.get('file', '') in _fronts) if _side.exists() else 0
     items = {}  # 检查项 -> [总数, 失败位置列表]
     def check(name, ok, where):
         it = items.setdefault(name, [0, []]); it[0] += 1
@@ -178,8 +180,9 @@ def main():
             check(f'{key} 对齐={c["align"]}', eff_pf(p, 'alignment') in AL[c['align']], where + f' 实为{eff_pf(p, "alignment")}')
         # 编号
         if key == 'h1':
-            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|导言|结语|附录[A-Z])', txt))
+            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
+            if not ok and front_left > 0 and txt.startswith('导言'): front_left -= 1; ok = True   # 仅下册 front 配置的册首导言
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)
             cur = m.group(1) if m else txt[:3]; h_counts = {'cur': cur, 'n': {}}
