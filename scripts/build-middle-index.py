@@ -27,7 +27,7 @@ def _cells(line):
 
 def dedupe_figure_index(text,order):
  """Collapse repeated figure rows in 附录B: keep the row of the chapter that comes first
- in 编写范围.json, note the other chapters in 原篇目, and recount the summary line.
+ in book order (成书章序.json), note the other chapters in 原篇目, and recount the summary line.
  Deleted rows (图号 —) are left as they are. Idempotent on an already collapsed table."""
  rank={name:i for i,name in enumerate(order)}
  lines=text.split('\n')
@@ -101,7 +101,9 @@ def main():
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
  by_path={e['path']:e for e in entries}
  appendix=MIDDLE/APPENDIX_B
- appendix.write_text(dedupe_figure_index(appendix.read_text(),[item['file'].removesuffix('.md') for item in planned]))
+ book=json.loads((DATA/'成书章序.json').read_text())['chapters']
+ book_order=[f.removesuffix('.md') for k in sorted(book,key=int) for f in book[k]]
+ appendix.write_text(dedupe_figure_index(appendix.read_text(),book_order))
  lines+=['','## 选用对照与引用依据','']
  for p in sorted(MIDDLE.glob('附录*.md')): lines.append(f'- [{title(p)}]({p.name})')
  lines+=['- [原图摘引与来源记录](assets/README.md)','- [行业指南、报告与白皮书](../索引/工信部行业数字化转型资料汇总.md)','- [行业解决方案章节模板](../templates/行业解决方案章节模板.md)','- [整体编写大纲](../草稿箱/中册-行业数智化解决方案-编写大纲构思-20261017.md)','',
