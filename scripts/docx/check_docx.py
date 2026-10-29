@@ -117,6 +117,10 @@ def main():
     cfg = yaml.safe_load(Path(a.style).read_text('utf-8')); L = cfg['levels']; F = cfg['fonts']
     doc = Document(a.docx)
     _side = Path(a.docx).with_suffix('.build.json')
+    _chaps = json.loads(_side.read_text('utf-8')).get('chapters', []) if _side.exists() else []
+    # 「导言」只允许来自某册 style.yaml volumes.<vol>.front 的册首篇目（如下册 00-导言.md）；以 build.json 实际收入的篇目为准
+    _front = {f"{v['dir']}/{f}" for v in cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
+    front_intro = sum(1 for x in _chaps if x.get('chapter') is None and x.get('file') in _front)
     unnumbered = sum(1 for x in json.loads(_side.read_text('utf-8')).get('chapters', []) if x.get('chapter') is None and '导读' in x.get('file', '').rsplit('/', 1)[-1] and re.match(r'^[A-Z]', x['file'].rsplit('/', 1)[-1])) if _side.exists() else 0
     items = {}  # 检查项 -> [总数, 失败位置列表]
     def check(name, ok, where):
@@ -178,7 +182,8 @@ def main():
             check(f'{key} 对齐={c["align"]}', eff_pf(p, 'alignment') in AL[c['align']], where + f' 实为{eff_pf(p, "alignment")}')
         # 编号
         if key == 'h1':
-            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|导言|结语|附录[A-Z])', txt))
+            ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
+            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True   # 仅 front 篇目可用「导言」
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)

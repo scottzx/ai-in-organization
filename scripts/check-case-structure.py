@@ -7,11 +7,17 @@ from pathlib import Path
 import re
 import sys
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / 'templates/case-structure.json').read_text(encoding='utf-8'))
 REQUIRED = CONFIG['required_h2']
 INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text(encoding='utf-8'))
 ENTRIES = {entry['id']: entry for entry in INDEX['entries']}
+# 册首不编号篇目（如下册导言）不是案例，名单读 style.yaml 的 volumes.<vol>.front
+STYLE = yaml.safe_load((ROOT / 'scripts/docx/style.yaml').read_text(encoding='utf-8'))
+FRONT = {(ROOT / v['dir'] / f).resolve() for v in STYLE.get('volumes', {}).values()
+         if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
 
 
 def visible_lines(text):
@@ -126,7 +132,7 @@ def main():
     input_errors = []
     for path in args.paths:
         if path.is_dir():
-            files.update(p.resolve() for p in path.rglob('*.md') if p.name != 'README.md')
+            files.update(p.resolve() for p in path.rglob('*.md') if p.name != 'README.md' and p.resolve() not in FRONT)
         elif path.is_file() and path.suffix == '.md':
             files.add(path.resolve())
         else:
