@@ -1,0 +1,195 @@
+# 《企业数智化转型研究报告》Word 排版参数（集中配置，待确认项标 TODO）
+book:
+  title: 《企业数智化转型研究报告——从智力服务到精益经营》   # 唯一书名字段（占位）：扉页、页眉、版权页均引用此处
+  subtitle: ""
+  author: 一芥智能研究院            # 编著单位
+  copyright_holder: 杭州一芥智能有限公司   # 著作权人
+  edition: 二次修订版（排版样张）
+  date: 2026年10月
+page:
+  size: A4
+  margin_top_cm: 2.54
+  margin_bottom_cm: 2.54
+  margin_left_cm: 2.8
+  margin_right_cm: 2.6
+  header_font: 宋体
+  header_size_pt: 9          # 小五
+  footer_size_pt: 9
+  front_matter_page_format: lowerRoman   # 版权页/目录 用罗马页码
+  body_restart_page_number: true
+fonts:
+  latin: Times New Roman
+  color: "000000"            # 全部黑色，含标题、超链接
+  line_spacing_exact_pt: 28  # 固定值行距
+  space_before_pt: 0
+  space_after_pt: 0
+levels:
+  h1: {font: 黑体,          size_pt: 16, bold: true, align: center, page_break_before: true}  # 黑体 三号
+  h2: {font: 楷体_GB2312,   size_pt: 15, bold: true, align: left}   # 楷体_GB2312 小三
+  h3: {font: 仿宋_GB2312,   size_pt: 14, bold: true, align: left}
+  h4: {font: 仿宋_GB2312,   size_pt: 12, bold: true,  align: left}
+  body: {font: 仿宋_GB2312, size_pt: 12, bold: false, align: justify, first_line_chars: 4}  # Scott 已定：4 字符（firstLineChars=400，等效 48pt）
+  caption: {font: 黑体,     size_pt: 12, bold: false, align: center}   # TODO 图题表题字体字号待确认
+  table: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: left}  # TODO 表内字号待确认
+  footnote: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: justify}   # 五号
+  figure_note: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: center}   # 图下来源注
+  toc_title: {font: 黑体, size_pt: 16, bold: true}
+numbering:
+  chapter_format: "第{cn}章　{title}"   # 一级：中文数字
+  figure_format: "图 {ch}-{n}　{title}"
+  table_format: "表 {ch}-{n}　{title}"
+  table_caption_position: above
+  figure_caption_position: below
+toc:
+  levels: "1-2"   # 目录只列到 X.Y
+# 上册试转：文件 -> 新章号（None=不编号的前后部分）
+volumes:
+  upper:
+    dir: 上册-研究报告
+    files:
+      - [00-导论.md, null]
+      - [01-智力即服务.md, 1]
+      - [02-MTL-从市场到有效线索.md, 2]
+      - [03-单点提效为何未传导到整体交付.md, 3]
+      - [04-IPD-从需求到可销售交付的产品.md, 4]
+      - [05-ITR-从问题受理到解决确认.md, 5]
+      - [06-业务线融合-从流程贯通到协同运转.md, 6]
+      - [07-组织变革与精益管理.md, 7]
+      - [08-实施建议-从改造机会到可验证行动.md, 8]
+      - [09-结语.md, null]
+      - [附录A-术语辨析表.md, A]
+  # 中册：全书第九至二十章（依据修订计划“中册 行业解决方案”12 章方案，与源稿图号 10-x…20-x 一致）
+  middle:
+    demote: true          # 中册标题降一级：章标题由脚本印，篇目 # → X.Y，## → X.Y.Z，### → 四级（n）
+    whole_chapter: [9]    # 整章即一篇（00-导读）：# 不印，## → 9.Y，### → 9.Y.Z
+    chapter_titles:       # 据修订计划中册章名
+      9: 怎样使用行业解决方案
+      10: 农林牧渔
+      11: 采矿
+      12: 装备与离散制造
+      13: 原材料与流程制造
+      14: 消费品制造
+      15: 能源与公用事业
+      16: 建筑、商贸与物流
+      17: 住宿餐饮与文体旅
+      18: 信息技术与金融
+      19: 专业服务
+      20: 社会领域
+    dir: 中册-行业解决方案
+    chapters:
+      9: [00-导读.md]
+      10: [A01-农业.md, A02-林业.md, A03-畜牧业.md, A04-渔业.md]
+      11: [B01-煤矿.md, B02-铁矿采选.md]
+      12: [C01-工程机械.md, C02-汽车与零部件.md, C03-机器人.md, C04-船舶.md, C09-印制电路板与电子装联.md, C10-家电.md, C16-智能移动终端.md, C25-医疗装备.md, C17-家具.md]
+      13: [C05-钢铁.md, C06-石化化工.md, C07-有色金属.md, C08-水泥.md, C26-玻璃.md, C27-建筑卫生陶瓷.md, C28-商品混凝土.md, C18-造纸.md, C14-民爆.md, C15-锂电池.md]
+      14: [C11-纺织服装.md, C12-食品加工.md, C21-饮料.md, C22-乳制品.md, C23-制糖.md, C24-白酒.md, C13-医药制造.md, C20-美妆日化.md, C19-皮革制造.md]
+      15: [D01-电力.md, D02-燃气.md, D03-水务.md]
+      16: [E01-建筑与工程.md, F01-批发.md, F02-零售.md, G01-货运与综合物流.md, G02-仓储.md, G03-油气储运.md]
+      17: [H01-住宿.md, H02-餐饮.md, R01-文化内容与传媒.md, R02-体育健身.md, R03-旅游与景区.md]
+      18: [I01-软件与信息技术服务.md, I02-电信服务.md, I03-云计算与模型平台服务.md, J01-银行.md, J02-保险.md, J03-证券服务.md, J04-基金管理.md]
+      19: [L01-招聘与人力资源服务.md, L02-经营咨询.md, L03-法律服务.md, M01-规划设计.md, M02-检验检测.md, M03-设备维保服务.md, M04-工程设计.md]
+      20: [P01-教育服务.md, Q01-医疗健康.md, S01-政务与公共服务.md]
+    unnumbered: []   # 16 个门类导读已随 #13 删除（c49d89f）
+    order:   # 成书顺序：按章号；附录殿后
+      - 00-导读.md
+      - A01-农业.md
+      - A02-林业.md
+      - A03-畜牧业.md
+      - A04-渔业.md
+      - B01-煤矿.md
+      - B02-铁矿采选.md
+      - C01-工程机械.md
+      - C02-汽车与零部件.md
+      - C03-机器人.md
+      - C04-船舶.md
+      - C09-印制电路板与电子装联.md
+      - C10-家电.md
+      - C16-智能移动终端.md
+      - C25-医疗装备.md
+      - C17-家具.md
+      - C05-钢铁.md
+      - C06-石化化工.md
+      - C07-有色金属.md
+      - C08-水泥.md
+      - C26-玻璃.md
+      - C27-建筑卫生陶瓷.md
+      - C28-商品混凝土.md
+      - C18-造纸.md
+      - C14-民爆.md
+      - C15-锂电池.md
+      - C11-纺织服装.md
+      - C12-食品加工.md
+      - C21-饮料.md
+      - C22-乳制品.md
+      - C23-制糖.md
+      - C24-白酒.md
+      - C13-医药制造.md
+      - C20-美妆日化.md
+      - C19-皮革制造.md
+      - D01-电力.md
+      - D02-燃气.md
+      - D03-水务.md
+      - E01-建筑与工程.md
+      - F01-批发.md
+      - F02-零售.md
+      - G01-货运与综合物流.md
+      - G02-仓储.md
+      - G03-油气储运.md
+      - H01-住宿.md
+      - H02-餐饮.md
+      - R01-文化内容与传媒.md
+      - R02-体育健身.md
+      - R03-旅游与景区.md
+      - I01-软件与信息技术服务.md
+      - I02-电信服务.md
+      - I03-云计算与模型平台服务.md
+      - J01-银行.md
+      - J02-保险.md
+      - J03-证券服务.md
+      - J04-基金管理.md
+      - L01-招聘与人力资源服务.md
+      - L02-经营咨询.md
+      - L03-法律服务.md
+      - M01-规划设计.md
+      - M02-检验检测.md
+      - M03-设备维保服务.md
+      - M04-工程设计.md
+      - P01-教育服务.md
+      - Q01-医疗健康.md
+      - S01-政务与公共服务.md
+      - 附录A-行业方案选用与能力对照表.md
+      - 附录B-原架构原图与案例对照.md | 附录B-中册图源索引表.md   # 新旧文件名兼容：按仓库里存在的那个取（PR #8 改名）
+copyright:
+  - "书名：{title}"
+  - "著作权人：{holder}　　编著：{author}"
+  - "Copyright © 2026 {holder}。"
+  - "本作品采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）进行许可，适用于本书有权许可的原创正文、分析与索引。许可文本见 https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans 。"
+  - "第三方音视频、图书、行业架构原图和资料由相应权利人持有；引用图示保留来源与页码，不纳入原创内容的 CC BY-NC-SA 4.0 许可。"
+  - "书中具名企业案例均根据公开资料整理，未对案例效果作独立审计或完整事实核验。"
+  - "本书只作经营管理分析与案例整理，不构成法律、财务、税务、医疗或其他专业意见。"
+  - "项目仓库：https://github.com/scottzx/ai-in-organization"
+# 构建时排除（glob，对文件名匹配）；另按“导航页”特征自动排除
+exclude:
+  patterns: ["备份-*.md", "README.md", "导图大纲-*.md", "*.blueprint.json"]
+  files: []
+  force_include: ["中册-行业解决方案/附录A-行业方案选用与能力对照表.md"]   # 不受导航页自动排除，作中册附录A
+  # 中册 16 个门类导读页（据中册同编号对照表）。
+  # 内容主笔的 PR 将其改名为 X00-门类导读（如 A00-农业与养殖导读.md）；改名前后两种文件名都识别。
+  # mode: exclude = 不进正文（默认，避免与同编号正文冲突、扰乱图号）；
+  #       include_x00 = 改名后的 X00 导读页作为门类入口进目录（不编章号/图号），旧名仍排除。
+  guide_pages:
+    mode: include_x00   # 已定：X00 导读页作为门类入口进目录
+    dir: 中册-行业解决方案
+    current: []   # 旧门类导读文件名均已不存在（#13 后清空）
+    x00_patterns: ["[A-Z]00-*.md", "[A-Z][0-9][0-9]-00-*.md"]   # C 门类分组形式如 C08-00-*.md
+  nav_page_detect: true
+  nav_page_max_chars: 1500   # 去掉链接后正文少于该字数、且以链接列表为主的视为分篇入口/跳转页
+# 图片清单（中册用）：保留/删除/重绘、来源、CC 声明。由 make_image_manifest.py 从审读意见生成
+images:
+  manifest: image-manifest.yaml
+  note_format: "资料来源：{source}。{cc}"
+  cc_note: "本图不适用本书 CC BY-NC-SA 4.0 许可。"
+  edition: ebook        # ebook / print：审读意见“保留（电子书）/重绘（纸书）”按此取舍
+checks:
+  # 版权页识别标记：PDF 某页含任一标记即视为版权页，页内网址（CC 许可协议、项目仓库地址）不算裸链（总编辑定）
+  copyright_page_markers: [版权页, 版权所有, 著作权人]   # 单独的 CC BY、知识共享不作标记

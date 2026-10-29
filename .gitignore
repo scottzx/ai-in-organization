@@ -27,3 +27,7 @@ output/pdf/*.pdf
 
 # PDF构建清单与检查记录随生成产生，不进仓库
 output/pdf/*.json
+
+# Word 样张与检查记录随生成产生，不进仓库
+output/docx/
+*.docx
