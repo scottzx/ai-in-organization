@@ -28,6 +28,8 @@ import argparse
 from glob import glob
 import xml.etree.ElementTree as ET
 
+from reportlab import rl_config
+from reportlab.platypus import tables as tables_module
 from reportlab.lib import colors
 from reportlab.lib import textsplit
 from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT, TA_CENTER
@@ -472,6 +474,12 @@ class Builder:
             pdfmetrics.registerFontFamily(name,normal=name,bold=name,italic=name,boldItalic=name)
         pdfmetrics.registerFontFamily('BookBody',normal='BookBody',bold='BookHeading',
                                       italic='BookBody',boldItalic='BookHeading')
+        # ReportLab 默认字体 Helvetica 不嵌入：画布初始字体读 rl_config.canvas_basefontname，
+        # 表格单元格与段落样式的默认字体在导入时固化。字体注册后统一改为可嵌入的 BookBody。
+        rl_config.canvas_basefontname = 'BookBody'
+        tables_module.CellStyle.fontname = 'BookBody'
+        ParagraphStyle.defaults['fontName'] = 'BookBody'
+        ParagraphStyle.defaults['bulletFontName'] = 'BookBody'
         self.body_characters = pdfmetrics.getFont('BookBody').face.charToGlyph
         self.styles = {}
         for name,font,size,leading in [
