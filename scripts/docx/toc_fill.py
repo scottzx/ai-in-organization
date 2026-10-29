@@ -8,6 +8,7 @@ from docx.enum.text import WD_TAB_ALIGNMENT, WD_TAB_LEADER, WD_LINE_SPACING
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Pt, Emu
+import indent_fix   # 顶格段落：firstLine=0 时 firstLineChars 也置 0（Word 中 Chars 优先）
 
 def _font(run, east, latin, size, bold=False):
     run.font.size = Pt(size); run.font.bold = bold; run.font.name = latin
@@ -60,7 +61,7 @@ def fill(docx_path, cfg, keep_pdf=None):
         r3 = para.add_run('0'); _font(r3, body_font, latin, 12 if l < 3 else 10.5)
         runs.append(r3); prev = para
     e = OxmlElement('w:r'); f = OxmlElement('w:fldChar'); f.set(qn('w:fldCharType'), 'end'); e.append(f); prev._p.append(e)
-    doc.save(docx_path)
+    indent_fix.fix(doc); doc.save(docx_path)
     tmp = tempfile.mkdtemp()
     pages, pdf = pdf_pages(docx_path, tmp)
     # 正文页：页脚为阿拉伯数字；按顺序查找标题
@@ -74,6 +75,6 @@ def fill(docx_path, cfg, keep_pdf=None):
             ci += 1; pos = 0
         if found is None: miss.append(text); ci, pos = max(0, ci - 1), 0; r3.text = '—'
         else: r3.text = str(found)
-    doc.save(docx_path)
+    indent_fix.fix(doc); doc.save(docx_path)
     shutil.rmtree(tmp, ignore_errors=True)
     return len(heads), miss
