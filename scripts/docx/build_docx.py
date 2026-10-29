@@ -241,7 +241,7 @@ class Builder:
         self.page_break()
         # 版权页（置底，用空段推到页面下部）
         for _ in range(10): self.para('Normal', key='body')
-        p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0)
+        p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0); set_first_line_chars(p._p, 0)
         r = p.add_run('版权声明'); self.style_run(r, self.lv('h1')['font'], 12, True)
         for line in self.cfg['copyright']:
             p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0)
@@ -657,6 +657,7 @@ class Builder:
 
         self.doc.core_properties.title = self.cfg['book']['title']
         self.doc.core_properties.author = self.cfg['book']['author']
+        import indent_fix; self.log['flush_left_chars_fixed'] = indent_fix.fix(self.doc)   # 顶格段落（firstLine=0）不得继承非零 firstLineChars
         self.doc.save(out)
 
 NAV_RE = re.compile(r'(?:>\s*)?(?:\*\*)?(?:(?:返回|上一[章篇节]|下一[章篇节])[:：]?\s*)?(?:\[[^\]]+\]\((?!https?:)[^)\s]*(?:\.md|README)[^)\s]*\)\s*(?:[·•｜|/、，,→←]\s*)?)+(?:\*\*)?')

@@ -281,6 +281,9 @@ def main():
         for m in _re.finditer(r'([图表])\s?([A-Z])\s?-\s?(\d+)', p.text):
             check('附录字母引用 有对应附录（不悬空）', f'{m.group(1)}{m.group(2)}-{m.group(3)}' in cap_set, f'段{i+1}「{m.group(0)}」')
     check('附录字母引用 有对应附录（不悬空）', True, '')   # 无引用时也列出本项
+    import indent_fix   # Word 中 firstLineChars 优先于 firstLine：顶格段落须同时为 0
+    _bad = indent_fix.offenders(doc)
+    check('首行缩进为 0 的段落 firstLineChars 也为 0（含样式继承）', not _bad, f'{len(_bad)} 段：' + '；'.join(f'{q.style.name}「{q.text[:12]}」' for q in _bad[:10]))
     web = []
     NAVW = r'(上册|中册|下册|全书)?(目录|索引|首页|研究报告|行业解决方案|企业案例|案例汇编)|上一章|下一章|返回|行业分篇说明|行业资料库'
     for i, p in enumerate(doc.paragraphs):
