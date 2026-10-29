@@ -428,6 +428,7 @@ class BookDoc(BaseDocTemplate):
 
 class Builder:
     def __init__(self, output=None, volume='all'):
+        self.note_number=0; self.pending_notes=[]
         self.output = Path(output).resolve() if output else None
         self.volume = volume
         self.body_start_source = ROOT/'上册-研究报告/00-导论.md'
@@ -549,8 +550,34 @@ class Builder:
             elif t=='Quoted': result.append('“'+self.inline(c[1],strong=strong)+'”')
             elif t=='RawInline':
                 for anchor in re.findall(r'id="([^"]+)"',c[1]): result.append(f'<a name="{key(self.current,anchor)}"/>')
+            elif t=='Note':
+                # Markdown footnotes become superscript links to chapter endnotes.
+                self.note_number+=1; n=self.note_number
+                name=key(self.current,f'fn-{n}'); ref=key(self.current,f'fnref-{n}')
+                self.pending_notes.append((n,c))
+                result.append(f'<a name="{ref}"/><super><a href="#{name}" color="#1D4ED8">{n}</a></super>')
             else: raise ValueError(f'Unsupported inline {t}')
         return ''.join(result)
+
+    def document_blocks(self,blocks):
+        # Footnote numbers restart in every chapter and print at the chapter end.
+        self.note_number=0; self.pending_notes=[]
+        out=self.blocks(blocks)
+        if self.pending_notes:
+            title=self.para('注释','h4'); title.keepWithNext=True
+            out.extend([CondPageBreak(60),title])
+            i=0
+            while i<len(self.pending_notes):
+                n,note=self.pending_notes[i]; i+=1
+                name=key(self.current,f'fn-{n}'); ref=key(self.current,f'fnref-{n}')
+                flows=self.blocks(note)
+                label=f'<a name="{name}"/><a href="#{ref}" color="#1D4ED8">{n}.</a> '
+                if flows and isinstance(flows[0],Paragraph):
+                    flows[0]=self.para(label+flows[0].text,'small')
+                else: flows.insert(0,self.para(label,'small'))
+                out.extend(flows)
+        self.pending_notes=[]
+        return out
 
     def load(self,path):
         text=path.read_text()
@@ -832,7 +859,7 @@ class Builder:
                         self.story.append(p)
                         current_middle_group=group
                 self.story.append(Anchor([key(path)]))
-                self.story.extend(self.blocks(docs[path]))
+                self.story.extend(self.document_blocks(docs[path]))
                 self.sources.append({'path':str(path.relative_to(ROOT)),
                                      'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         pdf=self.output or (PDF if self.volume=='all' else OUT/(TITLE+f'-{self.volume_name()}.pdf'))
@@ -859,7 +886,7 @@ class Builder:
         self.register(path, blocks)
         self.current = path
         self.story.append(Anchor([key(path)]))
-        self.story.extend(self.blocks(blocks))
+        self.story.extend(self.document_blocks(blocks))
         self.sources.append({'path': str(path.relative_to(ROOT)),
                              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         title = next((plain(b['c'][2]) for b in blocks if b['t'] == 'Header' and b['c'][0] == 1), path.stem)
