@@ -14,6 +14,26 @@ ROOT=Path(__file__).resolve().parents[1]
 MID=ROOT/'中册-行业解决方案'
 DATA=ROOT/'scripts/data/middle'
 
+# Middle-volume guide pages retired in PR #13 (deleted; `from` records kept).
+RETIRED_GUIDES={
+ 'A00-农业与养殖导读.md',
+ 'B00-采矿导读.md',
+ 'C08-00-建材导读.md',
+ 'C09-00-电子信息与关键部件导读.md',
+ 'C10-00-家电与轻工导读.md',
+ 'C12-00-食品饮料导读.md',
+ 'C13-00-医药与医疗装备导读.md',
+ 'D00-能源与公用事业导读.md',
+ 'F00-批发与零售导读.md',
+ 'G00-运输仓储与物流导读.md',
+ 'H00-住宿与餐饮导读.md',
+ 'I00-软件与信息服务导读.md',
+ 'J00-金融导读.md',
+ 'L00-商务服务导读.md',
+ 'M00-专业技术服务导读.md',
+ 'R00-文化体育与文旅导读.md',
+}
+
 def main():
  plan=json.loads((DATA/'编写范围.json').read_text())
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
@@ -87,8 +107,9 @@ def main():
   if group['from'] in planned_files:
    errors.append('Combined entry must not be counted as an industry chapter: '+group['from'])
   if not entry.is_file():
-   # Retired combined entries (e.g. deleted guide pages) keep their `from` record; skip the reading-entry check.
-   continue
+   # The 16 retired guide pages keep their `from` record; only they may be absent.
+   if group['from'] in RETIRED_GUIDES: continue
+   errors.append('Previous industry URL is missing its reading entry: '+group['from']);continue
   entry_text=entry.read_text()
   if re.search(r'!\[[^\]\n]*\]\(assets/',entry_text):
    errors.append('Combined entry still duplicates industry figures: '+group['from'])
