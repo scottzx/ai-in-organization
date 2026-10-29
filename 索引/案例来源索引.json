@@ -4068,8 +4068,8 @@
     },
     {
       "id": "L02",
-      "title": "独立零售顾问的AI应用",
-      "path": "下册-案例汇编/L-租赁与商务服务业/L02-黄碧云零售咨询的AI应用.md",
+      "title": "某零售咨询顾问的AI应用",
+      "path": "下册-案例汇编/L-租赁与商务服务业/L02-某零售咨询顾问的AI应用.md",
       "industry_code": "L",
       "industry_name": "租赁和商务服务业",
       "classification_status": "supported",
@@ -4975,8 +4975,8 @@
     },
     {
       "id": "R02",
-      "title": "程前朋友圈AI选题探索",
-      "path": "下册-案例汇编/R-文化体育与娱乐业/R02-程前朋友圈AI选题探索.md",
+      "title": "某自媒体创作者AI选题探索",
+      "path": "下册-案例汇编/R-文化体育与娱乐业/R02-某自媒体创作者AI选题探索.md",
       "industry_code": "R",
       "industry_name": "文化、体育和娱乐业",
       "classification_status": "provisional",
@@ -4992,7 +4992,7 @@
           "anchor": "s-19-f01",
           "sources": [
             {
-              "title": "程前朋友圈AI大改造。",
+              "title": "据抖音视频（7654126612127976745，2026-06-22）受访者自述",
               "publisher": "光羽的平行世界",
               "url": "https://www.douyin.com/video/7654126612127976745",
               "document": "7654126612127976745.md",
@@ -5002,7 +5002,7 @@
               "locator": "00:03:57.980"
             },
             {
-              "title": "程前朋友圈AI大改造。",
+              "title": "据抖音视频（7654126612127976745，2026-06-22）受访者自述",
               "publisher": "光羽的平行世界",
               "url": "https://www.douyin.com/video/7654126612127976745",
               "document": "7654126612127976745.md",
@@ -5022,7 +5022,7 @@
           "anchor": "s-19-f02",
           "sources": [
             {
-              "title": "程前朋友圈AI大改造。",
+              "title": "据抖音视频（7654126612127976745，2026-06-22）受访者自述",
               "publisher": "光羽的平行世界",
               "url": "https://www.douyin.com/video/7654126612127976745",
               "document": "7654126612127976745.md",
@@ -5032,7 +5032,7 @@
               "locator": "00:07:44.460"
             },
             {
-              "title": "程前朋友圈AI大改造。",
+              "title": "据抖音视频（7654126612127976745，2026-06-22）受访者自述",
               "publisher": "光羽的平行世界",
               "url": "https://www.douyin.com/video/7654126612127976745",
               "document": "7654126612127976745.md",
