@@ -6,7 +6,7 @@
 
 生成器覆盖上、中、下三册。`--volume upper`、`--volume middle`、`--volume lower`分别导出单册，默认`--volume all`按上、中、下顺序生成三册合订本。每次生成会在同目录写出构建清单（`*.manifest.json`），记录源文档SHA256、章节起页、字体配置、图表标题、PDF校验值和内容检查结果。
 
-先维护Markdown正文，再使用安装了`reportlab`和`pypdf`的Python环境运行生成器；另需Pandoc。渲染检查使用Poppler的`pdftoppm`、`pdftotext`及`pdfinfo`。
+先维护Markdown正文，再用[`scripts/requirements-pdf.txt`](../../scripts/requirements-pdf.txt)安装Python依赖（`python3 -m pip install -r scripts/requirements-pdf.txt`）后运行生成器；另需Pandoc。交付环境须锁定ReportLab 5.1.0，更换版本可能改变分页与页码。渲染检查使用Poppler的`pdftoppm`、`pdftotext`及`pdfinfo`。
 
 ```bash
 python3 scripts/build-pdf.py --volume upper --output output/pdf/企业数智化转型研究报告-上册.pdf

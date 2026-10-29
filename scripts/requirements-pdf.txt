@@ -1,0 +1,7 @@
+# PDF生成依赖（scripts/build-pdf.py）。版本已锁定，更换ReportLab版本可能改变分页与页码。
+# 安装：python3 -m pip install -r scripts/requirements-pdf.txt；另需系统安装Pandoc与Poppler。
+reportlab==5.1.0
+pypdf==6.21.4
+# ReportLab的运行依赖，按当前构建环境锁定
+pillow==13.0.0
+charset-normalizer==3.5.2
