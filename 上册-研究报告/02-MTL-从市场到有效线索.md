@@ -182,13 +182,13 @@ MTL的整体改进，需要以销售实际接手、能够继续跟进的有效�
 
 ## 参考文献
 
-[1] 华为. Huawei’s Position Paper on Cyber Security[R/OL]. 2019. https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34.[^c02-1]
+[1] 华为. [Huawei’s Position Paper on Cyber Security](https://www-file.huawei.com/-/media/corporate/pdf/public-policy/huaweis_position_paper_on_cybersecurity.pdf#page=34)[R/OL]. 2019.[^c02-1]
 
-[2] 马想聊AI. 据抖音视频（7543858319371390260，2025-08-29）受访者自述[EB/OL]. https://www.douyin.com/video/7543858319371390260.[^c02-3]
+[2] 马想聊AI. [据抖音视频（7543858319371390260，2025-08-29）受访者自述](https://www.douyin.com/video/7543858319371390260)[EB/OL].[^c02-3]
 
-[3] 马想聊AI. 据抖音视频（7657543904942973659，2026-07-01）受访者自述[EB/OL]. https://www.douyin.com/video/7657543904942973659.[^c02-4]
+[3] 马想聊AI. [据抖音视频（7657543904942973659，2026-07-01）受访者自述](https://www.douyin.com/video/7657543904942973659)[EB/OL].[^c02-4]
 
-[4] 马想聊AI. 据抖音视频（7639644564847889718，2026-05-14）受访者自述[EB/OL]. https://www.douyin.com/video/7639644564847889718.[^c02-5]
+[4] 马想聊AI. [据抖音视频（7639644564847889718，2026-05-14）受访者自述](https://www.douyin.com/video/7639644564847889718)[EB/OL].[^c02-5]
 
 [^c02-1]: PDF第34页。引用范围：MTL的流程名称与业务运作层定位；本章原因分析、环节划分与处理办法为本书应用整理。
 
