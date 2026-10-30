@@ -17,12 +17,18 @@ def _font(run, east, latin, size, bold=False):
     for a in ('w:ascii', 'w:hAnsi'): rf.set(qn(a), latin)
     rf.set(qn('w:eastAsia'), east)
 
+class TocError(Exception): pass
+
 N = lambda t: re.sub(r'[\s\u3000\u00a0]', '', t)
 
 def pdf_pages(docx, tmp):
     subprocess.run(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', tmp, str(docx)], capture_output=True, timeout=600)
     pdf = Path(tmp) / (Path(docx).stem + '.pdf')
-    n = int(re.search(r'Pages:\s+(\d+)', subprocess.run(['pdfinfo', pdf], capture_output=True, text=True).stdout).group(1))
+    info = subprocess.run(['pdfinfo', pdf], capture_output=True, text=True) if pdf.exists() else None
+    m = re.search(r'Pages:\s+(\d+)', info.stdout) if info is not None else None
+    if not m:   # 出版审读 #78 P2③：LibreOffice 未出 PDF 或 pdfinfo 无输出时明确报错，不再 AttributeError
+        raise TocError(f'目录预排失败：{"LibreOffice 未生成 " + pdf.name if info is None else "pdfinfo 无页数输出（" + (info.stderr.strip()[:200] or "空输出") + "）"}')
+    n = int(m.group(1))
     out = []
     for i in range(1, n + 1):
         t = subprocess.run(['pdftotext', '-f', str(i), '-l', str(i), '-layout', pdf, '-'], capture_output=True, text=True).stdout

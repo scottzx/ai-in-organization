@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproducibility test for scripts/extract-middle-figures.py.
 
-Re-renders the 27 figures recompressed in PR #83 plus B05-船舶-17 into a temp
+Re-renders the 24 PR #83 figures still in the book (3 removed by #87) plus B05-船舶-17 into a temp
 dir and checks each PNG's sha256 against 中册-行业解决方案/assets/sources.json.
 Source PDFs are read from each source's local_pdf (gitignored 资料库/ dir);
 the test skips cleanly when a PDF, pdftoppm or the pinned packages are missing.
@@ -24,10 +24,10 @@ spec.loader.exec_module(extract)
 # PR #83 (merge 2af0bc8): 27 figures downscaled to 1713 px + oxipng -o4.
 PR83 = ['A11-制糖-41', 'A11-医疗装备-32', 'A11-医疗装备-33', 'A11-医疗装备-34',
         'A11-医疗装备-35', 'A11-印制板-53', 'A11-印制板-54', 'A11-家电-37',
-        'A11-工程机械-22', 'A11-工程机械-23', 'A11-新能源汽车-25',
+        'A11-新能源汽车-25',
         'A11-新能源汽车-26', 'A11-新能源汽车-27', 'A11-智能移动终端-56',
         'A11-机器人-29', 'A11-机器人-30', 'A11-白酒-44', 'A11-石化-16',
-        'A11-石化-17', 'A11-石化-18', 'A11-美妆日化-46', 'A11-钢铁-13',
+        'A11-石化-17', 'A11-石化-18', 'A11-钢铁-13',
         'A11-钢铁-14', 'A11-锂电池-49', 'A11-锂电池-50', 'A11-锂电池-51',
         'B01-钢铁-43']
 CASES = [name + '.png' for name in PR83] + ['B05-船舶-17.png']
@@ -45,7 +45,7 @@ class ReproduceFigures(unittest.TestCase):
         manifest = json.loads((extract.TARGET / 'sources.json').read_text())
         expected = {r['asset']: r['asset_sha256'] for r in manifest['figures']}
         by_asset = {r['asset']: r for r in rules['figures']}
-        self.assertEqual(len(CASES), 28)
+        self.assertEqual(len(CASES), 25)
         with tempfile.TemporaryDirectory() as tmp:
             for asset in CASES:
                 rule = by_asset[asset]

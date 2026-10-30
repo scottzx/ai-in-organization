@@ -5,12 +5,18 @@ from docx.oxml.ns import qn
 from fontTools.ttLib import TTFont
 import fonts_embed
 
+class GlyphError(Exception):
+    """白名单（style.yaml fonts.glyph_fallback_chars）外的字符缺字形，或回退字体也没有该字形。"""
+
+def whitelist(cfg):
+    return set(cfg.get('fonts', {}).get('glyph_fallback_chars') or [])
+
 def fix(doc, cfg, parts=None):
     order = (cfg.get('fonts', {}).get('glyph_fallback') or [])
     names = set(order) | set((cfg.get('fonts', {}).get('embed') or {}).get('files', {}))
     found = fonts_embed.find_fonts(sorted(names), cfg)
     cmaps = {n: set(TTFont(str(v['regular']), lazy=True).getBestCmap()) for n, v in found.items()}
-    log = {}
+    log = {}; allow = whitelist(cfg); bad = {}
     roots = [doc.element] + [p for p in (parts or [])]
     for root in roots:
         for r in list(root.iter(qn('w:r'))):
@@ -26,8 +32,11 @@ def fix(doc, cfg, parts=None):
             for c in t.text:
                 f = None
                 if ord(c) >= 0x80 and ord(c) not in cm:
-                    f = next((n for n in order if n in cmaps and ord(c) in cmaps[n]), None)
-                    if f: log.setdefault(f'U+{ord(c):04X} {c}', {'from': east, 'to': f, 'count': 0}); log[f'U+{ord(c):04X} {c}']['count'] += 1
+                    f = next((n for n in order if n in cmaps and ord(c) in cmaps[n]), None) if c in allow else None
+                    if not f:
+                        k = f'U+{ord(c):04X} {c}（{east}缺字，' + ('回退字体也无此字）' if c in allow else '不在 fonts.glyph_fallback_chars 白名单）')
+                        bad[k] = bad.get(k, 0) + 1
+                    else: log.setdefault(f'U+{ord(c):04X} {c}', {'from': east, 'to': f, 'count': 0}); log[f'U+{ord(c):04X} {c}']['count'] += 1
                 if f != curf and cur: segs.append((cur, curf)); cur = ''
                 cur += c; curf = f
             if cur: segs.append((cur, curf))
@@ -41,4 +50,6 @@ def fix(doc, cfg, parts=None):
                     nrf.set(qn('w:eastAsia'), f)   # 只换中文字体槽；西文槽仍是 Source Serif 4
                 parent.insert(idx + i, nr)
             parent.remove(r)
+    if bad:
+        raise GlyphError('；'.join(f'{k} {n} 处' for k, n in bad.items()))
     return log
