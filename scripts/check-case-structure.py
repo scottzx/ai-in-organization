@@ -17,6 +17,9 @@ INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text(encoding=
 ENTRIES = {entry['id']: entry for entry in INDEX['entries']}
 # 册首不编号篇目（如下册导言）不是案例，名单读 style.yaml 的 volumes.<vol>.front
 STYLE = yaml.safe_load((ROOT / 'scripts/docx/style.yaml').read_text(encoding='utf-8'))
+BRIEF_REQUIRED = ['资料来源']
+
+
 def nfc(path):
     """路径按 NFC 规范化后比较（macOS 文件名常为 NFD）。"""
     return unicodedata.normalize('NFC', str(Path(path).resolve()))
@@ -72,8 +75,10 @@ def check_case(path):
             errors.append('一级标题必须在其他标题之前')
     sections = [(number, title) for number, level, title in headings if level == 2]
     titles = [title for _, title in sections]
-    missing = [title for title in REQUIRED if title not in titles]
-    extra = [title for title in titles if title not in REQUIRED]
+    # 简述篇（来源索引 presentation=brief）：一两段事实简述，只设“资料来源”一节。
+    required = BRIEF_REQUIRED if entry and entry.get('presentation') == 'brief' else REQUIRED
+    missing = [title for title in required if title not in titles]
+    extra = [title for title in titles if title not in required]
     duplicates = [title for title, count in Counter(titles).items() if count > 1]
     if missing:
         errors.append('缺少二级标题：' + '；'.join(missing))
@@ -81,7 +86,7 @@ def check_case(path):
         errors.append('非模板二级标题：' + '；'.join(extra))
     if duplicates:
         errors.append('重复二级标题：' + '；'.join(duplicates))
-    if not missing and not extra and not duplicates and titles != REQUIRED:
+    if not missing and not extra and not duplicates and titles != required:
         errors.append('二级标题顺序不符合模板')
     for i, (start, title) in enumerate(sections):
         end = sections[i + 1][0] if i + 1 < len(sections) else float('inf')
