@@ -253,6 +253,22 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
+        # 16. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 某某公司项目，见PDF第35—38页。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 3,6[2026-10-29].')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('“见PDF第x—y页”作主页码 -> validate-middle 报错', r.returncode == 1 and any('[3]' in e and 'main page locator' in e for e in errs), str(errs)[-300:])
+            ok('离散页码“3,6”缺空格 -> validate-middle 报错', r.returncode == 1 and any('[4]' in e and 'half-width ", "' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
+
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
         fr = [f"{v['dir']}/{f}" for v in cfg['volumes'].values() if isinstance(v, dict) and v.get('front') for f in v['front']]
