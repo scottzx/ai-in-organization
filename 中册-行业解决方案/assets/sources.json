@@ -798,7 +798,7 @@
       "title": "荆门市水务集团综合漏损率变化（2014年与2023年）",
       "disposition": "本书新绘",
       "attribution": "国际在线湖北频道《荆门供水管网漏控经验获住建部推广》（访问日期：2026-10-28），见本节参考资料[4]。图中为综合漏损率，未扣除标准规定的修正值，不宜直接与10%、12%的评定值比较",
-      "asset_sha256": "a9111500b47dec2aacc4738a0eb2aba460fbbd398641c8deb50eac7cc30a4587",
+      "asset_sha256": "9d65d03d74de930281b21a97aa9ba01bfee1ac8a4654795f2aa75e0d3e8afd10",
       "generator": "scripts/figures/render.py",
       "required_in": [
         "D03-水务.md"

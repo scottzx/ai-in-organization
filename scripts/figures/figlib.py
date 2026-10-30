@@ -262,7 +262,8 @@ def vbar(labels, values, texts, ylabel, ymax=None, h=6.0, colors=None):
         ax.text(x, v + (ymax or max(values)) * 0.02, t, ha='center', va='bottom', fontsize=9, color=INK)
     ax.set_xticks(list(xs)); ax.set_xticklabels(labels, fontsize=9, color=INK)
     ax.set_ylim(0, ymax or max(values) * 1.2)
-    lim = ax.get_ylim()[1]; ax.set_yticks([t for t in ax.get_yticks() if t <= lim + 1e-9])  # 不留越出坐标范围的刻度; ax.set_ylabel(ylabel, fontsize=9, color=INK)
+    lim = ax.get_ylim()[1]; ax.set_yticks([t for t in ax.get_yticks() if t <= lim + 1e-9])  # 不留越出坐标范围的刻度
+    ax.set_ylabel(ylabel, fontsize=9, color=INK)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
     for s in ('left', 'bottom'): ax.spines[s].set_color(EDGE); ax.spines[s].set_linewidth(0.75)
     ax.tick_params(labelsize=9, colors=INK, width=0.75)
