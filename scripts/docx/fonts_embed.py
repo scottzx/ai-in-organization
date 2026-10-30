@@ -68,7 +68,8 @@ def find_fonts(names, cfg):
     """返回 {字体名: {'regular': 路径, 'bold': 路径?}}；只收 TrueType/OpenType 单字体文件（.ttf/.otf），.ttc 不能嵌入 Word。"""
     e = (cfg.get('fonts', {}).get('embed') or {})
     dirs = [os.environ['BOOK_FONT_DIR']] if os.environ.get('BOOK_FONT_DIR') else []
-    dirs += [os.path.expanduser(d) for d in e.get('search_dirs', [])]
+    here = Path(__file__).resolve().parent   # 相对路径按本脚本目录解析（如 fonts/ 下随仓库的 Source Serif 4）
+    dirs += [str(here / os.path.expanduser(d)) if not os.path.isabs(os.path.expanduser(d)) else os.path.expanduser(d) for d in e.get('search_dirs', [])]
     files = {k: [x.lower() for x in v] for k, v in (e.get('files') or {}).items()}
     found = {}
     cands = []
@@ -136,7 +137,8 @@ def embed(docx_path, cfg):
             el = st.find(q(W, tag))
             if el is not None: st.remove(el)
     parts['word/settings.xml'] = etree.tostring(st, xml_declaration=True, encoding='UTF-8', standalone=True)
-    tmp = tempfile.mktemp(suffix='.docx')
+    with tempfile.NamedTemporaryFile(suffix='.docx', delete=False, dir=os.path.dirname(os.path.abspath(docx_path))) as fh:   # 不用 mktemp（有竞态）
+        tmp = fh.name
     with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as z:
         for n, b in parts.items(): z.writestr(n, b)
     shutil.move(tmp, docx_path)

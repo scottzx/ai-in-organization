@@ -143,6 +143,7 @@ def main():
             for c in row.cells:
                 paras += [(p, True) for p in c.paragraphs]
     chapter = '前置'; body_started = False
+    app_letter = None   # 当前一级标题若为“附录X　…”，记其字母；题注只在附录内可用字母，且须与本附录字母一致
     in_front = False; front_caps = []; front_no = 0   # 当前一级标题是否为 front 篇目的「导言」；front 篇目内题注；第几个 front 篇目（每篇“导”号单独连续）
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
@@ -195,6 +196,7 @@ def main():
         if key == 'h1':
             ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
             in_front = False
+            _ma = re.match(r'^附录([A-Z])', txt); app_letter = _ma.group(1) if _ma else None
             if not ok and txt.startswith('导言') and front_queue:   # 仅 front 篇目可用「导言」，且须是名单上的下一篇
                 exp_h1 = front_queue.pop(0)
                 if exp_h1 is None or re.sub(r'[\s\u3000]', '', txt) == exp_h1: ok = True; in_front = True; front_no += 1
@@ -208,9 +210,10 @@ def main():
             m = re.match(r'^((?:\d+|[A-Z])(?:\.\d+){%d}) ' % (int(key[1]) - 1), txt)
             check(f'{key} 编号层级“X.Y{".Z" * (int(key[1]) - 2)}”', bool(m), where)
         if key == 'caption':
-            # 章号为 1 起的数字或附录字母；front 篇目（导言）内只能用“导”（图导-N／表导-N）；“0”一律不合格
+            # 章号为 1 起的数字，或附录内本附录的字母（如附录A 内“图 A-1”）；front 篇目（导言）内只能用“导”（图导-N／表导-N）；“0”一律不合格
             m = re.match(r'^([图表]) ?(导|[1-9]\d*|[A-Z])-(\d+)', txt)
             if m and (m.group(2) == '导') != in_front: m = None
+            if m and re.fullmatch(r'[A-Z]', m.group(2)) and m.group(2) != app_letter: m = None   # 字母号只在本附录内、且与附录字母一致
             if m and in_front: front_caps.append(p._p)
             check('图题/表题 编号“图/表 X-Y”（front 篇目为“图/表 导-Y”）', bool(m), where)
             if m:

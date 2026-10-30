@@ -18,20 +18,20 @@ page:
   front_matter_page_format: lowerRoman   # 版权页/目录 用罗马页码
   body_restart_page_number: true
 fonts:
-  latin: Times New Roman
+  latin: Source Serif 4      # 西文字体（总编辑 2026-10-30 定）：Source Serif 4 4.005 TTF，SIL OFL 1.1，随仓库放在 scripts/docx/fonts/SourceSerif4/（含 LICENSE.md）
   color: "000000"            # 全部黑色，含标题、超链接
   line_spacing_exact_pt: 28  # 固定值行距
   space_before_pt: 0
   space_after_pt: 0
   embed:                     # Word 嵌入字体（Scott 2026-10-30 定）：fonts_embed.py 按字体名查找字体文件（.ttf/.otf；.ttc 不能嵌入）
     enabled: true
-    search_dirs: [~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定
+    search_dirs: [fonts, ~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定
     files:                   # 常见文件名；也按字体内部名称（name 表）匹配
       黑体: [simhei.ttf]
       楷体_GB2312: [simkai.ttf, kaiti_gb2312.ttf, 楷体_gb2312.ttf]
       仿宋_GB2312: [simfang.ttf, fangsong_gb2312.ttf, 仿宋_gb2312.ttf]
       宋体: [simsun.ttf]
-      Times New Roman: [times.ttf, timesbd.ttf]
+      Source Serif 4: [sourceserif4-regular.ttf, sourceserif4-bold.ttf]
 levels:
   h1: {font: 黑体,          size_pt: 16, bold: true, align: center, page_break_before: true}  # 黑体 三号
   h2: {font: 楷体_GB2312,   size_pt: 15, bold: true, align: left}   # 楷体_GB2312 小三

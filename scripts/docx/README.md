@@ -15,7 +15,7 @@
 
 - Python 3，依赖：`python-docx`、`pyyaml`、`fonttools`（`pip install python-docx pyyaml fonttools`）
 - 可选：LibreOffice（`soffice`，用于预排目录页码和转 PDF）；`pdftotext`（poppler-utils，用于 `--pdf` 检查）
-- 字体嵌入：构建时按 `style.yaml` 的 `fonts.embed` 查找黑体、楷体_GB2312、仿宋_GB2312、宋体、Times New Roman 的字体文件（`.ttf`/`.otf`；`.ttc` 不能嵌入 Word），找到的嵌入 docx 并打开 `embedTrueTypeFonts`、`saveSubsetFonts`；也可用环境变量 `BOOK_FONT_DIR` 指定字体目录。找不到的字体如实列出（终端与 `*.build.json` 的 `fonts_embedded`），不以其他字体替代；此时 `check_docx.py` 的“Word 嵌入字体”项不通过。正式出稿须在装有这些字体文件的机器上构建。
+- 字体嵌入：构建时按 `style.yaml` 的 `fonts.embed` 查找黑体、楷体_GB2312、仿宋_GB2312、宋体的字体文件；西文字体 Source Serif 4（4.005 TTF，SIL OFL 1.1）随仓库放在 `fonts/SourceSerif4/`（含 LICENSE.md），构建时直接嵌入（`.ttf`/`.otf`；`.ttc` 不能嵌入 Word），找到的嵌入 docx 并打开 `embedTrueTypeFonts`、`saveSubsetFonts`；也可用环境变量 `BOOK_FONT_DIR` 指定字体目录。找不到的字体如实列出（终端与 `*.build.json` 的 `fonts_embedded`），不以其他字体替代；此时 `check_docx.py` 的“Word 嵌入字体”项不通过。正式出稿须在装有这些字体文件的机器上构建。
 - 字号：图题、表题、表格文字均为五号（10.5pt），`check_docx.py` 逐段核对。
 
 ## 路径约定
@@ -42,6 +42,8 @@ python3 build_docx.py --volume all -o ../../output/docx/样张-合订本.docx
 ```
 
 **下册不做导航页判定：** `style.yaml` 的 `exclude.nav_page_detect_exempt_dirs: [下册-案例汇编]` 使整个下册目录都不按“导航页”特征（短正文＋多链接）自动剔除，否则附编B 等短篇案例会被误删。下册各门类的 `README.md`（门类索引页）由文件名规则 `exclude.patterns` 中的 `README.md` 剔除，不靠导航页判定。因此，今后若在下册新增其他导航/索引页（文件名不是 `README.md`），构建不会自动识别，会当作案例排入正文；需改名为 `README.md`，或加入 `exclude.files`。
+
+不给 `-o` 时按 `--volume` 自动命名，写到 `output/docx/`：`样张-上册.docx`、`样张-中册.docx`、`样张-下册.docx`、`样张-合订本.docx`（`--print` 时加“-印刷版”，如 `样张-中册-印刷版.docx`），各册互不覆盖。
 
 其他常用参数：`--only N`（只导出第 N 章）、`--no-toc-pages`（不预排目录，在 Word 中按 F9 更新）、`--allow-web-residue`（源稿残留网页导航行时临时放行出样张）。
 
