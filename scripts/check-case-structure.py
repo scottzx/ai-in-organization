@@ -18,6 +18,12 @@ ENTRIES = {entry['id']: entry for entry in INDEX['entries']}
 # 册首不编号篇目（如下册导言）不是案例，名单读 style.yaml 的 volumes.<vol>.front
 STYLE = yaml.safe_load((ROOT / 'scripts/docx/style.yaml').read_text(encoding='utf-8'))
 BRIEF_REQUIRED = ['资料来源']
+# 简述篇白名单：取自 Datawhale《FDE案例100》、已压缩为一两段事实简述的21篇（PR #95）。
+# 其他篇目即使在来源索引里标了 presentation: brief，也按七节模板检查并报错。
+BRIEF_IDS = frozenset('''C01 C02 C07 C10 C11 C23 C24 C25 F01 F07 F08 F10 J01 L01 L03 L06
+M01 M02 M03 S01 附B01'''.split())
+# 简述篇“资料来源”之前的正文上限（不计空白，含一级标题、锚点与阶段行）。现有最长314字，留余量。
+BRIEF_MAX_CHARS = 400
 
 
 def nfc(path):
@@ -75,8 +81,23 @@ def check_case(path):
             errors.append('一级标题必须在其他标题之前')
     sections = [(number, title) for number, level, title in headings if level == 2]
     titles = [title for _, title in sections]
-    # 简述篇（来源索引 presentation=brief）：一两段事实简述，只设“资料来源”一节。
-    required = BRIEF_REQUIRED if entry and entry.get('presentation') == 'brief' else REQUIRED
+    # 简述篇（来源索引 presentation=brief 且在 BRIEF_IDS 白名单内）：一两段事实简述，只设“资料来源”一节。
+    brief = False
+    if entry and entry.get('presentation') == 'brief':
+        if entry['id'] in BRIEF_IDS:
+            brief = True
+        else:
+            errors.append(f'简述篇未列入白名单：{entry["id"]}')
+    required = BRIEF_REQUIRED if brief else REQUIRED
+    if brief:
+        source_line = next((number for number, level, title in headings if level == 2 and title == '资料来源'), None)
+        for number, level, title in headings:
+            if level > 1 and number != source_line:
+                errors.append(f'简述篇正文不得有其他标题：第{number}行“{title}”')
+        body = ''.join(line for number, line in lines if source_line is None or number < source_line)
+        size = len(re.sub(r'\s', '', body))
+        if size > BRIEF_MAX_CHARS:
+            errors.append(f'简述篇正文超过{BRIEF_MAX_CHARS}字：{size}字')
     missing = [title for title in required if title not in titles]
     extra = [title for title in titles if title not in required]
     duplicates = [title for title, count in Counter(titles).items() if count > 1]
