@@ -119,30 +119,6 @@ images:
   redraw_file: null
   note: null
   manual_review: null
-- file: A11-工程机械-22.png
-  chapters: C01-工程机械
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第22页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=22
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: A11-工程机械-23.png
-  chapters: C01-工程机械
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第23页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=23
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
 - file: A11-新能源汽车-25.png
   chapters: C02-汽车与零部件
   action:
@@ -347,30 +323,6 @@ images:
   advice: 保留（电子书）/重绘（纸书）
   source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第20页
   url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=20
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: A11-美妆日化-46.png
-  chapters: C20-美妆日化
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第46页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=46
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: A11-美妆日化-47.png
-  chapters: C20-美妆日化
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部《场景化、图谱化推进重点行业数字化转型的参考指引（2025版）》行业场景图谱 第47页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20259/60b964bacb4e4c6886ad27349060bb36.pdf#page=47
   not_cc: true
   redraw_file: null
   note: null
