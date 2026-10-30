@@ -1,10 +1,12 @@
 """文档默认字体、主题字体、全部样式一律改成显式的开源字体（出版审读 #78 P2①）。
 python-docx 模板的 docDefaults 引用主题字体（Cambria/Calibri、宋体），未用的 MacroText 等样式写死 Courier；
-这里统一改为 style.yaml 的西文字体（Source Serif 4）和中文默认字体（思源宋体 Noto Serif SC），只改字体名，不动字号、行距、缩进。"""
+这里统一改为 style.yaml 的西文字体（Source Serif 4）和中文默认字体（思源宋体 Noto Serif SC），只改字体名，不动字号、行距、缩进。
+fontTable.xml 只保留开源字体条目（模板自带的 Times New Roman、Calibri、ＭＳ 明朝 等删去），settings 的 themeFontLang 改为 en-US / zh-CN（出版审读 #82 P2①）。"""
 import re
 from docx.oxml.ns import qn
 
 EAST_DEFAULT = 'Noto Serif SC'
+THEME_LANG = {'w:val': 'en-US', 'w:eastAsia': 'zh-CN'}
 THEME_ATTRS = ('w:asciiTheme', 'w:hAnsiTheme', 'w:eastAsiaTheme', 'w:cstheme')
 
 def allowed(cfg):
@@ -39,6 +41,17 @@ def fix(doc, cfg):
             x = re.sub(r'(<a:font script="(?:Hans|Hant|Jpan|Hang)" typeface=")[^"]*(")', lambda m: m.group(1) + EAST_DEFAULT + m.group(2), x)
             x = re.sub(r'(<a:font script="(?!Hans|Hant|Jpan|Hang)[^"]*" typeface=")[^"]*(")', lambda m: m.group(1) + latin + m.group(2), x)
             part._blob = x.encode('utf-8'); n += 1
+        elif str(part.partname) == '/word/fontTable.xml':
+            from lxml import etree
+            ft = etree.fromstring(part.blob)
+            for f in list(ft.findall(qn('w:font'))):
+                if f.get(qn('w:name')) not in ok: ft.remove(f); n += 1
+            part._blob = etree.tostring(ft, xml_declaration=True, encoding='UTF-8', standalone=True)
+    tl = doc.settings.element.find(qn('w:themeFontLang'))
+    if tl is not None:
+        for k in list(tl.attrib): del tl.attrib[k]
+        for k, v in THEME_LANG.items(): tl.set(qn(k), v)
+        n += 1
     return n
 
 def audit(docx_path, cfg):
@@ -55,4 +68,11 @@ def audit(docx_path, cfg):
         if re.match(r'word/theme/theme\d*\.xml$', n):
             t = z.read(n).decode('utf-8')
             for f in sorted(set(re.findall(r'typeface="([^"]*)"', t)) - ok - {''}): bad.append(f'{n} 用了 {f}')
+    ft = z.read('word/fontTable.xml').decode('utf-8') if 'word/fontTable.xml' in z.namelist() else ''
+    for f in sorted(set(re.findall(r'<w:font [^>]*w:name="([^"]*)"', ft)) - ok): bad.append(f'fontTable.xml 列有 {f}')
+    st = z.read('word/settings.xml').decode('utf-8')
+    m = re.search(r'<w:themeFontLang ([^>]*?)/?>', st)
+    if m:
+        got = dict(re.findall(r'w:(\w+)="([^"]*)"', m.group(1)))
+        if got != {k[2:]: v for k, v in THEME_LANG.items()}: bad.append(f'settings.xml themeFontLang 为 {got}')
     return bad
