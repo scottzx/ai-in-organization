@@ -233,7 +233,7 @@ class Builder:
     def front_matter(self):
         b = self.cfg['book']
         for _ in range(6): self.para('Normal', key='body', align='center')
-        for text, size in ((b['title'], 22), (b['subtitle'], 18), ('', 12), (b['edition'], 14), (b['date'], 14)):
+        for text, size in ((b['title'], 22), (b['subtitle'], 18), ('', 12), *(((b['edition'], 14),) if b.get('edition') else ()), (b['date'], 14)):
             p = self.para('Normal', key='body', align='center')
             if text:
                 r = p.add_run(text); self.style_run(r, self.lv('h1')['font'], size)
