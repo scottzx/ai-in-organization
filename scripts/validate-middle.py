@@ -49,6 +49,14 @@ def reference_style_errors(name,number,record):
   errs.append(name+': reference ['+number+'] document number year must use 〔〕')
  if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*(?:PDF)?第\s*\d+\s*(?:[—–-]\s*\d+\s*)?页',record):
   errs.append(name+': reference ['+number+'] has a bare page locator right after the access date; use "年: 页码[引用日期]."')
+ if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*第[^页。；\n]*?节',record):
+  errs.append(name+': reference ['+number+'] has a bare section locator right after the access date; fold it into the note, e.g. "引用范围：第x节，…"')
+ if re.search(r': \d+(?:-\d+)?(?:\s*[，、]\s*\d+(?:-\d+)?)+\[\d{4}-\d{2}-\d{2}\]',record):
+  errs.append(name+': reference ['+number+'] discrete page numbers must be separated by half-width ", "')
+ note=re.search(r'\[\d{4}-\d{2}-\d{2}\]\.?\s*([^。；\n]*)',record)
+ # 总编辑允许说明文字里用PDF页定位附件、图谱、表格或公报版（如J04、C01、C19、C25、A01）；只报首句即以PDF页作主页码者。
+ if note and re.search(r'(?<!\[)PDF第\d+',note.group(1)) and not re.search(r'附件|图谱|表\d|公报|见',note.group(1)) and not re.search(r': \d+(?:-\d+)?(?:, \d+(?:-\d+)?)*\[\d{4}-',record):
+  errs.append(name+': reference ['+number+'] uses "PDF第x—y页" in the note as its main page locator; use "年: 页码[引用日期]."')
  return errs
 
 def lower_reference_errors():
@@ -57,7 +65,10 @@ def lower_reference_errors():
   rel=p.relative_to(LOWER)
   if p.name=='README.md' or '研究记录' in rel.parts: continue
   for number,record in re.findall(r'^(?:- )?\[(\d+)\]\s+(.+)$',p.read_text(),re.M):
-   if '/OL]' in record: errs.extend(reference_style_errors('下册/'+str(rel),number,record))
+   if '/OL]' not in record: continue
+   errs.extend(reference_style_errors('下册/'+str(rel),number,record))
+   if not re.match(r'(?:[^\[\n]+\. )?\[[^\]\n]+\]\([^)\n]+\)',record):
+    errs.append('下册/'+str(rel)+': reference ['+number+'] needs a linked title "[题名](URL)"')
  return errs
 
 def main():
