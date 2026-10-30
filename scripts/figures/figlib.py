@@ -268,3 +268,43 @@ def vbar(labels, values, texts, ylabel, ymax=None, h=6.0, colors=None):
     for s in ('left', 'bottom'): ax.spines[s].set_color(EDGE); ax.spines[s].set_linewidth(0.75)
     ax.tick_params(labelsize=9, colors=INK, width=0.75)
     return fig
+
+# ---------- 分层网络架构（三层），用于重绘工信部各行业融合应用参考指南的“融合创新实施架构” ----------
+
+def _need(t):
+    """一段文字按原有换行排版时所需的网格宽度（9pt 约 0.36 单位/全角字，半角按 0.55 计）。"""
+    return max(sum(0.55 if ord(c) < 128 else 1 for c in l) for l in t.split('\n')) * 0.36 + 0.4
+
+def net3(bands, gap=0.12, band_gap=0.25):
+    """bands 自上而下：(层名, rows)；rows 自上而下，每行是若干 (文字, 样式)。
+    样式：'net' 网络名（强调字）、'plat' 平台（强调框）、'key' 本层核心主体（强调框）、'grey' 灰底、'white' 白底、'head' 分组名。
+    每行按各框所需宽度等比铺满；文字不缩字，放不下由 fit() 报出。"""
+    XL, WL = 0.1, 0.62; X0 = XL + WL + 0.15; X1 = LW - 0.1; LH = 0.45
+    def rh(row): return max(t.count('\n') + 1 for t, _ in row) * LH + 0.4
+    hs = [sum(rh(r) for r in rows) + gap * (len(rows) + 1) for _, rows in bands]
+    f = Fig(sum(hs) + band_gap * (len(bands) - 1) + 0.2)
+    y = f.h - 0.1
+    for (name, rows), h in zip(bands, hs):
+        y -= h
+        f.box(XL, y, WL, h, '\n'.join(name), fill=FILL2, bold=True, wrapw=False)
+        f.box(X0 - 0.08, y, X1 - X0 + 0.16, h, '', fill='white')
+        yy = y + h - gap
+        for row in rows:
+            r = rh(row); yy -= r
+            need = [_need(t) for t, _ in row]
+            avail = X1 - X0 - 0.08 - gap * (len(row) - 1); k = avail / sum(need)
+            x = X0
+            for (t, st), n in zip(row, need):
+                w = n * k
+                kw = dict(wrapw=False)
+                if st in ('plat', 'key'): kw.update(accent=True, bold=st == 'key')
+                elif st == 'net': kw.update(fill=FILL, bold=True)
+                elif st == 'head': kw.update(fill=FILL2, bold=True)
+                elif st == 'grey': kw.update(fill=FILL)
+                else: kw.update(fill='white')
+                f.box(x, yy, w, r, t, **kw)
+                if st == 'net': f.ax.texts[-1].set_color(ACCENT)
+                x += w + gap
+            yy -= gap
+        y -= band_gap
+    return f
