@@ -1,4 +1,4 @@
-"""33 张配图的规格：图题、插入位置、图源与绘制函数。改图改这里，然后运行 render.py。"""
+"""34 张配图的规格：图题、插入位置、图源与绘制函数。改图改这里，然后运行 render.py。"""
 from figlib import *
 
 MID = '中册-行业解决方案'; UP = '上册-研究报告'; LOW = '下册-案例汇编'
@@ -26,7 +26,7 @@ def _():
     f = Fig(5.0); y = 2.1; bh = 1.2
     f.box(0.1, y - 0.3, 2.75, bh + 0.6, '前端监测设备\n（管网相邻\n地下空间）', wrapw=False)
     f.box(3.1, y, 2.5, bh, '监测中心值守研判', accent=True)
-    f.arrow((2.85, y + bh / 2), (3.1, y + bh / 2)); f.text(4.35, y + bh + 0.3, '分级推送预警', fs=8, color=ACCENT)
+    f.arrow((2.85, y + bh / 2), (3.1, y + bh / 2)); f.text(4.35, y + bh + 0.3, '分级推送预警', fs=9, color=ACCENT)
     tg = ['燃气企业', '行业主管部门', '应急指挥平台']
     for i, t in enumerate(tg):
         yy = 3.9 - i * 1.5
@@ -182,15 +182,15 @@ def _():
     f = Fig(7.6)
     for i, t in enumerate(['社会单位', '消防技术服务机构', '消防救援机构']):
         x = 0.6 + i * 4.8; f.box(x, 6.3, 4.0, 0.9, t); f.arrow((x + 2.0, 6.3), (x + 2.0, 5.6), style='<|-|>')
-    f.box(0.6, 4.7, 13.6, 0.9, '消防物联网平台：消防安全管理 · 设施实时监管 · 维护保养 · 隐患监测 · 火情联动处置', accent=True, wrapw=False, fs=8.5)
+    f.box(0.6, 4.7, 13.6, 0.9, '消防物联网平台：消防安全管理 · 设施实时监管 · 维护保养 · 隐患监测 · 火情联动处置', accent=True, wrapw=False, fs=9)
     y = 2.6
     f.box(0.6, y, 3.0, 1.1, '维保测试任务量化'); f.arrow((3.6, y + 0.55), (4.2, y + 0.55))
     f.box(4.2, y, 3.0, 1.1, '维保时自动记录'); f.arrow((7.2, y + 0.55), (7.8, y + 0.55))
     f.box(7.8, y, 3.0, 1.1, '当月测试是否达标', accent=True)
-    f.box(11.4, 3.3, 2.8, 0.9, '达标：任务结束'); f.arrow((10.8, y + 0.8), (11.4, 3.75))
-    f.box(11.4, 1.9, 2.8, 0.9, '未达标：任务无法结束', accent=True); f.arrow((10.8, y + 0.3), (11.4, 2.35), accent=True)
-    f.box(7.8, 0.3, 6.4, 1.0, '强行结束：立即通知业主单位和消防救援机构', accent=True)
-    f.arrow((12.8, 1.9), (12.8, 1.3), accent=True)
+    f.box(11.4, 3.3, 2.8, 1.0, '达标：任务结束'); f.arrow((10.8, y + 0.8), (11.4, 3.8))
+    f.box(11.4, 1.75, 2.8, 1.25, '未达标：任务无法结束', accent=True); f.arrow((10.8, y + 0.3), (11.4, 2.35), accent=True)
+    f.box(7.8, 0.2, 6.4, 1.1, '强行结束：立即通知业主单位和消防救援机构', accent=True)
+    f.arrow((12.8, 1.75), (12.8, 1.3), accent=True)
     f.arrow((2.1, 4.7), (2.1, 3.7))
     return f
 
@@ -220,13 +220,13 @@ def _():
                            ('IPD', '新产品验证：需要专家和设备'), ('ITR', '客户紧急问题：需要及时处置')]
     for i, (k, t) in enumerate(lines):
         y = 5.4 - i * 1.5
-        f.box(0.3, y, 1.4, 0.95, k, fill=FILL2, bold=True); f.box(1.85, y, 5.4, 0.95, t, fs=8.5)
+        f.box(0.3, y, 1.4, 0.95, k, fill=FILL2, bold=True); f.box(1.85, y - 0.1, 5.4, 1.15, t, fs=9)
         f.arrow((7.25, y + 0.475), (9.0, 3.3), accent=True)
     f.box(9.0, 1.6, 5.7, 3.4, '', accent=True)
     f.text(11.85, 4.6, '共享的稀缺资源', color=ACCENT, bold=True)
     for j, t in enumerate(['人员：销售、方案、专家', '产能与设备', '资金']):
-        f.box(9.3, 3.55 - j * 0.85, 5.1, 0.7, t, fill='white', fs=8.5)
-    f.text(11.85, 0.9, '共同资源没有增加时，\n各线计划分别成立，合在一起未必能完成', fs=8)
+        f.box(9.3, 3.55 - j * 0.85, 5.1, 0.7, t, fill='white', fs=9)
+    f.text(11.85, 0.9, '共同资源没有增加时，\n各线计划分别成立，合在一起未必能完成', fs=9)
     return f
 
 @fig('T-06-2', UP, '06-业务线融合-从流程贯通到协同运转.md', '整体协同不宜全部依赖临时会议', '共同取舍闭环：看清全貌—核实约束—比较安排—决定落实—检验再判断', '06-2-共同取舍闭环', SELF)
@@ -242,7 +242,7 @@ def _():
         y = 5.4 - i * 1.4
         f.box(0.6, y, 6.0, 0.95, a); f.box(8.4, y, 6.0, 0.95, b, accent=True)
         f.arrow((6.6, y + 0.475), (8.4, y + 0.475), accent=True, dashed=True)
-    f.text(7.5, 0.35, '同一笔收入、回款或避免的支出不在多条线重复认领', fs=8)
+    f.text(7.5, 0.35, '同一笔收入、回款或避免的支出不在多条线重复认领', fs=9)
     return f
 
 @fig('T-07-1', UP, '07-组织变革与精益管理.md', '组织职责说明需要承担什么责任', '人、智力服务与程序的分工', '07-1-人智力服务程序分工', SELF)
@@ -254,22 +254,22 @@ def _():
         x = 0.3 + c * 4.9
         f.box(x, 4.9, 4.5, 0.8, t, accent=acc, fill=ACC_FILL if acc else FILL2, bold=True)
         for i, s in enumerate(items):
-            f.box(x, 3.8 - i * 1.25, 4.5, 1.0, s, accent=acc, fill='white')
+            f.box(x, 3.65 - i * 1.3, 4.5, 1.2, s, accent=acc, fill='white')
     return f
 
 @fig('T-07-2', UP, '07-组织变革与精益管理.md', '判断方式的转变需要事先约定抽样规则', '判断者从逐份审核转向抽样校准', '07-2-逐份审核转向抽样校准', SELF)
 def _():
     f = Fig(7.0); f.text(3.0, 6.6, '原方式', bold=True); f.text(10.6, 6.6, '按任务风险分档', bold=True, color=ACCENT)
-    f.box(0.4, 2.6, 5.2, 3.4, '判断者逐份审核全部产物')
+    f.box(0.4, 2.45, 5.2, 3.75, '判断者逐份审核全部产物')
     tiers = [('涉及客户承诺、安全与合规的产物', '专业人员逐份确认'), ('条件明确、已有稳定检查的常规产物', '按比例抽查'),
              ('内部参考类材料', '使用者提出疑问时复核')]
     for i, (a, b) in enumerate(tiers):
-        y = 5.1 - i * 1.25
-        f.box(6.9, y, 4.6, 0.95, a, fs=8.5); f.box(11.9, y, 2.9, 0.95, b, accent=True, fs=8.5)
-        f.arrow((11.5, y + 0.475), (11.9, y + 0.475), accent=True)
+        y = 5.05 - i * 1.3
+        f.box(6.9, y, 4.6, 1.15, a, fs=9); f.box(11.9, y, 2.9, 1.15, b, accent=True, fs=9)
+        f.arrow((11.5, y + 0.575), (11.9, y + 0.575), accent=True)
     f.arrow((5.6, 4.3), (6.9, 4.3))
-    f.box(6.9, 0.4, 7.9, 0.95, '同类问题反复出现：回到方法和工具修正，而非简单提高抽查比例', fill=FILL2, fs=8.5)
-    f.arrow((10.6, 2.6), (10.6, 1.35))
+    f.box(6.9, 0.3, 7.9, 1.15, '同类问题反复出现：回到方法和工具修正，而非简单提高抽查比例', fill=FILL2, fs=9)
+    f.arrow((9.2, 2.45), (9.2, 1.45))
     return f
 
 @fig('T-07-3', UP, '07-组织变革与精益管理.md', '延续第六章的说明性场景', '智力飞轮：遗漏—复盘—方法—验证—推广—版本保留', '07-3-智力飞轮', SELF)
@@ -297,16 +297,16 @@ def _():
         if r is None: continue
         y = n - 1 - i; t, v = r; appx = i > len(LOWER_COUNTS)
         ax.barh(y, v, color='#B3B3B3' if appx else ACCENT, height=0.6)
-        ax.text(v + 0.4, y, str(v), va='center', fontsize=8, color=INK)
+        ax.text(v + 0.4, y, str(v), va='center', fontsize=9, color=INK)
         ys.append(y); labels.append(t)
     sep = n - 1 - len(LOWER_COUNTS)
     ax.axhline(sep, color=EDGE, lw=0.6, ls='--')
-    ax.text(27.5, sep - 1.5, '不计入行业案例', ha='right', va='center', fontsize=8, color='#6E6E6E')
-    ax.text(27.5, sep + 1.2, '行业案例合计 73 篇', ha='right', va='center', fontsize=8, color=ACCENT)
-    ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=8, color=INK)
-    ax.set_xlim(0, 28); ax.set_ylim(-0.6, n - 0.4); ax.set_xlabel('篇数', fontsize=8, color=INK)
+    ax.text(27.5, sep - 1.5, '不计入行业案例', ha='right', va='center', fontsize=9, color='#6E6E6E')
+    ax.text(27.5, sep + 1.2, '行业案例合计 73 篇', ha='right', va='center', fontsize=9, color=ACCENT)
+    ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=9, color=INK)
+    ax.set_xlim(0, 28); ax.set_ylim(-0.6, n - 0.4); ax.set_xlabel('篇数', fontsize=9, color=INK)
     for k in ('top', 'right'): ax.spines[k].set_visible(False)
     for k in ('left', 'bottom'): ax.spines[k].set_color(EDGE); ax.spines[k].set_linewidth(0.75)
-    ax.tick_params(labelsize=8, colors=INK, width=0.75)
+    ax.tick_params(labelsize=9, colors=INK, width=0.75)
     return fig
 

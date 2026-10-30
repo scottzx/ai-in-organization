@@ -1,4 +1,6 @@
-"""配图绘制库：黑白灰 + 强调色深青 #1F6F8B；坐标单位为厘米，版心宽 15cm，300dpi。"""
+"""配图绘制库：黑白灰 + 强调色深青 #1F6F8B；成图宽 14.504cm（300dpi 下 1713px）。
+布局坐标按宽 LW=15 个单位的网格书写，整体按 K=W/LW 等比缩放到成图；字号、线宽为成图上的实际磅值。
+配图规范见 scripts/figures/README.md：图内文字最小 9pt（小五），不自动缩字。"""
 import math, textwrap
 import matplotlib
 matplotlib.use('Agg')
@@ -14,7 +16,9 @@ FILL = '#F2F2F2'     # 普通框底
 FILL2 = '#E0E0E0'    # 分层/底栏
 ACC_FILL = '#E6F0F3' # 强调框底（灰阶下与 FILL 可区分靠线宽/线色）
 FS = 9               # 正文标签 pt
-W = 15.0             # 版心宽 cm
+W = 14.504           # 成图宽 cm（300dpi 下 1713px）
+LW = 15.0            # 布局网格宽（单位）
+K = W / LW           # 网格单位 → cm
 DPI = 300
 CM_PER_PT = 2.54 / 72
 
@@ -23,13 +27,13 @@ plt.rcParams['axes.unicode_minus'] = False
 
 
 ISSUES = []          # 渲染后仍溢出的文字，由 render.py 汇总
-MIN_FS = 7.0         # 自动缩字号下限 pt
+MIN_FS = 9.0         # 图内文字最小字号 pt（小五），不再自动缩字
 PAD = 0.08           # 文字距框边最小留白 cm
 
 
 def max_chars(width_cm, fs=FS):
     """框内一行可容纳的最大字数（中文按全角字宽≈字号计，留 8% 余量）。"""
-    return max(2, int(width_cm / (fs * CM_PER_PT * 1.08)))
+    return max(2, int(width_cm * K / (fs * CM_PER_PT * 1.08)))
 
 
 try:
@@ -69,9 +73,9 @@ def wrap(text, width_cm, fs=FS):
 class Fig:
     def __init__(self, h):
         self.h = h
-        self.fig = plt.figure(figsize=(W / 2.54, h / 2.54), dpi=DPI)
+        self.fig = plt.figure(figsize=(W / 2.54, h * K / 2.54), dpi=DPI)
         self.ax = self.fig.add_axes([0, 0, 1, 1])
-        self.ax.set_xlim(0, W); self.ax.set_ylim(0, h); self.ax.axis('off')
+        self.ax.set_xlim(0, LW); self.ax.set_ylim(0, h); self.ax.axis('off')
         self.boxed = []
 
     def _ext(self, a, r):
@@ -87,13 +91,12 @@ class Fig:
                 x0, y0, x1, y1 = self._ext(a, r)
                 return x0 < x + PAD or x1 > x + w - PAD or y0 < y + PAD or y1 > y + h - PAD
             fs = a.get_fontsize()
-            while bad() and fs > MIN_FS:
-                fs = max(MIN_FS, fs - 0.5); a.set_fontsize(fs)
-                if wrapw: a.set_text(wrap(text, w - 0.25, fs))
-            if bad(): ISSUES.append(f'{name}: 框内文字放不下（已缩到 {fs}pt）：{text}')
+            if fs < MIN_FS: ISSUES.append(f'{name}: 字号 {fs}pt 低于 {MIN_FS}pt：{text}')
+            if bad(): ISSUES.append(f'{name}: 框内文字放不下（{fs}pt，不缩字，请缩短措辞或加大框）：{text}')
         for a in self.ax.texts:
             x0, y0, x1, y1 = self._ext(a, r)
-            if x0 < 0 or y0 < 0 or x1 > W or y1 > self.h:
+            if a.get_fontsize() < MIN_FS: ISSUES.append(f'{name}: 字号 {a.get_fontsize()}pt 低于 {MIN_FS}pt：{a.get_text()!r}')
+            if x0 < 0 or y0 < 0 or x1 > LW or y1 > self.h:
                 ISSUES.append(f'{name}: 文字越出画布：{a.get_text()!r}')
 
     def box(self, x, y, w, h, text, accent=False, fill=None, fs=FS, bold=False, wrapw=True, align='center'):
@@ -130,12 +133,17 @@ class Fig:
 
 # ---------- 版式 ----------
 
+def base_h(text):
+    """底栏高度：按折行后的行数加高（9pt 一行约 0.42 网格单位）。"""
+    return 0.6 + 0.45 * (wrap(text, LW - 0.3 - 0.25).count('\n'))
+
+
 def chain(steps, notes=None, feedback=None, base=None, accent_steps=(), box_h=1.5, legend=None):
     """横向流程。notes: {步骤序号: 智力服务介入点文字}（强调色，放在框下）；
     feedback: 回路文字（末步回到首步，或 (i, j, text)）；base: 底栏文字（贯穿全链）。"""
     n = len(steps); gap = 0.45; m = 0.15
-    bw = (W - 2 * m - gap * (n - 1)) / n
-    h = 0.4 + box_h + (1.5 if notes else 0) + (0.9 if base else 0) + (1.0 if feedback else 0) + (0.5 if legend else 0)
+    bw = (LW - 2 * m - gap * (n - 1)) / n
+    h = 0.4 + box_h + (1.75 if notes else 0) + (base_h(base) + 0.3 if base else 0) + (1.0 if feedback else 0) + (0.5 if legend else 0)
     f = Fig(h)
     y = h - 0.3 - box_h - (1.0 if feedback else 0)
     xs = []
@@ -147,18 +155,19 @@ def chain(steps, notes=None, feedback=None, base=None, accent_steps=(), box_h=1.
         i, j, t = feedback if isinstance(feedback, tuple) else (n - 1, 0, feedback)
         x1, x2 = xs[i] + bw / 2, xs[j] + bw / 2; yt = y + box_h + 0.55
         f.line([x1, x1, x2], [y + box_h, yt, yt]); f.arrow((x2, yt), (x2, y + box_h))
-        f.text((x1 + x2) / 2, yt + 0.22, t, fs=8)
+        f.text((x1 + x2) / 2, yt + 0.22, t, fs=9)
     yy = y
     if notes:
         for i, t in notes.items():
             x = xs[i]; f.arrow((x + bw / 2, y - 0.55), (x + bw / 2, y), accent=True, style='-|>')
-            f.box(x - 0.1, y - 1.4, bw + 0.2, 0.85, t, accent=True, fs=8, fill='white')
-        yy = y - 1.5
+            f.box(x - 0.1, y - 1.65, bw + 0.2, 1.1, t, accent=True, fs=9, fill='white')
+        yy = y - 1.75
     if base:
-        f.box(m, yy - 0.85, W - 2 * m, 0.6, base, fill=FILL2, wrapw=False, fs=8.5)
-        yy -= 0.9
+        bh = base_h(base)
+        f.box(m, yy - bh - 0.25, LW - 2 * m, bh, base, fill=FILL2, fs=9)
+        yy -= bh + 0.3
     if legend:
-        f.text(W - m, 0.25, legend, fs=7.5, color=ACCENT, ha='right')
+        f.text(LW - m, 0.25, legend, fs=9, color=ACCENT, ha='right')
     return f
 
 
@@ -171,27 +180,27 @@ def layers(rows, side_title, side_items, top_label=None, bottom_label=None):
     for i, r in enumerate(rows):
         y = y0 + i * (rh + g)
         if isinstance(r, tuple):
-            f.box(m, y, 2.6, rh, r[0], fill=FILL2, fs=8.5, bold=True)
-            f.box(m + 2.75, y, lw - 2.75, rh, r[1], fs=8.5)
+            f.box(m, y, 2.6, rh, r[0], fill=FILL2, fs=9, bold=True)
+            f.box(m + 2.75, y, lw - 2.75, rh, r[1], fs=9)
         else:
             f.box(m, y, lw, rh, r)
     top = y0 + n * rh + (n - 1) * g
-    sx = m + lw + 0.5; sw = W - m - sx
+    sx = m + lw + 0.5; sw = LW - m - sx
     f.box(sx, y0, sw, top - y0, '', accent=True)
     f.text(sx + sw / 2, top - 0.4, side_title, color=ACCENT, bold=True)
     k = len(side_items); ih = (top - y0 - 0.9 - (k - 1) * 0.2) / k
     for j, t in enumerate(side_items):
-        f.box(sx + 0.2, top - 0.8 - (j + 1) * ih - j * 0.2, sw - 0.4, ih, t, accent=True, fill='white', fs=8.5)
+        f.box(sx + 0.2, top - 0.8 - (j + 1) * ih - j * 0.2, sw - 0.4, ih, t, accent=True, fill='white', fs=9)
     for i in range(n):
         y = y0 + i * (rh + g) + rh / 2
         f.arrow((sx, y), (m + lw, y), accent=True, style='<|-|>', dashed=True, lw=0.75)
-    if top_label: f.text(m + lw / 2, top + 0.3, top_label, fs=8.5)
-    if bottom_label: f.text(m + lw / 2, 0.45, bottom_label, fs=8.5)
+    if top_label: f.text(m + lw / 2, top + 0.3, top_label, fs=9)
+    if bottom_label: f.text(m + lw / 2, 0.45, bottom_label, fs=9)
     return f
 
 
 def compare(lt, lsteps, rt, rsteps, lfoot=None, rfoot=None, accent_right=True):
-    n = max(len(lsteps), len(rsteps)); bh, g = 0.95, 0.45
+    n = max(len(lsteps), len(rsteps)); bh, g = 1.15, 0.4
     h = 1.0 + n * bh + (n - 1) * g + (0.9 if (lfoot or rfoot) else 0) + 0.2
     f = Fig(h); cw = 6.6
     for c, (t, st, foot, acc) in enumerate([(lt, lsteps, lfoot, False), (rt, rsteps, rfoot, accent_right)]):
@@ -203,13 +212,13 @@ def compare(lt, lsteps, rt, rsteps, lfoot=None, rfoot=None, accent_right=True):
             if i: f.arrow((x + cw / 2, y + bh + g), (x + cw / 2, y + bh), accent=acc)
         if foot:
             f.text(x + cw / 2, 0.5, foot, color=ACCENT if acc else INK, bold=True)
-    f.line([W / 2, W / 2], [0.3, h - 0.2], dashed=True)
+    f.line([LW / 2, LW / 2], [0.3, h - 0.2], dashed=True)
     return f
 
 
 def cycle(steps, center=None, r=2.5, bw=3.4, bh=0.95):
     n = len(steps); h = 2 * r + bh + 0.8
-    f = Fig(h); cx, cy = W / 2, h / 2
+    f = Fig(h); cx, cy = LW / 2, h / 2
     pts = []
     for i, s in enumerate(steps):
         a = math.pi / 2 - 2 * math.pi * i / n
@@ -235,12 +244,12 @@ def hbar(labels, values, texts, xlabel, xmax=None, h=5.0, accent_idx=None):
     cols = [ACCENT if (accent_idx is None or i in accent_idx) else '#8C8C8C' for i in range(len(labels))]
     ax.barh(ys, values, color=cols, height=0.55)
     for y, v, t in zip(ys, values, texts):
-        ax.text(v + (xmax or max(values)) * 0.015, y, t, va='center', fontsize=8.5, color=INK)
+        ax.text(v + (xmax or max(values)) * 0.015, y, t, va='center', fontsize=9, color=INK)
     ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=9, color=INK)
-    ax.set_xlim(0, xmax or max(values) * 1.35); ax.set_xlabel(xlabel, fontsize=8.5, color=INK)
+    ax.set_xlim(0, xmax or max(values) * 1.35); ax.set_xlabel(xlabel, fontsize=9, color=INK)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
     for s in ('left', 'bottom'): ax.spines[s].set_color(EDGE); ax.spines[s].set_linewidth(0.75)
-    ax.tick_params(labelsize=8.5, colors=INK, width=0.75)
+    ax.tick_params(labelsize=9, colors=INK, width=0.75)
     return fig
 
 
@@ -252,8 +261,10 @@ def vbar(labels, values, texts, ylabel, ymax=None, h=6.0, colors=None):
     for x, v, t in zip(xs, values, texts):
         ax.text(x, v + (ymax or max(values)) * 0.02, t, ha='center', va='bottom', fontsize=9, color=INK)
     ax.set_xticks(list(xs)); ax.set_xticklabels(labels, fontsize=9, color=INK)
-    ax.set_ylim(0, ymax or max(values) * 1.2); ax.set_ylabel(ylabel, fontsize=8.5, color=INK)
+    ax.set_ylim(0, ymax or max(values) * 1.2)
+    lim = ax.get_ylim()[1]; ax.set_yticks([t for t in ax.get_yticks() if t <= lim + 1e-9])  # 不留越出坐标范围的刻度
+    ax.set_ylabel(ylabel, fontsize=9, color=INK)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
     for s in ('left', 'bottom'): ax.spines[s].set_color(EDGE); ax.spines[s].set_linewidth(0.75)
-    ax.tick_params(labelsize=8.5, colors=INK, width=0.75)
+    ax.tick_params(labelsize=9, colors=INK, width=0.75)
     return fig
