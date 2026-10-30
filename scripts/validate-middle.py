@@ -72,8 +72,16 @@ def main():
   for number,record in reference_lines:
    if '．' in record:
     errors.append(item['file']+': reference ['+number+'] uses full-width separator "．"; use half-width ". "')
-   if not re.match(r'(?:[^\[\n]+\. )?\[[^\]\n]+\]\([^)\n]+\)(?:: [^\[\]\n]+)?\[(?:EB|R|S|J|M|N|Z|A)/OL\]\. [^\[\]\n]*?(?:\([0-9-]{4,10}[^)\n]*\)|(?:19|20)\d{2})?\[\d{4}-\d{2}-\d{2}\](?::[^.\n]+)?\.(?: |$)',record) or not re.search(r'(?:19|20)\d{2}',record):
+   if not re.match(r'(?:[^\[\n]+\. )?\[[^\]\n]+\]\([^)\n]+\)(?:: [^\[\]\n]+)?\[(?:EB|R|S|J|M|N|Z|A)/OL\]\. [^\[\]\n]*?(?:\([0-9-]{4,10}[^)\n]*\)|(?:19|20)\d{2})?(?:\(\d+\))?(?:: \d+(?:-\d+)?(?:, \d+(?:-\d+)?)*)?\[\d{4}-\d{2}-\d{2}\]\.(?: |$)',record) or not re.search(r'(?:19|20)\d{2}',record):
     errors.append(item['file']+': reference ['+number+'] lacks institution, linked title or year in the upper-volume format')
+   if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[:：]',record):
+    errors.append(item['file']+': reference ['+number+'] places page numbers after the access date; use "年: 页码[引用日期]."')
+   if re.search(r': [\d, —–-]*[—–][\d, —–-]*\[\d{4}-\d{2}-\d{2}\]',record):
+    errors.append(item['file']+': reference ['+number+'] page range must use half-width "-"')
+   if re.search(r'\[[^\]\n]*：[^\]：\n]{1,20}〔\d{4}〕\d+号\]\(',record):
+    errors.append(item['file']+': reference ['+number+'] document number inside linked title; use "[题名](URL): 文号"')
+   if re.search(r'(?<!〔)[\[（(【](?:19|20)\d{2}[\]）)】]\d+号',record):
+    errors.append(item['file']+': reference ['+number+'] document number year must use 〔〕')
   if not re.search(r'^###\s+',digital,re.M):
    errors.append(item['file']+': missing independently explained digital application modules')
   if '初稿 v' in text or '一芥智能研究院' in text: errors.append(item['file']+': page header or draft edition residue in body text')
