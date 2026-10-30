@@ -23,6 +23,7 @@ fonts:
   line_spacing_exact_pt: 28  # 固定值行距
   space_before_pt: 0
   space_after_pt: 0
+  glyph_fallback: [Noto Serif SC, Noto Sans SC]   # 缺字回退：所用中文字体没有某字形时（如朱雀仿宋 0.212 缺 ＋ ｜ ③ ④），该字改用这些已嵌入的开源字体，见 glyph_fallback.py
   embed:                     # Word 嵌入字体（Scott 2026-10-30 定）：fonts_embed.py 按字体名查找字体文件（.ttf/.otf；.ttc 不能嵌入）
     enabled: true
     search_dirs: [fonts, fonts/cache, ~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定

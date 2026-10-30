@@ -664,6 +664,9 @@ class Builder:
         cp = self.doc.core_properties   # 研究院不单独署名：作者、最后修改者等留空（python-docx 模板默认作者为 python-docx）
         cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''
         import indent_fix; self.log['flush_left_chars_fixed'] = indent_fix.fix(self.doc)   # 顶格段落（firstLine=0）不得继承非零 firstLineChars
+        import glyph_fallback
+        fn = [self._fn_root] if getattr(self, '_fn_root', None) is not None else []
+        self.log['glyph_fallback'] = glyph_fallback.fix(self.doc, self.cfg, fn)   # 缺字改用已嵌入的开源字体
         self.doc.save(out)
 
 NAV_RE = re.compile(r'(?:>\s*)?(?:\*\*)?(?:(?:返回|上一[章篇节]|下一[章篇节])[:：]?\s*)?(?:\[[^\]]+\]\((?!https?:)[^)\s]*(?:\.md|README)[^)\s]*\)\s*(?:[·•｜|/、，,→←]\s*)?)+(?:\*\*)?')

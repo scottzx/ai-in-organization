@@ -13,6 +13,20 @@ OUT_DIR = Path(os.environ.get('DOCX_OUT_DIR', HERE.parent.parent / 'output' / 'd
 AL = {'left': (None, WD_ALIGN_PARAGRAPH.LEFT), 'center': (WD_ALIGN_PARAGRAPH.CENTER,),
       'justify': (WD_ALIGN_PARAGRAPH.JUSTIFY,), 'right': (WD_ALIGN_PARAGRAPH.RIGHT,)}
 
+_GF = {}
+def gf_ok(text, want, ea):
+    """缺字回退（glyph_fallback.py）：仅当该 run 的每个字都不在应有字体中、且改用的是 style.yaml fonts.glyph_fallback 中的字体时才算合格。"""
+    import yaml
+    cfg = yaml.safe_load(open(Path(__file__).resolve().parent / 'style.yaml', encoding='utf-8'))
+    if ea not in (cfg.get('fonts', {}).get('glyph_fallback') or []): return False
+    if want not in _GF:
+        import fonts_embed
+        from fontTools.ttLib import TTFont
+        f = fonts_embed.find_fonts([want], cfg).get(want)
+        _GF[want] = set(TTFont(str(f['regular']), lazy=True).getBestCmap()) if f else None
+    cm = _GF[want]
+    return cm is not None and all(ord(ch) >= 0x80 and ord(ch) not in cm for ch in text)
+
 def chain(obj_style):
     s = obj_style
     while s is not None: yield s; s = s.base_style
@@ -164,7 +178,7 @@ def main():
         for r in p.runs:
             if not r.text.strip(): continue
             ea, asc, size, bold, color = eff_run(r, p)
-            check(f'{key} 中文字体(eastAsia)={c["font"]}', front or ea == c['font'], where + f' 实为{ea}')
+            check(f'{key} 中文字体(eastAsia)={c["font"]}', front or ea == c['font'] or gf_ok(r.text, c['font'], ea), where + f' 实为{ea}')
             check(f'全部 西文字体={F["latin"]}', asc == F['latin'], where + f' 实为{asc}')
             if not front:
                 check(f'{key} 字号={c["size_pt"]}pt', size == c['size_pt'], where + f' 实为{size}')
