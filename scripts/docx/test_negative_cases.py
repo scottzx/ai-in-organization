@@ -10,6 +10,8 @@
   7. pdfinfo 无页数输出 -> toc_fill 抛 TocError（不再 AttributeError）；生成的 docx 权限为 0644
   8. 端到端：PATH 上的 pdfinfo 输出为空 -> build_docx 退出 7，且半成品 docx 已删除（需 soffice）
   9. fontTable.xml 列有 Times New Roman / ＭＳ 明朝、settings themeFontLang 为 ja-JP -> 显式字体项不通过；基准样张 fontTable 只有开源字体
+  11. 白名单外篇目在来源索引中标 presentation: brief -> check-case-structure 不通过
+  12. 白名单内简述篇仍用七节模板 -> check-case-structure 不通过（简述篇正文不得有其他标题）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -168,6 +170,40 @@ def main():
         check(repo, nb, tmp / 'gf_nobj.md')
         gl = [l for l in (tmp / 'gf_nobj.md').read_text('utf-8').splitlines() if l.startswith('### 缺字回退字符')]
         ok('无 build.json -> 缺字回退提示注明“次数仅供参考”', len(gl) == 1 and gl[0].endswith('（无 build.json，次数仅供参考）') and '种、合计' in gl[0], str(gl))
+
+        # 11. 白名单外的篇目标了 presentation: brief -> check-case-structure 不通过
+        idx_p = repo / '索引' / '案例来源索引.json'; idx_src = idx_p.read_text('utf-8')
+        try:
+            idx = json.loads(idx_src)
+            victim = next(e for e in idx['entries'] if e.get('presentation') != 'brief' and (repo / e['path']).exists())
+            victim['presentation'] = 'brief'
+            idx_p.write_text(json.dumps(idx, ensure_ascii=False, indent=2), 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'check-case-structure.py'), victim['path']], cwd=repo, capture_output=True, text=True)
+            res = json.loads(r.stdout)
+            ok('白名单外篇目标为 brief -> 结构检查不通过', r.returncode == 1 and res['passed'] is False
+               and any('简述篇未列入白名单' in e for item in res['results'] for e in item['errors']), r.stdout[-300:])
+        finally:
+            idx_p.write_text(idx_src, 'utf-8')
+
+        # 12. 白名单内的简述篇仍用七节模板 -> check-case-structure 不通过
+        bidx = json.loads(idx_p.read_text('utf-8'))
+        bent = next(e for e in bidx['entries'] if e['id'] == 'C01')
+        bp = repo / bent['path']; bsrc = bp.read_text('utf-8')
+        try:
+            req = json.loads((repo / 'templates' / 'case-structure.json').read_text('utf-8'))['required_h2']
+            frag = bent['fragments'][0]
+            parts = [bsrc.splitlines()[0], '']
+            for i, h in enumerate(req):
+                parts += [f'## {h}', '']
+                if i == 3: parts += [f'<a id="{frag["anchor"]}"></a>', '', f'**阶段：{frag["stage_label"]}。**', '']
+                parts += ['本节为反例测试文字。', '']
+            bp.write_text('\n'.join(parts), 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'check-case-structure.py'), bent['path']], cwd=repo, capture_output=True, text=True)
+            res = json.loads(r.stdout)
+            ok('简述篇仍用七节模板 -> 结构检查不通过', r.returncode == 1 and res['passed'] is False
+               and any('简述篇正文不得有其他标题' in e for item in res['results'] for e in item['errors']), r.stdout[-300:])
+        finally:
+            bp.write_text(bsrc, 'utf-8')
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))

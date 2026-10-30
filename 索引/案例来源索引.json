@@ -602,7 +602,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C02",
@@ -694,7 +695,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C03",
@@ -1014,7 +1016,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C08",
@@ -1270,7 +1273,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C11",
@@ -1372,7 +1376,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C12",
@@ -1920,7 +1925,8 @@
           }
         ],
         "basis_type": "source_supported_research_classification"
-      }
+      },
+      "presentation": "brief"
     },
     {
       "id": "C24",
@@ -2025,7 +2031,8 @@
       ],
       "previous_paths": [
         "下册-案例汇编/待定-行业待核/待01-海外工业企业物料诊断.md"
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "C25",
@@ -2139,7 +2146,8 @@
       ],
       "previous_paths": [
         "下册-案例汇编/待定-行业待核/待03-消费品企业包装AI预检.md"
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "D01",
@@ -2344,7 +2352,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "F02",
@@ -2816,7 +2825,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "F08",
@@ -2908,7 +2918,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "F09",
@@ -3062,7 +3073,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "F11",
@@ -4167,7 +4179,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "J02",
@@ -4310,7 +4323,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "L02",
@@ -4444,7 +4458,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "L04",
@@ -4630,7 +4645,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "L07",
@@ -4929,7 +4945,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "M02",
@@ -5001,7 +5018,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "M03",
@@ -5073,7 +5091,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "Q01",
@@ -5371,7 +5390,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "附A01",
@@ -5485,7 +5505,8 @@
             }
           ]
         }
-      ]
+      ],
+      "presentation": "brief"
     },
     {
       "id": "附B02",
