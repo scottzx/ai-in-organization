@@ -1,6 +1,6 @@
 {
   "title": "中册行业图示摘引来源",
-  "updated_on": "2026-10-28",
+  "updated_on": "2026-10-30",
   "figures": [
     {
       "asset": "A11-钢铁-13.png",
@@ -12,8 +12,8 @@
       "asset_sha256": "db18b25eadde2d4556d38cca14f0be5076853d5b6b9aa4cd0b6c62b46d3647fb",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2992,
-        2235
+        1713,
+        1280
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -75,8 +75,8 @@
       "asset_sha256": "e91c23669063d9c118cfe5c1303295caf7b4c590db3323424601e9e0868d138a",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2929,
-        2248
+        1713,
+        1315
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -138,8 +138,8 @@
       "asset_sha256": "39ec7504562fdc3c8a1afd0bb3486b48ce9b5523eda0f1fb2820beae507a44ad",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2982,
-        2237
+        1713,
+        1285
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -201,8 +201,8 @@
       "asset_sha256": "a4932ba33b1b85696a212c51451e9d023965ce9325c133aeff98379e3d46c932",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2982,
-        2126
+        1713,
+        1221
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -264,8 +264,8 @@
       "asset_sha256": "d9aeaf761650afa8635443f95865559a0408580aeddb25e17a41324edb2f72d0",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2982,
-        2050
+        1713,
+        1178
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -453,8 +453,8 @@
       "asset_sha256": "b07a0a40b16ad328def638dda191550de4befd6b4db239995de398ac6b32bed9",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        3200,
-        2263
+        1713,
+        1211
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -491,8 +491,8 @@
       "asset_sha256": "b89c0df21664d5174b9f01c06b8e6dd32bc61a2c08568b4903b82c07b464fe24",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        3200,
-        2263
+        1713,
+        1211
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -529,8 +529,8 @@
       "asset_sha256": "21a487969c92224560ad04c3a85a9c2be7cf35e428a1ae17a34a3fdc13be3033",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        3200,
-        2263
+        1713,
+        1211
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -567,8 +567,8 @@
       "asset_sha256": "179fd94ccdc8ec4f5825f3e1a1a8b8fad404b53f94f6e7a33e70c1402455cf53",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2254
+        1713,
+        1314
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -630,8 +630,8 @@
       "asset_sha256": "98b325a9d05c3dbc0f753bc3bb252f37d8e71bd04316fe77d0f2ead43e0db2f0",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2243
+        1713,
+        1307
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -693,8 +693,8 @@
       "asset_sha256": "aa88aaa1f4219caf0ff395b1be5440f2e46935d5cd3fc245a55d74b2f2c2b19f",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2230
+        1713,
+        1300
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -756,8 +756,8 @@
       "asset_sha256": "4e68761f7881a33eee29bd01578b85db5a9e9370236121ce640d5049587e2555",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2218
+        1713,
+        1293
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -819,8 +819,8 @@
       "asset_sha256": "c1740e97614b10001ae2909f64ac8cf866cce75d41413077f1e7b795358c7c85",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2951,
-        2205
+        1713,
+        1280
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -882,8 +882,8 @@
       "asset_sha256": "941957b1f29863f3c88d617e81bd2d7446b18e9e7a286c0aa93044f02015204a",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2138
+        1713,
+        1246
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -945,8 +945,8 @@
       "asset_sha256": "7f38eb7422adaf289f2a8dccd511ce280fe1fc3d9cd51471f2770e57ab7da7ef",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2946,
-        2147
+        1713,
+        1248
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1134,8 +1134,8 @@
       "asset_sha256": "79bb1d2d82e693f66c8094dd596a472c4b36ad908122ef8e43c99bf4084b2405",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        3016,
-        2256
+        1713,
+        1281
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1260,8 +1260,8 @@
       "asset_sha256": "5138895a358ad3f1b3d7a3cd424d44da232d9d400d5483f734fdc11d6ea19df4",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2133
+        1713,
+        1243
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1323,8 +1323,8 @@
       "asset_sha256": "c63b88d4bbf2540b63894f22e72fb09b30a40433c3462213a3288cc120a4b880",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2989,
-        2210
+        1713,
+        1267
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1386,8 +1386,8 @@
       "asset_sha256": "04b15f68ac5ff3a8302036ac163b776908534e726914ceb4189d1d7b8048e3cc",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2980,
-        2064
+        1713,
+        1186
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1449,8 +1449,8 @@
       "asset_sha256": "4df43bff59e9e7da3dd4b1d68b69d263f4ded5b99101b7c74cbef88c115fed02",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2955,
-        2042
+        1713,
+        1184
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1512,8 +1512,8 @@
       "asset_sha256": "c20ecb9d863ff7bec2fe62f7fbe164dfc3d5b4d7296a496a53c1a3e40baa2c65",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2988,
-        2224
+        1713,
+        1275
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1575,8 +1575,8 @@
       "asset_sha256": "064b850b463dceaa9192aed337bc86f8afd60313a5443a9fc6c6e767f7d10f80",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2939,
-        2178
+        1713,
+        1269
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1638,8 +1638,8 @@
       "asset_sha256": "02604fcf9abd324e0a57873f3545db71a093d226e557e5b1ace1fb5bd90f768e",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        3200,
-        2263
+        1713,
+        1211
       ],
       "content_detection": {
         "method": "visible-pdf-element-union-with-4pt-padding",
@@ -1806,8 +1806,8 @@
       "asset_sha256": "6d658c42defa41923b7724d738503710342d658b6447bccec51d3fe6c5d6d506",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2587,
-        1687
+        1713,
+        1117
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -2138,11 +2138,11 @@
       "pdf_page": 17,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17",
       "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "f175acc3d8f018fc980a8db398d246c05af23af327d89056bc512f345daab18f",
+      "asset_sha256": "22e1446698124088c5307c803b38e2f34d6e3bdcab5047ce0c1fa22d420984c3",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        1631,
-        2631
+        1713,
+        2763
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -2188,15 +2188,16 @@
         "page_height_removed_fraction": 0.178,
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
         "pixel_bbox": [
-          330,
-          382,
-          1961,
-          3013
+          396,
+          458,
+          2351,
+          3611
         ]
       },
-      "uncropped_asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03",
+      "uncropped_asset_sha256": "70e446e6dcf9461e9ac1e73c80d8db0ef79217be6cdef61062d0431da9c9deaa",
       "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用",
+      "render_dpi": 328
     },
     {
       "asset": "B05-船舶-44.png",
