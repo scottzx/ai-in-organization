@@ -404,7 +404,7 @@ def main():
     check('Word 嵌入字体（embedTrueTypeFonts 已开；所用字体均有 odttf 部件且解混淆后有效）', on and not bad, ('未开 embedTrueTypeFonts；' if not on else '') + '；'.join(f'{k}：{v}' for k, v in bad.items()))
     import explicit_fonts   # docDefaults、主题、全部样式只用开源字体（出版审读 #78 P2①）
     efb = explicit_fonts.audit(a.docx, cfg)
-    check('文档默认/主题/样式字体均为显式开源字体（无主题引用、无 Times New Roman/宋体/Courier 等）', not efb, '；'.join(efb))
+    check('文档默认/主题/样式/fontTable 字体均为显式开源字体（无主题引用、无 Times New Roman/宋体/Courier 等；themeFontLang zh-CN）', not efb, '；'.join(efb))
     check('缺字回退仅限 style.yaml fonts.glyph_fallback_chars 白名单字符', not _GF_BAD, '；'.join(sorted(set(_GF_BAD))))
     # 脚注（真脚注 footnotes.xml）
     fpart = next((r.target_part for r in doc.part.rels.values() if r.reltype.endswith('/footnotes')), None)
@@ -426,7 +426,8 @@ def main():
                 check('脚注 颜色=黑色', col is not None and col.get(qn('w:val')).upper() == F['color'], w)
     # 提示项（不计入通过/不通过，仅供文字编辑修改；排版脚本不自动增删空格或替换连接号）
     hints = {'中英文/数字间有空格': [], '数值范围用了“～”“-”“–”（应为一字线“—”）': [],
-             '缺字回退字符（所用字体缺字形，改用已嵌入的开源字体）': [f'{k}：{n} 处' for k, n in sorted(_GF_USED.items())]}
+             '缺字回退字符（所用字体缺字形，改用已嵌入的开源字体）': [f"{k}（{v['from']}→{v['to']}）：{v['count']} 处" for k, v in sorted((BJ.get('glyph_fallback') or {}).items())]
+             if 'glyph_fallback' in BJ else [f'{k}：{n} 处' for k, n in sorted(_GF_USED.items())]}   # 次数以 build.json（glyph_fallback.fix 逐字计数）为准（出版审读 #82 P2②）
     cur = '前置'
     for i, p in enumerate(doc.paragraphs):
         t = p.text
