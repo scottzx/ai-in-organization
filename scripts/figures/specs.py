@@ -1,7 +1,7 @@
 """33 张配图的规格：图题、插入位置、图源与绘制函数。改图改这里，然后运行 render.py。"""
 from figlib import *
 
-MID = '中册-行业解决方案'; UP = '上册-研究报告'
+MID = '中册-行业解决方案'; UP = '上册-研究报告'; LOW = '下册-案例汇编'
 SELF = '资料来源：本书绘制，据本节正文整理，为定性示意，不含数据。'
 FIGS = []
 
@@ -275,3 +275,38 @@ def _():
 @fig('T-07-3', UP, '07-组织变革与精益管理.md', '延续第六章的说明性场景', '智力飞轮：遗漏—复盘—方法—验证—推广—版本保留', '07-3-智力飞轮', SELF)
 def _():
     return cycle(['发现遗漏', '复盘原因', '形成方法', '验证方法', '推广使用', '保留版本'], center='智力飞轮', r=2.6)
+
+
+# ---------------- 下册导言 ----------------
+LOWER_COUNTS = [('制造业', 25), ('批发和零售业', 12), ('信息传输、软件和信息技术服务业', 8), ('租赁和商务服务业', 8),
+                ('交通运输、仓储和邮政业', 4), ('采矿业', 3), ('科学研究和技术服务业', 3), ('电力、热力、燃气及水生产和供应业', 2),
+                ('金融业', 2), ('文化、体育和娱乐业', 2), ('农、林、牧、渔业', 1), ('住宿和餐饮业', 1), ('卫生和社会工作', 1),
+                ('公共管理、社会保障和社会组织', 1)]
+LOWER_APPX = [('附编A 跨行业方法', 1), ('附编B 原型与演示参考', 7)]
+
+@fig('T-下00-1', LOW, '00-导言.md', '目前各只有一篇。', '下册各门类案例篇数', '00-1-下册各门类案例篇数',
+     '资料来源：据本书下册目录整理。')
+def _():
+    """14 个门类（GB/T 4754 门类名，按篇数降序，合计 73）＋附编A/B（灰，不计入行业案例）。"""
+    assert sum(v for _, v in LOWER_COUNTS) == 73 and sum(v for _, v in LOWER_APPX) == 8
+    rows = LOWER_COUNTS + [None] + LOWER_APPX
+    fig = plt.figure(figsize=(W / 2.54, 9.0 / 2.54), dpi=DPI)
+    ax = fig.add_axes([0.40, 0.14, 0.54, 0.84])
+    n = len(rows); ys, labels = [], []
+    for i, r in enumerate(rows):
+        if r is None: continue
+        y = n - 1 - i; t, v = r; appx = i > len(LOWER_COUNTS)
+        ax.barh(y, v, color='#B3B3B3' if appx else ACCENT, height=0.6)
+        ax.text(v + 0.4, y, str(v), va='center', fontsize=8, color=INK)
+        ys.append(y); labels.append(t)
+    sep = n - 1 - len(LOWER_COUNTS)
+    ax.axhline(sep, color=EDGE, lw=0.6, ls='--')
+    ax.text(27.5, sep - 1.5, '不计入行业案例', ha='right', va='center', fontsize=8, color='#6E6E6E')
+    ax.text(27.5, sep + 1.2, '行业案例合计 73 篇', ha='right', va='center', fontsize=8, color=ACCENT)
+    ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=8, color=INK)
+    ax.set_xlim(0, 28); ax.set_ylim(-0.6, n - 0.4); ax.set_xlabel('篇数', fontsize=8, color=INK)
+    for k in ('top', 'right'): ax.spines[k].set_visible(False)
+    for k in ('left', 'bottom'): ax.spines[k].set_color(EDGE); ax.spines[k].set_linewidth(0.75)
+    ax.tick_params(labelsize=8, colors=INK, width=0.75)
+    return fig
+
