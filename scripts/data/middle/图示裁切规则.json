@@ -1054,6 +1054,7 @@
       "source_id": "B05",
       "industry": "船舶",
       "pdf_page": 17,
+      "render_dpi": 328,
       "required_in": [
         "C04-船舶.md"
       ],

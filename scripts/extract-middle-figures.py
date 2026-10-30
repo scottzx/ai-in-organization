@@ -12,7 +12,23 @@ import hashlib
 import json
 import math
 import struct
+import io
 import subprocess
+from importlib.metadata import version
+
+# Output pipeline is pinned so assets reproduce byte for byte (PR #83 hashes).
+# Install: python3 -m pip install -r scripts/requirements-figures.txt
+PINNED = {'pillow': '12.3.0', 'pyoxipng': '9.1.1'}
+MAX_WIDTH_PX = 1713  # 14.5 cm text width at 300 ppi
+OUTPUT_DPI = 300
+OXIPNG_LEVEL = 4
+
+
+def check_pins():
+    found = {name: version(name) for name in PINNED}
+    if found != PINNED:
+        raise RuntimeError(f'Figure pipeline needs {PINNED}, found {found}; '
+                           'see scripts/requirements-figures.txt')
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / '中册-行业解决方案/assets'
@@ -23,12 +39,29 @@ def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def render_page(pdf, page, output, crop=None):
-    command = ['pdftoppm', '-f', str(page), '-l', str(page),
-               '-scale-to', '3200', '-png', '-singlefile']
+def finalize_png(path):
+    """Downscale to MAX_WIDTH_PX with LANCZOS (never upscale), tag 300 dpi, oxipng -o4."""
+    from PIL import Image
+    import oxipng
+    with Image.open(path) as image:
+        image = image.convert('RGB')
+        width, height = image.size
+        if width > MAX_WIDTH_PX:
+            image = image.resize((MAX_WIDTH_PX, round(height * MAX_WIDTH_PX / width)),
+                                 Image.LANCZOS)
+        buffer = io.BytesIO()
+        image.save(buffer, 'PNG', dpi=(OUTPUT_DPI, OUTPUT_DPI))
+    path.write_bytes(oxipng.optimize_from_memory(
+        buffer.getvalue(), level=OXIPNG_LEVEL, strip=oxipng.StripChunks.safe()))
+
+
+def render_page(pdf, page, output, crop=None, render_dpi=None):
+    """Render with pdftoppm; default long side 3200 px, or render_dpi for native-resolution pages."""
+    command = ['pdftoppm', '-f', str(page), '-l', str(page), '-png', '-singlefile']
+    command += ['-r', str(render_dpi)] if render_dpi else ['-scale-to', '3200']
     if crop:
         width, height = crop['page_size_points']
-        scale = 3200 / max(width, height)
+        scale = render_dpi / 72 if render_dpi else 3200 / max(width, height)
         left, top, right, bottom = crop['pdf_bbox_points']
         x, y = math.floor(left * scale), math.floor(top * scale)
         right, bottom = math.ceil(right * scale), math.ceil(bottom * scale)
@@ -36,6 +69,7 @@ def render_page(pdf, page, output, crop=None):
         crop['pixel_bbox'] = [x, y, right, bottom]
     command += [str(pdf), str(output.with_suffix(''))]
     subprocess.run(command, check=True, capture_output=True)
+    finalize_png(output)
 
 
 def main():
@@ -46,6 +80,7 @@ def main():
                         help='Reapply reviewed element bounds to existing cropped figures')
     parser.add_argument('--force', action='store_true', help='Rerender all selected figures')
     args = parser.parse_args()
+    check_pins()
     rules = json.loads(RULES.read_text())
     tasks = [r for r in rules['figures']
              if (not args.sources or r['source_id'] in args.sources)
@@ -85,12 +120,14 @@ def main():
         }
         crop = dict(analysis) if bounds else None
         old_crop = existing.get('crop', {}).get('pdf_bbox_points')
-        changed = old_crop != bounds
+        changed = (old_crop != bounds
+                   or existing.get('render_dpi') != rule.get('render_dpi'))
         before_hash = sha256(output) if output.is_file() else None
         if (args.force or not output.is_file() or changed
                 or before_hash != existing.get('asset_sha256')
                 or args.trim_margins and bounds):
-            render_page(ROOT/source['local_pdf'], rule['pdf_page'], output, crop)
+            render_page(ROOT/source['local_pdf'], rule['pdf_page'], output, crop,
+                        rule.get('render_dpi'))
         elif crop and existing.get('crop', {}).get('pixel_bbox'):
             crop['pixel_bbox'] = existing['crop']['pixel_bbox']
         result = {**existing,
@@ -103,7 +140,7 @@ def main():
             'page_number_handling': rule['page_number_handling'],
             'use': '图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可',
         }
-        for key in ('printed_page', 'figure_titles'):
+        for key in ('printed_page', 'figure_titles', 'render_dpi'):
             if key in rule:
                 result[key] = rule[key]
         if crop:
@@ -120,9 +157,10 @@ def main():
     combined = dict(previous)
     combined.update({r['asset']: r for r in rendered})
     manifest.write_text(json.dumps({**prior, 'title': '中册行业图示摘引来源',
-        'updated_on': rules['reviewed_on'],
+        'updated_on': max(prior.get('updated_on', ''), rules['reviewed_on']),
         'crop_rules': '../../scripts/data/middle/图示裁切规则.json',
-        'figures': sorted(combined.values(), key=lambda r: (r['source_id'], r['pdf_page']))
+        # Keep manifest order; redraw entries have no source_id/pdf_page, so do not re-sort.
+        'figures': list(combined.values())
     }, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'rendered_or_verified': len(rendered),
         'cropped': sum(bool(r.get('crop')) for r in rendered),

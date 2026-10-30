@@ -1,6 +1,6 @@
 {
   "title": "中册行业图示摘引来源",
-  "updated_on": "2026-10-28",
+  "updated_on": "2026-10-30",
   "figures": [
     {
       "asset": "A11-钢铁-13.png",
@@ -2315,11 +2315,11 @@
       "pdf_page": 17,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17",
       "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "f175acc3d8f018fc980a8db398d246c05af23af327d89056bc512f345daab18f",
+      "asset_sha256": "22e1446698124088c5307c803b38e2f34d6e3bdcab5047ce0c1fa22d420984c3",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        1631,
-        2631
+        1713,
+        2763
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -2365,15 +2365,16 @@
         "page_height_removed_fraction": 0.178,
         "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
         "pixel_bbox": [
-          330,
-          382,
-          1961,
-          3013
+          396,
+          458,
+          2351,
+          3611
         ]
       },
       "uncropped_asset_sha256": "700b30b1ccd0cd674ed03b66d54ba4a2e53fbfd6a1fb12050d7e5cd01585ea03",
       "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
+      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用",
+      "render_dpi": 328
     },
     {
       "asset": "B05-船舶-44.png",
