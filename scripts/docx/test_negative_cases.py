@@ -12,6 +12,9 @@
   9. fontTable.xml 列有 Times New Roman / ＭＳ 明朝、settings themeFontLang 为 ja-JP -> 显式字体项不通过；基准样张 fontTable 只有开源字体
   11. 白名单外篇目在来源索引中标 presentation: brief -> check-case-structure 不通过
   12. 白名单内简述篇仍用七节模板 -> check-case-structure 不通过（简述篇正文不得有其他标题）
+  16. 一章多目录（下册第三十章“其他行业案例”）：门类按 groups 所列顺序排、各门类前印一次加粗引导行（不作标题），案例连续编 30.Y
+  17. groups 列表里有不存在的子目录 -> build_docx 报错退出，指出该目录
+  18. 调换 groups 列表顺序 -> 篇目顺序随之改变（顺序以配置为准，不按目录名排序）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -253,7 +256,7 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
-        # 16. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
+        # 19. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
         lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
         try:
             u = 'https://example.com/a.pdf'
@@ -269,7 +272,7 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
-        # 17. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
+        # 20. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
         lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
         try:
             u = 'https://example.com/a.pdf'
@@ -286,6 +289,51 @@ def main():
             ok('“引用范围：第十二项” 不误报', not any('[5]' in e for e in errs), str(errs)[-300:])
         finally:
             lp.write_text(lsrc, 'utf-8')
+        # 16–18. 一章多目录（合并章）与门类引导行
+        import yaml
+        cfg0 = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        multi = {c: g for c, g in cfg0['volumes']['lower']['groups'].items() if isinstance(g, list)}
+        ok('style.yaml 下册存在一章多目录且每个目录配引导行', len(multi) == 1
+           and all(d in (cfg0['volumes']['lower'].get('group_leads') or {}) for g in multi.values() for d in g), str(multi))
+        mch, mdirs = next(iter(multi.items()))
+        out16 = tmp / 'lower16.docx'
+        r = build(repo, 'lower', out16)
+        if r.returncode == 0:
+            import docx as _dx
+            ps = [p for p in _dx.Document(str(out16)).paragraphs if p.text.strip()]
+            leads = [cfg0['volumes']['lower']['group_leads'][d] for d in mdirs]
+            idx = [i for i, p in enumerate(ps) if p.text.strip() in leads]
+            got = [ps[i].text.strip() for i in idx]
+            bold = all(all(r_.bold for r_ in ps[i].runs if r_.text.strip()) and not ps[i].style.name.startswith('Heading') for i in idx)
+            nxt = [ps[i + 1].text.strip() for i in idx]
+            want_first = []
+            for d in mdirs:
+                f = sorted(p for p in (repo / '下册-案例汇编' / d).glob('*.md') if p.name != 'README.md')[0]
+                h = next(l for l in f.read_text('utf-8').splitlines() if l.startswith('# '))[2:].strip()
+                want_first.append(re.sub(r'^[A-Z]\d{2}[\s　]*', '', h))
+            secs = [p.text.strip() for p in ps if re.match(rf'^{mch}\.\d+ ', p.text.strip())]
+            ok('一章多目录 -> 门类按配置顺序、各印一次加粗引导行（非标题），引导行后紧接本门类第一篇',
+               got == leads and bold and all(n.endswith(w) for n, w in zip(nxt, want_first)), f'{got} {nxt}')
+            ok('一章多目录 -> 合并章案例连续编号', [x.split(' ')[0] for x in secs] == [f'{mch}.{k}' for k in range(1, len(secs) + 1)] and len(secs) >= len(mdirs), str(secs))
+        else:
+            ok('一章多目录 -> 下册构建成功', False, r.stderr[-300:])
+        # 17. 不存在的子目录
+        bad = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        bad['volumes']['lower']['groups'][mch] = list(mdirs) + ['Z-不存在的门类']
+        st = tmp / 'style-bad.yaml'; st.write_text(yaml.safe_dump(bad, allow_unicode=True), 'utf-8')
+        r = subprocess.run([sys.executable, str(HERE / 'build_docx.py'), '--style', str(st), '--repo', str(repo), '--volume', 'lower', '--no-toc-pages', '-o', str(tmp / 'bad.docx')],
+                           env=dict(os.environ, BOOK_REPO=str(repo)), capture_output=True, text=True)
+        ok('groups 列表含不存在的子目录 -> build_docx 报错退出', r.returncode != 0 and 'Z-不存在的门类' in (r.stderr + r.stdout) and not (tmp / 'bad.docx').exists(), (r.stderr + r.stdout)[-200:])
+        # 18. 调换顺序
+        sys.path.insert(0, str(HERE)); import build_docx as bd
+        rev = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        rev['volumes']['lower']['groups'][mch] = list(reversed(mdirs))
+        def dirs_of(c):
+            seen = []
+            for p_, ch_ in bd.volume_items(c, repo, 'lower'):
+                if ch_ == mch and p_.parent.name not in seen: seen.append(p_.parent.name)
+            return seen
+        ok('调换 groups 列表顺序 -> 合并章门类顺序随配置改变', dirs_of(cfg0) == list(mdirs) and dirs_of(rev) == list(reversed(mdirs)), f'{dirs_of(cfg0)} {dirs_of(rev)}')
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
