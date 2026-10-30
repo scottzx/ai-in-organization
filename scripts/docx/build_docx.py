@@ -664,9 +664,12 @@ class Builder:
         cp = self.doc.core_properties   # 研究院不单独署名：作者、最后修改者等留空（python-docx 模板默认作者为 python-docx）
         cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''
         import indent_fix; self.log['flush_left_chars_fixed'] = indent_fix.fix(self.doc)   # 顶格段落（firstLine=0）不得继承非零 firstLineChars
+        import explicit_fonts; self.log['explicit_fonts'] = explicit_fonts.fix(self.doc, self.cfg)   # docDefaults/主题/样式字体改显式开源字体
         import glyph_fallback
         fn = [self._fn_root] if getattr(self, '_fn_root', None) is not None else []
-        self.log['glyph_fallback'] = glyph_fallback.fix(self.doc, self.cfg, fn)   # 缺字改用已嵌入的开源字体
+        try: self.log['glyph_fallback'] = glyph_fallback.fix(self.doc, self.cfg, fn)
+        except glyph_fallback.GlyphError as e:
+            print(f'缺字回退白名单外的字符，未写出 {out}：{e}'); print('请文字编辑改用字体内已有的字符，或经总编辑确认后加入 style.yaml fonts.glyph_fallback_chars。'); sys.exit(6)   # 缺字改用已嵌入的开源字体
         self.doc.save(out)
 
 NAV_RE = re.compile(r'(?:>\s*)?(?:\*\*)?(?:(?:返回|上一[章篇节]|下一[章篇节])[:：]?\s*)?(?:\[[^\]]+\]\((?!https?:)[^)\s]*(?:\.md|README)[^)\s]*\)\s*(?:[·•｜|/、，,→←]\s*)?)+(?:\*\*)?')
@@ -877,7 +880,9 @@ def main():
     b.save(a.output)
     if not a.no_toc_pages and shutil.which('soffice'):   # 目录预排：标题……页码，按层级缩进
         import toc_fill
-        n, miss = toc_fill.fill(a.output, cfg)
+        try: n, miss = toc_fill.fill(a.output, cfg)
+        except toc_fill.TocError as e:   # 不留下未预排目录、未嵌字体的半成品
+            Path(a.output).unlink(missing_ok=True); print(f'{e}；已删除半成品 {a.output}'); sys.exit(7)
         b.log['toc'] = {'entries': n, 'missing_page': miss}
         print(f'  目录预排 {n} 条' + (f'，{len(miss)} 条未找到页码：' + '；'.join(miss[:5]) if miss else ''))
     import fonts_embed   # 目录预排（toc_fill 会经 python-docx 重存）之后再嵌入字体

@@ -13,19 +13,23 @@ OUT_DIR = Path(os.environ.get('DOCX_OUT_DIR', HERE.parent.parent / 'output' / 'd
 AL = {'left': (None, WD_ALIGN_PARAGRAPH.LEFT), 'center': (WD_ALIGN_PARAGRAPH.CENTER,),
       'justify': (WD_ALIGN_PARAGRAPH.JUSTIFY,), 'right': (WD_ALIGN_PARAGRAPH.RIGHT,)}
 
-_GF = {}
+_GF = {}; _GF_USED = {}; _GF_BAD = []   # 回退字符统计（提示项）、白名单外的回退（不通过）
 def gf_ok(text, want, ea):
     """缺字回退（glyph_fallback.py）：仅当该 run 的每个字都不在应有字体中、且改用的是 style.yaml fonts.glyph_fallback 中的字体时才算合格。"""
     import yaml
     cfg = yaml.safe_load(open(Path(__file__).resolve().parent / 'style.yaml', encoding='utf-8'))
     if ea not in (cfg.get('fonts', {}).get('glyph_fallback') or []): return False
+    allow = set(cfg.get('fonts', {}).get('glyph_fallback_chars') or [])
+    for ch in text:
+        if ch not in allow: _GF_BAD.append(f'U+{ord(ch):04X} {ch}')
+        else: _GF_USED[f'U+{ord(ch):04X} {ch}（{want}→{ea}）'] = _GF_USED.get(f'U+{ord(ch):04X} {ch}（{want}→{ea}）', 0) + 1
     if want not in _GF:
         import fonts_embed
         from fontTools.ttLib import TTFont
         f = fonts_embed.find_fonts([want], cfg).get(want)
         _GF[want] = set(TTFont(str(f['regular']), lazy=True).getBestCmap()) if f else None
     cm = _GF[want]
-    return cm is not None and all(ord(ch) >= 0x80 and ord(ch) not in cm for ch in text)
+    return cm is not None and all(ord(ch) >= 0x80 and ord(ch) not in cm and ch in allow for ch in text)
 
 def chain(obj_style):
     s = obj_style
@@ -398,6 +402,10 @@ def main():
     on, fr, used = fonts_embed.verify(a.docx)
     bad = {k: v for k, v in fr.items() if v}
     check('Word 嵌入字体（embedTrueTypeFonts 已开；所用字体均有 odttf 部件且解混淆后有效）', on and not bad, ('未开 embedTrueTypeFonts；' if not on else '') + '；'.join(f'{k}：{v}' for k, v in bad.items()))
+    import explicit_fonts   # docDefaults、主题、全部样式只用开源字体（出版审读 #78 P2①）
+    efb = explicit_fonts.audit(a.docx, cfg)
+    check('文档默认/主题/样式字体均为显式开源字体（无主题引用、无 Times New Roman/宋体/Courier 等）', not efb, '；'.join(efb))
+    check('缺字回退仅限 style.yaml fonts.glyph_fallback_chars 白名单字符', not _GF_BAD, '；'.join(sorted(set(_GF_BAD))))
     # 脚注（真脚注 footnotes.xml）
     fpart = next((r.target_part for r in doc.part.rels.values() if r.reltype.endswith('/footnotes')), None)
     nref = len(doc.element.body.findall('.//' + qn('w:footnoteReference')))
@@ -417,7 +425,8 @@ def main():
                 check(f'脚注 字号={fc["size_pt"]}pt(五号)', sz is not None and int(sz.get(qn('w:val'))) == int(fc['size_pt'] * 2), w)
                 check('脚注 颜色=黑色', col is not None and col.get(qn('w:val')).upper() == F['color'], w)
     # 提示项（不计入通过/不通过，仅供文字编辑修改；排版脚本不自动增删空格或替换连接号）
-    hints = {'中英文/数字间有空格': [], '数值范围用了“～”“-”“–”（应为一字线“—”）': []}
+    hints = {'中英文/数字间有空格': [], '数值范围用了“～”“-”“–”（应为一字线“—”）': [],
+             '缺字回退字符（所用字体缺字形，改用已嵌入的开源字体）': [f'{k}：{n} 处' for k, n in sorted(_GF_USED.items())]}
     cur = '前置'
     for i, p in enumerate(doc.paragraphs):
         t = p.text
