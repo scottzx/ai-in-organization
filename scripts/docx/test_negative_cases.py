@@ -15,6 +15,9 @@
   16. 一章多目录（下册第三十章“其他行业案例”）：门类按 groups 所列顺序排、各门类前印一次加粗引导行（不作标题），案例连续编 30.Y
   17. groups 列表里有不存在的子目录 -> build_docx 报错退出，指出该目录
   18. 调换 groups 列表顺序 -> 篇目顺序随之改变（顺序以配置为准，不按目录名排序）
+  19. 同一目录在 groups 中列了两次 -> build_docx 报错退出，不留半成品
+  20. 某章目录列表为空、或目录里没有可排篇目（只有 README）-> build_docx 报错退出，不留半成品
+  21. group_leads 配给单目录章的目录 -> build_docx 报错退出（引导行只用于多目录章）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -301,6 +304,31 @@ def main():
                 if ch_ == mch and p_.parent.name not in seen: seen.append(p_.parent.name)
             return seen
         ok('调换 groups 列表顺序 -> 合并章门类顺序随配置改变', dirs_of(cfg0) == list(mdirs) and dirs_of(rev) == list(reversed(mdirs)), f'{dirs_of(cfg0)} {dirs_of(rev)}')
+
+        # 19–21. groups 配置防呆
+        def bad_build(tag, mut):
+            c = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8')); mut(c['volumes']['lower'])
+            st_ = tmp / f'style-{tag}.yaml'; st_.write_text(yaml.safe_dump(c, allow_unicode=True), 'utf-8')
+            o = tmp / f'{tag}.docx'
+            r_ = subprocess.run([sys.executable, str(HERE / 'build_docx.py'), '--style', str(st_), '--repo', str(repo), '--volume', 'lower', '--no-toc-pages', '-o', str(o)],
+                                env=dict(os.environ, BOOK_REPO=str(repo)), capture_output=True, text=True)
+            return r_.returncode, r_.stderr + r_.stdout, o.exists()
+        single = next(c for c, g in cfg0['volumes']['lower']['groups'].items() if isinstance(g, str))
+        sdir = cfg0['volumes']['lower']['groups'][single]
+        rc, msg, ex = bad_build('dup', lambda v: v['groups'].__setitem__(mch, list(mdirs) + [mdirs[0]]))
+        ok('同一目录在合并章里列两次 -> 报错退出', rc != 0 and '重复列出目录' in msg and not ex, msg[-200:])
+        rc, msg, ex = bad_build('dup2', lambda v: v['groups'].__setitem__(mch, list(mdirs) + [sdir]))
+        ok('同一目录分属两章 -> 报错退出', rc != 0 and '重复列出目录' in msg and not ex, msg[-200:])
+        rc, msg, ex = bad_build('emptylist', lambda v: v['groups'].__setitem__(mch, []))
+        ok('某章目录列表为空 -> 报错退出', rc != 0 and '没有列任何目录' in msg and not ex, msg[-200:])
+        ed = repo / '下册-案例汇编' / 'Z-空门类'; ed.mkdir(); (ed / 'README.md').write_text('# 空门类\n', 'utf-8')
+        try:
+            rc, msg, ex = bad_build('emptydir', lambda v: v['groups'].__setitem__(mch, list(mdirs) + ['Z-空门类']))
+            ok('目录里只有 README、没有篇目 -> 报错退出', rc != 0 and '没有可排的篇目' in msg and 'Z-空门类' in msg and not ex, msg[-200:])
+        finally:
+            shutil.rmtree(ed, ignore_errors=True)
+        rc, msg, ex = bad_build('lead1', lambda v: v['group_leads'].__setitem__(sdir, '测试　单目录引导行'))
+        ok('group_leads 配给单目录章 -> 报错退出', rc != 0 and '只能用于多目录章' in msg and sdir in msg and not ex, msg[-200:])
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
