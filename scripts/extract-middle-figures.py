@@ -13,7 +13,9 @@ import json
 import math
 import struct
 import io
+import os
 import subprocess
+import sys
 from importlib.metadata import version
 
 # Output pipeline is pinned so assets reproduce byte for byte (PR #83 hashes).
@@ -29,6 +31,11 @@ def check_pins():
     if found != PINNED:
         raise RuntimeError(f'Figure pipeline needs {PINNED}, found {found}; '
                            'see scripts/requirements-figures.txt')
+
+def require_figure_pdfs():
+    """REQUIRE_FIGURE_PDFS=1: a missing source PDF is an error, never a skip (tests: also pdftoppm/pins)."""
+    return os.environ.get('REQUIRE_FIGURE_PDFS') == '1'
+
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / '中册-行业解决方案/assets'
@@ -88,13 +95,22 @@ def main():
     if not tasks:
         parser.error('No figures match the selected sources/industries')
     # Verify once per source before rendering; geometry is tied to these PDF versions.
-    for source_id in {r['source_id'] for r in tasks}:
+    # Missing PDFs (资料库/ is gitignored) skip their figures, keeping existing assets and manifest
+    # entries; REQUIRE_FIGURE_PDFS=1 makes a missing PDF a hard failure. A changed PDF always fails.
+    missing = []
+    for source_id in sorted({r['source_id'] for r in tasks}):
         source = rules['sources'][source_id]
         pdf = ROOT / source['local_pdf']
         if not pdf.is_file():
-            raise FileNotFoundError(pdf)
+            if require_figure_pdfs():
+                raise FileNotFoundError(f'Source PDF missing for {source_id}: {pdf}')
+            print(f'skip {source_id}: source PDF missing ({pdf}); set REQUIRE_FIGURE_PDFS=1 to fail',
+                  file=sys.stderr)
+            missing.append(source_id)
+            continue
         if sha256(pdf) != source['sha256']:
             raise ValueError(f'Source PDF differs from reviewed version: {source_id}')
+    tasks = [r for r in tasks if r['source_id'] not in missing]
     TARGET.mkdir(parents=True, exist_ok=True)
     manifest = TARGET / 'sources.json'
     prior = json.loads(manifest.read_text()) if manifest.exists() else {'figures': []}

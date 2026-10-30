@@ -1,6 +1,7 @@
 # 中册抽图依赖（scripts/extract-middle-figures.py）。版本已锁定：缩放（Pillow LANCZOS）与无损压缩（oxipng -o4）
 # 的输出逐字节依赖这两个版本，换版本会改变 sources.json 里的 asset_sha256。脚本启动时会校验版本。
-# 安装（建议独立 venv，requirements-pdf.txt 锁的是 pillow 13.0.0）：python3 -m pip install -r scripts/requirements-figures.txt
+# 必须装在独立 venv（requirements-pdf.txt 锁的是 pillow 13.0.0），命令见 中册-行业解决方案/assets/README.md：
+#   python3 -m venv .venv-figures && .venv-figures/bin/python -m pip install -r scripts/requirements-figures.txt
 # 另需系统安装 Poppler（pdftoppm）。
 pillow==12.3.0
 pyoxipng==9.1.1

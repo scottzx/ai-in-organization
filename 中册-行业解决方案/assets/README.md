@@ -13,3 +13,20 @@
 可复现的[裁切与正文嵌入规则](../../scripts/data/middle/图示裁切规则.json)绑定源PDF的SHA256，登记PDF坐标、图题、页码和使用章节。渲染脚本从完整源页生成3200像素长边的图像后按确认边界取图；不会抽取图片对象而遗漏外部文字或水印。输出尺寸、裁切框与文件校验值见来源记录；原PDF不作修改。源图细字较多时可点击图片放大或查看对应PDF源页。
 
 这些引用材料保留原发布者及编制者的署名和权利，不纳入本书原创文字的 CC BY-NC-SA 4.0 许可。来源书目见[行业资料库](../../索引/工信部行业数字化转型资料汇总.md)。
+
+## 重新生成摘图（独立虚拟环境）
+
+抽图脚本 `scripts/extract-middle-figures.py` 锁定 Pillow 12.3.0 与 pyoxipng 9.1.1（见 [requirements-figures.txt](../../scripts/requirements-figures.txt)），输出按 LANCZOS 缩到最宽 1713 像素（Word 版心 14.5 厘米 × 300dpi）、写入 300dpi 标记后用 oxipng `-o4` 无损压缩，文件校验值逐字节依赖这两个版本。PDF/Word 工具链的 [requirements-pdf.txt](../../scripts/requirements-pdf.txt) 锁定 Pillow 13.0.0，两者不能装在同一环境，抽图须使用独立虚拟环境：
+
+```bash
+python3 -m venv .venv-figures
+.venv-figures/bin/python -m pip install -r scripts/requirements-figures.txt
+.venv-figures/bin/python scripts/test_extract_middle_figures.py
+REQUIRE_FIGURE_PDFS=1 .venv-figures/bin/python scripts/test_extract_middle_figures.py  # 发布前：缺源PDF即失败
+.venv-figures/bin/python scripts/extract-middle-figures.py --sources B02   # 只重渲染校验值不符或裁切框变动的图
+
+python3 -m venv .venv-pdf    # PDF/Word 构建另用一个环境
+.venv-pdf/bin/python -m pip install -r scripts/requirements-pdf.txt
+```
+
+另需系统安装 Poppler（`pdftoppm`）。源PDF放在不入库的 `资料库/`；测试默认在缺少源PDF、`pdftoppm` 或锁定版本时跳过，设置 `REQUIRE_FIGURE_PDFS=1` 后改为失败。
