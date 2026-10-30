@@ -34,6 +34,32 @@ RETIRED_GUIDES={
  'R00-文化体育与文旅导读.md',
 }
 
+LOWER=ROOT/'下册-案例汇编'
+
+def reference_style_errors(name,number,record):
+ """GB/T 7714 page, page-range and document-number rules shared by 中册 and 下册."""
+ errs=[]
+ if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[:：]',record):
+  errs.append(name+': reference ['+number+'] places page numbers after the access date; use "年: 页码[引用日期]."')
+ if re.search(r': [\d, —–-]*[—–][\d, —–-]*\[\d{4}-\d{2}-\d{2}\]',record):
+  errs.append(name+': reference ['+number+'] page range must use half-width "-"')
+ if re.search(r'\[[^\]\n]*：[^\]：\n]{1,20}〔\d{4}〕\d+号\]\(',record):
+  errs.append(name+': reference ['+number+'] document number inside linked title; use "[题名](URL): 文号"')
+ if re.search(r'(?<!〔)[\[（(【](?:19|20)\d{2}[\]）)】]\d+号',record):
+  errs.append(name+': reference ['+number+'] document number year must use 〔〕')
+ if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*(?:PDF)?第\s*\d+\s*(?:[—–-]\s*\d+\s*)?页',record):
+  errs.append(name+': reference ['+number+'] has a bare page locator right after the access date; use "年: 页码[引用日期]."')
+ return errs
+
+def lower_reference_errors():
+ errs=[]
+ for p in sorted(LOWER.rglob('*.md')):
+  rel=p.relative_to(LOWER)
+  if p.name=='README.md' or '研究记录' in rel.parts: continue
+  for number,record in re.findall(r'^(?:- )?\[(\d+)\]\s+(.+)$',p.read_text(),re.M):
+   if '/OL]' in record: errs.extend(reference_style_errors('下册/'+str(rel),number,record))
+ return errs
+
 def main():
  plan=json.loads((DATA/'编写范围.json').read_text())
  entries=json.loads((ROOT/'索引/案例来源索引.json').read_text())['entries']
@@ -74,14 +100,7 @@ def main():
     errors.append(item['file']+': reference ['+number+'] uses full-width separator "．"; use half-width ". "')
    if not re.match(r'(?:[^\[\n]+\. )?\[[^\]\n]+\]\([^)\n]+\)(?:: [^\[\]\n]+)?\[(?:EB|R|S|J|M|N|Z|A)/OL\]\. [^\[\]\n]*?(?:\([0-9-]{4,10}[^)\n]*\)|(?:19|20)\d{2})?(?:\(\d+\))?(?:: \d+(?:-\d+)?(?:, \d+(?:-\d+)?)*)?\[\d{4}-\d{2}-\d{2}\]\.(?: |$)',record) or not re.search(r'(?:19|20)\d{2}',record):
     errors.append(item['file']+': reference ['+number+'] lacks institution, linked title or year in the upper-volume format')
-   if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[:：]',record):
-    errors.append(item['file']+': reference ['+number+'] places page numbers after the access date; use "年: 页码[引用日期]."')
-   if re.search(r': [\d, —–-]*[—–][\d, —–-]*\[\d{4}-\d{2}-\d{2}\]',record):
-    errors.append(item['file']+': reference ['+number+'] page range must use half-width "-"')
-   if re.search(r'\[[^\]\n]*：[^\]：\n]{1,20}〔\d{4}〕\d+号\]\(',record):
-    errors.append(item['file']+': reference ['+number+'] document number inside linked title; use "[题名](URL): 文号"')
-   if re.search(r'(?<!〔)[\[（(【](?:19|20)\d{2}[\]）)】]\d+号',record):
-    errors.append(item['file']+': reference ['+number+'] document number year must use 〔〕')
+   errors.extend(reference_style_errors(item['file'],number,record))
   if not re.search(r'^###\s+',digital,re.M):
    errors.append(item['file']+': missing independently explained digital application modules')
   if '初稿 v' in text or '一芥智能研究院' in text: errors.append(item['file']+': page header or draft edition residue in body text')
@@ -89,6 +108,7 @@ def main():
   if len(re.findall(r'[\u4e00-\u9fff]',text))<2200: errors.append(item['file']+': needs substantive editorial review (short)')
   if re.search(r'TODO|FIXME|\{行业\}|\{企业\}',text): errors.append(item['file']+': unreplaced placeholder')
   checks.append({'file':item['file'],'edition':edition,'sections':len(heads),'digital_modules':len(re.findall(r'^###\s+',digital,re.M)),'service_applications':len(re.findall(r'^###\s+',service,re.M)),'reference_entries':len(reference_lines),'digital_han':len(re.findall(r'[\u4e00-\u9fff]',digital)),'service_han':len(re.findall(r'[\u4e00-\u9fff]',service)),'han':len(re.findall(r'[\u4e00-\u9fff]',text))})
+ errors.extend(lower_reference_errors())
  for p in MID.glob('*.md'):
   if p.name in ['README.md','附录B-中册图源索引表.md']: continue
   text=p.read_text()

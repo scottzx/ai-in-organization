@@ -205,6 +205,33 @@ def main():
         finally:
             bp.write_text(bsrc, 'utf-8')
 
+        # 13. 白名单内的简述篇正文超过 400 字 -> check-case-structure 不通过
+        try:
+            bl = bsrc.splitlines()
+            at = next(i for i, l in enumerate(bl) if l.strip() == '## 资料来源')
+            bl[at:at] = ['反例测试文字' * 70, '']
+            bp.write_text('\n'.join(bl) + '\n', 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'check-case-structure.py'), bent['path']], cwd=repo, capture_output=True, text=True)
+            res = json.loads(r.stdout)
+            ok('白名单内简述篇正文超过 400 字 -> 结构检查不通过', r.returncode == 1 and res['passed'] is False
+               and any('简述篇正文超过400字' in e for item in res['results'] for e in item['errors']), r.stdout[-300:])
+        finally:
+            bp.write_text(bsrc, 'utf-8')
+
+        # 14. 下册参考文献用旧写法（日期后写页码、页码用—、日期后裸“PDF第x—y页”）-> validate-middle 报错
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            old = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30)[2026-10-29]: 19—21.\n[3] 甲. [乙](https://example.com/a.pdf)[EB/OL]. (2026-03-30): 1—2[2026-10-29].\n[4] 甲. [乙](https://example.com/b.pdf)[EB/OL]. (2026-03-30)[2026-10-29]（PDF第19—21页）.')
+            assert old != lsrc
+            lp.write_text(old, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('下册参考文献旧写法 -> validate-middle 报错', r.returncode == 1
+               and any('after the access date' in e for e in errs) and any('half-width "-"' in e for e in errs)
+               and any('bare page locator' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
+
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
         fr = [f"{v['dir']}/{f}" for v in cfg['volumes'].values() if isinstance(v, dict) and v.get('front') for f in v['front']]
