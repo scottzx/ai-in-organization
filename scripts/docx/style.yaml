@@ -24,6 +24,7 @@ fonts:
   space_before_pt: 0
   space_after_pt: 0
   glyph_fallback: [Noto Serif SC, Noto Sans SC]   # 缺字回退：所用中文字体没有某字形时（如朱雀仿宋 0.212 缺 ＋ ｜ ③ ④），该字改用这些已嵌入的开源字体，见 glyph_fallback.py
+  glyph_fallback_chars: ["\uFF0B", "\uFF5C", "\u2462", "\u2463"]   # 回退白名单（出版审读 #78 P2④）：＋ ｜ ③ ④（朱雀仿宋 0.212 所缺，出版审读逐字扫过全书仅此 4 字）；白名单外的字缺字形时 build_docx 退出 6，check_docx 不通过
   embed:                     # Word 嵌入字体（Scott 2026-10-30 定）：fonts_embed.py 按字体名查找字体文件（.ttf/.otf；.ttc 不能嵌入）
     enabled: true
     search_dirs: [fonts, fonts/cache, ~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定

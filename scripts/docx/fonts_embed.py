@@ -164,6 +164,7 @@ def embed(docx_path, cfg):
         tmp = fh.name
     with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as z:
         for n, b in parts.items(): z.writestr(n, b)
+    os.chmod(tmp, 0o644)   # NamedTemporaryFile 建的是 0600（出版审读 #78 P2②）
     shutil.move(tmp, docx_path)
     return res
 
