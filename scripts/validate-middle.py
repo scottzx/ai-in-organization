@@ -51,6 +51,8 @@ def reference_style_errors(name,number,record):
   errs.append(name+': reference ['+number+'] has a bare page locator right after the access date; use "年: 页码[引用日期]."')
  if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*第[^页。；\n]*?节',record):
   errs.append(name+': reference ['+number+'] has a bare section locator right after the access date; fold it into the note, e.g. "引用范围：第x节，…"')
+ if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*第[^页节。；\n]*?(?:项|部分)',record):
+  errs.append(name+': reference ['+number+'] has a bare clause locator (第…项/部分) right after the access date; write "引用范围：第…项/第…部分，…"')
  if any(re.search(r',(?! )|[，、]',m) for m in re.findall(r': (\d+(?:-\d+)?(?:\s*[,，、]\s*\d+(?:-\d+)?)+)\[\d{4}-\d{2}-\d{2}\]',record)):
   errs.append(name+': reference ['+number+'] discrete page numbers must be separated by half-width ", " (comma plus space)')
  note=re.search(r'\[\d{4}-\d{2}-\d{2}\]\.?\s*([^。；\n]*)',record)
