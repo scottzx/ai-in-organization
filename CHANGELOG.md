@@ -2,7 +2,7 @@
 
 ## 2026-10-30 · 说明 ai-in-org.blueprint.json 的地位
 
-- `ai-in-org.blueprint.json` 是思维导图副本，不是权威版本，内容以书稿正文为准。它不进入 Word/PDF 最终产出（构建时已排除），其节点说明可能落后于正文；本次只把其中参考文献行的分隔符同步为半角。
+- `ai-in-org.blueprint.json` 是思维导图副本，不是权威版本，内容以书稿正文为准。它不进入 Word/PDF 最终产出（Word 构建由 scripts/docx/style.yaml 排除，PDF 和网页构建不读取该文件），其节点说明可能落后于正文；本次只把其中参考文献行的分隔符同步为半角。
 
 ## 2026-10-27 · 许可协议改为 CC BY-NC-SA 4.0
 

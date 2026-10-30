@@ -72,7 +72,7 @@ def main():
   for number,record in reference_lines:
    if '．' in record:
     errors.append(item['file']+': reference ['+number+'] uses full-width separator "．"; use half-width ". "')
-   if not re.search(r'\. \[[^\]\n]+\]\([^)\n]+\)\. ',record) or not re.search(r'(?:19|20)\d{2}',record):
+   if not re.match(r'(?:[^\[\n]+\. )?\[[^\]\n]+\]\([^)\n]+\)(?:: [^\[\]\n]+)?\[(?:EB|R|S|J|M|N|Z|A)/OL\]\. [^\[\]\n]*?(?:\([0-9-]{4,10}[^)\n]*\)|(?:19|20)\d{2})?\[\d{4}-\d{2}-\d{2}\](?::[^.\n]+)?\.(?: |$)',record) or not re.search(r'(?:19|20)\d{2}',record):
     errors.append(item['file']+': reference ['+number+'] lacks institution, linked title or year in the upper-volume format')
   if not re.search(r'^###\s+',digital,re.M):
    errors.append(item['file']+': missing independently explained digital application modules')
