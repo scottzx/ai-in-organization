@@ -147,26 +147,6 @@ images:
   redraw_file: null
   note: null
   manual_review: null
-- file: C07-数字金融-34.png
-  chapters: J01-银行, J04-基金管理
-  action: redraw
-  advice: 重绘1张，其余删除
-  source: 中国信通院《数字金融》(2025) 第34页
-  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=34
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: true
-- file: C07-数字金融-35.png
-  chapters: J02-保险, J03-证券服务
-  action: redraw
-  advice: 重绘1张，其余删除
-  source: 中国信通院《数字金融》(2025) 第35页
-  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=35
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: true
 - file: C07-数字金融-9.png
   chapters: J01-银行, J02-保险, J03-证券服务, J04-基金管理
   action: redraw
@@ -193,36 +173,6 @@ images:
   advice: 重绘
   source: 中国信通院数字乡村(2024) 第11页
   url: https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: C11-智慧医疗-13.png
-  chapters: Q01-医疗健康
-  action: delete
-  advice: 删除，改文字引用
-  source: 中国信通院5G智慧医疗(2019) 第13页
-  url: https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=13
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: C11-远程会诊-31.png
-  chapters: Q01-医疗健康
-  action: delete
-  advice: 删除，改文字引用
-  source: 中国信通院5G智慧医疗(2019) 第31页
-  url: https://www.caict.ac.cn/kxyj/qwfb/bps/201907/P020190724323587134333.pdf#page=31
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: C16-城市运管中心-27.png
-  chapters: S01-政务与公共服务
-  action: delete
-  advice: 删除，改文字引用
-  source: 中国信通院城市运管中心(2020) 第27页
-  url: https://www.caict.ac.cn/kxyj/qwfb/ztbg/202009/P020200917537374351025.pdf#page=27
   not_cc: true
   redraw_file: null
   note: null
@@ -263,16 +213,6 @@ images:
   advice: 重绘
   source: 中国信通院数字政府(2024) 第20页
   url: https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: SC-A02-01-智慧林业架构-23.png
-  chapters: A02-林业
-  action: delete
-  advice: 删除，改文字引用
-  source: 《中国智慧林业发展指导意见》(2013) 第23页
-  url: https://www.forestry.gov.cn/uploadfile/main/2013-8/file/2013-8-23-5eb225df08f4464089502e8e116b7899.pdf#page=23
   not_cc: true
   redraw_file: null
   note: null

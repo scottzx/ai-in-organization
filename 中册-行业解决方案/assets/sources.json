@@ -143,7 +143,7 @@
       "pdf_page": 57,
       "source_url": "https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57",
       "source_sha256": "019e9266060a9a062a673074e494055cf6e22b773166c4fa73248727738cb2bb",
-      "asset_sha256": "d40a38d309b3a96d640e52b5bffdcd844d362363056778d312ae4208000dcceb",
+      "asset_sha256": "1e6cae688b7f0049a3098e400bd341bc5c96fbed75e59fe2ae00996642a66fe1",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -189,8 +189,8 @@
       },
       "uncropped_asset_sha256": "28bb0fa205797c23f730decf288b56582bf71dfef6c90675a665934c1e0c821b",
       "output_size_px": [
-        2214,
-        1502
+        1713,
+        1162
       ],
       "required_in": [
         "C01-工程机械.md"
@@ -277,11 +277,11 @@
       "pdf_page": 14,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=14",
       "source_sha256": "851595295943b13b75be4b137747cb38294dc875c163bbbe353791f3b4951572",
-      "asset_sha256": "2b31c4ce3d165a28894cbe9ba7d33907aa6f71bcf031eeaac7143005c64e0854",
+      "asset_sha256": "30413fb3aa5c85560261cdc51d04b1bdd69d546ddf15134a9ff2106d33acc4f2",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        1717,
-        1245
+        1713,
+        1242
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -344,11 +344,11 @@
       "pdf_page": 16,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=16",
       "source_sha256": "851595295943b13b75be4b137747cb38294dc875c163bbbe353791f3b4951572",
-      "asset_sha256": "f25df7e8cadd363d026807650bf4e017944287d70bc791b75fbd64596b695ece",
+      "asset_sha256": "379667480a3e1197ecc99e71708dc757497c2dad9ee19802e270c0731af22259",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2927,
-        1963
+        1713,
+        1149
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
@@ -546,11 +546,11 @@
       "pdf_page": 26,
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20264/52fcd95580bb4d7f89131f5378f522f7.pdf#page=26",
       "source_sha256": "66188e3f3a69b824a4f14b65995711517548050b6f46f294c2bc7e7d88e1e8bb",
-      "asset_sha256": "be33e0ba650e48ab93f8524cfa835d3ded29f2de46a1afea62fb7c591f8849a8",
+      "asset_sha256": "be63f88a7513347db1d6e5e14e903d972450d7743f8e9720804b4e92eb152e17",
       "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
       "output_size_px": [
-        2612,
-        1739
+        1713,
+        1140
       ],
       "content_detection": {
         "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",

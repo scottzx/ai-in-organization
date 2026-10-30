@@ -77,6 +77,24 @@ templates/
 
 修改记录保存在[CHANGELOG](CHANGELOG.md)，补充方式见[编写与贡献约定](CONTRIBUTING.md)。暂不纳入正文的素材保存在[草稿箱](草稿箱/README.md)。中册65篇行业与专业业务方案统一为五节正文与独立参考资料，重点展示行业架构、数字化应用模块和智力服务新增价值；共用实施方法集中于上册第八章。案例按[统一七节模板](templates/企业案例模板.md)呈现主体、业务背景、问题、实施过程、效果、分析与来源。
 
+### 构建环境（两个独立虚拟环境）
+
+抽图与PDF生成锁定的Pillow版本不同（`scripts/requirements-figures.txt` 锁 pillow 12.3.0，`scripts/requirements-pdf.txt` 锁 pillow 13.0.0），不能装进同一个环境：
+
+```bash
+# 中册抽图（scripts/extract-middle-figures.py 及其测试）；另需系统安装 Poppler（pdftoppm）
+python3 -m venv .venv-figures
+.venv-figures/bin/pip install -r scripts/requirements-figures.txt
+.venv-figures/bin/python scripts/test_extract_middle_figures.py
+REQUIRE_FIGURE_PDFS=1 .venv-figures/bin/python scripts/test_extract_middle_figures.py  # 缺来源PDF即失败，不跳过
+
+# PDF生成（scripts/build-pdf.py）；另需系统安装 Pandoc 与 Poppler
+python3 -m venv .venv-pdf
+.venv-pdf/bin/pip install -r scripts/requirements-pdf.txt
+```
+
+来源PDF放在不入库的 `资料库/`（路径见 `scripts/data/middle/图示裁切规则.json` 的 `local_pdf`）。缺少某个来源PDF时，抽图脚本默认跳过该来源的图并保留现有图片和 `sources.json` 条目；设置 `REQUIRE_FIGURE_PDFS=1` 时改为直接报错。来源PDF与记录的 sha256 不符时始终报错。
+
 ## 来源与使用
 
 新增[工信部行业数字化转型资料汇总](索引/工信部行业数字化转型资料汇总.md)，包含57条指南、方案、报告、白皮书和名录资料；配套[960条工厂项目企业索引](索引/工信部5G工厂企业索引.md)与[335个典型案例检索入口](索引/工信部典型案例检索索引.md)。书目与检索入口不计为案例，精读并形成独立篇目的企业过程按下册来源索引登记。
