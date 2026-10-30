@@ -160,6 +160,15 @@ def main():
             zip_mutate(base, tmp / f'{tag}.docx', nm, fn); rows = check(repo, tmp / f'{tag}.docx', tmp / f'{tag}.md')
             ok(f'{nm} 改出 {want} -> 显式字体项不通过', not rows[EF][0] and want in rows[EF][1], rows[EF][1])
 
+        # 10. 缺字回退提示：种数与处数分列；无 build.json 时注明“次数仅供参考”
+        check(repo, base, tmp / 'gf_bj.md')
+        gl = [l for l in (tmp / 'gf_bj.md').read_text('utf-8').splitlines() if l.startswith('### 缺字回退字符')]
+        ok('有 build.json -> 缺字回退提示为“共 N 种、合计 M 处”且无参考注记', len(gl) == 1 and re.search(r'共 \d+ 种、合计 \d+ 处$', gl[0]) is not None, str(gl))
+        nb = tmp / 'nobj' / 'base.docx'; nb.parent.mkdir(); shutil.copy2(base, nb)
+        check(repo, nb, tmp / 'gf_nobj.md')
+        gl = [l for l in (tmp / 'gf_nobj.md').read_text('utf-8').splitlines() if l.startswith('### 缺字回退字符')]
+        ok('无 build.json -> 缺字回退提示注明“次数仅供参考”', len(gl) == 1 and gl[0].endswith('（无 build.json，次数仅供参考）') and '种、合计' in gl[0], str(gl))
+
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
         fr = [f"{v['dir']}/{f}" for v in cfg['volumes'].values() if isinstance(v, dict) and v.get('front') for f in v['front']]

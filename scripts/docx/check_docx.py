@@ -425,9 +425,17 @@ def main():
                 check(f'脚注 字号={fc["size_pt"]}pt(五号)', sz is not None and int(sz.get(qn('w:val'))) == int(fc['size_pt'] * 2), w)
                 check('脚注 颜色=黑色', col is not None and col.get(qn('w:val')).upper() == F['color'], w)
     # 提示项（不计入通过/不通过，仅供文字编辑修改；排版脚本不自动增删空格或替换连接号）
-    hints = {'中英文/数字间有空格': [], '数值范围用了“～”“-”“–”（应为一字线“—”）': [],
-             '缺字回退字符（所用字体缺字形，改用已嵌入的开源字体）': [f"{k}（{v['from']}→{v['to']}）：{v['count']} 处" for k, v in sorted((BJ.get('glyph_fallback') or {}).items())]
-             if 'glyph_fallback' in BJ else [f'{k}：{n} 处' for k, n in sorted(_GF_USED.items())]}   # 次数以 build.json（glyph_fallback.fix 逐字计数）为准（出版审读 #82 P2②）
+    # 缺字回退：按“种”（字符数）与“处”（逐字出现次数）分别统计（出版审读 #86 P2①）；无 build.json 时退回 check 端计数并注明（P2②）
+    if 'glyph_fallback' in BJ:
+        _gfi = sorted((BJ.get('glyph_fallback') or {}).items())
+        gf_list = [f"{k}（{v['from']}→{v['to']}）：{v['count']} 处" for k, v in _gfi]
+        gf_kinds, gf_total, gf_note = len(_gfi), sum(int(v['count']) for _, v in _gfi), ''
+    else:
+        _gfi = sorted(_GF_USED.items())
+        gf_list = [f'{k}：{n} 处' for k, n in _gfi]
+        gf_kinds, gf_total, gf_note = len({k.split('（')[0] for k, _ in _gfi}), sum(n for _, n in _gfi), '（无 build.json，次数仅供参考）'
+    GF_KEY = '缺字回退字符（所用字体缺字形，改用已嵌入的开源字体）'
+    hints = {'中英文/数字间有空格': [], '数值范围用了“～”“-”“–”（应为一字线“—”）': [], GF_KEY: gf_list}   # 次数以 build.json（glyph_fallback.fix 逐字计数）为准
     cur = '前置'
     for i, p in enumerate(doc.paragraphs):
         t = p.text
@@ -474,7 +482,7 @@ def main():
         out.append(f'| {i} | {k} | {n} | {"✅ 通过" if not fails else f"❌ 不通过 {len(fails)} 处"} | {"；".join(fails[:10]).replace("|","／") if fails else "—"} |')
     out += ['', '## 提示项（供文字编辑修改，不计入通过/不通过）', '']
     for k, v in hints.items():
-        out += [f'### {k}：{len(v)} 处', '']
+        out += [f'### {k}：共 {gf_kinds} 种、合计 {gf_total} 处{gf_note}' if k == GF_KEY else f'### {k}：{len(v)} 处', '']
         out += [f'{n}. {x.replace("|","／")}' for n, x in enumerate(v, 1)] or ['无']
         out.append('')
     out += ['', '说明：扫描包含正文与表格内段落；扉页、版权页、目录页为特殊版式，仅核对字体与颜色。',
