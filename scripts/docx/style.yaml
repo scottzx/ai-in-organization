@@ -1,8 +1,8 @@
-# 《企业数智化转型研究报告》Word 排版参数（集中配置，待确认项标 TODO）
+# 《企业数智化转型思路》Word 排版参数（集中配置，待确认项标 TODO）
 book:
-  title: 《企业数智化转型研究报告——从智力服务到精益经营》   # 唯一书名字段（占位）：扉页、页眉、版权页均引用此处
+  title: 《企业数智化转型思路》   # 唯一书名字段（Scott 2026-10-30 定）：扉页、页眉、版权页、docx 文件属性均引用此处
   subtitle: ""
-  author: 一芥智能研究院            # 编著单位
+  # 研究院不单独署名（Scott 2026-10-30 定）：不设 author 字段，扉页、版权页、docx 文件属性均不写编著单位
   copyright_holder: 杭州一芥智能有限公司   # 著作权人
   edition: 二次修订版（排版样张）
   date: 2026年10月
@@ -23,14 +23,23 @@ fonts:
   line_spacing_exact_pt: 28  # 固定值行距
   space_before_pt: 0
   space_after_pt: 0
+  embed:                     # Word 嵌入字体（Scott 2026-10-30 定）：fonts_embed.py 按字体名查找字体文件（.ttf/.otf；.ttc 不能嵌入）
+    enabled: true
+    search_dirs: [~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定
+    files:                   # 常见文件名；也按字体内部名称（name 表）匹配
+      黑体: [simhei.ttf]
+      楷体_GB2312: [simkai.ttf, kaiti_gb2312.ttf, 楷体_gb2312.ttf]
+      仿宋_GB2312: [simfang.ttf, fangsong_gb2312.ttf, 仿宋_gb2312.ttf]
+      宋体: [simsun.ttf]
+      Times New Roman: [times.ttf, timesbd.ttf]
 levels:
   h1: {font: 黑体,          size_pt: 16, bold: true, align: center, page_break_before: true}  # 黑体 三号
   h2: {font: 楷体_GB2312,   size_pt: 15, bold: true, align: left}   # 楷体_GB2312 小三
   h3: {font: 仿宋_GB2312,   size_pt: 14, bold: true, align: left}
   h4: {font: 仿宋_GB2312,   size_pt: 12, bold: true,  align: left}
   body: {font: 仿宋_GB2312, size_pt: 12, bold: false, align: justify, first_line_chars: 2}  # Scott 已定（2026-10-29）：4 个英文字符＝2 个中文字符（firstLineChars=200，12pt 时 firstLine=480 twips＝24pt）
-  caption: {font: 黑体,     size_pt: 12, bold: false, align: center}   # TODO 图题表题字体字号待确认
-  table: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: left}  # TODO 表内字号待确认
+  caption: {font: 黑体,     size_pt: 10.5, bold: false, align: center}   # 五号（Scott 2026-10-30 定）
+  table: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: left}  # 五号（Scott 2026-10-30 定）
   footnote: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: justify}   # 五号
   figure_note: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: center}   # 图下来源注
   toc_title: {font: 黑体, size_pt: 16, bold: true}
@@ -208,13 +217,13 @@ volumes:
       lower: {A: D, B: E}
 copyright:
   - "书名：{title}"
-  - "著作权人：{holder}　　编著：{author}"
+  - "著作权人：{holder}"
   - "Copyright © 2026 {holder}。"
   - "本作品采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）进行许可，适用于本书有权许可的原创正文、分析与索引。许可文本见 https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans 。"
   - "第三方音视频、图书、行业架构原图和资料由相应权利人持有；引用图示保留来源与页码，不纳入原创内容的 CC BY-NC-SA 4.0 许可。"
   - "书中具名企业案例均根据公开资料整理，未对案例效果作独立审计或完整事实核验。"
   - "本书只作经营管理分析与案例整理，不构成法律、财务、税务、医疗或其他专业意见。"
-  - "项目仓库：https://github.com/scottzx/ai-in-organization"
+  - "项目仓库：https://github.com/scottzx/ai-in-organization"   # 官网/仓库地址只印在版权页（Scott 2026-10-30 定）
 # 构建时排除（glob，对文件名匹配）；另按“导航页”特征自动排除
 exclude:
   patterns: ["备份-*.md", "README.md", "导图大纲-*.md", "*.blueprint.json"]

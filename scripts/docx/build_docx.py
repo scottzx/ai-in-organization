@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Markdown -> docx 排版脚本（《企业数智化转型研究报告》二次修订）。
+"""Markdown -> docx 排版脚本（《企业数智化转型思路》二次修订）。
 
 用法:
   python3 build_docx.py                       # 默认：上册 -> 样张-上册.docx
@@ -233,7 +233,7 @@ class Builder:
     def front_matter(self):
         b = self.cfg['book']
         for _ in range(6): self.para('Normal', key='body', align='center')
-        for text, size in ((b['title'], 22), (b['subtitle'], 18), ('', 12), (b['author'] + '　编著', 16), (b['edition'], 14), (b['date'], 14)):
+        for text, size in ((b['title'], 22), (b['subtitle'], 18), ('', 12), (b['edition'], 14), (b['date'], 14)):
             p = self.para('Normal', key='body', align='center')
             if text:
                 r = p.add_run(text); self.style_run(r, self.lv('h1')['font'], size)
@@ -246,7 +246,7 @@ class Builder:
         for line in self.cfg['copyright']:
             p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0)
             set_first_line_chars(p._p, 0)
-            r = p.add_run(line.format(title=b['title'], holder=b['copyright_holder'], author=b['author'])); self.style_run(r, self.lv('body')['font'], 10.5)
+            r = p.add_run(line.format(title=b['title'], holder=b['copyright_holder'])); self.style_run(r, self.lv('body')['font'], 10.5)
         self.page_break()
         # 目录
         p = self.para('Normal', key='body', align='center'); p.paragraph_format.first_line_indent = Pt(0); set_first_line_chars(p._p, 0)
@@ -306,7 +306,6 @@ class Builder:
                                  else f'附录{host}\u3000{self.demote[host]}')
             self.whole = ch in self.demote and len(self.members.get(ch, [])) == 1 and self.is_guide is False and ch in self.whole_ch
         # 册首 front 篇目（style.yaml volumes.<vol>.front，如下册 00-导言.md）不编章号：图表号用“导”，即 图导-1／表导-1；其余不编号篇目仍按 0 计
-        _front = {f"{v['dir']}/{f}" for v in self.cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
         _fdir = next((v['dir'] for v in self.cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') and rel in {f"{v['dir']}/{f}" for f in v.get('front', [])}), None)
         self.label = str(ch) if ch is not None else ('导' if _fdir else '0'); self.cur_file = rel
         # 计数器键：front 篇目按所在册单独计（导:<册目录>），与 0 号导读页等其他不编号篇目互不接续，合订本中不会串号
@@ -520,6 +519,8 @@ class Builder:
         return self.heading_raw(4, f'（{self.n4}）{strip_sec(text)}')
 
     def caption(self, kind, title):
+        if self.label == '0':   # 不编号篇目（导读页等，label 0）不得有图表：否则会生成“图 0-N”，直接报错
+            self.fig_errors.append(f'{self.cur_file}  不编号篇目含{kind}「{(title or "")[:24]}」：不编号篇目不能有图表（front 篇目用“导”号，须列入 style.yaml volumes.<册>.front）')
         if kind == '表':
             self.ntab += 1; n = self.ntab; fmt = self.cfg['numbering']['table_format']
         else:
@@ -660,7 +661,8 @@ class Builder:
         # 门类导读已删除：不再做“导读单独成页、X.1 前分页”
 
         self.doc.core_properties.title = self.cfg['book']['title']
-        self.doc.core_properties.author = self.cfg['book']['author']
+        cp = self.doc.core_properties   # 研究院不单独署名：作者、最后修改者等留空（python-docx 模板默认作者为 python-docx）
+        cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''
         import indent_fix; self.log['flush_left_chars_fixed'] = indent_fix.fix(self.doc)   # 顶格段落（firstLine=0）不得继承非零 firstLineChars
         self.doc.save(out)
 
@@ -872,6 +874,9 @@ def main():
         n, miss = toc_fill.fill(a.output, cfg)
         b.log['toc'] = {'entries': n, 'missing_page': miss}
         print(f'  目录预排 {n} 条' + (f'，{len(miss)} 条未找到页码：' + '；'.join(miss[:5]) if miss else ''))
+    import fonts_embed   # 目录预排（toc_fill 会经 python-docx 重存）之后再嵌入字体
+    fe = fonts_embed.embed(a.output, cfg); b.log['fonts_embedded'] = fe
+    print('  嵌入字体：' + ('、'.join(f"{x['font']}（{x['kind']}，{x['bytes']} 字节）" for x in fe['embedded']) or '无') + (f"；未找到字体文件：{'、'.join(fe['missing'])}" if fe['missing'] else ''))
     b.write_xref(Path(a.output).parent / ('图号对照表-' + Path(a.output).stem.replace('样张-', '') + '.md'))
     sys.path.insert(0, str(HERE))
     Path(a.output).with_suffix('.build.json').write_text(json.dumps(b.log, ensure_ascii=False, indent=1), 'utf-8')

@@ -6,15 +6,17 @@
 |---|---|
 | `build_docx.py` | Markdown → docx 导出（扉页、版权页、目录、页眉页脚、章节重编号、图表编号） |
 | `check_docx.py` | 读回 docx 逐项核对格式，可选同时检查导出的 PDF |
+| `fonts_embed.py` | 把所用字体按 ECMA-376 混淆为 `.odttf` 嵌入 docx（由 `build_docx.py` 在回填目录后自动调用），并供 `check_docx.py` 核对 |
 | `toc_fill.py` | 用 LibreOffice 回填目录页码（由 `build_docx.py` 自动调用） |
 | `style.yaml` | 全部格式参数（字体、字号、行距、缩进、各册章号映射等） |
 | `image-manifest.yaml` | 图片取舍清单（电子书保留 / 纸书重绘） |
 
 ## 环境要求
 
-- Python 3，依赖：`python-docx`、`pyyaml`（`pip install python-docx pyyaml`）
+- Python 3，依赖：`python-docx`、`pyyaml`、`fonttools`（`pip install python-docx pyyaml fonttools`）
 - 可选：LibreOffice（`soffice`，用于预排目录页码和转 PDF）；`pdftotext`（poppler-utils，用于 `--pdf` 检查）
-- 字体：仿宋_GB2312、楷体_GB2312、黑体需在排版/打开 Word 的机器上安装，脚本只在 docx 中写字体名，不引用本地字体路径。
+- 字体嵌入：构建时按 `style.yaml` 的 `fonts.embed` 查找黑体、楷体_GB2312、仿宋_GB2312、宋体、Times New Roman 的字体文件（`.ttf`/`.otf`；`.ttc` 不能嵌入 Word），找到的嵌入 docx 并打开 `embedTrueTypeFonts`、`saveSubsetFonts`；也可用环境变量 `BOOK_FONT_DIR` 指定字体目录。找不到的字体如实列出（终端与 `*.build.json` 的 `fonts_embedded`），不以其他字体替代；此时 `check_docx.py` 的“Word 嵌入字体”项不通过。正式出稿须在装有这些字体文件的机器上构建。
+- 字号：图题、表题、表格文字均为五号（10.5pt），`check_docx.py` 逐段核对。
 
 ## 路径约定
 

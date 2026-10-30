@@ -117,11 +117,21 @@ def main():
     cfg = yaml.safe_load(Path(a.style).read_text('utf-8')); L = cfg['levels']; F = cfg['fonts']
     doc = Document(a.docx)
     _side = Path(a.docx).with_suffix('.build.json')
-    _chaps = json.loads(_side.read_text('utf-8')).get('chapters', []) if _side.exists() else []
-    # 「导言」只允许来自某册 style.yaml volumes.<vol>.front 的册首篇目（如下册 00-导言.md）；以 build.json 实际收入的篇目为准
-    _front = {f"{v['dir']}/{f}" for v in cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
-    front_intro = sum(1 for x in _chaps if x.get('chapter') is None and x.get('file') in _front)
-    unnumbered = sum(1 for x in json.loads(_side.read_text('utf-8')).get('chapters', []) if x.get('chapter') is None and '导读' in x.get('file', '').rsplit('/', 1)[-1] and re.match(r'^[A-Z]', x['file'].rsplit('/', 1)[-1])) if _side.exists() else 0
+    BJ = json.loads(_side.read_text('utf-8')) if _side.exists() else {}   # build.json 只读一次
+    _chaps = BJ.get('chapters', [])
+    # 「导言」只允许来自某册 style.yaml volumes.<vol>.front 的册首篇目（如下册 00-导言.md）；以 build.json 实际收入的篇目为准，
+    # 并核对每个「导言」一级标题确是该 front 篇目（按源稿首个 # 标题比对），不只核数量
+    import unicodedata
+    NFC = lambda x: unicodedata.normalize('NFC', x)
+    _front = {NFC(f"{v['dir']}/{f}") for v in cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
+    _repo = Path(os.environ.get('BOOK_REPO', HERE.parent.parent))
+    def _h1(rel):
+        fp = _repo / rel
+        t = fp.read_text('utf-8') if fp.exists() else ''
+        m = re.search(r'^#\s+(.+?)\s*$', t, re.M)
+        return re.sub(r'[\s\u3000]', '', m.group(1)) if m else None
+    front_queue = [_h1(x['file']) for x in _chaps if x.get('chapter') is None and NFC(x.get('file', '')) in _front]
+    unnumbered = sum(1 for x in _chaps if x.get('chapter') is None and '导读' in x.get('file', '').rsplit('/', 1)[-1] and re.match(r'^[A-Z]', x['file'].rsplit('/', 1)[-1]))
     items = {}  # 检查项 -> [总数, 失败位置列表]
     def check(name, ok, where):
         it = items.setdefault(name, [0, []]); it[0] += 1
@@ -185,7 +195,9 @@ def main():
         if key == 'h1':
             ok = bool(re.match(r'^(第[一二三四五六七八九十]+章　\S|导论|结语|附录[A-Z])', txt))
             in_front = False
-            if not ok and txt.startswith('导言') and front_intro > 0: front_intro -= 1; ok = True; in_front = True; front_no += 1   # 仅 front 篇目可用「导言」
+            if not ok and txt.startswith('导言') and front_queue:   # 仅 front 篇目可用「导言」，且须是名单上的下一篇
+                exp_h1 = front_queue.pop(0)
+                if exp_h1 is None or re.sub(r'[\s\u3000]', '', txt) == exp_h1: ok = True; in_front = True; front_no += 1
             if not ok and unnumbered > 0 and not txt.startswith('第'): unnumbered -= 1; ok = True   # 门类导读入口，不编章号
             check('h1 编号格式“第X章　标题”(中文数字)', ok, where)
             m = re.match(r'^第([一二三四五六七八九十]+)章', txt)
@@ -206,6 +218,19 @@ def main():
                 check('图题/表题 章内连续编号', int(m.group(3)) == prev + 1, where + f' 前一号为{prev}')
                 cap_seq[k] = int(m.group(3))
                 check('表题 有标题文字', len(txt.split('　', 1)) > 1, where + ' 仅有编号，缺表题')
+    # 题注、表格文字五号（Scott 2026-10-30 定）：固定 10.5pt，不只跟 style.yaml
+    WUHAO = 10.5
+    check('style.yaml 图题表题/表格文字=五号（10.5pt）', L['caption']['size_pt'] == WUHAO and L['table']['size_pt'] == WUHAO, f"caption {L['caption']['size_pt']} / table {L['table']['size_pt']}")
+    for idx, (p, intab) in enumerate(paras):
+        k = classify(p, intab)
+        if k not in ('caption', 'table'): continue
+        for r in p.runs:
+            if not r.text.strip(): continue
+            size = eff_run(r, p)[2]
+            check('图题/表题 字号=五号（10.5pt）' if k == 'caption' else '表格文字 字号=五号（10.5pt）', size == WUHAO, f'段{idx+1}“{p.text.strip()[:18]}” 实为{size}')
+    for sn in ('Caption', '表格文字'):
+        sz = doc.styles[sn].font.size if sn in [x.name for x in doc.styles] else None
+        check('Caption/表格文字 样式字号=五号（10.5pt）', sz is not None and sz.pt == WUHAO, f'{sn} 实为{sz.pt if sz else None}')
     # 目录页标题“目　录”：字体、字号、加粗
     tt = L.get('toc_title', {})
     for idx, (p, intab) in enumerate(paras):
@@ -238,10 +263,10 @@ def main():
     start = seq[0] if seq else 1
     check('h1 章号连续且每章只印一次（全书连续编号，自首章起）', seq == list(range(start, start + len(seq))), f'实为 {nums}')
     # 各级标题编号层次（中册降级版式：X.Y / X.Y.Z / （n））
-    demote = json.loads(_side.read_text('utf-8')).get('demote') if _side.exists() else False
+    demote = BJ.get('demote', False)
     if demote:
-        dm_ch = json.loads(_side.read_text('utf-8')).get('demote_chapters'); dm_ch = {c for c in dm_ch if isinstance(c, int)} if dm_ch else None
-        ch = sec = sub = n4 = 0; ch_t = ''; app_h2 = []; guides = sum(1 for x in json.loads(_side.read_text('utf-8'))['chapters'] if x.get('chapter') is None); seen = set()
+        dm_ch = BJ.get('demote_chapters'); dm_ch = {c for c in dm_ch if isinstance(c, int)} if dm_ch else None
+        ch = sec = sub = n4 = 0; ch_t = ''; app_h2 = []; guides = sum(1 for x in _chaps if x.get('chapter') is None); seen = set()
         for i, p in enumerate(doc.paragraphs):
             sn, t = p.style.name, p.text.strip(); w = f'段{i+1}「{t[:24]}」'
             if sn == 'Heading 1':
@@ -340,7 +365,22 @@ def main():
         check('页脚 含 PAGE 页码域', 'PAGE' in s.footer._element.xml, f'第{si+1}节')
     check('版权页 存在且含书名', any('Copyright' in p.text for p in doc.paragraphs) and any(cfg['book']['title'] in p.text and '书名' in p.text for p in doc.paragraphs), '未找到')
     bk = cfg['book']
-    check('版权页 含著作权人/编著单位', any(bk['copyright_holder'] in p.text for p in doc.paragraphs) and any(('编著：' + bk['author']) in p.text for p in doc.paragraphs), '缺著作权人或编著单位')
+    check('版权页 含著作权人', any(('著作权人：' + bk['copyright_holder']) in p.text for p in doc.paragraphs), '缺著作权人')
+    TITLE = '《企业数智化转型思路》'   # Scott 2026-10-30 定
+    check(f'书名={TITLE}（style.yaml、页眉、docx 属性 title）', bk['title'] == TITLE and cp.title == TITLE, f'style.yaml “{bk["title"]}” / 属性 “{cp.title}”')
+    front_txt = [p.text for p in doc.paragraphs[:next((k for k, p in enumerate(doc.paragraphs) if p.style.name == 'Heading 1'), len(doc.paragraphs))]]
+    check('研究院不单独署名（扉页/版权页无“编著”“研究院”，docx 属性 author/last_modified_by 为空）', 'author' not in bk and not cp.author and not cp.last_modified_by and not any(re.search(r'编著|研究院', t) for t in front_txt), f'author“{cp.author}” / 修改者“{cp.last_modified_by}” / 前置页：' + '；'.join(t[:20] for t in front_txt if re.search(r'编著|研究院', t)))
+    URLS = ('github.com/scottzx', 'ai-in-organization')   # 官网、仓库地址只在版权页
+    _toc = next((k for k, p in enumerate(doc.paragraphs) if any('TOC' in (x.text or '') for x in p._p.iter(qn('w:instrText')))), 0)
+    _copy = next((k for k, p in enumerate(doc.paragraphs) if p.text.strip() == '版权声明'), _toc)
+    hf = [q.text for s_ in doc.sections for h in (s_.header, s_.footer) for q in h.paragraphs]
+    out_url = [f'段{k+1}' for k, (p, _) in enumerate(paras) if any(u in p.text for u in URLS) and not (_copy <= k < _toc)] + [f'页眉页脚“{t[:20]}”' for t in hf if any(u in t for u in URLS)]
+    out_url += [f'超链接 {r.target_ref[:40]}' for r in doc.part.rels.values() if r.is_external and any(u in r.target_ref for u in URLS) and not any(u in p.text for p in doc.paragraphs[_copy:_toc] for u in URLS)]
+    check('官网/仓库地址只在版权页（正文、页眉页脚、属性不出现）', not out_url and not any(u in (cp.title or '') + (cp.comments or '') for u in URLS), '；'.join(out_url[:10]))
+    import fonts_embed   # 嵌入字体：settings 开 embedTrueTypeFonts，所用每种字体在 fontTable 有 embedRegular，odttf 解混淆后是有效字体
+    on, fr, used = fonts_embed.verify(a.docx)
+    bad = {k: v for k, v in fr.items() if v}
+    check('Word 嵌入字体（embedTrueTypeFonts 已开；所用字体均有 odttf 部件且解混淆后有效）', on and not bad, ('未开 embedTrueTypeFonts；' if not on else '') + '；'.join(f'{k}：{v}' for k, v in bad.items()))
     # 脚注（真脚注 footnotes.xml）
     fpart = next((r.target_part for r in doc.part.rels.values() if r.reltype.endswith('/footnotes')), None)
     nref = len(doc.element.body.findall('.//' + qn('w:footnoteReference')))
@@ -411,7 +451,7 @@ def main():
         out += [f'{n}. {x.replace("|","／")}' for n, x in enumerate(v, 1)] or ['无']
         out.append('')
     out += ['', '说明：扫描包含正文与表格内段落；扉页、版权页、目录页为特殊版式，仅核对字体与颜色。',
-            '本机缺“黑体/楷体_GB2312/仿宋_GB2312”实体字体，此清单核对的是 docx 内的字体设定（Word 在装有这些字体的电脑上按设定显示）。']
+            '字体嵌入：' + ('、'.join(f'{k}{"✅" if not v else "❌" + v}' for k, v in fr.items()) or '无') + '。缺字体文件时构建如实不嵌入，不以其他字体替代。']
     Path(a.output).write_text('\n'.join(out) + '\n', 'utf-8')
     print('\n'.join(out[:3])); return 1 if total_fail else 0
 

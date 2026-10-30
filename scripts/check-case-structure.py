@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import unicodedata
 
 import yaml
 
@@ -16,7 +17,12 @@ INDEX = json.loads((ROOT / '索引/案例来源索引.json').read_text(encoding=
 ENTRIES = {entry['id']: entry for entry in INDEX['entries']}
 # 册首不编号篇目（如下册导言）不是案例，名单读 style.yaml 的 volumes.<vol>.front
 STYLE = yaml.safe_load((ROOT / 'scripts/docx/style.yaml').read_text(encoding='utf-8'))
-FRONT = {(ROOT / v['dir'] / f).resolve() for v in STYLE.get('volumes', {}).values()
+def nfc(path):
+    """路径按 NFC 规范化后比较（macOS 文件名常为 NFD）。"""
+    return unicodedata.normalize('NFC', str(Path(path).resolve()))
+
+
+FRONT = {nfc(ROOT / v['dir'] / f) for v in STYLE.get('volumes', {}).values()
          if isinstance(v, dict) and v.get('dir') for f in v.get('front', [])}
 
 
@@ -130,14 +136,19 @@ def main():
     args = parser.parse_args()
     files = set()
     input_errors = []
+    skipped = 0
     for path in args.paths:
         if path.is_dir():
-            files.update(p.resolve() for p in path.rglob('*.md') if p.name != 'README.md' and p.resolve() not in FRONT)
+            files.update(p.resolve() for p in path.rglob('*.md') if p.name != 'README.md' and nfc(p) not in FRONT)
         elif path.is_file() and path.suffix == '.md':
+            if nfc(path) in FRONT:   # 显式传入的册首 front 篇目同样跳过
+                print(f'跳过册首不编号篇目（style.yaml front）：{display_path(path.resolve())}', file=sys.stderr)
+                skipped += 1
+                continue
             files.add(path.resolve())
         else:
             input_errors.append('不存在的案例文件或目录：' + str(path))
-    if not files:
+    if not files and not skipped:   # 只传了 front 篇目：已跳过，不算输入错误
         input_errors.append('未找到案例Markdown文件')
     results = [check_case(path) for path in sorted(files)]
     passed = not input_errors and all(not item['errors'] for item in results)
