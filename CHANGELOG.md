@@ -1,5 +1,9 @@
 # 更新记录
 
+## 2026-10-30 · 说明 ai-in-org.blueprint.json 的地位
+
+- `ai-in-org.blueprint.json` 是思维导图副本，不是权威版本，内容以书稿正文为准。它不进入 Word/PDF 最终产出（构建时已排除），其节点说明可能落后于正文；本次只把其中参考文献行的分隔符同步为半角。
+
 ## 2026-10-27 · 许可协议改为 CC BY-NC-SA 4.0
 
 - 本仓库现行版本的原创内容改按知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0) 许可。版权人仍为一芥智能研究院，Copyright © 2026。法律文本见 LICENSE，中文说明见 https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans 。
