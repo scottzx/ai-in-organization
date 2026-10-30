@@ -8,6 +8,6 @@
 
 ## 资料来源
 
-[1] Datawhale. FDE案例100[EB/OL]. 2026: 33-45[2026-10-30]. https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf. 篇目：NO.4。
+[1] Datawhale. FDE案例100[EB/OL]. (2026-09-06): 33-45[2026-10-30]. https://assets.datawhale.cn/Datawhale%20FDE%E6%A1%88%E4%BE%8B100.pdf. 篇目：NO.4。
 
 > 本篇据公开资料整理，来源为第三方实施者自述（访问日期：2026-10-30）。所述情况和数据为来源方口径，未经独立核实，仅作研究说明，不构成推荐、保证或投资建议。
