@@ -12,7 +12,7 @@ page:
   margin_bottom_cm: 2.54
   margin_left_cm: 2.8
   margin_right_cm: 2.6
-  header_font: 宋体
+  header_font: Noto Serif SC      # 思源宋体（原宋体，Scott 2026-10-30 定改开源字体）
   header_size_pt: 9          # 小五
   footer_size_pt: 9
   front_matter_page_format: lowerRoman   # 版权页/目录 用罗马页码
@@ -25,24 +25,25 @@ fonts:
   space_after_pt: 0
   embed:                     # Word 嵌入字体（Scott 2026-10-30 定）：fonts_embed.py 按字体名查找字体文件（.ttf/.otf；.ttc 不能嵌入）
     enabled: true
-    search_dirs: [fonts, ~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定
-    files:                   # 常见文件名；也按字体内部名称（name 表）匹配
-      黑体: [simhei.ttf]
-      楷体_GB2312: [simkai.ttf, kaiti_gb2312.ttf, 楷体_gb2312.ttf]
-      仿宋_GB2312: [simfang.ttf, fangsong_gb2312.ttf, 仿宋_gb2312.ttf]
-      宋体: [simsun.ttf]
+    search_dirs: [fonts, fonts/cache, ~/.fonts, ~/.local/share/fonts, /usr/share/fonts, /usr/local/share/fonts, C:/Windows/Fonts]   # 另可用环境变量 BOOK_FONT_DIR 指定
+    subset: true             # 只嵌入本书用到的字（子集），否则每册 docx 多 80 MB 以上
+    files:                   # 文件名；也按字体内部名称（name 表）匹配。中文字体由 fonts/fetch_fonts.py 下载到 fonts/cache/（不入 git）
+      Noto Sans SC: [notosanssc-regular.ttf, notosanssc-bold.ttf]                 # 思源黑体，替代黑体
+      Noto Serif SC: [notoserifsc-regular.ttf, notoserifsc-bold.ttf]              # 思源宋体，替代宋体
+      LXGW WenKai: [lxgwwenkai-regular.ttf]                                       # 霞鹜文楷，替代楷体_GB2312
+      Zhuque Fangsong (technical preview): [zhuquefangsong-regular.ttf]           # 朱雀仿宋，替代仿宋_GB2312
       Source Serif 4: [sourceserif4-regular.ttf, sourceserif4-bold.ttf]
 levels:
-  h1: {font: 黑体,          size_pt: 16, bold: true, align: center, page_break_before: true}  # 黑体 三号
-  h2: {font: 楷体_GB2312,   size_pt: 15, bold: true, align: left}   # 楷体_GB2312 小三
-  h3: {font: 仿宋_GB2312,   size_pt: 14, bold: true, align: left}
-  h4: {font: 仿宋_GB2312,   size_pt: 12, bold: true,  align: left}
-  body: {font: 仿宋_GB2312, size_pt: 12, bold: false, align: justify, first_line_chars: 2}  # Scott 已定（2026-10-29）：4 个英文字符＝2 个中文字符（firstLineChars=200，12pt 时 firstLine=480 twips＝24pt）
-  caption: {font: 黑体,     size_pt: 10.5, bold: false, align: center}   # 五号（Scott 2026-10-30 定）
-  table: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: left}  # 五号（Scott 2026-10-30 定）
-  footnote: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: justify}   # 五号
-  figure_note: {font: 仿宋_GB2312, size_pt: 10.5, bold: false, align: center}   # 图下来源注
-  toc_title: {font: 黑体, size_pt: 16, bold: true}
+  h1: {font: Noto Sans SC,          size_pt: 16, bold: true, align: center, page_break_before: true}  # 思源黑体 三号
+  h2: {font: LXGW WenKai,   size_pt: 15, bold: true, align: left}   # 霞鹜文楷 小三
+  h3: {font: Zhuque Fangsong (technical preview),   size_pt: 14, bold: true, align: left}
+  h4: {font: Zhuque Fangsong (technical preview),   size_pt: 12, bold: true,  align: left}
+  body: {font: Zhuque Fangsong (technical preview), size_pt: 12, bold: false, align: justify, first_line_chars: 2}  # Scott 已定（2026-10-29）：4 个英文字符＝2 个中文字符（firstLineChars=200，12pt 时 firstLine=480 twips＝24pt）
+  caption: {font: Noto Sans SC,     size_pt: 10.5, bold: false, align: center}   # 五号（Scott 2026-10-30 定）
+  table: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: left}  # 五号（Scott 2026-10-30 定）
+  footnote: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: justify}   # 五号
+  figure_note: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: center}   # 图下来源注
+  toc_title: {font: Noto Sans SC, size_pt: 16, bold: true}
 numbering:
   chapter_format: "第{cn}章　{title}"   # 一级：中文数字
   figure_format: "图 {ch}-{n}　{title}"

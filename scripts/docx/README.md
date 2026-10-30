@@ -15,7 +15,9 @@
 
 - Python 3，依赖：`python-docx`、`pyyaml`、`fonttools`（`pip install python-docx pyyaml fonttools`）
 - 可选：LibreOffice（`soffice`，用于预排目录页码和转 PDF）；`pdftotext`（poppler-utils，用于 `--pdf` 检查）
-- 字体嵌入：构建时按 `style.yaml` 的 `fonts.embed` 查找黑体、楷体_GB2312、仿宋_GB2312、宋体的字体文件；西文字体 Source Serif 4（4.005 TTF，SIL OFL 1.1）随仓库放在 `fonts/SourceSerif4/`（含 LICENSE.md），构建时直接嵌入（`.ttf`/`.otf`；`.ttc` 不能嵌入 Word），找到的嵌入 docx 并打开 `embedTrueTypeFonts`、`saveSubsetFonts`；也可用环境变量 `BOOK_FONT_DIR` 指定字体目录。找不到的字体如实列出（终端与 `*.build.json` 的 `fonts_embedded`），不以其他字体替代；此时 `check_docx.py` 的“Word 嵌入字体”项不通过。正式出稿须在装有这些字体文件的机器上构建。
+- 字体（Scott 2026-10-30 定，全部改用开源字体，SIL OFL 1.1）：思源黑体 Noto Sans SC（替代黑体）、思源宋体 Noto Serif SC（替代宋体）、霞鹜文楷 LXGW WenKai（替代楷体_GB2312）、朱雀仿宋 Zhuque Fangsong（替代仿宋_GB2312），西文 Source Serif 4。字号、行距、缩进不变。
+- 字体文件：构建前先运行 `python3 fonts/fetch_fonts.py`，按固定 URL 下载中文字体并校验 sha256，放到 `fonts/cache/`（不入 git；Noto 可变字体自动生成静态 Regular/Bold）。Source Serif 4 已随仓库放在 `fonts/SourceSerif4/`。各字体授权原文在 `fonts/licenses/` 和 `fonts/SourceSerif4/LICENSE.md`。
+- 字体嵌入：构建时按 `style.yaml` 的 `fonts.embed` 查找上述字体（`.ttf`/`.otf`，跳过 `.ttc` 和可变字体；也可用 `BOOK_FONT_DIR` 指定目录），按本书实际用字子集化后嵌入 docx，并打开 `embedTrueTypeFonts`、`saveSubsetFonts`。找不到的字体如实列出，不以其他字体替代，此时 `check_docx.py` 的“Word 嵌入字体”项不通过。子集只含本书已有的字，在 Word 中新增生僻字时可能回退到本机字体。
 - 字号：图题、表题、表格文字均为五号（10.5pt），`check_docx.py` 逐段核对。
 
 ## 路径约定

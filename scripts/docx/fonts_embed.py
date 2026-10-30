@@ -58,6 +58,7 @@ def _family_names(path):
     from fontTools.ttLib import TTFont
     try:
         f = TTFont(str(path), lazy=True, fontNumber=0)
+        if 'fvar' in f: return set(), False   # 可变字体 Word 不能可靠嵌入，跳过（fetch_fonts.py 已生成静态 Regular/Bold）
         out = {r.toUnicode().strip() for r in f['name'].names if r.nameID in (1, 4, 16)}
         sub = {r.toUnicode().strip().lower() for r in f['name'].names if r.nameID in (2, 17)}
         return out, ('bold' in ' '.join(sub) and 'regular' not in sub)
@@ -86,6 +87,26 @@ def find_fonts(names, cfg):
         if fam: found.setdefault(fam, {}).setdefault('bold' if bold else 'regular', p)
     return {k: v for k, v in found.items() if 'regular' in v}
 
+def doc_chars(parts):
+    """docx 中实际出现的字符（正文、页眉页脚、脚注、目录），外加 ASCII 可见字符和常用全角标点，供字体子集化。"""
+    txt = set(chr(c) for c in range(0x20, 0x7f)) | set('　，。、；：？！“”‘’（）《》〈〉【】—…·－～％／０１２３４５６７８９')
+    for n, b in parts.items():
+        if re.match(r'word/(document|header\d*|footer\d*|footnotes|endnotes)\.xml$', n):
+            for m in re.finditer(rb'<w:(?:t|instrText)(?: [^>]*)?>([^<]*)</w:', b):
+                txt |= set(etree.fromstring(b'<x>' + m.group(1) + b'</x>').text or '')
+    return ''.join(sorted(txt))
+
+def subset_font(src, text):
+    """按 text 子集化（保留 name 表与排版特性，字体名不变），返回 TTF 字节；失败则返回 None（调用方改嵌完整字体）。"""
+    from fontTools import subset
+    try:
+        opt = subset.Options(); opt.name_IDs = ['*']; opt.name_languages = ['*']; opt.layout_features = ['*']
+        opt.notdef_outline = True; opt.glyph_names = False; opt.hinting = True; opt.legacy_kern = True
+        f = subset.load_font(str(src), opt); sb = subset.Subsetter(opt); sb.populate(text=text); sb.subset(f)
+        bio = __import__('io').BytesIO(); f.save(bio); return bio.getvalue()
+    except Exception as ex:
+        print(f'  子集化失败，嵌入完整字体：{src}（{ex}）'); return None
+
 def embed(docx_path, cfg):
     """原地改写 docx。返回 {'embedded': [{font, kind, file, bytes}], 'missing': [字体名]}。"""
     e = cfg.get('fonts', {}).get('embed') or {}
@@ -97,6 +118,7 @@ def embed(docx_path, cfg):
     rels_name = 'word/_rels/fontTable.xml.rels'
     rels = etree.fromstring(parts[rels_name]) if rels_name in parts else etree.Element(q(PR, 'Relationships'), nsmap={None: PR})
     res = {'embedded': [], 'missing': [n for n in names if n not in hits]}
+    do_sub = e.get('subset', True); text = doc_chars(parts) if do_sub else ''
     k = 0
     for name in names:
         if name not in hits: continue
@@ -107,14 +129,15 @@ def embed(docx_path, cfg):
             src = hits[name].get(kind)
             if not src: continue
             k += 1; guid = '{' + str(uuid.uuid4()).upper() + '}'; target = f'fonts/font{k}.odttf'
-            parts['word/' + target] = obfuscate(src.read_bytes(), guid)
+            data = (subset_font(src, text) if do_sub else None) or src.read_bytes()   # 子集化：只保留本书用到的字，docx 不至过大
+            parts['word/' + target] = obfuscate(data, guid)
             rid = f'rIdFont{k}'
             rel = etree.SubElement(rels, q(PR, 'Relationship')); rel.set('Id', rid); rel.set('Type', RT_FONT); rel.set('Target', target)
             tag = 'embedRegular' if kind == 'regular' else 'embedBold'
             old = font.find(q(W, tag))
             if old is not None: font.remove(old)
             em = etree.SubElement(font, q(W, tag)); em.set(q(R, 'id'), rid); em.set(q(W, 'fontKey'), guid)
-            res['embedded'].append({'font': name, 'kind': kind, 'file': str(src), 'bytes': src.stat().st_size})
+            res['embedded'].append({'font': name, 'kind': kind, 'file': str(src), 'bytes': len(data), 'source_bytes': src.stat().st_size})
     if res['embedded']:
         parts['word/fontTable.xml'] = etree.tostring(ft, xml_declaration=True, encoding='UTF-8', standalone=True)
         parts[rels_name] = etree.tostring(rels, xml_declaration=True, encoding='UTF-8', standalone=True)
