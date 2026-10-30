@@ -232,6 +232,27 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
+        # 15. 参考文献新规则：日期后裸“第…节”、说明文字以PDF页作主页码、离散页码用中文逗号/顿号、下册条目无链接题名 -> validate-middle 报错
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 1-2[2026-10-29]. 第4.2—4.6节。引用范围：测试。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 某某公司项目，PDF第35—38页。'
+                     '\n[5] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 3、6-9[2026-10-29].'
+                     '\n[6] 甲. 乙[EB/OL]. (2026-03-30): 1-2[2026-10-29].'
+                     '\n[7] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 1-2[2026-10-29]. 引用范围：附件3（PDF第21—23页）。')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            want = {'[3]': 'bare section locator', '[4]': 'main page locator', '[5]': 'half-width ", "', '[6]': 'linked title'}
+            ok('参考文献新规则（裸节号、PDF主页码、中文分隔、无链接题名）-> validate-middle 报错，附件PDF页定位不误报', r.returncode == 1
+               and all(any(n in e and w in e for e in errs) for n, w in want.items())
+               and not any('[7]' in e for e in errs), str(errs)[-400:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
+
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
         fr = [f"{v['dir']}/{f}" for v in cfg['volumes'].values() if isinstance(v, dict) and v.get('front') for f in v['front']]
