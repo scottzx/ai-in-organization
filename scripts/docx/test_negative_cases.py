@@ -15,6 +15,8 @@
   16. 一章多目录（下册第三十章“其他行业案例”）：门类按 groups 所列顺序排、各门类前印一次加粗引导行（不作标题），案例连续编 30.Y
   17. groups 列表里有不存在的子目录 -> build_docx 报错退出，指出该目录
   18. 调换 groups 列表顺序 -> 篇目顺序随之改变（顺序以配置为准，不按目录名排序）
+  19. 成品范围内 Markdown 出现失效 #锚点 / 指向不存在的文件 -> scripts/check-md-links.py 退出 1 并列出该处；仓库现状 0 处
+  20. 不给 -o -> 默认输出 {书名}-{册}.docx（如 企业数智化转型思路-上册.docx），文件名不含“样张”
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -301,6 +303,23 @@ def main():
                 if ch_ == mch and p_.parent.name not in seen: seen.append(p_.parent.name)
             return seen
         ok('调换 groups 列表顺序 -> 合并章门类顺序随配置改变', dirs_of(cfg0) == list(mdirs) and dirs_of(rev) == list(reversed(mdirs)), f'{dirs_of(cfg0)} {dirs_of(rev)}')
+
+        # 19. 失效锚点 / 失效文件链接 -> check-md-links 报错
+        chk = REPO / 'scripts' / 'check-md-links.py'
+        r = subprocess.run([sys.executable, str(chk), '--repo', str(repo)], capture_output=True, text=True)
+        ok('check-md-links 仓库现状 0 处失效', r.returncode == 0, r.stdout[-300:])
+        lk = repo / '索引' / '阅读路径.md'; lsrc0 = lk.read_text('utf-8')
+        try:
+            lk.write_text(lsrc0 + '\n\n[坏锚点](../上册-研究报告/01-智力即服务.md#section-1-99)\n[坏文件](../上册-研究报告/不存在.md)\n', 'utf-8')
+            r = subprocess.run([sys.executable, str(chk), '--repo', str(repo)], capture_output=True, text=True)
+        finally: lk.write_text(lsrc0, 'utf-8')
+        ok('失效锚点、失效文件 -> check-md-links 退出 1 并列出', r.returncode == 1 and '#section-1-99' in r.stdout and '不存在.md' in r.stdout, r.stdout[-300:])
+        # 20. 默认输出文件名
+        od = tmp / 'outdef'; od.mkdir()
+        r = subprocess.run([sys.executable, str(HERE / 'build_docx.py'), '--repo', str(repo), '--volume', 'upper', '--no-toc-pages'],
+                           env=dict(os.environ, BOOK_REPO=str(repo), DOCX_OUT_DIR=str(od)), capture_output=True, text=True)
+        names = sorted(x.name for x in od.glob('*.docx'))
+        ok('不给 -o -> 默认输出 企业数智化转型思路-上册.docx，不含“样张”', r.returncode == 0 and names == ['企业数智化转型思路-上册.docx'], f'{names} {r.stderr[-200:]}')
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
