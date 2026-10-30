@@ -4,7 +4,7 @@ book:
   subtitle: ""
   # 研究院不单独署名（Scott 2026-10-30 定）：不设 author 字段，扉页、版权页、docx 文件属性均不写编著单位
   copyright_holder: 杭州一芥智能有限公司   # 著作权人
-  edition: 二次修订版（排版样张）
+  edition: ""   # 成品不印版本字样（总编辑 2026-10-30 定，终审 P1-3）；留空时扉页不生成该行
   date: 2026年10月
 page:
   size: A4
