@@ -26,6 +26,9 @@
   23. group_leads 配给单目录章的目录 -> build_docx 报错退出（引导行只用于多目录章）
   24. “见PDF第x—y页”作主页码、离散页码“3,6”缺空格 -> validate-middle 报错
   25. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
+  26. 封面节页眉印书名、页脚有 PAGE 域 -> 封面页眉页码项不通过；目录节页码改阿拉伯数字 -> 目录页码项不通过
+  27. 去掉表格 tblHeader、表题/表头 keepNext -> 跨页表各项不通过
+  28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -120,6 +123,53 @@ def main():
         def f_out(d): retag(caps(d)[0], 'C')
         mutate(base, tmp / 'a_out.docx', f_out); rows = check(repo, tmp / 'a_out.docx', tmp / 'a_out.md')
         ok('附录外用字母“C-N” -> 题注编号项不通过', has_cap_err(rows, 'C-'), rows[CAP][1])
+
+        # 26–33. 出版审读 d7b16e3 预审 P1/P2：封面版权页无页眉页码、目录罗马页码、跨页表头、成品包清理
+        cfgL = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        COV = '封面、版权页 不印页眉页码（第1节页眉页脚为本节专用空白部件）'
+        TOCPG = f'目录节 页码{cfgL["page"]["front_matter_page_format"]}自1起'
+        BODYPG = '正文节 阿拉伯页码自1起（自第一篇，上册即导论）'
+        TH = '表格 首行为重复表头（tblHeader）'; TK = '表格 表头与下行同页（keepNext）且不跨页（cantSplit）'; TC = '表题 与下段同页（keepNext）'
+        PK = '成品包无 stylesWithEffects 部件及引用、无 Courier/Symbol 字体名、样式无主题色（themeColor）'
+        rows0 = check(repo, base, tmp / 'base2.md')
+        ok('基准样张 封面无页眉页码、目录/正文页码、表头重复、成品包清理各项通过', all(rows0.get(k, (False,))[0] for k in (COV, TOCPG, BODYPG, TH, TK, TC, PK)), str({k: rows0.get(k) for k in (COV, TOCPG, BODYPG, TH, TK, TC, PK)}))
+        def f_cov(d): d.sections[0].header.paragraphs[0].text = cfgL['book']['title']
+        mutate(base, tmp / 'cov.docx', f_cov); rows = check(repo, tmp / 'cov.docx', tmp / 'cov.md')
+        ok('封面节页眉印了书名 -> 封面页眉页码项不通过', not rows[COV][0], str(rows.get(COV)))
+        def f_covpg(d):
+            from docx.oxml import OxmlElement as OE
+            fp = d.sections[0].footer.paragraphs[0]; r_ = OE('w:r'); it = OE('w:instrText'); it.text = ' PAGE '; r_.append(it); fp._p.append(r_)
+        mutate(base, tmp / 'covpg.docx', f_covpg); rows = check(repo, tmp / 'covpg.docx', tmp / 'covpg.md')
+        ok('封面节页脚有 PAGE 域 -> 封面页眉页码项不通过', not rows[COV][0], str(rows.get(COV)))
+        def f_tocpg(d):
+            from docx.oxml.ns import qn as Q
+            d.sections[1]._sectPr.find(Q('w:pgNumType')).set(Q('w:fmt'), 'decimal')
+        mutate(base, tmp / 'tocpg.docx', f_tocpg); rows = check(repo, tmp / 'tocpg.docx', tmp / 'tocpg.md')
+        ok('目录节页码改成阿拉伯数字 -> 目录页码项不通过', not rows[TOCPG][0], str(rows.get(TOCPG)))
+        def f_th(d):
+            from docx.oxml.ns import qn as Q
+            tp = d.tables[0].rows[0]._tr.trPr; tp.remove(tp.find(Q('w:tblHeader')))
+            next(p for p in d.paragraphs if p.style.name == 'Caption' and p.text.startswith('表')).paragraph_format.keep_with_next = False
+            for c in d.tables[1].rows[0].cells:
+                for q_ in c.paragraphs: q_.paragraph_format.keep_with_next = False
+        mutate(base, tmp / 'th.docx', f_th); rows = check(repo, tmp / 'th.docx', tmp / 'th.md')
+        ok('去掉首个表的 tblHeader -> 重复表头项不通过', not rows[TH][0] and '第1个表格' in rows[TH][1], str(rows.get(TH)))
+        ok('表题去掉 keepNext -> 表题同页项不通过', not rows[TC][0], str(rows.get(TC)))
+        ok('表头行去掉 keepNext -> 表头同页项不通过', not rows[TK][0] and '第2个表格' in rows[TK][1], str(rows.get(TK)))
+        def add_swe(src, dst):
+            import zipfile
+            with zipfile.ZipFile(src) as zi, zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED) as zo:
+                for n in zi.namelist(): zo.writestr(n, zi.read(n))
+                zo.writestr('word/stylesWithEffects.xml', '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Courier"/></w:rPr></w:rPrDefault></w:docDefaults></w:styles>')
+            shutil.copy2(Path(src).with_suffix('.build.json'), Path(dst).with_suffix('.build.json'))
+        add_swe(base, tmp / 'swe.docx'); rows = check(repo, tmp / 'swe.docx', tmp / 'swe.md')
+        ok('包里放回 stylesWithEffects（含 Courier）-> 成品包项不通过', not rows[PK][0] and 'stylesWithEffects' in rows[PK][1] and 'Courier' in rows[PK][1], str(rows.get(PK)))
+        zip_mutate(base, tmp / 'theme.docx', 'word/styles.xml', lambda x: x.replace('<w:color w:val="000000"/>', '<w:color w:val="4F81BD" w:themeColor="accent1"/>', 1))
+        rows = check(repo, tmp / 'theme.docx', tmp / 'theme.md')
+        ok('样式里出现 themeColor 主题蓝 -> 成品包项不通过', not rows[PK][0] and '主题色' in rows[PK][1], str(rows.get(PK)))
+        zip_mutate(base, tmp / 'sym.docx', 'word/numbering.xml', lambda x: re.sub(r'\s*/>\s*$', '>', x, count=1).replace('</w:numbering>', '') + '<w:abstractNum w:abstractNumId="9"><w:lvl w:ilvl="0"><w:rPr><w:rFonts w:ascii="Symbol" w:hAnsi="Symbol"/></w:rPr></w:lvl></w:abstractNum></w:numbering>')
+        rows = check(repo, tmp / 'sym.docx', tmp / 'sym.md')
+        ok('numbering.xml 出现 Symbol 字体 -> 成品包项不通过', not rows[PK][0] and 'Symbol' in rows[PK][1], str(rows.get(PK)))
 
         # 5. 回退白名单
         WL = '缺字回退仅限 style.yaml fonts.glyph_fallback_chars 白名单字符'

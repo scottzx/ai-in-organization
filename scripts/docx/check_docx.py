@@ -381,9 +381,36 @@ def main():
     # 目录、页眉页脚、版权页
     xml = doc.element.xml
     check('目录 TOC 域存在', 'TOC \\o' in xml, '未找到 TOC 域')
-    for si, s in enumerate(doc.sections):
+    # 分节：第1节封面＋版权页不印页眉页码；第2节目录小写罗马页码自 i 起；第3节起正文阿拉伯页码自 1 起（出版审读 d7b16e3 预审 P1-1）
+    secs = doc.sections
+    check('分节：封面版权页／目录／正文 三节', len(secs) >= 3, f'实为 {len(secs)} 节')
+    def _pg(s_):
+        g = s_._sectPr.find(qn('w:pgNumType')); return (g.get(qn('w:fmt')), g.get(qn('w:start'))) if g is not None else (None, None)
+    for si, s in enumerate(secs):
+        if si == 0:
+            hx = s.header._element.xml if not s.header.is_linked_to_previous else ''
+            fx = s.footer._element.xml if not s.footer.is_linked_to_previous else ''
+            check('封面、版权页 不印页眉页码（第1节页眉页脚为本节专用空白部件）', not s.header.is_linked_to_previous and not s.footer.is_linked_to_previous
+                  and not ''.join(q.text for q in s.header.paragraphs + s.footer.paragraphs).strip() and 'PAGE' not in hx + fx, '第1节页眉页脚有内容或无专用部件')
+            continue
         check('页眉 = 书名(配置 book.title)', s.header.paragraphs[0].text.strip() == cfg['book']['title'], f'第{si+1}节 实为“{s.header.paragraphs[0].text}”')
         check('页脚 含 PAGE 页码域', 'PAGE' in s.footer._element.xml, f'第{si+1}节')
+        if si == 1: check(f'目录节 页码{cfg["page"]["front_matter_page_format"]}自1起', _pg(s) == (cfg['page']['front_matter_page_format'], '1'), f'实为 {_pg(s)}')
+        if si == 2: check('正文节 阿拉伯页码自1起（自第一篇，上册即导论）', _pg(s) == ('decimal', '1'), f'实为 {_pg(s)}')
+    hparts = [s.header.part.partname for s in secs] if len(secs) >= 2 else []
+    check('封面节页眉部件与后续各节不共用', len(hparts) < 2 or hparts[0] not in hparts[1:], f'{hparts}')
+    # 跨页表：首行重复表头；表头与表身前几行不跨页、与下行同页
+    for i, t in enumerate(doc.tables):
+        tr = t.rows[0]._tr; trpr = tr.trPr
+        check('表格 首行为重复表头（tblHeader）', trpr is not None and trpr.find(qn('w:tblHeader')) is not None, f'第{i+1}个表格')
+        if len(t.rows) > 1:
+            check('表格 表头与下行同页（keepNext）且不跨页（cantSplit）', trpr is not None and trpr.find(qn('w:cantSplit')) is not None and all(eff_pf(q, 'keep_with_next') for c in t.rows[0].cells for q in c.paragraphs), f'第{i+1}个表格')
+    for p in doc.paragraphs:
+        if p.style.name == 'Caption' and p.text.startswith('表'):
+            check('表题 与下段同页（keepNext）', bool(eff_pf(p, 'keep_with_next')), p.text[:20])
+    import package_clean   # 成品包：无 stylesWithEffects、无 Courier/Symbol 字体、样式无主题色
+    pb = package_clean.audit(a.docx)
+    check('成品包无 stylesWithEffects 部件及引用、无 Courier/Symbol 字体名、样式无主题色（themeColor）', not pb, '；'.join(pb))
     check('版权页 存在且含书名', any('Copyright' in p.text for p in doc.paragraphs) and any(cfg['book']['title'] in p.text and '书名' in p.text for p in doc.paragraphs), '未找到')
     bk = cfg['book']
     check('版权页 含著作权人', any(('著作权人：' + bk['copyright_holder']) in p.text for p in doc.paragraphs), '缺著作权人')
