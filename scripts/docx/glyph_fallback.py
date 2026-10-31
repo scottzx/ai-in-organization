@@ -8,6 +8,8 @@ import fonts_embed
 class GlyphError(Exception):
     """白名单（style.yaml fonts.glyph_fallback_chars）外的字符缺字形，或回退字体也没有该字形。"""
 
+CTRL = {'\u2060'}   # WORD JOINER：零宽排版控制符（宽表防断词），不绘字形，无需字体收录
+
 def whitelist(cfg):
     return set(cfg.get('fonts', {}).get('glyph_fallback_chars') or [])
 
@@ -26,12 +28,12 @@ def fix(doc, cfg, parts=None):
             east = rf.get(qn('w:eastAsia')) if rf is not None else None
             if east not in cmaps: continue
             cm = cmaps[east]
-            if all(ord(c) < 0x80 or ord(c) in cm for c in t.text): continue
+            if all(ord(c) < 0x80 or c in CTRL or ord(c) in cm for c in t.text): continue
             # 按“有字/缺字”切段
             segs, cur, curf = [], '', None
             for c in t.text:
                 f = None
-                if ord(c) >= 0x80 and ord(c) not in cm:
+                if ord(c) >= 0x80 and c not in CTRL and ord(c) not in cm:
                     f = next((n for n in order if n in cmaps and ord(c) in cmaps[n]), None) if c in allow else None
                     if not f:
                         k = f'U+{ord(c):04X} {c}（{east}缺字，' + ('回退字体也无此字）' if c in allow else '不在 fonts.glyph_fallback_chars 白名单）')

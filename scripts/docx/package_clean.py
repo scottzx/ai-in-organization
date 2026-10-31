@@ -4,6 +4,8 @@
   1. 删除 python-docx 模板残留的 word/stylesWithEffects.xml（内含 Courier 等专有字体名），并删除 rels、[Content_Types] 中对它的引用；
   2. numbering.xml：删除正文未使用的编号定义（模板里带 Symbol 字体的项目符号），同时去掉样式里指向这些编号的 numPr；
   3. styles.xml：去掉全部主题色引用（themeColor/themeTint/themeShade/themeFill…），文字和边框颜色一律改为黑色 000000。
+  4. styles.xml：删除正文（含页眉页脚脚注）没有引用的内置样式中带底纹或彩色的那些（Light Shading 等 98 个表格样式及彩色内置样式），
+     保留样式的颜色一律改黑、底纹（w:shd 的 fill）一律去掉，清理后 styles.xml 不含非黑颜色和底纹。
 只改包结构和未使用的定义，不改正文。"""
 import re, shutil, tempfile, zipfile
 from pathlib import Path
@@ -27,6 +29,37 @@ def _clean_styles(st, drop_num):
     for numpr in root.iter(q('numPr')):
         nid = numpr.find(q('numId'))
         if nid is not None and nid.get(q('val')) in drop_num: numpr.getparent().remove(numpr)
+    return etree.tostring(root, xml_declaration=True, encoding='UTF-8', standalone=True), n
+
+BLACK = {'000000', 'auto'}
+def colored(el):
+    """元素（含子孙）有非黑颜色或底纹填充。"""
+    for e in el.iter():
+        if e.get(q('fill')) not in (None, 'auto'): return True
+        if e.tag == q('color') and e.get(q('val')) not in BLACK: return True
+        if e.tag != q('color') and e.get(q('color')) not in (None, *BLACK): return True
+    return False
+
+def _prune_styles(st, used):
+    """删除未引用的彩色/底纹样式（含全部未引用的表格样式），并把保留样式的颜色改黑、去底纹。返回 (xml, 删除的样式数)。"""
+    root = etree.fromstring(st)
+    styles = {s.get(q('styleId')): s for s in root.findall(q('style'))}
+    keep = set(used) | {i for i, s in styles.items() if s.get(q('default')) == '1'}
+    todo = list(keep)
+    while todo:   # basedOn / link / next 依赖闭包
+        s = styles.get(todo.pop())
+        if s is None: continue
+        for t in ('basedOn', 'link', 'next'):
+            e = s.find(q(t))
+            if e is not None and e.get(q('val')) not in keep: keep.add(e.get(q('val'))); todo.append(e.get(q('val')))
+    n = 0
+    for i, s in styles.items():
+        if i not in keep and (s.get(q('type')) == 'table' or colored(s)): root.remove(s); n += 1
+    for e in list(root.iter(q('shd'))):
+        if e.get(q('fill')) not in (None, 'auto'): e.getparent().remove(e)
+    for e in root.iter():
+        if e.tag == q('color') and e.get(q('val')) not in BLACK: e.set(q('val'), '000000')
+        elif e.tag != q('color') and e.get(q('color')) not in (None, *BLACK): e.set(q('color'), '000000')
     return etree.tostring(root, xml_declaration=True, encoding='UTF-8', standalone=True), n
 
 def _clean_numbering(nb, used):
@@ -57,6 +90,11 @@ def clean(path):
         data['word/numbering.xml'], drop = _clean_numbering(data['word/numbering.xml'], used)
     log['numbering_removed'] = sorted(drop, key=int)
     data['word/styles.xml'], log['theme_color_refs_removed'] = _clean_styles(data['word/styles.xml'], drop)
+    sused = set()
+    for n in names:
+        if re.match(r'word/(document|header\d*|footer\d*|footnotes|endnotes|numbering)\.xml$', n) and n in data:
+            sused |= {u.decode() for u in re.findall(rb'<w:(?:pStyle|rStyle|tblStyle|numStyleLink|styleLink) w:val="([^"]+)"', data[n])}
+    data['word/styles.xml'], log['styles_removed'] = _prune_styles(data['word/styles.xml'], sused)
     log['stylesWithEffects_removed'] = SWE in data
     data.pop(SWE, None)
     for n in [x for x in data if x.endswith('.rels')]:
@@ -93,4 +131,14 @@ def audit(path):
         st = z.read('word/styles.xml')
         k = len(re.findall(rb'w:theme(Color|Tint|Shade|Fill)', st))
         if k: bad.append(f'styles.xml 有 {k} 处主题色引用')
+    return bad
+
+def styles_color_issues(st):
+    """styles.xml 中的非黑颜色（w:color、边框 color）和底纹填充（fill）。"""
+    root = etree.fromstring(st); bad = []
+    cols = sorted({e.get(q('val')) for e in root.iter(q('color')) if e.get(q('val')) not in BLACK} |
+                  {e.get(q('color')) for e in root.iter() if e.tag != q('color') and e.get(q('color')) not in (None, *BLACK)})
+    fills = sorted({e.get(q('fill')) for e in root.iter() if e.get(q('fill')) not in (None, 'auto')})
+    if cols: bad.append(f'styles.xml 有非黑颜色 {len(cols)} 种：' + '、'.join(cols[:8]))
+    if fills: bad.append(f'styles.xml 有底纹填充 {len(fills)} 种：' + '、'.join(fills[:8]))
     return bad

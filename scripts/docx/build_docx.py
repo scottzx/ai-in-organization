@@ -25,6 +25,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.shared import Pt, Cm, RGBColor, Emu
+from docx.enum.section import WD_ORIENT
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parent.parent          # 仓库根目录（scripts/docx 的上两级）
@@ -312,6 +313,9 @@ class Builder:
                 lines = [code2sec(l) for l in lines]
         self.ch = ch; self.n2 = self.n3 = self.n4 = 0
         self.is_guide = guide_kind(self.cfg, rel, md_path.name) == 'x00'
+        mc = self.cfg.get('tables', {}).get('landscape_min_cols', 99)   # 篇内有横排宽表：整篇（标题、说明段）自篇首起排进横排节
+        if any(re.match(r'^\s*\|', l) and l.strip().strip('|').count('|') + 1 >= mc and re.match(r'^\s*\|[\s:|-]+\|?\s*$', lines[i + 1] if i + 1 < len(lines) else '') for i, l in enumerate(lines)):
+            self.orient_section(True); self.land_open = True
         if self.demote:
             host = self.host.get(rel, ch)
             if host in self.demote and host != self.last_ch:   # 本章第一篇（或导读页）前印章标题；下册附编按附录字母印“附录X　标题”
@@ -550,14 +554,96 @@ class Builder:
         if title: self.collect.setdefault((kind, norm_title(title)), []).append({'no': f'{kind}{self.label}-{n}', 'file': self.cur_file})
         return p
 
+    def orient_section(self, landscape):
+        """另起一节（页码续排、页眉页脚同正文），横排或恢复竖排。"""
+        s = self.doc.add_section(WD_SECTION.NEW_PAGE)
+        w, h = Cm(21.0), Cm(29.7)
+        s.orientation = WD_ORIENT.LANDSCAPE if landscape else WD_ORIENT.PORTRAIT
+        s.page_width, s.page_height = (h, w) if landscape else (w, h)
+        self.decorate_section(s, 'decimal', False)
+        pg = s._sectPr.find(qn('w:pgNumType'))
+        if pg is not None and pg.get(qn('w:start')) is not None: del pg.attrib[qn('w:start')]
+        return s
+
+    TOKEN = re.compile(r'[A-Za-z0-9][\w\-.]*\w')   # 不宜断开的词：文件名、篇目号（C25-医疗装备）等
+    @staticmethod
+    def text_em(t):
+        t = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', t).replace('**', '').replace('`', '')
+        return sum(1.0 if ord(c) > 0x2e80 else 0.55 for c in t)
+
+    PAD = 14.0
+    def column_widths(self, header, body, ncol, width_pt, size_pt):
+        """每列下限＝表头、最长不可断词（含两侧单元格边距）；余宽按文字量分配。返回各列 pt。"""
+        pad = self.PAD   # 单元格左右边距约 10.8pt，另留粗体表头余量
+        col = lambda ci: [r[ci] if ci < len(r) else '' for r in body]
+        clean = lambda c: re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', c)
+        unb = lambda c: [clean(c)] if self.text_em(c) <= 8 else self.TOKEN.findall(clean(c))   # 短单元格（≤8 字）整格不断行
+        mins = [max([self.text_em(header[ci] if ci < len(header) else '')] + [self.text_em(t) for c in col(ci) for t in unb(c)]) * size_pt + pad for ci in range(ncol)]
+        tot = [sum(self.text_em(c) for c in col(ci)) or 1 for ci in range(ncol)]
+        extra = width_pt - sum(mins)
+        if extra <= 0:   # 排不下：先保证表头整格（表头不断行），其余按超出部分比例分
+            hmin = [self.text_em(header[ci] if ci < len(header) else '') * size_pt + pad for ci in range(ncol)]
+            over = [m - h for m, h in zip(mins, hmin)]
+            return [h + o * (width_pt - sum(hmin)) / (sum(over) or 1) for h, o in zip(hmin, over)]
+        return [m + extra * t / sum(tot) for m, t in zip(mins, tot)]
+
+    def wide_cell(self, p, col_pt, size_pt, pad):
+        """横排宽表单元格防断词（不插零宽字符）：文件名、篇目号里的连字符改 w:noBreakHyphen；
+        按估算行宽，整词排不下当前行时在词前加 w:br 换行；比列宽还长的文件名在连字符处分段，段间保留普通连字符并换行。"""
+        colem = (col_pt - pad) / size_pt * 0.92   # 估算留 8% 余量
+        runs = [r for r in p._p.iter(qn('w:r')) if r.find(qn('w:t')) is not None]
+        pos = 0.0
+        def mk(tag, text=None):
+            e = OxmlElement(tag)
+            if text is not None: e.text = text; e.set('{http://www.w3.org/XML/1998/namespace}space', 'preserve')
+            return e
+        for r in runs:
+            ts = r.findall(qn('w:t')); text = ''.join(t.text or '' for t in ts)
+            for t in ts: r.remove(t)
+            out = []; k = 0
+            def plain(x):
+                nonlocal pos
+                for ch in x:
+                    w = 1.0 if ord(ch) > 0x2e80 else 0.55
+                    pos = w if pos + w > colem else pos + w
+                if x: out.append(mk('w:t', x))
+            for m in self.TOKEN.finditer(text):
+                plain(text[k:m.start()]); k = m.end(); tok = m.group(0); em = self.text_em(tok)
+                if em <= colem:
+                    if pos > 0 and pos + em > colem: out.append(mk('w:br')); pos = 0.0
+                    segs = tok.split('-')
+                    for i, sg in enumerate(segs):
+                        if i: out.append(mk('w:noBreakHyphen'))
+                        if sg: out.append(mk('w:t', sg))
+                    pos += em
+                else:   # 超长文件名：在连字符处分段，每段排满一行，段尾保留普通连字符
+                    if pos > 0: out.append(mk('w:br')); pos = 0.0
+                    segs = tok.split('-'); line = ''
+                    for i, sg in enumerate(segs):
+                        piece = sg + ('-' if i < len(segs) - 1 else '')
+                        if line and self.text_em(line + piece) > colem:
+                            out.append(mk('w:t', line)); out.append(mk('w:br')); line = ''
+                        line += piece
+                    out.append(mk('w:t', line)); pos = self.text_em(line)
+            plain(text[k:])
+            for e in out: r.append(e)
+
     def table(self, rows):
         cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows]
         header, body = cells[0], cells[2:]
+        ncol0 = max(len(header), *(len(r) for r in body)) if body else len(header)
+        wide = ncol0 >= self.cfg.get('tables', {}).get('landscape_min_cols', 99)
+        if wide and not getattr(self, 'land_open', False): self.orient_section(True)
+        self.land_open = False
         idx = self.ntab - self.tab_base
         title = self.titles[idx] if idx < len(self.titles) else ''
         if not title: self.log['warnings'].append(f'第{self.label}章 表{idx+1} 无表题，仅编号')
         cap = self.caption('表', title); cap.paragraph_format.keep_with_next = True
         ncol = max(len(header), *(len(r) for r in body)) if body else len(header)
+        if wide:
+            sec = self.doc.sections[-1]
+            wpt = (sec.page_width - sec.left_margin - sec.right_margin) / 12700
+            ws = self.column_widths(header, body, ncol, wpt, self.lv('table')['size_pt'])
         t = self.doc.add_table(rows=1 + len(body), cols=ncol)
         t.style = self.doc.styles['Table Grid']; t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for ri, row in enumerate([header] + body):
@@ -566,6 +652,11 @@ class Builder:
                 c = self.lv('table')
                 fmt_par(p.paragraph_format, self.cfg, 'center' if ri == 0 else c['align'], 0, c['size_pt'])
                 self.inline(p, row[ci] if ci < len(row) else '', 'table', ri == 0)
+                if wide:
+                    txt = row[ci] if ci < len(row) else ''
+                    if ri == 0 or self.text_em(txt) <= 8:   # 表头、短单元格整格不折行
+                        tcPr = cell._tc.get_or_add_tcPr(); tcPr.append(OxmlElement('w:noWrap'))
+                    else: self.wide_cell(p, ws[ci], c['size_pt'], self.PAD)
         # 跨页表（出版审读 #108 复审 P1）：首行为重复表头且不跨页；表头只与表身第 1 行同页（keepNext）。
         # 表身各行不加 cantSplit/keepNext——行高的索引表若整块绑定，会把表题单独挤到上一页。
         if t.rows:
@@ -574,6 +665,17 @@ class Builder:
             if len(t.rows) > 1:
                 for c_ in t.rows[0].cells:
                     for q_ in c_.paragraphs: q_.paragraph_format.keep_with_next = True
+        if wide:   # 横排宽表：固定布局，列宽按内容分配；表后恢复竖排
+            tblPr = t._tbl.tblPr; lay = OxmlElement('w:tblLayout'); lay.set(qn('w:type'), 'fixed'); tblPr.append(lay)
+            tw = tblPr.find(qn('w:tblW'))
+            if tw is None: tw = OxmlElement('w:tblW'); tblPr.append(tw)
+            tw.set(qn('w:w'), str(int(sum(ws) * 20))); tw.set(qn('w:type'), 'dxa')
+            for gc, wv in zip(t._tbl.tblGrid.findall(qn('w:gridCol')), ws): gc.set(qn('w:w'), str(int(wv * 20)))
+            for row in t.rows:
+                for ci, c_ in enumerate(row.cells): c_.width = Pt(ws[ci])
+            self.log.setdefault('landscape_tables', []).append({'file': self.cur_file, 'cols': ncol, 'widths_pt': [round(x, 1) for x in ws]})
+            self.orient_section(False)
+            return
         # 表格边框黑色
         self.para('Normal', key='body')  # 表后空行（行距同正文）
 
@@ -686,6 +788,10 @@ class Builder:
     def save(self, out):
         # 门类导读已删除：不再做“导读单独成页、X.1 前分页”
 
+        # 横排宽表若是全书最后的内容，表后补的竖排节为空：删去空节，末节即横排节（避免末尾空白页）
+        body = self.doc.element.body; last = body[-1]; prev = last.getprevious()
+        if last.tag == qn('w:sectPr') and prev is not None and prev.tag == qn('w:p') and prev.find(qn('w:pPr') + '/' + qn('w:sectPr')) is not None and not ''.join(prev.itertext()).strip():
+            sp = prev.find(qn('w:pPr')).find(qn('w:sectPr')); body.remove(last); body.remove(prev); body.append(sp)
         self.doc.core_properties.title = self.cfg['book']['title']
         cp = self.doc.core_properties   # 研究院不单独署名：作者、最后修改者等留空（python-docx 模板默认作者为 python-docx）
         cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''
