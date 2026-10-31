@@ -96,6 +96,10 @@ class Builder:
         captions = repo / 'scripts/pdf-table-captions.json'
         self.table_titles = json.loads(captions.read_text('utf-8')) if captions.exists() else {}
         self.xrefs = []
+        # 多目录章的门类引导行：{仓库相对目录: 引导文字}（style.yaml volumes.<vol>.group_leads）；不编号、不作标题，印为加粗正文行
+        self.leads = {f"{v['dir']}/{sub}": t for v in cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir')
+                      for sub, t in (v.get('group_leads') or {}).items()}
+        self.last_lead = None
         self.chap_counters = {}      # 章号 -> [ntab, nfig]：同一章的多个篇目连续编号
         self.registry = registry if registry is not None else {}   # {('图'|'表', 题名): [编号...]}，上一轮收集，供 {{fig:}}/{{tab:}} 解析
         self.collect = {}            # 本轮收集
@@ -305,6 +309,10 @@ class Builder:
                 self.heading_raw(1, self.cfg['numbering']['chapter_format'].format(cn=cn_num(host), title=self.demote[host]) if isinstance(host, int)
                                  else f'附录{host}\u3000{self.demote[host]}')
             self.whole = ch in self.demote and len(self.members.get(ch, [])) == 1 and self.is_guide is False and ch in self.whole_ch
+        _ldir = rel.rsplit('/', 1)[0]
+        if _ldir in self.leads and _ldir != self.last_lead:   # 门类引导行：本门类第一篇之前印一次
+            self.last_lead = _ldir
+            lp = self.para('Normal'); self.inline(lp, self.leads[_ldir], 'body', bold=True)
         # 册首 front 篇目（style.yaml volumes.<vol>.front，如下册 00-导言.md）不编章号：图表号用“导”，即 图导-1／表导-1；其余不编号篇目仍按 0 计
         _fdir = next((v['dir'] for v in self.cfg.get('volumes', {}).values() if isinstance(v, dict) and v.get('dir') and rel in {f"{v['dir']}/{f}" for f in v.get('front', [])}), None)
         self.label = str(ch) if ch is not None else ('导' if _fdir else '0'); self.cur_file = rel
@@ -747,10 +755,12 @@ def volume_items(cfg, repo, name, relabel=None):
         return out
     if 'groups' in v:
         items = [(repo / v['dir'] / f, None) for f in v.get('front', [])]   # 册首不编号篇目（下册导言），排在各章之前
-        for c, sub in v['groups'].items():
-            d = repo / v['dir'] / sub
-            if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
-            items += [(p, lab(parse_ch(c))) for p in sorted(d.glob('*.md'))]   # README.md（门类导读）由 exclude.patterns 剔除
+        for c, subs in v['groups'].items():
+            # 一章可对应多个子目录（如下册末章“其他行业案例”汇集若干门类）：按所列顺序排，各目录内按文件名排
+            for sub in (subs if isinstance(subs, list) else [subs]):
+                d = repo / v['dir'] / sub
+                if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
+                items += [(p, lab(parse_ch(c))) for p in sorted(d.glob('*.md'))]   # README.md（门类导读）由 exclude.patterns 剔除
         return items
     if 'chapters' in v:   # 按全书章号映射：{章号: [篇目...]}；未列出的 X00 导读页不编号，附录按字母
         fmap = {alt.strip(): ch for ch, fs in v['chapters'].items() for f in fs for alt in str(f).split('|')}
