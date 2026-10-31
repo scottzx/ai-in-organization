@@ -10,8 +10,12 @@
   7. pdfinfo 无页数输出 -> toc_fill 抛 TocError（不再 AttributeError）；生成的 docx 权限为 0644
   8. 端到端：PATH 上的 pdfinfo 输出为空 -> build_docx 退出 7，且半成品 docx 已删除（需 soffice）
   9. fontTable.xml 列有 Times New Roman / ＭＳ 明朝、settings themeFontLang 为 ja-JP -> 显式字体项不通过；基准样张 fontTable 只有开源字体
+  10. 缺字回退提示：有 build.json 时为“共 N 种、合计 M 处”；无 build.json 时注明“次数仅供参考”
   11. 白名单外篇目在来源索引中标 presentation: brief -> check-case-structure 不通过
   12. 白名单内简述篇仍用七节模板 -> check-case-structure 不通过（简述篇正文不得有其他标题）
+  13. 白名单内简述篇正文超过 400 字 -> check-case-structure 不通过
+  14. 下册参考文献旧写法（日期后写页码、页码用—、日期后裸“PDF第x—y页”）-> validate-middle 报错
+  15. 参考文献新规则（裸节号、PDF 作主页码、离散页码分隔、无链接题名）-> validate-middle 报错；附件 PDF 页定位不误报
   16. 一章多目录（下册第三十章“其他行业案例”）：门类按 groups 所列顺序排、各门类前印一次加粗引导行（不作标题），案例连续编 30.Y
   17. groups 列表里有不存在的子目录 -> build_docx 报错退出，指出该目录
   18. 调换 groups 列表顺序 -> 篇目顺序随之改变（顺序以配置为准，不按目录名排序）
@@ -20,6 +24,8 @@
   21. 同一目录在 groups 中列了两次 -> build_docx 报错退出，不留半成品
   22. 某章目录列表为空、或目录里没有可排篇目（只有 README）-> build_docx 报错退出，不留半成品
   23. group_leads 配给单目录章的目录 -> build_docx 报错退出（引导行只用于多目录章）
+  24. “见PDF第x—y页”作主页码、离散页码“3,6”缺空格 -> validate-middle 报错
+  25. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -261,7 +267,7 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
-        # 19. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
+        # 24. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
         lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
         try:
             u = 'https://example.com/a.pdf'
@@ -277,7 +283,7 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
-        # 20. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
+        # 25. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
         lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
         try:
             u = 'https://example.com/a.pdf'
