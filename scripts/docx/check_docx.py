@@ -501,19 +501,34 @@ def main():
         p = ps[k]; nx = ps[k + 1].text.strip() if k + 1 < len(ps) else ''
         check('图题格式“图X-Y　标题”（front 篇目“图导-Y”）且居中', bool(re.match(r'^图 ?导-\d+\u3000\S' if any(p._p is e for e in front_caps) else r'^图 ?(?:[1-9]\d*|[A-Z])-\d+\u3000\S', p.text)) and eff_pf(p, 'alignment') == 1, p.text[:20])
         check('图题下一行为资料来源/数据来源', bool(re.match(r'^(资料来源|数据来源)', nx)), p.text[:20])
-    # 图源索引表（附录B）图号须与成品图题一致：按图题文字对照
-    capnum = {}
+    # 图源索引表（附录B）图号须与成品图题一致：按图题文字对照（出版审读 #111/#112 复审）
+    # 先去零宽字符（U+2060/200B/200C/200D/FEFF，横排表格单元格会插 U+2060）；
+    # 索引表存在但 0 行可解析、图题找不到或对应多个成品图题，一律不通过（不跳过、不取第一个）。
+    ZW = dict.fromkeys(map(ord, '\u2060\u200b\u200c\u200d\ufeff'))
+    def zw(s): return s.translate(ZW).strip()
+    APPB = '图源索引表图号与成品图题一致（按图题文字对照）'
+    capnums = {}
     for k in caps:
-        m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)\u3000(.+)$', ps[k].text.strip())
-        if m: capnum.setdefault(m.group(2).strip(), m.group(1))
+        m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)\u3000(.+)$', zw(ps[k].text))
+        if m: capnums.setdefault(m.group(2).strip(), []).append(m.group(1))
     for t in doc.tables:
-        for row in t.rows:
+        if len(t.rows) < 1 or len(t.rows[0].cells) < 2: continue
+        hd = [zw(c.text) for c in t.rows[0].cells[:2]]
+        if hd != ['图号', '图题']: continue
+        parsed = 0
+        for row in t.rows[1:]:
             cs = row.cells
             if len(cs) < 2: continue
-            m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)$', cs[0].text.strip())
-            if not m or cs[1].text.strip() not in capnum: continue
-            check('图源索引表图号与成品图题一致（按图题文字对照）', capnum[cs[1].text.strip()] == m.group(1),
-                  f'{cs[1].text.strip()[:16]} 索引表为{m.group(1)}，图题为{capnum[cs[1].text.strip()]}')
+            num, title = zw(cs[0].text), zw(cs[1].text)
+            m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)$', num)
+            if not m:
+                check(APPB, False, f'索引表图号无法解析：{num[:16]!r}'); continue
+            parsed += 1
+            got = capnums.get(title, [])
+            if not got: check(APPB, False, f'{title[:16]} 索引表为{m.group(1)}，成品中找不到该图题')
+            elif len(got) > 1: check(APPB, False, f'{title[:16]} 索引表为{m.group(1)}，成品中有 {len(got)} 个同名图题（{"、".join(got)}）')
+            else: check(APPB, got[0] == m.group(1), f'{title[:16]} 索引表为{m.group(1)}，图题为{got[0]}')
+        if parsed == 0: check(APPB, False, f'图源索引表存在但 0 行可解析（共 {len(t.rows) - 1} 行）')
     # 输出
     total_fail = sum(1 for v in items.values() if v[1])
     out = [f'# 格式检查清单：{Path(a.docx).name}', '',
