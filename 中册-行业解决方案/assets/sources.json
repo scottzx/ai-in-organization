@@ -70,138 +70,32 @@
       "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
     },
     {
-      "asset": "B01-钢铁-43.png",
-      "source_id": "B01",
-      "source_title": "工业互联网与钢铁行业融合应用参考指南（2021年）",
-      "pdf_page": 43,
-      "source_url": "https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=43",
-      "source_sha256": "9b09986aa1f7ac090352bdc1df4b21c6045b29614fe7fce7b80de9caeab27c84",
-      "asset_sha256": "6d658c42defa41923b7724d738503710342d658b6447bccec51d3fe6c5d6d506",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1713,
-        1117
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          841.9,
-          595.3
-        ],
-        "pdf_bbox_points": [
-          81.96,
-          92.04,
-          762.24,
-          535.43
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.238,
-        "page_height_removed_fraction": 0.2552,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
+      "asset": "fig-C05-1-钢铁融合创新实施架构.png",
+      "title": "钢铁行业工业互联网融合创新实施架构",
+      "disposition": "本书重绘",
+      "attribution": "本书绘制，据工业和信息化部《工业互联网与钢铁行业融合应用参考指南（2021年）》图3-2（PDF第43页）整理",
+      "asset_sha256": "9df58c2d5e82aebeaed934d3ba55c532a4924a9fa30280ed7fac09eea1e61478",
+      "generator": "scripts/figures/render.py",
       "required_in": [
         "C05-钢铁.md"
       ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 32,
-      "figure_titles": [
-        "图3-2 钢铁行业工业互联网融合创新实施架构"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          841.9,
-          595.3
-        ],
-        "pdf_bbox_points": [
-          81.96,
-          92.04,
-          762.24,
-          535.43
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.238,
-        "page_height_removed_fraction": 0.2552,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          311,
-          349,
-          2898,
-          2036
-        ]
-      },
-      "uncropped_asset_sha256": "06699a245631e47f00c8c75d5385e3f11bc3d883f66d8cdae403309bbff093c5",
-      "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；原图权利归原发布者",
+      "redraws": "B01-钢铁-43.png",
+      "source_url": "https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=43"
     },
     {
-      "asset": "B02-工程机械-57.png",
-      "source_id": "B02",
-      "source_title": "工业互联网与工程机械行业融合应用参考指南（2023年）",
-      "pdf_page": 57,
-      "source_url": "https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57",
-      "source_sha256": "019e9266060a9a062a673074e494055cf6e22b773166c4fa73248727738cb2bb",
-      "asset_sha256": "1e6cae688b7f0049a3098e400bd341bc5c96fbed75e59fe2ae00996642a66fe1",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          841.9,
-          595.3
-        ],
-        "pdf_bbox_points": [
-          69.0,
-          122.04,
-          651.24,
-          516.88
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.446,
-        "page_height_removed_fraction": 0.3367,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          841.9,
-          595.3
-        ],
-        "pdf_bbox_points": [
-          69.0,
-          122.04,
-          651.24,
-          516.88
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.446,
-        "page_height_removed_fraction": 0.3367,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          262,
-          463,
-          2476,
-          1965
-        ]
-      },
-      "uncropped_asset_sha256": "28bb0fa205797c23f730decf288b56582bf71dfef6c90675a665934c1e0c821b",
-      "output_size_px": [
-        1713,
-        1162
-      ],
+      "asset": "fig-C01-1-工程机械融合创新实施架构.png",
+      "title": "工程机械行业工业互联网融合创新实施架构",
+      "disposition": "本书重绘",
+      "attribution": "本书绘制，据工业和信息化部《工业互联网与工程机械行业融合应用参考指南（2023年）》图3-2（PDF第57页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）",
+      "asset_sha256": "70a89d6d04f74425c09acf450ee8451a546118815528861b742ad4a90358bec5",
+      "generator": "scripts/figures/render.py",
       "required_in": [
         "C01-工程机械.md"
       ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 51,
-      "figure_titles": [
-        "图3-2 工程机械行业工业互联网融合创新实施架构"
-      ],
-      "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；原图权利归原发布者",
+      "redraws": "B02-工程机械-57.png",
+      "source_url": "https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57"
     },
     {
       "asset": "B03-电力-20.png",
@@ -473,71 +367,18 @@
       "render_dpi": 328
     },
     {
-      "asset": "B05-船舶-44.png",
-      "source_id": "B05",
-      "source_title": "工业互联网与船舶行业融合应用参考指南（2025年）",
-      "pdf_page": 44,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=44",
-      "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "f3d989a6046bc9adac9b683bb6ce9d94204a15f64e8b23176adaf7768c65f0ad",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1602,
-        1024
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          87,
-          127.32,
-          508.08,
-          396.36
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.414,
-        "page_height_removed_fraction": 0.6804,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
+      "asset": "fig-C04-1-船舶融合创新实施架构.png",
+      "title": "融合创新实施架构",
+      "disposition": "本书重绘",
+      "attribution": "本书绘制，据工业和信息化部《工业互联网与船舶行业融合应用参考指南（2025年）》图4-2（PDF第44页）整理",
+      "asset_sha256": "1e2b393bbc76369dd8163cbe5df1c7d733c954aff2c0c0fbc5f1a327c157f683",
+      "generator": "scripts/figures/render.py",
       "required_in": [
         "C04-船舶.md"
       ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 38,
-      "figure_titles": [
-        "图4-2 融合创新实施架构"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          87,
-          127.32,
-          508.08,
-          396.36
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.414,
-        "page_height_removed_fraction": 0.6804,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          330,
-          483,
-          1932,
-          1507
-        ]
-      },
-      "uncropped_asset_sha256": "1a9fe44152d6f5eb8c7b0498036c6d9cf9edcc7bca6bd7dfc1fcb89a6ed17b4a",
-      "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
+      "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；原图权利归原发布者",
+      "redraws": "B05-船舶-44.png",
+      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=44"
     },
     {
       "asset": "B06-油气储运-26.png",

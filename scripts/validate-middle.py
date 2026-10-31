@@ -51,11 +51,13 @@ def reference_style_errors(name,number,record):
   errs.append(name+': reference ['+number+'] has a bare page locator right after the access date; use "年: 页码[引用日期]."')
  if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*第[^页。；\n]*?节',record):
   errs.append(name+': reference ['+number+'] has a bare section locator right after the access date; fold it into the note, e.g. "引用范围：第x节，…"')
- if re.search(r': \d+(?:-\d+)?(?:\s*[，、]\s*\d+(?:-\d+)?)+\[\d{4}-\d{2}-\d{2}\]',record):
-  errs.append(name+': reference ['+number+'] discrete page numbers must be separated by half-width ", "')
+ if re.search(r'\[\d{4}-\d{2}-\d{2}\]\s*[.．。]?\s*[（(]?\s*第[^页节。；\n]*?(?:项|部分)',record):
+  errs.append(name+': reference ['+number+'] has a bare clause locator (第…项/部分) right after the access date; write "引用范围：第…项/第…部分，…"')
+ if any(re.search(r',(?! )|[，、]',m) for m in re.findall(r': (\d+(?:-\d+)?(?:\s*[,，、]\s*\d+(?:-\d+)?)+)\[\d{4}-\d{2}-\d{2}\]',record)):
+  errs.append(name+': reference ['+number+'] discrete page numbers must be separated by half-width ", " (comma plus space)')
  note=re.search(r'\[\d{4}-\d{2}-\d{2}\]\.?\s*([^。；\n]*)',record)
  # 总编辑允许说明文字里用PDF页定位附件、图谱、表格或公报版（如J04、C01、C19、C25、A01）；只报首句即以PDF页作主页码者。
- if note and re.search(r'(?<!\[)PDF第\d+',note.group(1)) and not re.search(r'附件|图谱|表\d|公报|见',note.group(1)) and not re.search(r': \d+(?:-\d+)?(?:, \d+(?:-\d+)?)*\[\d{4}-',record):
+ if note and re.search(r'(?<!\[)PDF第\d+',note.group(1)) and not re.search(r'附件|图谱|表\d|公报',note.group(1)) and not re.search(r': \d+(?:-\d+)?(?:, \d+(?:-\d+)?)*\[\d{4}-',record):
   errs.append(name+': reference ['+number+'] uses "PDF第x—y页" in the note as its main page locator; use "年: 页码[引用日期]."')
  return errs
 

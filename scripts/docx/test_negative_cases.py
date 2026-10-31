@@ -258,6 +258,39 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
+        # 19. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 某某公司项目，见PDF第35—38页。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 3,6[2026-10-29].')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('“见PDF第x—y页”作主页码 -> validate-middle 报错', r.returncode == 1 and any('[3]' in e and 'main page locator' in e for e in errs), str(errs)[-300:])
+            ok('离散页码“3,6”缺空格 -> validate-middle 报错', r.returncode == 1 and any('[4]' in e and 'half-width ", "' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
+
+        # 20. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 第十二、十三项。引用范围：某方向。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 第二部分重点任务。引用范围：某方向。'
+                     '\n[5] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 引用范围：第十二项某方向。')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('日期后裸写“第十二、十三项” -> validate-middle 报错', r.returncode == 1 and any('[3]' in e and 'clause locator' in e for e in errs), str(errs)[-300:])
+            ok('日期后裸写“第二部分” -> validate-middle 报错', any('[4]' in e and 'clause locator' in e for e in errs), str(errs)[-300:])
+            ok('“引用范围：第十二项” 不误报', not any('[5]' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
         # 16–18. 一章多目录（合并章）与门类引导行
         import yaml
         cfg0 = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8'))
