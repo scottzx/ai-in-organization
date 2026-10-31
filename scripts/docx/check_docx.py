@@ -511,25 +511,42 @@ def main():
     for k in caps:
         m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)\u3000(.+)$', zw(ps[k].text))
         if m: capnums.setdefault(m.group(2).strip(), []).append(m.group(1))
+    idx_nums, idx_seen = set(), False
     for t in doc.tables:
         if len(t.rows) < 1 or len(t.rows[0].cells) < 2: continue
         hd = [zw(c.text) for c in t.rows[0].cells[:2]]
         if hd != ['图号', '图题']: continue
+        idx_seen = True
         parsed = 0
         for row in t.rows[1:]:
             cs = row.cells
             if len(cs) < 2: continue
             num, title = zw(cs[0].text), zw(cs[1].text)
-            if num in ('—', '－', '-', ''): continue   # 附录B 约定：未入书的图图号记“—”，不对照（但不计入可解析行）
+            if num == '—':   # 未入书的图：其图题不得作为成品图题出现（否则说明真用到的图被误记成“—”）
+                if title in capnums: check(APPB, False, f'{title[:16]} 索引表记“—”，但成品中有该图题（{"、".join(capnums[title])}）')
+                continue   # 附录B 约定：未入书的图图号整格只记一字线“—”（U+2014），不对照、不计入可解析行；“-”“－”“无”、空格等一律按无法解析不通过
             m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)$', num)
             if not m:
                 check(APPB, False, f'索引表图号无法解析：{num[:16]!r}'); continue
-            parsed += 1
+            parsed += 1; idx_nums.add(m.group(1))
             got = capnums.get(title, [])
             if not got: check(APPB, False, f'{title[:16]} 索引表为{m.group(1)}，成品中找不到该图题')
             elif len(got) > 1: check(APPB, False, f'{title[:16]} 索引表为{m.group(1)}，成品中有 {len(got)} 个同名图题（{"、".join(got)}）')
             else: check(APPB, got[0] == m.group(1), f'{title[:16]} 索引表为{m.group(1)}，图题为{got[0]}')
         if parsed == 0: check(APPB, False, f'图源索引表存在但 0 行可解析（共 {len(t.rows) - 1} 行）')
+    # 收入了中册附录B（中册、合订本）则对照项必须出现：表头被改坏、表找不到一律不通过
+    if any(str(c.get('file', '')).endswith('附录B-中册图源索引表.md') for c in BJ.get('chapters', []) if isinstance(c, dict)) and not idx_seen:
+        check(APPB, False, '已收入附录B-中册图源索引表，但成品中找不到表头为“图号｜图题”的索引表')
+    # 反向校验（出版审读 #111 复审）：成品中凡据外部文献原图改绘/整理的图，附录B 必须有对应图号行，防止真用到的图被误记成“—”而漏检。
+    # “外部图源”判定（按资料来源行，去零宽字符后）：含“改绘”，或在书名号》之后引用了原文献的图号并注页码（如“》（2024年）图3-2（PDF第57页）”）。
+    # 不看“本书绘制”字样（附录B 中多张图写“本书绘制，据……图X（PDF第N页）整理”，仍属外部图源）；只引网页文章、未引原图的图不算外部图源。
+    REV = '据外部原图绘制的成品图均列入图源索引表（反向校验）'
+    EXT = re.compile(r'改绘|》[^；。]*?图 ?\d+(?:-\d+)?（PDF第')
+    if idx_seen:
+        for k in caps:
+            m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)\u3000', zw(ps[k].text))
+            src = zw(ps[k + 1].text) if k + 1 < len(ps) else ''
+            if m and EXT.search(src): check(REV, m.group(1) in idx_nums, f'图{m.group(1)} 资料来源引外部原图，但图源索引表无此图号')
     # 输出
     total_fail = sum(1 for v in items.values() if v[1])
     out = [f'# 格式检查清单：{Path(a.docx).name}', '',
