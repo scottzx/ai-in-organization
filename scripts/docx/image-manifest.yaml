@@ -39,17 +39,15 @@ images:
   redraw_file: null
   note: null
   manual_review: null
-- file: B01-钢铁-41.png
+- file: fig-C05-2-钢铁融合创新应用总体架构.png
   chapters: C05-钢铁
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部钢铁行业数字化转型指南(2021) 第41页
-  url: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=41
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B01-钢铁-41.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与钢铁行业融合应用参考指南（2021年）》图3-1（PDF第41页）整理。"
   manual_review: null
 - file: fig-C05-1-钢铁融合创新实施架构.png
   chapters: C05-钢铁
@@ -71,29 +69,25 @@ images:
   redraw_file: null
   note: "资料来源：本书绘制，据工业和信息化部《工业互联网与工程机械行业融合应用参考指南（2023年）》图3-2（PDF第57页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）。"
   manual_review: null
-- file: B03-电力-20.png
+- file: fig-D01-1-电力融合创新实施架构.png
   chapters: D01-电力
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部电力指南(2024) 第20页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20249/7d9030c7509741a0a3b3c14611634965.pdf#page=20
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B03-电力-20.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与电力行业融合应用参考指南（2024年）》图2-2（PDF第20页）整理。"
   manual_review: null
-- file: B04-石化-14.png
+- file: fig-C06-1-石化化工融合应用总体架构.png
   chapters: C06-石化化工
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部石化指南(2025) 第14页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=14
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B04-石化-14.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与石化化工行业融合应用参考指南（2025年）》图2-1（PDF第14页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）。"
   manual_review: null
 - file: B04-石化-16.png
   chapters: C06-石化化工
@@ -129,17 +123,15 @@ images:
   redraw_file: null
   note: "资料来源：本书绘制，据工业和信息化部《工业互联网与船舶行业融合应用参考指南（2025年）》图4-2（PDF第44页）整理。"
   manual_review: null
-- file: B06-油气储运-26.png
+- file: fig-G03-1-油气储运融合创新实施架构.png
   chapters: G03-油气储运
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部油气储运指南(2026) 第26页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20264/52fcd95580bb4d7f89131f5378f522f7.pdf#page=26
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B06-油气储运-26.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与油气储运行业融合应用参考指南（2026年）》图2-2（PDF第26页）整理。"
   manual_review: null
 - file: C07-数字金融-9.png
   chapters: J01-银行, J02-保险, J03-证券服务, J04-基金管理

@@ -308,3 +308,78 @@ def net3(bands, gap=0.12, band_gap=0.25):
             yy -= gap
         y -= band_gap
     return f
+
+
+def _bh(t):
+    """按原有换行计的框高。"""
+    return (t.count('\n') + 1) * 0.45 + 0.35
+
+def loop_arch(top, left, pyramid, loop, right, gap=0.12):
+    """“融合创新应用总体架构”版式（不含图内文字，全部由参数传入）：
+    top     自上而下若干行应用场景，每行 [(文字, 强调?)]；
+    left    现有制造体系的管理功能（左栏）；pyramid 五层制造体系，自上而下（中左，逐层加宽）；
+    loop    数据优化闭环：dict(title, top, bottom, planes=[(层名, rows)], up, down)，rows 每行若干文字；
+    right   工业互联网带来的能力（右栏）。"""
+    LX, LWD = 0.1, 2.25; PX, PW = 2.55, 2.85; MX, MW = 6.05, 5.0; RX, RW = 11.7, 3.2
+    rowh = [max(_bh(t) for t, _ in r) for r in top]
+    # 闭环区域高度
+    plane_h = []
+    for name, rows in loop['planes']:
+        plane_h.append(0.45 + sum(max(_bh(t) for t in r) + gap for r in rows) + gap)
+    mid_h = 0.55 + _bh(loop['top']) + 0.25 + sum(plane_h) + 0.5 * (len(plane_h) - 1) + 0.25 + _bh(loop['bottom'])
+    H = 0.15 + sum(rowh) + gap * len(rowh) + 0.55 + mid_h + 0.15
+    f = Fig(H)
+    y = H - 0.15
+    for r, h in zip(top, rowh):
+        y -= h; n = len(r); w = (LW - 0.2 - gap * (n - 1)) / n
+        for i, (t, acc) in enumerate(r):
+            f.box(0.1 + i * (w + gap), y, w, h, t, accent=acc, bold=acc, fill=ACC_FILL if acc else FILL2, wrapw=False)
+        y -= gap
+    for ax_ in (PX + PW / 2, RX + RW / 2): f.arrow((ax_, y - 0.5), (ax_, y - 0.02), accent=True, lw=1.5)
+    ytop = y - 0.55; ybot = 0.15
+    # 中：数据优化闭环
+    yy = ytop
+    f.text(MX + MW / 2, yy - 0.25, loop['title'], bold=True, color=ACCENT); yy -= 0.55
+    h = _bh(loop['top']); f.box(MX + 0.6, yy - h, MW - 1.2, h, loop['top'], fill=FILL2, wrapw=False); yy -= h + 0.25
+    ptops = []
+    for (name, rows), ph in zip(loop['planes'], plane_h):
+        f.box(MX, yy - ph, MW, ph, '', fill='white'); ptops.append((yy, yy - ph))
+        f.text(MX + 0.12, yy - 0.24, name, bold=True, color=ACCENT, ha='left')
+        ry = yy - 0.45
+        for r in rows:
+            rh = max(_bh(t) for t in r); ry -= rh
+            n = len(r); w = (MW - 0.3 - gap * (n - 1)) / n
+            for i, t in enumerate(r):
+                f.box(MX + 0.15 + i * (w + gap), ry, w, rh, t, fill='white' if n > 1 else FILL, wrapw=False)
+            ry -= gap
+        yy -= ph + 0.5
+    yy += 0.5
+    h = _bh(loop['bottom']); f.box(MX + 0.6, yy - 0.25 - h, MW - 1.2, h, loop['bottom'], fill=FILL2, wrapw=False)
+    # 信息流（上行，左侧）与决策流（下行，右侧）
+    for (a, b), (c, d) in zip(ptops[1:], ptops[:-1]):
+        f.arrow((MX + 0.9, a), (MX + 0.9, d), accent=True)
+        f.arrow((MX + MW - 0.9, d), (MX + MW - 0.9, a))
+    m = ptops[-1][0] + 0.25
+    f.text(MX + 1.05, m, loop['up'], ha='left', color=ACCENT)
+    m = ptops[0][1] - 0.25
+    f.text(MX + MW - 1.15, m, loop['down'], ha='right')
+    # 左中：五层制造体系（逐层加宽）
+    n = len(pyramid); ph = (ytop - ybot - gap * (n - 1)) / n
+    cy = []
+    for i, t in enumerate(pyramid):
+        w = PW * (0.55 + 0.45 * i / (n - 1)); yb = ytop - (i + 1) * ph - i * gap
+        f.box(PX + (PW - w) / 2, yb, w, ph, t, accent=True, fill=ACC_FILL, wrapw=False); cy.append(yb + ph / 2)
+    for i in (1, 2, 4):
+        f.arrow((PX + PW + 0.08, cy[i]), (MX - 0.08, cy[i]), style='<|-|>')
+    # 左：管理功能
+    def col(x, wd, items):
+        k = len(items); hh = [_bh(t) for t in items]; sp = (ytop - ybot - sum(hh)) / (k - 1 if k > 1 else 1)
+        yy = ytop; out = []
+        for t, h in zip(items, hh):
+            f.box(x, yy - h, wd, h, t, fill=FILL, wrapw=False); out.append(yy - h / 2); yy -= h + sp
+        return out
+    col(LX, LWD, left)
+    f.arrow((PX + 0.35, (ytop + ybot) / 2), (LX + LWD + 0.05, (ytop + ybot) / 2), accent=True, lw=1.5)
+    col(RX, RW, right)
+    f.arrow((MX + MW + 0.08, (ytop + ybot) / 2), (RX - 0.08, (ytop + ybot) / 2), accent=True, lw=1.5)
+    return f
