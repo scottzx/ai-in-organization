@@ -112,7 +112,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202603/P020260327690711652535.pdf#page=9"
       },
       "attribution": "据中国信息通信研究院云计算与数字化研究所《数字金融创新发展研究报告（2025年）》图1（PDF第9页）改绘",
-      "asset_sha256": "03e66d3f029f957a8dd4be848c86b1c2270ab05b6fd4fa1f56ce86f8bf7b0976",
+      "asset_sha256": "a5f447d1a61445161d3ece322eb3f7c4c6a2cdcb94eb137d8bc73afdfc81d7b7",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "J01-银行.md"
@@ -131,7 +131,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202201/P020220104495485440718.pdf#page=9"
       },
       "attribution": "据中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心《中国智慧农业发展研究报告——新一代信息技术助力乡村振兴》（2021年）图1（PDF第9页）改绘",
-      "asset_sha256": "a9676d18a49fcf606d7328f43a2d091366dc88ad43e53e0ea3000a3a4607b2b2",
+      "asset_sha256": "7d9e3dd26b5903a5333fff58f38768c3b2abda9b2ad410253902f8970b8109ed",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "A01-农业.md"
@@ -157,7 +157,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202406/P020240604545842789562.pdf#page=11"
       },
       "attribution": "据中国信息通信研究院《数字乡村发展实践白皮书（2024年）》图1（PDF第11页）改绘",
-      "asset_sha256": "fcadff3532a8eaa554cb9f4f4942260b6573f252d1773c5a6ff3a39942e5474b",
+      "asset_sha256": "acc738e333f85cc917f0e14d3227148ea6774eab83ac8d8195a25843ac5d6685",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "A01-农业.md"
@@ -176,7 +176,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202407/P020240723334151523502.pdf#page=41"
       },
       "attribution": "据中国信息通信研究院《云计算白皮书（2024年）》图17（PDF第41页）改绘",
-      "asset_sha256": "ce11843bba51fcb9053e81e27e1d1cbf0a472dd8174d068e4114d926390cc040",
+      "asset_sha256": "f2f9363b1aaea6c9c51666fa3f8ea38c607bac1d1778c62e9925185488880a91",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "I03-云计算与模型平台服务.md"
@@ -195,7 +195,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202206/P020220614564340133801.pdf#page=39"
       },
       "attribution": "据中国信息通信研究院泰尔终端实验室《实时互动产业发展研究报告——互联网的下一个十年（2022年）》图8（PDF第39页）改绘",
-      "asset_sha256": "e5478475b3c85dfeea2f93cabc956767584f4a96eaac5dbc1a4d119738e4bf32",
+      "asset_sha256": "0fca51177e4ee45d9d9d9cb72c160a6915fa08e0fcdf721eb93560a004b3ec6d",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "R03-旅游与景区.md"
@@ -214,7 +214,7 @@
         "source_url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202409/P020240926401677616677.pdf#page=23"
       },
       "attribution": "据中国信息通信研究院等《电信业发展蓝皮书——智能化发展（2024年）》图7（PDF第23页）改绘",
-      "asset_sha256": "b87889f0dbb0aa3e2f43a9589d8713ea854a843fba47c6f2b9c339d55b6e27b4",
+      "asset_sha256": "c6c86dc78fdefd5c953896b5f3ea0aa0406972a12174c9455af05515e77b3774",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "I02-电信服务.md"
@@ -233,7 +233,7 @@
         "source_url": "https://www.caict.ac.cn/sytj/202404/P020240401340155307571.pdf#page=20"
       },
       "attribution": "据中国信息通信研究院《数字政府一体化建设白皮书（2024年）》图3（PDF第20页）改绘",
-      "asset_sha256": "d048fa58e79c70d1561eeaff3ac8eed4917cfaa292935182a90562f8e216a56a",
+      "asset_sha256": "61689b173e3cc5939dc401da769a478e1f272a0686f19dd0eb79d7562d70fe59",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "S01-政务与公共服务.md"
@@ -252,7 +252,7 @@
         "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=20"
       },
       "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-1（PDF第20页）改绘",
-      "asset_sha256": "a24e16a9b0da4734370048092e94465c687535535a5e81d56b27d1f4d4eabc9b",
+      "asset_sha256": "84e1a02abd4f8749a11bcfac28cb6e1fa15243eac007485d00ecf35476fcbe41",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "H02-餐饮.md"
@@ -271,7 +271,7 @@
         "source_url": "https://www.sic.gov.cn/sic/83/260/1016/2c97b8cb-8d20be1e-0192-949324c4-2e51.pdf#page=21"
       },
       "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-2（PDF第21页）改绘",
-      "asset_sha256": "0db53b8215afa0fdca52732739357f135be1220092094dfc8526b52ee0ade688",
+      "asset_sha256": "f4d556f026becce11858eaff32133749b100e36830d7823e6644fa92a9ee4025",
       "generator": "scripts/redraw-middle-figures.py",
       "required_in": [
         "H02-餐饮.md"
