@@ -81,6 +81,8 @@ def mutate(src, dst, fn):
     d = docx.Document(str(src)); fn(d); d.save(str(dst))
     shutil.copy2(Path(src).with_suffix('.build.json'), Path(dst).with_suffix('.build.json'))
 
+import docx
+
 def main():
     tmp = Path(tempfile.mkdtemp(prefix='neg-'))
     repo = tmp / 'repo'; repo.mkdir(); copy_repo(repo)
@@ -108,6 +110,77 @@ def main():
         def f1(d): retag(caps(d)[0], '导')
         mutate(base, tmp / 'n1.docx', f1); rows = check(repo, tmp / 'n1.docx', tmp / 'n1.md')
         ok('front 以外“图/表导-N” -> 题注编号项不通过', not rows[CAP][0] and '导-' in rows[CAP][1], rows[CAP][1])
+
+        # 附录B 图源索引表（表头“图号|图题”）对照项：错号、零宽字符、0 行解析、找不到/重名图题
+        APPB = '图源索引表图号与成品图题一致（按图题文字对照）'
+        def first_cap(d):
+            fc = next(p for p in d.paragraphs if p.style.name == 'Caption' and re.match(r'^图 ?\d+-\d+\u3000', p.text))
+            return fc, re.match(r'^图 ?(\d+-\d+)\u3000(.+)$', fc.text.strip()).groups()
+        def idx(d, rows_):
+            t = d.add_table(rows=len(rows_) + 1, cols=2); t.cell(0, 0).text = '图号'; t.cell(0, 1).text = '图题'
+            for i, (x, y) in enumerate(rows_, 1): t.cell(i, 0).text = x; t.cell(i, 1).text = y
+        def fb(d):
+            _, (num, title) = first_cap(d); a, b = num.split('-')
+            idx(d, [(f'图 {num}', title), (f'图 {a}-{int(b) + 7}', title)])
+        mutate(base, tmp / 'nb.docx', fb); rows = check(repo, tmp / 'nb.docx', tmp / 'nb.md')
+        ok('附录B 图号与成品图题不符 -> 图源索引表对照项不通过', APPB in rows and not rows[APPB][0] and '索引表为' in rows[APPB][1], str(rows.get(APPB)))
+        def fz(d):   # 单元格插 U+2060 等零宽字符（#112 横排表）-> 对照项仍出现且通过
+            fc, (num, title) = first_cap(d)
+            for r_ in fc.runs: r_.text = ''
+            fc.runs[0].text = '\u2060'.join(f'图 {num}') + '\u3000' + '\u200d'.join(title)   # 图题侧也插零宽字符
+            idx(d, [('\u2060'.join(f'图 {num}'), '\u200b'.join(title) + '\ufeff')])
+        mutate(base, tmp / 'nz.docx', fz); rows = check(repo, tmp / 'nz.docx', tmp / 'nz.md')
+        ok('附录B 单元格含零宽字符 -> 对照项出现且通过', APPB in rows and rows[APPB][0], str(rows.get(APPB)))
+        def fn(d): idx(d, [('—', '未入书的图甲'), ('—', '未入书的图乙')])
+        mutate(base, tmp / 'nn.docx', fn); rows = check(repo, tmp / 'nn.docx', tmp / 'nn.md')
+        ok('附录B 索引表 0 行可解析 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '0 行可解析' in rows[APPB][1], str(rows.get(APPB)))
+        def fu(d): idx(d, [('见上', '某图')])
+        mutate(base, tmp / 'nu.docx', fu); rows = check(repo, tmp / 'nu.docx', tmp / 'nu.md')
+        ok('附录B 图号既非“图X-Y”也非“—” -> 对照项不通过', APPB in rows and not rows[APPB][0] and '无法解析' in rows[APPB][1], str(rows.get(APPB)))
+        def fm(d): idx(d, [('图 1-1', '成品中不存在的图题XYZ')])
+        mutate(base, tmp / 'nm.docx', fm); rows = check(repo, tmp / 'nm.docx', tmp / 'nm.md')
+        ok('附录B 图题在成品中找不到 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '找不到' in rows[APPB][1], str(rows.get(APPB)))
+        def fd(d):
+            fc, (num, title) = first_cap(d)
+            c2 = next(p for p in d.paragraphs if p.style.name == 'Caption' and re.match(r'^图 ?\d+-\d+\u3000', p.text) and p._p is not fc._p)
+            for r_ in c2.runs: r_.text = ''
+            c2.runs[0].text = f'图 {num.split("-")[0]}-99\u3000{title}'
+            idx(d, [(f'图 {num}', title)])
+        mutate(base, tmp / 'nd.docx', fd); rows = check(repo, tmp / 'nd.docx', tmp / 'nd.md')
+        ok('附录B 图题对应多个成品图题 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '同名图题' in rows[APPB][1], str(rows.get(APPB)))
+
+        def fdash(x):
+            def f(d): _, (num, title) = first_cap(d); idx(d, [(f'图 {num}', title), (x, '未入书的图甲')])
+            return f
+        for tag, x in (('h', '-'), ('f', '－'), ('w', '无'), ('e', ''), ('s', '— —')):
+            mutate(base, tmp / f'nx{tag}.docx', fdash(x)); rows = check(repo, tmp / f'nx{tag}.docx', tmp / f'nx{tag}.md')
+            ok(f'附录B 图号为{x!r}（非一字线“—”） -> 对照项不通过', APPB in rows and not rows[APPB][0] and '无法解析' in rows[APPB][1], str(rows.get(APPB)))
+        def fdt(d): _, (num, title) = first_cap(d); idx(d, [('—', title)])
+        mutate(base, tmp / 'ndt.docx', fdt); rows = check(repo, tmp / 'ndt.docx', tmp / 'ndt.md')
+        ok('附录B “—”行的图题是成品图题 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '记“—”' in rows[APPB][1], str(rows.get(APPB)))
+
+        # 中册：附录B 必须出现；反向校验（外部原图须列入索引表）
+        mid = tmp / 'middle.docx'; r = build(repo, 'middle', mid)
+        if r.returncode != 0: ok('中册样张构建', False, r.stdout[-300:] + r.stderr[-300:]); return
+        REV = '据外部原图绘制的成品图均列入图源索引表（反向校验）'
+        rows = check(repo, mid, tmp / 'mid.md')
+        ok('中册基准 附录B 对照项与反向校验均出现且通过', rows.get(APPB, (False,))[0] and rows.get(REV, (False,))[0], f'{rows.get(APPB)} {rows.get(REV)}')
+        def appb_table(d): return next(t for t in d.tables if [c.text.replace('\u2060', '').strip() for c in t.rows[0].cells[:2]] == ['图号', '图题'])
+        def fhd(d): appb_table(d).cell(0, 0).text = '图 号'
+        mutate(mid, tmp / 'nhd.docx', fhd); rows = check(repo, tmp / 'nhd.docx', tmp / 'nhd.md')
+        ok('中册 附录B 表头被改坏 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '找不到表头' in rows[APPB][1], str(rows.get(APPB)))
+        t0 = appb_table(docx.Document(str(mid)))
+        # 只删“外部原图”图（资料来源行含“改绘”或“》…图X（PDF第”）对应的行；图 13-4 只引 PDF 页码、未引原图，不在反向校验范围
+        EXT = re.compile(r'改绘|》[^；。]*?图 ?\d+(?:-\d+)?（PDF第')
+        dm = docx.Document(str(mid)); pm = dm.paragraphs
+        ext = {re.match(r'^图 ?(\S+?)\u3000', pm[k].text).group(1) for k, q in enumerate(pm) if q.style.name == 'Caption' and re.match(r'^图 ?\S+?\u3000', q.text) and k + 1 < len(pm) and EXT.search(pm[k + 1].text)}
+        numbered = [i for i, rw in enumerate(t0.rows) if i and rw.cells[0].text.replace('\u2060', '').strip().replace('图', '').strip() in ext]
+        bad = []
+        for i in numbered:
+            def fdel(d, i=i): t = appb_table(d); t._tbl.remove(t.rows[i]._tr)
+            mutate(mid, tmp / 'ndel.docx', fdel); rows = check(repo, tmp / 'ndel.docx', tmp / 'ndel.md')
+            if not (REV in rows and not rows[REV][0]): bad.append(t0.rows[i].cells[0].text)
+        ok(f'中册 附录B 逐一删去 {len(numbered)} 个有图号行 -> 反向校验均不通过', len(numbered) == 16 and not bad, f'未报：{bad}')
 
         # 4. 附录字母：把第一个题注所在章的 h1 改成“附录A”
         def into_app(d, letter):
