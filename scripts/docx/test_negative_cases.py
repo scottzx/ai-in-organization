@@ -33,6 +33,7 @@
   36. 封面节与目录节共用页眉部件 -> 部件不共用项不通过
   37. 书稿出现“本章索引” -> build_docx 退出 8
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
+  39. document.xml 出现 U+2060 等零宽控制字符 -> 零宽字符项不通过
   38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
@@ -189,6 +190,12 @@ def main():
         zip_mutate(base, tmp / 'bcol.docx', 'word/styles.xml', lambda x: x.replace('</w:styles>', '<w:style w:type="paragraph" w:styleId="X1"><w:name w:val="X1"/><w:pPr><w:pBdr><w:bottom w:val="single" w:sz="4" w:color="4F81BD"/></w:pBdr></w:pPr></w:style></w:styles>'))
         rows = check(repo, tmp / 'bcol.docx', tmp / 'bcol.md')
         ok('样式边框颜色 4F81BD -> 无非黑颜色项不通过', not rows[SC][0] and '4F81BD' in rows[SC][1], str(rows.get(SC)))
+
+        ZW = '正文无零宽控制字符（U+2060/200B/200C/200D/FEFF，影响 EPUB 搜索复制）'
+        ok('基准样张 无零宽控制字符项通过', rows0.get(ZW, (False,))[0], str(rows0.get(ZW)))
+        zip_mutate(base, tmp / 'zw.docx', 'word/document.xml', lambda x: x.replace('</w:t>', '\u2060</w:t>', 1))
+        rows = check(repo, tmp / 'zw.docx', tmp / 'zw.md')
+        ok('document.xml 插入 U+2060 -> 零宽控制字符项不通过', not rows[ZW][0] and 'U+2060' in rows[ZW][1], str(rows.get(ZW)))
 
         # 34–37. 出版审读 #108 复审：表身不绑定、正文页码自1、封面页眉部件不共用、“本章索引”报错
         TB = '表格 表身各行不加 cantSplit/keepNext（防表题被挤成孤页）'; HP = '封面节页眉部件与后续各节不共用'
