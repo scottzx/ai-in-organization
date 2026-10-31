@@ -755,12 +755,24 @@ def volume_items(cfg, repo, name, relabel=None):
         return out
     if 'groups' in v:
         items = [(repo / v['dir'] / f, None) for f in v.get('front', [])]   # 册首不编号篇目（下册导言），排在各章之前
+        seen, multi = {}, set()
         for c, subs in v['groups'].items():
             # 一章可对应多个子目录（如下册末章“其他行业案例”汇集若干门类）：按所列顺序排，各目录内按文件名排
-            for sub in (subs if isinstance(subs, list) else [subs]):
+            sl = subs if isinstance(subs, list) else [subs]
+            if not sl: sys.exit(f'style.yaml volumes.{name}.groups 第{c}章没有列任何目录')
+            if len(sl) > 1: multi.update(sl)
+            for sub in sl:
+                if sub in seen: sys.exit(f'style.yaml volumes.{name}.groups 重复列出目录：{sub}（第{seen[sub]}章、第{c}章）')
+                seen[sub] = c
                 d = repo / v['dir'] / sub
                 if not d.is_dir(): sys.exit(f'style.yaml volumes.{name}.groups 指向的目录不存在：{d.relative_to(repo).as_posix()}')
-                items += [(p, lab(parse_ch(c))) for p in sorted(d.glob('*.md'))]   # README.md（门类导读）由 exclude.patterns 剔除
+                ps = sorted(d.glob('*.md'))   # README.md（门类导读）由 exclude.patterns 剔除
+                if not any(not excluded(cfg, repo, p) for p in ps):
+                    sys.exit(f'style.yaml volumes.{name}.groups 第{c}章的目录没有可排的篇目：{d.relative_to(repo).as_posix()}')
+                items += [(p, lab(parse_ch(c))) for p in ps]
+        # 门类引导行只用于多目录章：单目录章本身就是一个门类，章名已说明，配了引导行视为配置错误
+        bad = [k for k in (v.get('group_leads') or {}) if k not in multi]
+        if bad: sys.exit(f'style.yaml volumes.{name}.group_leads 只能用于多目录章，以下目录不在多目录章中：{"、".join(bad)}')
         return items
     if 'chapters' in v:   # 按全书章号映射：{章号: [篇目...]}；未列出的 X00 导读页不编号，附录按字母
         fmap = {alt.strip(): ch for ch, fs in v['chapters'].items() for f in fs for alt in str(f).split('|')}
