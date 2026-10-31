@@ -87,31 +87,7 @@ images:
   url: null
   not_cc: false
   redraw_file: null
-  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与石化化工行业融合应用参考指南（2025年）》图2-1（PDF第14页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）。"
-  manual_review: null
-- file: B04-石化-16.png
-  chapters: C06-石化化工
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部石化指南(2025) 第16页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=16
-  not_cc: true
-  redraw_file: null
-  note: null
-  manual_review: null
-- file: B05-船舶-17.png
-  chapters: C04-船舶
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部船舶指南(2025) 第17页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17
-  not_cc: true
-  redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与石化化工行业融合应用参考指南（2025年）》图2-1（PDF第14页）整理；框架参考工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）。"
   manual_review: null
 - file: fig-C04-1-船舶融合创新实施架构.png
   chapters: C04-船舶

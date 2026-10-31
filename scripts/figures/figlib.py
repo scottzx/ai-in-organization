@@ -378,8 +378,17 @@ def loop_arch(top, left, pyramid, loop, right, gap=0.12):
         for t, h in zip(items, hh):
             f.box(x, yy - h, wd, h, t, fill=FILL, wrapw=False); out.append(yy - h / 2); yy -= h + sp
         return out
-    col(LX, LWD, left)
-    f.arrow((PX + 0.35, (ytop + ybot) / 2), (LX + LWD + 0.05, (ytop + ybot) / 2), accent=True, lw=1.5)
+    # 左栏与金字塔层对位（同原图）：首两项对第一、二层，末项对底层，其余在中间层间均布；
+    # 横向箭头从第二层（制造执行/生产控制级）左缘指向左栏第二项。
+    k = len(left); hh = [_bh(t) for t in left]
+    pos = [0, 1] + [1 + (n - 2) * j / (k - 2) for j in range(1, k - 2)] + [n - 1] if k >= 3 else list(range(k))
+    def at(v):
+        i = min(int(v), n - 2); fr = v - i
+        return cy[i] + (cy[i + 1] - cy[i]) * fr
+    for t, h, v in zip(left, hh, pos):
+        f.box(LX, at(v) - h / 2, LWD, h, t, fill=FILL, wrapw=False)
+    w1 = PW * (0.55 + 0.45 / (n - 1))
+    f.arrow((PX + (PW - w1) / 2 - 0.05, cy[1]), (LX + LWD + 0.05, cy[1]), accent=True, lw=1.5)
     col(RX, RW, right)
     f.arrow((MX + MW + 0.08, (ytop + ybot) / 2), (RX - 0.08, (ytop + ybot) / 2), accent=True, lw=1.5)
     return f
