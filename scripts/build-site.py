@@ -16,6 +16,7 @@ import re
 import shutil
 
 from markdown_it import MarkdownIt
+from mdit_py_plugins.footnote import footnote_plugin
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
@@ -27,7 +28,7 @@ ASSETS = {
     for path in (ROOT / 'web').iterdir()
     if path.is_file() and path.suffix in ('.css', '.js', '.svg', '.png')
 }
-MD = MarkdownIt('commonmark', {'html': True}).enable('table').enable('strikethrough')
+MD = MarkdownIt('commonmark', {'html': True}).enable('table').enable('strikethrough').use(footnote_plugin)
 
 
 def render_text(renderer, tokens, index, options, env):
@@ -107,7 +108,8 @@ def rewrite_url(source, value):
         # Drafts, scripts and editorial files can still be consulted on GitHub.
         relative_parts = destination.relative_to(ROOT).parts
         allowed = (relative_parts[0] in ('output', '索引')
-                   or relative_parts[:2] == ('中册-行业解决方案', 'assets'))
+                   or (len(relative_parts) > 2 and relative_parts[1] == 'assets'
+                       and relative_parts[0] in ('上册-研究报告', '中册-行业解决方案', '下册-案例汇编')))
         if allowed and destination.is_file() and destination.suffix in ('.png', '.svg', '.jpg', '.jpeg', '.webp', '.pdf', '.pptx', '.json', '.csv'):
             copy_asset(destination)
         else:
