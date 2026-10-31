@@ -139,11 +139,19 @@ class Builder:
         s.page_width, s.page_height = Cm(21.0), Cm(29.7)
         s.top_margin, s.bottom_margin = Cm(p['margin_top_cm']), Cm(p['margin_bottom_cm'])
         s.left_margin, s.right_margin = Cm(p['margin_left_cm']), Cm(p['margin_right_cm'])
-        self.decorate_section(s, p['front_matter_page_format'], restart=True)
+        self.blank_section(s)   # 第一节：封面＋版权页，不印页眉页码（出版审读 d7b16e3 预审 P1-1）
+
+    def blank_section(self, s):
+        """封面、版权页所在节：页眉页脚为本节专用的空白部件（不链接前节、无书名、无 PAGE 域）。"""
+        for hf in (s.header, s.footer):
+            hf.is_linked_to_previous = True; hf.is_linked_to_previous = False
+            for q_ in hf.paragraphs: q_.text = ''
 
     def decorate_section(self, s, fmt, restart):
         p = self.cfg['page']
         sect = s._sectPr
+        # add_section 会复制前节的页眉页脚引用：先断开再新建，保证每节有自己的页眉页脚部件，改本节不影响前节
+        for hf in (s.header, s.footer): hf.is_linked_to_previous = True
         pg = sect.find(qn('w:pgNumType'))
         if pg is None: pg = OxmlElement('w:pgNumType'); sect.append(pg)
         pg.set(qn('w:fmt'), fmt)
@@ -251,14 +259,16 @@ class Builder:
             p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0)
             set_first_line_chars(p._p, 0)
             r = p.add_run(line.format(title=b['title'], holder=b['copyright_holder'])); self.style_run(r, self.lv('body')['font'], 10.5)
-        self.page_break()
+        # 目录另起一节：小写罗马数字页码，自 i 起；封面、版权页所在第一节不印页眉页码
+        s = self.doc.add_section(WD_SECTION.NEW_PAGE)
+        self.decorate_section(s, self.cfg['page']['front_matter_page_format'], restart=True)
         # 目录
         p = self.para('Normal', key='body', align='center'); p.paragraph_format.first_line_indent = Pt(0); set_first_line_chars(p._p, 0)
         r = p.add_run('目　　录'); self.style_run(r, self.cfg['levels']['toc_title']['font'], self.cfg['levels']['toc_title']['size_pt'], self.cfg['levels']['toc_title'].get('bold', False))
         p = self.para('Normal', key='body', align='left'); p.paragraph_format.first_line_indent = Pt(0); set_first_line_chars(p._p, 0)
         run = add_field(p, f'TOC \\o "{self.cfg["toc"]["levels"]}" \\h \\z \\u', '（目录域：在 Word 中打开时选择“更新域”或按 F9 生成）')
         self.style_run(run, self.lv('body')['font'], 12)
-        # 正文另起一节，页码阿拉伯数字从 1 开始
+        # 正文（自第一篇起，上册即导论）另起一节，页码阿拉伯数字从 1 开始
         s = self.doc.add_section(WD_SECTION.NEW_PAGE)
         self.decorate_section(s, 'decimal', self.cfg['page']['body_restart_page_number'])
         self.first_chapter = True
@@ -343,10 +353,8 @@ class Builder:
             if re.fullmatch(r'<a id="[^"]*"></a>', s) or s in ('---', '***') or \
                False:
                 flush(); i += 1; continue
-            if s == '本章索引':
-                flush(); i += 1
-                while i < len(lines) and (not lines[i].strip() or re.match(r'^\s*[-*] \[.*\]\(#', lines[i])): i += 1
-                continue
+            if s == '本章索引':   # 出版审读 #108 复审 P2③：本章索引已由文字编辑删除（#109），再出现即报错，不再静默跳过
+                print(f'书稿出现“本章索引”（{rel}:{i + 1}），请文字编辑在源稿删除后再构建。'); sys.exit(8)
             m = re.match(r'^(#{1,4})\s+(.*)$', s)
             if m:
                 flush(); hl, ht = len(m.group(1)), m.group(2).strip()
@@ -458,6 +466,8 @@ class Builder:
         if self.log.get('figmap'):
             L += ['', '## 二、源稿图号 → 重编图号', '', '| 位置 | 图片文件 | 源稿图号 | 重编后 |', '|---|---|---|---|']
             L += [f"| {f['where']} | {f['file']} | {f['old'] or '（无）'} | {f['new']} |" for f in self.log['figmap']]
+        if getattr(self, 'xref_notes', None):
+            L += ['', '## 编号说明', ''] + [f'- {x}' for x in self.xref_notes]
         L += ['', '## 三、重编后图表清单', '']
         L += [f'- {t}' for t in self.log['tables'] + self.log['figures']]
         L += ['', '说明：扫描规则覆盖“见图/表 X-Y”“图X”“表X”“上/下/前/后图（表）”“如上图所示”“此表/该表/本表”。上册源稿无插图，图号仅在表格上验证；中下册含图片后同一脚本适用。']
@@ -556,6 +566,14 @@ class Builder:
                 c = self.lv('table')
                 fmt_par(p.paragraph_format, self.cfg, 'center' if ri == 0 else c['align'], 0, c['size_pt'])
                 self.inline(p, row[ci] if ci < len(row) else '', 'table', ri == 0)
+        # 跨页表（出版审读 #108 复审 P1）：首行为重复表头且不跨页；表头只与表身第 1 行同页（keepNext）。
+        # 表身各行不加 cantSplit/keepNext——行高的索引表若整块绑定，会把表题单独挤到上一页。
+        if t.rows:
+            trpr = t.rows[0]._tr.get_or_add_trPr()
+            trpr.append(OxmlElement('w:cantSplit')); trpr.append(OxmlElement('w:tblHeader'))
+            if len(t.rows) > 1:
+                for c_ in t.rows[0].cells:
+                    for q_ in c_.paragraphs: q_.paragraph_format.keep_with_next = True
         # 表格边框黑色
         self.para('Normal', key='body')  # 表后空行（行距同正文）
 
@@ -910,6 +928,26 @@ def main():
     import fonts_embed   # 目录预排（toc_fill 会经 python-docx 重存）之后再嵌入字体
     fe = fonts_embed.embed(a.output, cfg); b.log['fonts_embedded'] = fe
     print('  嵌入字体：' + ('、'.join(f"{x['font']}（{x['kind']}，{x['bytes']} 字节）" for x in fe['embedded']) or '无') + (f"；未找到字体文件：{'、'.join(fe['missing'])}" if fe['missing'] else ''))
+    # 图号对照表的编号说明：册首 front 篇目的“导”号归属；合订本附录字母重排
+    VN = {'upper': '上册', 'middle': '中册', 'lower': '下册', 'all': '合订本'}
+    notes = []
+    for vk, v in cfg.get('volumes', {}).items():
+        if not (isinstance(v, dict) and v.get('front')): continue
+        fronts = {f"{v['dir']}/{f}" for f in v['front']}
+        if any(not x['new'].startswith('已') and x['where'].rsplit(':', 1)[0] in fronts and '导-' in x['new'] for x in b.log.get('figmap', [])) or \
+           any('导-' in t for t in b.log['tables'] + b.log['figures']):
+            nos = sorted({re.match(r'^([图表] ?导-\d+)', t).group(1) for t in b.log['tables'] + b.log['figures'] if re.match(r'^[图表] ?导-\d+', t)})
+            if nos: notes.append(f"{'、'.join('「' + n + '」' for n in nos)} 属于{VN.get(vk, vk)}导言（{'、'.join(sorted(fronts))}），“导”为册首导言的图表号，不是章号。")
+    if not (a.files or a.dir):
+        for sub, mp in ((cfg['volumes'].get(a.volume) or {}).get('appendix_relabel') or {}).items():
+            pairs = [(o, n) for o, n in mp.items() if o != n]
+            if pairs: notes.append(f"{VN.get(sub, sub)}附录{'、'.join(o for o, _ in pairs)}在{VN.get(a.volume, a.volume)}中为附录{'、'.join(n for _, n in pairs)}（附录字母按合订本顺序重排，附录内图表号随之改为对应字母）。")
+    b.xref_notes = notes; b.log['xref_notes'] = notes
+    import package_clean   # 删 stylesWithEffects、未用编号定义、样式主题色（字体嵌入之后，成品包最后一步）
+    b.log['package_clean'] = package_clean.clean(a.output)
+    if not a.no_toc_pages and shutil.which('soffice') and 'toc' in b.log:   # 成品包（已嵌字体）再渲染一次，目录页码按最终排版校准
+        b.log['toc']['recheck'] = toc_fill.recheck(a.output, cfg)
+        print(f"  目录页码终检：改正 {b.log['toc']['recheck']['fixed']} 条，{b.log['toc']['recheck']['rounds']} 轮后一致={b.log['toc']['recheck']['ok']}")
     b.write_xref(Path(a.output).parent / ('图号对照表-' + Path(a.output).stem.replace('样张-', '').replace('企业数智化转型思路-', '') + '.md'))
     sys.path.insert(0, str(HERE))
     Path(a.output).with_suffix('.build.json').write_text(json.dumps(b.log, ensure_ascii=False, indent=1), 'utf-8')
