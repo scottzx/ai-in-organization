@@ -114,6 +114,9 @@
       "attribution": "据中国信息通信研究院云计算与数字化研究所《数字金融创新发展研究报告（2025年）》图1（PDF第9页）改绘",
       "asset_sha256": "03e66d3f029f957a8dd4be848c86b1c2270ab05b6fd4fa1f56ce86f8bf7b0976",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "J01-银行.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -130,6 +133,9 @@
       "attribution": "据中国信息通信研究院政策与经济研究所、中国人民大学智慧农业与数字乡村发展研究中心《中国智慧农业发展研究报告——新一代信息技术助力乡村振兴》（2021年）图1（PDF第9页）改绘",
       "asset_sha256": "a9676d18a49fcf606d7328f43a2d091366dc88ad43e53e0ea3000a3a4607b2b2",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "A01-农业.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者",
       "year_basis": {
         "year": "2021年",
@@ -153,6 +159,9 @@
       "attribution": "据中国信息通信研究院《数字乡村发展实践白皮书（2024年）》图1（PDF第11页）改绘",
       "asset_sha256": "fcadff3532a8eaa554cb9f4f4942260b6573f252d1773c5a6ff3a39942e5474b",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "A01-农业.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -169,6 +178,9 @@
       "attribution": "据中国信息通信研究院《云计算白皮书（2024年）》图17（PDF第41页）改绘",
       "asset_sha256": "ce11843bba51fcb9053e81e27e1d1cbf0a472dd8174d068e4114d926390cc040",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "I03-云计算与模型平台服务.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -185,6 +197,9 @@
       "attribution": "据中国信息通信研究院泰尔终端实验室《实时互动产业发展研究报告——互联网的下一个十年（2022年）》图8（PDF第39页）改绘",
       "asset_sha256": "e5478475b3c85dfeea2f93cabc956767584f4a96eaac5dbc1a4d119738e4bf32",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "R03-旅游与景区.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -201,6 +216,9 @@
       "attribution": "据中国信息通信研究院等《电信业发展蓝皮书——智能化发展（2024年）》图7（PDF第23页）改绘",
       "asset_sha256": "b87889f0dbb0aa3e2f43a9589d8713ea854a843fba47c6f2b9c339d55b6e27b4",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "I02-电信服务.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -217,6 +235,9 @@
       "attribution": "据中国信息通信研究院《数字政府一体化建设白皮书（2024年）》图3（PDF第20页）改绘",
       "asset_sha256": "d048fa58e79c70d1561eeaff3ac8eed4917cfaa292935182a90562f8e216a56a",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "S01-政务与公共服务.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -233,6 +254,9 @@
       "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-1（PDF第20页）改绘",
       "asset_sha256": "a24e16a9b0da4734370048092e94465c687535535a5e81d56b27d1f4d4eabc9b",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "H02-餐饮.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
@@ -249,6 +273,9 @@
       "attribution": "据国家信息中心《中国餐饮业数字化发展报告（2024）》图3-2（PDF第21页）改绘",
       "asset_sha256": "0db53b8215afa0fdca52732739357f135be1220092094dfc8526b52ee0ade688",
       "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "H02-餐饮.md"
+      ],
       "license": "本书绘制的定性示意图，随本书 CC BY-NC-SA 4.0 许可；不含原图数据，原图权利归原发布者"
     },
     {
