@@ -416,9 +416,12 @@ def main():
     import zipfile
     with zipfile.ZipFile(a.docx) as _z: sc = package_clean.styles_color_issues(_z.read('word/styles.xml'))
     check('styles.xml 无非黑颜色、无底纹填充（未用的彩色/底纹内置样式已删）', not sc, '；'.join(sc))
-    with zipfile.ZipFile(a.docx) as _z: _dx = _z.read('word/document.xml').decode('utf-8')
-    zw = {f'U+{ord(ch):04X}': _dx.count(ch) for ch in '\u2060\u200b\u200c\u200d\ufeff' if ch in _dx}
-    check('正文无零宽控制字符（U+2060/200B/200C/200D/FEFF，影响 EPUB 搜索复制）', not zw, '、'.join(f'{k} {v} 处' for k, v in zw.items()))
+    ZWC = '\u2060\u200b\u200c\u200d\ufeff'   # 正文、页眉页脚、脚注尾注都查（EPUB 搜索复制）
+    with zipfile.ZipFile(a.docx) as _z:
+        _parts = {n: _z.read(n).decode('utf-8') for n in _z.namelist()
+                  if re.fullmatch(r'word/(document|header\d*|footer\d*|footnotes|endnotes)\.xml', n)}
+    zw = [f'{n[5:]} U+{ord(ch):04X} {x.count(ch)} 处' for n, x in sorted(_parts.items()) for ch in ZWC if ch in x]
+    check('正文、页眉页脚、脚注尾注无零宽控制字符（U+2060/200B/200C/200D/FEFF，影响 EPUB 搜索复制）', not zw, '、'.join(zw))
     check('版权页 存在且含书名', any('Copyright' in p.text for p in doc.paragraphs) and any(cfg['book']['title'] in p.text and '书名' in p.text for p in doc.paragraphs), '未找到')
     bk = cfg['book']
     check('版权页 含著作权人', any(('著作权人：' + bk['copyright_holder']) in p.text for p in doc.paragraphs), '缺著作权人')

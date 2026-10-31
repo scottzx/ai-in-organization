@@ -33,7 +33,7 @@
   36. 封面节与目录节共用页眉部件 -> 部件不共用项不通过
   37. 书稿出现“本章索引” -> build_docx 退出 8
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
-  39. document.xml 出现 U+2060 等零宽控制字符 -> 零宽字符项不通过
+  39. document.xml、页眉、脚注出现 U+2060/200B/FEFF 等零宽控制字符 -> 零宽字符项不通过
   38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
@@ -191,11 +191,18 @@ def main():
         rows = check(repo, tmp / 'bcol.docx', tmp / 'bcol.md')
         ok('样式边框颜色 4F81BD -> 无非黑颜色项不通过', not rows[SC][0] and '4F81BD' in rows[SC][1], str(rows.get(SC)))
 
-        ZW = '正文无零宽控制字符（U+2060/200B/200C/200D/FEFF，影响 EPUB 搜索复制）'
+        ZW = '正文、页眉页脚、脚注尾注无零宽控制字符（U+2060/200B/200C/200D/FEFF，影响 EPUB 搜索复制）'
         ok('基准样张 无零宽控制字符项通过', rows0.get(ZW, (False,))[0], str(rows0.get(ZW)))
         zip_mutate(base, tmp / 'zw.docx', 'word/document.xml', lambda x: x.replace('</w:t>', '\u2060</w:t>', 1))
         rows = check(repo, tmp / 'zw.docx', tmp / 'zw.md')
         ok('document.xml 插入 U+2060 -> 零宽控制字符项不通过', not rows[ZW][0] and 'U+2060' in rows[ZW][1], str(rows.get(ZW)))
+        import zipfile as _zf
+        _z = _zf.ZipFile(base); _nm = _z.namelist()
+        for part, chz in (('word/footnotes.xml', '\u200b'), (next((n for n in sorted(_nm) if re.fullmatch(r'word/header\d+\.xml', n) and '</w:t>' in _z.read(n).decode()), 'word/header.xml'), '\ufeff')):
+            if part not in _nm: ok(f'基准样张含 {part}', False, '缺部件'); continue
+            zip_mutate(base, tmp / 'zwp.docx', part, lambda x, c=chz: x.replace('</w:t>', c + '</w:t>', 1) if '</w:t>' in x else x)
+            rows = check(repo, tmp / 'zwp.docx', tmp / 'zwp.md')
+            ok(f'{part[5:]} 插入 U+{ord(chz):04X} -> 零宽控制字符项不通过', not rows[ZW][0] and part[5:] in rows[ZW][1], str(rows.get(ZW)))
 
         # 34–37. 出版审读 #108 复审：表身不绑定、正文页码自1、封面页眉部件不共用、“本章索引”报错
         TB = '表格 表身各行不加 cantSplit/keepNext（防表题被挤成孤页）'; HP = '封面节页眉部件与后续各节不共用'
