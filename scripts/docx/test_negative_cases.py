@@ -123,13 +123,18 @@ def main():
         mutate(base, tmp / 'nb.docx', fb); rows = check(repo, tmp / 'nb.docx', tmp / 'nb.md')
         ok('附录B 图号与成品图题不符 -> 图源索引表对照项不通过', APPB in rows and not rows[APPB][0] and '索引表为' in rows[APPB][1], str(rows.get(APPB)))
         def fz(d):   # 单元格插 U+2060 等零宽字符（#112 横排表）-> 对照项仍出现且通过
-            _, (num, title) = first_cap(d)
+            fc, (num, title) = first_cap(d)
+            for r_ in fc.runs: r_.text = ''
+            fc.runs[0].text = '\u2060'.join(f'图 {num}') + '\u3000' + '\u200d'.join(title)   # 图题侧也插零宽字符
             idx(d, [('\u2060'.join(f'图 {num}'), '\u200b'.join(title) + '\ufeff')])
         mutate(base, tmp / 'nz.docx', fz); rows = check(repo, tmp / 'nz.docx', tmp / 'nz.md')
         ok('附录B 单元格含零宽字符 -> 对照项出现且通过', APPB in rows and rows[APPB][0], str(rows.get(APPB)))
-        def fn(d): idx(d, [('见上', '无'), ('—', '')])
+        def fn(d): idx(d, [('—', '未入书的图甲'), ('—', '未入书的图乙')])
         mutate(base, tmp / 'nn.docx', fn); rows = check(repo, tmp / 'nn.docx', tmp / 'nn.md')
         ok('附录B 索引表 0 行可解析 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '0 行可解析' in rows[APPB][1], str(rows.get(APPB)))
+        def fu(d): idx(d, [('见上', '某图')])
+        mutate(base, tmp / 'nu.docx', fu); rows = check(repo, tmp / 'nu.docx', tmp / 'nu.md')
+        ok('附录B 图号既非“图X-Y”也非“—” -> 对照项不通过', APPB in rows and not rows[APPB][0] and '无法解析' in rows[APPB][1], str(rows.get(APPB)))
         def fm(d): idx(d, [('图 1-1', '成品中不存在的图题XYZ')])
         mutate(base, tmp / 'nm.docx', fm); rows = check(repo, tmp / 'nm.docx', tmp / 'nm.md')
         ok('附录B 图题在成品中找不到 -> 对照项不通过', APPB in rows and not rows[APPB][0] and '找不到' in rows[APPB][1], str(rows.get(APPB)))

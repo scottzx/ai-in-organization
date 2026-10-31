@@ -503,7 +503,7 @@ def main():
         check('图题下一行为资料来源/数据来源', bool(re.match(r'^(资料来源|数据来源)', nx)), p.text[:20])
     # 图源索引表（附录B）图号须与成品图题一致：按图题文字对照（出版审读 #111/#112 复审）
     # 先去零宽字符（U+2060/200B/200C/200D/FEFF，横排表格单元格会插 U+2060）；
-    # 索引表存在但 0 行可解析、图题找不到或对应多个成品图题，一律不通过（不跳过、不取第一个）。
+    # 图号为“—”的行（未入书）不对照；索引表存在但 0 行可解析、图题找不到或对应多个成品图题，一律不通过（不跳过、不取第一个）。
     ZW = dict.fromkeys(map(ord, '\u2060\u200b\u200c\u200d\ufeff'))
     def zw(s): return s.translate(ZW).strip()
     APPB = '图源索引表图号与成品图题一致（按图题文字对照）'
@@ -520,6 +520,7 @@ def main():
             cs = row.cells
             if len(cs) < 2: continue
             num, title = zw(cs[0].text), zw(cs[1].text)
+            if num in ('—', '－', '-', ''): continue   # 附录B 约定：未入书的图图号记“—”，不对照（但不计入可解析行）
             m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)$', num)
             if not m:
                 check(APPB, False, f'索引表图号无法解析：{num[:16]!r}'); continue
