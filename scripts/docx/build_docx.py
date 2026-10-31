@@ -2,7 +2,7 @@
 """Markdown -> docx 排版脚本（《企业数智化转型思路》二次修订）。
 
 用法:
-  python3 build_docx.py                       # 默认：上册 -> 样张-上册.docx；--volume middle/lower/all -> 样张-中册/下册/合订本.docx（印刷版加“-印刷版”）
+  python3 build_docx.py                       # 默认：上册 -> 企业数智化转型思路-上册.docx；--volume middle/lower/all -> 企业数智化转型思路-中册/下册/合订本.docx（印刷版加“-印刷版”）
   python3 build_docx.py --volume upper -o out.docx
   python3 build_docx.py --files a.md:9 b.md:10 -o 中册.docx   # 任意文件:新章号（null=不编号, A=附录）
   python3 build_docx.py --style style.yaml --repo <仓库根目录>   # 默认即本仓库，可用 BOOK_REPO 覆盖
@@ -446,8 +446,8 @@ class Builder:
             r['ok'] = bool(target) and r['status'] in ('一致', '方位指代，建议改为明确编号')
 
     def write_xref(self, path):
-        L = ['# 图表交叉引用对照表（上册样张）', '',
-             f'- 生成脚本：build_docx.py，随样张自动生成；书中实际图 {len(self.log["figures"])} 个、表 {len(self.log["tables"])} 个。',
+        L = ['# 图表交叉引用对照表', '',
+             f'- 生成脚本：build_docx.py，随 Word 成品自动生成；书中实际图 {len(self.log["figures"])} 个、表 {len(self.log["tables"])} 个。',
              f'- 扫描到正文引用 {len(self.xrefs)} 处；需处理 {sum(1 for r in self.xrefs if not r["ok"])} 处（✗），方位指代建议改写 {sum(1 for r in self.xrefs if r["status"].startswith("方位"))} 处（△）。', '',
              '## 一、引用对照', '', '| # | 位置（源文件:行） | 原文 | 上下文 | 原图号 | 重编后实际编号 | 判定 |', '|---|---|---|---|---|---|---|']
         for i, r in enumerate(self.xrefs, 1):
@@ -810,12 +810,12 @@ def main():
     ap.add_argument('--allow-web-residue', action='store_true', help='临时跳过网页导航行/“一芥智能研究院｜…”页眉行以出样张（默认报错退出）')
     ap.add_argument('--no-toc-pages', action='store_true', help='不预排目录（只留 TOC 域，Word 中按 F9 生成）')
     ap.add_argument('--only', type=int, help='只导出某一章（含其导读页），编号仍按全书')
-    ap.add_argument('-o', '--output', default=None, help='默认按 --volume 命名：output/docx/样张-上册|中册|下册|合订本.docx（--print 加“-印刷版”），各册互不覆盖')
+    ap.add_argument('-o', '--output', default=None, help='默认按 --volume 命名：output/docx/企业数智化转型思路-上册|中册|下册|合订本.docx（--print 加“-印刷版”），各册互不覆盖')
     ap.add_argument('--print', dest='print_edition', action='store_true', default=os.environ.get('BOOK_EDITION') == 'print', help='印刷版：参考文献与来源行在题名后补印网址（亦可 BOOK_EDITION=print）')
     a = ap.parse_args()
-    if a.output is None:   # 不给 -o 时按册命名，避免各册都写到 样张-上册.docx 互相覆盖
+    if a.output is None:   # 不给 -o 时按册命名（书名-册名，不带“样张”），各册互不覆盖
         vol = {'upper': '上册', 'middle': '中册', 'lower': '下册', 'all': '合订本'}.get(a.volume, a.volume)
-        a.output = OUT_DIR / f"样张-{vol}{'-印刷版' if a.print_edition else ''}.docx"
+        a.output = OUT_DIR / f"企业数智化转型思路-{vol}{'-印刷版' if a.print_edition else ''}.docx"
     cfg = yaml.safe_load(Path(a.style).read_text('utf-8')); repo = Path(a.repo)
     if a.files:
         items = [(repo / f.rsplit(':', 1)[0], parse_ch(f.rsplit(':', 1)[1] if ':' in f else None)) for f in a.files]
@@ -898,7 +898,7 @@ def main():
     import fonts_embed   # 目录预排（toc_fill 会经 python-docx 重存）之后再嵌入字体
     fe = fonts_embed.embed(a.output, cfg); b.log['fonts_embedded'] = fe
     print('  嵌入字体：' + ('、'.join(f"{x['font']}（{x['kind']}，{x['bytes']} 字节）" for x in fe['embedded']) or '无') + (f"；未找到字体文件：{'、'.join(fe['missing'])}" if fe['missing'] else ''))
-    b.write_xref(Path(a.output).parent / ('图号对照表-' + Path(a.output).stem.replace('样张-', '') + '.md'))
+    b.write_xref(Path(a.output).parent / ('图号对照表-' + Path(a.output).stem.replace('样张-', '').replace('企业数智化转型思路-', '') + '.md'))
     sys.path.insert(0, str(HERE))
     Path(a.output).with_suffix('.build.json').write_text(json.dumps(b.log, ensure_ascii=False, indent=1), 'utf-8')
     print(f'已生成 {a.output}；表 {len(b.log["tables"])} 个，图 {len(b.log["figures"])} 个，警告 {len(b.log["warnings"])} 条')

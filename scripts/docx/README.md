@@ -30,33 +30,33 @@
 ```bash
 cd scripts/docx
 # 电子书版（参考文献只印题名，题名带超链接）
-python3 build_docx.py --volume upper -o ../../output/docx/样张-上册.docx
+python3 build_docx.py --volume upper -o ../../output/docx/企业数智化转型思路-上册.docx
 # 印刷版（参考文献、注释、来源行在题名后补印网址）
-python3 build_docx.py --volume upper --print -o ../../output/docx/样张-上册-印刷版.docx
+python3 build_docx.py --volume upper --print -o ../../output/docx/企业数智化转型思路-上册-印刷版.docx
 # 或：BOOK_EDITION=print python3 build_docx.py ...
 ```
 
 四册均可导出：`--volume upper`（上册，第一至八章）、`--volume middle`（中册，第九至二十章）、`--volume lower`（下册，第二十一至三十章，篇目较多的行业门类各成一章，A、H、M、Q、S 五个门类合为第三十章“其他行业案例”（各门类前印加粗引导行，不编号），案例为 X.Y，附编A/B 为附录A/B）、`--volume all`（合订本，三册合排、一个目录，章号与各册单独导出时相同，附录字母全书连续：上册A、中册B/C、下册D/E）。配置见 `style.yaml` 的 `volumes`（`files` / `chapters` / `groups` / `include`；`groups` 的一章可列多个子目录，配 `group_leads` 印门类引导行）；下册 `front` 列册首不编号篇目（`00-导言.md`），排在第二十一章之前。
 
 ```bash
-python3 build_docx.py --volume lower -o ../../output/docx/样张-下册.docx
-python3 build_docx.py --volume all -o ../../output/docx/样张-合订本.docx
+python3 build_docx.py --volume lower -o ../../output/docx/企业数智化转型思路-下册.docx
+python3 build_docx.py --volume all -o ../../output/docx/企业数智化转型思路-合订本.docx
 ```
 
 **下册不做导航页判定：** `style.yaml` 的 `exclude.nav_page_detect_exempt_dirs: [下册-案例汇编]` 使整个下册目录都不按“导航页”特征（短正文＋多链接）自动剔除，否则附编B 等短篇案例会被误删。下册各门类的 `README.md`（门类索引页）由文件名规则 `exclude.patterns` 中的 `README.md` 剔除，不靠导航页判定。因此，今后若在下册新增其他导航/索引页（文件名不是 `README.md`），构建不会自动识别，会当作案例排入正文；需改名为 `README.md`，或加入 `exclude.files`。
 
-不给 `-o` 时按 `--volume` 自动命名，写到 `output/docx/`：`样张-上册.docx`、`样张-中册.docx`、`样张-下册.docx`、`样张-合订本.docx`（`--print` 时加“-印刷版”，如 `样张-中册-印刷版.docx`），各册互不覆盖。
+不给 `-o` 时按 `--volume` 自动命名，写到 `output/docx/`：`企业数智化转型思路-上册.docx`、`企业数智化转型思路-中册.docx`、`企业数智化转型思路-下册.docx`、`企业数智化转型思路-合订本.docx`（`--print` 时加“-印刷版”，如 `企业数智化转型思路-中册-印刷版.docx`），各册互不覆盖。
 
 其他常用参数：`--only N`（只导出第 N 章）、`--no-toc-pages`（不预排目录，在 Word 中按 F9 更新）、`--allow-web-residue`（源稿残留网页导航行时临时放行出样张）。
 
 ## 格式自检
 
 ```bash
-python3 check_docx.py ../../output/docx/样张-上册.docx -o ../../output/docx/检查清单-上册.md
+python3 check_docx.py ../../output/docx/企业数智化转型思路-上册.docx -o ../../output/docx/检查清单-上册.md
 # 同时检查 PDF（版本号、裸链、电子版不补印网址）
-python3 check_docx.py 样张-上册.docx --pdf 样张-上册.pdf
+python3 check_docx.py 企业数智化转型思路-上册.docx --pdf 企业数智化转型思路-上册.pdf
 # 印刷版 PDF：检查参考文献与来源行是否印出网址
-python3 check_docx.py 样张-上册-印刷版.docx --print --pdf 样张-上册-印刷版.pdf
+python3 check_docx.py 企业数智化转型思路-上册-印刷版.docx --print --pdf 企业数智化转型思路-上册-印刷版.pdf
 ```
 
 结果写入 `-o` 指定的检查清单（Markdown），开头给出“共 N 项，M 项不通过”。

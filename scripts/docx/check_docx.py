@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""读回 docx 逐项核对格式。用法: python3 check_docx.py [样张.docx] [-o 检查清单.md] [--style style.yaml]"""
+"""读回 docx 逐项核对格式。用法: python3 check_docx.py [企业数智化转型思路-上册.docx] [-o 检查清单.md] [--style style.yaml]"""
 import json
 import argparse, os, re, yaml
 from pathlib import Path
@@ -126,7 +126,7 @@ def pdf_url_hits(path, copyright_markers=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('docx', nargs='?', default=OUT_DIR / '样张-上册.docx')
+    ap.add_argument('docx', nargs='?', default=OUT_DIR / '企业数智化转型思路-上册.docx')
     ap.add_argument('-o', '--output', default=OUT_DIR / '检查清单-上册.md')
     ap.add_argument('--style', default=HERE / 'style.yaml')
     ap.add_argument('--pdf', default=None, help='同时用 pdftotext 检查该 PDF 中的本书版本号')
