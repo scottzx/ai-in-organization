@@ -51,29 +51,25 @@ images:
   redraw_file: null
   note: null
   manual_review: null
-- file: B01-钢铁-43.png
+- file: fig-C05-1-钢铁融合创新实施架构.png
   chapters: C05-钢铁
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部钢铁行业数字化转型指南(2021) 第43页
-  url: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/202111/5dc66160a01f417098c5426e36aab051.pdf#page=43
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B01-钢铁-43.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与钢铁行业融合应用参考指南（2021年）》图3-2（PDF第43页）整理。"
   manual_review: null
-- file: B02-工程机械-57.png
+- file: fig-C01-1-工程机械融合创新实施架构.png
   chapters: C01-工程机械
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部工程机械指南(2023,gov.cn) 第57页
-  url: https://www.gov.cn/zhengce/zhengceku/202311/P020231118422003936163.pdf#page=57
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B02-工程机械-57.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与工程机械行业融合应用参考指南（2023年）》图3-2（PDF第57页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）。"
   manual_review: null
 - file: B03-电力-20.png
   chapters: D01-电力
@@ -123,17 +119,15 @@ images:
   redraw_file: null
   note: null
   manual_review: null
-- file: B05-船舶-44.png
+- file: fig-C04-1-船舶融合创新实施架构.png
   chapters: C04-船舶
-  action:
-    ebook: keep
-    print: redraw
-  advice: 保留（电子书）/重绘（纸书）
-  source: 工信部船舶指南(2025) 第44页
-  url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=44
-  not_cc: true
+  action: keep
+  advice: 本书重绘（替代原图B05-船舶-44.png）
+  source: 本书绘制
+  url: null
+  not_cc: false
   redraw_file: null
-  note: null
+  note: "资料来源：本书绘制，据工业和信息化部《工业互联网与船舶行业融合应用参考指南（2025年）》图4-2（PDF第44页）整理。"
   manual_review: null
 - file: B06-油气储运-26.png
   chapters: G03-油气储运
