@@ -353,10 +353,8 @@ class Builder:
             if re.fullmatch(r'<a id="[^"]*"></a>', s) or s in ('---', '***') or \
                False:
                 flush(); i += 1; continue
-            if s == '本章索引':
-                flush(); i += 1
-                while i < len(lines) and (not lines[i].strip() or re.match(r'^\s*[-*] \[.*\]\(#', lines[i])): i += 1
-                continue
+            if s == '本章索引':   # 出版审读 #108 复审 P2③：本章索引已由文字编辑删除（#109），再出现即报错，不再静默跳过
+                print(f'书稿出现“本章索引”（{rel}:{i + 1}），请文字编辑在源稿删除后再构建。'); sys.exit(8)
             m = re.match(r'^(#{1,4})\s+(.*)$', s)
             if m:
                 flush(); hl, ht = len(m.group(1)), m.group(2).strip()
@@ -552,7 +550,6 @@ class Builder:
         if title: self.collect.setdefault((kind, norm_title(title)), []).append({'no': f'{kind}{self.label}-{n}', 'file': self.cur_file})
         return p
 
-    KEEP_ROWS = 3   # 表身前 3 行随表头同页
     def table(self, rows):
         cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows]
         header, body = cells[0], cells[2:]
@@ -569,14 +566,13 @@ class Builder:
                 c = self.lv('table')
                 fmt_par(p.paragraph_format, self.cfg, 'center' if ri == 0 else c['align'], 0, c['size_pt'])
                 self.inline(p, row[ci] if ci < len(row) else '', 'table', ri == 0)
-        # 跨页表（出版审读 d7b16e3 预审 P1-2）：首行为重复表头；表题、表头与表身前 KEEP_ROWS 行同页，这几行不跨页
-        for ri, row in enumerate(t.rows):
-            if ri > self.KEEP_ROWS: break
-            trpr = row._tr.get_or_add_trPr()
-            if trpr.find(qn('w:cantSplit')) is None: trpr.append(OxmlElement('w:cantSplit'))
-            if ri == 0 and trpr.find(qn('w:tblHeader')) is None: trpr.append(OxmlElement('w:tblHeader'))
-            if ri < len(t.rows) - 1:   # 末行不再连到表后段落
-                for c_ in row.cells:
+        # 跨页表（出版审读 #108 复审 P1）：首行为重复表头且不跨页；表头只与表身第 1 行同页（keepNext）。
+        # 表身各行不加 cantSplit/keepNext——行高的索引表若整块绑定，会把表题单独挤到上一页。
+        if t.rows:
+            trpr = t.rows[0]._tr.get_or_add_trPr()
+            trpr.append(OxmlElement('w:cantSplit')); trpr.append(OxmlElement('w:tblHeader'))
+            if len(t.rows) > 1:
+                for c_ in t.rows[0].cells:
                     for q_ in c_.paragraphs: q_.paragraph_format.keep_with_next = True
         # 表格边框黑色
         self.para('Normal', key='body')  # 表后空行（行距同正文）
@@ -949,6 +945,9 @@ def main():
     b.xref_notes = notes; b.log['xref_notes'] = notes
     import package_clean   # 删 stylesWithEffects、未用编号定义、样式主题色（字体嵌入之后，成品包最后一步）
     b.log['package_clean'] = package_clean.clean(a.output)
+    if not a.no_toc_pages and shutil.which('soffice') and 'toc' in b.log:   # 成品包（已嵌字体）再渲染一次，目录页码按最终排版校准
+        b.log['toc']['recheck'] = toc_fill.recheck(a.output, cfg)
+        print(f"  目录页码终检：改正 {b.log['toc']['recheck']['fixed']} 条，{b.log['toc']['recheck']['rounds']} 轮后一致={b.log['toc']['recheck']['ok']}")
     b.write_xref(Path(a.output).parent / ('图号对照表-' + Path(a.output).stem.replace('样张-', '').replace('企业数智化转型思路-', '') + '.md'))
     sys.path.insert(0, str(HERE))
     Path(a.output).with_suffix('.build.json').write_text(json.dumps(b.log, ensure_ascii=False, indent=1), 'utf-8')

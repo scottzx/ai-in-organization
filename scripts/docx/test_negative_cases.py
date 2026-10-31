@@ -28,6 +28,10 @@
   25. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
   26. 封面节页眉印书名、页脚有 PAGE 域 -> 封面页眉页码项不通过；目录节页码改阿拉伯数字 -> 目录页码项不通过
   27. 去掉表格 tblHeader、表题/表头 keepNext -> 跨页表各项不通过
+  34. 表身行加 cantSplit/keepNext -> 表身不绑定项不通过（出版审读 #108 复审 P1）
+  35. 正文节 start=2 -> 正文页码项不通过
+  36. 封面节与目录节共用页眉部件 -> 部件不共用项不通过
+  37. 书稿出现“本章索引” -> build_docx 退出 8
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
@@ -170,6 +174,38 @@ def main():
         zip_mutate(base, tmp / 'sym.docx', 'word/numbering.xml', lambda x: re.sub(r'\s*/>\s*$', '>', x, count=1).replace('</w:numbering>', '') + '<w:abstractNum w:abstractNumId="9"><w:lvl w:ilvl="0"><w:rPr><w:rFonts w:ascii="Symbol" w:hAnsi="Symbol"/></w:rPr></w:lvl></w:abstractNum></w:numbering>')
         rows = check(repo, tmp / 'sym.docx', tmp / 'sym.md')
         ok('numbering.xml 出现 Symbol 字体 -> 成品包项不通过', not rows[PK][0] and 'Symbol' in rows[PK][1], str(rows.get(PK)))
+
+        # 34–37. 出版审读 #108 复审：表身不绑定、正文页码自1、封面页眉部件不共用、“本章索引”报错
+        TB = '表格 表身各行不加 cantSplit/keepNext（防表题被挤成孤页）'; HP = '封面节页眉部件与后续各节不共用'
+        ok('基准样张 表身不绑定、封面页眉部件独立通过', rows0.get(TB, (True,))[0] and rows0.get(HP, (False,))[0], str(rows0.get(TB)) + str(rows0.get(HP)))
+        def f_tb(d):
+            from docx.oxml import OxmlElement as OE
+            t_ = next(t for t in d.tables if len(t.rows) > 2); t_.rows[1]._tr.get_or_add_trPr().append(OE('w:cantSplit'))
+        mutate(base, tmp / 'tb.docx', f_tb); rows = check(repo, tmp / 'tb.docx', tmp / 'tb.md')
+        ok('表身第 1 行加 cantSplit -> 表身不绑定项不通过', not rows[TB][0], str(rows.get(TB)))
+        def f_tbk(d):
+            t_ = next(t for t in d.tables if len(t.rows) > 2)
+            for c_ in t_.rows[2].cells:
+                for q_ in c_.paragraphs: q_.paragraph_format.keep_with_next = True
+        mutate(base, tmp / 'tbk.docx', f_tbk); rows = check(repo, tmp / 'tbk.docx', tmp / 'tbk.md')
+        ok('表身第 2 行加 keepNext -> 表身不绑定项不通过', not rows[TB][0], str(rows.get(TB)))
+        def f_bodypg(d):
+            from docx.oxml.ns import qn as Q
+            d.sections[2]._sectPr.find(Q('w:pgNumType')).set(Q('w:start'), '2')
+        mutate(base, tmp / 'bodypg.docx', f_bodypg); rows = check(repo, tmp / 'bodypg.docx', tmp / 'bodypg.md')
+        ok('正文节 pgNumType start=2 -> 正文页码自1项不通过', not rows[BODYPG][0], str(rows.get(BODYPG)))
+        def f_share(d):
+            from docx.oxml.ns import qn as Q
+            r0 = d.sections[0]._sectPr.find(Q('w:headerReference')); r1 = d.sections[1]._sectPr.find(Q('w:headerReference'))
+            r0.set(Q('r:id'), r1.get(Q('r:id')))
+        mutate(base, tmp / 'share.docx', f_share); rows = check(repo, tmp / 'share.docx', tmp / 'share.md')
+        ok('封面节与目录节共用页眉部件 -> 部件不共用项不通过', not rows[HP][0], str(rows.get(HP)))
+        src = repo / '上册-研究报告' / '01-智力即服务.md'; o1 = src.read_text('utf-8')
+        try:
+            src.write_text(o1 + '\n\n本章索引\n\n- [第一节](#x)\n', 'utf-8')
+            r = build(repo, 'upper', tmp / 'idx.docx')
+        finally: src.write_text(o1, 'utf-8')
+        ok('书稿出现“本章索引” -> build_docx 退出 8 且不写出', r.returncode == 8 and '本章索引' in r.stdout and not (tmp / 'idx.docx').exists(), f'exit {r.returncode} ' + r.stdout[-200:])
 
         # 5. 回退白名单
         WL = '缺字回退仅限 style.yaml fonts.glyph_fallback_chars 白名单字符'

@@ -399,12 +399,14 @@ def main():
         if si == 2: check('正文节 阿拉伯页码自1起（自第一篇，上册即导论）', _pg(s) == ('decimal', '1'), f'实为 {_pg(s)}')
     hparts = [s.header.part.partname for s in secs] if len(secs) >= 2 else []
     check('封面节页眉部件与后续各节不共用', len(hparts) < 2 or hparts[0] not in hparts[1:], f'{hparts}')
-    # 跨页表：首行重复表头；表头与表身前几行不跨页、与下行同页
+    # 跨页表（出版审读 #108 复审 P1）：首行重复表头、不跨页、与表身第 1 行同页；表身各行不加 cantSplit/keepNext
     for i, t in enumerate(doc.tables):
         tr = t.rows[0]._tr; trpr = tr.trPr
         check('表格 首行为重复表头（tblHeader）', trpr is not None and trpr.find(qn('w:tblHeader')) is not None, f'第{i+1}个表格')
         if len(t.rows) > 1:
             check('表格 表头与下行同页（keepNext）且不跨页（cantSplit）', trpr is not None and trpr.find(qn('w:cantSplit')) is not None and all(eff_pf(q, 'keep_with_next') for c in t.rows[0].cells for q in c.paragraphs), f'第{i+1}个表格')
+            bad = [ri + 1 for ri, r in enumerate(t.rows) if ri > 0 and ((r._tr.trPr is not None and r._tr.trPr.find(qn('w:cantSplit')) is not None) or any(q.paragraph_format.keep_with_next for c in r.cells for q in c.paragraphs))]
+            check('表格 表身各行不加 cantSplit/keepNext（防表题被挤成孤页）', not bad, f'第{i+1}个表格 第{bad[:5]}行')
     for p in doc.paragraphs:
         if p.style.name == 'Caption' and p.text.startswith('表'):
             check('表题 与下段同页（keepNext）', bool(eff_pf(p, 'keep_with_next')), p.text[:20])

@@ -84,3 +84,64 @@ def fill(docx_path, cfg, keep_pdf=None):
     indent_fix.fix(doc); doc.save(docx_path)
     shutil.rmtree(tmp, ignore_errors=True)
     return len(heads), miss
+
+
+W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
+
+def _entries(root):
+    """TOC 域内各条目段落：[(标题文字, 页码 w:t 元素)]。"""
+    ps = list(root.iter(W + 'p')); out = []; inside = False
+    for p in ps:
+        if not inside:
+            if any('TOC \\o' in (t.text or '') for t in p.iter(W + 'instrText')): inside = True
+            continue
+        ts = [t for t in p.iter(W + 't')]
+        if len(ts) >= 2: out.append((''.join(t.text or '' for t in ts[:-1]), ts[-1]))
+        if any(f.get(W + 'fldCharType') == 'end' for f in p.iter(W + 'fldChar')): break
+    return out
+
+def locate(pages, titles):
+    """按顺序在正文页（页脚为阿拉伯数字）中找各标题，返回页码字符串列表（找不到为 '—'）。"""
+    bodyp = [(int(last), t) for last, t in pages if re.fullmatch(r'\d+', last)]
+    ci, pos, res = 0, 0, []
+    for text in titles:
+        key = N(text)[:14]; found = None
+        while ci < len(bodyp):
+            j = bodyp[ci][1].find(key, pos)
+            if j >= 0: found = bodyp[ci][0]; pos = j + len(key); break
+            ci += 1; pos = 0
+        if found is None: ci, pos = max(0, ci - 1), 0; res.append('—')
+        else: res.append(str(found))
+    return res
+
+def compare(docx_path, keep_pdf=None):
+    """渲染成品，返回 [(标题, 目录页码, 实际页码)] 与 PDF 路径。"""
+    import zipfile
+    from lxml import etree
+    root = etree.fromstring(zipfile.ZipFile(docx_path).read('word/document.xml'))
+    ents = _entries(root)
+    tmp = tempfile.mkdtemp(); pages, pdf = pdf_pages(docx_path, tmp)
+    real = locate(pages, [e[0] for e in ents])
+    if keep_pdf: shutil.copy2(pdf, keep_pdf)
+    shutil.rmtree(tmp, ignore_errors=True)
+    return [(e[0], e[1].text, r) for e, r in zip(ents, real)]
+
+def recheck(docx_path, cfg=None, max_rounds=3):
+    """出版审读 #108 复审 P2②：fill 预排时成品尚未嵌入字体、未清理包，LibreOffice 用的字形度量与成品不同，
+    后半本分页会差 1 页。这里对成品包再渲染，直接改 document.xml 里的页码文字（不经 python-docx 重存），
+    目录在罗马页码节，改数字不影响正文分页；重复至一致。"""
+    import zipfile
+    from lxml import etree
+    fixed = 0
+    for rnd in range(1, max_rounds + 1):
+        res = compare(docx_path)
+        if all(a == b for t, a, b in res): return {'ok': True, 'rounds': rnd, 'fixed': fixed}
+        zi = zipfile.ZipFile(docx_path); items = [(n, zi.read(n)) for n in zi.namelist()]; zi.close()
+        root = etree.fromstring(dict(items)['word/document.xml'])
+        ents = _entries(root); real = [b for t, a, b in res]
+        for (t, el), r in zip(ents, real):
+            if el.text != r: el.text = r; fixed += 1
+        data = etree.tostring(root, xml_declaration=True, encoding='UTF-8', standalone=True)
+        with zipfile.ZipFile(docx_path, 'w', zipfile.ZIP_DEFLATED) as zo:
+            for n, b in items: zo.writestr(n, data if n == 'word/document.xml' else b)
+    return {'ok': not [1 for t, a, b in compare(docx_path) if a != b], 'rounds': max_rounds, 'fixed': fixed}
