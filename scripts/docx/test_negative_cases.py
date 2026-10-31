@@ -109,6 +109,17 @@ def main():
         mutate(base, tmp / 'n1.docx', f1); rows = check(repo, tmp / 'n1.docx', tmp / 'n1.md')
         ok('front 以外“图/表导-N” -> 题注编号项不通过', not rows[CAP][0] and '导-' in rows[CAP][1], rows[CAP][1])
 
+        # 附录B 图源索引表图号与成品图题不符 -> 对照项不通过
+        APPB = '图源索引表图号与成品图题一致（按图题文字对照）'
+        def fb(d):
+            fc = next(p for p in d.paragraphs if p.style.name == 'Caption' and re.match(r'^图 ?\d+-\d+\u3000', p.text))
+            num, title = re.match(r'^图 ?(\d+-\d+)\u3000(.+)$', fc.text.strip()).groups()
+            a, b = num.split('-'); t = d.add_table(rows=2, cols=2)
+            t.cell(0, 0).text = f'图 {num}'; t.cell(0, 1).text = title              # 一致的一行
+            t.cell(1, 0).text = f'图 {a}-{int(b) + 7}'; t.cell(1, 1).text = title   # 错号的一行
+        mutate(base, tmp / 'nb.docx', fb); rows = check(repo, tmp / 'nb.docx', tmp / 'nb.md')
+        ok('附录B 图号与成品图题不符 -> 图源索引表对照项不通过', APPB in rows and not rows[APPB][0] and '索引表为' in rows[APPB][1], str(rows.get(APPB)))
+
         # 4. 附录字母：把第一个题注所在章的 h1 改成“附录A”
         def into_app(d, letter):
             c = caps(d)[0]; ps = d.paragraphs; i = next(k for k, p in enumerate(ps) if p._p is c._p)

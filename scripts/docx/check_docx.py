@@ -501,6 +501,19 @@ def main():
         p = ps[k]; nx = ps[k + 1].text.strip() if k + 1 < len(ps) else ''
         check('图题格式“图X-Y　标题”（front 篇目“图导-Y”）且居中', bool(re.match(r'^图 ?导-\d+\u3000\S' if any(p._p is e for e in front_caps) else r'^图 ?(?:[1-9]\d*|[A-Z])-\d+\u3000\S', p.text)) and eff_pf(p, 'alignment') == 1, p.text[:20])
         check('图题下一行为资料来源/数据来源', bool(re.match(r'^(资料来源|数据来源)', nx)), p.text[:20])
+    # 图源索引表（附录B）图号须与成品图题一致：按图题文字对照
+    capnum = {}
+    for k in caps:
+        m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)\u3000(.+)$', ps[k].text.strip())
+        if m: capnum.setdefault(m.group(2).strip(), m.group(1))
+    for t in doc.tables:
+        for row in t.rows:
+            cs = row.cells
+            if len(cs) < 2: continue
+            m = re.match(r'^图 ?((?:导|[1-9]\d*|[A-Z])-\d+)$', cs[0].text.strip())
+            if not m or cs[1].text.strip() not in capnum: continue
+            check('图源索引表图号与成品图题一致（按图题文字对照）', capnum[cs[1].text.strip()] == m.group(1),
+                  f'{cs[1].text.strip()[:16]} 索引表为{m.group(1)}，图题为{capnum[cs[1].text.strip()]}')
     # 输出
     total_fail = sum(1 for v in items.values() if v[1])
     out = [f'# 格式检查清单：{Path(a.docx).name}', '',
