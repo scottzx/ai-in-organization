@@ -14,8 +14,10 @@ import json
 import os
 import re
 import shutil
+import copy
 
 from markdown_it import MarkdownIt
+from markdown_it.token import Token
 from mdit_py_plugins.footnote import footnote_plugin
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -168,8 +170,108 @@ def without_trailing_navigation(path, tokens):
     return tokens
 
 
+REFERENCE_HEADING = re.compile(r'参考文献|参考资料|references|bibliography', re.I)
+REF_NOTE_STYLE = 'display:block;font-size:0.85em;color:#666;margin-top:0.2em'
+
+
+def inline_reference_notes(tokens):
+    """Show notes on reference-list entries as grey text after the entry.
+
+    Footnote references inside a 参考文献/参考资料 section are replaced by the
+    note text. Notes still referenced from body text stay in the footnote list,
+    which is renumbered without gaps; an empty list is removed with its rule.
+    """
+    try:
+        start = next(i for i, t in enumerate(tokens) if t.type == 'footnote_block_open')
+        end = max(i for i, t in enumerate(tokens) if t.type == 'footnote_block_close')
+    except (StopIteration, ValueError):
+        return tokens
+    body, block = tokens[:start], tokens[start + 1:end]
+    notes, current = {}, None
+    for token in block:
+        if token.type == 'footnote_open':
+            current = token.meta['id']
+            notes[current] = []
+        elif token.type == 'footnote_close':
+            current = None
+        elif current is not None:
+            notes[current].append(token)
+
+    def note_children(note_id):
+        children = []
+        for token in notes.get(note_id, []):
+            if token.type == 'inline':
+                if children:
+                    children.append(Token('softbreak', 'br', 0))
+                children.extend(copy.deepcopy(token.children or []))
+        return children
+
+    section_level = None
+    in_heading = False
+    kept_refs = []
+    for index, token in enumerate(body):
+        if token.type == 'heading_open':
+            level = int(token.tag[1])
+            title = body[index + 1].content
+            if section_level is not None and level <= section_level:
+                section_level = None
+            if REFERENCE_HEADING.search(title):
+                section_level = level
+            in_heading = True
+            continue
+        if token.type == 'heading_close':
+            in_heading = False
+            continue
+        if token.type != 'inline' or not token.children:
+            continue
+        children = []
+        for child in token.children:
+            if child.type != 'footnote_ref':
+                children.append(child)
+            elif section_level is not None and not in_heading:
+                note = Token('html_inline', '', 0)
+                note.content = f'<span class="ref-note" style="{REF_NOTE_STYLE}">'
+                close = Token('html_inline', '', 0)
+                close.content = '</span>'
+                children.extend([note, *note_children(child.meta['id']), close])
+            else:
+                children.append(child)
+                kept_refs.append(child)
+        token.children = children
+    return _renumber(body, notes, kept_refs)
+
+
+def _renumber(body, notes, kept_refs):
+    order = sorted({ref.meta['id'] for ref in kept_refs})
+    mapping = {old: new for new, old in enumerate(order)}
+    counts = Counter()
+    for ref in kept_refs:
+        old = ref.meta['id']
+        ref.meta = {**ref.meta, 'id': mapping[old], 'subId': counts[old]}
+        counts[old] += 1
+    if not order:
+        return body
+    out = [Token('footnote_block_open', '', 1)]
+    for old in order:
+        opening = Token('footnote_open', '', 1)
+        opening.meta = {'id': mapping[old], 'label': None}
+        out.append(opening)
+        content = [t for t in notes[old] if t.type != 'footnote_anchor']
+        last = content.pop() if content and content[-1].type == 'paragraph_close' else None
+        out.extend(content)
+        for sub in range(counts[old]):
+            anchor = Token('footnote_anchor', '', 0)
+            anchor.meta = {'id': mapping[old], 'subId': sub, 'label': None}
+            out.append(anchor)
+        if last:
+            out.append(last)
+        out.append(Token('footnote_close', '', -1))
+    out.append(Token('footnote_block_close', '', -1))
+    return body + out
+
+
 def render_document(path):
-    tokens = without_trailing_navigation(path, MD.parse(path.read_text()))
+    tokens = inline_reference_notes(without_trailing_navigation(path, MD.parse(path.read_text())))
     headings = []
     counts = Counter()
     for index, token in enumerate(tokens):
