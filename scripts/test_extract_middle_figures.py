@@ -33,9 +33,9 @@ spec.loader.exec_module(extract)
 
 # B01-钢铁-43, B02-工程机械-57, B05-船舶-44 (PR 1/3) and B01-钢铁-41, B03-电力-20, B04-石化-14,
 # B06-油气储运-26 (PR 2/3) were redrawn by the book (scripts/figures, fig-*) and left the crop pipeline.
-CASES = ['B04-石化-16.png', 'B05-船舶-17.png']
+CASES = []  # 中册已无原图裁切（场景图谱均改为精简表）
 # Assets produced by the pinned pipeline (PR #83/#85).
-REPRODUCIBLE = ['B04-石化-16.png', 'B05-船舶-17.png']
+REPRODUCIBLE = []
 
 
 def unavailable(test, reason):
@@ -83,6 +83,13 @@ class ReproduceFigures(unittest.TestCase):
         self.assertEqual(sorted(r['asset'] for r in rules['figures']), sorted(CASES))
         used = {r['source_id'] for r in rules['figures']}
         self.assertTrue(used <= set(rules['sources']))
+
+    def test_self_drawn_inventory_matches_manifest(self):
+        rules = json.loads(extract.RULES.read_text())
+        manifest = json.loads((extract.TARGET / 'sources.json').read_text())
+        inventory = [r['asset'] for r in rules['figures']] + [r['asset'] for r in rules['self_drawn']]
+        self.assertEqual(len(inventory), len(set(inventory)))
+        self.assertEqual(sorted(inventory), sorted(r['asset'] for r in manifest['figures']))
 
     def test_byte_identical(self):
         check_toolchain(self)

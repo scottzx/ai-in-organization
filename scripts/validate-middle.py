@@ -173,7 +173,17 @@ def main():
   for chapter in rule['required_in']:
    text=(MID/chapter).read_text()
    if source_url not in text: errors.append(chapter+': figure lacks original PDF page link: '+asset)
- if set(by_asset)!=set(r['asset'] for r in figure_rules['figures']):
+ for rule in figure_rules.get('self_drawn',[]):
+  asset=rule['asset'];meta=by_asset.get(asset)
+  if not meta:
+   errors.append('Reviewed self-drawn figure missing from source manifest: '+asset);continue
+  if inline_uses.get(asset,set())!=set(rule['required_in']):
+   errors.append('Self-drawn figure must be embedded in its planned chapter(s): '+asset)
+  if meta.get('generator')!=rule.get('generator') or meta.get('redraws')!=rule.get('redraws'):
+   errors.append('Self-drawn figure provenance differs from reviewed inventory: '+asset)
+ inventory=[r['asset'] for r in figure_rules['figures']]+[r['asset'] for r in figure_rules.get('self_drawn',[])]
+ if len(inventory)!=len(set(inventory)): errors.append('Reviewed figure inventory lists an asset twice')
+ if set(by_asset)!=set(inventory):
   errors.append('Figure manifest and reviewed figure inventory differ')
  intake=json.loads((DATA/'新增案例条目.json').read_text())
  for e in intake['entries']:

@@ -47,59 +47,358 @@
       "sha256": "66188e3f3a69b824a4f14b65995711517548050b6f46f294c2bc7e7d88e1e8bb"
     }
   },
-  "figures": [
+  "figures": [],
+  "self_drawn": [
     {
-      "asset": "B04-石化-16.png",
-      "source_id": "B04",
-      "industry": "石化",
-      "pdf_page": 16,
+      "asset": "fig-C01-1-工程机械融合创新实施架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
       "required_in": [
-        "C06-石化化工.md"
+        "C01-工程机械.md"
       ],
-      "page_size_points": [
-        1190.55,
-        841.9
-      ],
-      "crop_pdf_bbox": [
-        29.4,
-        62.28,
-        1118.16,
-        792.28
-      ],
-      "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-      "printed_page": 10,
-      "figure_titles": [
-        "图3-1 工业互联网与石化化工行业融合应用场景总览"
-      ],
-      "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。"
+      "redraws": "B02-工程机械-57.png"
     },
     {
-      "asset": "B05-船舶-17.png",
-      "source_id": "B05",
-      "industry": "船舶",
-      "pdf_page": 17,
-      "render_dpi": 328,
+      "asset": "fig-C04-1-船舶融合创新实施架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
       "required_in": [
         "C04-船舶.md"
       ],
-      "page_size_points": [
-        595.3,
-        841.9
+      "redraws": "B05-船舶-44.png"
+    },
+    {
+      "asset": "fig-C05-1-钢铁融合创新实施架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "C05-钢铁.md"
       ],
-      "crop_pdf_bbox": [
-        87,
-        100.56,
-        515.88,
-        792.64
+      "redraws": "B01-钢铁-43.png"
+    },
+    {
+      "asset": "fig-C05-2-钢铁融合创新应用总体架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "C05-钢铁.md"
       ],
-      "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-      "printed_page": 11,
-      "figure_titles": [
-        "图3-2 工业互联网与船舶行业融合应用场景总览"
+      "redraws": "B01-钢铁-41.png"
+    },
+    {
+      "asset": "fig-C06-1-石化化工融合应用总体架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "C06-石化化工.md"
       ],
-      "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。"
+      "redraws": "B04-石化-14.png"
+    },
+    {
+      "asset": "fig-C14-1-许可监管资料流程.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "C14-民爆.md"
+      ]
+    },
+    {
+      "asset": "fig-D01-1-电力融合创新实施架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D01-电力.md"
+      ],
+      "redraws": "B03-电力-20.png"
+    },
+    {
+      "asset": "fig-D02-1-城市燃气方案架构.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D02-燃气.md"
+      ]
+    },
+    {
+      "asset": "fig-D02-2-燃气隐患流转.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D02-燃气.md"
+      ]
+    },
+    {
+      "asset": "fig-D03-1-漏损治理闭环.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D03-水务.md"
+      ]
+    },
+    {
+      "asset": "fig-D03-2-荆门综合漏损率.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "D03-水务.md"
+      ]
+    },
+    {
+      "asset": "fig-F01-1-批发业务架构.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "F01-批发.md"
+      ]
+    },
+    {
+      "asset": "fig-F01-2-批发市场追溯.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "F01-批发.md"
+      ]
+    },
+    {
+      "asset": "fig-G01-1-货运履约链.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G01-货运与综合物流.md"
+      ]
+    },
+    {
+      "asset": "fig-G01-2-中储智运业务量增速.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G01-货运与综合物流.md"
+      ]
+    },
+    {
+      "asset": "fig-G02-1-仓储作业流程.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G02-仓储.md"
+      ]
+    },
+    {
+      "asset": "fig-G02-2-产前物流系统衔接.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G02-仓储.md"
+      ]
+    },
+    {
+      "asset": "fig-G03-1-油气储运融合创新实施架构.png",
+      "disposition": "本书重绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "G03-油气储运.md"
+      ],
+      "redraws": "B06-油气储运-26.png"
+    },
+    {
+      "asset": "fig-I01-1-软件交付链.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "I01-软件与信息技术服务.md"
+      ]
+    },
+    {
+      "asset": "fig-I01-2-软件业务收入构成.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "I01-软件与信息技术服务.md"
+      ]
+    },
+    {
+      "asset": "fig-L01-1-招聘服务流程.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L01-招聘与人力资源服务.md"
+      ]
+    },
+    {
+      "asset": "fig-L01-2-就业平台六类通道.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L01-招聘与人力资源服务.md"
+      ]
+    },
+    {
+      "asset": "fig-L02-1-咨询项目链.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L02-经营咨询.md"
+      ]
+    },
+    {
+      "asset": "fig-L02-2-武汉诊断改造验收.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "L02-经营咨询.md"
+      ]
+    },
+    {
+      "asset": "fig-M01-1-规划研判对比.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M01-规划设计.md"
+      ]
+    },
+    {
+      "asset": "fig-M02-1-检验检测业务链.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M02-检验检测.md"
+      ]
+    },
+    {
+      "asset": "fig-M02-2-LIMS在线委托.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M02-检验检测.md"
+      ]
+    },
+    {
+      "asset": "fig-M03-1-设备维保闭环.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M03-设备维保服务.md"
+      ]
+    },
+    {
+      "asset": "fig-M03-2-消防物联网维保闭环.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M03-设备维保服务.md"
+      ]
+    },
+    {
+      "asset": "fig-M04-1-工程设计数据流.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M04-工程设计.md"
+      ]
+    },
+    {
+      "asset": "fig-M04-2-施工图审查对比.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "M04-工程设计.md"
+      ]
+    },
+    {
+      "asset": "fig-R01-1-内容生产链.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R01-文化内容与传媒.md"
+      ]
+    },
+    {
+      "asset": "fig-R02-1-体育健身经营架构.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R02-体育健身.md"
+      ]
+    },
+    {
+      "asset": "fig-R02-2-排课变化协调.png",
+      "disposition": "本书新绘",
+      "generator": "scripts/figures/render.py",
+      "required_in": [
+        "R02-体育健身.md"
+      ]
+    },
+    {
+      "asset": "redraw-实时互动技术构成示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "R03-旅游与景区.md"
+      ]
+    },
+    {
+      "asset": "redraw-数字乡村框架示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "A01-农业.md"
+      ]
+    },
+    {
+      "asset": "redraw-数字政府一体化框架示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "S01-政务与公共服务.md"
+      ]
+    },
+    {
+      "asset": "redraw-数字金融体系示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "J01-银行.md"
+      ]
+    },
+    {
+      "asset": "redraw-智慧农业三层框架示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "A01-农业.md"
+      ]
+    },
+    {
+      "asset": "redraw-智能云服务分层示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "I03-云计算与模型平台服务.md"
+      ]
+    },
+    {
+      "asset": "redraw-电信业智能化路径示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "I02-电信服务.md"
+      ]
+    },
+    {
+      "asset": "redraw-餐饮产业链示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "H02-餐饮.md"
+      ]
+    },
+    {
+      "asset": "redraw-餐饮数字化环节矩阵示意.png",
+      "disposition": "重绘",
+      "generator": "scripts/redraw-middle-figures.py",
+      "required_in": [
+        "H02-餐饮.md"
+      ]
     }
   ]
 }

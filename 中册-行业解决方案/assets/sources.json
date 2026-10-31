@@ -7,7 +7,7 @@
       "title": "融合创新应用总体架构",
       "disposition": "本书重绘",
       "attribution": "本书绘制，据工业和信息化部《工业互联网与钢铁行业融合应用参考指南（2021年）》图3-1（PDF第41页）整理",
-      "asset_sha256": "4b025bb53a48f4d39722f738b30736362476de063c9e8b81e1ec5aa7df46b0ec",
+      "asset_sha256": "a8533cb3516aee77b680feaaffe8fd83bc0c96a65b396275609ca5ede432913b",
       "generator": "scripts/figures/render.py",
       "required_in": [
         "C05-钢铁.md"
@@ -62,8 +62,8 @@
       "asset": "fig-C06-1-石化化工融合应用总体架构.png",
       "title": "融合应用总体架构",
       "disposition": "本书重绘",
-      "attribution": "本书绘制，据工业和信息化部《工业互联网与石化化工行业融合应用参考指南（2025年）》图2-1（PDF第14页）整理；原图引自工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）",
-      "asset_sha256": "bdd11367c847ae3013d9627a6ebac7e3f187213f8926024f317c5096b041ceed",
+      "attribution": "本书绘制，据工业和信息化部《工业互联网与石化化工行业融合应用参考指南（2025年）》图2-1（PDF第14页）整理；框架参考工业互联网产业联盟《工业互联网体系架构（版本2.0）》（2019年）",
+      "asset_sha256": "a135632aad026255f76138db64eedf4e199c9b3b66b3effe2d1015ec30d6f25c",
       "generator": "scripts/figures/render.py",
       "required_in": [
         "C06-石化化工.md"
@@ -71,141 +71,6 @@
       "license": "本书绘制，随本书 CC BY-NC-SA 4.0 许可；原图权利归原发布者",
       "redraws": "B04-石化-14.png",
       "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=14"
-    },
-    {
-      "asset": "B04-石化-16.png",
-      "source_id": "B04",
-      "source_title": "工业互联网与石化化工行业融合应用参考指南（2025年）",
-      "pdf_page": 16,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/0c36b1149443485aa06640131422cb6c.pdf#page=16",
-      "source_sha256": "851595295943b13b75be4b137747cb38294dc875c163bbbe353791f3b4951572",
-      "asset_sha256": "379667480a3e1197ecc99e71708dc757497c2dad9ee19802e270c0731af22259",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1713,
-        1149
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          29.4,
-          62.28,
-          1118.16,
-          792.28
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.093,
-        "page_height_removed_fraction": 0.1329,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "required_in": [
-        "C06-石化化工.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 10,
-      "figure_titles": [
-        "图3-1 工业互联网与石化化工行业融合应用场景总览"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          1190.55,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          29.4,
-          62.28,
-          1118.16,
-          792.28
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.093,
-        "page_height_removed_fraction": 0.1329,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          79,
-          167,
-          3006,
-          2130
-        ]
-      },
-      "uncropped_asset_sha256": "fdae434bf8f3e38be3fe7cbcc9acd2024fd47517d416786ffade333fe13e3a32",
-      "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用"
-    },
-    {
-      "asset": "B05-船舶-17.png",
-      "source_id": "B05",
-      "source_title": "工业互联网与船舶行业融合应用参考指南（2025年）",
-      "pdf_page": 17,
-      "source_url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20255/fbda1d571a2f403081a9166d3390ad85.pdf#page=17",
-      "source_sha256": "59afde74f5270604f64929d3b20dc827777b2b4775479fd4cf19a821a0da09eb",
-      "asset_sha256": "22e1446698124088c5307c803b38e2f34d6e3bdcab5047ce0c1fa22d420984c3",
-      "use": "图示摘引；仅裁页面外围，保留图内文字、连线、图题、来源、脚注及水印；正文注明来源页码，不计入本书原创内容的 CC BY-NC-SA 4.0 许可",
-      "output_size_px": [
-        1713,
-        2763
-      ],
-      "content_detection": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          87,
-          100.56,
-          515.88,
-          792.64
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.388,
-        "page_height_removed_fraction": 0.178,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。"
-      },
-      "required_in": [
-        "C04-船舶.md"
-      ],
-      "page_number_handling": "正文同时注明PDF文件页码与印刷页码；页脚与图之间无正文时保留页脚。",
-      "printed_page": 11,
-      "figure_titles": [
-        "图3-2 工业互联网与船舶行业融合应用场景总览"
-      ],
-      "crop": {
-        "method": "native-figure-image-plus-caption-source-and-figure-footnote-union",
-        "reviewed_on": "2026-10-18",
-        "page_size_points": [
-          595.3,
-          841.9
-        ],
-        "pdf_bbox_points": [
-          87,
-          100.56,
-          515.88,
-          792.64
-        ],
-        "cropped": true,
-        "same_width_display_gain": 1.388,
-        "page_height_removed_fraction": 0.178,
-        "review_note": "从整页渲染裁取，保留图题、来源、图内文字、连线及水印；必要脚注纳入裁框。",
-        "pixel_bbox": [
-          396,
-          458,
-          2351,
-          3611
-        ]
-      },
-      "uncropped_asset_sha256": "70e446e6dcf9461e9ac1e73c80d8db0ef79217be6cdef61062d0431da9c9deaa",
-      "disposition": "保留",
-      "license": "本图不适用本书 CC 许可；权利归原发布者，按政府公开文件注明出处引用",
-      "render_dpi": 328
     },
     {
       "asset": "fig-C04-1-船舶融合创新实施架构.png",
