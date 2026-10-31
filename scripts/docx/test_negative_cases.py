@@ -33,6 +33,7 @@
   36. 封面节与目录节共用页眉部件 -> 部件不共用项不通过
   37. 书稿出现“本章索引” -> build_docx 退出 8
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
+  38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -174,6 +175,20 @@ def main():
         zip_mutate(base, tmp / 'sym.docx', 'word/numbering.xml', lambda x: re.sub(r'\s*/>\s*$', '>', x, count=1).replace('</w:numbering>', '') + '<w:abstractNum w:abstractNumId="9"><w:lvl w:ilvl="0"><w:rPr><w:rFonts w:ascii="Symbol" w:hAnsi="Symbol"/></w:rPr></w:lvl></w:abstractNum></w:numbering>')
         rows = check(repo, tmp / 'sym.docx', tmp / 'sym.md')
         ok('numbering.xml 出现 Symbol 字体 -> 成品包项不通过', not rows[PK][0] and 'Symbol' in rows[PK][1], str(rows.get(PK)))
+
+        # 38–40. 印前 P2：styles.xml 删未用的底纹/彩色内置样式，清理后无非黑颜色、无底纹
+        SC = 'styles.xml 无非黑颜色、无底纹填充（未用的彩色/底纹内置样式已删）'
+        ok('基准样张 styles.xml 无非黑颜色、无底纹项通过', rows0.get(SC, (False,))[0], str(rows0.get(SC)))
+        LS = '<w:style w:type="table" w:styleId="LightShading"><w:name w:val="Light Shading"/><w:tblPr><w:tblBorders><w:top w:val="single" w:sz="8" w:color="000000"/></w:tblBorders></w:tblPr><w:tcPr><w:shd w:val="clear" w:color="auto" w:fill="C0C0C0"/></w:tcPr></w:style></w:styles>'
+        zip_mutate(base, tmp / 'shd.docx', 'word/styles.xml', lambda x: x.replace('</w:styles>', LS))
+        rows = check(repo, tmp / 'shd.docx', tmp / 'shd.md')
+        ok('styles.xml 放回带底纹的表格样式（fill C0C0C0）-> 无底纹项不通过', not rows[SC][0] and 'C0C0C0' in rows[SC][1], str(rows.get(SC)))
+        zip_mutate(base, tmp / 'col.docx', 'word/styles.xml', lambda x: x.replace('<w:color w:val="000000"/>', '<w:color w:val="365F91"/>', 1))
+        rows = check(repo, tmp / 'col.docx', tmp / 'col.md')
+        ok('样式文字颜色改为 365F91（无主题色引用）-> 无非黑颜色项不通过', not rows[SC][0] and '365F91' in rows[SC][1], str(rows.get(SC)))
+        zip_mutate(base, tmp / 'bcol.docx', 'word/styles.xml', lambda x: x.replace('</w:styles>', '<w:style w:type="paragraph" w:styleId="X1"><w:name w:val="X1"/><w:pPr><w:pBdr><w:bottom w:val="single" w:sz="4" w:color="4F81BD"/></w:pBdr></w:pPr></w:style></w:styles>'))
+        rows = check(repo, tmp / 'bcol.docx', tmp / 'bcol.md')
+        ok('样式边框颜色 4F81BD -> 无非黑颜色项不通过', not rows[SC][0] and '4F81BD' in rows[SC][1], str(rows.get(SC)))
 
         # 34–37. 出版审读 #108 复审：表身不绑定、正文页码自1、封面页眉部件不共用、“本章索引”报错
         TB = '表格 表身各行不加 cantSplit/keepNext（防表题被挤成孤页）'; HP = '封面节页眉部件与后续各节不共用'

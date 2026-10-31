@@ -413,6 +413,9 @@ def main():
     import package_clean   # 成品包：无 stylesWithEffects、无 Courier/Symbol 字体、样式无主题色
     pb = package_clean.audit(a.docx)
     check('成品包无 stylesWithEffects 部件及引用、无 Courier/Symbol 字体名、样式无主题色（themeColor）', not pb, '；'.join(pb))
+    import zipfile
+    with zipfile.ZipFile(a.docx) as _z: sc = package_clean.styles_color_issues(_z.read('word/styles.xml'))
+    check('styles.xml 无非黑颜色、无底纹填充（未用的彩色/底纹内置样式已删）', not sc, '；'.join(sc))
     check('版权页 存在且含书名', any('Copyright' in p.text for p in doc.paragraphs) and any(cfg['book']['title'] in p.text and '书名' in p.text for p in doc.paragraphs), '未找到')
     bk = cfg['book']
     check('版权页 含著作权人', any(('著作权人：' + bk['copyright_holder']) in p.text for p in doc.paragraphs), '缺著作权人')

@@ -244,6 +244,10 @@ exclude:
   nav_page_max_chars: 1500   # 去掉链接后正文少于该字数、且以链接列表为主的视为分篇入口/跳转页
   nav_page_detect_exempt_dirs: [下册-案例汇编]   # 下册各篇均为案例正文（门类 README 已按 patterns 排除），短篇不按导航页剔除
 # 图片清单（中册用）：保留/删除/重绘、来源、CC 声明。由 make_image_manifest.py 从审读意见生成
+tables:
+  # 宽表横排（出版审读印刷前 P2-1）：列数达到此值的表格单独成横排节（页码续排、页眉同正文），
+  # 列宽按内容分配：每列不窄于表头和最长不可断词（文件名、篇目号等），余宽按各列文字量分配
+  landscape_min_cols: 7
 images:
   manifest: image-manifest.yaml
   note_format: "资料来源：{source}。{cc}"
