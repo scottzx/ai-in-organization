@@ -6,7 +6,7 @@ Usage: python3 scripts/build-pdf.py
        python3 scripts/build-pdf.py --volume middle
        python3 scripts/build-pdf.py --volume lower
        python3 scripts/build-pdf.py --chapter 上册-研究报告/02-MTL-从市场到有效线索.md
-       python3 scripts/build-pdf.py --output output/pdf/企业数智化转型研究报告-排版预览版.pdf
+       python3 scripts/build-pdf.py --output output/pdf/企业数智化转型思路-排版预览版.pdf
        python3 scripts/build-pdf.py --volume upper --print   (or BOOK_EDITION=print)
 The default e-book edition shows linked titles only. The print edition additionally
 prints each external URL after its title in reference entries (参考文献/参考资料/
@@ -50,7 +50,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/pdf'
-TITLE = '企业数智化转型研究报告'
+TITLE = '企业数智化转型思路'
 MANUSCRIPT_DATE = '2026-10-18'
 DATE = '2026年10月18日'
 PDF = OUT / (TITLE + '-上中下册合订本.pdf')

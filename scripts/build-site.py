@@ -302,7 +302,7 @@ def footer(current):
 def page_shell(current, body, description):
     prefix = os.path.relpath('.', output_path(current).parent)
     asset = lambda name: quote(prefix + '/assets/' + ASSETS[name], safe='/.-')
-    title = '企业数智化转型研究报告' if current == ROOT / 'README.md' else TITLES[current]
+    title = '企业数智化转型思路' if current == ROOT / 'README.md' else TITLES[current]
     canonical = SITE + quote(str(output_path(current)), safe='/')
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
