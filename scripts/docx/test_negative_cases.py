@@ -15,9 +15,11 @@
   16. 一章多目录（下册第三十章“其他行业案例”）：门类按 groups 所列顺序排、各门类前印一次加粗引导行（不作标题），案例连续编 30.Y
   17. groups 列表里有不存在的子目录 -> build_docx 报错退出，指出该目录
   18. 调换 groups 列表顺序 -> 篇目顺序随之改变（顺序以配置为准，不按目录名排序）
-  19. 同一目录在 groups 中列了两次 -> build_docx 报错退出，不留半成品
-  20. 某章目录列表为空、或目录里没有可排篇目（只有 README）-> build_docx 报错退出，不留半成品
-  21. group_leads 配给单目录章的目录 -> build_docx 报错退出（引导行只用于多目录章）
+  19. 成品范围内 Markdown 出现失效 #锚点 / 指向不存在的文件 -> scripts/check-md-links.py 退出 1 并列出该处；仓库现状 0 处
+  20. 不给 -o -> 默认输出 {书名}-{册}.docx（如 企业数智化转型思路-上册.docx），文件名不含“样张”
+  21. 同一目录在 groups 中列了两次 -> build_docx 报错退出，不留半成品
+  22. 某章目录列表为空、或目录里没有可排篇目（只有 README）-> build_docx 报错退出，不留半成品
+  23. group_leads 配给单目录章的目录 -> build_docx 报错退出（引导行只用于多目录章）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -259,6 +261,39 @@ def main():
         finally:
             lp.write_text(lsrc, 'utf-8')
 
+        # 19. “见PDF第x—y页”作主页码、离散页码“3,6”无空格 -> validate-middle 报错
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 某某公司项目，见PDF第35—38页。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30): 3,6[2026-10-29].')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('“见PDF第x—y页”作主页码 -> validate-middle 报错', r.returncode == 1 and any('[3]' in e and 'main page locator' in e for e in errs), str(errs)[-300:])
+            ok('离散页码“3,6”缺空格 -> validate-middle 报错', r.returncode == 1 and any('[4]' in e and 'half-width ", "' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
+
+        # 20. 日期后裸写“第…项/部分” -> validate-middle 报错；“引用范围：第…项”不报
+        lp = next((repo / '下册-案例汇编').glob('D-*/D02-*.md')); lsrc = lp.read_text('utf-8')
+        try:
+            u = 'https://example.com/a.pdf'
+            extra = ('\n[3] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 第十二、十三项。引用范围：某方向。'
+                     '\n[4] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 第二部分重点任务。引用范围：某方向。'
+                     '\n[5] 甲. [乙](' + u + ')[EB/OL]. (2026-03-30)[2026-10-29]. 引用范围：第十二项某方向。')
+            new = lsrc.replace('(2026-03-30): 19-21[2026-10-29].', '(2026-03-30): 19-21[2026-10-29].' + extra)
+            assert new != lsrc
+            lp.write_text(new, 'utf-8')
+            r = subprocess.run([sys.executable, str(repo / 'scripts' / 'validate-middle.py')], cwd=repo, capture_output=True, text=True)
+            errs = [e for e in json.loads(r.stdout)['errors'] if e.startswith('下册/')]
+            ok('日期后裸写“第十二、十三项” -> validate-middle 报错', r.returncode == 1 and any('[3]' in e and 'clause locator' in e for e in errs), str(errs)[-300:])
+            ok('日期后裸写“第二部分” -> validate-middle 报错', any('[4]' in e and 'clause locator' in e for e in errs), str(errs)[-300:])
+            ok('“引用范围：第十二项” 不误报', not any('[5]' in e for e in errs), str(errs)[-300:])
+        finally:
+            lp.write_text(lsrc, 'utf-8')
         # 16–18. 一章多目录（合并章）与门类引导行
         import yaml
         cfg0 = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8'))
@@ -305,7 +340,23 @@ def main():
             return seen
         ok('调换 groups 列表顺序 -> 合并章门类顺序随配置改变', dirs_of(cfg0) == list(mdirs) and dirs_of(rev) == list(reversed(mdirs)), f'{dirs_of(cfg0)} {dirs_of(rev)}')
 
-        # 19–21. groups 配置防呆
+        # 19. 失效锚点 / 失效文件链接 -> check-md-links 报错
+        chk = REPO / 'scripts' / 'check-md-links.py'
+        r = subprocess.run([sys.executable, str(chk), '--repo', str(repo)], capture_output=True, text=True)
+        ok('check-md-links 仓库现状 0 处失效', r.returncode == 0, r.stdout[-300:])
+        lk = repo / '索引' / '阅读路径.md'; lsrc0 = lk.read_text('utf-8')
+        try:
+            lk.write_text(lsrc0 + '\n\n[坏锚点](../上册-研究报告/01-智力即服务.md#section-1-99)\n[坏文件](../上册-研究报告/不存在.md)\n', 'utf-8')
+            r = subprocess.run([sys.executable, str(chk), '--repo', str(repo)], capture_output=True, text=True)
+        finally: lk.write_text(lsrc0, 'utf-8')
+        ok('失效锚点、失效文件 -> check-md-links 退出 1 并列出', r.returncode == 1 and '#section-1-99' in r.stdout and '不存在.md' in r.stdout, r.stdout[-300:])
+        # 20. 默认输出文件名
+        od = tmp / 'outdef'; od.mkdir()
+        r = subprocess.run([sys.executable, str(HERE / 'build_docx.py'), '--repo', str(repo), '--volume', 'upper', '--no-toc-pages'],
+                           env=dict(os.environ, BOOK_REPO=str(repo), DOCX_OUT_DIR=str(od)), capture_output=True, text=True)
+        names = sorted(x.name for x in od.glob('*.docx'))
+        ok('不给 -o -> 默认输出 企业数智化转型思路-上册.docx，不含“样张”', r.returncode == 0 and names == ['企业数智化转型思路-上册.docx'], f'{names} {r.stderr[-200:]}')
+        # 21–23. groups 配置防呆
         def bad_build(tag, mut):
             c = yaml.safe_load((HERE / 'style.yaml').read_text('utf-8')); mut(c['volumes']['lower'])
             st_ = tmp / f'style-{tag}.yaml'; st_.write_text(yaml.safe_dump(c, allow_unicode=True), 'utf-8')

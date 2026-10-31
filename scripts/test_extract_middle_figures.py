@@ -31,13 +31,11 @@ spec = importlib.util.spec_from_file_location(
 extract = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(extract)
 
-CASES = ['B01-钢铁-41.png', 'B01-钢铁-43.png', 'B02-工程机械-57.png', 'B03-电力-20.png',
-         'B04-石化-14.png', 'B04-石化-16.png', 'B05-船舶-17.png', 'B05-船舶-44.png',
-         'B06-油气储运-26.png']
-# Assets produced by the pinned pipeline (PR #83/#85 and this PR); B01-钢铁-41, B03-电力-20 and
-# B05-船舶-44 (<= 1713 px) predate it and are intentionally not re-rendered (no --force).
-REPRODUCIBLE = ['B01-钢铁-43.png', 'B02-工程机械-57.png', 'B04-石化-14.png', 'B04-石化-16.png',
-                'B05-船舶-17.png', 'B06-油气储运-26.png']
+# B01-钢铁-43, B02-工程机械-57, B05-船舶-44 (PR 1/3) and B01-钢铁-41, B03-电力-20, B04-石化-14,
+# B06-油气储运-26 (PR 2/3) were redrawn by the book (scripts/figures, fig-*) and left the crop pipeline.
+CASES = ['B04-石化-16.png', 'B05-船舶-17.png']
+# Assets produced by the pinned pipeline (PR #83/#85).
+REPRODUCIBLE = ['B04-石化-16.png', 'B05-船舶-17.png']
 
 
 def unavailable(test, reason):
