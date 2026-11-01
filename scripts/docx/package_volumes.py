@@ -18,8 +18,9 @@ CHAP = re.compile(r'^第([一二三四五六七八九十]+)章')
 def name(cfg, vol): return f"{cfg['book']['title'].strip('《》')}-{VN[vol]}.docx"
 
 def pdf_pages(docx):
-    with tempfile.TemporaryDirectory() as tmp:
-        subprocess.run(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', tmp, str(docx)], capture_output=True, timeout=900)
+    with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory(prefix='lo-profile-', dir='/tmp') as prof:
+        # 每次渲染用独立的 LibreOffice 用户配置目录，避免与其他 soffice 进程抢锁、沿用旧配置
+        subprocess.run(['soffice', f'-env:UserInstallation={Path(prof).as_uri()}', '--headless', '--convert-to', 'pdf', '--outdir', tmp, str(docx)], capture_output=True, timeout=900)
         pdf = Path(tmp) / (Path(docx).stem + '.pdf')
         if not pdf.exists(): sys.exit(f'LibreOffice 未能渲染 {docx}')
         return int(re.search(r'Pages:\s+(\d+)', subprocess.run(['pdfinfo', pdf], capture_output=True, text=True).stdout).group(1))
@@ -76,6 +77,10 @@ def main():
     idx = out / D['index_name']; index_doc(cfg, repo, rows, idx)
     n = pdf_pages(idx)
     if n != 1: sys.exit(f'索引说明渲染为 {n} 页，应为 1 页')
+    rep = out / ('检查报告-' + Path(D['index_name']).stem.split('-')[-1] + '.md')
+    r = subprocess.run([sys.executable, str(HERE / 'check_docx.py'), str(idx), '--profile', 'index', '-o', str(rep)], capture_output=True, text=True)
+    print(r.stdout.strip().splitlines()[-1] if r.stdout.strip() else r.stderr[-300:])
+    if r.returncode: sys.exit(f'索引说明格式检查不通过，见 {rep}')
     z = out / D['zip_name']
     with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
         for r in rows: zf.write(out / r['file'], r['file'])

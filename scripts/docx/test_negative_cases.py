@@ -37,6 +37,9 @@
   38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
   40. 表格文字段落改回固定值 28pt、表格文字样式段后非 0 -> 表格文字单倍行距项不通过（Scott 2026-11-01）
   41. 参考文献条目里放回脚注引用 -> “参考文献条目 无脚注”不通过；条目注文改为小四/加粗/非黑 -> 条目注文项不通过
+  43. 正文段落改为单倍行距 -> 固定值28pt 项不通过
+  44. 参考文献节内“1.”“• ”（源稿 -）列表条目放回脚注 -> 条目无脚注项不通过；参考文献节外的“1.”列表带脚注不误报
+  45. 索引说明 --profile index：格式项全部通过、整书结构项记“不适用”；默认整书口径则不通过；正文改单倍行距 -> 仍不通过
   42. 多段脚注挂在参考文献条目上 -> Word 条目注文保留分段（段间 w:br），两段文字都在；说明段落/伪参考文献标题下的脚注仍为脚注（判定见 scripts/test_refnotes.py）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
@@ -629,6 +632,51 @@ def main():
                 xml = q._p.xml
                 mp_ok = q.text.index('出版社公开导言') < q.text.index('多段测试第二段') < q.text.index('多段测试第三段') and xml.count('<w:br/>') >= 2
         ok('多段脚注挂在条目上 -> Word 条目注文保留分段（段间换行）', mp_ok, f'exit {r.returncode} {r.stdout[-200:]}')
+
+
+        # 43–45. 正文行距、列表式参考文献条目、索引说明检查口径
+        LS28 = '全部 行距=固定值28pt（表格文字除外）'
+        def body_single(d):
+            h1 = next(i for i, q in enumerate(d.paragraphs) if q.style.name == 'Heading 1')
+            q = next(q for q in d.paragraphs[h1 + 1:] if q.style.name == 'Normal' and len(q.text) > 40 and not RE_ENT.match(q.text))
+            q.paragraph_format.line_spacing_rule = _LS.SINGLE
+        mutate(base, tmp / 'bsingle.docx', body_single); rows = check(repo, tmp / 'bsingle.docx', tmp / 'bsingle.md')
+        ok('正文段落改为单倍行距 -> 固定值28pt 项不通过', not rows.get(LS28, (True,))[0])
+        NOFN = '参考文献条目 无脚注（条目注文已改为接在条目后）'
+        def relist(marker):
+            def f(d):
+                q = ent_paras(d)[0]; r0 = q.runs[0]
+                r0.text = re.sub(r'^\s*\[\d+\]\s*', marker, r0.text, count=1)
+                ref = next(x for x in d.element.body.iter(qn('w:footnoteReference'))); q._p.append(copy.deepcopy(ref.getparent()))
+            return f
+        for tag, mk in (('num', '1. '), ('dot', '• ')):
+            mutate(base, tmp / f'ent{tag}.docx', relist(mk)); rows = check(repo, tmp / f'ent{tag}.docx', tmp / f'ent{tag}.md')
+            ok(f'参考文献节内“{mk.strip()}”列表条目放回脚注 -> 条目无脚注项不通过', not rows.get(NOFN, (True,))[0], str(rows.get(NOFN)))
+        def body_list_fn(d):
+            h1 = next(i for i, q in enumerate(d.paragraphs) if q.style.name == 'Heading 1')
+            q = next(q for q in d.paragraphs[h1 + 1:] if q.style.name == 'Normal' and len(q.text) > 40 and not RE_ENT.match(q.text))
+            q.runs[0].text = '1. ' + q.runs[0].text
+            ref = next(x for x in d.element.body.iter(qn('w:footnoteReference'))); q._p.append(copy.deepcopy(ref.getparent()))
+        mutate(base, tmp / 'bodylist.docx', body_list_fn); rows = check(repo, tmp / 'bodylist.docx', tmp / 'bodylist.md')
+        ok('参考文献节外“1.”列表带脚注 -> 不按条目误报', rows.get(NOFN, (True,))[0], str(rows.get(NOFN)))
+        import package_volumes, yaml as _y
+        cfgp = _y.safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        idx_doc = tmp / 'idx.docx'
+        package_volumes.index_doc(cfgp, repo, [{'vol': 'upper', 'file': 'x.docx', 'summary': '测试简介。', 'pages': 1, 'range': '第一章至第八章（8 章）', 'apps': ['附录A　测试'], 'other': []}], idx_doc)
+        def chk_p(docx_, md, prof):
+            r_ = subprocess.run([sys.executable, str(HERE / 'check_docx.py'), str(docx_), '-o', str(md)] + (['--profile', prof] if prof else []),
+                                env=dict(os.environ, BOOK_REPO=str(repo)), capture_output=True, text=True)
+            return r_.returncode, Path(md).read_text('utf-8')
+        rc, md = chk_p(idx_doc, tmp / 'idx.md', 'index')
+        ok('索引说明 --profile index -> 全部通过，整书项记“不适用”', rc == 0 and '不适用' in md and '❌' not in md, md[:300])
+        rc, md = chk_p(idx_doc, tmp / 'idx2.md', None)
+        ok('索引说明按整书口径 -> 不通过（整书项不适用于单页附件）', rc != 0)
+        def idx_single(d):
+            for q in d.paragraphs:
+                if q.style.name == 'Normal': q.paragraph_format.line_spacing_rule = _LS.SINGLE
+        d_ = docx.Document(str(idx_doc)); idx_single(d_); d_.save(str(tmp / 'idx_bad.docx'))
+        rc, md = chk_p(tmp / 'idx_bad.docx', tmp / 'idx3.md', 'index')
+        ok('索引说明正文改单倍行距 -> --profile index 仍不通过', rc != 0 and '固定值28pt' in md and '❌' in md)
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))

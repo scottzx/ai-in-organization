@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """读回 docx 逐项核对格式。用法: python3 check_docx.py [企业数智化转型思路-上册.docx] [-o 检查清单.md] [--style style.yaml]"""
 import json
-import argparse, os, re, yaml
+import argparse, os, re, sys, yaml
 from pathlib import Path
 from docx import Document
 from docx.oxml.ns import qn
@@ -131,6 +131,7 @@ def main():
     ap.add_argument('--style', default=HERE / 'style.yaml')
     ap.add_argument('--pdf', default=None, help='同时用 pdftotext 检查该 PDF 中的本书版本号')
     ap.add_argument('--print', dest='print_edition', action='store_true', default=os.environ.get('BOOK_EDITION') == 'print', help='--pdf 为印刷版：参考文献与来源行须带网址')
+    ap.add_argument('--profile', choices=('book', 'index'), default='book', help='index：一页「索引说明」等单页附件，只核格式项，整书结构项记“不适用”')
     a = ap.parse_args()
     cfg = yaml.safe_load(Path(a.style).read_text('utf-8')); L = cfg['levels']; F = cfg['fonts']
     doc = Document(a.docx)
@@ -167,7 +168,10 @@ def main():
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
     RN = L.get('ref_note') or {'font': L['footnote']['font'], 'size_pt': 10.5}
-    REF_ENTRY = re.compile(r'^(\[\d+\]|［\d+］)')
+    REF_ENTRY = re.compile(r'^(\[\d+\]|［\d+］)')   # [n] 条目：任何位置都按条目核对
+    REF_LIST = re.compile(r'^(?:\d+[.)、]\s?|[•\-*+]\s)')   # 参考文献节内的“1.”“-”（Word 中印为“• ”）列表条目
+    sys.path.insert(0, str(HERE.parent)); import refnotes
+    ref_level = None   # 当前所在参考文献节的标题级别（判定与 scripts/refnotes.py 相同：整行为参考文献等标题）
     ref_note_runs = []
     check('style.yaml 参考文献条目注文=五号（10.5pt，比正文小一号）', RN.get('size_pt') == 10.5, f"ref_note {RN.get('size_pt')}")
     BODY_INDENT_CHARS = 2   # Scott 2026-10-29 确认：正文首行缩进 4 个英文字符＝2 个中文字符
@@ -183,7 +187,11 @@ def main():
         c = L[key]
         # 前置页（扉页/版权页/目录）中的 Normal 段为特殊排版，字号不按正文检查
         front = not body_started and key == 'body'
-        is_entry = key == 'body' and bool(REF_ENTRY.match(txt))
+        if key in ('h1', 'h2', 'h3', 'h4'):
+            lv = int(key[1])
+            if ref_level is not None and lv <= ref_level: ref_level = None
+            if refnotes.is_reference_heading('#' * lv + ' ' + txt): ref_level = lv
+        is_entry = key == 'body' and (bool(REF_ENTRY.match(txt)) or (ref_level is not None and bool(REF_LIST.match(txt))))
         for r in p.runs:
             if not r.text.strip(): continue
             ea, asc, size, bold, color = eff_run(r, p)
@@ -578,13 +586,19 @@ def main():
             src = zw(ps[k + 1].text) if k + 1 < len(ps) else ''
             if m and EXT.search(src): check(REV, m.group(1) in idx_nums, f'图{m.group(1)} 资料来源引外部原图，但图源索引表无此图号')
     # 输出
+    # --profile index：整书结构项（章号、图表号、附录、目录、分节、封面/版权页、页眉页码、脚注）对单页附件不适用
+    NA_RE = re.compile(r'^(h1 编号格式|h1 章号|图号/表号|图题/表题 编号|跨文件引用|附录|目录|分节|封面|正文节|版权页|官网/仓库|脚注|图源索引表|页眉|页码)')
+    na = {k for k in items if a.profile == 'index' and NA_RE.match(k)}
+    na_items = {k: items.pop(k) for k in list(items) if k in na}
     total_fail = sum(1 for v in items.values() if v[1])
     out = [f'# 格式检查清单：{Path(a.docx).name}', '',
            f'依据：{Path(a.style).name}（Scott 已确认的格式）。共 {len(items)} 项，'
-           f'{"全部通过" if not total_fail else f"{total_fail} 项不通过"}。', '',
+           f'{"全部通过" if not total_fail else f"{total_fail} 项不通过"}。' + (f'另有整书结构项 {len(na_items)} 项不适用（--profile index，只核格式项）。' if na_items else ''), '',
            '| # | 检查项 | 检查次数 | 结果 | 不通过位置（最多列 10 处） |', '|---|---|---|---|---|']
     for i, (k, (n, fails)) in enumerate(items.items(), 1):
         out.append(f'| {i} | {k} | {n} | {"✅ 通过" if not fails else f"❌ 不通过 {len(fails)} 处"} | {"；".join(fails[:10]).replace("|","／") if fails else "—"} |')
+    for j, k in enumerate(na_items, len(items) + 1):
+        out.append(f'| {j} | {k} | {na_items[k][0]} | ➖ 不适用（单页附件） | — |')
     out += ['', '## 提示项（供文字编辑修改，不计入通过/不通过）', '']
     for k, v in hints.items():
         out += [f'### {k}：共 {gf_kinds} 种、合计 {gf_total} 处{gf_note}' if k == GF_KEY else f'### {k}：{len(v)} 处', '']
