@@ -173,7 +173,7 @@ def without_trailing_navigation(path, tokens):
     return tokens
 
 
-REF_NOTE_STYLE = 'display:block;font-size:0.85em;color:#666;margin-top:0.2em'
+REF_NOTE_STYLE = 'display:block;font-size:0.85em;color:#000;margin-top:0.2em'
 
 
 def inline_reference_notes(tokens, lines):
