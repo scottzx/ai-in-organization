@@ -618,7 +618,7 @@ def main():
         if not f01.exists(): f01 = next((repo / '上册-研究报告').glob('01-*.md'))
         o01 = f01.read_text('utf-8')
         try:
-            f01.write_text(o01.replace('[^c01-1]: 出版社公开导言与试读。', '[^c01-1]: 出版社公开导言与试读。\n\n    多段测试第二段。\n\n    多段测试第三段。', 1), 'utf-8')
+            f01.write_text(o01.replace('[^c01-1]: 定位：出版社公开导言与试读。', '[^c01-1]: 定位：出版社公开导言与试读。\n\n    多段测试第二段。\n\n    多段测试第三段。', 1), 'utf-8')
             r = build(repo, 'upper', tmp / 'mp.docx')
         finally: f01.write_text(o01, 'utf-8')
         mp_ok = False
