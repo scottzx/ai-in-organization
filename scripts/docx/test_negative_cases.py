@@ -35,6 +35,12 @@
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
   39. document.xml、页眉、脚注出现 U+2060/200B/FEFF 等零宽控制字符 -> 零宽字符项不通过
   38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
+  40. 表格文字段落改回固定值 28pt、表格文字样式段后非 0 -> 表格文字单倍行距项不通过（Scott 2026-11-01）
+  41. 参考文献条目里放回脚注引用 -> “参考文献条目 无脚注”不通过；条目注文改为小四/加粗/非黑 -> 条目注文项不通过
+  43. 正文段落改为单倍行距 -> 固定值28pt 项不通过
+  44. 参考文献节内“1.”“• ”（源稿 -）列表条目放回脚注 -> 条目无脚注项不通过；参考文献节外的“1.”列表带脚注不误报
+  45. 索引说明 --profile index：格式项全部通过、整书结构项记“不适用”；默认整书口径则不通过；正文改单倍行距 -> 仍不通过
+  42. 多段脚注挂在参考文献条目上 -> Word 条目注文保留分段（段间 w:br），两段文字都在；说明段落/伪参考文献标题下的脚注仍为脚注（判定见 scripts/test_refnotes.py）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -574,6 +580,103 @@ def main():
             shutil.rmtree(ed, ignore_errors=True)
         rc, msg, ex = bad_build('lead1', lambda v: v['group_leads'].__setitem__(sdir, '测试　单目录引导行'))
         ok('group_leads 配给单目录章 -> 报错退出', rc != 0 and '只能用于多目录章' in msg and sdir in msg and not ex, msg[-200:])
+
+
+        # 40–42. 表格单倍行距、参考文献条目注文（Scott 2026-11-01）
+        import copy
+        from docx.oxml.ns import qn
+        base_rows = check(repo, base, tmp / 'base40.md')
+        from docx.shared import Pt as _Pt, RGBColor as _RGB
+        from docx.enum.text import WD_LINE_SPACING as _LS
+        def tab_exact(d):
+            for t in d.tables:
+                for row in t.rows:
+                    for c in row.cells:
+                        for q in c.paragraphs: q.paragraph_format.line_spacing_rule = _LS.EXACTLY; q.paragraph_format.line_spacing = _Pt(28)
+        mutate(base, tmp / 'tab28.docx', tab_exact); rows = check(repo, tmp / 'tab28.docx', tmp / 'tab28.md')
+        ok('表格文字改回固定值28pt -> 表格文字单倍行距项不通过', not rows.get('表格文字 行距=单倍（line=240 auto）', (True,))[0])
+        ok('基准样张 表格文字单倍行距项通过', base_rows.get('表格文字 行距=单倍（line=240 auto）', (False,))[0])
+        def tab_style(d): d.styles['表格文字'].paragraph_format.space_after = _Pt(6)
+        mutate(base, tmp / 'tabsty.docx', tab_style); rows = check(repo, tmp / 'tabsty.docx', tmp / 'tabsty.md')
+        ok('表格文字样式段后非 0 -> 样式行距项不通过', not rows.get('表格文字 样式行距=单倍、段前段后=0', (True,))[0])
+        RE_ENT = re.compile(r'^\s*\[\d+\]')
+        def ent_paras(d): return [q for q in d.paragraphs if RE_ENT.match(q.text) and any(r.font.size and r.font.size.pt == 10.5 for r in q.runs)]
+        def put_fn(d):
+            q = ent_paras(d)[0]; ref = next(x for x in d.element.body.iter(qn('w:footnoteReference')))
+            q._p.append(copy.deepcopy(ref.getparent()))
+        mutate(base, tmp / 'entfn.docx', put_fn); rows = check(repo, tmp / 'entfn.docx', tmp / 'entfn.md')
+        ok('参考文献条目放回脚注 -> 条目无脚注项不通过', not rows.get('参考文献条目 无脚注（条目注文已改为接在条目后）', (True,))[0])
+        ok('基准样张 参考文献条目无脚注项通过', base_rows.get('参考文献条目 无脚注（条目注文已改为接在条目后）', (False,))[0])
+        def note_bold(d):
+            for r in ent_paras(d)[0].runs:
+                if r.font.size and r.font.size.pt == 10.5: r.font.bold = True
+        mutate(base, tmp / 'rnbold.docx', note_bold); rows = check(repo, tmp / 'rnbold.docx', tmp / 'rnbold.md')
+        ok('条目注文加粗 -> 条目注文字号/不加粗项不通过', not rows.get('参考文献条目注文 字号=五号（10.5pt）、不加粗', (True,))[0])
+        def note_red(d):
+            for r in ent_paras(d)[0].runs:
+                if r.font.size and r.font.size.pt == 10.5: r.font.color.rgb = _RGB(0x66, 0x66, 0x66)
+        mutate(base, tmp / 'rngrey.docx', note_red); rows = check(repo, tmp / 'rngrey.docx', tmp / 'rngrey.md')
+        ok('条目注文改为灰色 -> 颜色项不通过', any(not v[0] for k, v in rows.items() if '黑' in k or '颜色' in k))
+        f01 = repo / '上册-研究报告' / '01-智力即服务.md'
+        if not f01.exists(): f01 = next((repo / '上册-研究报告').glob('01-*.md'))
+        o01 = f01.read_text('utf-8')
+        try:
+            f01.write_text(o01.replace('[^c01-1]: 定位：出版社公开导言与试读。', '[^c01-1]: 定位：出版社公开导言与试读。\n\n    多段测试第二段。\n\n    多段测试第三段。', 1), 'utf-8')
+            r = build(repo, 'upper', tmp / 'mp.docx')
+        finally: f01.write_text(o01, 'utf-8')
+        mp_ok = False
+        if r.returncode == 0:
+            d = docx.Document(str(tmp / 'mp.docx'))
+            q = next((q for q in ent_paras(d) if '多段测试第二段' in q.text), None)
+            if q is not None:
+                xml = q._p.xml
+                mp_ok = q.text.index('出版社公开导言') < q.text.index('多段测试第二段') < q.text.index('多段测试第三段') and xml.count('<w:br/>') >= 2
+        ok('多段脚注挂在条目上 -> Word 条目注文保留分段（段间换行）', mp_ok, f'exit {r.returncode} {r.stdout[-200:]}')
+
+
+        # 43–45. 正文行距、列表式参考文献条目、索引说明检查口径
+        LS28 = '全部 行距=固定值28pt（表格文字除外）'
+        def body_single(d):
+            h1 = next(i for i, q in enumerate(d.paragraphs) if q.style.name == 'Heading 1')
+            q = next(q for q in d.paragraphs[h1 + 1:] if q.style.name == 'Normal' and len(q.text) > 40 and not RE_ENT.match(q.text))
+            q.paragraph_format.line_spacing_rule = _LS.SINGLE
+        mutate(base, tmp / 'bsingle.docx', body_single); rows = check(repo, tmp / 'bsingle.docx', tmp / 'bsingle.md')
+        ok('正文段落改为单倍行距 -> 固定值28pt 项不通过', not rows.get(LS28, (True,))[0])
+        NOFN = '参考文献条目 无脚注（条目注文已改为接在条目后）'
+        def relist(marker):
+            def f(d):
+                q = ent_paras(d)[0]; r0 = q.runs[0]
+                r0.text = re.sub(r'^\s*\[\d+\]\s*', marker, r0.text, count=1)
+                ref = next(x for x in d.element.body.iter(qn('w:footnoteReference'))); q._p.append(copy.deepcopy(ref.getparent()))
+            return f
+        for tag, mk in (('num', '1. '), ('dot', '• ')):
+            mutate(base, tmp / f'ent{tag}.docx', relist(mk)); rows = check(repo, tmp / f'ent{tag}.docx', tmp / f'ent{tag}.md')
+            ok(f'参考文献节内“{mk.strip()}”列表条目放回脚注 -> 条目无脚注项不通过', not rows.get(NOFN, (True,))[0], str(rows.get(NOFN)))
+        def body_list_fn(d):
+            h1 = next(i for i, q in enumerate(d.paragraphs) if q.style.name == 'Heading 1')
+            q = next(q for q in d.paragraphs[h1 + 1:] if q.style.name == 'Normal' and len(q.text) > 40 and not RE_ENT.match(q.text))
+            q.runs[0].text = '1. ' + q.runs[0].text
+            ref = next(x for x in d.element.body.iter(qn('w:footnoteReference'))); q._p.append(copy.deepcopy(ref.getparent()))
+        mutate(base, tmp / 'bodylist.docx', body_list_fn); rows = check(repo, tmp / 'bodylist.docx', tmp / 'bodylist.md')
+        ok('参考文献节外“1.”列表带脚注 -> 不按条目误报', rows.get(NOFN, (True,))[0], str(rows.get(NOFN)))
+        import package_volumes, yaml as _y
+        cfgp = _y.safe_load((HERE / 'style.yaml').read_text('utf-8'))
+        idx_doc = tmp / 'idx.docx'
+        package_volumes.index_doc(cfgp, repo, [{'vol': 'upper', 'file': 'x.docx', 'summary': '测试简介。', 'pages': 1, 'range': '第一章至第八章（8 章）', 'apps': ['附录A　测试'], 'other': []}], idx_doc)
+        def chk_p(docx_, md, prof):
+            r_ = subprocess.run([sys.executable, str(HERE / 'check_docx.py'), str(docx_), '-o', str(md)] + (['--profile', prof] if prof else []),
+                                env=dict(os.environ, BOOK_REPO=str(repo)), capture_output=True, text=True)
+            return r_.returncode, Path(md).read_text('utf-8')
+        rc, md = chk_p(idx_doc, tmp / 'idx.md', 'index')
+        ok('索引说明 --profile index -> 全部通过，整书项记“不适用”', rc == 0 and '不适用' in md and '❌' not in md, md[:300])
+        rc, md = chk_p(idx_doc, tmp / 'idx2.md', None)
+        ok('索引说明按整书口径 -> 不通过（整书项不适用于单页附件）', rc != 0)
+        def idx_single(d):
+            for q in d.paragraphs:
+                if q.style.name == 'Normal': q.paragraph_format.line_spacing_rule = _LS.SINGLE
+        d_ = docx.Document(str(idx_doc)); idx_single(d_); d_.save(str(tmp / 'idx_bad.docx'))
+        rc, md = chk_p(tmp / 'idx_bad.docx', tmp / 'idx3.md', 'index')
+        ok('索引说明正文改单倍行距 -> --profile index 仍不通过', rc != 0 and '固定值28pt' in md and '❌' in md)
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))

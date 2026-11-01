@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """读回 docx 逐项核对格式。用法: python3 check_docx.py [企业数智化转型思路-上册.docx] [-o 检查清单.md] [--style style.yaml]"""
 import json
-import argparse, os, re, yaml
+import argparse, os, re, sys, yaml
 from pathlib import Path
 from docx import Document
 from docx.oxml.ns import qn
@@ -131,6 +131,7 @@ def main():
     ap.add_argument('--style', default=HERE / 'style.yaml')
     ap.add_argument('--pdf', default=None, help='同时用 pdftotext 检查该 PDF 中的本书版本号')
     ap.add_argument('--print', dest='print_edition', action='store_true', default=os.environ.get('BOOK_EDITION') == 'print', help='--pdf 为印刷版：参考文献与来源行须带网址')
+    ap.add_argument('--profile', choices=('book', 'index'), default='book', help='index：一页「索引说明」等单页附件，只核格式项，整书结构项记“不适用”')
     a = ap.parse_args()
     cfg = yaml.safe_load(Path(a.style).read_text('utf-8')); L = cfg['levels']; F = cfg['fonts']
     doc = Document(a.docx)
@@ -166,6 +167,13 @@ def main():
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
+    RN = L.get('ref_note') or {'font': L['footnote']['font'], 'size_pt': 10.5}
+    REF_ENTRY = re.compile(r'^(\[\d+\]|［\d+］)')   # [n] 条目：任何位置都按条目核对
+    REF_LIST = re.compile(r'^(?:\d+[.)、]\s?|[•\-*+]\s)')   # 参考文献节内的“1.”“-”（Word 中印为“• ”）列表条目
+    sys.path.insert(0, str(HERE.parent)); import refnotes
+    ref_level = None   # 当前所在参考文献节的标题级别（判定与 scripts/refnotes.py 相同：整行为参考文献等标题）
+    ref_note_runs = []
+    check('style.yaml 参考文献条目注文=五号（10.5pt，比正文小一号）', RN.get('size_pt') == 10.5, f"ref_note {RN.get('size_pt')}")
     BODY_INDENT_CHARS = 2   # Scott 2026-10-29 确认：正文首行缩进 4 个英文字符＝2 个中文字符
     check(f'style.yaml 正文首行缩进={BODY_INDENT_CHARS}字符（4 个英文字符）', L['body'].get('first_line_chars') == BODY_INDENT_CHARS, f"style.yaml levels.body.first_line_chars 为 {L['body'].get('first_line_chars')}")
     _ns = doc.styles['Normal'].element.pPr; _ni = _ns.find(qn('w:ind')) if _ns is not None else None
@@ -179,9 +187,19 @@ def main():
         c = L[key]
         # 前置页（扉页/版权页/目录）中的 Normal 段为特殊排版，字号不按正文检查
         front = not body_started and key == 'body'
+        if key in ('h1', 'h2', 'h3', 'h4'):
+            lv = int(key[1])
+            if ref_level is not None and lv <= ref_level: ref_level = None
+            if refnotes.is_reference_heading('#' * lv + ' ' + txt): ref_level = lv
+        is_entry = key == 'body' and (bool(REF_ENTRY.match(txt)) or (ref_level is not None and bool(REF_LIST.match(txt))))
         for r in p.runs:
             if not r.text.strip(): continue
             ea, asc, size, bold, color = eff_run(r, p)
+            if is_entry and size == RN['size_pt'] and not front:   # 参考文献条目注文（Scott 2026-11-01：小一号接在条目后）
+                check(f'参考文献条目注文 字体={RN["font"]}', ea == RN['font'] or gf_ok(r.text, RN['font'], ea), where + f' 实为{ea}')
+                check('参考文献条目注文 字号=五号（10.5pt）、不加粗', size == 10.5 and not bold, where)
+                check(f'全部 文字颜色=#{F["color"]}', color == F['color'], where + f' 实为{color}')
+                ref_note_runs.append(r.text); continue
             check(f'{key} 中文字体(eastAsia)={c["font"]}', front or ea == c['font'] or gf_ok(r.text, c['font'], ea), where + f' 实为{ea}')
             check(f'全部 西文字体={F["latin"]}', asc == F['latin'], where + f' 实为{asc}')
             if not front:
@@ -193,7 +211,15 @@ def main():
             for col in h.iter(qn('w:color')):
                 check('超链接 颜色=黑色', col.get(qn('w:val')).upper() == F['color'], where)
         if front: continue
-        check('全部 行距=固定值%gpt' % F['line_spacing_exact_pt'],
+        if is_entry:
+            check('参考文献条目 无脚注（条目注文已改为接在条目后）', not p._p.findall('.//' + qn('w:footnoteReference')), where)
+        if key == 'table':   # Scott 2026-11-01：表格文字单倍行距（w:line=240 lineRule=auto）
+            sp = p._p.pPr.find(qn('w:spacing')) if p._p.pPr is not None else None
+            check('表格文字 行距=单倍（line=240 auto）',
+                  eff_pf(p, 'line_spacing_rule') == WD_LINE_SPACING.SINGLE and sp is not None and sp.get(qn('w:line')) == '240' and sp.get(qn('w:lineRule')) in (None, 'auto'),
+                  where + f' 实为{eff_pf(p, "line_spacing_rule")}/{None if sp is None else dict(sp.attrib)}')
+        else:
+            check('全部 行距=固定值%gpt（表格文字除外）' % F['line_spacing_exact_pt'],
               eff_pf(p, 'line_spacing_rule') == WD_LINE_SPACING.EXACTLY and eff_pf(p, 'line_spacing') == exact,
               where + f' 实为{eff_pf(p, "line_spacing_rule")}/{eff_pf(p, "line_spacing")}')
         sb, sa = eff_pf(p, 'space_before'), eff_pf(p, 'space_after')
@@ -252,6 +278,9 @@ def main():
     for sn in ('Caption', '表格文字'):
         sz = doc.styles[sn].font.size if sn in [x.name for x in doc.styles] else None
         check('Caption/表格文字 样式字号=五号（10.5pt）', sz is not None and sz.pt == WUHAO, f'{sn} 实为{sz.pt if sz else None}')
+    if '表格文字' in [x.name for x in doc.styles]:
+        _tpf = doc.styles['表格文字'].paragraph_format
+        check('表格文字 样式行距=单倍、段前段后=0', _tpf.line_spacing_rule == WD_LINE_SPACING.SINGLE and (_tpf.space_before or 0) == 0 and (_tpf.space_after or 0) == 0, f'实为{_tpf.line_spacing_rule}/{_tpf.space_before}/{_tpf.space_after}')
     # 目录页标题“目　录”：字体、字号、加粗
     tt = L.get('toc_title', {})
     for idx, (p, intab) in enumerate(paras):
@@ -557,13 +586,19 @@ def main():
             src = zw(ps[k + 1].text) if k + 1 < len(ps) else ''
             if m and EXT.search(src): check(REV, m.group(1) in idx_nums, f'图{m.group(1)} 资料来源引外部原图，但图源索引表无此图号')
     # 输出
+    # --profile index：整书结构项（章号、图表号、附录、目录、分节、封面/版权页、页眉页码、脚注）对单页附件不适用
+    NA_RE = re.compile(r'^(h1 编号格式|h1 章号|图号/表号|图题/表题 编号|跨文件引用|附录|目录|分节|封面|正文节|版权页|官网/仓库|脚注|图源索引表|页眉|页码)')
+    na = {k for k in items if a.profile == 'index' and NA_RE.match(k)}
+    na_items = {k: items.pop(k) for k in list(items) if k in na}
     total_fail = sum(1 for v in items.values() if v[1])
     out = [f'# 格式检查清单：{Path(a.docx).name}', '',
            f'依据：{Path(a.style).name}（Scott 已确认的格式）。共 {len(items)} 项，'
-           f'{"全部通过" if not total_fail else f"{total_fail} 项不通过"}。', '',
+           f'{"全部通过" if not total_fail else f"{total_fail} 项不通过"}。' + (f'另有整书结构项 {len(na_items)} 项不适用（--profile index，只核格式项）。' if na_items else ''), '',
            '| # | 检查项 | 检查次数 | 结果 | 不通过位置（最多列 10 处） |', '|---|---|---|---|---|']
     for i, (k, (n, fails)) in enumerate(items.items(), 1):
         out.append(f'| {i} | {k} | {n} | {"✅ 通过" if not fails else f"❌ 不通过 {len(fails)} 处"} | {"；".join(fails[:10]).replace("|","／") if fails else "—"} |')
+    for j, k in enumerate(na_items, len(items) + 1):
+        out.append(f'| {j} | {k} | {na_items[k][0]} | ➖ 不适用（单页附件） | — |')
     out += ['', '## 提示项（供文字编辑修改，不计入通过/不通过）', '']
     for k, v in hints.items():
         out += [f'### {k}：共 {gf_kinds} 种、合计 {gf_total} 处{gf_note}' if k == GF_KEY else f'### {k}：{len(v)} 处', '']

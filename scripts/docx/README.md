@@ -7,6 +7,9 @@
 | `build_docx.py` | Markdown → docx 导出（扉页、版权页、目录、页眉页脚、章节重编号、图表编号） |
 | `check_docx.py` | 读回 docx 逐项核对格式，可选同时检查导出的 PDF |
 | `fonts_embed.py` | 把所用字体按 ECMA-376 混淆为 `.odttf` 嵌入 docx（由 `build_docx.py` 在回填目录后自动调用），并供 `check_docx.py` 核对 |
+| `package_volumes.py` | 分册交付包：逐册导出（`--build`）上、中、下三册，PDF 实测页数，生成一页「索引说明」docx，四个文件打成一个 zip |
+| `ref_notes_report.py` | 参考文献条目注文清单（供文字编辑核对），并核对 Word／网页注文与源稿一致 |
+| `../refnotes.py` | Word 与网页共用的参考文献条目注文判定 |
 | `toc_fill.py` | 用 LibreOffice 回填目录页码（由 `build_docx.py` 自动调用） |
 | `style.yaml` | 全部格式参数（字体、字号、行距、缩进、各册章号映射等） |
 | `image-manifest.yaml` | 图片取舍清单（电子书保留 / 纸书重绘） |
@@ -49,6 +52,25 @@ python3 build_docx.py --volume all -o ../../output/docx/企业数智化转型思
 
 其他常用参数：`--only N`（只导出第 N 章）、`--no-toc-pages`（不预排目录，在 Word 中按 F9 更新）、`--allow-web-residue`（源稿残留网页导航行时临时放行出样张）。
 
+## 分册交付（默认交付件）
+
+Scott 2026-11-01 定：默认只交上、中、下三册，外加一页「索引说明」，打成一个 zip；合订本不再作为交付件（`--volume all` 仍可导出自查）。各册均按目录→正文→附录排。
+
+```bash
+python3 package_volumes.py --build -o ../../output/split-volumes   # 一次导出一册，三册依次导出后打包
+python3 package_volumes.py -o ../../output/split-volumes           # 三册已导出时，只生成索引说明并打包
+```
+
+索引说明逐册列内容简介、页数（LibreOffice 渲染 PDF 后实测，含封面、版权页和目录）、章节范围和附录（从成品一级标题读出）；渲染不是 1 页即报错。配置见 `style.yaml` 的 `delivery`。
+
+## 参考文献条目注文
+
+参考文献条目上的脚注不再作为脚注，原注文以五号（10.5pt）黑色字接在条目后（多段注文保留分段）；正文脚注照常保留，Word 自动按剩余引用重排编号。判定由 `scripts/refnotes.py` 统一给出，`build_docx.py` 与 `scripts/build-site.py` 共用：只认整行为“参考文献／参考资料／资料来源”等的标题行，节到同级或更高一级标题为止，节内只有列表条目（`[n]`、`1.`、`-` 开头）算条目。单元测试：`/workspace/venv-site/bin/python ../test_refnotes.py`（需 markdown-it-py、mdit-py-plugins）。
+
+```bash
+python3 ref_notes_report.py --docx upper=…上册.docx middle=…中册.docx lower=…下册.docx --site ../../_site -o ref-notes-list.md
+```
+
 ## 格式自检
 
 ```bash
@@ -67,6 +89,8 @@ python3 check_docx.py 企业数智化转型思路-上册-印刷版.docx --print 
 
 - 一级标题：黑体三号；二级标题：楷体_GB2312 小三；三级标题：仿宋_GB2312 四号；四级标题：仿宋_GB2312 小四；全部标题加粗，标题不缩进。
 - 正文：仿宋_GB2312 小四，固定行距 28 磅，段前段后 0，首行缩进 2 个中文字符（＝4 个英文字符，firstLineChars=200，小四时 24 磅）；标题不缩进。
+- 表格文字：五号，单倍行距（w:line=240、lineRule=auto），段前段后 0（Scott 2026-11-01）；正文仍为固定 28 磅。
+- 参考文献条目注文：五号，不加粗，黑色，接在条目后。
 - 文字全部为黑色；图、表居中。
 - 目录独立成页，每章另起一页。
 - 标题层级：第一章、2.1、2.1.1 递进。

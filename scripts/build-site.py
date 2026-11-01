@@ -14,6 +14,9 @@ import json
 import os
 import re
 import shutil
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import refnotes  # 参考文献条目注文：与 Word 构建共用判定
 import copy
 
 from markdown_it import MarkdownIt
@@ -170,16 +173,18 @@ def without_trailing_navigation(path, tokens):
     return tokens
 
 
-REFERENCE_HEADING = re.compile(r'参考文献|参考资料|references|bibliography', re.I)
-REF_NOTE_STYLE = 'display:block;font-size:0.85em;color:#666;margin-top:0.2em'
+REF_NOTE_STYLE = 'display:block;font-size:0.85em;color:#000;margin-top:0.2em'
 
 
-def inline_reference_notes(tokens):
+def inline_reference_notes(tokens, lines):
     """Show notes on reference-list entries as grey text after the entry.
 
-    Footnote references inside a 参考文献/参考资料 section are replaced by the
-    note text. Notes still referenced from body text stay in the footnote list,
-    which is renumbered without gaps; an empty list is removed with its rule.
+    Which footnote references count as reference-entry notes is decided by the
+    shared scripts/refnotes.py (same as the Word build): only list entries
+    under a heading line that is exactly 参考文献/参考资料/资料来源 etc.
+    Multi-paragraph notes keep their paragraph breaks. Notes still referenced
+    elsewhere stay in the footnote list, renumbered without gaps; an empty list
+    is removed with its rule.
     """
     try:
         start = next(i for i, t in enumerate(tokens) if t.type == 'footnote_block_open')
@@ -187,11 +192,12 @@ def inline_reference_notes(tokens):
     except (StopIteration, ValueError):
         return tokens
     body, block = tokens[:start], tokens[start + 1:end]
-    notes, current = {}, None
+    notes, labels, current = {}, {}, None
     for token in block:
         if token.type == 'footnote_open':
             current = token.meta['id']
             notes[current] = []
+            labels[current] = token.meta.get('label')
         elif token.type == 'footnote_close':
             current = None
         elif current is not None:
@@ -201,34 +207,23 @@ def inline_reference_notes(tokens):
         children = []
         for token in notes.get(note_id, []):
             if token.type == 'inline':
-                if children:
-                    children.append(Token('softbreak', 'br', 0))
+                if children:   # 多段注文：保留分段
+                    children.append(Token('hardbreak', 'br', 0))
                 children.extend(copy.deepcopy(token.children or []))
         return children
 
-    section_level = None
-    in_heading = False
+    _, _, plan = refnotes.plan(lines)
     kept_refs = []
-    for index, token in enumerate(body):
-        if token.type == 'heading_open':
-            level = int(token.tag[1])
-            title = body[index + 1].content
-            if section_level is not None and level <= section_level:
-                section_level = None
-            if REFERENCE_HEADING.search(title):
-                section_level = level
-            in_heading = True
-            continue
-        if token.type == 'heading_close':
-            in_heading = False
-            continue
+    for token in body:
         if token.type != 'inline' or not token.children:
             continue
+        rows = range(token.map[0], token.map[1]) if token.map else ()
+        wanted = {lab for row in rows for lab in plan.get(row, [])}
         children = []
         for child in token.children:
             if child.type != 'footnote_ref':
                 children.append(child)
-            elif section_level is not None and not in_heading:
+            elif child.meta.get('label') in wanted:
                 note = Token('html_inline', '', 0)
                 note.content = f'<span class="ref-note" style="{REF_NOTE_STYLE}">'
                 close = Token('html_inline', '', 0)
@@ -271,7 +266,8 @@ def _renumber(body, notes, kept_refs):
 
 
 def render_document(path):
-    tokens = inline_reference_notes(without_trailing_navigation(path, MD.parse(path.read_text())))
+    source = path.read_text()
+    tokens = inline_reference_notes(without_trailing_navigation(path, MD.parse(source)), source.splitlines())
     headings = []
     counts = Counter()
     for index, token in enumerate(tokens):
