@@ -166,6 +166,10 @@ def main():
     cn = '一二三四五六七八九十'
     h_counts = {}; cap_seq = {}
     exact = Pt(F['line_spacing_exact_pt'])
+    RN = L.get('ref_note') or {'font': L['footnote']['font'], 'size_pt': 10.5}
+    REF_ENTRY = re.compile(r'^(\[\d+\]|［\d+］)')
+    ref_note_runs = []
+    check('style.yaml 参考文献条目注文=五号（10.5pt，比正文小一号）', RN.get('size_pt') == 10.5, f"ref_note {RN.get('size_pt')}")
     BODY_INDENT_CHARS = 2   # Scott 2026-10-29 确认：正文首行缩进 4 个英文字符＝2 个中文字符
     check(f'style.yaml 正文首行缩进={BODY_INDENT_CHARS}字符（4 个英文字符）', L['body'].get('first_line_chars') == BODY_INDENT_CHARS, f"style.yaml levels.body.first_line_chars 为 {L['body'].get('first_line_chars')}")
     _ns = doc.styles['Normal'].element.pPr; _ni = _ns.find(qn('w:ind')) if _ns is not None else None
@@ -179,9 +183,15 @@ def main():
         c = L[key]
         # 前置页（扉页/版权页/目录）中的 Normal 段为特殊排版，字号不按正文检查
         front = not body_started and key == 'body'
+        is_entry = key == 'body' and bool(REF_ENTRY.match(txt))
         for r in p.runs:
             if not r.text.strip(): continue
             ea, asc, size, bold, color = eff_run(r, p)
+            if is_entry and size == RN['size_pt'] and not front:   # 参考文献条目注文（Scott 2026-11-01：小一号接在条目后）
+                check(f'参考文献条目注文 字体={RN["font"]}', ea == RN['font'] or gf_ok(r.text, RN['font'], ea), where + f' 实为{ea}')
+                check('参考文献条目注文 字号=五号（10.5pt）、不加粗', size == 10.5 and not bold, where)
+                check(f'全部 文字颜色=#{F["color"]}', color == F['color'], where + f' 实为{color}')
+                ref_note_runs.append(r.text); continue
             check(f'{key} 中文字体(eastAsia)={c["font"]}', front or ea == c['font'] or gf_ok(r.text, c['font'], ea), where + f' 实为{ea}')
             check(f'全部 西文字体={F["latin"]}', asc == F['latin'], where + f' 实为{asc}')
             if not front:
@@ -193,7 +203,15 @@ def main():
             for col in h.iter(qn('w:color')):
                 check('超链接 颜色=黑色', col.get(qn('w:val')).upper() == F['color'], where)
         if front: continue
-        check('全部 行距=固定值%gpt' % F['line_spacing_exact_pt'],
+        if is_entry:
+            check('参考文献条目 无脚注（条目注文已改为接在条目后）', not p._p.findall('.//' + qn('w:footnoteReference')), where)
+        if key == 'table':   # Scott 2026-11-01：表格文字单倍行距（w:line=240 lineRule=auto）
+            sp = p._p.pPr.find(qn('w:spacing')) if p._p.pPr is not None else None
+            check('表格文字 行距=单倍（line=240 auto）',
+                  eff_pf(p, 'line_spacing_rule') == WD_LINE_SPACING.SINGLE and sp is not None and sp.get(qn('w:line')) == '240' and sp.get(qn('w:lineRule')) in (None, 'auto'),
+                  where + f' 实为{eff_pf(p, "line_spacing_rule")}/{None if sp is None else dict(sp.attrib)}')
+        else:
+            check('全部 行距=固定值%gpt（表格文字除外）' % F['line_spacing_exact_pt'],
               eff_pf(p, 'line_spacing_rule') == WD_LINE_SPACING.EXACTLY and eff_pf(p, 'line_spacing') == exact,
               where + f' 实为{eff_pf(p, "line_spacing_rule")}/{eff_pf(p, "line_spacing")}')
         sb, sa = eff_pf(p, 'space_before'), eff_pf(p, 'space_after')
@@ -252,6 +270,9 @@ def main():
     for sn in ('Caption', '表格文字'):
         sz = doc.styles[sn].font.size if sn in [x.name for x in doc.styles] else None
         check('Caption/表格文字 样式字号=五号（10.5pt）', sz is not None and sz.pt == WUHAO, f'{sn} 实为{sz.pt if sz else None}')
+    if '表格文字' in [x.name for x in doc.styles]:
+        _tpf = doc.styles['表格文字'].paragraph_format
+        check('表格文字 样式行距=单倍、段前段后=0', _tpf.line_spacing_rule == WD_LINE_SPACING.SINGLE and (_tpf.space_before or 0) == 0 and (_tpf.space_after or 0) == 0, f'实为{_tpf.line_spacing_rule}/{_tpf.space_before}/{_tpf.space_after}')
     # 目录页标题“目　录”：字体、字号、加粗
     tt = L.get('toc_title', {})
     for idx, (p, intab) in enumerate(paras):

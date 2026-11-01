@@ -35,6 +35,9 @@
   28. 包里放回 stylesWithEffects（Courier）、样式出现 themeColor、numbering 出现 Symbol -> 成品包项不通过
   39. document.xml、页眉、脚注出现 U+2060/200B/FEFF 等零宽控制字符 -> 零宽字符项不通过
   38. styles.xml 放回带底纹（fill）的表格样式、样式文字或边框改为非黑颜色 -> styles.xml 无非黑颜色/底纹项不通过
+  40. 表格文字段落改回固定值 28pt、表格文字样式段后非 0 -> 表格文字单倍行距项不通过（Scott 2026-11-01）
+  41. 参考文献条目里放回脚注引用 -> “参考文献条目 无脚注”不通过；条目注文改为小四/加粗/非黑 -> 条目注文项不通过
+  42. 多段脚注挂在参考文献条目上 -> Word 条目注文保留分段（段间 w:br），两段文字都在；说明段落/伪参考文献标题下的脚注仍为脚注（判定见 scripts/test_refnotes.py）
 修改临时副本里的源稿一律用 try/finally 还原（出版审读 #82 P2④）。
 
 用法：python3 scripts/docx/test_negative_cases.py     （约 1–2 分钟；全部通过退出 0）
@@ -574,6 +577,58 @@ def main():
             shutil.rmtree(ed, ignore_errors=True)
         rc, msg, ex = bad_build('lead1', lambda v: v['group_leads'].__setitem__(sdir, '测试　单目录引导行'))
         ok('group_leads 配给单目录章 -> 报错退出', rc != 0 and '只能用于多目录章' in msg and sdir in msg and not ex, msg[-200:])
+
+
+        # 40–42. 表格单倍行距、参考文献条目注文（Scott 2026-11-01）
+        import copy
+        from docx.oxml.ns import qn
+        base_rows = check(repo, base, tmp / 'base40.md')
+        from docx.shared import Pt as _Pt, RGBColor as _RGB
+        from docx.enum.text import WD_LINE_SPACING as _LS
+        def tab_exact(d):
+            for t in d.tables:
+                for row in t.rows:
+                    for c in row.cells:
+                        for q in c.paragraphs: q.paragraph_format.line_spacing_rule = _LS.EXACTLY; q.paragraph_format.line_spacing = _Pt(28)
+        mutate(base, tmp / 'tab28.docx', tab_exact); rows = check(repo, tmp / 'tab28.docx', tmp / 'tab28.md')
+        ok('表格文字改回固定值28pt -> 表格文字单倍行距项不通过', not rows.get('表格文字 行距=单倍（line=240 auto）', (True,))[0])
+        ok('基准样张 表格文字单倍行距项通过', base_rows.get('表格文字 行距=单倍（line=240 auto）', (False,))[0])
+        def tab_style(d): d.styles['表格文字'].paragraph_format.space_after = _Pt(6)
+        mutate(base, tmp / 'tabsty.docx', tab_style); rows = check(repo, tmp / 'tabsty.docx', tmp / 'tabsty.md')
+        ok('表格文字样式段后非 0 -> 样式行距项不通过', not rows.get('表格文字 样式行距=单倍、段前段后=0', (True,))[0])
+        RE_ENT = re.compile(r'^\s*\[\d+\]')
+        def ent_paras(d): return [q for q in d.paragraphs if RE_ENT.match(q.text) and any(r.font.size and r.font.size.pt == 10.5 for r in q.runs)]
+        def put_fn(d):
+            q = ent_paras(d)[0]; ref = next(x for x in d.element.body.iter(qn('w:footnoteReference')))
+            q._p.append(copy.deepcopy(ref.getparent()))
+        mutate(base, tmp / 'entfn.docx', put_fn); rows = check(repo, tmp / 'entfn.docx', tmp / 'entfn.md')
+        ok('参考文献条目放回脚注 -> 条目无脚注项不通过', not rows.get('参考文献条目 无脚注（条目注文已改为接在条目后）', (True,))[0])
+        ok('基准样张 参考文献条目无脚注项通过', base_rows.get('参考文献条目 无脚注（条目注文已改为接在条目后）', (False,))[0])
+        def note_bold(d):
+            for r in ent_paras(d)[0].runs:
+                if r.font.size and r.font.size.pt == 10.5: r.font.bold = True
+        mutate(base, tmp / 'rnbold.docx', note_bold); rows = check(repo, tmp / 'rnbold.docx', tmp / 'rnbold.md')
+        ok('条目注文加粗 -> 条目注文字号/不加粗项不通过', not rows.get('参考文献条目注文 字号=五号（10.5pt）、不加粗', (True,))[0])
+        def note_red(d):
+            for r in ent_paras(d)[0].runs:
+                if r.font.size and r.font.size.pt == 10.5: r.font.color.rgb = _RGB(0x66, 0x66, 0x66)
+        mutate(base, tmp / 'rngrey.docx', note_red); rows = check(repo, tmp / 'rngrey.docx', tmp / 'rngrey.md')
+        ok('条目注文改为灰色 -> 颜色项不通过', any(not v[0] for k, v in rows.items() if '黑' in k or '颜色' in k))
+        f01 = repo / '上册-研究报告' / '01-智力即服务.md'
+        if not f01.exists(): f01 = next((repo / '上册-研究报告').glob('01-*.md'))
+        o01 = f01.read_text('utf-8')
+        try:
+            f01.write_text(o01.replace('[^c01-1]: 出版社公开导言与试读。', '[^c01-1]: 出版社公开导言与试读。\n\n    多段测试第二段。\n\n    多段测试第三段。', 1), 'utf-8')
+            r = build(repo, 'upper', tmp / 'mp.docx')
+        finally: f01.write_text(o01, 'utf-8')
+        mp_ok = False
+        if r.returncode == 0:
+            d = docx.Document(str(tmp / 'mp.docx'))
+            q = next((q for q in ent_paras(d) if '多段测试第二段' in q.text), None)
+            if q is not None:
+                xml = q._p.xml
+                mp_ok = q.text.index('出版社公开导言') < q.text.index('多段测试第二段') < q.text.index('多段测试第三段') and xml.count('<w:br/>') >= 2
+        ok('多段脚注挂在条目上 -> Word 条目注文保留分段（段间换行）', mp_ok, f'exit {r.returncode} {r.stdout[-200:]}')
 
         # 3. 只传 front 篇目
         cfg = __import__('yaml').safe_load((HERE / 'style.yaml').read_text('utf-8'))

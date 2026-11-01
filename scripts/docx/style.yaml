@@ -44,6 +44,7 @@ levels:
   caption: {font: Noto Sans SC,     size_pt: 10.5, bold: false, align: center}   # 五号（Scott 2026-10-30 定）
   table: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: left}  # 五号（Scott 2026-10-30 定）
   footnote: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: justify}   # 五号
+  ref_note: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: justify}   # 参考文献条目注文：比正文小一号（五号），接在条目后（Scott 2026-11-01）
   figure_note: {font: Zhuque Fangsong (technical preview), size_pt: 10.5, bold: false, align: center}   # 图下来源注
   toc_title: {font: Noto Sans SC, size_pt: 16, bold: true}
 numbering:
@@ -256,3 +257,12 @@ images:
 checks:
   # 版权页识别标记：PDF 某页含任一标记即视为版权页，页内网址（CC 许可协议、项目仓库地址）不算裸链（总编辑定）
   copyright_page_markers: [版权页, 版权所有, 著作权人]   # 单独的 CC BY、知识共享不作标记
+# 分册交付（Scott 2026-11-01，方案 A 补充修订）：默认只交上、中、下三册 + 一页「索引说明」，打成一个 zip；合订本不再作为交付件（--volume all 仍可单独导出自查）
+delivery:
+  volumes: [upper, middle, lower]
+  zip_name: 企业数智化转型思路-分册.zip
+  index_name: 企业数智化转型思路-索引说明.docx
+  summaries:
+    upper: 研究报告。讨论 AI 进入企业后的流程改造：智力即服务，MTL（市场到线索）、LTC（线索到回款）、IPD（需求到产品）、ITR（问题到解决）四条业务流程，业务线融合、组织变革与精益管理，以及从改造机会到可验证行动的实施建议。
+    middle: 行业解决方案。第九章说明如何使用行业方案，第十至二十章按行业门类给出数字化与 AI 改造方案，覆盖农林牧渔、采矿、制造、能源与公用事业、建筑商贸物流、住宿餐饮与文体旅、信息技术与金融、专业服务和社会领域。
+    lower: 案例汇编。按国民经济行业门类整理企业 AI 应用的公开案例，并注明资料来源；附录收跨行业方法与原型演示参考。

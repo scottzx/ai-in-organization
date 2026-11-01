@@ -17,6 +17,8 @@ from docx.opc.packuri import PackURI
 from lxml import etree
 from pathlib import Path
 import yaml
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import refnotes   # 参考文献条目注文：与 build-site.py 共用判定
 from docx import Document
 from docx.enum.section import WD_SECTION
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -122,6 +124,7 @@ class Builder:
             fc = c.get('first_line_chars', 0)
             fmt_par(s.paragraph_format, self.cfg, c['align'], fc, c['size_pt'])
             if fc: set_first_line_chars(s.element, fc)
+            if key == 'table': s.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
             if name.startswith('Heading'):
                 s.paragraph_format.keep_with_next = True
                 s.paragraph_format.page_break_before = bool(c.get('page_break_before'))
@@ -186,7 +189,7 @@ class Builder:
         return p
 
     # 行内 Markdown：**粗** *斜* `码` [文字](链接)
-    TOK = re.compile(r'(\[\^[^\]]+\]|\*\*.+?\*\*|`[^`]+`|\[[^\]]+\]\([^)\s]+\)|(?<!\*)\*[^*\s][^*]*?\*(?!\*))')
+    TOK = re.compile(r'(\x00RN:[^\x00]+\x00|\[\^[^\]]+\]|\*\*.+?\*\*|`[^`]+`|\[[^\]]+\]\([^)\s]+\)|(?<!\*)\*[^*\s][^*]*?\*(?!\*))')
     def inline(self, p, text, key, bold=False, allow_fn=True):
         c = self.lv(key)
         base_bold = bold or c['bold']
@@ -196,6 +199,9 @@ class Builder:
         for part in self.TOK.split(text):
             if not part: continue
             b = base_bold
+            mr_ = re.fullmatch(r'\x00RN:([^\x00]+)\x00', part)
+            if mr_:   # 参考文献条目注文：小一号（五号）、黑色，直接接在条目后；多段注文段间换行
+                self.ref_note(p, mr_.group(1)); continue
             mf = re.fullmatch(r'\[\^([^\]]+)\]', part)
             if mf:
                 note = self.fn_defs.get(mf.group(1))
@@ -219,6 +225,16 @@ class Builder:
             if part.startswith('`') and part.endswith('`'): part = part[1:-1]
             elif part.startswith('*') and part.endswith('*') and len(part) > 2: part = part[1:-1]
             r = p.add_run(part); self.style_run(r, c['font'], c['size_pt'], b)
+
+    def ref_note(self, p, label):
+        paras = self.fn_defs.get(label) or []
+        c = self.lv('ref_note')
+        for n, t in enumerate(paras):
+            r = p.add_run(); self.style_run(r, c['font'], c['size_pt'])
+            if n: r.add_break()
+            else: r.text = '\u3000'
+            self.inline(p, t, 'ref_note', allow_fn=False)
+        self.log.setdefault('ref_notes', []).append({'file': self.cur_file, 'label': label, 'paras': paras})
 
     XTOK = re.compile(r'\{\{(fig|tab):([^{}]+)\}\}')
     def resolve_tokens(self, text):
@@ -286,14 +302,11 @@ class Builder:
         rel = md_path.relative_to(self.repo).as_posix()
         self.ref_level = None; self.ref_file = rel.endswith('索引/资料来源说明.md')
         raw = md_path.read_text('utf-8').splitlines()
-        self.fn_defs, lines, k = {}, [], 0
-        while k < len(raw):
-            md = re.match(r'^\[\^([^\]]+)\]:\s?(.*)$', raw[k])
-            if md:
-                txt = md.group(2); k += 1
-                while k < len(raw) and re.match(r'^( {4}|\t)\S', raw[k]): txt += raw[k].strip(); k += 1
-                self.fn_defs[md.group(1)] = txt; continue
-            lines.append(raw[k]); k += 1
+        # 脚注定义（多段保留分段）与参考文献条目注文判定：与网页共用 scripts/refnotes.py
+        self.fn_defs, used, rn = refnotes.plan(raw)
+        for i, labs in rn.items():
+            raw[i] = refnotes.FN_REF.sub(lambda m: f'\x00RN:{m.group(1)}\x00' if m.group(1) in labs else m.group(0), raw[i])
+        lines = [l for k, l in enumerate(raw) if k not in used]
         kept = []
         for n0, l in enumerate(lines):   # 网页导航行：整行只有站内 .md 链接（以 · ｜ | 分隔），一律过滤
             # 网页残留行（源稿与 Word 应一致，脚本不静默删除）：默认报错；--allow-web-residue 时临时跳过以出样张
@@ -651,6 +664,7 @@ class Builder:
                 cell = t.cell(ri, ci); p = cell.paragraphs[0]; p.style = self.doc.styles['表格文字']
                 c = self.lv('table')
                 fmt_par(p.paragraph_format, self.cfg, 'center' if ri == 0 else c['align'], 0, c['size_pt'])
+                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE   # Scott 2026-11-01：表格文字单倍行距（line=240 auto），正文仍固定 28 磅
                 self.inline(p, row[ci] if ci < len(row) else '', 'table', ri == 0)
                 if wide:
                     txt = row[ci] if ci < len(row) else ''
@@ -752,6 +766,7 @@ class Builder:
         return self._fn_root
 
     def add_footnote(self, p, text):
+        paras = text if isinstance(text, list) else [text]; text = paras[0] if paras else ''
         root = self.footnotes_root(); fid = self._fn_next; self._fn_next += 1
         c = self.lv('footnote')
         # 正文中的引用标记（上标）
@@ -768,9 +783,16 @@ class Builder:
         sp = tmp.add_run(' '); self.style_run(sp, c['font'], c['size_pt'])
         self._link_part = self._fn_part
         self.inline(tmp, text, 'footnote', allow_fn=False)
+        fn = OxmlElement('w:footnote'); fn.set(qn('w:id'), str(fid))
+        tmp._p.getparent().remove(tmp._p); fn.append(tmp._p)
+        for more in paras[1:]:   # 多段脚注：每段一个段落，不并段
+            q = self.doc.add_paragraph()
+            fmt_par(q.paragraph_format, self.cfg, c['align'], 0, c['size_pt'])
+            q.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+            self.inline(q, more, 'footnote', allow_fn=False)
+            q._p.getparent().remove(q._p); fn.append(q._p)
         self._link_part = None
-        tmp._p.getparent().remove(tmp._p)
-        fn = OxmlElement('w:footnote'); fn.set(qn('w:id'), str(fid)); fn.append(tmp._p); root.append(fn)
+        root.append(fn)
         self.log.setdefault('footnotes', []).append(text[:30])
 
     def guide_page_breaks(self):
